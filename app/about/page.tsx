@@ -70,48 +70,6 @@ export default function AboutPage() {
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-center mb-12">Co-Founders</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Nauman Shah */}
-            <Card variant="gradient-border" className="p-8 group">
-              <div className="flex flex-col items-center mb-6">
-                <div className="relative w-40 h-40 rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-primary-100 to-cyan-100 dark:from-primary-900 dark:to-cyan-900 p-1 shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                  <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                    <Image
-                      src="/team/nauman-shah.jpg"
-                      alt="Nauman Shah"
-                      fill
-                      className="object-contain group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-1">Nauman Shah</h3>
-                <p className="text-sm font-semibold text-primary-600 dark:text-primary-400 mb-1">Co-Founder & VP of Technology</p>
-                <p className="text-xs text-gray-500 dark:text-gray-400">AI & Data Analytics | Generative AI | Security-Focused On-Prem Solutions</p>
-              </div>
-              <CardContent>
-                <CardDescription className="text-sm leading-relaxed text-justify">
-                  Nauman is an AI and Data Analytics Specialist focused on building production-grade AI 
-                  systems for regulated environments across healthcare, financial services, and enterprise 
-                  analytics. His work spans machine learning, NLP, and generative AI—turning advanced models 
-                  into solutions that improve decision-making, efficiency, and risk control.
-                </CardDescription>
-                <CardDescription className="text-sm leading-relaxed mt-3 text-justify">
-                  He currently works in the CFT/AML domain at a leading bank, focusing on fraud detection 
-                  and risk mitigation. Previously, as Lead Data Scientist at CancerClarity LLC, he led 
-                  development of AI-driven clinical trial matching and treatment recommendation systems, 
-                  including pipelines that extract structured clinical insights and improve trial selection 
-                  accuracy.
-                </CardDescription>
-                <CardDescription className="text-sm leading-relaxed mt-3 text-justify">
-                  Across financial services, Nauman has delivered fraud detection solutions using BERT-based 
-                  models, classical ML (including SVM and ensemble methods), and modern generative AI tooling 
-                  (including LLM frameworks). His work improved detection accuracy while reducing false 
-                  positives, creating measurable value for risk teams and operations. He is certified in 
-                  Oracle Cloud Infrastructure Generative AI and brings strong hands-on expertise in Python, 
-                  SQL, Snowflake, dbt, and Power BI.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
             {/* Ehsan Ullah */}
             <Card variant="gradient-border" className="p-8 group">
               <div className="flex flex-col items-center mb-6">
@@ -157,6 +115,48 @@ export default function AboutPage() {
                   of the International Organization for Standardization (ISO) technical committee on medical 
                   laboratories and in vitro diagnostic systems, a Visiting Assistant Professor at The Ohio 
                   State University and the University of Otago, and an author of 60+ publications.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            {/* Nauman Shah */}
+            <Card variant="gradient-border" className="p-8 group">
+              <div className="flex flex-col items-center mb-6">
+                <div className="relative w-40 h-40 rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-primary-100 to-cyan-100 dark:from-primary-900 dark:to-cyan-900 p-1 shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                  <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                    <Image
+                      src="/team/nauman-shah.jpg"
+                      alt="Nauman Shah"
+                      fill
+                      className="object-contain group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-1">Nauman Shah</h3>
+                <p className="text-sm font-semibold text-primary-600 dark:text-primary-400 mb-1">Co-Founder & VP of Technology</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">AI & Data Analytics | Generative AI | Security-Focused On-Prem Solutions</p>
+              </div>
+              <CardContent>
+                <CardDescription className="text-sm leading-relaxed text-justify">
+                  Nauman is an AI and Data Analytics Specialist focused on building production-grade AI 
+                  systems for regulated environments across healthcare, financial services, and enterprise 
+                  analytics. His work spans machine learning, NLP, and generative AI—turning advanced models 
+                  into solutions that improve decision-making, efficiency, and risk control.
+                </CardDescription>
+                <CardDescription className="text-sm leading-relaxed mt-3 text-justify">
+                  He currently works in the CFT/AML domain at a leading bank, focusing on fraud detection 
+                  and risk mitigation. Previously, as Lead Data Scientist at CancerClarity LLC, he led 
+                  development of AI-driven clinical trial matching and treatment recommendation systems, 
+                  including pipelines that extract structured clinical insights and improve trial selection 
+                  accuracy.
+                </CardDescription>
+                <CardDescription className="text-sm leading-relaxed mt-3 text-justify">
+                  Across financial services, Nauman has delivered fraud detection solutions using BERT-based 
+                  models, classical ML (including SVM and ensemble methods), and modern generative AI tooling 
+                  (including LLM frameworks). His work improved detection accuracy while reducing false 
+                  positives, creating measurable value for risk teams and operations. He is certified in 
+                  Oracle Cloud Infrastructure Generative AI and brings strong hands-on expertise in Python, 
+                  SQL, Snowflake, dbt, and Power BI.
                 </CardDescription>
               </CardContent>
             </Card>
