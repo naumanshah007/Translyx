@@ -146,11 +146,13 @@ export default function AboutPage() {
                   strict governance and compliance requirements.
                 </CardDescription>
                 <CardDescription className="text-sm leading-relaxed mt-3 text-justify">
-                  Currently, Nauman serves as a Business Intelligence Developer at Watercare Services Limited, where 
-                  he leads data integration and quality assurance initiatives and develops decision-ready analytics and 
-                  reporting solutions. Previously, he was Lead Data Scientist at CancerClarity LLC, where he built 
+                  Nauman has worked as a Business Intelligence Developer at Watercare Services Limited, where 
+                  he led data integration and quality assurance initiatives and developed decision-ready analytics and 
+                  reporting solutions. He has also worked in the banking sector, focusing on financial crime analytics 
+                  and risk management. Previously, he was Lead Data Scientist at CancerClarity LLC, where he built 
                   AI-driven clinical trial matching capabilities using NLP and transformer-based models, improving 
-                  trial relevance and patient-to-study alignment outcomes.
+                  trial relevance and patient-to-study alignment outcomes. He has engaged extensively with healthcare 
+                  institutions and professionals, delivering AI solutions for clinical research and patient care.
                 </CardDescription>
                 <CardDescription className="text-sm leading-relaxed mt-3 text-justify">
                   Across 30+ client engagements, Nauman has delivered production-grade AI and data solutions end to 
