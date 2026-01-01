@@ -58,11 +58,11 @@ Reply directly to this email to respond to ${name} (${email}).
     `.trim();
 
     // Send email using Resend
-    // TEMPORARY: Using verified email for testing. After domain verification, change back to siteConfig.company.email
-    // To send to info@privexa.co, you need to verify privexa.co domain in Resend dashboard
+    // Note: Domain verification is required to send to info@privexa.co
+    // Until domain is verified, Resend may only allow sending to verified account email
     const { data, error } = await resend.emails.send({
       from: "Privexa Website <onboarding@resend.dev>", // Change to noreply@privexa.co after domain verification
-      to: ["naumanshah07@gmail.com"], // TEMPORARY: Change to [siteConfig.company.email] after domain verification
+      to: [siteConfig.company.email], // info@privexa.co
       replyTo: email,
       subject: subject,
       text: emailBody,
