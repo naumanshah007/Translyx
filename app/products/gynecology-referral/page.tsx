@@ -62,7 +62,7 @@ export default function GynecologyReferralPage() {
             <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-primary-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg">
               <Stethoscope className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gradient">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold ">
               Referral Grading System
             </h1>
           </div>
@@ -74,7 +74,7 @@ export default function GynecologyReferralPage() {
         </div>
 
         {/* Overview Section */}
-        <Card variant="gradient-border" className="mb-12 p-6 sm:p-8">
+        <Card variant="default" className="mb-12 p-6 sm:p-8">
           <CardHeader>
             <CardTitle className="text-2xl sm:text-3xl mb-4">Overview</CardTitle>
           </CardHeader>
@@ -99,12 +99,12 @@ export default function GynecologyReferralPage() {
 
         {/* Key Features */}
         <div className="mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-10 text-gradient px-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-10  px-4">
             Key Features
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto px-4 sm:px-6">
             {features.map((feature, index) => (
-              <Card key={index} variant="default" className="p-4 sm:p-6 group hover:shadow-colored transition-all duration-300 h-full">
+              <Card key={index} variant="default" className="p-4 sm:p-6 group hover:shadow-lg transition-all duration-300 h-full">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary-500 to-cyan-500 rounded-xl flex items-center justify-center mb-3 sm:mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
@@ -118,7 +118,7 @@ export default function GynecologyReferralPage() {
         </div>
 
         {/* Benefits */}
-        <Card variant="default" className="mb-12 sm:mb-16 hover:shadow-colored transition-all duration-300">
+        <Card variant="default" className="mb-12 sm:mb-16 hover:shadow-lg transition-all duration-300">
           <CardHeader>
             <CardTitle className="text-2xl sm:text-3xl">Key Benefits</CardTitle>
           </CardHeader>
@@ -135,7 +135,7 @@ export default function GynecologyReferralPage() {
         </Card>
 
         {/* Use Cases */}
-        <Card variant="gradient-border" className="mb-12 sm:mb-16 p-6 sm:p-8">
+        <Card variant="default" className="mb-12 sm:mb-16 p-6 sm:p-8">
           <CardHeader>
             <CardTitle className="text-2xl sm:text-3xl mb-4">Use Cases</CardTitle>
           </CardHeader>
@@ -159,9 +159,9 @@ export default function GynecologyReferralPage() {
 
         {/* CTA */}
         <div className="text-center px-4 sm:px-6">
-          <Card variant="gradient-border" className="p-6 sm:p-8">
+          <Card variant="default" className="p-6 sm:p-8">
             <CardContent>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 text-gradient">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 ">
                 Interested in Learning More?
               </h3>
               <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4 sm:mb-6 max-w-2xl mx-auto leading-relaxed">
@@ -169,13 +169,13 @@ export default function GynecologyReferralPage() {
                 can transform your healthcare referral processes.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                <Button asChild variant="gradient" size="lg" className="min-h-[44px] sm:min-h-[48px] w-full sm:w-auto">
+                <Button asChild variant="gradient" size="lg" className="min-h-[44px] sm:min-h-[48px] w-full sm:w-auto shadow-md">
                   <Link href="/contact">
                     Contact Us
                     <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="min-h-[44px] sm:min-h-[48px] w-full sm:w-auto">
+                <Button asChild variant="outline" size="lg" className="min-h-[44px] sm:min-h-[48px] w-full sm:w-auto font-semibold">
                   <Link href="/products">View All Products</Link>
                 </Button>
               </div>

@@ -1,7 +1,7 @@
 {
   "name": "website-boilerplate",
   "version": "1.0.0",
-  "description": "Universal website boilerplate with Privexa design system",
+  "description": "Translyx Limited - Healthcare Technology Enablement",
   "private": true,
   "scripts": {
     "dev": "next dev --port 3000",

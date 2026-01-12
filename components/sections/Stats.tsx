@@ -86,7 +86,7 @@ export function Stats({ stats, className }: StatsProps) {
                 <div className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-2 bg-gradient-to-r from-primary-600 to-cyan-600 bg-clip-text text-transparent">
                   <span data-value={stat.value}>{stat.value}</span>
                 </div>
-                <div className="text-sm md:text-base text-gray-600 dark:text-gray-400 font-medium">
+                <div className="text-sm md:text-base text-gray-700 dark:text-gray-300 font-medium">
                   {stat.label}
                 </div>
               </div>

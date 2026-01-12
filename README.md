@@ -1,17 +1,19 @@
-# Privexa Limited Website
+# Translyx Limited Website
 
-Official website for Privexa Limited - Innovative AI Solutions Across Industries.
+Official website for Translyx Limited - Translating Innovation into Impact.
 
 ## About
 
-Privexa Limited is a technology company specializing in AI solutions for regulated environments. Our flagship product, **Privexa**, is an on-premise generative AI platform designed for healthcare, financial services, and other compliance-sensitive industries.
+Translyx Limited is a New Zealand–based consultancy and technology enablement firm focused on supporting the responsible adoption of advanced diagnostic and clinical technologies within the healthcare and research ecosystem.
 
-## Products & Solutions
+## Services
 
-- **Privexa**: On-premise generative AI platform for healthcare and financial services
-- **Referral Grading System**: AI-powered system for hospitals to analyze GP requests and suggest best-fit pathways
-- **AI Vision Assistant**: AI-based assistance app for blind people, serving as their digital eyes
-- **Accessibility Solutions**: Pipeline of solutions for disabled persons
+- **Regulatory & Compliance Alignment**: Ensure technology adoption meets New Zealand healthcare regulatory requirements
+- **Technology Integration Support**: Facilitate seamless integration of diagnostic and clinical technologies
+- **Documentation & Evidence Support**: Comprehensive documentation and evidence gathering
+- **Training & Enablement**: Training programs and operational enablement
+- **Operational & Logistics Support**: End-to-end operational support for technology deployment
+- **Partnership & Stakeholder Coordination**: Coordinate partnerships between manufacturers, laboratories, clinicians, and research organizations
 
 ## Tech Stack
 
@@ -24,11 +26,11 @@ Privexa Limited is a technology company specializing in AI solutions for regulat
 ## Features
 
 - Modern, responsive UI/UX design
-- Company-focused branding with product showcase
+- Healthcare technology enablement focus
 - SEO optimized with sitemap generation
 - Dark mode support
 - Component-based architecture
-- YouTube video integration for product demos
+- Contact form with email integration
 
 ## Development
 
@@ -54,15 +56,15 @@ npm start
 ├── app/                    # Next.js app directory
 │   ├── page.tsx            # Homepage
 │   ├── about/              # About page
-│   ├── products/           # Products showcase
-│   ├── pricing/            # Pricing page
-│   └── contact/            # Contact page
+│   ├── services/           # Services page
+│   ├── collaboration/      # Collaboration page
+│   └── contact/           # Contact page
 ├── components/
 │   ├── layout/             # Header, Footer, Navigation
 │   ├── sections/           # Hero, Features, CTA, etc.
 │   └── ui/                 # Button, Card, Logo
 ├── config/                 # Configuration files
-│   ├── site.ts             # Site settings & products
+│   ├── site.ts             # Site settings & services
 │   ├── navigation.ts       # Menu structure
 │   └── social.ts           # Social links
 └── public/                 # Static assets (logos, images)
@@ -71,10 +73,10 @@ npm start
 ## Configuration
 
 Key configuration files:
-- `config/site.ts`: Company info, products, global presence, expertise
+- `config/site.ts`: Company info, services, expertise
 - `config/navigation.ts`: Main navigation menu
 - `config/social.ts`: Social media links
 
 ## License
 
-Proprietary - Privexa Limited
+Proprietary - Translyx Limited

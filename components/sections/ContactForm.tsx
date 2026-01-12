@@ -3,15 +3,15 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/Card";
+import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    company: "",
+    organization: "",
     message: "",
-    requestDemo: false,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
@@ -47,7 +47,7 @@ export function ContactForm() {
       }
 
       setSubmitStatus("success");
-      setFormData({ name: "", email: "", company: "", message: "", requestDemo: false });
+      setFormData({ name: "", email: "", organization: "", message: "" });
     } catch (error) {
       console.error("Form submission error:", error);
       setSubmitStatus("error");
@@ -57,7 +57,7 @@ export function ContactForm() {
   };
 
   return (
-    <Card variant="default" className="max-w-2xl mx-auto hover:shadow-colored transition-all duration-300">
+    <Card variant="default" className="max-w-2xl mx-auto">
       <CardHeader>
         <CardTitle className="text-2xl">Get in Touch</CardTitle>
         <CardDescription>
@@ -95,14 +95,14 @@ export function ContactForm() {
           </div>
 
           <div>
-            <label htmlFor="company" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-              Company
+            <label htmlFor="organization" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+              Organization
             </label>
             <input
               type="text"
-              id="company"
-              value={formData.company}
-              onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+              id="organization"
+              value={formData.organization}
+              onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
               className="w-full px-4 py-3 border-2 border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 dark:bg-gray-800 dark:text-white"
             />
           </div>
@@ -121,19 +121,6 @@ export function ContactForm() {
             />
           </div>
 
-          <div className="flex items-center">
-            <input
-              type="checkbox"
-              id="requestDemo"
-              checked={formData.requestDemo}
-              onChange={(e) => setFormData({ ...formData, requestDemo: e.target.checked })}
-              className="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary dark:bg-gray-800 dark:border-gray-700"
-            />
-            <label htmlFor="requestDemo" className="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">
-              Request Demo
-            </label>
-          </div>
-
           {submitStatus === "success" && (
             <div className="p-4 bg-green-50 border border-green-200 rounded-md text-green-800 dark:bg-green-900/20 dark:border-green-800 dark:text-green-200">
               Thank you! Your message has been sent successfully.
@@ -143,11 +130,11 @@ export function ContactForm() {
           {submitStatus === "error" && (
             <div className="p-4 bg-red-50 border border-red-200 rounded-md text-red-800 dark:bg-red-900/20 dark:border-red-800 dark:text-red-200">
               Something went wrong. Please try again later or contact us directly at{" "}
-              <a href="mailto:info@privexa.co" className="underline">info@privexa.co</a>.
+              <a href={`mailto:${siteConfig.company.email}`} className="underline">{siteConfig.company.email}</a>.
             </div>
           )}
 
-          <Button type="submit" variant="gradient" size="lg" className="w-full" isLoading={isSubmitting}>
+          <Button type="submit" variant="gradient" size="lg" className="w-full shadow-md" isLoading={isSubmitting}>
             Send Message
           </Button>
         </form>

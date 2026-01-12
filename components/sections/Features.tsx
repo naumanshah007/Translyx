@@ -51,8 +51,8 @@ export function Features({
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-gradient">{title}</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-50">{title}</h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             {description}
           </p>
         </div>
@@ -82,7 +82,7 @@ export function Features({
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                  <CardDescription className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                     {feature.description}
                   </CardDescription>
                 </CardContent>

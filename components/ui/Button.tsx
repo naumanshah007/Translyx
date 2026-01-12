@@ -12,30 +12,30 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "default", size = "default", isLoading, children, disabled, asChild, ...props }, ref) => {
     const buttonClasses = cn(
-      "inline-flex items-center justify-center rounded-lg text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 relative overflow-hidden",
+      "inline-flex items-center justify-center rounded-md text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
       {
-        // Primary - Animated gradient with glow
-        "bg-gradient-to-r from-primary-600 via-primary-500 to-cyan-500 text-white hover:from-primary-500 hover:via-primary-400 hover:to-cyan-400 shadow-lg shadow-primary-500/50 hover:shadow-xl hover:shadow-primary-500/60 hover:scale-105 active:scale-100": variant === "default" || variant === "primary",
+        // Primary - Solid primary color with high contrast white text
+        "bg-primary-600 text-white hover:bg-primary-700 shadow-sm hover:shadow-md": variant === "default" || variant === "primary",
         
-        // Gradient - Enhanced gradient button
-        "bg-gradient-to-r from-cyan-500 via-primary-500 to-purple-500 text-white hover:from-cyan-400 hover:via-primary-400 hover:to-purple-400 shadow-lg shadow-cyan-500/40 hover:shadow-xl hover:shadow-cyan-500/50 hover:scale-105 active:scale-100 animate-gradient bg-[length:200%_200%]": variant === "gradient",
+        // Gradient - Professional gradient with high contrast
+        "bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 text-white hover:from-primary-700 hover:via-primary-600 hover:to-primary-700 shadow-md hover:shadow-lg font-bold": variant === "gradient",
         
-        // Secondary - Glassmorphism
-        "glass border-2 border-primary-200 dark:border-primary-800 text-primary-700 dark:text-primary-300 hover:bg-primary-50/50 dark:hover:bg-primary-900/20 hover:border-primary-300 dark:hover:border-primary-700 hover:scale-105 active:scale-100": variant === "secondary",
+        // Secondary - Light background with dark text
+        "bg-gray-100 text-gray-900 hover:bg-gray-200 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700 dark:border-gray-700": variant === "secondary",
         
-        // Destructive
-        "bg-red-600 text-white hover:bg-red-700 shadow-lg shadow-red-500/50 hover:shadow-xl hover:shadow-red-500/60 hover:scale-105 active:scale-100": variant === "destructive",
+        // Destructive - Red with white text
+        "bg-red-600 text-white hover:bg-red-700 shadow-sm hover:shadow-md": variant === "destructive",
         
-        // Outline - Enhanced border with hover fill
-        "border-2 border-primary-300 dark:border-primary-700 bg-transparent text-primary-700 dark:text-primary-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:border-primary-400 dark:hover:border-primary-600 hover:scale-105 active:scale-100 transition-all": variant === "outline",
+        // Outline - Border with high contrast text
+        "border-2 border-primary-600 bg-transparent text-primary-700 hover:bg-primary-50 dark:border-primary-500 dark:text-primary-400 dark:hover:bg-primary-900/20 font-semibold": variant === "outline",
         
-        // Ghost - Subtle background on hover
-        "hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 hover:scale-105 active:scale-100": variant === "ghost",
+        // Ghost - Subtle with good contrast
+        "hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-100": variant === "ghost",
       },
       {
-        "h-10 px-6 py-2": size === "default",
-        "h-9 px-4 text-xs": size === "sm",
-        "h-12 px-8 text-base": size === "lg",
+        "h-10 px-4 py-2": size === "default",
+        "h-9 px-3 text-xs": size === "sm",
+        "h-11 px-8 text-base": size === "lg",
       },
       className
     );
@@ -64,11 +64,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             />
           </svg>
         )}
-        <span className="relative z-10">{children}</span>
-        {/* Shine effect on hover for gradient buttons */}
-        {(variant === "gradient" || variant === "default" || variant === "primary") && (
-          <span className="absolute inset-0 -translate-x-full hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-        )}
+        {children}
       </>
     );
 

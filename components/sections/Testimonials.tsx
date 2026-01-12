@@ -50,7 +50,7 @@ export function Testimonials({
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-gradient">{title}</h2>
+          <h2 className="text-3xl font-bold mb-4">{title}</h2>
         </div>
 
         {/* Testimonials Grid */}
@@ -66,7 +66,7 @@ export function Testimonials({
                 className={cn(
                   "p-6 transition-all duration-500",
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
-                  "hover:shadow-colored-lg hover:-translate-y-1"
+                  "hover:shadow-lg"
                 )}
               >
                 <CardContent className="pt-6">

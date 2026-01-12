@@ -17,7 +17,7 @@ export async function POST(request: Request) {
     const resend = new Resend(apiKey);
 
     const body = await request.json();
-    const { name, email, company, message, requestDemo } = body;
+    const { name, email, organization, message } = body;
 
     // Validate required fields
     if (!name || !email || !message) {
@@ -37,32 +37,29 @@ export async function POST(request: Request) {
     }
 
     // Prepare email content
-    const subject = requestDemo
-      ? `New Demo Request from ${name}${company ? ` (${company})` : ""}`
-      : `New Contact Form Submission from ${name}${company ? ` (${company})` : ""}`;
+    const subject = `New Contact Form Submission from ${name}${organization ? ` (${organization})` : ""}`;
 
     const emailBody = `
 New contact form submission:
 
 Name: ${name}
 Email: ${email}
-${company ? `Company: ${company}` : ""}
-${requestDemo ? "Requested: Demo" : ""}
+${organization ? `Organization: ${organization}` : ""}
 
 Message:
 ${message}
 
 ---
-This email was sent from the Privexa Limited website contact form.
+This email was sent from the Translyx Limited website contact form.
 Reply directly to this email to respond to ${name} (${email}).
     `.trim();
 
     // Send email using Resend
-    // Note: Domain verification is required to send to info@privexa.co
+    // Note: Domain verification is required to send to info@translyx.co
     // Until domain is verified, Resend may only allow sending to verified account email
     const { data, error } = await resend.emails.send({
-      from: "Privexa Website <onboarding@resend.dev>", // Change to noreply@privexa.co after domain verification
-      to: [siteConfig.company.email], // info@privexa.co
+      from: "Translyx Website <onboarding@resend.dev>", // Change to noreply@translyx.co after domain verification
+      to: [siteConfig.company.email], // info@translyx.co
       replyTo: email,
       subject: subject,
       text: emailBody,
@@ -72,8 +69,7 @@ Reply directly to this email to respond to ${name} (${email}).
           <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-            ${company ? `<p><strong>Company:</strong> ${company}</p>` : ""}
-            ${requestDemo ? `<p><strong>Requested:</strong> Demo</p>` : ""}
+            ${organization ? `<p><strong>Organization:</strong> ${organization}</p>` : ""}
           </div>
           <div style="margin: 20px 0;">
             <h3 style="color: #1E40AF;">Message:</h3>
@@ -81,7 +77,7 @@ Reply directly to this email to respond to ${name} (${email}).
           </div>
           <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 30px 0;">
           <p style="color: #666; font-size: 12px;">
-            This email was sent from the Privexa Limited website contact form.<br>
+            This email was sent from the Translyx Limited website contact form.<br>
             Reply directly to this email to respond to ${name} (${email}).
           </p>
         </div>

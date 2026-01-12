@@ -7,133 +7,108 @@
 
 export const siteConfig = {
   // Basic Information
-  name: "Privexa",
-  companyName: "Privexa Limited",
-  companyTagline: "Innovative AI Solutions Across Industries",
-  companyDescription: "Delivering cutting-edge AI solutions that transform industries while maintaining the highest standards of privacy, security, and compliance.",
-  tagline: "Privacy-First AI Platform", // Product tagline
-  description: "Enabling Safe Enterprise AI Without Data Exposure", // Product description
+  name: "Translyx",
+  companyName: "Translyx Limited",
+  companyTagline: "Translating Innovation into Impact",
+  companyDescription: "We help New Zealand healthcare and research organizations adopt advanced diagnostic and clinical technologies through compliant integration, documentation, training, and operational enablement.",
+  tagline: "Translating Innovation into Impact",
+  description: "We help New Zealand healthcare and research organizations adopt advanced diagnostic and clinical technologies through compliant integration, documentation, training, and operational enablement.",
   
   // Domain & URLs
-  domain: "privexa.co",
-  url: "https://www.privexa.co",
+  domain: "translyx.co",
+  url: "https://www.translyx.co",
   
   // Company Details
   company: {
-    name: "Privexa Limited",
+    name: "Translyx Limited",
     location: "Auckland, New Zealand",
-    email: "info@privexa.co",
+    email: "info@translyx.co",
     phone: "+64 (0) X XXX XXXX",
     address: "Auckland, New Zealand",
   },
   
   // Team Contact Information
   team: {
-    nauman: {
-      name: "Nauman Shah",
-      phone: "+642108608617",
-      email: "info@privexa.co",
-    },
     ehsan: {
-      name: "Ehsan Ullah",
+      name: "Dr Ehsan Ullah",
+      role: "Clinical & Technology Liaison",
       phone: "+64220141390",
-      email: "info@privexa.co",
+      email: "ehsan.ullah@translyx.co",
     },
   },
   
   // SEO Defaults
   seo: {
-    defaultTitle: "Privexa Limited - Innovative AI Solutions Across Industries",
-    defaultDescription: "Delivering cutting-edge AI solutions that transform industries while maintaining the highest standards of privacy, security, and compliance.",
+    defaultTitle: "Translyx Limited — Translating Innovation into Impact",
+    defaultDescription: "Translyx helps New Zealand healthcare and research organizations adopt advanced diagnostic and clinical technologies through compliant integration, documentation, training, and operational enablement.",
     keywords: [
-      // Company-level
-      "AI solutions company", "enterprise AI solutions", "AI consulting", 
-      "healthcare AI solutions", "financial AI solutions", "accessibility AI",
-      "Privexa Limited", "AI innovation", "secure AI automation",
-      "AI solutions provider", "enterprise AI consulting",
-      // Product-level
-      "privacy AI", "on-premise AI", "HIPAA-friendly AI", "GDPR-friendly AI", 
-      "PII protection", "enterprise AI security", "data sovereignty", 
-      "privacy-first AI", "enterprise AI platform",
+      "healthcare technology", "diagnostic technology", "clinical technology", 
+      "healthcare compliance", "medical device integration", "laboratory technology",
+      "Translyx Limited", "healthcare enablement", "clinical workflow",
+      "regulatory compliance", "technology integration", "healthcare training",
+      "diagnostic systems", "clinical documentation", "healthcare implementation",
     ],
-    author: "Privexa Limited",
+    author: "Translyx Limited",
     ogImage: "/og-image.png",
   },
   
   // Logo Configuration
   logo: {
-    src: "/logo.png",
-    alt: "Privexa Limited Logo",
+    src: "/logo.jpeg",
+    alt: "Translyx Limited Logo",
     width: 48,
     height: 48,
   },
 
-  // Product Information
-  product: {
-    name: "Privexa",
-    description: "Privacy-First AI Platform",
-    logo: {
-      src: "/logo.png",
-      alt: "Privexa Logo",
-    },
-  },
-
-  // Products Portfolio
-  products: [
+  // Services (replacing products)
+  services: [
     {
-      name: "Privexa",
-      description: "Privacy-First AI Platform enabling safe enterprise AI without data exposure",
-      status: "available",
+      name: "Regulatory & Compliance Alignment",
+      description: "Ensure technology adoption meets New Zealand healthcare regulatory requirements and compliance standards.",
       icon: "Shield",
     },
     {
-      name: "Referral Grading System",
-      description: "AI-powered system that analyzes thousands of GP requests and suggests best-fit referral paths per hospital policies",
-      status: "available",
-      icon: "Stethoscope",
+      name: "Technology Integration Support",
+      description: "Facilitate seamless integration of diagnostic and clinical technologies into existing healthcare workflows.",
+      icon: "Zap",
     },
     {
-      name: "AI Vision Assistant",
-      description: "AI-based help app for blind people, serving as their eyes for daily life chores and activities",
-      status: "available",
-      icon: "Eye",
+      name: "Documentation & Evidence Support",
+      description: "Comprehensive documentation and evidence gathering to support technology adoption and regulatory submissions.",
+      icon: "FileText",
     },
     {
-      name: "Accessibility Solutions",
-      description: "Comprehensive AI solutions for disabled persons, designed to enhance independence and quality of life",
-      status: "coming-soon",
-      icon: "Heart",
+      name: "Training & Enablement",
+      description: "Training programs and operational enablement to ensure successful technology implementation and adoption.",
+      icon: "Users",
+    },
+    {
+      name: "Operational & Logistics Support",
+      description: "End-to-end operational support for technology deployment, including logistics and workflow facilitation.",
+      icon: "Settings",
+    },
+    {
+      name: "Partnership & Stakeholder Coordination",
+      description: "Coordinate partnerships between manufacturers, laboratories, clinicians, and research organizations.",
+      icon: "Handshake",
     },
   ],
 
-  // Global Presence
-  globalPresence: {
-    regions: [
-      "South Asia",
-      "Middle East",
-      "USA",
-      "EU",
-      "Canada",
-      "Australia",
-      "New Zealand",
-    ],
-  },
-
   // Team Expertise
   expertise: {
-    talent: "Top 1% in AI and Full Stack Development",
+    talent: "Healthcare Technology Enablement Specialists",
     domains: [
-      "Healthcare",
-      "Compliance",
-      "Cyber Security",
-      "Infrastructure",
-      "CFT/AML",
-      "Banking",
+      "Diagnostic Technology",
+      "Clinical Systems",
+      "Regulatory Compliance",
+      "Laboratory Workflows",
+      "Healthcare Integration",
+      "Technology Training",
     ],
     specialties: [
-      "Agentic AI",
-      "Secure AI Automation",
-      "Enterprise AI Solutions",
+      "Regulatory Alignment",
+      "Technology Integration",
+      "Clinical Enablement",
     ],
   },
 };

@@ -18,22 +18,22 @@ export const navigation: NavItem[] = [
     description: "Return to homepage",
   },
   {
-    label: "Products",
-    href: "/products",
-    description: "Explore our products and solutions",
-  },
-  {
-    label: "About",
+    label: "About Us",
     href: "/about",
-    description: "Learn about us",
+    description: "Learn about Translyx",
   },
   {
-    label: "Pricing",
-    href: "/pricing",
-    description: "View pricing information",
+    label: "Our Services",
+    href: "/services",
+    description: "Explore our services",
   },
   {
-    label: "Contact",
+    label: "Collaboration",
+    href: "/collaboration",
+    description: "Partner with us",
+  },
+  {
+    label: "Contact Us",
     href: "/contact",
     description: "Get in touch",
   },
@@ -41,7 +41,7 @@ export const navigation: NavItem[] = [
 
 // CTA Button in Header
 export const headerCTA = {
-  label: "Request Demo",
+  label: "Talk to Us",
   href: "/contact",
 };
 

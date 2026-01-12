@@ -17,7 +17,7 @@ export function Navigation() {
             key={item.href}
             href={item.href}
             className={cn(
-              "text-sm font-medium transition-colors hover:text-primary",
+              "text-sm font-medium transition-all duration-200 hover:text-primary hover:tracking-[0.08em] uppercase",
               isActive
                 ? "text-primary"
                 : "text-gray-600 dark:text-gray-300"
@@ -30,4 +30,3 @@ export function Navigation() {
     </nav>
   );
 }
-

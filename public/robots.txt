@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://privexa.io/sitemap.xml
+Sitemap: https://translyx.co/sitemap.xml
 

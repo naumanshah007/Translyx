@@ -13,23 +13,13 @@ export interface SocialLink {
 
 export const socialLinks: SocialLink[] = [
   {
-    name: "Twitter",
-    href: "https://twitter.com/privexa",
-    icon: "Twitter",
-  },
-  {
     name: "LinkedIn",
-    href: "https://linkedin.com/company/privexa",
+    href: "",
     icon: "Linkedin",
   },
   {
-    name: "GitHub",
-    href: "https://github.com/privexa",
-    icon: "Github",
-  },
-  {
     name: "Email",
-    href: "mailto:info@privexa.co",
+    href: "mailto:info@translyx.co",
     icon: "Mail",
   },
 ];
