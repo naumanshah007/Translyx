@@ -35,10 +35,10 @@ export function Header() {
 
         {/* Mobile Header */}
         <div className="lg:hidden">
-          <div className="flex items-center justify-between h-20 px-4 sm:px-6">
+          <div className="flex items-center justify-between h-28 sm:h-32 px-4 sm:px-6">
             {/* Mobile Logo */}
-            <div className="flex items-center">
-              <Logo href="/" size="md" />
+            <div className="flex items-center flex-shrink-0">
+              <Logo href="/" size="lg" className="!w-48 !h-48 sm:!w-56 sm:!h-56 md:!w-64 md:!h-64" />
             </div>
 
             {/* Mobile Menu Button */}

@@ -62,7 +62,8 @@ export function Logo({
         width={width}
         height={height}
         priority
-        className="object-contain"
+        className="object-contain w-auto h-auto"
+        style={{ maxWidth: '100%', height: 'auto' }}
       />
       {showText && variant !== "horizontal" && (
         <div className="flex flex-col ml-3">
