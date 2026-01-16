@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { CTA } from "@/components/sections/CTA";
 import { siteConfig } from "@/config/site";
 import Link from "next/link";
+import { PatternOverlay } from "@/components/ui/DecorativeElements";
 import { 
   Stethoscope,
   ArrowRight,
@@ -55,11 +56,12 @@ export default function GynecologyReferralPage() {
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto relative">
+        <PatternOverlay pattern="topo" opacity={0.04} className="text-primary-500/30" />
         {/* Page Header */}
         <div className="text-center mb-12 sm:mb-16 px-4">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-primary-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-slate-900 via-primary-600 to-cyan-400 rounded-2xl flex items-center justify-center shadow-[0_16px_35px_rgba(37,99,235,0.35)]">
               <Stethoscope className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold ">
@@ -75,7 +77,7 @@ export default function GynecologyReferralPage() {
         </div>
 
         {/* Overview Section */}
-        <Card variant="default" className="mb-12 p-6 sm:p-8">
+        <Card variant="gradient-border" className="mb-12 p-6 sm:p-8" cornerAccent>
           <CardHeader>
             <CardTitle className="text-2xl sm:text-3xl mb-4">Overview</CardTitle>
           </CardHeader>
@@ -106,8 +108,8 @@ export default function GynecologyReferralPage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto px-4 sm:px-6">
             {features.map((feature, index) => (
-              <Card key={index} variant="default" className="p-4 sm:p-6 group hover:shadow-lg transition-all duration-300 h-full">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary-500 to-cyan-500 rounded-xl flex items-center justify-center mb-3 sm:mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <Card key={index} variant="gradient-border" className="p-4 sm:p-6 group transition-all duration-300 h-full">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-slate-900 via-primary-600 to-cyan-400 rounded-2xl flex items-center justify-center mb-3 sm:mb-4 shadow-[0_12px_25px_rgba(37,99,235,0.35)] group-hover:scale-110 transition-transform duration-300">
                   <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
                 <CardTitle className="text-base sm:text-lg mb-2">{feature.title}</CardTitle>
@@ -120,7 +122,7 @@ export default function GynecologyReferralPage() {
         </div>
 
         {/* Benefits */}
-        <Card variant="default" className="mb-12 sm:mb-16 hover:shadow-lg transition-all duration-300">
+        <Card variant="gradient-border" className="mb-12 sm:mb-16 transition-all duration-300" cornerAccent>
           <CardHeader>
             <CardTitle className="text-2xl sm:text-3xl">Key Benefits</CardTitle>
           </CardHeader>
@@ -137,7 +139,7 @@ export default function GynecologyReferralPage() {
         </Card>
 
         {/* Use Cases */}
-        <Card variant="default" className="mb-12 sm:mb-16 p-6 sm:p-8">
+        <Card variant="gradient-border" className="mb-12 sm:mb-16 p-6 sm:p-8" cornerAccent>
           <CardHeader>
             <CardTitle className="text-2xl sm:text-3xl mb-4">Use Cases</CardTitle>
           </CardHeader>
@@ -161,7 +163,7 @@ export default function GynecologyReferralPage() {
 
         {/* CTA */}
         <div className="text-center px-4 sm:px-6">
-          <Card variant="default" className="p-6 sm:p-8">
+          <Card variant="gradient-border" className="p-6 sm:p-8" cornerAccent>
             <CardContent>
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 ">
                 Interested in Learning More?
@@ -188,4 +190,3 @@ export default function GynecologyReferralPage() {
     </div>
   );
 }
-

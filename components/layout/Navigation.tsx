@@ -17,10 +17,12 @@ export function Navigation() {
             key={item.href}
             href={item.href}
             className={cn(
-              "text-sm font-medium transition-all duration-200 hover:text-primary hover:tracking-[0.08em] uppercase",
+              "relative text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-200",
+              "after:absolute after:-bottom-2 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-gradient-to-r after:from-cyan-400 after:via-primary-500 after:to-amber-300 after:transition-transform after:duration-300",
+              "hover:after:scale-x-100",
               isActive
-                ? "text-primary"
-                : "text-gray-600 dark:text-gray-300"
+                ? "text-slate-900 dark:text-white after:scale-x-100"
+                : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
             )}
           >
             {item.label}

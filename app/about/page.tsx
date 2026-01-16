@@ -25,7 +25,7 @@ export default function AboutPage() {
 
         {/* Main Content */}
         <div className="space-y-12 mb-16">
-          <Card cornerAccent>
+          <Card cornerAccent variant="gradient-border">
             <CardHeader>
               <CardTitle className="text-2xl">Our Mission</CardTitle>
             </CardHeader>
@@ -50,14 +50,14 @@ export default function AboutPage() {
           <SectionDivider variant="minimal" />
 
           {/* Our Role Section */}
-          <Card cornerAccent>
+          <Card cornerAccent variant="gradient-border">
             <CardHeader>
               <CardTitle className="text-2xl">Our Role</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="flex items-start gap-4">
-                  <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary-500 to-cyan-500 text-white flex items-center justify-center shadow-lg flex-shrink-0">
+                  <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-slate-900 via-primary-600 to-cyan-400 text-white flex items-center justify-center shadow-[0_12px_30px_rgba(37,99,235,0.35)] flex-shrink-0">
                     <Settings className="h-6 w-6" />
                   </div>
                   <div>
@@ -68,7 +68,7 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary-500 to-cyan-500 text-white flex items-center justify-center shadow-lg flex-shrink-0">
+                  <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-slate-900 via-primary-600 to-cyan-400 text-white flex items-center justify-center shadow-[0_12px_30px_rgba(37,99,235,0.35)] flex-shrink-0">
                     <Shield className="h-6 w-6" />
                   </div>
                   <div>
@@ -79,7 +79,7 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary-500 to-cyan-500 text-white flex items-center justify-center shadow-lg flex-shrink-0">
+                  <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-slate-900 via-primary-600 to-cyan-400 text-white flex items-center justify-center shadow-[0_12px_30px_rgba(37,99,235,0.35)] flex-shrink-0">
                     <Users className="h-6 w-6" />
                   </div>
                   <div>
@@ -90,7 +90,7 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary-500 to-cyan-500 text-white flex items-center justify-center shadow-lg flex-shrink-0">
+                  <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-slate-900 via-primary-600 to-cyan-400 text-white flex items-center justify-center shadow-[0_12px_30px_rgba(37,99,235,0.35)] flex-shrink-0">
                     <FileText className="h-6 w-6" />
                   </div>
                   <div>
@@ -106,15 +106,15 @@ export default function AboutPage() {
 
           <SectionDivider variant="gradient" />
 
-          {/* Team Section - Dr Ehsan Ullah Only */}
+        {/* Team Section - Dr Ehsan Ullah Only */}
         <div className="mb-16 relative">
-            <PatternOverlay pattern="dots" opacity={0.02} className="text-primary-500" />
+            <PatternOverlay pattern="topo" opacity={0.04} className="text-primary-500/40" />
             <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 relative">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -top-4 sm:-top-6 w-12 sm:w-16 h-0.5 sm:h-1 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full" />
               Our Team
             </h2>
             <div className="max-w-2xl mx-auto">
-              <Card variant="default" className="p-8" cornerAccent>
+              <Card variant="gradient-border" className="p-8" cornerAccent>
               <div className="flex flex-col items-center mb-6">
                 <div className="relative w-40 h-40 rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-primary-100 to-cyan-100 dark:from-primary-900 dark:to-cyan-900 p-1 shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                   <div className="relative w-full h-full rounded-2xl overflow-hidden">
@@ -143,14 +143,14 @@ export default function AboutPage() {
 
         {/* Values Section */}
         <div className="relative">
-            <PatternOverlay pattern="grid" opacity={0.02} className="text-primary-500" />
+            <PatternOverlay pattern="mesh" opacity={0.03} className="text-primary-500/40" />
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 relative">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -top-4 sm:-top-6 w-12 sm:w-16 h-0.5 sm:h-1 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full" />
               Our Values
             </h2>
           <div className="grid md:grid-cols-3 gap-8">
-              <Card variant="default" className="p-8 text-center" cornerAccent>
-              <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary-500/30 group-hover:scale-110 transition-transform duration-300">
+              <Card variant="gradient-border" className="p-8 text-center group" cornerAccent>
+              <div className="w-20 h-20 bg-gradient-to-br from-slate-900 via-primary-600 to-cyan-400 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-[0_18px_40px_rgba(37,99,235,0.35)] group-hover:scale-110 transition-transform duration-300">
                   <Shield className="w-10 h-10 text-white" />
               </div>
                 <CardTitle className="text-xl mb-3">Quality & Compliance</CardTitle>
@@ -160,8 +160,8 @@ export default function AboutPage() {
               </CardDescription>
             </Card>
 
-              <Card variant="default" className="p-8 text-center" cornerAccent>
-              <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary-500/30 group-hover:scale-110 transition-transform duration-300">
+              <Card variant="gradient-border" className="p-8 text-center group" cornerAccent>
+              <div className="w-20 h-20 bg-gradient-to-br from-slate-900 via-primary-600 to-cyan-400 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-[0_18px_40px_rgba(37,99,235,0.35)] group-hover:scale-110 transition-transform duration-300">
                   <CheckCircle2 className="w-10 h-10 text-white" />
               </div>
                 <CardTitle className="text-xl mb-3">Responsible Adoption</CardTitle>
@@ -171,8 +171,8 @@ export default function AboutPage() {
               </CardDescription>
             </Card>
 
-              <Card variant="default" className="p-8 text-center" cornerAccent>
-              <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary-500/30 group-hover:scale-110 transition-transform duration-300">
+              <Card variant="gradient-border" className="p-8 text-center group" cornerAccent>
+              <div className="w-20 h-20 bg-gradient-to-br from-slate-900 via-primary-600 to-cyan-400 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-[0_18px_40px_rgba(37,99,235,0.35)] group-hover:scale-110 transition-transform duration-300">
                   <Handshake className="w-10 h-10 text-white" />
               </div>
                 <CardTitle className="text-xl mb-3">Partnership & Collaboration</CardTitle>

@@ -9,6 +9,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        body: ["var(--font-body)", "ui-sans-serif", "system-ui"],
+        display: ["var(--font-display)", "ui-serif", "Georgia", "serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -42,9 +46,10 @@ const config: Config = {
           900: "#164E63",
         },
         brand: {
-          primary: "#1E40AF",
-          secondary: "#3B82F6",
-          accent: "#7C3AED",
+          primary: "#0F1C3F",
+          secondary: "#1D4ED8",
+          accent: "#F59E0B",
+          glow: "#7CE7FF",
         },
         success: {
           DEFAULT: "#10B981",
@@ -77,15 +82,15 @@ const config: Config = {
           500: "#3B82F6",
         },
         accent: {
-          DEFAULT: "#7C3AED",
-          50: "#F5F3FF",
-          100: "#EDE9FE",
-          200: "#DDD6FE",
-          300: "#C4B5FD",
-          400: "#A78BFA",
-          500: "#8B5CF6",
-          600: "#7C3AED",
-          700: "#6D28D9",
+          DEFAULT: "#F59E0B",
+          50: "#FFFBEB",
+          100: "#FEF3C7",
+          200: "#FDE68A",
+          300: "#FCD34D",
+          400: "#FBBF24",
+          500: "#F59E0B",
+          600: "#D97706",
+          700: "#B45309",
         },
         destructive: {
           DEFAULT: "#EF4444",
@@ -142,6 +147,14 @@ const config: Config = {
           "0%, 100%": { boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)" },
           "50%": { boxShadow: "0 0 40px rgba(59, 130, 246, 0.8)" },
         },
+        aurora: {
+          "0%, 100%": { transform: "translate3d(0, 0, 0)" },
+          "50%": { transform: "translate3d(-4%, 2%, 0)" },
+        },
+        sheen: {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-out forwards",
@@ -153,6 +166,8 @@ const config: Config = {
         "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "float": "float 3s ease-in-out infinite",
         "glow": "glow 2s ease-in-out infinite",
+        "aurora": "aurora 18s ease-in-out infinite",
+        "sheen": "sheen 2.5s ease-in-out infinite",
       },
       backgroundSize: {
         "300%": "300%",
@@ -168,4 +183,3 @@ const config: Config = {
 };
 
 export default config;
-

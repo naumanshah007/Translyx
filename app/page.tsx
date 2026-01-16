@@ -75,9 +75,9 @@ export default function HomePage() {
       <SectionDivider variant="gradient" />
 
       {/* Feature Highlights Section */}
-      <section className="relative py-12 sm:py-14 md:py-16 bg-gray-50 dark:bg-gray-900">
-        <PatternOverlay pattern="dots" opacity={0.03} className="text-primary-500" />
-        <CornerAccent position="top-right" size="sm" className="hidden sm:block" />
+      <section className="relative py-12 sm:py-14 md:py-16 bg-white/70 dark:bg-slate-950/60">
+        <PatternOverlay pattern="topo" opacity={0.05} className="text-primary-500/40" />
+        <CornerAccent position="top-right" size="md" className="hidden sm:block" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16 relative">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full mb-4 sm:mb-6" />
@@ -92,10 +92,11 @@ export default function HomePage() {
                 return (
                 <Card
                   key={index}
-                  className="p-6"
+                  variant="gradient-border"
+                  className="p-6 group"
                 >
                   <CardHeader>
-                    <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 bg-white/80 dark:bg-slate-900/70 border border-white/60 dark:border-slate-700/60 rounded-2xl flex items-center justify-center mb-4 shadow-[0_10px_25px_rgba(15,23,42,0.2)] group-hover:scale-110 transition-transform duration-300">
                       <Icon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                     </div>
                     <CardTitle className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
@@ -117,8 +118,8 @@ export default function HomePage() {
       <SectionDivider variant="geometric" />
 
       {/* Our Commitment to Quality Section */}
-      <section className="relative py-12 sm:py-14 md:py-16 bg-white dark:bg-gray-950">
-        <PatternOverlay pattern="grid" opacity={0.02} className="text-primary-500" />
+      <section className="relative py-12 sm:py-14 md:py-16 bg-slate-50/70 dark:bg-slate-950/70">
+        <PatternOverlay pattern="grid" opacity={0.03} className="text-primary-500/40" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16 relative">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full mb-4 sm:mb-6" />
@@ -134,9 +135,9 @@ export default function HomePage() {
                         </p>
                       </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="p-6" cornerAccent>
+            <Card className="p-6" variant="gradient-border" cornerAccent>
               <CardHeader>
-                <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-white/80 dark:bg-slate-900/70 border border-white/60 dark:border-slate-700/60 rounded-2xl flex items-center justify-center mb-4 shadow-[0_10px_25px_rgba(15,23,42,0.2)]">
                   <Shield className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                   </div>
                 <CardTitle className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Regulatory Excellence</CardTitle>
@@ -147,9 +148,9 @@ export default function HomePage() {
                 </CardDescription>
               </CardContent>
             </Card>
-            <Card className="p-6" cornerAccent>
+            <Card className="p-6" variant="gradient-border" cornerAccent>
               <CardHeader>
-                <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-white/80 dark:bg-slate-900/70 border border-white/60 dark:border-slate-700/60 rounded-2xl flex items-center justify-center mb-4 shadow-[0_10px_25px_rgba(15,23,42,0.2)]">
                   <Zap className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                 </div>
                 <CardTitle className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Accessible Innovation</CardTitle>
@@ -160,9 +161,9 @@ export default function HomePage() {
                 </CardDescription>
               </CardContent>
             </Card>
-            <Card className="p-6" cornerAccent>
+            <Card className="p-6" variant="gradient-border" cornerAccent>
               <CardHeader>
-                <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-white/80 dark:bg-slate-900/70 border border-white/60 dark:border-slate-700/60 rounded-2xl flex items-center justify-center mb-4 shadow-[0_10px_25px_rgba(15,23,42,0.2)]">
                   <Handshake className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                 </div>
                 <CardTitle className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Collaborative Approach</CardTitle>
@@ -180,9 +181,9 @@ export default function HomePage() {
       <SectionDivider variant="gradient" />
 
       {/* Services Preview Section */}
-      <section className="relative py-12 sm:py-14 md:py-16 bg-gray-50 dark:bg-gray-900">
-        <PatternOverlay pattern="dots" opacity={0.03} className="text-primary-500" />
-        <CornerAccent position="bottom-left" size="sm" className="hidden sm:block" />
+      <section className="relative py-12 sm:py-14 md:py-16 bg-white/70 dark:bg-slate-950/60">
+        <PatternOverlay pattern="dots" opacity={0.04} className="text-primary-500/40" />
+        <CornerAccent position="bottom-left" size="md" className="hidden sm:block" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16 relative">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full mb-4 sm:mb-6" />
@@ -201,10 +202,11 @@ export default function HomePage() {
               return (
                 <Card
                   key={index}
-                  className="p-6"
+                  variant="gradient-border"
+                  className="p-6 group"
                 >
                   <CardHeader>
-                    <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 bg-white/80 dark:bg-slate-900/70 border border-white/60 dark:border-slate-700/60 rounded-2xl flex items-center justify-center mb-4 shadow-[0_10px_25px_rgba(15,23,42,0.2)] group-hover:scale-110 transition-transform duration-300">
                       <IconComponent className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                     </div>
                     <CardTitle className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
@@ -232,14 +234,14 @@ export default function HomePage() {
       <SectionDivider variant="minimal" />
 
       {/* Trust / Compliance Note Section */}
-      <section className="relative py-12 sm:py-14 md:py-16 bg-white dark:bg-gray-950">
-        <PatternOverlay pattern="mesh" opacity={0.02} className="text-primary-500" />
+      <section className="relative py-12 sm:py-14 md:py-16 bg-slate-50/70 dark:bg-slate-950/70">
+        <PatternOverlay pattern="topo" opacity={0.05} className="text-primary-500/30" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
-            <Card className="p-8">
+            <Card className="p-8" variant="gradient-border" cornerAccent>
               <CardHeader>
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-white/80 dark:bg-slate-900/70 border border-white/60 dark:border-slate-700/60 rounded-2xl flex items-center justify-center shadow-[0_10px_25px_rgba(15,23,42,0.2)]">
                     <Shield className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                   </div>
                   <CardTitle className="text-2xl text-gray-900 dark:text-gray-100">Quality, Compliance & Patient Safety</CardTitle>

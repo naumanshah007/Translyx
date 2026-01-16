@@ -74,7 +74,8 @@ const engagementModels = [
 export default function CollaborationPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 md:py-16">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto relative">
+        <PatternOverlay pattern="topo" opacity={0.04} className="text-primary-500/30" />
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16 relative">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full mb-4 sm:mb-6" />
@@ -97,7 +98,7 @@ export default function CollaborationPage() {
 
         {/* Who We Collaborate With */}
         <div className="mb-16 relative">
-          <PatternOverlay pattern="grid" opacity={0.02} className="text-primary-500" />
+          <PatternOverlay pattern="mesh" opacity={0.04} className="text-primary-500/30" />
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 relative">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -top-4 sm:-top-6 w-12 sm:w-16 h-0.5 sm:h-1 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full" />
             Who We Collaborate With
@@ -106,9 +107,9 @@ export default function CollaborationPage() {
             {collaborators.map((collaborator, index) => {
               const Icon = collaborator.icon;
               return (
-                <Card key={index} variant="default" className="p-6" cornerAccent>
+                <Card key={index} variant="gradient-border" className="p-6" cornerAccent>
                   <div className="flex items-start gap-4">
-                    <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary-500 to-cyan-500 text-white flex items-center justify-center shadow-lg shadow-primary-500/30 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                    <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-slate-900 via-primary-600 to-cyan-400 text-white flex items-center justify-center shadow-[0_12px_30px_rgba(37,99,235,0.35)] group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                       <Icon className="h-6 w-6" />
                     </div>
                     <div className="flex-1">
@@ -128,7 +129,7 @@ export default function CollaborationPage() {
 
         {/* Engagement Models */}
         <div className="mb-16 relative">
-          <PatternOverlay pattern="dots" opacity={0.02} className="text-primary-500" />
+          <PatternOverlay pattern="topo" opacity={0.04} className="text-primary-500/30" />
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12 relative">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -top-4 sm:-top-6 w-12 sm:w-16 h-0.5 sm:h-1 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full" />
             Engagement Models
@@ -137,9 +138,9 @@ export default function CollaborationPage() {
             {engagementModels.map((model, index) => {
               const Icon = model.icon;
               return (
-                <Card key={index} variant="default" className="p-6 h-full flex flex-col" cornerAccent>
+                <Card key={index} variant="gradient-border" className="p-6 h-full flex flex-col" cornerAccent>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-primary-500 to-cyan-500 text-white flex items-center justify-center shadow-lg shadow-primary-500/30 flex-shrink-0">
+                    <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-slate-900 via-primary-600 to-cyan-400 text-white flex items-center justify-center shadow-[0_12px_30px_rgba(37,99,235,0.35)] flex-shrink-0">
                       <Icon className="h-6 w-6" />
                     </div>
                     <CardTitle className="text-xl">{model.name}</CardTitle>

@@ -19,11 +19,12 @@ export function GeometricShapes({ variant = "circles", className, count = 3 }: G
             <div
               key={i}
               className={cn(
-                "absolute rounded-full bg-gradient-to-br from-primary-400/20 to-cyan-400/20 blur-xl",
+                "absolute rounded-full bg-gradient-to-br from-primary-400/25 to-cyan-400/25 blur-2xl animate-float",
                 i === 0 && "w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 -top-8 -right-8 sm:-top-12 sm:-right-12 md:-top-16 md:-right-16",
                 i === 1 && "w-12 h-12 sm:w-20 sm:h-20 md:w-24 md:h-24 -bottom-6 -left-6 sm:-bottom-10 sm:-left-10 md:-bottom-12 md:-left-12",
                 i === 2 && "hidden sm:block w-20 h-20 md:w-40 md:h-40 top-1/2 right-1/4"
               )}
+              style={{ animationDelay: `${i * 1.6}s` }}
             />
           ))}
         </>
@@ -34,7 +35,7 @@ export function GeometricShapes({ variant = "circles", className, count = 3 }: G
             <div
               key={i}
               className={cn(
-                "absolute bg-gradient-to-br from-primary-500/10 to-cyan-500/10",
+                "absolute bg-gradient-to-br from-primary-500/15 to-cyan-500/15",
                 "clip-path-hexagon",
                 i === 0 && "hidden sm:block w-12 h-12 md:w-20 md:h-20 top-10 right-10 rotate-12",
                 i === 1 && "hidden md:block w-12 h-12 md:w-16 md:h-16 bottom-20 left-20 -rotate-12",
@@ -46,9 +47,9 @@ export function GeometricShapes({ variant = "circles", className, count = 3 }: G
       )}
       {variant === "mixed" && (
         <>
-          <div className="absolute w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-primary-400/20 to-cyan-400/20 blur-xl -top-8 -right-8 sm:-top-12 sm:-right-12 md:-top-16 md:-right-16" />
-          <div className="absolute w-12 h-12 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gradient-to-br from-primary-500/10 to-cyan-500/10 rounded-lg rotate-45 -bottom-6 -left-6 sm:-bottom-10 sm:-left-10 md:-bottom-12 md:-left-12" />
-          <div className="hidden sm:block absolute w-12 h-12 md:w-20 md:h-20 bg-gradient-to-br from-cyan-400/20 to-primary-400/20 rounded-full blur-lg top-1/2 right-1/4" />
+          <div className="absolute w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-primary-400/25 to-cyan-400/25 blur-2xl -top-8 -right-8 sm:-top-12 sm:-right-12 md:-top-16 md:-right-16 animate-float" />
+          <div className="absolute w-12 h-12 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gradient-to-br from-primary-500/15 to-cyan-500/15 rounded-xl rotate-45 -bottom-6 -left-6 sm:-bottom-10 sm:-left-10 md:-bottom-12 md:-left-12 animate-float" style={{ animationDelay: "1.4s" }} />
+          <div className="hidden sm:block absolute w-12 h-12 md:w-20 md:h-20 bg-gradient-to-br from-cyan-400/25 to-primary-400/25 rounded-full blur-lg top-1/2 right-1/4 animate-float" style={{ animationDelay: "2.2s" }} />
         </>
       )}
     </div>
@@ -85,7 +86,7 @@ export function GradientAccent({
   return (
     <div
       className={cn(
-        "absolute bg-gradient-to-r from-primary-500 via-cyan-500 to-primary-500",
+        "absolute bg-gradient-to-r from-cyan-400 via-primary-500 to-amber-300",
         orientation === "horizontal" ? "w-full" : "h-full",
         sizeClasses[size],
         positionClasses[position],
@@ -97,7 +98,7 @@ export function GradientAccent({
 
 // Pattern Overlay Component
 interface PatternOverlayProps {
-  pattern?: "dots" | "grid" | "waves" | "mesh";
+  pattern?: "dots" | "grid" | "waves" | "mesh" | "topo";
   opacity?: number;
   className?: string;
 }
@@ -106,11 +107,11 @@ export function PatternOverlay({ pattern = "dots", opacity = 0.05, className }: 
   const patternStyles = {
     dots: {
       backgroundImage: `radial-gradient(circle, currentColor 1px, transparent 1px)`,
-      backgroundSize: "24px 24px",
+      backgroundSize: "28px 28px",
     },
     grid: {
       backgroundImage: `linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)`,
-      backgroundSize: "32px 32px",
+      backgroundSize: "40px 40px",
     },
     waves: {
       backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 10px, currentColor 10px, currentColor 20px)`,
@@ -119,6 +120,13 @@ export function PatternOverlay({ pattern = "dots", opacity = 0.05, className }: 
     mesh: {
       backgroundImage: `radial-gradient(at 40% 20%, currentColor 0px, transparent 50%), radial-gradient(at 80% 0%, currentColor 0px, transparent 50%), radial-gradient(at 0% 50%, currentColor 0px, transparent 50%)`,
       backgroundSize: "100% 100%",
+    },
+    topo: {
+      backgroundImage:
+        "radial-gradient(circle at 15% 20%, transparent 0 28px, currentColor 28px 29px, transparent 29px 60px)," +
+        "radial-gradient(circle at 85% 10%, transparent 0 24px, currentColor 24px 25px, transparent 25px 54px)," +
+        "radial-gradient(circle at 30% 80%, transparent 0 26px, currentColor 26px 27px, transparent 27px 56px)",
+      backgroundSize: "220px 220px",
     },
   };
 
@@ -145,10 +153,10 @@ export function SectionDivider({ variant = "gradient", className }: SectionDivid
     return (
       <div className={cn("relative py-4 sm:py-6 md:py-8", className)}>
         <div className="absolute inset-0 flex items-center">
-          <div className="w-full h-px bg-gradient-to-r from-transparent via-primary-300 to-transparent" />
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-cyan-300/70 to-transparent" />
         </div>
         <div className="relative flex justify-center">
-          <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gradient-to-br from-primary-500 to-cyan-500 shadow-lg" />
+          <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gradient-to-br from-primary-500 to-cyan-400 shadow-[0_0_18px_rgba(56,189,248,0.6)]" />
         </div>
       </div>
     );
@@ -159,11 +167,11 @@ export function SectionDivider({ variant = "gradient", className }: SectionDivid
       <div className={cn("relative py-6 sm:py-8 md:py-12", className)}>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="flex items-center gap-2 sm:gap-4">
-            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary-400" />
-            <div className="w-8 sm:w-12 md:w-16 h-px bg-gradient-to-r from-primary-400 to-cyan-400" />
-            <div className="w-2 h-2 sm:w-3 sm:h-3 rotate-45 bg-gradient-to-br from-primary-500 to-cyan-500" />
-            <div className="w-8 sm:w-12 md:w-16 h-px bg-gradient-to-r from-cyan-400 to-primary-400" />
             <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-cyan-400" />
+            <div className="w-8 sm:w-12 md:w-16 h-px bg-gradient-to-r from-cyan-400 to-primary-400" />
+            <div className="w-2 h-2 sm:w-3 sm:h-3 rotate-45 bg-gradient-to-br from-primary-500 to-cyan-400 shadow-[0_0_12px_rgba(56,189,248,0.45)]" />
+            <div className="w-8 sm:w-12 md:w-16 h-px bg-gradient-to-r from-primary-400 to-cyan-400" />
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary-400" />
           </div>
         </div>
       </div>
@@ -173,7 +181,7 @@ export function SectionDivider({ variant = "gradient", className }: SectionDivid
   return (
     <div className={cn("relative py-4 sm:py-6", className)}>
       <div className="absolute inset-0 flex items-center">
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-700 to-transparent" />
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-slate-300/70 dark:via-slate-700/70 to-transparent" />
       </div>
     </div>
   );
@@ -219,10 +227,10 @@ export function FloatingIcon({
     >
       <div
         className={cn(
-          "rounded-xl bg-gradient-to-br from-primary-500/20 to-cyan-500/20 backdrop-blur-sm",
+          "rounded-2xl bg-gradient-to-br from-primary-500/20 to-cyan-500/20 backdrop-blur-md shadow-[0_8px_30px_rgba(56,189,248,0.25)]",
           "flex items-center justify-center",
           sizeClasses[size],
-          animated && "animate-pulse"
+          animated && "animate-float"
         )}
       >
         <Icon className={cn("text-primary-600 dark:text-primary-400", size === "sm" ? "w-3 h-3 sm:w-4 sm:h-4" : size === "md" ? "w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" : "w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8")} />
@@ -263,7 +271,7 @@ export function CornerAccent({ position = "top-right", size = "md", className }:
     >
       <div
         className={cn(
-          "absolute bg-gradient-to-br from-primary-500/30 to-cyan-500/30",
+          "absolute bg-gradient-to-br from-cyan-400/30 to-amber-300/25",
           position === "top-left" && "w-full h-full rounded-br-full",
           position === "top-right" && "w-full h-full rounded-bl-full",
           position === "bottom-left" && "w-full h-full rounded-tr-full",

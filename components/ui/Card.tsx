@@ -13,35 +13,23 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         className={cn(
-          "rounded-lg border border-gray-200 bg-white shadow-sm transition-all duration-200 relative overflow-hidden",
-          "dark:border-gray-800 dark:bg-gray-950",
-          variant === "gradient-border" && "border-2 border-transparent bg-gradient-to-br from-primary-500/20 to-cyan-500/20 p-[2px]",
-          hover && "hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-md hover:shadow-primary-500/10",
+          "rounded-2xl border border-slate-200/70 bg-white/80 shadow-[0_18px_45px_-28px_rgba(15,23,42,0.45)] backdrop-blur-md transition-all duration-300 relative overflow-hidden",
+          "dark:border-slate-800/70 dark:bg-slate-950/70",
+          variant === "gradient-border" &&
+            "border border-transparent bg-[linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9)),linear-gradient(120deg,rgba(59,130,246,0.35),rgba(34,211,238,0.28),rgba(251,191,36,0.18))] [background-origin:border-box] [background-clip:padding-box,border-box] dark:bg-[linear-gradient(rgba(2,6,23,0.75),rgba(2,6,23,0.75)),linear-gradient(120deg,rgba(59,130,246,0.35),rgba(34,211,238,0.25),rgba(251,191,36,0.18))]",
+          hover &&
+            "hover:-translate-y-1 hover:border-primary-300/70 dark:hover:border-primary-500/60 hover:shadow-[0_24px_60px_-30px_rgba(15,23,42,0.55)]",
           className
         )}
         {...props}
       >
-        {variant === "gradient-border" ? (
-          <div className="rounded-lg bg-white dark:bg-gray-950 h-full w-full">
-            {cornerAccent && (
-              <>
-                <div className="absolute top-0 right-0 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-primary-500/20 to-transparent rounded-bl-full" />
-                <div className="absolute bottom-0 left-0 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-tr from-cyan-500/20 to-transparent rounded-tr-full" />
-              </>
-            )}
-            {children}
-          </div>
-        ) : (
+        {cornerAccent && (
           <>
-            {cornerAccent && (
-              <>
-                <div className="absolute top-0 right-0 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br from-primary-500/20 to-transparent rounded-bl-full" />
-                <div className="absolute bottom-0 left-0 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-tr from-cyan-500/20 to-transparent rounded-tr-full" />
-              </>
-            )}
-            {children}
+            <div className="absolute top-0 right-0 w-12 h-12 sm:w-14 sm:h-14 md:w-18 md:h-18 bg-gradient-to-br from-cyan-400/30 to-transparent rounded-bl-full" />
+            <div className="absolute bottom-0 left-0 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-tr from-amber-300/25 to-transparent rounded-tr-full" />
           </>
         )}
+        {children}
       </div>
     );
   }
@@ -67,7 +55,7 @@ const CardTitle = React.forwardRef<
   <h3
     ref={ref}
     className={cn(
-      "text-2xl font-bold leading-none tracking-tight text-gray-900 dark:text-gray-50",
+      "text-2xl font-bold leading-none tracking-tight text-slate-900 dark:text-slate-50",
       className
     )}
     {...props}
@@ -81,7 +69,7 @@ const CardDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn("text-sm text-gray-500 dark:text-gray-400 leading-relaxed", className)}
+    className={cn("text-sm text-slate-600 dark:text-slate-400 leading-relaxed", className)}
     {...props}
   />
 ));

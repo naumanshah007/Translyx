@@ -126,7 +126,8 @@ const services = [
 export default function ServicesPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 md:py-16">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto relative">
+        <PatternOverlay pattern="topo" opacity={0.04} className="text-primary-500/30" />
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16 relative">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full mb-4 sm:mb-6" />
@@ -149,14 +150,14 @@ export default function ServicesPage() {
 
         {/* Services Grid */}
         <div className="space-y-12 mb-16 relative">
-          <PatternOverlay pattern="dots" opacity={0.02} className="text-primary-500" />
+          <PatternOverlay pattern="mesh" opacity={0.04} className="text-primary-500/30" />
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <Card key={index} variant="default" className="p-0 overflow-hidden" cornerAccent={index === 0}>
+              <Card key={index} variant="gradient-border" className="p-0 overflow-hidden" cornerAccent={index === 0}>
                 <CardContent className="p-8">
                   <div className="flex items-start gap-6 mb-6">
-                    <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-primary-500 to-cyan-500 text-white flex items-center justify-center shadow-lg shadow-primary-500/30 flex-shrink-0">
+                    <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-slate-900 via-primary-600 to-cyan-400 text-white flex items-center justify-center shadow-[0_18px_40px_rgba(37,99,235,0.35)] flex-shrink-0">
                       <Icon className="h-8 w-8" />
                     </div>
                     <div className="flex-1">

@@ -12,25 +12,29 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "default", size = "default", isLoading, children, disabled, asChild, ...props }, ref) => {
     const buttonClasses = cn(
-      "inline-flex items-center justify-center rounded-md text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+      "inline-flex items-center justify-center rounded-full text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/40 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 relative overflow-hidden",
       {
         // Primary - Solid primary color with high contrast white text
-        "bg-primary-600 text-white hover:bg-primary-700 shadow-sm hover:shadow-md": variant === "default" || variant === "primary",
+        "bg-slate-900 text-white shadow-[0_12px_30px_rgba(15,23,42,0.28)] hover:bg-slate-800 hover:shadow-[0_18px_40px_rgba(15,23,42,0.35)]":
+          variant === "default" || variant === "primary",
         
         // Gradient - Professional gradient with high contrast
-        "bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 text-white hover:from-primary-700 hover:via-primary-600 hover:to-primary-700 shadow-md hover:shadow-lg font-bold": variant === "gradient",
+        "bg-[linear-gradient(110deg,#0F1C3F,#1D4ED8,#22D3EE)] bg-[length:200%_200%] animate-gradient text-white shadow-[0_14px_35px_rgba(37,99,235,0.45)] hover:shadow-[0_20px_45px_rgba(14,116,144,0.5)] font-bold before:content-[''] before:absolute before:inset-0 before:bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.35),transparent)] before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100":
+          variant === "gradient",
         
         // Secondary - Light background with dark text
-        "bg-gray-100 text-gray-900 hover:bg-gray-200 border border-gray-300 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700 dark:border-gray-700": variant === "secondary",
+        "bg-white/80 text-slate-900 hover:bg-white border border-slate-200/70 shadow-[0_8px_20px_-12px_rgba(15,23,42,0.35)] dark:bg-slate-900/60 dark:text-slate-100 dark:hover:bg-slate-900 dark:border-slate-700/60":
+          variant === "secondary",
         
         // Destructive - Red with white text
         "bg-red-600 text-white hover:bg-red-700 shadow-sm hover:shadow-md": variant === "destructive",
         
         // Outline - Border with high contrast text
-        "border-2 border-primary-600 bg-transparent text-primary-700 hover:bg-primary-50 dark:border-primary-500 dark:text-primary-400 dark:hover:bg-primary-900/20 font-semibold": variant === "outline",
+        "border border-slate-300/70 bg-white/70 text-slate-900 hover:bg-white hover:border-slate-400/80 dark:border-slate-700/70 dark:text-slate-100 dark:bg-slate-950/40 dark:hover:bg-slate-900/60 font-semibold":
+          variant === "outline",
         
         // Ghost - Subtle with good contrast
-        "hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-100": variant === "ghost",
+        "hover:bg-slate-100/70 dark:hover:bg-slate-900/60 text-slate-900 dark:text-slate-100": variant === "ghost",
       },
       {
         "h-10 px-4 py-2": size === "default",
