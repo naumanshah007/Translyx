@@ -32,16 +32,16 @@ export default function AboutPage() {
             <CardContent>
               <div className="text-base leading-relaxed space-y-4 text-gray-700 dark:text-gray-300">
                 <p>
-                  Translyx is a New Zealand–based consultancy and technology enablement firm focused on supporting the responsible adoption of advanced diagnostic and clinical technologies within the healthcare and research ecosystem.
+                  Translyx Limited exists to introduce innovative diagnostic and clinical products to the New Zealand healthcare sector, supporting clinicians and health services with timely access to high-quality technologies that enable effective patient care.
                 </p>
                 <p>
-                  Our mission is to bridge the gap between regulatory approval, technical readiness, and real-world implementation, ensuring that innovative healthcare solutions can be introduced efficiently, compliantly, and sustainably. We are dedicated to enhancing healthcare in New Zealand by facilitating the integration of advanced diagnostic and clinical technologies, making innovative solutions accessible to healthcare providers and researchers alike.
+                  Our team focuses on identifying globally validated clinical innovations and making them available to healthcare providers across hospital, community, and research settings. Our role is to bridge the gap between emerging clinical technologies and their practical use in everyday healthcare, with an emphasis on fit-for-purpose implementation, reliable supply, and local support.
                 </p>
                 <p>
-                  We collaborate closely with manufacturers, clinicians, laboratories, and research organizations to streamline the introduction of new technologies. Our comprehensive support includes training, documentation, and logistical assistance, all tailored to meet the specific needs of the New Zealand healthcare landscape. Our services span regulatory guidance, technical documentation support, training coordination, and operational enablement — designed to empower healthcare organizations to make informed decisions about the technologies they adopt.
+                  Translyx takes a systems-based approach to product introduction, recognising that access to appropriate diagnostic and clinical tools plays an important role in supporting clinical decision-making and contributing to improved patient outcomes. We work collaboratively with healthcare organisations, laboratories, and academic partners to ensure innovative products are introduced in a way that aligns with real-world clinical needs.
                 </p>
                 <p>
-                  At Translyx, quality, compliance, and patient safety are central to everything we do. We prioritize quality and compliance in every aspect of our operations, fostering partnerships and promoting responsible practices. We do not replace clinical decision-making; instead, we support healthcare professionals by ensuring that new technologies are introduced with clarity, accountability, and adherence to applicable standards, ultimately improving patient outcomes.
+                  The company is led by its Founding Director, Dr Ehsan Ullah, whose background in laboratory medicine, digital pathology, and healthcare systems informs Translyx&apos;s commitment to scientific rigour, translational focus, and practical impact.
                 </p>
               </div>
             </CardContent>
@@ -132,26 +132,7 @@ export default function AboutPage() {
               </div>
               <CardContent>
                 <CardDescription className="text-sm leading-relaxed text-justify">
-                    {siteConfig.team.ehsan.name} is a physician-scientist and healthcare systems leader with deep expertise in 
-                  laboratory medicine, digital pathology, and applied AI. He brings a rare combination 
-                  of clinical judgment, systems thinking, and translational research experience, shaped 
-                  by more than a decade of leadership across large-scale public health services, national 
-                  programs, and international standards bodies.
-                </CardDescription>
-                <CardDescription className="text-sm leading-relaxed mt-3 text-justify">
-                    Working at the intersection of AI, data, and complex regulated operations, {siteConfig.team.ehsan.name} focuses 
-                  on translating advanced research into deployable, high-impact solutions for real-world 
-                    healthcare environments. He has led nationally significant transformation initiatives, advised 
-                    on global standards for AI and data systems, and overseen the deployment of automation and 
-                    ML in highly complex operational settings.
-                </CardDescription>
-                <CardDescription className="text-sm leading-relaxed mt-3 text-justify">
-                    He maintains active collaborations with leading universities in New Zealand and the United States, 
-                    contributes to international technical standards, and serves as an author and editor on emerging 
-                    AI and digital systems frameworks. He is a Director (Board of Directors) at the Digital Pathology 
-                    Association (USA), a member of the International Organization for Standardization (ISO) 
-                    technical committee on medical laboratories and in vitro diagnostic systems, a Visiting Assistant 
-                    Professor at The Ohio State University and the University of Otago, and an author of 60+ publications.
+                  The company is led by its Founding Director, {siteConfig.team.ehsan.name}, whose background in laboratory medicine, digital pathology, and healthcare systems informs Translyx&apos;s commitment to scientific rigour, translational focus, and practical impact.
                 </CardDescription>
               </CardContent>
             </Card>

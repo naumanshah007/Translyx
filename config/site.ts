@@ -10,9 +10,9 @@ export const siteConfig = {
   name: "Translyx",
   companyName: "Translyx Limited",
   companyTagline: "Translating Innovation into Impact",
-  companyDescription: "We help New Zealand healthcare and research organizations adopt advanced diagnostic and clinical technologies through compliant integration, documentation, training, and operational enablement.",
+  companyDescription: "Our mission is to bring innovative diagnostic and clinical products to New Zealand, supporting healthcare providers with timely access to technologies that enable high-quality patient care and informed clinical decision-making.",
   tagline: "Translating Innovation into Impact",
-  description: "We help New Zealand healthcare and research organizations adopt advanced diagnostic and clinical technologies through compliant integration, documentation, training, and operational enablement.",
+  description: "Our mission is to bring innovative diagnostic and clinical products to New Zealand, supporting healthcare providers with timely access to technologies that enable high-quality patient care and informed clinical decision-making.",
   
   // Domain & URLs
   domain: "translyx.co",
@@ -40,7 +40,7 @@ export const siteConfig = {
   // SEO Defaults
   seo: {
     defaultTitle: "Translyx Limited — Translating Innovation into Impact",
-    defaultDescription: "Translyx helps New Zealand healthcare and research organizations adopt advanced diagnostic and clinical technologies through compliant integration, documentation, training, and operational enablement.",
+    defaultDescription: "Our mission is to bring innovative diagnostic and clinical products to New Zealand, supporting healthcare providers with timely access to technologies that enable high-quality patient care and informed clinical decision-making.",
     keywords: [
       "healthcare technology", "diagnostic technology", "clinical technology", 
       "healthcare compliance", "medical device integration", "laboratory technology",

@@ -57,7 +57,7 @@ export default function HomePage() {
     <>
       <Hero
         headline="Translating Innovation into Impact"
-        description="We help New Zealand healthcare and research organizations adopt advanced diagnostic and clinical technologies through compliant integration, documentation, training, and operational enablement."
+        description="Our mission is to bring innovative diagnostic and clinical products to New Zealand, supporting healthcare providers with timely access to technologies that enable high-quality patient care and informed clinical decision-making."
         primaryCTA={{
           label: "Explore Services",
           href: "/services",
@@ -124,15 +124,15 @@ export default function HomePage() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full mb-4 sm:mb-6" />
             <div className="inline-flex items-center gap-2 px-2 py-0.5 sm:px-3 sm:py-1 bg-primary-100 dark:bg-primary-900/30 rounded-full mb-3 sm:mb-4">
               <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-primary-600 dark:text-primary-400" />
-            </div>
+                  </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-50 mt-3 sm:mt-4">Our Commitment to Quality</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
               Translyx is dedicated to enhancing healthcare in New Zealand by facilitating the integration of advanced 
               diagnostic and clinical technologies. Our mission is to bridge the gap between regulatory approval and 
               practical application, ensuring that innovative solutions are accessible to healthcare providers and 
               researchers alike.
-            </p>
-          </div>
+                        </p>
+                      </div>
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="p-6" cornerAccent>
               <CardHeader>
@@ -217,9 +217,9 @@ export default function HomePage() {
                     <Button asChild variant="outline" size="sm" className="w-full font-semibold">
                       <Link href="/services" className="flex items-center justify-center gap-2">
                         Learn More
-                        <ArrowRight className="h-4 w-4" />
-                      </Link>
-                    </Button>
+                            <ArrowRight className="h-4 w-4" />
+                          </Link>
+                        </Button>
                     </CardContent>
                   </Card>
                 );
