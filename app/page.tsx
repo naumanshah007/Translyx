@@ -127,10 +127,10 @@ export default function HomePage() {
                   </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-50 mt-3 sm:mt-4">Our Commitment to Quality</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-              Translyx is dedicated to enhancing healthcare in New Zealand by facilitating the integration of advanced 
-              diagnostic and clinical technologies. Our mission is to bridge the gap between regulatory approval and 
-              practical application, ensuring that innovative solutions are accessible to healthcare providers and 
-              researchers alike.
+              Translyx is dedicated to introducing innovative diagnostic and clinical products to the New Zealand healthcare 
+              sector. We work collaboratively with healthcare organisations, laboratories, and academic partners to make 
+              globally validated clinical innovations available, supporting clinical decision-making and contributing to 
+              improved patient outcomes.
                         </p>
                       </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -191,7 +191,8 @@ export default function HomePage() {
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-50 mt-3 sm:mt-4">Our Services</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-              We provide end-to-end support for healthcare technology adoption, from regulatory alignment to operational enablement.
+              We support the introduction of innovative diagnostic and clinical products, making globally validated clinical 
+              innovations available to healthcare providers across hospital, community, and research settings.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

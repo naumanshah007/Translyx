@@ -135,14 +135,15 @@ export default function ServicesPage() {
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900 dark:text-gray-50">Our Services</h1>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-4">
-            {siteConfig.companyName} provides comprehensive technology enablement services to help New Zealand healthcare 
-            and research organizations adopt advanced diagnostic and clinical technologies. Our services span the entire 
-            technology adoption lifecycle, from regulatory alignment to operational enablement.
+            {siteConfig.companyName} supports the introduction of innovative diagnostic and clinical products to New Zealand 
+            healthcare providers. We work collaboratively with healthcare organisations, laboratories, and academic partners to 
+            make globally validated clinical innovations available across hospital, community, and research settings.
           </p>
           <p className="text-base text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            We are dedicated to providing top-notch diagnostic and clinical technologies, ensuring they meet the highest 
-            standards for healthcare and research. Our comprehensive support includes training, documentation, and logistical 
-            assistance, all tailored to meet the specific needs of the New Zealand healthcare landscape.
+            Our services focus on identifying globally validated clinical innovations and making them available to healthcare 
+            providers, with an emphasis on fit-for-purpose implementation, reliable supply, and local support. We provide 
+            comprehensive support including training, documentation, and logistical assistance, all tailored to meet the 
+            specific needs of the New Zealand healthcare landscape.
           </p>
         </div>
 

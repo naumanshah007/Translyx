@@ -83,12 +83,13 @@ export default function CollaborationPage() {
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900 dark:text-gray-50">Collaboration</h1>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-4">
-            We partner with manufacturers, laboratories, clinicians, and research organizations to facilitate 
-            successful technology adoption in New Zealand healthcare settings.
+            We work collaboratively with healthcare organisations, laboratories, and academic partners to introduce 
+            innovative diagnostic and clinical products to New Zealand healthcare settings.
           </p>
           <p className="text-base text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            By fostering partnerships and promoting responsible practices, we aim to empower healthcare organizations 
-            to make informed decisions about the technologies they adopt, ultimately improving patient outcomes.
+            Our systems-based approach ensures that globally validated clinical innovations are made available to 
+            healthcare providers with fit-for-purpose implementation, reliable supply, and local support, contributing 
+            to improved patient outcomes.
           </p>
         </div>
 

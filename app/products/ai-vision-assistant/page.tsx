@@ -73,6 +73,7 @@ export default function AIVisionAssistantPage() {
             </h1>
           </div>
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            An innovative diagnostic and clinical product introduced by Translyx to the New Zealand healthcare sector. 
             An AI-based help app for blind and visually impaired people, serving as their eyes 
             for daily life chores and activities. Empowering independence through advanced 
             computer vision technology.
@@ -87,8 +88,9 @@ export default function AIVisionAssistantPage() {
           <CardContent>
             <div className="space-y-4 text-base leading-relaxed text-gray-600 dark:text-gray-400">
               <p>
-                The AI Vision Assistant is a transformative accessibility solution designed to 
-                empower blind and visually impaired individuals in their daily lives. Using 
+                Translyx introduces the AI Vision Assistant as part of our commitment to making globally validated 
+                clinical innovations available to New Zealand healthcare providers. This transformative accessibility 
+                solution is designed to empower blind and visually impaired individuals in their daily lives. Using 
                 advanced computer vision and artificial intelligence, the app acts as a digital 
                 pair of eyes, helping users navigate the world with greater confidence and independence.
               </p>

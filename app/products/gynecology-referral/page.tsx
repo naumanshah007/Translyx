@@ -67,6 +67,7 @@ export default function GynecologyReferralPage() {
             </h1>
           </div>
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            An innovative diagnostic and clinical product introduced by Translyx to the New Zealand healthcare sector. 
             An AI-powered system that analyzes thousands of GP referral requests and suggests 
             best-fit referral paths per hospital policies, streamlining healthcare workflows and 
             improving patient care outcomes.
@@ -81,7 +82,8 @@ export default function GynecologyReferralPage() {
           <CardContent>
             <div className="space-y-4 text-base leading-relaxed text-gray-600 dark:text-gray-400">
               <p>
-                Referral Grading System is an innovative AI solution designed to 
+                Translyx introduces the Referral Grading System as part of our commitment to making globally validated 
+                clinical innovations available to New Zealand healthcare providers. This innovative AI solution is designed to 
                 transform how healthcare systems handle referral requests. By leveraging advanced 
                 artificial intelligence, the system analyzes thousands of general practitioner (GP) 
                 referral requests and automatically suggests the most appropriate referral pathways 
