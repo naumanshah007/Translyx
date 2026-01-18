@@ -25,15 +25,6 @@ import {
 } from "lucide-react";
 import { SectionDivider, PatternOverlay, CornerAccent } from "@/components/ui/DecorativeElements";
 
-const serviceIconMap: Record<string, typeof Shield> = {
-  Shield,
-  Zap,
-  FileText,
-  Users,
-  Settings,
-  Handshake,
-};
-
 export default function HomePage() {
   const highlights = [
     {
@@ -48,7 +39,7 @@ export default function HomePage() {
     },
     {
       label: "Partner-Led",
-      description: "We collaborate with manufacturers, labs, and clinicians",
+      description: "Collaboration with manufacturers, labs, and clinicians",
       icon: Handshake,
     },
   ];
@@ -59,7 +50,7 @@ export default function HomePage() {
         headline="Translating Innovation into Impact"
         description="Our mission is to bring innovative diagnostic and clinical products to New Zealand, supporting healthcare providers with timely access to technologies that enable high-quality patient care and informed clinical decision-making."
         primaryCTA={{
-          label: "Explore Services",
+          label: "View Product Pipeline",
           href: "/services",
         }}
         secondaryCTA={{
@@ -129,7 +120,7 @@ export default function HomePage() {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-50 mt-3 sm:mt-4">Our Commitment to Quality</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
               Translyx is dedicated to introducing innovative diagnostic and clinical products to the New Zealand healthcare 
-              sector. We work collaboratively with healthcare organisations, laboratories, and academic partners to make 
+              sector. The company works with healthcare organisations, laboratories, and academic partners to make 
               globally validated clinical innovations available, supporting clinical decision-making and contributing to 
               improved patient outcomes.
                         </p>
@@ -190,44 +181,28 @@ export default function HomePage() {
             <div className="inline-flex items-center gap-2 px-2 py-0.5 sm:px-3 sm:py-1 bg-primary-100 dark:bg-primary-900/30 rounded-full mb-3 sm:mb-4">
               <Settings className="w-3 h-3 sm:w-4 sm:h-4 text-primary-600 dark:text-primary-400" />
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-50 mt-3 sm:mt-4">Our Services</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-gray-900 dark:text-gray-50 mt-3 sm:mt-4">Product Pipeline</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-              We support the introduction of innovative diagnostic and clinical products, making globally validated clinical 
+              Translyx supports the introduction of innovative diagnostic and clinical products, making globally validated clinical 
               innovations available to healthcare providers across hospital, community, and research settings.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {siteConfig.services.map((service, index) => {
-              const IconComponent = serviceIconMap[service.icon] || Shield;
-              return (
-                <Card
-                  key={index}
-                  variant="gradient-border"
-                  className="p-6 group"
-                >
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-white/80 dark:bg-slate-900/70 border border-white/60 dark:border-slate-700/60 rounded-2xl flex items-center justify-center mb-4 shadow-[0_10px_25px_rgba(15,23,42,0.2)] group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent className="w-6 h-6 text-primary-600 dark:text-primary-400" />
-                    </div>
-                    <CardTitle className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">
-                      {service.name}
-                    </CardTitle>
-                    </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
-                      {service.description}
-                      </CardDescription>
-                    <Button asChild variant="outline" size="sm" className="w-full font-semibold">
-                      <Link href="/services" className="flex items-center justify-center gap-2">
-                        Learn More
-                            <ArrowRight className="h-4 w-4" />
-                          </Link>
-                        </Button>
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
+          <div className="max-w-2xl mx-auto">
+            <Card variant="gradient-border" className="p-8 text-center">
+              <CardContent>
+                <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                  Translyx focuses on identifying globally validated clinical innovations and making them available to healthcare 
+                  providers, with an emphasis on fit-for-purpose implementation, reliable supply, and local support.
+                </p>
+                <Button asChild variant="gradient" size="lg" className="shadow-[0_14px_35px_rgba(37,99,235,0.45)]">
+                  <Link href="/services" className="flex items-center justify-center gap-2">
+                    View Product Pipeline
+                    <ArrowRight className="h-5 w-5" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
@@ -249,15 +224,15 @@ export default function HomePage() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
-                  At Translyx, we prioritize quality and compliance in every aspect of our operations. By fostering 
-                  partnerships and promoting responsible practices, we aim to empower healthcare organizations to make 
+                  At Translyx, quality and compliance are prioritized in every aspect of operations. By fostering 
+                  partnerships and promoting responsible practices, the company aims to empower healthcare organizations to make 
                   informed decisions about the technologies they adopt, ultimately improving patient outcomes.
                 </p>
                 <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-0.5" />
                     <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                      <span className="font-semibold text-gray-900 dark:text-gray-100">Important:</span> Translyx does not provide medical advice or replace clinical decision-making. We support compliant 
+                      <span className="font-semibold text-gray-900 dark:text-gray-100">Important:</span> Translyx does not provide medical advice or replace clinical decision-making. The company supports compliant 
                       adoption and implementation of technology.
                     </p>
                   </div>
@@ -272,7 +247,7 @@ export default function HomePage() {
         title="Ready to Transform Your Healthcare Technology?"
         description="Let's discuss how Translyx can support your organization's technology adoption journey."
         primaryCTA={{
-          label: "Explore Services",
+          label: "View Product Pipeline",
           href: "/services",
         }}
         secondaryCTA={{

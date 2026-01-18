@@ -23,14 +23,14 @@ export const navigation: NavItem[] = [
     description: "Learn about Translyx",
   },
   {
-    label: "Our Services",
+    label: "Product Pipeline",
     href: "/services",
-    description: "Explore our services",
+    description: "Explore our product pipeline",
   },
   {
-    label: "Collaboration",
-    href: "/collaboration",
-    description: "Partner with us",
+    label: "Updates",
+    href: "/updates",
+    description: "Company updates and announcements",
   },
   {
     label: "Contact Us",
