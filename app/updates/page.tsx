@@ -36,7 +36,7 @@ export default function UpdatesPage() {
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900 dark:text-gray-50">Updates</h1>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            Stay informed about Translyx Limited's latest developments, company updates, and announcements.
+            Stay informed about Translyx Limited&apos;s latest developments, company updates, and announcements.
           </p>
         </div>
 
