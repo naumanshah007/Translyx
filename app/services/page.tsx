@@ -21,16 +21,10 @@ export default function ServicesPage() {
             <Settings className="w-3 h-3 sm:w-4 sm:h-4 text-primary-600 dark:text-primary-400" />
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900 dark:text-gray-50">Product Pipeline</h1>
-          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-4">
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             {siteConfig.companyName} supports the introduction of innovative diagnostic and clinical products to New Zealand 
             healthcare providers. The company works with healthcare organisations, laboratories, and academic partners to 
             make globally validated clinical innovations available across hospital, community, and research settings.
-          </p>
-          <p className="text-base text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            Services focus on identifying globally validated clinical innovations and making them available to healthcare 
-            providers, with an emphasis on fit-for-purpose implementation, reliable supply, and local support. Support 
-            includes training, documentation, and logistical assistance, all tailored to meet the specific needs of the 
-            New Zealand healthcare landscape.
           </p>
         </div>
 

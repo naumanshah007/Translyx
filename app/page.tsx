@@ -34,10 +34,6 @@ export default function HomePage() {
           label: "Talk to Us",
           href: "/contact",
         }}
-        badge={{
-          text: "Healthcare Technology Enablement",
-          icon: <Shield className="w-4 h-4" />,
-        }}
       />
 
       <SectionDivider variant="gradient" />
