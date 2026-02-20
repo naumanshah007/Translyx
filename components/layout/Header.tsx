@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
@@ -11,6 +12,7 @@ import { cn } from "@/lib/utils";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200/70 bg-white/70 backdrop-blur-xl shadow-[0_10px_30px_-25px_rgba(15,23,42,0.45)] dark:border-slate-800/70 dark:bg-slate-950/70 relative">
@@ -45,7 +47,7 @@ export function Header() {
             {/* Mobile Menu Button */}
             <button
               type="button"
-              className="inline-flex items-center justify-center rounded-full p-2.5 text-slate-700 dark:text-slate-300 hover:bg-white/70 dark:hover:bg-slate-900/70 transition-colors"
+              className="inline-flex items-center justify-center rounded-full min-h-[44px] min-w-[44px] p-2.5 text-slate-700 dark:text-slate-300 hover:bg-white/70 dark:hover:bg-slate-900/70 transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <span className="sr-only">Open main menu</span>
@@ -61,19 +63,24 @@ export function Header() {
           {mobileMenuOpen && (
             <div className="border-t border-slate-200/70 dark:border-slate-800/70 bg-white/90 backdrop-blur-xl dark:bg-slate-950/90">
               <div className="space-y-1 px-4 pb-4 pt-3">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={cn(
-                      "block rounded-xl px-3 py-2 text-base font-semibold transition-colors",
-                      "text-slate-900 hover:bg-slate-100/70 dark:text-slate-100 dark:hover:bg-slate-900/70"
-                    )}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                {navigation.map((item) => {
+                  const isActive = pathname === item.href;
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={cn(
+                        "block rounded-xl px-3 py-3 min-h-[44px] flex items-center text-base font-semibold transition-colors",
+                        isActive
+                          ? "bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300"
+                          : "text-slate-900 hover:bg-slate-100/70 dark:text-slate-100 dark:hover:bg-slate-900/70"
+                      )}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
                 <div className="pt-4">
                   <Button asChild variant="gradient" className="w-full shadow-[0_12px_25px_rgba(56,189,248,0.35)]">
                     <Link href={headerCTA.href} onClick={() => setMobileMenuOpen(false)}>

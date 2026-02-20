@@ -1,5 +1,5 @@
 import { siteConfig } from "@/config/site";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Linkedin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { PatternOverlay } from "@/components/ui/DecorativeElements";
 
@@ -22,13 +22,13 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto space-y-6">
+        <div className="max-w-2xl mx-auto space-y-6 w-full min-w-0">
           {/* Contact Information */}
           <Card variant="gradient-border" cornerAccent>
-            <CardHeader>
+            <CardHeader className="px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 lg:pt-8">
               <CardTitle className="text-2xl text-center">Contact Information</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-6 px-4 sm:px-6 lg:px-8 pt-0 pb-4 sm:pb-6 lg:pb-8">
               <div className="flex flex-col items-center gap-4 text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-slate-900 via-primary-600 to-cyan-400 rounded-2xl flex items-center justify-center shadow-[0_16px_35px_rgba(37,99,235,0.35)]">
                   <Mail className="w-8 h-8 text-white" />
@@ -52,6 +52,24 @@ export default function ContactPage() {
                   <p className="text-gray-600 dark:text-gray-400">
                     {siteConfig.company.address}
                   </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 pt-6 border-t border-gray-200 dark:border-gray-700">
+                <div className="w-10 h-10 bg-gradient-to-br from-slate-900 via-primary-600 to-cyan-400 rounded-xl flex items-center justify-center flex-shrink-0 shadow-[0_12px_25px_rgba(37,99,235,0.3)]">
+                  <Linkedin className="w-5 h-5 text-white" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Follow us</p>
+                  <a
+                    href="https://www.linkedin.com/company/translyx/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 min-h-[44px] py-2 text-primary-600 dark:text-primary-400 hover:underline transition-colors break-words"
+                  >
+                    <Linkedin className="w-4 h-4 flex-shrink-0" />
+                    LinkedIn
+                  </a>
                 </div>
               </div>
             </CardContent>

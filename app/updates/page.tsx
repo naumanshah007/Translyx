@@ -1,4 +1,5 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/Card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
+import { Prose } from "@/components/ui/Prose";
 import { siteConfig } from "@/config/site";
 import { PatternOverlay } from "@/components/ui/DecorativeElements";
 import { Calendar } from "lucide-react";
@@ -40,7 +41,7 @@ Keep an eye on this space for updates on how the company is helping bring the ne
 export default function UpdatesPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 md:py-16">
-      <div className="max-w-4xl mx-auto relative">
+      <div className="max-w-6xl mx-auto relative">
         <PatternOverlay pattern="topo" opacity={0.04} className="text-primary-500/30" />
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16 relative">
@@ -67,7 +68,7 @@ export default function UpdatesPage() {
                   />
                 </div>
               )}
-              <div className="p-6 sm:p-8">
+              <div className="p-4 sm:p-6 lg:p-8">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-3">
                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-100 dark:bg-primary-900/30 rounded-full">
@@ -78,9 +79,11 @@ export default function UpdatesPage() {
                   <CardTitle className="text-2xl sm:text-3xl mb-4 text-gray-900 dark:text-gray-100">{update.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-base leading-relaxed text-gray-700 dark:text-gray-300 whitespace-pre-line">
-                    {update.content}
-                  </CardDescription>
+                  <Prose>
+                    {update.content.split("\n\n").map((para, i) => (
+                      <p key={i}>{para}</p>
+                    ))}
+                  </Prose>
                 </CardContent>
               </div>
             </Card>

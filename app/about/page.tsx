@@ -1,8 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
+import { Prose } from "@/components/ui/Prose";
 import { siteConfig } from "@/config/site";
 import { Shield, Users, MapPin } from "lucide-react";
 import { PatternOverlay } from "@/components/ui/DecorativeElements";
-import { PipelineImage } from "@/components/ui/PipelineImage";
 import Link from "next/link";
 
 export const metadata = {
@@ -51,7 +51,7 @@ export default function AboutPage() {
               <Link
                 key={id}
                 href={`#${id}`}
-                className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-primary-50 dark:bg-primary-900/30 border border-primary-200/70 dark:border-primary-700/50 text-primary-700 dark:text-primary-300 hover:bg-primary-100 dark:hover:bg-primary-900/50 hover:border-primary-400/70 dark:hover:border-primary-600/60 hover:text-primary-800 dark:hover:text-primary-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50 focus-visible:ring-offset-2 active:scale-[0.98] transition-all duration-200"
+                className="inline-flex items-center min-h-[44px] px-4 py-2 rounded-full text-sm font-semibold bg-primary-50 dark:bg-primary-900/30 border border-primary-200/70 dark:border-primary-700/50 text-primary-700 dark:text-primary-300 hover:bg-primary-100 dark:hover:bg-primary-900/50 hover:border-primary-400/70 dark:hover:border-primary-600/60 hover:text-primary-800 dark:hover:text-primary-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/50 focus-visible:ring-offset-2 active:scale-[0.98] transition-all duration-200"
               >
                 {label}
               </Link>
@@ -61,12 +61,12 @@ export default function AboutPage() {
 
         {/* Section: Our Mission */}
         <section id="our-mission" className="scroll-mt-24 sm:scroll-mt-28 mb-20 sm:mb-24 md:mb-28">
-          <Card cornerAccent variant="gradient-border" className="p-8 sm:p-10 md:p-12">
+          <Card cornerAccent variant="gradient-border" className="p-4 sm:p-6 lg:p-8 md:p-10 lg:p-12">
             <CardHeader className="pb-6">
               <CardTitle className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-50">Our Mission</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-6 text-lg sm:text-xl leading-relaxed text-gray-700 dark:text-gray-300 max-w-4xl">
+              <Prose className="space-y-6">
                 <p>
                   Translyx Limited exists to introduce innovative diagnostic and clinical products to the New Zealand healthcare sector, supporting clinicians and health services with timely access to high-quality technologies that enable effective patient care.
                 </p>
@@ -76,7 +76,7 @@ export default function AboutPage() {
                 <p>
                   Translyx takes a systems-based approach to product introduction, recognising that access to appropriate diagnostic and clinical tools plays an important role in supporting clinical decision-making and contributing to improved patient outcomes. The company works with healthcare organisations, laboratories, and academic partners to ensure innovative products are introduced in a way that aligns with real-world clinical needs.
                 </p>
-              </div>
+              </Prose>
             </CardContent>
           </Card>
         </section>
@@ -89,30 +89,21 @@ export default function AboutPage() {
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-50">Leadership</h2>
           </div>
-          <Card variant="gradient-border" className="overflow-hidden p-0">
-            <PipelineImage
-              src="/images/leadership/ehsan-presenting.jpg"
-              alt=""
-              className="rounded-t-2xl rounded-b-none"
-            />
-            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 p-8 sm:p-10 md:p-12">
+          <Card variant="gradient-border" className="p-4 sm:p-6 lg:p-8 md:p-10 lg:p-12">
+            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
               <div className="flex-shrink-0">
                 <div className="aspect-square w-32 h-32 sm:w-40 sm:h-40 rounded-2xl overflow-hidden bg-gradient-to-br from-primary-100 to-cyan-100 dark:from-primary-900/40 dark:to-cyan-900/40 flex items-center justify-center shadow-lg">
-                  {leadershipPrimary.avatar ? (
-                    <img src={leadershipPrimary.avatar} alt="" className="w-full h-full object-cover object-center" />
-                  ) : (
-                    <Users className="w-16 h-16 sm:w-20 sm:h-20 text-primary-500 dark:text-primary-400" />
-                  )}
+                  <img src="/images/leadership/ehsan-presenting.jpg" alt="" className="w-full h-full object-cover object-center" />
                 </div>
               </div>
               <div className="flex-1 min-w-0">
                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-50 mb-1">{leadershipPrimary.name}</h3>
                 <p className="text-primary-600 dark:text-primary-400 font-semibold text-lg mb-6">{leadershipPrimary.title}</p>
-                <div className="space-y-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                <Prose>
                   {leadershipText.split("\n\n").map((para, i) => (
                     <p key={i}>{para}</p>
                   ))}
-                </div>
+                </Prose>
               </div>
             </div>
           </Card>
@@ -126,11 +117,11 @@ export default function AboutPage() {
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-50">Operational Territory</h2>
           </div>
-          <Card variant="gradient-border" className="p-8 sm:p-10 md:p-12">
-            <CardContent>
-              <p className="text-lg sm:text-xl leading-relaxed text-gray-700 dark:text-gray-300 max-w-4xl">
-                {operationalTerritoryText}
-              </p>
+          <Card variant="gradient-border" className="p-4 sm:p-6 lg:p-8 md:p-10 lg:p-12">
+            <CardContent className="pt-0">
+              <Prose>
+                <p>{operationalTerritoryText}</p>
+              </Prose>
             </CardContent>
           </Card>
         </section>

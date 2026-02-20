@@ -56,13 +56,15 @@
   html {
     font-size: clamp(16px, 2vw + 14px, 18px);
     scroll-behavior: smooth;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    overflow-x: hidden;
   }
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
     font-family: var(--font-body);
     line-height: 1.6;
-    overflow-x: hidden;
     background-image:
       radial-gradient(1200px 600px at 10% -10%, rgba(14, 116, 144, 0.12), transparent 60%),
       radial-gradient(900px 500px at 90% -20%, rgba(30, 64, 175, 0.12), transparent 55%),

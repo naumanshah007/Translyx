@@ -4,6 +4,9 @@
   "description": "Translyx Limited - Healthcare Technology Enablement",
   "private": true,
   "scripts": {
+    "sync:images": "node scripts/syncPipelineImages.mjs",
+    "predev": "npm run sync:images",
+    "prebuild": "npm run sync:images",
     "dev": "next dev --port 3000",
     "build": "next build",
     "start": "next start --port 3000",

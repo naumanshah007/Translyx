@@ -155,9 +155,6 @@ export function SectionDivider({ variant = "gradient", className }: SectionDivid
         <div className="absolute inset-0 flex items-center">
           <div className="w-full h-px bg-gradient-to-r from-transparent via-cyan-300/70 to-transparent" />
         </div>
-        <div className="relative flex justify-center">
-          <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gradient-to-br from-primary-500 to-cyan-400 shadow-[0_0_18px_rgba(56,189,248,0.6)]" />
-        </div>
       </div>
     );
   }

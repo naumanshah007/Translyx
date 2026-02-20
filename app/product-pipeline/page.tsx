@@ -1,11 +1,9 @@
-import { Card, CardContent } from "@/components/ui/Card";
 import { siteConfig } from "@/config/site";
 import { Settings } from "lucide-react";
 import { PatternOverlay } from "@/components/ui/DecorativeElements";
 import { pipelineCategories } from "@/config/pipeline";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { CTA } from "@/components/sections/CTA";
+import { PipelineCategoryCard } from "@/components/ui/PipelineCategoryCard";
 
 export const metadata = {
   title: "Product Pipeline",
@@ -36,28 +34,13 @@ export default function ProductPipelinePage() {
         {/* Category Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-20">
           {pipelineCategories.map((category) => (
-            <Link key={category.slug} href={`/product-pipeline/${category.slug}`}>
-              <Card variant="gradient-border" className="h-full overflow-hidden hover:-translate-y-1 transition-transform duration-300">
-                <div className="aspect-video w-full overflow-hidden rounded-t-2xl">
-                  <img
-                    src={category.images[0]}
-                    alt={category.title}
-                    loading="lazy"
-                    className="h-full w-full object-cover object-center"
-                  />
-                </div>
-                <CardContent className="p-6 sm:p-8">
-                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-50 mb-3">{category.title}</h2>
-                  <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-4 line-clamp-2">
-                    {category.excerpt}
-                  </p>
-                  <span className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-semibold">
-                    Learn more
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                </CardContent>
-              </Card>
-            </Link>
+            <PipelineCategoryCard
+              key={category.slug}
+              slug={category.slug}
+              title={category.title}
+              excerpt={category.excerpt}
+              image={category.images[0]}
+            />
           ))}
         </div>
 

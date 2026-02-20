@@ -37,9 +37,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         "hover:bg-slate-100/70 dark:hover:bg-slate-900/60 text-slate-900 dark:text-slate-100": variant === "ghost",
       },
       {
-        "h-10 px-4 py-2": size === "default",
-        "h-9 px-3 text-xs": size === "sm",
-        "h-11 px-8 text-base": size === "lg",
+        "h-10 min-h-[44px] px-4 py-2": size === "default",
+        "h-9 min-h-[44px] px-3 text-xs": size === "sm",
+        "h-11 min-h-[44px] px-6 sm:px-8 text-base": size === "lg",
       },
       className
     );

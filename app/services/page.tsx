@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/Card";
+import { Prose } from "@/components/ui/Prose";
 import { siteConfig } from "@/config/site";
 import { Briefcase } from "lucide-react";
 import { PatternOverlay } from "@/components/ui/DecorativeElements";
@@ -15,7 +16,7 @@ const servicesContent = `At Translyx Limited, we provide expert professional ser
 export default function ServicesPage() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24">
-      <div className="max-w-4xl mx-auto relative">
+      <div className="max-w-6xl mx-auto relative">
         <PatternOverlay pattern="topo" opacity={0.04} className="text-primary-500/30" />
 
         <div className="text-center mb-16 sm:mb-20 relative">
@@ -26,11 +27,11 @@ export default function ServicesPage() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-gray-50">Services</h1>
         </div>
 
-        <Card variant="gradient-border" cornerAccent className="p-8 sm:p-10 md:p-12">
+        <Card variant="gradient-border" cornerAccent className="p-4 sm:p-6 lg:p-8 md:p-10 lg:p-12">
           <CardContent>
-            <p className="text-lg sm:text-xl leading-relaxed text-gray-700 dark:text-gray-300 whitespace-pre-line">
+            <Prose className="whitespace-pre-line">
               {servicesContent}
-            </p>
+            </Prose>
           </CardContent>
         </Card>
       </div>

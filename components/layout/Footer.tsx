@@ -14,7 +14,7 @@ export function Footer() {
       <GradientAccent position="top" size="md" />
       <PatternOverlay pattern="topo" opacity={0.06} className="text-white/20" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand Column */}
           <div className="col-span-1 md:col-span-1">
             <Logo
@@ -98,12 +98,22 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-slate-300">
               <li>{siteConfig.company.email}</li>
               <li>{siteConfig.company.location}</li>
+              <li>
+                <Link
+                  href="https://www.linkedin.com/company/translyx/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-block min-h-[44px] py-2 -my-2 hover:text-white transition-colors"
+                >
+                  LinkedIn
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center">
+        <div className="mt-8 border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
           <p className="text-sm text-slate-400">
             © {currentYear} {siteConfig.companyName}. All rights reserved.
           </p>

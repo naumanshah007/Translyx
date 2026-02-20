@@ -48,11 +48,8 @@ export const metadata: Metadata = {
     images: [siteConfig.seo.ogImage],
   },
   icons: {
-    icon: [
-      { url: "/favicon.ico", type: "image/x-icon" },
-      { url: "/logo.png", type: "image/png" },
-    ],
-    apple: [{ url: "/logo.png", sizes: "180x180", type: "image/png" }],
+    icon: "/favicon.ico",
+    apple: "/logo.png",
   },
 };
 

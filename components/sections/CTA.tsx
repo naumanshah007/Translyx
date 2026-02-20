@@ -27,14 +27,14 @@ export function CTA({
   className,
 }: CTAProps) {
   return (
-    <section className={cn("relative py-20 overflow-hidden", className)}>
+    <section className={cn("relative py-16 sm:py-20 overflow-hidden", className)}>
       <div className="absolute inset-0 bg-slate-950" />
       <div className="absolute inset-0 bg-[radial-gradient(1000px_500px_at_15%_-10%,rgba(56,189,248,0.45),transparent_60%)] opacity-80 animate-aurora" />
       <div className="absolute inset-0 bg-[radial-gradient(900px_500px_at_90%_0%,rgba(37,99,235,0.45),transparent_55%)] opacity-80 animate-aurora" />
       <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.08),transparent,rgba(255,255,255,0.08))] opacity-60" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center relative z-10">
-          <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-4">
             {title}
           </h2>
           {description && (

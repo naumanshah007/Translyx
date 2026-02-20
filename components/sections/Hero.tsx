@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Shield, Zap, Users } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
-import { GeometricShapes, PatternOverlay, FloatingIcon } from "@/components/ui/DecorativeElements";
+import { PatternOverlay } from "@/components/ui/DecorativeElements";
 
 interface HeroProps {
   headline: string;
@@ -35,7 +35,7 @@ export function Hero({
   className,
 }: HeroProps) {
   return (
-    <section className={cn("relative py-24 lg:py-36 overflow-hidden", className)}>
+    <section className={cn("relative py-16 sm:py-20 md:py-24 lg:py-36 overflow-hidden", className)}>
       {/* Luminous Aurora Background */}
       <div className="absolute inset-0 bg-slate-950" />
       <div className="absolute inset-0 bg-[radial-gradient(1200px_700px_at_10%_-10%,rgba(34,211,238,0.45),transparent_60%)] opacity-80 animate-aurora" />
@@ -45,14 +45,6 @@ export function Hero({
 
       {/* Pattern Overlay */}
       <PatternOverlay pattern="topo" opacity={0.08} className="text-white/30" />
-
-      {/* Geometric Shapes */}
-      <GeometricShapes variant="mixed" count={5} />
-
-      {/* Floating Icons */}
-      <FloatingIcon icon={Shield} position="top-left" size="md" animated />
-      <FloatingIcon icon={Zap} position="top-right" size="sm" animated />
-      <FloatingIcon icon={Users} position="bottom-left" size="sm" animated />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
@@ -65,7 +57,7 @@ export function Hero({
           )}
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.05] mb-6 text-white">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.1] mb-6 text-white">
             {subheadline && (
               <span className="text-cyan-200">{subheadline} </span>
             )}

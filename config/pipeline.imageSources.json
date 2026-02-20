@@ -1,0 +1,32 @@
+{
+  "antibacterial-resistance": [
+    "https://publichealthnotes.com/wp-content/uploads/2020/09/antibiotic-project-image2-346x381.png",
+    "https://as2.ftcdn.net/v2/jpg/17/52/95/91/1000_F_1752959170_k0oLW55boMpTXjHx79EhnintjT0DM5gP.jpg"
+  ],
+  "sepsis": [
+    "https://as1.ftcdn.net/v2/jpg/06/22/79/82/1000_F_622798268_G7kN6gPHHN9VeJLZhnH7rWB3WYs8lWID.jpg",
+    "https://as2.ftcdn.net/v2/jpg/02/34/30/47/1000_F_234304797_N5MYkWRZmGXwdQ9rGpSddn6nnTY2Okkb.jpg"
+  ],
+  "oncology-biomarkers": [
+    "https://as1.ftcdn.net/v2/jpg/18/45/26/42/1000_F_1845264264_oplqxG9CvoAEzBcbvkT5TNqwEdIm2hZo.jpg",
+    "https://t3.ftcdn.net/jpg/10/97/38/22/240_F_1097382233_SF8Wtkb59AMPnUqpKSwbbu12fYrUJ9xO.jpg",
+    "https://t4.ftcdn.net/jpg/17/84/90/01/240_F_1784900147_g8TJvkpbcPinb2MFwq2a9ock5mtn32pi.jpg"
+  ],
+  "cardiac-biomarkers": [
+    "https://t4.ftcdn.net/jpg/07/57/70/21/240_F_757702159_WOEHbAtlR0cXMLAbDJmHDzTft14yZthe.jpg",
+    "https://t3.ftcdn.net/jpg/10/31/29/46/240_F_1031294649_z07OUuPspUZEjHwcYxiEhzOk1Qu3hLZu.jpg",
+    "https://t3.ftcdn.net/jpg/10/82/34/20/240_F_1082342023_NVzpQncQZwpsut0I0Lx3NoQT9YVjlWeA.jpg"
+  ],
+  "endocrine-biomarkers": [
+    "https://as1.ftcdn.net/v2/jpg/19/02/33/72/1000_F_1902337294_woBmWv4jBQaTNffDI3ewr4GXK06lRNJN.jpg",
+    "https://www.endocrine.org/-/media/endocrine/images/patient-engagement-webpage/condition-page-images/diabetes-and-glucose-metabolism/diabetes_and_endocrine_function_pe_1796x943.jpg?w=2580&hash=664F2471888EAD5F76E727B696D649E4",
+    "https://www.praxisambahnhof.ch/blog/wp-content/uploads/2020/12/Diabetes-1024x682.jpeg"
+  ],
+  "point-of-care-testing": [
+    "https://www.gener8.net/wp-content/uploads/2023/04/iStock-1456055366-1536x1024.jpg",
+    "https://cdn.open-pr.com/S/c/Sc23297724_g.jpg",
+    "https://as2.ftcdn.net/v2/jpg/10/97/38/15/1000_F_1097381584_auI16RubdPYIOie1eTKniyTbHtrK6DFR.jpg",
+    "https://as1.ftcdn.net/v2/jpg/03/91/33/48/1000_F_391334892_qNafNLivolSj6kmmDYY3Wia2GewxtSXa.jpg",
+    "https://www.genomicseducation.hee.nhs.uk/wp-content/uploads/2017/01/portable-sequencing.jpg"
+  ]
+}
