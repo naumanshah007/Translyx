@@ -26,19 +26,11 @@ export default function HomePage() {
       <Hero
         headline="Translating Innovation into Impact"
         description="Our mission is to bring innovative diagnostic and clinical products to New Zealand, supporting healthcare providers with timely access to technologies that enable high-quality patient care and informed clinical decision-making."
-        primaryCTA={{
-          label: "View Product Pipeline",
-          href: "/services",
-        }}
-        secondaryCTA={{
-          label: "Talk to Us",
-          href: "/contact",
-        }}
       />
 
       <SectionDivider variant="gradient" />
 
-      {/* Services Preview Section */}
+      {/* Product Pipeline + Quality cards — 2-column on desktop, stacked on mobile */}
       <section className="relative py-16 sm:py-20 md:py-24 bg-white/70 dark:bg-slate-950/60">
         <PatternOverlay pattern="dots" opacity={0.04} className="text-primary-500/40" />
         <CornerAccent position="bottom-left" size="md" className="hidden sm:block" />
@@ -54,33 +46,24 @@ export default function HomePage() {
               innovations available to healthcare providers across hospital, community, and research settings.
             </p>
           </div>
-          <div className="max-w-2xl mx-auto">
-            <Card variant="gradient-border" className="p-8 text-center">
-              <CardContent>
-                <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch max-w-5xl mx-auto">
+            {/* Product Pipeline card */}
+            <Card variant="gradient-border" className="p-8 text-center flex flex-col h-full">
+              <CardContent className="flex flex-col flex-1">
+                <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-6 flex-1">
                   Translyx focuses on identifying globally validated clinical innovations and making them available to healthcare 
                   providers, with an emphasis on fit-for-purpose implementation, reliable supply, and local support.
                 </p>
                 <Button asChild variant="gradient" size="lg" className="shadow-[0_14px_35px_rgba(37,99,235,0.45)]">
-                  <Link href="/services" className="flex items-center justify-center gap-2">
+                  <Link href="/product-pipeline" className="flex items-center justify-center gap-2">
                     View Product Pipeline
                     <ArrowRight className="h-5 w-5" />
                   </Link>
                 </Button>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      <SectionDivider variant="minimal" />
-
-      {/* Trust / Compliance Note Section */}
-      <section className="relative py-12 sm:py-14 md:py-16 bg-slate-50/70 dark:bg-slate-950/70">
-        <PatternOverlay pattern="topo" opacity={0.05} className="text-primary-500/30" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
-            <Card className="p-8" variant="gradient-border" cornerAccent>
+            {/* Quality, Compliance & Patient Safety card */}
+            <Card className="p-8 flex flex-col h-full" variant="gradient-border" cornerAccent>
               <CardHeader>
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-white/80 dark:bg-slate-900/70 border border-white/60 dark:border-slate-700/60 rounded-2xl flex items-center justify-center shadow-[0_10px_25px_rgba(15,23,42,0.2)]">
@@ -89,13 +72,13 @@ export default function HomePage() {
                   <CardTitle className="text-2xl text-gray-900 dark:text-gray-100">Quality, Compliance & Patient Safety</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-6 flex-1 flex flex-col">
                 <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
                   At Translyx, quality and compliance are prioritized in every aspect of operations. By fostering 
                   partnerships and promoting responsible practices, the company aims to empower healthcare organizations to make 
                   informed decisions about the technologies they adopt, ultimately improving patient outcomes.
                 </p>
-                <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
+                <div className="pt-6 border-t border-gray-200 dark:border-gray-700 mt-auto">
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-0.5" />
                     <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -113,14 +96,6 @@ export default function HomePage() {
       <CTA
         title="Ready to Transform Your Healthcare Technology?"
         description="Let's discuss how Translyx can support your organization's technology adoption journey."
-        primaryCTA={{
-          label: "View Product Pipeline",
-          href: "/services",
-        }}
-        secondaryCTA={{
-          label: "Contact Us",
-          href: "/contact",
-        }}
       />
     </>
   );

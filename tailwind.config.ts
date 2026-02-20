@@ -173,9 +173,17 @@ const config: Config = {
         "300%": "300%",
       },
       spacing: {
+        /* Override defaults for ~25% more vertical spacing site-wide */
+        "16": "5rem",
+        "20": "6.25rem",
+        "24": "7.5rem",
         "18": "4.5rem",
         "88": "22rem",
         "128": "32rem",
+      },
+      maxWidth: {
+        "content": "68.75rem",   /* 1100px */
+        "content-wide": "75rem",   /* 1200px */
       },
     },
   },

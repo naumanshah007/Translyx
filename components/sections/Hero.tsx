@@ -75,7 +75,10 @@ export function Hero({
           </h1>
 
           {/* Description */}
-          <p className="text-lg sm:text-xl text-white/85 max-w-3xl mx-auto leading-relaxed mb-10">
+          <p className={cn(
+            "text-lg sm:text-xl text-white/85 max-w-3xl mx-auto leading-relaxed",
+            (primaryCTA || secondaryCTA) ? "mb-10" : "mb-0"
+          )}>
             {description}
           </p>
 

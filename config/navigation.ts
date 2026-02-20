@@ -24,8 +24,13 @@ export const navigation: NavItem[] = [
   },
   {
     label: "Product Pipeline",
-    href: "/services",
+    href: "/product-pipeline",
     description: "Explore our product pipeline",
+  },
+  {
+    label: "Services",
+    href: "/services",
+    description: "Professional services and consultancy",
   },
   {
     label: "Updates",

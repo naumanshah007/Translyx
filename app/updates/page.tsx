@@ -13,9 +13,23 @@ interface Update {
   date: string;
   title: string;
   content: string;
+  featuredImage?: string | null; // Replace with Ehsan photo from overseas trip presenting
 }
 
+/* Add new updates here — sorted by date descending (newest first) */
 const updates: Update[] = [
+  {
+    date: "8 February 2026",
+    title: "Translyx Ltd Launches in New Zealand – Bringing Innovative Diagnostics Closer to Patients",
+    content: `A new chapter in clinical diagnostics has begun in New Zealand with the launch of Translyx Ltd, founded by Dr Ehsan Ullah, an Auckland-based physician scientist and healthcare entrepreneur. The company is on a mission to bring advanced diagnostic solutions that have been transforming healthcare globally directly into the New Zealand and Oceania markets.
+
+Translyx will introduce technologies across critical areas including antibacterial resistance, sepsis, oncology biomarkers, point-of-care testing, cardiac biomarkers, and endocrine diagnostics. By bridging the gap between global innovation and local clinical practice, the company aims to support clinicians, laboratories, and healthcare providers with faster, more precise diagnostic tools that can improve patient care and outcomes.
+
+This is just the beginning. Exciting announcements on partnerships, new technologies, and product launches are coming soon, as Translyx works to strengthen diagnostic capability across the region.
+
+Keep an eye on this space for updates on how the company is helping bring the next generation of clinical diagnostics to New Zealand.`,
+    featuredImage: null, // Replace with Ehsan photo from overseas trip presenting
+  },
   {
     date: "17 January 2026",
     title: "Translyx Limited – Company Update",
@@ -41,23 +55,34 @@ export default function UpdatesPage() {
         </div>
 
         {/* Updates Feed */}
-        <div className="space-y-6">
+        <div className="space-y-8">
           {updates.map((update, index) => (
-            <Card key={index} variant="gradient-border" className="p-6 sm:p-8" cornerAccent>
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-100 dark:bg-primary-900/30 rounded-full">
-                    <Calendar className="w-4 h-4 text-primary-600 dark:text-primary-400" />
-                    <span className="text-sm font-semibold text-primary-600 dark:text-primary-400">{update.date}</span>
-                  </div>
+            <Card key={index} variant="gradient-border" className="overflow-hidden" cornerAccent>
+              {update.featuredImage && (
+                <div className="aspect-video w-full overflow-hidden">
+                  <img
+                    src={update.featuredImage}
+                    alt=""
+                    className="h-full w-full object-cover object-center"
+                  />
                 </div>
-                <CardTitle className="text-2xl sm:text-3xl mb-4 text-gray-900 dark:text-gray-100">{update.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base leading-relaxed text-gray-700 dark:text-gray-300 whitespace-pre-line">
-                  {update.content}
-                </CardDescription>
-              </CardContent>
+              )}
+              <div className="p-6 sm:p-8">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-100 dark:bg-primary-900/30 rounded-full">
+                      <Calendar className="w-4 h-4 text-primary-600 dark:text-primary-400" />
+                      <span className="text-sm font-semibold text-primary-600 dark:text-primary-400">{update.date}</span>
+                    </div>
+                  </div>
+                  <CardTitle className="text-2xl sm:text-3xl mb-4 text-gray-900 dark:text-gray-100">{update.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base leading-relaxed text-gray-700 dark:text-gray-300 whitespace-pre-line">
+                    {update.content}
+                  </CardDescription>
+                </CardContent>
+              </div>
             </Card>
           ))}
         </div>

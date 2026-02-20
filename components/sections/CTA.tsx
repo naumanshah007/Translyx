@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 interface CTAProps {
   title: string;
   description?: string;
-  primaryCTA: {
+  primaryCTA?: {
     label: string;
     href: string;
   };
@@ -38,31 +38,38 @@ export function CTA({
             {title}
           </h2>
           {description && (
-            <p className="text-lg text-white/80 mb-8">{description}</p>
+            <p className={cn(
+              "text-lg text-white/80",
+              (primaryCTA || secondaryCTA) ? "mb-8" : "mb-0"
+            )}>{description}</p>
           )}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              asChild
-              variant="secondary"
-              size="lg"
-              className="bg-white text-slate-900 hover:bg-white font-bold shadow-[0_18px_40px_rgba(15,23,42,0.4)]"
-            >
-              <Link href={primaryCTA.href}>
-                {primaryCTA.label}
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            {secondaryCTA && (
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="border border-white/50 text-white hover:bg-white/10 font-semibold"
-              >
-                <Link href={secondaryCTA.href}>{secondaryCTA.label}</Link>
-              </Button>
-            )}
-          </div>
+          {(primaryCTA || secondaryCTA) && (
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {primaryCTA && (
+                <Button
+                  asChild
+                  variant="secondary"
+                  size="lg"
+                  className="bg-white text-slate-900 hover:bg-white font-bold shadow-[0_18px_40px_rgba(15,23,42,0.4)]"
+                >
+                  <Link href={primaryCTA.href}>
+                    {primaryCTA.label}
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              )}
+              {secondaryCTA && (
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="border border-white/50 text-white hover:bg-white/10 font-semibold"
+                >
+                  <Link href={secondaryCTA.href}>{secondaryCTA.label}</Link>
+                </Button>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </section>
