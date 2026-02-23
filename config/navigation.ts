@@ -33,6 +33,11 @@ export const navigation: NavItem[] = [
     description: "Professional services and consultancy",
   },
   {
+    label: "AI Solutions",
+    href: "/ai-solutions",
+    description: "AI privacy for healthcare organizations",
+  },
+  {
     label: "Updates",
     href: "/updates",
     description: "Company updates and announcements",

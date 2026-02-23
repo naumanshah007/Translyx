@@ -15,6 +15,7 @@ interface CTAProps {
   secondaryCTA?: {
     label: string;
     href: string;
+    external?: boolean;
   };
   className?: string;
 }
@@ -59,14 +60,27 @@ export function CTA({
                 </Button>
               )}
               {secondaryCTA && (
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="border border-white/50 text-white hover:bg-white/10 font-semibold"
-                >
-                  <Link href={secondaryCTA.href}>{secondaryCTA.label}</Link>
-                </Button>
+                secondaryCTA.external ? (
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="border border-white/50 text-white hover:bg-white/10 font-semibold"
+                  >
+                    <a href={secondaryCTA.href} target="_blank" rel="noopener noreferrer" aria-label={`${secondaryCTA.label} (opens in new tab)`}>
+                      {secondaryCTA.label}
+                    </a>
+                  </Button>
+                ) : (
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="border border-white/50 text-white hover:bg-white/10 font-semibold"
+                  >
+                    <Link href={secondaryCTA.href}>{secondaryCTA.label}</Link>
+                  </Button>
+                )
               )}
             </div>
           )}
