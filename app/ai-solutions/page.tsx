@@ -127,6 +127,7 @@ export default function AISolutionsPage() {
 
       <CTA
         title="Interested in how Privexa can support your organization's AI adoption?"
+        description="Contact us at info@privexa.co"
         primaryCTA={{ label: "Request a conversation", href: "/contact" }}
         secondaryCTA={{ label: "Learn more about Privexa", href: "https://privexa.co", external: true }}
       />
