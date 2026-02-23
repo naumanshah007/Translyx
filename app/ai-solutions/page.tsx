@@ -14,9 +14,9 @@ export const metadata = {
 };
 
 const steps = [
-  { id: "healthcare-ai", step: "1", label: "Healthcare AI" },
-  { id: "data-privacy-gap", step: "2", label: "The gap" },
-  { id: "privexa", step: "3", label: "Privexa" },
+  { id: "healthcare-ai", label: "Healthcare AI", icon: Zap },
+  { id: "data-privacy-gap", label: "The gap", icon: ShieldAlert },
+  { id: "privexa", label: "Privexa", icon: ShieldCheck },
 ];
 
 export default function AISolutionsPage() {
@@ -34,18 +34,18 @@ export default function AISolutionsPage() {
         <PatternOverlay pattern="topo" opacity={0.03} className="text-primary-500/20" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto">
-            {/* Nav pills — compact */}
+            {/* Nav pills — icon + label, no numbers */}
             <nav className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-5 sm:mb-6" aria-label="Page sections">
-              {steps.map(({ id, step, label }) => (
+              {steps.map(({ id, label, icon: Icon }) => (
                 <Link
                   key={id}
                   href={`#${id}`}
-                  className="inline-flex items-center gap-2 min-h-[40px] px-3 py-2 sm:px-4 sm:py-2.5 rounded-lg sm:rounded-xl border border-primary-200/80 dark:border-primary-700/60 bg-white dark:bg-slate-900/80 shadow-sm hover:shadow-md hover:border-primary-400/80 dark:hover:border-primary-500/60 transition-all text-sm font-semibold text-gray-800 dark:text-gray-200"
+                  className="group inline-flex items-center gap-2.5 min-h-[44px] pl-3 pr-4 py-2.5 rounded-xl border border-primary-200/80 dark:border-primary-700/60 bg-white dark:bg-slate-900/80 shadow-sm hover:shadow-md hover:border-primary-400/80 dark:hover:border-primary-500/60 hover:bg-primary-50/50 dark:hover:bg-primary-950/30 transition-all duration-200"
                 >
-                  <span className="flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-md bg-primary-500/15 text-primary-700 dark:text-primary-300 font-bold text-xs">
-                    {step}
+                  <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500/20 to-cyan-500/20 text-primary-600 dark:text-primary-400 group-hover:from-primary-500/30 group-hover:to-cyan-500/30 transition-colors">
+                    <Icon className="w-4 h-4" />
                   </span>
-                  {label}
+                  <span className="text-sm font-semibold text-gray-800 dark:text-gray-200">{label}</span>
                 </Link>
               ))}
             </nav>
