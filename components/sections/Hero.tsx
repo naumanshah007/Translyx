@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
-import { PatternOverlay } from "@/components/ui/DecorativeElements";
+import { PatternOverlay, GeometricShapes } from "@/components/ui/DecorativeElements";
 
 interface HeroProps {
   headline: string;
@@ -17,11 +17,14 @@ interface HeroProps {
   secondaryCTA?: {
     label: string;
     href: string;
+    external?: boolean;
   };
   badge?: {
     text: string;
     icon?: React.ReactNode;
   };
+  enhancedAurora?: boolean;
+  decorativeShapes?: boolean;
   className?: string;
 }
 
@@ -32,6 +35,8 @@ export function Hero({
   primaryCTA,
   secondaryCTA,
   badge,
+  enhancedAurora,
+  decorativeShapes,
   className,
 }: HeroProps) {
   return (
@@ -40,8 +45,13 @@ export function Hero({
       <div className="absolute inset-0 bg-slate-950" />
       <div className="absolute inset-0 bg-[radial-gradient(1200px_700px_at_10%_-10%,rgba(34,211,238,0.45),transparent_60%)] opacity-80 animate-aurora" />
       <div className="absolute inset-0 bg-[radial-gradient(900px_600px_at_90%_0%,rgba(59,130,246,0.5),transparent_55%)] opacity-80 animate-aurora" />
+      {enhancedAurora && (
+        <div className="absolute inset-0 bg-[radial-gradient(700px_500px_at_50%_50%,rgba(139,92,246,0.25),transparent_70%)] opacity-90 animate-aurora" />
+      )}
       <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.08),transparent,rgba(255,255,255,0.06))] opacity-60" />
       <div className="absolute inset-0 bg-gradient-to-br from-slate-950/60 via-primary-900/40 to-slate-900/60" />
+
+      {decorativeShapes && <GeometricShapes variant="mixed" className="z-0" />}
 
       {/* Pattern Overlay */}
       <PatternOverlay pattern="topo" opacity={0.08} className="text-white/30" />
@@ -50,7 +60,7 @@ export function Hero({
         <div className="max-w-5xl mx-auto text-center">
           {/* Badge */}
           {badge && (
-            <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/10 backdrop-blur-md border border-white/30 rounded-full text-xs uppercase tracking-[0.2em] text-white mb-8 shadow-[0_10px_30px_rgba(15,23,42,0.35)]">
+            <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/10 backdrop-blur-md border border-white/30 rounded-full text-xs uppercase tracking-[0.2em] text-white mb-8 shadow-[0_10px_30px_rgba(15,23,42,0.35)] animate-float">
               {badge.icon}
               {badge.text}
             </div>
@@ -86,14 +96,27 @@ export function Hero({
                 </Button>
               )}
               {secondaryCTA && (
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="border border-white/50 text-white hover:bg-white/10 font-semibold"
-                >
-                  <Link href={secondaryCTA.href}>{secondaryCTA.label}</Link>
-                </Button>
+                secondaryCTA.external ? (
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="border border-white/50 text-white hover:bg-white/10 font-semibold"
+                  >
+                    <a href={secondaryCTA.href} target="_blank" rel="noopener noreferrer" aria-label={`${secondaryCTA.label} (opens in new tab)`}>
+                      {secondaryCTA.label}
+                    </a>
+                  </Button>
+                ) : (
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="border border-white/50 text-white hover:bg-white/10 font-semibold"
+                  >
+                    <Link href={secondaryCTA.href}>{secondaryCTA.label}</Link>
+                  </Button>
+                )
               )}
             </div>
           )}
