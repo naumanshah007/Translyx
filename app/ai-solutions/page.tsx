@@ -66,7 +66,7 @@ export default function AISolutionsPage() {
 
       <div id="ai-solutions-content">
         {/* In-page nav — sticky */}
-        <div className="sticky top-16 z-20 py-4 bg-gradient-to-b from-cyan-50/95 via-white/95 to-primary-50/90 dark:from-cyan-950/95 dark:via-slate-950/95 dark:to-primary-950/90 backdrop-blur-md border-b border-primary-200/30 dark:border-primary-800/30">
+        <div className="sticky top-16 z-20 py-3 sm:py-3 bg-gradient-to-b from-cyan-50/95 via-white/95 to-primary-50/90 dark:from-cyan-950/95 dark:via-slate-950/95 dark:to-primary-950/90 backdrop-blur-md border-b border-primary-200/30 dark:border-primary-800/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <nav className="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-5xl mx-auto" aria-label="Page sections">
               {sectionAnchors.map(({ id, label, icon: NavIcon }) => (
@@ -86,13 +86,13 @@ export default function AISolutionsPage() {
       {/* Section 1 — The Case for Clinical AI */}
       <section
         id="case-for-ai"
-        className="relative scroll-mt-24 sm:scroll-mt-28 py-16 sm:py-20 md:py-24 bg-gradient-to-br from-cyan-50/80 via-white to-primary-50/60 dark:from-cyan-950/20 dark:via-slate-950 dark:to-primary-950/20"
+        className="relative scroll-mt-24 sm:scroll-mt-28 py-10 sm:py-12 md:py-14 bg-gradient-to-br from-cyan-50/80 via-white to-primary-50/60 dark:from-cyan-950/20 dark:via-slate-950 dark:to-primary-950/20"
       >
         <PatternOverlay pattern="topo" opacity={0.04} className="text-primary-500/15 dark:text-primary-400/10" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto">
             <div className="relative pl-4 sm:pl-6 border-l-4 border-primary-400/50 dark:border-primary-500/40 rounded-r-lg animate-fade-in-up motion-reduce:animate-none">
-              <div className="flex items-start gap-3 sm:gap-4 mb-4">
+              <div className="flex items-start gap-3 sm:gap-4 mb-3">
                 <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-primary-400/30 to-primary-500/20 dark:from-primary-500/25 dark:to-primary-600/15 backdrop-blur-md flex items-center justify-center shadow-[0_8px_24px_rgba(59,130,246,0.2)]">
                   <Zap className="w-6 h-6 sm:w-7 sm:h-7 text-primary-600 dark:text-primary-400" />
                 </div>
@@ -115,18 +115,18 @@ export default function AISolutionsPage() {
         </div>
       </section>
 
-      <SectionDivider variant="gradient" />
+      <SectionDivider variant="gradient" className="py-2 sm:py-3" />
 
       {/* Section 2 — The Data Privacy Challenge */}
       <section
         id="privacy-challenge"
-        className="relative scroll-mt-24 sm:scroll-mt-28 py-16 sm:py-20 md:py-24 bg-gradient-to-br from-amber-50/70 via-white to-rose-50/50 dark:from-amber-950/15 dark:via-slate-950 dark:to-rose-950/10"
+        className="relative scroll-mt-24 sm:scroll-mt-28 py-10 sm:py-12 md:py-14 bg-gradient-to-br from-amber-50/70 via-white to-rose-50/50 dark:from-amber-950/15 dark:via-slate-950 dark:to-rose-950/10"
       >
         <PatternOverlay pattern="topo" opacity={0.04} className="text-amber-500/15 dark:text-amber-400/10" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto">
             <div className="relative pl-4 sm:pl-6 border-l-4 border-amber-400/50 dark:border-amber-500/40 rounded-r-lg animate-fade-in-up motion-reduce:animate-none" style={{ animationDelay: "100ms" }}>
-              <div className="flex items-start gap-3 sm:gap-4 mb-4">
+              <div className="flex items-start gap-3 sm:gap-4 mb-3">
                 <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-amber-400/30 to-amber-500/20 dark:from-amber-500/25 dark:to-amber-600/15 backdrop-blur-md flex items-center justify-center shadow-[0_8px_24px_rgba(245,158,11,0.2)]">
                   <ShieldAlert className="w-6 h-6 sm:w-7 sm:h-7 text-amber-600 dark:text-amber-400" />
                 </div>
@@ -152,24 +152,24 @@ export default function AISolutionsPage() {
         </div>
       </section>
 
-      <SectionDivider variant="geometric" />
+      <SectionDivider variant="geometric" className="py-2 sm:py-3" />
 
       {/* Section 3 — Privexa partnership + feature cards */}
       <section
         id="privexa"
-        className="relative scroll-mt-24 sm:scroll-mt-28 py-16 sm:py-20 md:py-24 bg-gradient-to-br from-primary-50/60 via-white to-cyan-50/70 dark:from-primary-950/20 dark:via-slate-950 dark:to-cyan-950/20"
+        className="relative scroll-mt-24 sm:scroll-mt-28 py-10 sm:py-12 md:py-14 bg-gradient-to-br from-primary-50/60 via-white to-cyan-50/70 dark:from-primary-950/20 dark:via-slate-950 dark:to-cyan-950/20"
       >
         <PatternOverlay pattern="topo" opacity={0.04} className="text-cyan-500/15 dark:text-cyan-400/10" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto">
             <div className="relative pl-4 sm:pl-6 border-l-4 border-cyan-400/50 dark:border-cyan-500/40 rounded-r-lg animate-fade-in-up motion-reduce:animate-none" style={{ animationDelay: "200ms" }}>
-              <div className="flex items-start gap-3 sm:gap-4 mb-4">
+              <div className="flex items-start gap-3 sm:gap-4 mb-3">
                 <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-cyan-400/30 to-cyan-500/20 dark:from-cyan-500/25 dark:to-cyan-600/15 backdrop-blur-md flex items-center justify-center shadow-[0_8px_24px_rgba(34,211,238,0.2)]">
                   <ShieldCheck className="w-6 h-6 sm:w-7 sm:h-7 text-cyan-600 dark:text-cyan-400" />
                 </div>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-50">Privexa — AI Privacy for Healthcare</h2>
               </div>
-              <Card variant="gradient-border" cornerAccent className="p-4 sm:p-6 lg:p-8 mb-8">
+              <Card variant="gradient-border" cornerAccent className="p-4 sm:p-6 lg:p-8 mb-5">
                 <CardContent className="pt-0">
                   <Prose className="space-y-6">
                     <p>
@@ -187,7 +187,7 @@ export default function AISolutionsPage() {
             </div>
 
             {/* How It Works mini-diagram */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-10 py-6 px-4 rounded-2xl bg-white/60 dark:bg-slate-900/40 border border-primary-200/50 dark:border-primary-700/50">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-6 py-5 px-4 rounded-2xl bg-white/60 dark:bg-slate-900/40 border border-primary-200/50 dark:border-primary-700/50">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-xl bg-primary-500/15 flex items-center justify-center">
                   <FileText className="w-6 h-6 text-primary-600 dark:text-primary-400" />
@@ -214,7 +214,7 @@ export default function AISolutionsPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
               {featureCards.map(({ id, title, body, icon: Icon, accentColor }, idx) => {
                 const accentClasses = {
                   primary: "from-primary-400/25 to-primary-600/20 dark:from-primary-500/20 dark:to-primary-600/15 border-primary-200/50 dark:border-primary-700/50",
@@ -249,21 +249,21 @@ export default function AISolutionsPage() {
         </div>
       </section>
 
-      <SectionDivider variant="gradient" />
+      <SectionDivider variant="gradient" className="py-2 sm:py-3" />
 
       {/* Section 4 — Compliance */}
       <section
         id="compliance"
-        className="relative scroll-mt-24 sm:scroll-mt-28 py-16 sm:py-20 md:py-24 bg-white dark:bg-slate-950"
+        className="relative scroll-mt-24 sm:scroll-mt-28 py-10 sm:py-12 md:py-14 bg-white dark:bg-slate-950"
       >
         <PatternOverlay pattern="mesh" opacity={0.05} className="text-primary-500/20 dark:text-primary-400/15" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-50 mb-6 animate-fade-in-up motion-reduce:animate-none" style={{ animationDelay: "300ms" }}>Designed for Regulated Healthcare</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-50 mb-4 animate-fade-in-up motion-reduce:animate-none" style={{ animationDelay: "300ms" }}>Designed for Regulated Healthcare</h2>
             <Card variant="gradient-border" className="p-4 sm:p-6 lg:p-8 border-primary-200/50 dark:border-primary-700/50 relative overflow-hidden animate-fade-in-up motion-reduce:animate-none" style={{ animationDelay: "350ms" }}>
               <GradientAccent position="top" size="lg" />
               <CardContent className="pt-0">
-                <p className="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 mb-6">Privexa is built with New Zealand&apos;s regulatory environment in mind:</p>
+                <p className="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Privexa is built with New Zealand&apos;s regulatory environment in mind:</p>
                 <div className="flex flex-wrap gap-3 sm:gap-4">
                   {complianceItems.map(({ label, detail, icon: ComplianceIcon }) => (
                     <div
