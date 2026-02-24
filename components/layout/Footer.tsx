@@ -81,6 +81,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/ai-solutions"
+                  className="text-sm text-slate-300 hover:text-white transition-colors"
+                >
+                  AI Solutions
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact"
                   className="text-sm text-slate-300 hover:text-white transition-colors"
                 >

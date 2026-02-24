@@ -1,8 +1,10 @@
 import { Card, CardContent } from "@/components/ui/Card";
 import { Prose } from "@/components/ui/Prose";
+import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/config/site";
-import { Briefcase } from "lucide-react";
+import { Briefcase, Shield, ArrowRight } from "lucide-react";
 import { PatternOverlay } from "@/components/ui/DecorativeElements";
+import Link from "next/link";
 
 export const metadata = {
   title: "Services",
@@ -32,6 +34,31 @@ export default function ServicesPage() {
             <Prose className="whitespace-pre-line">
               {servicesContent}
             </Prose>
+          </CardContent>
+        </Card>
+
+        {/* AI Privacy & Compliance Support subsection */}
+        <Card variant="gradient-border" className="p-4 sm:p-6 lg:p-8 md:p-10 lg:p-12 mt-8">
+          <CardContent>
+            <div className="flex flex-col sm:flex-row sm:items-start gap-4 mb-6">
+              <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-primary-500/15 flex items-center justify-center">
+                <Shield className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+              </div>
+              <div>
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-50 mb-4">AI Privacy & Compliance Support</h2>
+                <Prose>
+                  <p>
+                    As part of Translyx&apos;s commitment to responsible technology adoption, we support healthcare organizations in implementing Privexa — an enterprise AI privacy platform that ensures patient data remains protected when AI tools are in use. We can assist with evaluation, deployment planning, and integration into existing clinical workflows.
+                  </p>
+                </Prose>
+              </div>
+            </div>
+            <Button asChild variant="gradient" size="lg">
+              <Link href="/ai-solutions" className="flex items-center gap-2">
+                Learn more about our AI solutions
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+            </Button>
           </CardContent>
         </Card>
       </div>

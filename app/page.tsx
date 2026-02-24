@@ -16,6 +16,9 @@ import {
   CheckCircle2,
   ArrowRight,
   Users,
+  Lock,
+  ShieldCheck,
+  Workflow,
 } from "lucide-react";
 import { SectionDivider } from "@/components/ui/DecorativeElements";
 
@@ -111,6 +114,77 @@ export default function HomePage() {
               </Button>
             </div>
           </Card>
+
+          {/* AI-Ready Healthcare section */}
+          <section id="ai-solutions" className="mt-16 sm:mt-20 max-w-5xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-gray-900 dark:text-gray-50">AI-Ready Healthcare — Without the Privacy Risk</h2>
+            <div className="space-y-6 mb-10">
+              <p className="text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300 text-justify hyphens-auto break-words">
+                Artificial intelligence is reshaping diagnostics, clinical workflows, and healthcare administration. But every AI tool your teams use raises the same question: what happens to patient data when it enters these systems?
+              </p>
+              <p className="text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300 text-justify hyphens-auto break-words">
+                Translyx has partnered with Privexa — a New Zealand-based enterprise AI privacy platform — to ensure that healthcare organizations can adopt AI confidently, without exposing sensitive patient information to external systems.
+              </p>
+              <p className="text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300 text-justify hyphens-auto break-words">
+                Privexa intercepts and replaces patient identifiers, clinical details, and sensitive fields before any data reaches an AI system or cloud platform. Raw patient data stays within your boundary. Your teams get the benefits of AI. Your compliance obligations stay intact.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+              <Card variant="gradient-border" className="p-4 sm:p-6 flex flex-col h-full">
+                <CardHeader className="flex-shrink-0">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-10 h-10 rounded-xl bg-primary-500/15 flex items-center justify-center">
+                      <Lock className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                    </div>
+                    <CardTitle className="text-lg font-bold text-gray-900 dark:text-gray-100">Patient Data Stays Local</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="flex-1 pt-0">
+                  <p className="text-sm sm:text-base leading-relaxed text-gray-700 dark:text-gray-300 text-justify hyphens-auto break-words">
+                    PII is replaced with safe tokens before reaching any LLM or cloud platform. Mappings stay within your infrastructure — never transmitted externally.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card variant="gradient-border" className="p-4 sm:p-6 flex flex-col h-full">
+                <CardHeader className="flex-shrink-0">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-10 h-10 rounded-xl bg-primary-500/15 flex items-center justify-center">
+                      <ShieldCheck className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                    </div>
+                    <CardTitle className="text-lg font-bold text-gray-900 dark:text-gray-100">NZ Privacy Act 2020 Aligned</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="flex-1 pt-0">
+                  <p className="text-sm sm:text-base leading-relaxed text-gray-700 dark:text-gray-300 text-justify hyphens-auto break-words">
+                    Designed for New Zealand&apos;s information privacy framework and international health data standards including HIPAA and GDPR.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card variant="gradient-border" className="p-4 sm:p-6 flex flex-col h-full">
+                <CardHeader className="flex-shrink-0">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-10 h-10 rounded-xl bg-primary-500/15 flex items-center justify-center">
+                      <Workflow className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                    </div>
+                    <CardTitle className="text-lg font-bold text-gray-900 dark:text-gray-100">Built for Clinical Workflows</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="flex-1 pt-0">
+                  <p className="text-sm sm:text-base leading-relaxed text-gray-700 dark:text-gray-300 text-justify hyphens-auto break-words">
+                    Works alongside your existing AI tools — no workflow disruption. Detection covers clinical identifiers, NHI numbers, patient names, dates of birth, and custom entity types specific to your organization.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+            <div className="flex justify-center">
+              <Button asChild variant="gradient" size="lg" className="shadow-[0_14px_35px_rgba(37,99,235,0.45)]">
+                <Link href="/ai-solutions" className="flex items-center justify-center gap-2">
+                  Learn about Privexa
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+          </section>
         </div>
       </section>
 
