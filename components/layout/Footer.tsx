@@ -81,6 +81,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/products/privexa-trace"
+                  className="text-sm text-slate-300 hover:text-white transition-colors"
+                >
+                  Privexa Trace
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/ai-solutions"
                   className="text-sm text-slate-300 hover:text-white transition-colors"
                 >
