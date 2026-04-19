@@ -12,7 +12,7 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "default", size = "default", isLoading, children, disabled, asChild, ...props }, ref) => {
     const buttonClasses = cn(
-      "inline-flex items-center justify-center rounded-full text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/40 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 relative overflow-hidden",
+      "inline-flex shrink-0 items-center justify-center gap-2 rounded-2xl text-sm font-semibold leading-none whitespace-nowrap text-center transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/40 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 relative overflow-hidden",
       {
         // Primary - Solid primary color with high contrast white text
         "bg-slate-900 text-white shadow-[0_12px_30px_rgba(15,23,42,0.28)] hover:bg-slate-800 hover:shadow-[0_18px_40px_rgba(15,23,42,0.35)]":
@@ -37,9 +37,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         "hover:bg-slate-100/70 dark:hover:bg-slate-900/60 text-slate-900 dark:text-slate-100": variant === "ghost",
       },
       {
-        "h-10 min-h-[44px] px-4 py-2": size === "default",
-        "h-9 min-h-[44px] px-3 text-xs": size === "sm",
-        "h-11 min-h-[44px] px-6 sm:px-8 text-base": size === "lg",
+        "min-h-[44px] px-4 py-2.5": size === "default",
+        "min-h-[44px] px-3.5 py-2 text-xs": size === "sm",
+        "min-h-[48px] px-5 py-3 text-base sm:px-6": size === "lg",
       },
       className
     );

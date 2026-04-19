@@ -11,7 +11,7 @@ const products = [
   {
     title: "Privexa Trace",
     href: "/products/privexa-trace",
-    label: "Flagship workflow product",
+    label: "Evidence workflow product",
     description:
       "Reviewer-gated synthetic control arm workflows with manual benchmark-arm comparison, lineage, visible limitations, and submission-oriented packaging.",
     icon: GitBranch,
@@ -42,7 +42,7 @@ export default function ProductsPage() {
         headline="Products that make clinical technology adoption more credible, structured, and usable"
         description="Translyx presents a product portfolio that spans protected AI workflows, reviewer-gated synthetic control evidence operations, and broader clinical technology introduction."
         badge={{ text: "Product Portfolio", icon: <Workflow className="w-4 h-4" /> }}
-        primaryCTA={{ label: "Explore Privexa Trace", href: "/products/privexa-trace" }}
+        primaryCTA={{ label: "Talk to Translyx", href: "/contact" }}
         secondaryCTA={{ label: "See AI Solutions", href: "/ai-solutions" }}
         decorativeShapes
         className="py-12 sm:py-14 md:py-16 lg:py-20"
@@ -104,13 +104,13 @@ export default function ProductsPage() {
               <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
                 <div>
                   <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-primary-700 dark:text-primary-300">
-                    Why Trace leads the public story
+                    Why Trace matters within the portfolio
                   </p>
                   <h2 className="mb-4 text-2xl font-bold text-slate-900 dark:text-slate-50 sm:text-3xl lg:text-4xl">
-                    Privexa Trace is the clearest expression of governed AI and evidence workflow discipline on the public site.
+                    Privexa Trace is an important Translyx product, while Translyx itself remains the broader company and platform story.
                   </h2>
                   <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300 sm:text-lg">
-                    It brings together reviewer sign-off before SCA generation, manual treatment and manual control benchmark arms, synthetic workflow outputs, visible limitations, and submission-oriented output. That combination makes it the strongest flagship product narrative for Translyx.
+                    Trace brings together reviewer sign-off before SCA generation, manual treatment and manual control benchmark arms, synthetic workflow outputs, visible limitations, and submission-oriented output. It should remain visible, but it should not collapse the wider Translyx portfolio into a single product identity.
                   </p>
                 </div>
                 <div className="grid gap-4 sm:grid-cols-2">
@@ -137,8 +137,8 @@ export default function ProductsPage() {
 
       <CTA
         title="Start with the product that best fits your workflow"
-        description="If your team is evaluating reviewer-gated synthetic control workflows, begin with Privexa Trace. If your primary need is protected AI privacy, start with Privexa."
-        primaryCTA={{ label: "Explore Privexa Trace", href: "/products/privexa-trace" }}
+        description="If your team is evaluating reviewer-gated synthetic control workflows, Privexa Trace may be the right fit. If your primary need is protected AI privacy, start with Privexa. If the need is broader, start with Translyx."
+        primaryCTA={{ label: "Talk to Translyx", href: "/contact" }}
         secondaryCTA={{ label: "See AI Solutions", href: "/ai-solutions" }}
       />
     </>

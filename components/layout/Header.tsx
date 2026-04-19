@@ -30,7 +30,7 @@ export function Header() {
           <div className="flex h-24 xl:h-28 flex-1 items-center justify-between px-6 xl:px-8">
             <div className="min-w-0">
               <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-                Flagship public product: Privexa Trace
+                Company, products, AI solutions, and clinical technology portfolio
               </p>
               <Navigation />
             </div>
@@ -45,7 +45,7 @@ export function Header() {
             <div className="flex min-w-0 flex-col justify-center">
               <Logo href="/" size="lg" className="h-auto w-28 sm:w-36" />
               <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-                Translyx • Privexa Trace
+                Translyx • Products and AI Solutions
               </p>
             </div>
 

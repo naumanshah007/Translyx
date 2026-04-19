@@ -142,10 +142,10 @@ export default function AISolutionsPage() {
       <Hero
         subheadline="Translyx AI Solutions"
         headline="Protected AI and governed evidence workflows for healthcare"
-        description="Translyx presents two complementary product stories for responsible healthcare AI: Privexa for protected data flows and Privexa Trace for reviewer-gated synthetic control and evidence workflows."
+        description="Translyx presents a broader AI solutions story in which Privexa protects data flows and Privexa Trace serves as one reviewer-gated evidence workflow product."
         badge={{ text: "AI & Privacy", icon: <Brain className="w-4 h-4" /> }}
-        primaryCTA={{ label: "Talk to Us", href: "/contact" }}
-        secondaryCTA={{ label: "Explore Privexa Trace", href: "/products/privexa-trace" }}
+        primaryCTA={{ label: "Talk to Translyx", href: "/contact" }}
+        secondaryCTA={{ label: "See all products", href: "/products" }}
         enhancedAurora
         decorativeShapes
         className="py-12 sm:py-14 md:py-16 lg:py-20"

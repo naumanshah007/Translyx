@@ -131,10 +131,10 @@ export default function PrivexaTracePage() {
       <Hero
         subheadline="Privexa Trace"
         headline="reviewer-gated synthetic control workflows for serious evidence teams"
-        description="Privexa Trace is a public-facing Translyx product for biotech, pharma, CRO, and clinical-trial-office stakeholders who need governed synthetic control arm workflows, visible review gates, and submission-oriented outputs."
+        description="Privexa Trace is one Translyx product for biotech, pharma, CRO, and clinical-trial-office stakeholders who need governed synthetic control arm workflows, visible review gates, and submission-oriented outputs."
         badge={{ text: "Privexa Trace", icon: <Workflow className="w-4 h-4" /> }}
-        primaryCTA={{ label: "Talk to Us", href: "/contact" }}
-        secondaryCTA={{ label: "See AI Solutions", href: "/ai-solutions" }}
+        primaryCTA={{ label: "See All Products", href: "/products" }}
+        secondaryCTA={{ label: "Talk to Translyx", href: "/contact" }}
         decorativeShapes
         className="py-12 sm:py-14 md:py-16 lg:py-20"
       />
@@ -148,18 +148,18 @@ export default function PrivexaTracePage() {
             <Card variant="gradient-border" cornerAccent className="p-5 sm:p-7 lg:p-8">
               <CardHeader className="p-0">
                 <CardTitle className="text-2xl sm:text-3xl lg:text-4xl">
-                  A governed workflow platform, not blind automation
+                  A governed workflow platform within the wider Translyx portfolio
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-0 pt-5 space-y-4 text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 <p>
-                  Translyx positions Privexa Trace as a primary product for teams working through synthetic control feasibility, cohort design, diagnostics review, and submission-oriented packaging.
+                  Privexa Trace is one Translyx product for teams working through synthetic control feasibility, cohort design, diagnostics review, and submission-oriented packaging.
                 </p>
                 <p>
                   The product is designed to support reviewed workflow discipline. It does not ask users to trust a black box. Instead, it structures the handoff from question definition to reviewer-gated output with traceability, lineage, and visible limitations intact.
                 </p>
                 <p>
-                  The intended audience includes biotech, pharma, CRO, and clinical-trial-office stakeholders who need evidence workflows that can be reviewed, defended, and packaged coherently.
+                  The intended audience includes biotech, pharma, CRO, and clinical-trial-office stakeholders who need evidence workflows that can be reviewed, defended, and packaged coherently, while still seeing Trace in the context of the broader Translyx offering.
                 </p>
               </CardContent>
             </Card>
@@ -172,7 +172,7 @@ export default function PrivexaTracePage() {
                 <div className="rounded-2xl border border-slate-200 dark:border-slate-700 p-4 bg-white/80 dark:bg-slate-950/40">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-700 dark:text-primary-300">Translyx</p>
                   <p className="mt-2 text-sm sm:text-base text-gray-700 dark:text-gray-300">
-                    Company and platform sponsor focused on clinically credible, enterprise-ready healthcare technology.
+                    Company and broader sponsor focused on clinically credible, enterprise-ready healthcare technology, AI solutions, and clinical product introduction.
                   </p>
                 </div>
                 <div className="rounded-2xl border border-slate-200 dark:border-slate-700 p-4 bg-white/80 dark:bg-slate-950/40">
@@ -385,14 +385,14 @@ export default function PrivexaTracePage() {
                     Privexa Trace should be understood as a serious workflow platform for reviewed evidence work. It does not claim blind automation, regulatory endorsement, or scientific maturity beyond the evidence available. Its strength is disciplined structure, visible governance, and coherent packaging.
                   </p>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button asChild variant="gradient" size="lg">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                  <Button asChild variant="gradient" size="lg" className="sm:min-w-[220px]">
                     <Link href="/contact" className="flex items-center justify-center gap-2">
-                      Discuss Privexa Trace
+                      Talk to Translyx
                       <ArrowRight className="h-5 w-5" />
                     </Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg">
+                  <Button asChild variant="outline" size="lg" className="sm:min-w-[190px]">
                     <Link href="/ai-solutions" className="flex items-center justify-center gap-2">
                       View AI Solutions
                     </Link>
@@ -405,10 +405,10 @@ export default function PrivexaTracePage() {
       </section>
 
       <CTA
-        title="See where Privexa Trace fits in your evidence workflow"
-        description="Translyx can walk your team through reviewer-gated synthetic control workflows, benchmark-arm comparison, and submission-oriented packaging without overstating what the product is designed to do."
-        primaryCTA={{ label: "Talk to Us", href: "/contact" }}
-        secondaryCTA={{ label: "See AI Solutions", href: "/ai-solutions" }}
+        title="See where Privexa Trace fits in the wider Translyx offering"
+        description="Translyx can walk your team through reviewer-gated synthetic control workflows, protected AI privacy, and broader clinical technology decisions without collapsing the portfolio into a single product."
+        primaryCTA={{ label: "Talk to Translyx", href: "/contact" }}
+        secondaryCTA={{ label: "See all products", href: "/products" }}
       />
     </>
   );

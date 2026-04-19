@@ -45,13 +45,13 @@ export function CTA({
             )}>{description}</p>
           )}
           {(primaryCTA || secondaryCTA) && (
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               {primaryCTA && (
                 <Button
                   asChild
                   variant="secondary"
                   size="lg"
-                  className="bg-white text-slate-900 hover:bg-white font-bold shadow-[0_18px_40px_rgba(15,23,42,0.4)]"
+                  className="w-full max-w-sm bg-white text-slate-900 hover:bg-white font-bold shadow-[0_18px_40px_rgba(15,23,42,0.4)] sm:w-auto"
                 >
                   <Link href={primaryCTA.href}>
                     {primaryCTA.label}
@@ -65,7 +65,7 @@ export function CTA({
                     asChild
                     variant="outline"
                     size="lg"
-                    className="border border-white/50 text-white hover:bg-white/10 font-semibold"
+                    className="w-full max-w-sm border border-white/50 text-white hover:bg-white/10 font-semibold sm:w-auto"
                   >
                     <a href={secondaryCTA.href} target="_blank" rel="noopener noreferrer" aria-label={`${secondaryCTA.label} (opens in new tab)`}>
                       {secondaryCTA.label}
@@ -76,7 +76,7 @@ export function CTA({
                     asChild
                     variant="outline"
                     size="lg"
-                    className="border border-white/50 text-white hover:bg-white/10 font-semibold"
+                    className="w-full max-w-sm border border-white/50 text-white hover:bg-white/10 font-semibold sm:w-auto"
                   >
                     <Link href={secondaryCTA.href}>{secondaryCTA.label}</Link>
                   </Button>

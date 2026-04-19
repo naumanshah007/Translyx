@@ -65,9 +65,9 @@ const productCards = [
     title: "Privexa Trace",
     body: "Reviewer-gated synthetic control arm workflows for biotech, pharma, CRO, and clinical-trial-office stakeholders.",
     href: "/products/privexa-trace",
-    cta: "Explore Trace",
+    cta: "View Trace",
     icon: GitBranch,
-    eyebrow: "Flagship product",
+    eyebrow: "Evidence workflow product",
   },
   {
     title: "Privexa",
@@ -123,9 +123,9 @@ export default function HomePage() {
       <Hero
         subheadline="Translyx"
         headline="clinical technology and governed AI workflows, presented with enterprise discipline"
-        description="Translyx brings product-led clinical technology to market, including Privexa Trace for reviewer-gated synthetic control workflows and Privexa for protected AI privacy operations."
-        badge={{ text: "Translyx Products", icon: <ShieldCheck className="w-4 h-4" /> }}
-        primaryCTA={{ label: "Explore Privexa Trace", href: "/products/privexa-trace" }}
+        description="Translyx is the broader company and platform sponsor behind healthcare technology offerings that include Privexa Trace, Privexa protected AI workflows, and a wider clinical product portfolio."
+        badge={{ text: "Translyx Portfolio", icon: <ShieldCheck className="w-4 h-4" /> }}
+        primaryCTA={{ label: "See Products", href: "/products" }}
         secondaryCTA={{ label: "See AI Solutions", href: "/ai-solutions" }}
       />
 
@@ -136,13 +136,13 @@ export default function HomePage() {
           <div className="mx-auto max-w-6xl">
             <div className="max-w-3xl mb-10">
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-primary-700 dark:text-primary-300">
-                Product-led homepage
+                Company and portfolio
               </p>
               <h2 className="mb-4 text-3xl font-bold text-slate-900 dark:text-slate-50 sm:text-4xl lg:text-5xl">
-                Translyx now presents its product portfolio more directly, with Privexa Trace at the center.
+                Translyx supports a wider healthcare technology mission, with products that serve different parts of the operating model.
               </h2>
               <p className="text-base leading-relaxed text-slate-700 dark:text-slate-300 sm:text-lg">
-                The public story is intentionally structured: Translyx is the company and product sponsor, Privexa protects AI data flows, and Privexa Trace governs synthetic control and evidence workflows with reviewer sign-off, traceability, and submission-oriented packaging.
+                The public story should stay legible: Translyx is the company and sponsor, Privexa protects AI data flows, Privexa Trace structures reviewer-gated evidence workflows, and the broader pipeline reflects a wider clinical technology agenda.
               </p>
             </div>
 
@@ -184,27 +184,27 @@ export default function HomePage() {
             <Card variant="gradient-border" cornerAccent className="p-5 sm:p-7 lg:p-8">
               <CardHeader className="p-0">
                 <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-primary-700 dark:text-primary-300">
-                  Privexa Trace
+                  Featured product
                 </p>
                 <CardTitle className="text-3xl sm:text-4xl">
-                  A governed workflow platform, not blind automation
+                  Privexa Trace is one important Translyx product, not the whole Translyx story
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 p-0 pt-5 text-base leading-relaxed text-slate-700 dark:text-slate-300 sm:text-lg">
                 <p>
-                  Privexa Trace is presented as a serious Translyx product for teams working through synthetic control feasibility, cohort design, reviewed diagnostics, and submission-oriented evidence packaging.
+                  Privexa Trace is a serious Translyx product for teams working through synthetic control feasibility, cohort design, reviewed diagnostics, and submission-oriented evidence packaging.
                 </p>
                 <p>
-                  The product is strongest when framed honestly: reviewer sign-off sits before SCA generation, benchmark arms remain visible, lineage matters, and limitations are carried forward rather than hidden.
+                  It sits within a broader Translyx portfolio that also includes protected AI privacy workflows and wider clinical technology offerings. That distinction matters for how the company is understood.
                 </p>
                 <div className="mt-6 flex flex-col gap-4 sm:flex-row">
-                  <Button asChild variant="gradient" size="lg">
+                  <Button asChild variant="gradient" size="lg" className="sm:min-w-[220px]">
                     <Link href="/products/privexa-trace" className="flex items-center justify-center gap-2">
-                      Explore Privexa Trace
+                      View Privexa Trace
                       <ArrowRight className="h-5 w-5" />
                     </Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg">
+                  <Button asChild variant="outline" size="lg" className="sm:min-w-[180px]">
                     <Link href="/products" className="flex items-center justify-center gap-2">
                       See all products
                     </Link>
@@ -370,9 +370,9 @@ export default function HomePage() {
       </section>
 
       <CTA
-        title="Discuss Privexa Trace, Privexa, or the wider Translyx product portfolio"
-        description="Translyx can help your team evaluate reviewer-gated synthetic control workflows, protected AI privacy operations, and broader clinical technology adoption with a more disciplined product view."
-        primaryCTA={{ label: "Discuss Privexa Trace", href: "/contact" }}
+        title="Discuss the wider Translyx portfolio"
+        description="Translyx can help your team evaluate reviewer-gated evidence workflows, protected AI privacy operations, and broader clinical technology adoption with a disciplined product view."
+        primaryCTA={{ label: "Talk to Translyx", href: "/contact" }}
         secondaryCTA={{ label: "See all products", href: "/products" }}
       />
     </>
