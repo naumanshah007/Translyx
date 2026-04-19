@@ -78,36 +78,52 @@ const audienceSegments = [
 
 const featureCards = [
   {
-    id: "field-protection",
-    title: "Field-level protection",
-    body: "Every sensitive field in every clinical document, message, or record is identified and replaced before transmission. Detection covers standard clinical identifiers and can be trained on entity types specific to your organisation's data.",
-    outcome: "Sensitive data never reaches AI systems.",
+    id: "llm-gateway",
+    title: "Secure LLM Gateway",
+    body: "PII is intercepted and replaced with tokens before any message reaches an LLM. Responses are automatically restored with original context. AI workflows operate normally — patient data never leaves your environment.",
+    outcome: "Real-time PII detection, token replacement, automatic response restoration.",
     icon: Lock,
     accentColor: "navy" as const,
   },
   {
-    id: "local-vault",
-    title: "Local vault — nothing leaves",
-    body: "Token mappings are stored within your infrastructure. Privexa does not transmit or store patient data externally. The privacy guarantee is architectural, not just contractual.",
-    outcome: "Zero external data exposure by design.",
-    icon: Database,
+    id: "cloud-shield",
+    title: "Cloud Shield",
+    body: "Field-level protection for cloud data pipelines. Sensitive fields are tokenised before reaching AWS, Azure, GCP, Snowflake, or Oracle. The local mapping vault is reversible only inside your perimeter — inaccessible to any external system.",
+    outcome: "Raw PII never reaches your cloud platforms.",
+    icon: Cloud,
     accentColor: "cyan" as const,
   },
   {
-    id: "cloud-shield",
-    title: "Cloud pipeline protection",
-    body: "For organisations moving clinical data to cloud platforms — AWS, Azure, GCP, or data warehouses — Cloud Shield enforces the same field-level boundary for data pipelines. Sensitive fields never reach cloud storage in their original form.",
-    outcome: "Same protection boundary across cloud and on-premise.",
-    icon: Cloud,
+    id: "privexa-scribe",
+    title: "Privexa Scribe",
+    body: "Clinical consultation recording with full PHI protection. Record the full session and transcribe on stop, or enable live relay for in-session visibility. Privexa de-identifies PHI, runs the note pipeline, restores identities locally, and returns a clinician-ready draft with review controls.",
+    outcome: "SOAP notes, referrals, discharge summaries, ICD support — PHI stays inside your boundary.",
+    icon: FileText,
     accentColor: "slate" as const,
+  },
+  {
+    id: "doc-intelligence",
+    title: "Document Intelligence",
+    body: "Analyse contracts, clinical records, and reports with AI — without exposing a single name, number, or identifier to any external model. Structured summaries, compliance scans, risk assessments, and entity mapping, all privacy-first.",
+    outcome: "HIPAA, SOC 2, GDPR compliance scanning and risk assessment on sensitive documents.",
+    icon: Database,
+    accentColor: "slate" as const,
+  },
+  {
+    id: "governance",
+    title: "Governance & Compliance",
+    body: "HIPAA and GDPR compliance monitoring, benchmark testing, data lifecycle controls, and immutable audit trails — built into the platform architecture, not added as optional modules.",
+    outcome: "Audit trails, access controls, and data handling designed for SOC 2 alignment.",
+    icon: FileCheck,
+    accentColor: "navy" as const,
   },
 ];
 
 const complianceItems = [
-  { label: "NZ Privacy Act 2020", detail: "Health information privacy principles", icon: Scale },
-  { label: "HIPAA alignment", detail: "For organisations with international partners", icon: Globe },
-  { label: "GDPR readiness", detail: "For research and cross-border data workflows", icon: Shield },
-  { label: "Immutable audit trails", detail: "Tamper-evident records for compliance reporting", icon: FileCheck },
+  { label: "HIPAA-aligned", detail: "Patient data never reaches external AI systems. PHI stays inside your boundary.", icon: Globe },
+  { label: "GDPR-ready", detail: "Personal data minimisation enforced at the API layer. Consent-aware processing.", icon: Shield },
+  { label: "NZ Privacy Act 2020", detail: "Designed to meet NZ information privacy principles for AI-assisted workflows.", icon: Scale },
+  { label: "SOC 2 oriented", detail: "Audit trails, access controls, and data handling designed for SOC 2 alignment.", icon: FileCheck },
 ];
 
 const traceSignals = [
@@ -324,21 +340,42 @@ export default function AISolutionsPage() {
         <section id="privexa" className="scroll-mt-20 py-12 sm:py-14 md:py-16 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-content mx-auto">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="flex-shrink-0 flex h-11 w-11 items-center justify-center rounded-xl bg-[#22D3EE]/12">
-                  <ShieldCheck className="w-5 h-5 text-[#0891B2]" />
+              <div className="flex items-start justify-between gap-4 mb-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 flex h-11 w-11 items-center justify-center rounded-xl bg-[#22D3EE]/12">
+                    <ShieldCheck className="w-5 h-5 text-[#0891B2]" />
+                  </div>
+                  <div>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">Privexa — Enterprise AI privacy platform</h2>
+                    <p className="mt-1 text-sm text-slate-500">Live at <a href="https://app.privexa.co" target="_blank" rel="noopener noreferrer" className="text-[#0891B2] hover:underline">app.privexa.co</a></p>
+                  </div>
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">Privexa — AI data protection for healthcare</h2>
+                <a
+                  href="https://app.privexa.co"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 inline-flex items-center gap-1.5 rounded-lg border border-[#0891B2]/30 bg-[#22D3EE]/8 px-4 py-2 text-sm font-semibold text-[#0891B2] hover:bg-[#22D3EE]/14 transition-colors"
+                >
+                  Access Privexa
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
               </div>
 
               <Card className="p-5 sm:p-6 lg:p-8 mb-6">
                 <CardContent className="pt-0 space-y-4 text-base leading-relaxed text-slate-700">
                   <p>
-                    Translyx has partnered with Privexa, a New Zealand enterprise AI privacy platform, to provide healthcare organisations with the protection layer that makes responsible AI adoption possible.
+                    Privexa is a live enterprise AI privacy platform — available now at <a href="https://app.privexa.co" target="_blank" rel="noopener noreferrer" className="text-[#0891B2] font-semibold hover:underline underline-offset-2">app.privexa.co</a>. It sits between your data and the AI systems your teams depend on, with five integrated protection layers covering LLM workflows, cloud pipelines, clinical documentation, and compliance.
                   </p>
                   <p>
-                    Before any data reaches an AI system, Privexa detects and replaces sensitive fields — patient names, NHI numbers, dates of birth, clinical identifiers, and custom entity types — with safe placeholders. AI systems work with the placeholders. Original patient data never leaves your environment. When AI responses return, Privexa restores original context seamlessly.
+                    Before any data reaches an AI system, Privexa detects and replaces sensitive fields — patient names, NHI numbers, dates of birth, clinical identifiers, and custom entity types — with safe tokens. AI systems operate on the tokens. Original data never leaves your environment. When AI responses return, Privexa restores original context seamlessly and invisibly.
                   </p>
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    {["HIPAA-aligned", "GDPR-ready", "NZ Privacy Act 2020", "SOC 2 oriented", "Zero cloud exposure"].map((badge) => (
+                      <span key={badge} className="inline-flex items-center rounded-full border border-slate-200/80 bg-[#F7F5F1] px-3 py-1 text-xs font-semibold text-slate-600">
+                        {badge}
+                      </span>
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
 
@@ -364,7 +401,7 @@ export default function AISolutionsPage() {
                 )}
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {featureCards.map(({ id, title, body, outcome, icon: Icon }) => (
                   <Card key={id} className="p-4 sm:p-5 flex flex-col h-full">
                     <CardHeader className="flex-shrink-0 p-0 mb-3">

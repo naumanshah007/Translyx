@@ -9,12 +9,12 @@ export const siteConfig = {
   // Basic Information
   name: "Translyx",
   companyName: "Translyx Limited",
-  companyTagline: "Clinical technology and governed AI workflows",
+  companyTagline: "Clinical technology and governed AI for New Zealand healthcare",
   companyDescription:
-    "Translyx Limited is a New Zealand healthcare technology company presenting Privexa Trace, reviewer-gated synthetic control arm workflows, Privexa protected AI privacy solutions, and broader clinical product offerings.",
-  tagline: "Clinical technology and governed AI workflows",
+    "Translyx Limited is an Auckland-based clinical technology company. Products include Privexa — a live enterprise AI privacy platform — Privexa Trace for reviewer-gated synthetic control arm workflows, and a broader diagnostic technology pipeline.",
+  tagline: "Clinical technology and governed AI for New Zealand healthcare",
   description:
-    "Translyx Limited presents Privexa Trace, reviewer-gated synthetic control arm workflows, Privexa protected AI solutions, and broader clinical technology products for healthcare organizations.",
+    "Translyx Limited brings advanced diagnostic technologies and governed AI solutions to New Zealand and Oceania. Products include Privexa (live at app.privexa.co), Privexa Trace, and a broader clinical pipeline.",
   
   // Domain & URLs
   domain: "translyx.co",

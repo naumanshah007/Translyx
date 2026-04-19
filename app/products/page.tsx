@@ -48,15 +48,16 @@ const products = [
   },
   {
     title: "Privexa",
-    href: "/ai-solutions#privexa",
+    href: "https://app.privexa.co",
     label: "Protection layer",
     status: "Available",
     statusColor: "emerald",
     description:
-      "Field-level AI data protection for healthcare workflows. Sensitive health data never leaves your environment in identifiable form.",
-    cta: "See AI Solutions",
+      "Enterprise AI privacy platform. Five protection layers — Secure LLM Gateway, Cloud Shield, Privexa Scribe, Document Intelligence, and Governance. Live at app.privexa.co.",
+    cta: "Access Privexa",
     icon: Lock,
     featured: false,
+    external: true,
   },
   {
     title: "Clinical & Diagnostic Pipeline",
@@ -117,7 +118,7 @@ export default function ProductsPage() {
             </div>
 
             <div className="grid gap-5 lg:grid-cols-3">
-              {products.map(({ title, href, label, status, statusColor, description, cta, icon: Icon, featured }) => {
+              {products.map(({ title, href, label, status, statusColor, description, cta, icon: Icon, featured, external }: typeof products[number] & { external?: boolean }) => {
                 const statusCls =
                   statusColor === "emerald"
                     ? "bg-emerald-50 text-emerald-700 border-emerald-200"
@@ -148,10 +149,17 @@ export default function ProductsPage() {
                       </p>
                       <div className="mt-6">
                         <Button asChild variant={featured ? "secondary" : "secondary"} size="lg" className={`w-full ${featured ? "bg-white text-[#0F1C3F] border-0 hover:bg-[#F7F5F1]" : ""}`}>
-                          <Link href={href} className="flex items-center justify-center gap-2">
-                            {cta}
-                            <ArrowRight className="h-4 w-4" />
-                          </Link>
+                          {external ? (
+                            <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                              {cta}
+                              <ArrowRight className="h-4 w-4" />
+                            </a>
+                          ) : (
+                            <Link href={href} className="flex items-center justify-center gap-2">
+                              {cta}
+                              <ArrowRight className="h-4 w-4" />
+                            </Link>
+                          )}
                         </Button>
                       </div>
                     </CardContent>
