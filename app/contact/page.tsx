@@ -1,24 +1,74 @@
+import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { Mail, MapPin, Linkedin } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { PatternOverlay } from "@/components/ui/DecorativeElements";
 
-export const metadata = {
-  title: "Contact Us",
-  description: `Get in touch with ${siteConfig.companyName}. Reach us at ${siteConfig.company.email}.`,
-  keywords: ["contact", "Translyx Limited contact", "healthcare technology consultation", "clinical technology contact"],
+const contactDescription = `Contact ${siteConfig.companyName} about Privexa Trace, AI solutions, and healthcare technology partnerships in New Zealand.`;
+
+export const metadata: Metadata = {
+  title: "Contact Translyx",
+  description: contactDescription,
+  keywords: [
+    "Translyx contact",
+    "Translyx Limited contact",
+    "Privexa Trace contact",
+    "healthcare technology consultation",
+    "clinical technology contact",
+  ],
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact Translyx | Privexa Trace and AI Solutions",
+    description: contactDescription,
+    url: `${siteConfig.url}/contact`,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.seo.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Contact Translyx",
+      },
+    ],
+  },
 };
 
 export default function ContactPage() {
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contact Translyx",
+    url: `${siteConfig.url}/contact`,
+    description: contactDescription,
+    mainEntity: {
+      "@type": "Organization",
+      name: siteConfig.companyName,
+      email: siteConfig.company.email,
+      url: siteConfig.url,
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        email: siteConfig.company.email,
+        areaServed: ["NZ", "AU", "Oceania"],
+      },
+    },
+  };
+
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 md:py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
       <div className="max-w-4xl mx-auto relative">
         <PatternOverlay pattern="topo" opacity={0.04} className="text-primary-500/30" />
         <div className="text-center mb-12 sm:mb-16 relative">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full mb-4 sm:mb-6" />
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-gray-50 mt-6 sm:mt-8">Get in Touch</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-gray-50 mt-6 sm:mt-8">Contact Translyx</h1>
           <p className="text-lg text-gray-700 dark:text-gray-300">
-            We&apos;d love to hear from you. Reach out to us and we&apos;ll respond as soon as possible.
+            Reach out to Translyx about Privexa Trace, AI solutions, and healthcare technology partnerships.
           </p>
         </div>
 

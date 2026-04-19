@@ -23,7 +23,7 @@ export function Header() {
           <div className="flex h-24 xl:h-28 w-[20rem] xl:w-[22rem] flex-col items-start justify-center border-r border-slate-200/70 bg-white/60 pl-6 dark:border-slate-800/70 dark:bg-slate-900/50 xl:pl-8">
             <Logo href="/" size="lg" className="h-auto w-36 xl:w-44" />
             <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-              Clinical Technology and AI Workflows
+              Translyx Limited • Clinical Technology and AI Workflows
             </p>
           </div>
 
@@ -45,7 +45,7 @@ export function Header() {
             <div className="flex min-w-0 flex-col justify-center">
               <Logo href="/" size="lg" className="h-auto w-28 sm:w-36" />
               <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-                Privexa Trace on Translyx
+                Translyx • Privexa Trace
               </p>
             </div>
 

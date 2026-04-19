@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { Settings } from "lucide-react";
 import { PatternOverlay } from "@/components/ui/DecorativeElements";
@@ -5,10 +6,35 @@ import { pipelineCategories } from "@/config/pipeline";
 import { CTA } from "@/components/sections/CTA";
 import { PipelineCategoryCard } from "@/components/ui/PipelineCategoryCard";
 
-export const metadata = {
-  title: "Product Pipeline",
-  description: `${siteConfig.companyName} supports the introduction of innovative diagnostic and clinical products to New Zealand healthcare providers.`,
-  keywords: ["healthcare technology", "diagnostics", "clinical products", "product pipeline", "New Zealand healthcare"],
+const pipelineDescription = `${siteConfig.companyName} product pipeline covers diagnostic and clinical technology areas for New Zealand healthcare providers, alongside Privexa Trace and AI solutions.`;
+
+export const metadata: Metadata = {
+  title: "Translyx Product Pipeline",
+  description: pipelineDescription,
+  keywords: [
+    "Translyx product pipeline",
+    "Translyx diagnostics",
+    "clinical products",
+    "diagnostic technology",
+    "New Zealand healthcare",
+  ],
+  alternates: {
+    canonical: "/product-pipeline",
+  },
+  openGraph: {
+    title: "Translyx Product Pipeline | Diagnostic and Clinical Technology",
+    description: pipelineDescription,
+    url: `${siteConfig.url}/product-pipeline`,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.seo.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Translyx Product Pipeline",
+      },
+    ],
+  },
 };
 
 export default function ProductPipelinePage() {
@@ -23,7 +49,7 @@ export default function ProductPipelinePage() {
           <div className="inline-flex items-center gap-2 px-2 py-0.5 sm:px-3 sm:py-1 bg-primary-100 dark:bg-primary-900/30 rounded-full mb-3 sm:mb-4 mt-6 sm:mt-8">
             <Settings className="w-3 h-3 sm:w-4 sm:h-4 text-primary-600 dark:text-primary-400" />
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-gray-50">Product Pipeline</h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-gray-50">Translyx Product Pipeline</h1>
           <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             {siteConfig.companyName} supports the introduction of innovative diagnostic and clinical products to New Zealand
             healthcare providers. The company works with healthcare organisations, laboratories, and academic partners to

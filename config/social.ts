@@ -14,7 +14,7 @@ export interface SocialLink {
 export const socialLinks: SocialLink[] = [
   {
     name: "LinkedIn",
-    href: "",
+    href: "https://www.linkedin.com/company/translyx/",
     icon: "Linkedin",
   },
   {
@@ -23,4 +23,3 @@ export const socialLinks: SocialLink[] = [
     icon: "Mail",
   },
 ];
-

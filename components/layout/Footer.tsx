@@ -21,7 +21,9 @@ export function Footer() {
               size="lg"
               className="rounded-2xl bg-white/10 p-2 shadow-[0_10px_25px_rgba(15,23,42,0.35)]"
             />
-            <p className="mt-4 text-sm text-slate-300">{siteConfig.description}</p>
+            <p className="mt-4 text-sm text-slate-300">
+              {siteConfig.companyName} presents Privexa Trace, protected AI solutions, and broader clinical technology products from New Zealand.
+            </p>
             <div className="mt-6 flex space-x-4">
               {socialLinks
                 .filter((link) => link.href)

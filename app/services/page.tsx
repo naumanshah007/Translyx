@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Card, CardContent } from "@/components/ui/Card";
 import { Prose } from "@/components/ui/Prose";
 import { Button } from "@/components/ui/Button";
@@ -6,10 +7,35 @@ import { Briefcase, Shield, ArrowRight } from "lucide-react";
 import { PatternOverlay } from "@/components/ui/DecorativeElements";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Services",
-  description: `Expert professional services and consultancy tailored to the healthcare and diagnostics sector from ${siteConfig.companyName}.`,
-  keywords: ["healthcare consultancy", "diagnostics", "professional services", "biomedical sciences", "digital pathology", "AI", "molecular diagnostics"],
+const servicesDescription = `Translyx services support healthcare technology adoption, diagnostics, AI privacy planning, and clinical implementation in New Zealand.`;
+
+export const metadata: Metadata = {
+  title: "Translyx Services",
+  description: servicesDescription,
+  keywords: [
+    "Translyx services",
+    "healthcare consultancy",
+    "diagnostics services",
+    "AI privacy support",
+    "clinical technology implementation",
+  ],
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: {
+    title: "Translyx Services | Healthcare Technology and Diagnostics Support",
+    description: servicesDescription,
+    url: `${siteConfig.url}/services`,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.seo.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Translyx Services",
+      },
+    ],
+  },
 };
 
 /* Edit Services page content here */
@@ -26,7 +52,7 @@ export default function ServicesPage() {
           <div className="inline-flex items-center gap-2 px-2 py-0.5 sm:px-3 sm:py-1 bg-primary-100 dark:bg-primary-900/30 rounded-full mb-3 sm:mb-4 mt-6 sm:mt-8">
             <Briefcase className="w-3 h-3 sm:w-4 sm:h-4 text-primary-600 dark:text-primary-400" />
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-gray-50">Services</h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-gray-50">Translyx Services</h1>
         </div>
 
         <Card variant="gradient-border" cornerAccent className="p-4 sm:p-6 lg:p-8 md:p-10 lg:p-12">

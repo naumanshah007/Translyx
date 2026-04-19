@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Prose } from "@/components/ui/Prose";
 import { siteConfig } from "@/config/site";
@@ -5,10 +6,35 @@ import { Shield, Users, MapPin } from "lucide-react";
 import { PatternOverlay } from "@/components/ui/DecorativeElements";
 import Link from "next/link";
 
-export const metadata = {
-  title: "About Us",
-  description: `Learn more about ${siteConfig.companyName} and our mission to support healthcare technology adoption in New Zealand.`,
-  keywords: ["Translyx Limited", "about", "healthcare technology", "clinical technology", "New Zealand healthcare"],
+const aboutDescription = `Learn about ${siteConfig.companyName}, the New Zealand healthcare technology company behind Privexa Trace, AI solutions, and broader clinical product introduction.`;
+
+export const metadata: Metadata = {
+  title: "About Translyx",
+  description: aboutDescription,
+  keywords: [
+    "Translyx",
+    "Translyx Limited",
+    "about Translyx",
+    "Privexa Trace",
+    "New Zealand healthcare technology company",
+  ],
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About Translyx | Healthcare Technology and AI Workflows",
+    description: aboutDescription,
+    url: `${siteConfig.url}/about`,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.seo.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "About Translyx",
+      },
+    ],
+  },
 };
 
 /* Edit Leadership content and image placeholder here */
@@ -32,8 +58,25 @@ const sectionAnchors = [
 ];
 
 export default function AboutPage() {
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About Translyx",
+    url: `${siteConfig.url}/about`,
+    description: aboutDescription,
+    mainEntity: {
+      "@type": "Organization",
+      name: siteConfig.companyName,
+      url: siteConfig.url,
+    },
+  };
+
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+      />
       <div className="max-w-6xl mx-auto relative">
         <PatternOverlay pattern="topo" opacity={0.04} className="text-primary-500/30" />
 
@@ -43,7 +86,7 @@ export default function AboutPage() {
           <div className="inline-flex items-center gap-2 px-2 py-0.5 sm:px-3 sm:py-1 bg-primary-100 dark:bg-primary-900/30 rounded-full mb-3 sm:mb-4 mt-6 sm:mt-8">
             <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-primary-600 dark:text-primary-400" />
           </div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-gray-50">About Us</h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-gray-50">About Translyx</h1>
 
           {/* In-page navigation */}
           <nav className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-8" aria-label="Page sections">
