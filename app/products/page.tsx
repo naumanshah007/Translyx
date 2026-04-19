@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/config/site";
 
 const pageDescription =
-  "Translyx product portfolio — Privexa Trace reviewer-gated synthetic control workflows, Privexa AI data protection, and a broader clinical and diagnostic technology pipeline for healthcare organisations.";
+  "Translyx product portfolio — Privexa Trace for reviewer-gated synthetic control arm workflows, Privexa for field-level clinical AI data protection, and a broader diagnostic technology pipeline spanning AMR, sepsis, POCT, and precision medicine.";
 
 export const metadata: Metadata = {
   title: "Products — Privexa Trace, Privexa & Clinical Pipeline | Translyx",
@@ -98,8 +98,8 @@ export default function ProductsPage() {
 
       <Hero
         badge={{ text: "Translyx Products", icon: <Workflow className="w-3.5 h-3.5" /> }}
-        headline="Products that make clinical AI adoption credible"
-        description="Translyx presents Privexa Trace for governed evidence workflows, Privexa for AI data protection, and a wider diagnostic pipeline — each solving a distinct part of the clinical AI operating model."
+        headline="Three products. One governed clinical AI stack."
+        description="Privexa Trace governs reviewer-gated synthetic control arm workflows. Privexa protects clinical data before it reaches any AI system. The diagnostic pipeline extends Translyx's reach across AMR, sepsis, POCT, and precision medicine."
         primaryCTA={{ label: "See Privexa Trace", href: "/products/privexa-trace" }}
         secondaryCTA={{ label: "Talk to Translyx", href: "/contact" }}
         className="py-16 sm:py-20 md:py-24 lg:py-32"
@@ -167,8 +167,8 @@ export default function ProductsPage() {
       <ProductArchitecture />
 
       <CTA
-        title="Start with the product that best fits your workflow"
-        description="If your team needs reviewer-gated synthetic control workflows, start with Privexa Trace. If the primary need is AI data protection, start with Privexa. Translyx can help you evaluate where each fits."
+        title="Speak with Translyx about your clinical AI priorities"
+        description="Request a walkthrough to see Privexa Trace's synthetic control workflow, Privexa's data protection architecture, and the broader Translyx diagnostic portfolio in context."
         primaryCTA={{ label: "Request walkthrough", href: "/contact" }}
         secondaryCTA={{ label: "See AI Solutions", href: "/ai-solutions" }}
       />

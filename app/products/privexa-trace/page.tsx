@@ -214,15 +214,15 @@ export default function PrivexaTracePage() {
             <Card className="p-5 sm:p-7 lg:p-8" cornerAccent>
               <CardHeader className="p-0">
                 <CardTitle className="text-2xl sm:text-3xl text-[#0F1C3F]">
-                  A governed workflow platform within the wider Translyx portfolio
+                  Built for teams that require a defensible audit trail
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-0 pt-5 space-y-4 text-base sm:text-lg leading-relaxed text-slate-700">
                 <p>
-                  Privexa Trace is one Translyx product for teams working through synthetic control feasibility, cohort design, diagnostics review, and submission-oriented packaging.
+                  Privexa Trace covers the complete synthetic control arm workflow — from workup definition to reviewed output — with mandatory reviewer sign-off at SCA generation, manual benchmark comparison throughout, and submission-oriented packaging at every stage.
                 </p>
                 <p>
-                  The product is designed to support reviewed workflow discipline. It does not ask users to trust a black box. Instead, it structures the handoff from question definition to reviewer-gated output with traceability, lineage, and visible limitations intact.
+                  Every decision point is visible. Every output carries its lineage. The workflow does not abstract away the steps that reviewers and regulators need to see.
                 </p>
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                   <Button asChild variant="primary" size="lg">
@@ -376,10 +376,10 @@ export default function PrivexaTracePage() {
               </CardHeader>
               <CardContent className="p-0 space-y-4 text-base leading-relaxed text-slate-700">
                 <p>
-                  The product value is not that manual work disappears. The value is that the manual benchmark and the synthetic workflow can be assessed in one governed environment.
+                  Privexa Trace is not a replacement for specialist clinical judgment. Manual treatment and control arms remain central to the workflow — the synthetic output is assessed alongside them in the same governed environment, under the same reviewer accountability.
                 </p>
                 <p>
-                  Over time, that comparison structure supports better review, stronger workflow discipline, and clearer evidence packaging — without pretending current output should be accepted uncritically.
+                  That structure produces stronger evidence packages: the benchmark remains visible, the synthetic construction is reviewed, and the final output carries both in context.
                 </p>
               </CardContent>
             </Card>
@@ -423,10 +423,10 @@ export default function PrivexaTracePage() {
             <div className="max-w-2xl mb-10">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">Governance model</p>
               <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F] mb-3">
-                Trust signals built into the product story
+                Governance built in, not bolted on
               </h2>
               <p className="text-base text-slate-600 leading-relaxed">
-                The strongest public story for Privexa Trace is not speed. It is structured review, visible limitations, and traceable output.
+                Reviewer gates, lineage, and visible limitations are not optional modules. They are structural features of how Privexa Trace operates.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -555,8 +555,8 @@ export default function PrivexaTracePage() {
       </section>
 
       <CTA
-        title="See where Privexa Trace fits your team"
-        description="Translyx can walk you through reviewer-gated synthetic control workflows, data protection, and the broader clinical technology portfolio — without collapsing it into a single product pitch."
+        title="See Privexa Trace in detail"
+        description="Schedule a walkthrough of the eight-step workflow, reviewer gate model, comparison workspace, and submission-oriented output — with the Translyx team."
         primaryCTA={{ label: "Request walkthrough", href: "/contact" }}
         secondaryCTA={{ label: "See all products", href: "/products" }}
       />

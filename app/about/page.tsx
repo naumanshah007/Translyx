@@ -174,13 +174,13 @@ export default function AboutPage() {
               <CardContent className="pt-0">
                 <Prose className="space-y-5 text-slate-700">
                   <p>
-                    Translyx Limited exists to introduce innovative diagnostic and clinical products to the New Zealand healthcare sector — supporting clinicians and health services with timely access to high-quality technologies that enable effective patient care.
+                    Translyx Limited brings advanced diagnostic and clinical products to the New Zealand healthcare sector — giving clinicians and health services access to technologies that improve diagnostic accuracy, clinical decision-making, and patient outcomes.
                   </p>
                   <p>
-                    Our highly experienced team brings decades of collective experience across diagnostics, laboratory medicine, clinical implementation, and healthcare supply. We focus on identifying globally validated clinical innovations and making them available to healthcare providers across hospital, community, and research settings.
+                    The team combines deep expertise across diagnostics, laboratory medicine, clinical implementation, and healthcare supply. That experience informs how Translyx selects, evaluates, and introduces globally validated innovations — matching the right technology to the right clinical environment, across hospital, community, and research settings.
                   </p>
                   <p>
-                    Translyx takes a systems-based approach to product introduction, recognising that access to appropriate diagnostic and clinical tools plays an important role in supporting clinical decision-making and contributing to improved patient outcomes.
+                    Translyx approaches product introduction at the system level. Diagnostic capability is not an isolated procurement decision — it shapes how clinicians make decisions, how labs operate, and how patients experience care.
                   </p>
                 </Prose>
               </CardContent>
@@ -261,8 +261,8 @@ export default function AboutPage() {
           {/* CTA strip */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 rounded-2xl border border-[#0F1C3F]/15 bg-[#F7F5F1] p-6 sm:p-8">
             <div>
-              <h3 className="text-lg font-semibold text-[#0F1C3F]">Ready to evaluate Privexa Trace with your team?</h3>
-              <p className="mt-1 text-sm text-slate-600">Talk to Translyx about reviewer-gated evidence workflows and AI data protection.</p>
+              <h3 className="text-lg font-semibold text-[#0F1C3F]">Work with Translyx</h3>
+              <p className="mt-1 text-sm text-slate-600">Speak with the team about diagnostic product evaluation, Privexa Trace workflows, or the broader Translyx portfolio.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
               <Button asChild variant="primary" size="lg">

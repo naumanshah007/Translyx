@@ -402,10 +402,10 @@ export default function AISolutionsPage() {
               <Card className="p-5 sm:p-6 lg:p-8 mb-6">
                 <CardContent className="pt-0 space-y-4 text-base leading-relaxed text-slate-700">
                   <p>
-                    Responsible healthcare AI is not only about protecting sensitive data. It is also about how evidence workflows are structured, reviewed, compared, and packaged.
+                    Protecting patient data is the starting point. What follows — how evidence is assembled, reviewed, and packaged — determines whether clinical AI is actually governable in a regulatory context.
                   </p>
                   <p>
-                    Privexa Trace addresses a different part of the operating model: reviewer-gated synthetic control arm workflows for biotech, pharma, CRO, and clinical-trial-office stakeholders who need traceable handoffs and credible governance. Reviewer sign-off is required before SCA generation, limitations stay visible, and outputs are organised for submission-oriented packaging.
+                    Privexa Trace addresses that second layer: reviewer-gated synthetic control arm workflows for biotech, pharma, CRO, and clinical trial office teams. Reviewer sign-off is required before SCA generation. Limitations are visible in every output. Packages are structured for submission from the outset.
                   </p>
                 </CardContent>
               </Card>
@@ -501,8 +501,8 @@ export default function AISolutionsPage() {
       </div>
 
       <CTA
-        title="Interested in protected AI workflows and governed evidence operations?"
-        description="Translyx presents Privexa for AI data protection and Privexa Trace for reviewed synthetic control workflows. We can help your team evaluate where each product fits."
+        title="Deploy clinical AI with the governance your organisation requires"
+        description="Translyx can walk your team through Privexa's data protection architecture and Privexa Trace's reviewer-gated evidence workflow — and identify where each fits your clinical AI roadmap."
         primaryCTA={{ label: "Request walkthrough", href: "/contact" }}
         secondaryCTA={{ label: "Explore Privexa Trace", href: "/products/privexa-trace" }}
       />
