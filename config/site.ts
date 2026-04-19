@@ -9,14 +9,16 @@ export const siteConfig = {
   // Basic Information
   name: "Translyx",
   companyName: "Translyx Limited",
-  companyTagline: "Translating Innovation into Impact",
-  companyDescription: "Our mission is to bring innovative diagnostic and clinical products to New Zealand, supporting healthcare providers with timely access to technologies that enable high-quality patient care and informed clinical decision-making.",
-  tagline: "Translating Innovation into Impact",
-  description: "Our mission is to bring innovative diagnostic and clinical products to New Zealand, supporting healthcare providers with timely access to technologies that enable high-quality patient care and informed clinical decision-making.",
+  companyTagline: "Clinical technology and governed AI workflows",
+  companyDescription:
+    "Translyx Limited is a New Zealand healthcare technology company presenting Privexa Trace, reviewer-gated synthetic control arm workflows, Privexa protected AI privacy solutions, and broader clinical product offerings.",
+  tagline: "Clinical technology and governed AI workflows",
+  description:
+    "Translyx Limited presents Privexa Trace, reviewer-gated synthetic control arm workflows, Privexa protected AI solutions, and broader clinical technology products for healthcare organizations.",
   
   // Domain & URLs
   domain: "translyx.co",
-  url: "https://www.translyx.co",
+  url: "https://translyx.co",
   
   // Company Details
   company: {
@@ -39,14 +41,26 @@ export const siteConfig = {
   
   // SEO Defaults
   seo: {
-    defaultTitle: "Translyx Limited — Translating Innovation into Impact",
-    defaultDescription: "Our mission is to bring innovative diagnostic and clinical products to New Zealand, supporting healthcare providers with timely access to technologies that enable high-quality patient care and informed clinical decision-making.",
+    defaultTitle: "Translyx | Privexa Trace, AI Solutions, and Clinical Technology",
+    defaultDescription:
+      "Translyx Limited presents Privexa Trace reviewer-gated synthetic control arm workflows, Privexa protected AI privacy solutions, and clinical technology products for healthcare organizations.",
     keywords: [
-      "healthcare technology", "diagnostic technology", "clinical technology", 
-      "healthcare compliance", "medical device integration", "laboratory technology",
-      "Translyx Limited", "healthcare enablement", "clinical workflow",
-      "regulatory compliance", "technology integration", "healthcare training",
-      "diagnostic systems", "clinical documentation", "healthcare implementation",
+      "Translyx",
+      "Translyx Limited",
+      "Privexa Trace",
+      "Translyx Privexa Trace",
+      "Translyx AI Solutions",
+      "Translyx healthcare AI",
+      "Privexa Trace synthetic control",
+      "healthcare technology",
+      "clinical technology",
+      "reviewer-gated synthetic control arm workflow",
+      "synthetic control arm",
+      "clinical evidence workflow",
+      "protected AI healthcare",
+      "healthcare AI privacy",
+      "clinical workflow",
+      "diagnostic technology",
     ],
     author: "Translyx Limited",
     ogImage: "/og-image.png",
@@ -112,4 +126,3 @@ export const siteConfig = {
     ],
   },
 };
-

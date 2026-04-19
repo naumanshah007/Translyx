@@ -18,9 +18,9 @@ export const navigation: NavItem[] = [
     description: "Return to homepage",
   },
   {
-    label: "About Us",
-    href: "/about",
-    description: "Learn about Translyx",
+    label: "Products",
+    href: "/products",
+    description: "Explore the Translyx product portfolio",
   },
   {
     label: "Privexa Trace",
@@ -28,24 +28,19 @@ export const navigation: NavItem[] = [
     description: "Reviewer-gated synthetic control workflow platform",
   },
   {
+    label: "AI Solutions",
+    href: "/ai-solutions",
+    description: "Protected AI privacy and governed evidence workflows",
+  },
+  {
     label: "Product Pipeline",
     href: "/product-pipeline",
     description: "Explore our product pipeline",
   },
   {
-    label: "Services",
-    href: "/services",
-    description: "Professional services and consultancy",
-  },
-  {
-    label: "AI Solutions",
-    href: "/ai-solutions",
-    description: "AI privacy for healthcare organizations",
-  },
-  {
-    label: "Updates",
-    href: "/updates",
-    description: "Company updates and announcements",
+    label: "About Us",
+    href: "/about",
+    description: "Learn about Translyx",
   },
   {
     label: "Contact Us",
@@ -56,6 +51,6 @@ export const navigation: NavItem[] = [
 
 // CTA Button in Header
 export const headerCTA = {
-  label: "Talk to Us",
+  label: "Discuss Trace",
   href: "/contact",
 };

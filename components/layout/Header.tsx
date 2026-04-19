@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 import { Navigation } from "./Navigation";
@@ -15,54 +16,52 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200/70 bg-white/70 backdrop-blur-xl shadow-[0_10px_30px_-25px_rgba(15,23,42,0.45)] dark:border-slate-800/70 dark:bg-slate-950/70 relative">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent pointer-events-none" />
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200/70 bg-white/70 shadow-[0_10px_30px_-25px_rgba(15,23,42,0.45)] backdrop-blur-xl dark:border-slate-800/70 dark:bg-slate-950/70 relative">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent" />
       <div className="w-full">
-        {/* Desktop Header - Same Row, Separated Sections */}
         <div className="hidden lg:flex items-center w-full">
-          {/* Logo Section - Fixed Width Left */}
-          <div className="w-80 xl:w-96 h-32 xl:h-40 flex items-center justify-start pl-6 xl:pl-8 border-r border-slate-200/70 dark:border-slate-800/70 bg-white/60 dark:bg-slate-900/50">
-            <Logo href="/" size="lg" className="w-44 xl:w-56 h-auto" />
+          <div className="flex h-24 xl:h-28 w-[20rem] xl:w-[22rem] flex-col items-start justify-center border-r border-slate-200/70 bg-white/60 pl-6 dark:border-slate-800/70 dark:bg-slate-900/50 xl:pl-8">
+            <Logo href="/" size="lg" className="h-auto w-36 xl:w-44" />
+            <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+              Clinical Technology and AI Workflows
+            </p>
           </div>
 
-          {/* Navigation Section - Flex Right */}
-          <div className="flex-1 flex items-center justify-between h-32 xl:h-40 px-6 xl:px-8">
-            <Navigation />
-            <div className="flex items-center gap-4">
-              <Button asChild variant="gradient" size="sm" className="shadow-[0_10px_25px_rgba(56,189,248,0.35)]">
-                <Link href={headerCTA.href}>{headerCTA.label}</Link>
-              </Button>
+          <div className="flex h-24 xl:h-28 flex-1 items-center justify-between px-6 xl:px-8">
+            <div className="min-w-0">
+              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+                Flagship public product: Privexa Trace
+              </p>
+              <Navigation />
             </div>
+            <Button asChild variant="gradient" size="sm" className="shadow-[0_10px_25px_rgba(56,189,248,0.35)]">
+              <Link href={headerCTA.href}>{headerCTA.label}</Link>
+            </Button>
           </div>
         </div>
 
-        {/* Mobile Header */}
         <div className="lg:hidden">
-          <div className="flex items-center justify-between h-28 sm:h-32 px-4 sm:px-6">
-            {/* Mobile Logo */}
-            <div className="flex items-center flex-shrink-0">
-              <Logo href="/" size="lg" className="w-32 sm:w-40 h-auto" />
+          <div className="flex h-20 sm:h-24 items-center justify-between px-4 sm:px-6">
+            <div className="flex min-w-0 flex-col justify-center">
+              <Logo href="/" size="lg" className="h-auto w-28 sm:w-36" />
+              <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+                Privexa Trace on Translyx
+              </p>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               type="button"
-              className="inline-flex items-center justify-center rounded-full min-h-[44px] min-w-[44px] p-2.5 text-slate-700 dark:text-slate-300 hover:bg-white/70 dark:hover:bg-slate-900/70 transition-colors"
+              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full p-2.5 text-slate-700 transition-colors hover:bg-white/70 dark:text-slate-300 dark:hover:bg-slate-900/70"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <span className="sr-only">Open main menu</span>
-              {mobileMenuOpen ? (
-                <X className="h-6 w-6" aria-hidden="true" />
-              ) : (
-                <Menu className="h-6 w-6" aria-hidden="true" />
-              )}
+              {mobileMenuOpen ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
             </button>
           </div>
 
-          {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="border-t border-slate-200/70 dark:border-slate-800/70 bg-white/90 backdrop-blur-xl dark:bg-slate-950/90">
-              <div className="space-y-1 px-4 pb-4 pt-3">
+            <div className="border-t border-slate-200/70 bg-white/90 backdrop-blur-xl dark:border-slate-800/70 dark:bg-slate-950/90">
+              <div className="space-y-2 px-4 pb-4 pt-3">
                 {navigation.map((item) => {
                   const isActive = pathname === item.href;
                   return (
@@ -70,14 +69,19 @@ export function Header() {
                       key={item.href}
                       href={item.href}
                       className={cn(
-                        "block rounded-xl px-3 py-3 min-h-[44px] flex items-center text-base font-semibold transition-colors",
+                        "block min-h-[44px] rounded-2xl px-4 py-3.5 transition-colors",
                         isActive
-                          ? "bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300"
+                          ? "bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300"
                           : "text-slate-900 hover:bg-slate-100/70 dark:text-slate-100 dark:hover:bg-slate-900/70"
                       )}
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      {item.label}
+                      <span className="block text-base font-semibold">{item.label}</span>
+                      {item.description ? (
+                        <span className="mt-1 block text-sm text-slate-500 dark:text-slate-400">
+                          {item.description}
+                        </span>
+                      ) : null}
                     </Link>
                   );
                 })}

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
 import { CTA } from "@/components/sections/CTA";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
@@ -15,13 +16,16 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+import { siteConfig } from "@/config/site";
 
-export const metadata = {
-  title: "Privexa Trace",
+export const metadata: Metadata = {
+  title: "Privexa Trace | Reviewer-Gated Synthetic Control Workflows",
   description:
-    "Privexa Trace is a reviewer-gated synthetic control arm workflow platform for biotech, pharma, CRO, and clinical-trial-office stakeholders.",
+    "Privexa Trace is a Translyx product for reviewer-gated synthetic control arm workflows, manual benchmark-arm comparison, lineage, visible limitations, and submission-oriented packaging.",
   keywords: [
     "Privexa Trace",
+    "Translyx Privexa Trace",
+    "Privexa Trace synthetic control",
     "synthetic control arm",
     "reviewer-gated workflow",
     "clinical evidence workflow",
@@ -30,6 +34,31 @@ export const metadata = {
     "CRO",
     "submission package",
   ],
+  alternates: {
+    canonical: "/products/privexa-trace",
+  },
+  openGraph: {
+    title: "Privexa Trace | Reviewer-Gated Synthetic Control Workflows | Translyx",
+    description:
+      "Privexa Trace is a Translyx product for reviewer-gated synthetic control arm workflows, manual benchmark-arm comparison, lineage, visible limitations, and submission-oriented packaging.",
+    url: `${siteConfig.url}/products/privexa-trace`,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.seo.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Privexa Trace",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privexa Trace | Reviewer-Gated Synthetic Control Workflows | Translyx",
+    description:
+      "Privexa Trace is a Translyx product for reviewer-gated synthetic control arm workflows, manual benchmark-arm comparison, lineage, visible limitations, and submission-oriented packaging.",
+    images: [siteConfig.seo.ogImage],
+  },
 };
 
 const workflowSteps = [
@@ -67,10 +96,41 @@ const trustSignals = [
 ];
 
 export default function PrivexaTracePage() {
+  const traceSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Privexa Trace",
+    alternateName: "Translyx Privexa Trace",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    url: `${siteConfig.url}/products/privexa-trace`,
+    description:
+      "Reviewer-gated synthetic control arm workflow platform with manual treatment arm, manual control arm, synthetic workflow comparison, lineage, visible limitations, and submission-oriented packaging.",
+    creator: {
+      "@type": "Organization",
+      name: siteConfig.companyName,
+      url: siteConfig.url,
+    },
+    featureList: [
+      "Reviewer sign-off before SCA generation",
+      "Manual treatment arm comparison",
+      "Manual control arm comparison",
+      "Synthetic workflow outputs",
+      "Traceability and lineage",
+      "Visible limitations",
+      "Submission-oriented packaging",
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(traceSchema) }}
+      />
       <Hero
-        headline="Reviewer-gated synthetic control workflows for serious evidence teams"
+        subheadline="Privexa Trace"
+        headline="reviewer-gated synthetic control workflows for serious evidence teams"
         description="Privexa Trace is a public-facing Translyx product for biotech, pharma, CRO, and clinical-trial-office stakeholders who need governed synthetic control arm workflows, visible review gates, and submission-oriented outputs."
         badge={{ text: "Privexa Trace", icon: <Workflow className="w-4 h-4" /> }}
         primaryCTA={{ label: "Talk to Us", href: "/contact" }}
@@ -127,6 +187,16 @@ export default function PrivexaTracePage() {
                     Reviewer-gated synthetic control and evidence workflow platform for reviewed feasibility, comparison, lineage, and submission-oriented output.
                   </p>
                 </div>
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {["Biotech", "Pharma", "CRO", "Clinical-trial office", "Review and governance"].map((item) => (
+                    <span
+                      key={item}
+                      className="inline-flex items-center rounded-full border border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-950/40 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-slate-700 dark:text-slate-300"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -161,6 +231,54 @@ export default function PrivexaTracePage() {
       </section>
 
       <SectionDivider variant="geometric" />
+
+      <section className="relative py-16 sm:py-20 md:py-24 bg-white dark:bg-slate-950">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="max-w-3xl mb-10">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-50 mb-4">
+                Three comparison paths inside one governed workflow
+              </h2>
+              <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                Trace is strongest when the comparison model is explicit: specialist-built manual arms remain visible, synthetic output is reviewed rather than assumed, and the final package carries the context forward.
+              </p>
+            </div>
+            <div className="grid gap-5 lg:grid-cols-3">
+              {[
+                {
+                  title: "Manual treatment arm",
+                  body: "Specialist-entered benchmark representation of the treated population or reference treatment context.",
+                  icon: Microscope,
+                },
+                {
+                  title: "Manual control arm",
+                  body: "Specialist-entered benchmark control context used to assess workflow logic and comparability.",
+                  icon: ShieldCheck,
+                },
+                {
+                  title: "Synthetic workflow outputs",
+                  body: "Reviewer-gated synthetic outputs that remain connected to diagnostics, lineage, and visible limitations.",
+                  icon: GitBranch,
+                },
+              ].map(({ title, body, icon: Icon }) => (
+                <Card key={title} variant="gradient-border" className="p-5 sm:p-6">
+                  <CardHeader className="p-0">
+                    <div className="w-12 h-12 rounded-2xl bg-primary-500/15 flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                    </div>
+                    <CardTitle className="text-2xl">{title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-0 pt-4">
+                    <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                      {body}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="relative py-16 sm:py-20 md:py-24 bg-white dark:bg-slate-950">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

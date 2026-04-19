@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Prose } from "@/components/ui/Prose";
@@ -6,11 +7,46 @@ import { Hero } from "@/components/sections/Hero";
 import { Brain, Zap, ShieldAlert, ShieldCheck, Lock, Database, Cloud, Scale, Globe, Shield, FileCheck, FileText, BrainCircuit, ArrowRight, GitBranch, Layers3, Microscope } from "lucide-react";
 import { PatternOverlay, GradientAccent, SectionDivider } from "@/components/ui/DecorativeElements";
 import Link from "next/link";
+import { siteConfig } from "@/config/site";
 
-export const metadata = {
-  title: "AI Solutions — Translyx Limited",
-  description: "Translyx supports responsible AI adoption through Privexa for protected AI privacy workflows and Privexa Trace for reviewer-gated synthetic control and evidence workflows.",
-  keywords: ["AI healthcare", "healthcare data privacy", "Privexa", "Privexa Trace", "synthetic control arm", "clinical AI", "patient data protection", "healthcare technology"],
+export const metadata: Metadata = {
+  title: "AI Solutions | Privexa and Privexa Trace",
+  description:
+    "Explore Translyx AI Solutions, including Privexa for protected healthcare AI privacy workflows and Privexa Trace for reviewer-gated synthetic control and clinical evidence workflows.",
+  keywords: [
+    "Translyx AI Solutions",
+    "Translyx healthcare AI",
+    "Privexa",
+    "Privexa Trace",
+    "protected AI healthcare",
+    "synthetic control arm",
+    "clinical evidence workflow",
+  ],
+  alternates: {
+    canonical: "/ai-solutions",
+  },
+  openGraph: {
+    title: "AI Solutions | Privexa and Privexa Trace | Translyx",
+    description:
+      "Explore Translyx AI Solutions, including Privexa for protected healthcare AI privacy workflows and Privexa Trace for reviewer-gated synthetic control and clinical evidence workflows.",
+    url: `${siteConfig.url}/ai-solutions`,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.seo.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Translyx AI Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Solutions | Privexa and Privexa Trace | Translyx",
+    description:
+      "Explore Translyx AI Solutions, including Privexa for protected healthcare AI privacy workflows and Privexa Trace for reviewer-gated synthetic control and clinical evidence workflows.",
+    images: [siteConfig.seo.ogImage],
+  },
 };
 
 const sectionAnchors = [
@@ -71,14 +107,45 @@ const traceSignals = [
 ];
 
 export default function AISolutionsPage() {
+  const aiSolutionsSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Translyx AI Solutions",
+    url: `${siteConfig.url}/ai-solutions`,
+    description:
+      "Translyx AI Solutions includes Privexa for protected AI privacy workflows and Privexa Trace for reviewer-gated synthetic control and evidence workflows.",
+    isPartOf: {
+      "@type": "WebSite",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    about: [
+      {
+        "@type": "SoftwareApplication",
+        name: "Privexa",
+        applicationCategory: "SecurityApplication",
+      },
+      {
+        "@type": "SoftwareApplication",
+        name: "Privexa Trace",
+        applicationCategory: "BusinessApplication",
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aiSolutionsSchema) }}
+      />
       <Hero
-        headline="AI Solutions for Healthcare"
-        description="Clinical AI is accelerating diagnoses, improving research outcomes, and streamlining hospital operations across New Zealand. Translyx supports healthcare organizations in adopting these technologies responsibly — ensuring that clinical innovation does not come at the cost of patient privacy or regulatory compliance."
+        subheadline="Translyx AI Solutions"
+        headline="Protected AI and governed evidence workflows for healthcare"
+        description="Translyx presents two complementary product stories for responsible healthcare AI: Privexa for protected data flows and Privexa Trace for reviewer-gated synthetic control and evidence workflows."
         badge={{ text: "AI & Privacy", icon: <Brain className="w-4 h-4" /> }}
         primaryCTA={{ label: "Talk to Us", href: "/contact" }}
-        secondaryCTA={{ label: "Learn more about Privexa", href: "https://privexa.co", external: true }}
+        secondaryCTA={{ label: "Explore Privexa Trace", href: "/products/privexa-trace" }}
         enhancedAurora
         decorativeShapes
         className="py-12 sm:py-14 md:py-16 lg:py-20"
@@ -135,6 +202,35 @@ export default function AISolutionsPage() {
                   </Prose>
                 </CardContent>
               </Card>
+
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                <Card variant="gradient-border" className="p-4 sm:p-5">
+                  <CardHeader className="p-0">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-700 dark:text-cyan-300 mb-2">
+                      Privexa
+                    </p>
+                    <CardTitle className="text-xl sm:text-2xl">Protected AI privacy layer</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-0 pt-4">
+                    <p className="text-sm sm:text-base leading-relaxed text-gray-700 dark:text-gray-300">
+                      Protects patient and clinical data before it reaches AI systems or cloud workflows.
+                    </p>
+                  </CardContent>
+                </Card>
+                <Card variant="gradient-border" className="p-4 sm:p-5">
+                  <CardHeader className="p-0">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-700 dark:text-primary-300 mb-2">
+                      Privexa Trace
+                    </p>
+                    <CardTitle className="text-xl sm:text-2xl">Reviewer-gated evidence workflow</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-0 pt-4">
+                    <p className="text-sm sm:text-base leading-relaxed text-gray-700 dark:text-gray-300">
+                      Structures synthetic control and evidence operations with manual benchmark comparison, review gates, lineage, and package-ready outputs.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </div>
@@ -360,6 +456,20 @@ export default function AISolutionsPage() {
                       <ArrowRight className="h-5 w-5" />
                     </Link>
                   </Button>
+                </div>
+                <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-6">
+                  {[
+                    "Clinical question",
+                    "Manual treatment arm",
+                    "Manual control arm",
+                    "Synthetic workflow outputs",
+                    "Reviewer-gated comparison",
+                    "Traceable package output",
+                  ].map((item) => (
+                    <div key={item} className="rounded-xl border border-slate-200/70 dark:border-slate-700/70 bg-white/80 dark:bg-slate-950/40 px-3 py-3 text-sm font-medium text-slate-700 dark:text-slate-300">
+                      {item}
+                    </div>
+                  ))}
                 </div>
               </CardContent>
             </Card>

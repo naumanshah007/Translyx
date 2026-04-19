@@ -25,6 +25,20 @@ export const metadata: Metadata = {
   keywords: siteConfig.seo.keywords,
   authors: [{ name: siteConfig.seo.author }],
   creator: siteConfig.seo.author,
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -58,9 +72,44 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: siteConfig.companyName,
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/logo.png`,
+    email: siteConfig.company.email,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Auckland",
+      addressCountry: "NZ",
+    },
+    sameAs: ["https://www.linkedin.com/company/translyx/"],
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    alternateName: siteConfig.companyName,
+    url: siteConfig.url,
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.companyName,
+    },
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${body.variable} ${display.variable} font-body`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
         <div className="min-h-screen flex flex-col">
           <Header />
           <main className="flex-1">{children}</main>
