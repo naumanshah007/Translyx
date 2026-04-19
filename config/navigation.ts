@@ -1,51 +1,72 @@
-/**
- * Navigation Configuration
- * 
- * Define your site's navigation menu structure here.
- * Add, remove, or reorder items as needed.
- */
+export interface NavSubItem {
+  label: string;
+  href: string;
+  description?: string;
+  status?: "available" | "pilot" | "pipeline";
+}
 
 export interface NavItem {
   label: string;
   href: string;
   description?: string;
+  subItems?: NavSubItem[];
 }
 
 export const navigation: NavItem[] = [
   {
-    label: "Home",
-    href: "/",
-    description: "Return to homepage",
-  },
-  {
     label: "Products",
     href: "/products",
-    description: "Explore the Translyx product portfolio",
+    description: "Translyx product portfolio",
+    subItems: [
+      {
+        label: "Privexa Trace",
+        href: "/products/privexa-trace",
+        description: "Reviewer-gated synthetic control workflows",
+        status: "available",
+      },
+      {
+        label: "Privexa",
+        href: "/ai-solutions#privexa",
+        description: "AI data protection layer for healthcare",
+        status: "available",
+      },
+      {
+        label: "AI Vision Assistant",
+        href: "/products/ai-vision-assistant",
+        description: "Clinical AI vision tools",
+        status: "pipeline",
+      },
+      {
+        label: "Gynecology Referral",
+        href: "/products/gynecology-referral",
+        description: "Referral pathway optimisation",
+        status: "pipeline",
+      },
+    ],
   },
   {
     label: "AI Solutions",
     href: "/ai-solutions",
-    description: "Protected AI privacy and governed evidence workflows",
+    description: "Protected AI and governed evidence workflows",
   },
   {
-    label: "Product Pipeline",
+    label: "Pipeline",
     href: "/product-pipeline",
-    description: "Explore our product pipeline",
+    description: "Broader clinical technology portfolio",
   },
   {
-    label: "About Us",
+    label: "Company",
     href: "/about",
-    description: "Learn about Translyx",
+    description: "About Translyx Limited",
   },
   {
-    label: "Contact Us",
+    label: "Contact",
     href: "/contact",
     description: "Get in touch",
   },
 ];
 
-// CTA Button in Header
 export const headerCTA = {
-  label: "Talk to Translyx",
+  label: "Request Walkthrough",
   href: "/contact",
 };

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
 import { CTA } from "@/components/sections/CTA";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
-import { PatternOverlay, SectionDivider } from "@/components/ui/DecorativeElements";
+import { SectionDivider } from "@/components/ui/DecorativeElements";
 import {
   FileCheck,
   GitBranch,
@@ -13,85 +13,121 @@ import {
   ShieldCheck,
   Microscope,
   FlaskConical,
+  Building2,
+  GraduationCap,
+  Users,
+  CheckCircle2,
+  XCircle,
 } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/config/site";
 
+const pageDescription =
+  "Privexa Trace is a Translyx product for reviewer-gated synthetic control arm workflows — with manual benchmark comparison, lineage, visible limitations, and submission-oriented packaging for biotech, pharma, CRO, and clinical trial teams.";
+
 export const metadata: Metadata = {
-  title: "Privexa Trace | Reviewer-Gated Synthetic Control Workflows",
-  description:
-    "Privexa Trace is a Translyx product for reviewer-gated synthetic control arm workflows, manual benchmark-arm comparison, lineage, visible limitations, and submission-oriented packaging.",
+  title: "Privexa Trace — Reviewer-Gated Synthetic Control Workflows | Translyx",
+  description: pageDescription,
   keywords: [
     "Privexa Trace",
     "Translyx Privexa Trace",
-    "Privexa Trace synthetic control",
-    "synthetic control arm",
-    "reviewer-gated workflow",
+    "reviewer-gated synthetic control arm",
+    "synthetic control arm software",
     "clinical evidence workflow",
-    "biotech",
-    "pharma",
-    "CRO",
-    "submission package",
+    "biotech synthetic control",
+    "pharma CRO submission package",
+    "audit-traceable clinical AI",
   ],
-  alternates: {
-    canonical: "/products/privexa-trace",
-  },
+  alternates: { canonical: "/products/privexa-trace" },
   openGraph: {
-    title: "Privexa Trace | Reviewer-Gated Synthetic Control Workflows | Translyx",
-    description:
-      "Privexa Trace is a Translyx product for reviewer-gated synthetic control arm workflows, manual benchmark-arm comparison, lineage, visible limitations, and submission-oriented packaging.",
+    title: "Privexa Trace — Reviewer-Gated Synthetic Control Workflows | Translyx",
+    description: pageDescription,
     url: `${siteConfig.url}/products/privexa-trace`,
     siteName: siteConfig.name,
-    images: [
-      {
-        url: siteConfig.seo.ogImage,
-        width: 1200,
-        height: 630,
-        alt: "Privexa Trace",
-      },
-    ],
+    images: [{ url: siteConfig.seo.ogImage, width: 1200, height: 630, alt: "Privexa Trace by Translyx" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privexa Trace | Reviewer-Gated Synthetic Control Workflows | Translyx",
-    description:
-      "Privexa Trace is a Translyx product for reviewer-gated synthetic control arm workflows, manual benchmark-arm comparison, lineage, visible limitations, and submission-oriented packaging.",
+    title: "Privexa Trace — Reviewer-Gated Synthetic Control Workflows | Translyx",
+    description: pageDescription,
     images: [siteConfig.seo.ogImage],
   },
 };
 
 const workflowSteps = [
-  "New Workup",
-  "Define Question",
-  "Find Comparables",
-  "Dataset Fit",
-  "Cohort Builder",
-  "Diagnostics & Review",
-  "SCA Analysis",
-  "Submission Package",
+  { step: "New Workup", description: "Initiate a structured workup for a specific clinical question." },
+  { step: "Define Question", description: "Articulate the research question, target population, and key parameters." },
+  { step: "Find Comparables", description: "Identify comparable historical and real-world datasets for cohort construction." },
+  { step: "Dataset Fit", description: "Assess dataset suitability, coverage, and alignment with the target question." },
+  { step: "Cohort Builder", description: "Build treatment and control cohorts with specialist review at each stage." },
+  { step: "Diagnostics & Review", description: "Run diagnostics and complete reviewer sign-off before SCA generation." },
+  { step: "SCA Analysis", description: "Generate reviewed synthetic control arm analysis with visible lineage." },
+  { step: "Submission Package", description: "Export a submission-oriented package with methods, limitations, and provenance." },
+];
+
+const audienceSegments = [
+  { icon: FlaskConical, label: "Clinical Sponsors", description: "Biotech and pharma teams running evidence reviews and SCA programmes" },
+  { icon: Building2, label: "CROs", description: "Contract research organisations managing reviewer-gated trial workflows" },
+  { icon: GraduationCap, label: "Academic Groups", description: "Research teams needing governed synthetic control arm methodology" },
+  { icon: Users, label: "Clinical Trial Offices", description: "Teams responsible for evidence packaging and submission preparation" },
 ];
 
 const trustSignals = [
   {
     title: "Reviewer sign-off before SCA generation",
-    body: "Privexa Trace preserves a hard governance gate before synthetic analysis can be generated.",
+    body: "Privexa Trace preserves a hard governance gate before any synthetic analysis can be generated. Statistics do not outrun human review.",
     icon: FileCheck,
   },
   {
     title: "Traceability and lineage",
-    body: "Each stage is structured so teams can follow how evidence, cohort choices, and outputs connect.",
+    body: "Each stage is structured so teams can follow exactly how evidence, cohort choices, and outputs connect through the workflow.",
     icon: GitBranch,
   },
   {
     title: "Visible limitations",
-    body: "Residual assumptions and workflow constraints stay visible instead of being hidden behind a polished output.",
+    body: "Residual assumptions and workflow constraints stay visible rather than being hidden behind a polished output. Honest about current boundaries.",
     icon: Scale,
   },
   {
     title: "Submission-oriented packaging",
-    body: "Trace brings methods, reviewed decisions, provenance, and package-ready output into one workflow.",
+    body: "Trace brings methods, reviewed decisions, provenance, and package-ready output into one coherent workflow — not an afterthought.",
     icon: Layers3,
+  },
+];
+
+const includedNotIncluded = {
+  included: [
+    "Reviewer sign-off gate before SCA generation",
+    "Manual treatment arm entry and comparison",
+    "Manual control arm entry and comparison",
+    "Synthetic workflow output with lineage",
+    "Visible limitations in every output",
+    "Submission-oriented packaging",
+    "Audit trail across all workflow stages",
+    "Traceability of cohort construction decisions",
+  ],
+  notIncluded: [
+    "Fully automated regulatory submission",
+    "Implied FDA, EMA, or Medsafe endorsement",
+    "Black-box output without reviewer gate",
+    "External patient data storage",
+    "Guaranteed regulatory acceptance",
+  ],
+};
+
+const faqItems = [
+  {
+    q: "Does Privexa Trace claim regulatory endorsement?",
+    a: "No. Privexa Trace is designed to support submission-oriented packaging and reviewer-gated governance workflows. It does not claim or imply regulatory endorsement from FDA, EMA, Medsafe, or any other body. All outputs carry visible limitations.",
+  },
+  {
+    q: "What data residency options does Privexa Trace support?",
+    a: "Privexa Trace is designed with data residency in mind for New Zealand and regional deployments. Integration and export options include SAS/R-compatible outputs and audit log exports. Contact Translyx for specific infrastructure requirements.",
+  },
+  {
+    q: "What is the difference between the manual arms and the synthetic output?",
+    a: "The manual treatment arm and manual control arm are specialist-entered benchmark representations. The synthetic workflow output is a reviewer-gated statistical construction. Trace keeps all three visible in one governed environment so they can be compared, not substituted.",
   },
 ];
 
@@ -104,22 +140,33 @@ export default function PrivexaTracePage() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     url: `${siteConfig.url}/products/privexa-trace`,
-    description:
-      "Reviewer-gated synthetic control arm workflow platform with manual treatment arm, manual control arm, synthetic workflow comparison, lineage, visible limitations, and submission-oriented packaging.",
-    creator: {
-      "@type": "Organization",
-      name: siteConfig.companyName,
-      url: siteConfig.url,
-    },
+    description: pageDescription,
+    creator: { "@type": "Organization", name: siteConfig.companyName, url: siteConfig.url },
     featureList: [
       "Reviewer sign-off before SCA generation",
       "Manual treatment arm comparison",
       "Manual control arm comparison",
-      "Synthetic workflow outputs",
-      "Traceability and lineage",
+      "Synthetic workflow outputs with lineage",
       "Visible limitations",
       "Submission-oriented packaging",
+      "Immutable audit trail",
     ],
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+        { "@type": "ListItem", position: 2, name: "Products", item: `${siteConfig.url}/products` },
+        { "@type": "ListItem", position: 3, name: "Privexa Trace", item: `${siteConfig.url}/products/privexa-trace` },
+      ],
+    },
+    mainEntity: {
+      "@type": "FAQPage",
+      mainEntity: faqItems.map(({ q, a }) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: { "@type": "Answer", text: a },
+      })),
+    },
   };
 
   return (
@@ -128,101 +175,134 @@ export default function PrivexaTracePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(traceSchema) }}
       />
+
       <Hero
-        subheadline="Privexa Trace"
-        headline="reviewer-gated synthetic control workflows for serious evidence teams"
-        description="Privexa Trace is one Translyx product for biotech, pharma, CRO, and clinical-trial-office stakeholders who need governed synthetic control arm workflows, visible review gates, and submission-oriented outputs."
-        badge={{ text: "Privexa Trace", icon: <Workflow className="w-4 h-4" /> }}
-        primaryCTA={{ label: "See All Products", href: "/products" }}
-        secondaryCTA={{ label: "Talk to Translyx", href: "/contact" }}
-        decorativeShapes
-        className="py-12 sm:py-14 md:py-16 lg:py-20"
+        badge={{ text: "A Translyx product · Built on Privexa", icon: <Workflow className="w-3.5 h-3.5" /> }}
+        headline="Reviewer-gated synthetic control arms, ready for submission"
+        description="Privexa Trace structures synthetic control arm workflows with reviewer sign-off, manual benchmark comparison, lineage, and submission-oriented packaging — for biotech, pharma, CRO, and clinical trial teams."
+        primaryCTA={{ label: "Request walkthrough", href: "/contact" }}
+        secondaryCTA={{ label: "See AI Solutions", href: "/ai-solutions" }}
+        className="py-16 sm:py-20 md:py-28 lg:py-36"
       />
+
+      {/* Built for — audience segmentation */}
+      <section className="bg-[#F7F5F1] border-b border-slate-200/60 py-10 sm:py-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-content mx-auto">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-5 text-center">Built for</p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {audienceSegments.map(({ icon: Icon, label, description }) => (
+                <div key={label} className="rounded-xl bg-white border border-slate-200/80 p-4 text-center shadow-[0_1px_8px_-2px_rgba(15,28,63,0.06)]">
+                  <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-[#0F1C3F]/6">
+                    <Icon className="h-5 w-5 text-[#0F1C3F]" />
+                  </div>
+                  <p className="text-sm font-semibold text-[#0F1C3F]">{label}</p>
+                  <p className="mt-1 text-xs text-slate-500 leading-snug">{description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <SectionDivider variant="gradient" />
 
-      <section className="relative py-16 sm:py-20 md:py-24 bg-white/80 dark:bg-slate-950/60">
-        <PatternOverlay pattern="topo" opacity={0.04} className="text-primary-500/15 dark:text-primary-400/10" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-6xl mx-auto grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-            <Card variant="gradient-border" cornerAccent className="p-5 sm:p-7 lg:p-8">
+      {/* Where Privexa Trace fits */}
+      <section className="bg-white py-16 sm:py-20 md:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-content mx-auto grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+            <Card className="p-5 sm:p-7 lg:p-8" cornerAccent>
               <CardHeader className="p-0">
-                <CardTitle className="text-2xl sm:text-3xl lg:text-4xl">
+                <CardTitle className="text-2xl sm:text-3xl text-[#0F1C3F]">
                   A governed workflow platform within the wider Translyx portfolio
                 </CardTitle>
               </CardHeader>
-              <CardContent className="p-0 pt-5 space-y-4 text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+              <CardContent className="p-0 pt-5 space-y-4 text-base sm:text-lg leading-relaxed text-slate-700">
                 <p>
                   Privexa Trace is one Translyx product for teams working through synthetic control feasibility, cohort design, diagnostics review, and submission-oriented packaging.
                 </p>
                 <p>
                   The product is designed to support reviewed workflow discipline. It does not ask users to trust a black box. Instead, it structures the handoff from question definition to reviewer-gated output with traceability, lineage, and visible limitations intact.
                 </p>
-                <p>
-                  The intended audience includes biotech, pharma, CRO, and clinical-trial-office stakeholders who need evidence workflows that can be reviewed, defended, and packaged coherently, while still seeing Trace in the context of the broader Translyx offering.
-                </p>
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                  <Button asChild variant="primary" size="lg">
+                    <Link href="/contact" className="flex items-center gap-2">
+                      Request walkthrough
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Button asChild variant="secondary" size="lg">
+                    <Link href="/products">See all products</Link>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
 
-            <Card variant="gradient-border" className="p-5 sm:p-7 lg:p-8">
-              <CardHeader className="p-0">
-                <CardTitle className="text-2xl sm:text-3xl">Where Privexa Trace fits</CardTitle>
-              </CardHeader>
-              <CardContent className="p-0 pt-5 space-y-4">
-                <div className="rounded-2xl border border-slate-200 dark:border-slate-700 p-4 bg-white/80 dark:bg-slate-950/40">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-700 dark:text-primary-300">Translyx</p>
-                  <p className="mt-2 text-sm sm:text-base text-gray-700 dark:text-gray-300">
-                    Company and broader sponsor focused on clinically credible, enterprise-ready healthcare technology, AI solutions, and clinical product introduction.
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-slate-200 dark:border-slate-700 p-4 bg-white/80 dark:bg-slate-950/40">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-700 dark:text-cyan-300">Privexa</p>
-                  <p className="mt-2 text-sm sm:text-base text-gray-700 dark:text-gray-300">
-                    Privacy and protected AI layer that helps sensitive healthcare data stay within the right boundary.
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-slate-200 dark:border-slate-700 p-4 bg-primary-50/70 dark:bg-primary-950/20">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-700 dark:text-primary-300">Privexa Trace</p>
-                  <p className="mt-2 text-sm sm:text-base text-gray-700 dark:text-gray-300">
-                    Reviewer-gated synthetic control and evidence workflow platform for reviewed feasibility, comparison, lineage, and submission-oriented output.
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {["Biotech", "Pharma", "CRO", "Clinical-trial office", "Review and governance"].map((item) => (
-                    <span
-                      key={item}
-                      className="inline-flex items-center rounded-full border border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-950/40 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-slate-700 dark:text-slate-300"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+            {/* Product hierarchy */}
+            <div className="space-y-3">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-4">Product hierarchy</p>
+              <div className="rounded-xl border border-slate-200/80 p-4 bg-[#F7F5F1]">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400">Translyx</p>
+                <p className="mt-1.5 text-sm text-slate-600 leading-relaxed">
+                  Clinical technology holding entity focused on enterprise-ready, clinically credible healthcare AI.
+                </p>
+              </div>
+              <div className="rounded-xl border border-[#22D3EE]/25 p-4 bg-white">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0891B2]">Privexa</p>
+                <p className="mt-1.5 text-sm text-slate-600 leading-relaxed">
+                  Field-level AI data protection layer. Sensitive healthcare data never leaves your environment.
+                </p>
+              </div>
+              <div className="rounded-xl border border-[#0F1C3F]/20 p-4 bg-[#0F1C3F]">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400">Privexa Trace</p>
+                <p className="mt-1.5 text-sm text-slate-300 leading-relaxed">
+                  Reviewer-gated synthetic control arm workflows with lineage, comparison workspace, and submission packaging.
+                </p>
+              </div>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {["Biotech", "Pharma", "CRO", "Clinical trial office", "Review & governance"].map((item) => (
+                  <span key={item} className="inline-flex items-center rounded-full border border-slate-200/80 bg-white px-3 py-1.5 text-[11px] font-semibold text-slate-500 uppercase tracking-[0.12em]">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-br from-primary-50/60 via-white to-cyan-50/60 dark:from-primary-950/20 dark:via-slate-950 dark:to-cyan-950/20">
+      {/* 8-step workflow */}
+      <section className="bg-[#F7F5F1] py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="max-w-3xl mb-10">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-50 mb-4">
+          <div className="max-w-content mx-auto">
+            <div className="max-w-2xl mb-10">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">Workflow</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F] mb-3">
                 The eight-step Privexa Trace workflow
               </h2>
-              <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                The workflow is structured to move from workup setup to reviewed evidence output without hiding the decision points that matter.
+              <p className="text-base text-slate-600 leading-relaxed">
+                Structured to move from workup setup to reviewed evidence output without hiding the decision points that matter.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-              {workflowSteps.map((step, index) => (
-                <Card key={step} variant="gradient-border" className="p-4 sm:p-5">
+              {workflowSteps.map((item, index) => (
+                <Card key={item.step} className="p-4 sm:p-5" hover={false}>
                   <CardHeader className="p-0">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-700 dark:text-primary-300">
-                      Step {index + 1}
-                    </p>
-                    <CardTitle className="text-lg sm:text-xl mt-2">{step}</CardTitle>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0F1C3F] text-[11px] font-bold text-white">
+                        {index + 1}
+                      </span>
+                      {index === 5 && (
+                        <span className="text-[10px] font-semibold text-amber-700 bg-amber-50 border border-amber-200 px-1.5 py-0.5 rounded uppercase tracking-wide">
+                          Gate
+                        </span>
+                      )}
+                    </div>
+                    <CardTitle className="text-base text-[#0F1C3F]">{item.step}</CardTitle>
                   </CardHeader>
+                  <CardContent className="p-0 pt-2">
+                    <p className="text-xs text-slate-500 leading-relaxed">{item.description}</p>
+                  </CardContent>
                 </Card>
               ))}
             </div>
@@ -232,46 +312,47 @@ export default function PrivexaTracePage() {
 
       <SectionDivider variant="geometric" />
 
-      <section className="relative py-16 sm:py-20 md:py-24 bg-white dark:bg-slate-950">
+      {/* Three comparison paths */}
+      <section className="bg-white py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="max-w-3xl mb-10">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-50 mb-4">
+          <div className="max-w-content mx-auto">
+            <div className="max-w-2xl mb-10">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">Comparison model</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F] mb-3">
                 Three comparison paths inside one governed workflow
               </h2>
-              <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                Trace is strongest when the comparison model is explicit: specialist-built manual arms remain visible, synthetic output is reviewed rather than assumed, and the final package carries the context forward.
+              <p className="text-base text-slate-600 leading-relaxed">
+                Trace is strongest when the comparison model is explicit: specialist-built manual arms remain visible, synthetic output is reviewed rather than assumed, and the final package carries all context forward.
               </p>
             </div>
             <div className="grid gap-5 lg:grid-cols-3">
               {[
                 {
                   title: "Manual treatment arm",
-                  body: "Specialist-entered benchmark representation of the treated population or reference treatment context.",
+                  body: "Specialist-entered benchmark representation of the treated population or reference treatment context. Built and reviewed before any synthetic generation.",
                   icon: Microscope,
                 },
                 {
                   title: "Manual control arm",
-                  body: "Specialist-entered benchmark control context used to assess workflow logic and comparability.",
+                  body: "Specialist-entered benchmark control context used to assess workflow logic and comparability. Reviewed alongside the treatment arm.",
                   icon: ShieldCheck,
                 },
                 {
-                  title: "Synthetic workflow outputs",
-                  body: "Reviewer-gated synthetic outputs that remain connected to diagnostics, lineage, and visible limitations.",
+                  title: "Synthetic workflow output",
+                  body: "Reviewer-gated synthetic output connected to diagnostics, lineage, and visible limitations. Not presented as a replacement for the manual arms.",
                   icon: GitBranch,
+                  dark: true,
                 },
-              ].map(({ title, body, icon: Icon }) => (
-                <Card key={title} variant="gradient-border" className="p-5 sm:p-6">
+              ].map(({ title, body, icon: Icon, dark }) => (
+                <Card key={title} className={`p-5 sm:p-6 ${dark ? "bg-[#0F1C3F] border-[#0F1C3F]" : ""}`}>
                   <CardHeader className="p-0">
-                    <div className="w-12 h-12 rounded-2xl bg-primary-500/15 flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                    <div className={`w-11 h-11 rounded-xl ${dark ? "bg-white/10" : "bg-[#0F1C3F]/6"} flex items-center justify-center mb-4`}>
+                      <Icon className={`w-5 h-5 ${dark ? "text-white" : "text-[#0F1C3F]"}`} />
                     </div>
-                    <CardTitle className="text-2xl">{title}</CardTitle>
+                    <CardTitle className={`text-lg ${dark ? "text-white" : "text-[#0F1C3F]"}`}>{title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="p-0 pt-4">
-                    <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-                      {body}
-                    </p>
+                  <CardContent className="p-0 pt-3">
+                    <p className={`text-sm leading-relaxed ${dark ? "text-slate-300" : "text-slate-600"}`}>{body}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -280,54 +361,52 @@ export default function PrivexaTracePage() {
         </div>
       </section>
 
-      <section className="relative py-16 sm:py-20 md:py-24 bg-white dark:bg-slate-950">
+      {/* Worked example + Manual/Synthetic comparison */}
+      <section className="bg-[#F7F5F1] py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto grid gap-8 lg:grid-cols-[1fr_1fr]">
-            <Card variant="gradient-border" className="p-5 sm:p-7 lg:p-8">
+          <div className="max-w-content mx-auto grid gap-8 lg:grid-cols-2">
+            <Card className="p-5 sm:p-7 lg:p-8">
               <CardHeader className="p-0">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-primary-500/15 flex items-center justify-center">
-                    <Microscope className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-11 h-11 rounded-xl bg-[#0F1C3F]/6 flex items-center justify-center">
+                    <Microscope className="w-5 h-5 text-[#0F1C3F]" />
                   </div>
-                  <CardTitle className="text-2xl sm:text-3xl">Manual and synthetic comparison</CardTitle>
+                  <CardTitle className="text-2xl text-[#0F1C3F]">Manual and synthetic comparison</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent className="p-0 pt-5 space-y-4 text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+              <CardContent className="p-0 space-y-4 text-base leading-relaxed text-slate-700">
                 <p>
-                  Privexa Trace supports comparison across specialist-entered manual treatment arms, specialist-entered manual control arms, and synthetic workflow outputs.
+                  The product value is not that manual work disappears. The value is that the manual benchmark and the synthetic workflow can be assessed in one governed environment.
                 </p>
                 <p>
-                  That framing matters. The product value is not that manual work disappears. The value is that the manual benchmark and the synthetic workflow can be assessed in one governed environment.
-                </p>
-                <p>
-                  Over time, that comparison structure supports better review, stronger workflow discipline, and clearer evidence packaging without pretending current output should be accepted uncritically.
+                  Over time, that comparison structure supports better review, stronger workflow discipline, and clearer evidence packaging — without pretending current output should be accepted uncritically.
                 </p>
               </CardContent>
             </Card>
 
-            <Card variant="gradient-border" cornerAccent className="p-5 sm:p-7 lg:p-8">
+            <Card className="p-5 sm:p-7 lg:p-8" cornerAccent>
               <CardHeader className="p-0">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-amber-500/15 flex items-center justify-center">
-                    <FlaskConical className="w-6 h-6 text-amber-600 dark:text-amber-400" />
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-11 h-11 rounded-xl bg-amber-500/10 flex items-center justify-center">
+                    <FlaskConical className="w-5 h-5 text-amber-700" />
                   </div>
-                  <CardTitle className="text-2xl sm:text-3xl">Worked example</CardTitle>
+                  <CardTitle className="text-2xl text-[#0F1C3F]">Worked example</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent className="p-0 pt-5">
+              <CardContent className="p-0">
                 <div className="space-y-3">
                   {[
                     "A clinical team defines the question and target setting.",
                     "A trial specialist builds a manual treatment arm and a manual control arm.",
-                    "Trace organizes comparable evidence, dataset fit, and cohort construction.",
+                    "Trace organises comparable evidence, dataset fit, and cohort construction.",
                     "Diagnostics and reviewer sign-off are completed before SCA generation.",
                     "The resulting package preserves lineage, limitations, and reviewed context.",
                   ].map((item, index) => (
-                    <div key={item} className="flex gap-3 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-950/40 p-4">
-                      <div className="w-8 h-8 rounded-full bg-primary-500/15 text-primary-700 dark:text-primary-300 flex items-center justify-center text-sm font-semibold shrink-0">
+                    <div key={item} className="flex gap-3 rounded-xl border border-slate-100 bg-[#F7F5F1]/60 p-3.5">
+                      <div className="w-6 h-6 rounded-full bg-[#0F1C3F] text-white flex items-center justify-center text-xs font-bold shrink-0">
                         {index + 1}
                       </div>
-                      <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">{item}</p>
+                      <p className="text-sm text-slate-700 leading-relaxed">{item}</p>
                     </div>
                   ))}
                 </div>
@@ -337,30 +416,32 @@ export default function PrivexaTracePage() {
         </div>
       </section>
 
-      <section className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-br from-cyan-50/60 via-white to-primary-50/50 dark:from-cyan-950/20 dark:via-slate-950 dark:to-primary-950/20">
+      {/* Trust signals */}
+      <section className="bg-white py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="max-w-3xl mb-10">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-50 mb-4">
+          <div className="max-w-content mx-auto">
+            <div className="max-w-2xl mb-10">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">Governance model</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F] mb-3">
                 Trust signals built into the product story
               </h2>
-              <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                The strongest public story for Privexa Trace is not speed alone. It is structured review, visible limitations, and traceable output.
+              <p className="text-base text-slate-600 leading-relaxed">
+                The strongest public story for Privexa Trace is not speed. It is structured review, visible limitations, and traceable output.
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {trustSignals.map(({ title, body, icon: Icon }) => (
-                <Card key={title} variant="gradient-border" className="p-5 sm:p-6">
+                <Card key={title} className="p-5 sm:p-6">
                   <CardHeader className="p-0">
                     <div className="flex items-start gap-3">
-                      <div className="w-11 h-11 rounded-2xl bg-primary-500/15 flex items-center justify-center shrink-0">
-                        <Icon className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                      <div className="w-10 h-10 rounded-xl bg-[#0F1C3F]/6 flex items-center justify-center shrink-0">
+                        <Icon className="w-5 h-5 text-[#0F1C3F]" />
                       </div>
-                      <CardTitle className="text-lg sm:text-xl leading-tight">{title}</CardTitle>
+                      <CardTitle className="text-base sm:text-lg leading-snug text-[#0F1C3F]">{title}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="p-0 pt-4">
-                    <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 leading-relaxed">{body}</p>
+                    <p className="text-sm text-slate-600 leading-relaxed">{body}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -369,45 +450,114 @@ export default function PrivexaTracePage() {
         </div>
       </section>
 
-      <section className="relative py-16 sm:py-20 bg-white dark:bg-slate-950">
+      {/* What's included / not included */}
+      <section className="bg-[#F7F5F1] py-16 sm:py-20 md:py-24 border-y border-slate-200/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto">
-            <Card variant="gradient-border" className="p-5 sm:p-7 lg:p-8">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-                <div className="max-w-3xl">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-700 dark:text-primary-300 mb-3">
-                    Trust Framing
-                  </p>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-gray-50 mb-4">
-                    Reviewer-gated, auditable, and honest about current boundaries
-                  </h2>
-                  <p className="text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                    Privexa Trace should be understood as a serious workflow platform for reviewed evidence work. It does not claim blind automation, regulatory endorsement, or scientific maturity beyond the evidence available. Its strength is disciplined structure, visible governance, and coherent packaging.
-                  </p>
+          <div className="max-w-content mx-auto">
+            <div className="max-w-2xl mb-10">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">Honest scoping</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">What Privexa Trace includes — and what it does not</h2>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <Card className="p-5 sm:p-6" hover={false}>
+                <CardHeader className="p-0 mb-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">Included</p>
+                </CardHeader>
+                <CardContent className="p-0">
+                  <ul className="space-y-2.5">
+                    {includedNotIncluded.included.map((item) => (
+                      <li key={item} className="flex items-start gap-2.5 text-sm text-slate-700">
+                        <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0 mt-0.5" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+              <Card className="p-5 sm:p-6 bg-[#F7F5F1] border-slate-200/60" hover={false}>
+                <CardHeader className="p-0 mb-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Not included</p>
+                </CardHeader>
+                <CardContent className="p-0">
+                  <ul className="space-y-2.5">
+                    {includedNotIncluded.notIncluded.map((item) => (
+                      <li key={item} className="flex items-start gap-2.5 text-sm text-slate-500">
+                        <XCircle className="h-4 w-4 text-slate-300 shrink-0 mt-0.5" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Regulatory posture */}
+      <section className="bg-white py-14 sm:py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-content mx-auto">
+            <Card className="p-5 sm:p-7 lg:p-8 border-[#0F1C3F]/15">
+              <CardContent className="pt-0">
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                  <div className="max-w-2xl">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">Regulatory posture</p>
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#0F1C3F] mb-3">
+                      Designed to support submission packaging — not to claim regulatory approval
+                    </h3>
+                    <p className="text-base text-slate-700 leading-relaxed mb-4">
+                      Privexa Trace is designed with the intent of supporting FDA, EMA, and Medsafe submission packaging workflows. It structures evidence with the discipline those processes require. It does not claim, imply, or guarantee regulatory acceptance of any output.
+                    </p>
+                    <div className="grid sm:grid-cols-3 gap-3">
+                      {["FDA-aligned workflow intent", "EMA-aligned workflow intent", "Medsafe NZ context"].map((item) => (
+                        <div key={item} className="rounded-lg border border-slate-200/80 bg-[#F7F5F1] px-3 py-2.5 text-xs font-semibold text-slate-600 text-center">
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-3 shrink-0">
+                    <Button asChild variant="primary" size="lg">
+                      <Link href="/contact" className="flex items-center gap-2">
+                        Request walkthrough
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </Button>
+                    <Button asChild variant="secondary" size="lg">
+                      <Link href="/ai-solutions">View AI Solutions</Link>
+                    </Button>
+                  </div>
                 </div>
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                  <Button asChild variant="gradient" size="lg" className="sm:min-w-[220px]">
-                    <Link href="/contact" className="flex items-center justify-center gap-2">
-                      Talk to Translyx
-                      <ArrowRight className="h-5 w-5" />
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" size="lg" className="sm:min-w-[190px]">
-                    <Link href="/ai-solutions" className="flex items-center justify-center gap-2">
-                      View AI Solutions
-                    </Link>
-                  </Button>
-                </div>
-              </div>
+              </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="bg-[#F7F5F1] py-14 sm:py-16 border-t border-slate-200/60">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-content mx-auto">
+            <h2 className="text-xl font-semibold text-[#0F1C3F] mb-6">Common questions</h2>
+            <div className="space-y-4">
+              {faqItems.map(({ q, a }) => (
+                <Card key={q} className="p-5 sm:p-6" hover={false}>
+                  <CardContent className="pt-0">
+                    <p className="text-sm font-bold text-[#0F1C3F] mb-2">{q}</p>
+                    <p className="text-sm text-slate-600 leading-relaxed">{a}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <CTA
-        title="See where Privexa Trace fits in the wider Translyx offering"
-        description="Translyx can walk your team through reviewer-gated synthetic control workflows, protected AI privacy, and broader clinical technology decisions without collapsing the portfolio into a single product."
-        primaryCTA={{ label: "Talk to Translyx", href: "/contact" }}
+        title="See where Privexa Trace fits your team"
+        description="Translyx can walk you through reviewer-gated synthetic control workflows, data protection, and the broader clinical technology portfolio — without collapsing it into a single product pitch."
+        primaryCTA={{ label: "Request walkthrough", href: "/contact" }}
         secondaryCTA={{ label: "See all products", href: "/products" }}
       />
     </>

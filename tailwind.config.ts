@@ -48,7 +48,9 @@ const config: Config = {
         brand: {
           primary: "#0F1C3F",
           secondary: "#1D4ED8",
-          accent: "#F59E0B",
+          accent: "#22D3EE",
+          warm: "#F7F5F1",
+          ink: "#1A1F2B",
           glow: "#7CE7FF",
         },
         success: {
@@ -82,15 +84,15 @@ const config: Config = {
           500: "#3B82F6",
         },
         accent: {
-          DEFAULT: "#F59E0B",
-          50: "#FFFBEB",
-          100: "#FEF3C7",
-          200: "#FDE68A",
-          300: "#FCD34D",
-          400: "#FBBF24",
-          500: "#F59E0B",
-          600: "#D97706",
-          700: "#B45309",
+          DEFAULT: "#22D3EE",
+          50: "#ECFEFF",
+          100: "#CFFAFE",
+          200: "#A5F3FC",
+          300: "#67E8F9",
+          400: "#22D3EE",
+          500: "#06B6D4",
+          600: "#0891B2",
+          700: "#0E7490",
         },
         destructive: {
           DEFAULT: "#EF4444",
@@ -104,6 +106,10 @@ const config: Config = {
           DEFAULT: "#FFFFFF",
           foreground: "#1F2937",
         },
+      },
+      fontSize: {
+        display: ["clamp(3.25rem, 6vw, 5.25rem)", { lineHeight: "1.05", letterSpacing: "-0.025em" }],
+        "display-sm": ["clamp(2.25rem, 4vw, 3.25rem)", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -127,10 +133,6 @@ const config: Config = {
           "0%": { opacity: "0", transform: "scale(0.95)" },
           "100%": { opacity: "1", transform: "scale(1)" },
         },
-        gradient: {
-          "0%, 100%": { backgroundPosition: "0% 50%" },
-          "50%": { backgroundPosition: "100% 50%" },
-        },
         shimmer: {
           "0%": { backgroundPosition: "-1000px 0" },
           "100%": { backgroundPosition: "1000px 0" },
@@ -141,15 +143,7 @@ const config: Config = {
         },
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-10px)" },
-        },
-        glow: {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)" },
-          "50%": { boxShadow: "0 0 40px rgba(59, 130, 246, 0.8)" },
-        },
-        aurora: {
-          "0%, 100%": { transform: "translate3d(0, 0, 0)" },
-          "50%": { transform: "translate3d(-4%, 2%, 0)" },
+          "50%": { transform: "translateY(-6px)" },
         },
         sheen: {
           "0%": { backgroundPosition: "-200% 0" },
@@ -161,29 +155,25 @@ const config: Config = {
         "fade-in-up": "fadeInUp 0.6s ease-out forwards",
         "slide-in": "slideIn 0.5s ease-out forwards",
         "scale-in": "scaleIn 0.4s ease-out forwards",
-        "gradient": "gradient 15s ease infinite",
         "shimmer": "shimmer 2s linear infinite",
         "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "float": "float 3s ease-in-out infinite",
-        "glow": "glow 2s ease-in-out infinite",
-        "aurora": "aurora 18s ease-in-out infinite",
+        "float": "float 4s ease-in-out infinite",
         "sheen": "sheen 2.5s ease-in-out infinite",
       },
       backgroundSize: {
         "300%": "300%",
       },
       spacing: {
-        /* Override defaults for ~25% more vertical spacing site-wide */
-        "16": "5rem",
-        "20": "6.25rem",
-        "24": "7.5rem",
+        "16": "4rem",
         "18": "4.5rem",
+        "20": "5rem",
+        "24": "6rem",
         "88": "22rem",
         "128": "32rem",
       },
       maxWidth: {
-        "content": "68.75rem",   /* 1100px */
-        "content-wide": "75rem",   /* 1200px */
+        "content": "68.75rem",
+        "content-wide": "75rem",
       },
     },
   },

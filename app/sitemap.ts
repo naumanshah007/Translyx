@@ -4,24 +4,27 @@ import { pipelineCategories } from "@/config/pipeline";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
+  const now = new Date();
 
   const pipelineUrls = pipelineCategories.map((c) => ({
     url: `${baseUrl}/product-pipeline/${c.slug}`,
-    lastModified: new Date(),
+    lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: 0.8,
+    priority: 0.6,
   }));
 
   return [
-    { url: baseUrl, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
-    { url: `${baseUrl}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/products`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${baseUrl}/products/privexa-trace`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${baseUrl}/product-pipeline`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
+    { url: baseUrl, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${baseUrl}/products`, lastModified: now, changeFrequency: "weekly", priority: 0.95 },
+    { url: `${baseUrl}/products/privexa-trace`, lastModified: now, changeFrequency: "weekly", priority: 0.95 },
+    { url: `${baseUrl}/ai-solutions`, lastModified: now, changeFrequency: "weekly", priority: 0.90 },
+    { url: `${baseUrl}/product-pipeline`, lastModified: now, changeFrequency: "monthly", priority: 0.80 },
     ...pipelineUrls,
-    { url: `${baseUrl}/services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/ai-solutions`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/updates`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
-    { url: `${baseUrl}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.80 },
+    { url: `${baseUrl}/services`, lastModified: now, changeFrequency: "monthly", priority: 0.70 },
+    { url: `${baseUrl}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${baseUrl}/updates`, lastModified: now, changeFrequency: "weekly", priority: 0.65 },
+    { url: `${baseUrl}/pricing`, lastModified: now, changeFrequency: "monthly", priority: 0.60 },
+    { url: `${baseUrl}/features`, lastModified: now, changeFrequency: "monthly", priority: 0.60 },
   ];
 }

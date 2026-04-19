@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
 
+# Block API routes from indexing
+Disallow: /api/
+
 Host: https://translyx.co
 Sitemap: https://translyx.co/sitemap.xml

@@ -9,26 +9,22 @@ export function Navigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="hidden md:flex items-center gap-6">
-      {navigation.map((item) => {
-        const isActive = pathname === item.href;
-        return (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={cn(
-              "relative text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-200",
-              "after:absolute after:-bottom-2 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-gradient-to-r after:from-cyan-400 after:via-primary-500 after:to-amber-300 after:transition-transform after:duration-300",
-              "hover:after:scale-x-100",
-              isActive
-                ? "text-slate-900 dark:text-white after:scale-x-100"
-                : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
-            )}
-          >
-            {item.label}
-          </Link>
-        );
-      })}
+    <nav className="hidden lg:flex items-center gap-7" aria-label="Main navigation">
+      {navigation.map((item) => (
+        <Link
+          key={item.href}
+          href={item.href}
+          className={cn(
+            "text-xs font-semibold uppercase tracking-[0.16em] transition-colors duration-150 relative",
+            "after:absolute after:-bottom-1 after:left-0 after:h-[1.5px] after:w-full after:origin-left after:scale-x-0 after:bg-[#0F1C3F] after:transition-transform after:duration-200 hover:after:scale-x-100",
+            pathname === item.href || (pathname.startsWith(item.href) && item.href !== "/")
+              ? "text-[#0F1C3F] after:scale-x-100"
+              : "text-slate-500 hover:text-[#0F1C3F]"
+          )}
+        >
+          {item.label}
+        </Link>
+      ))}
     </nav>
   );
 }

@@ -1,91 +1,113 @@
 import type { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
-import { Prose } from "@/components/ui/Prose";
 import { CTA } from "@/components/sections/CTA";
 import { Hero } from "@/components/sections/Hero";
-import { Brain, Zap, ShieldAlert, ShieldCheck, Lock, Database, Cloud, Scale, Globe, Shield, FileCheck, FileText, BrainCircuit, ArrowRight, GitBranch, Layers3, Microscope } from "lucide-react";
-import { PatternOverlay, GradientAccent, SectionDivider } from "@/components/ui/DecorativeElements";
+import {
+  Brain,
+  Zap,
+  ShieldAlert,
+  ShieldCheck,
+  Lock,
+  Database,
+  Cloud,
+  Scale,
+  Globe,
+  Shield,
+  FileCheck,
+  FileText,
+  BrainCircuit,
+  ArrowRight,
+  GitBranch,
+  Layers3,
+  Microscope,
+  Users,
+  FlaskConical,
+  Building2,
+} from "lucide-react";
+import { PatternOverlay, SectionDivider } from "@/components/ui/DecorativeElements";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
+const pageDescription =
+  "Translyx AI Solutions — Privexa protects clinical AI data flows field by field. Privexa Trace governs reviewer-gated evidence workflows. Together they form the complete governed AI operating model for healthcare.";
+
 export const metadata: Metadata = {
-  title: "AI Solutions | Privexa and Privexa Trace",
-  description:
-    "Explore Translyx AI Solutions, including Privexa for protected healthcare AI privacy workflows and Privexa Trace for reviewer-gated synthetic control and clinical evidence workflows.",
+  title: "AI Solutions — Governed Clinical AI | Translyx",
+  description: pageDescription,
   keywords: [
     "Translyx AI Solutions",
-    "Translyx healthcare AI",
-    "Privexa",
+    "clinical AI governance",
+    "Privexa AI protection",
     "Privexa Trace",
-    "protected AI healthcare",
-    "synthetic control arm",
-    "clinical evidence workflow",
+    "AI data protection healthcare",
+    "audit-traceable clinical AI workflows",
+    "synthetic control arm software",
+    "healthcare AI NZ",
   ],
-  alternates: {
-    canonical: "/ai-solutions",
-  },
+  alternates: { canonical: "/ai-solutions" },
   openGraph: {
-    title: "AI Solutions | Privexa and Privexa Trace | Translyx",
-    description:
-      "Explore Translyx AI Solutions, including Privexa for protected healthcare AI privacy workflows and Privexa Trace for reviewer-gated synthetic control and clinical evidence workflows.",
+    title: "AI Solutions — Governed Clinical AI | Translyx",
+    description: pageDescription,
     url: `${siteConfig.url}/ai-solutions`,
     siteName: siteConfig.name,
-    images: [
-      {
-        url: siteConfig.seo.ogImage,
-        width: 1200,
-        height: 630,
-        alt: "Translyx AI Solutions",
-      },
-    ],
+    images: [{ url: siteConfig.seo.ogImage, width: 1200, height: 630, alt: "Translyx AI Solutions" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Solutions | Privexa and Privexa Trace | Translyx",
-    description:
-      "Explore Translyx AI Solutions, including Privexa for protected healthcare AI privacy workflows and Privexa Trace for reviewer-gated synthetic control and clinical evidence workflows.",
+    title: "AI Solutions — Governed Clinical AI | Translyx",
+    description: pageDescription,
     images: [siteConfig.seo.ogImage],
   },
 };
 
 const sectionAnchors = [
-  { id: "case-for-ai", label: "The Case for AI", icon: Zap },
-  { id: "privacy-challenge", label: "Privacy Challenge", icon: ShieldAlert },
+  { id: "case-for-ai", label: "The case for AI", icon: Zap },
+  { id: "privacy-challenge", label: "Privacy challenge", icon: ShieldAlert },
   { id: "privexa", label: "Privexa", icon: ShieldCheck },
   { id: "privexa-trace", label: "Privexa Trace", icon: GitBranch },
   { id: "compliance", label: "Compliance", icon: Scale },
 ];
 
-const complianceItems = [
-  { label: "NZ Privacy Act 2020", detail: "Health information privacy principles", icon: Scale },
-  { label: "HIPAA alignment", detail: "For organizations with international partners", icon: Globe },
-  { label: "GDPR readiness", detail: "For research and cross-border data workflows", icon: Shield },
-  { label: "Immutable audit trails", detail: "Tamper-evident records for compliance reporting", icon: FileCheck },
+const audienceSegments = [
+  { label: "Clinical Sponsors", icon: FlaskConical, description: "Biotech and pharma teams running evidence reviews" },
+  { label: "CROs", icon: Building2, description: "Contract research organisations managing trial workflows" },
+  { label: "Academic Groups", icon: Brain, description: "Research teams needing governed synthetic control work" },
+  { label: "Diagnostic Vendors", icon: Microscope, description: "Companies integrating AI into diagnostic pipelines" },
 ];
 
 const featureCards = [
   {
     id: "field-protection",
-    title: "Field-Level Protection",
-    body: "Every sensitive field in every clinical document, message, or record is identified and replaced before transmission. Detection covers standard clinical identifiers and can be trained on entity types specific to your organization's data.",
+    title: "Field-level protection",
+    body: "Every sensitive field in every clinical document, message, or record is identified and replaced before transmission. Detection covers standard clinical identifiers and can be trained on entity types specific to your organisation's data.",
+    outcome: "Sensitive data never reaches AI systems.",
     icon: Lock,
-    accentColor: "primary" as const,
+    accentColor: "navy" as const,
   },
   {
     id: "local-vault",
-    title: "Local Vault — Nothing Leaves",
+    title: "Local vault — nothing leaves",
     body: "Token mappings are stored within your infrastructure. Privexa does not transmit or store patient data externally. The privacy guarantee is architectural, not just contractual.",
+    outcome: "Zero external data exposure by design.",
     icon: Database,
     accentColor: "cyan" as const,
   },
   {
     id: "cloud-shield",
-    title: "Cloud Pipeline Protection (Privexa Cloud Shield)",
-    body: "For organizations moving clinical data to cloud platforms — AWS, Azure, GCP, or data warehouses — Cloud Shield enforces the same field-level boundary for data pipelines. Sensitive fields never reach cloud storage in their original form.",
+    title: "Cloud pipeline protection",
+    body: "For organisations moving clinical data to cloud platforms — AWS, Azure, GCP, or data warehouses — Cloud Shield enforces the same field-level boundary for data pipelines. Sensitive fields never reach cloud storage in their original form.",
+    outcome: "Same protection boundary across cloud and on-premise.",
     icon: Cloud,
-    accentColor: "amber" as const,
+    accentColor: "slate" as const,
   },
+];
+
+const complianceItems = [
+  { label: "NZ Privacy Act 2020", detail: "Health information privacy principles", icon: Scale },
+  { label: "HIPAA alignment", detail: "For organisations with international partners", icon: Globe },
+  { label: "GDPR readiness", detail: "For research and cross-border data workflows", icon: Shield },
+  { label: "Immutable audit trails", detail: "Tamper-evident records for compliance reporting", icon: FileCheck },
 ];
 
 const traceSignals = [
@@ -96,13 +118,28 @@ const traceSignals = [
   },
   {
     title: "Manual and synthetic comparison in one workspace",
-    body: "Specialist-entered manual treatment and manual control benchmark arms can be assessed alongside synthetic workflow outputs.",
+    body: "Specialist-entered manual treatment and manual control benchmark arms are assessed alongside synthetic workflow outputs.",
     icon: Microscope,
   },
   {
     title: "Traceability, lineage, and submission packaging",
-    body: "Workflow context, visible limitations, and submission-oriented output remain part of the product story rather than an afterthought.",
+    body: "Workflow context, visible limitations, and submission-oriented output remain part of the product story — not an afterthought.",
     icon: Layers3,
+  },
+];
+
+const faqItems = [
+  {
+    q: "What is the difference between Privexa and Privexa Trace?",
+    a: "Privexa is the data-protection layer — it ensures sensitive clinical data never reaches AI systems in identifiable form. Privexa Trace is the evidence workflow product — it governs reviewer-gated synthetic control arm workflows with lineage and submission packaging. They solve different problems in the same AI governance stack.",
+  },
+  {
+    q: "Does Privexa Trace imply regulatory approval?",
+    a: "No. Privexa Trace is designed to support submission-oriented packaging and reviewed governance workflows. It does not claim or imply regulatory endorsement from FDA, EMA, Medsafe, or any other body. Translyx is transparent about this on every product page.",
+  },
+  {
+    q: "Who is Privexa Trace designed for?",
+    a: "Biotech, pharma, CRO, and clinical-trial office teams who need governed synthetic control arm workflows, visible review gates, manual benchmark comparison, and traceable output that can be defended in a submission context.",
   },
 ];
 
@@ -112,25 +149,39 @@ export default function AISolutionsPage() {
     "@type": "WebPage",
     name: "Translyx AI Solutions",
     url: `${siteConfig.url}/ai-solutions`,
-    description:
-      "Translyx AI Solutions includes Privexa for protected AI privacy workflows and Privexa Trace for reviewer-gated synthetic control and evidence workflows.",
-    isPartOf: {
-      "@type": "WebSite",
-      name: siteConfig.name,
-      url: siteConfig.url,
+    description: pageDescription,
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+        { "@type": "ListItem", position: 2, name: "AI Solutions", item: `${siteConfig.url}/ai-solutions` },
+      ],
     },
+    isPartOf: { "@type": "WebSite", name: siteConfig.name, url: siteConfig.url },
     about: [
       {
         "@type": "SoftwareApplication",
         name: "Privexa",
         applicationCategory: "SecurityApplication",
+        description: "Field-level AI data protection for healthcare workflows.",
+        provider: { "@type": "Organization", name: siteConfig.companyName },
       },
       {
         "@type": "SoftwareApplication",
         name: "Privexa Trace",
         applicationCategory: "BusinessApplication",
+        description: "Reviewer-gated synthetic control arm workflow platform.",
+        provider: { "@type": "Organization", name: siteConfig.companyName },
       },
     ],
+    mainEntity: {
+      "@type": "FAQPage",
+      mainEntity: faqItems.map(({ q, a }) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: { "@type": "Answer", text: a },
+      })),
+    },
   };
 
   return (
@@ -139,384 +190,320 @@ export default function AISolutionsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aiSolutionsSchema) }}
       />
+
       <Hero
-        subheadline="Translyx AI Solutions"
-        headline="Protected AI and governed evidence workflows for healthcare"
-        description="Translyx presents a broader AI solutions story in which Privexa protects data flows and Privexa Trace serves as one reviewer-gated evidence workflow product."
-        badge={{ text: "AI & Privacy", icon: <Brain className="w-4 h-4" /> }}
-        primaryCTA={{ label: "Talk to Translyx", href: "/contact" }}
-        secondaryCTA={{ label: "See all products", href: "/products" }}
-        enhancedAurora
-        decorativeShapes
-        className="py-12 sm:py-14 md:py-16 lg:py-20"
+        badge={{ text: "Translyx AI Solutions", icon: <Brain className="w-3.5 h-3.5" /> }}
+        headline="AI solutions, governed end-to-end"
+        description="Privexa is the protection primitive for clinical AI workflows. Privexa Trace is the governed evidence platform built on top of it. Together they form a complete, reviewed AI operating model."
+        primaryCTA={{ label: "See Privexa Trace", href: "/products/privexa-trace" }}
+        secondaryCTA={{ label: "Talk to Translyx", href: "/contact" }}
+        className="py-16 sm:py-20 md:py-28 lg:py-36"
       />
 
       <div id="ai-solutions-content" className="overflow-x-hidden">
-        {/* In-page nav — sticky */}
-        <div className="sticky top-14 sm:top-16 z-20 py-3 bg-gradient-to-b from-cyan-50/95 via-white/95 to-primary-50/90 dark:from-cyan-950/95 dark:via-slate-950/95 dark:to-primary-950/90 backdrop-blur-md border-b border-primary-200/30 dark:border-primary-800/30">
+        {/* In-page nav */}
+        <div className="sticky top-16 z-20 py-3 bg-white/95 backdrop-blur-md border-b border-slate-200/60 dark:bg-slate-950/95">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
-            <nav className="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-5xl mx-auto" aria-label="Page sections">
+            <nav className="flex flex-wrap justify-center gap-2 sm:gap-2.5 max-w-3xl mx-auto" aria-label="Page sections">
               {sectionAnchors.map(({ id, label, icon: NavIcon }) => (
                 <Link
                   key={id}
                   href={`#${id}`}
-                  className="inline-flex items-center gap-1.5 sm:gap-2 min-h-[44px] min-w-[44px] px-3 sm:px-4 py-2 rounded-xl border border-primary-200/80 dark:border-primary-700/60 bg-white/90 dark:bg-slate-900/80 shadow-sm hover:shadow-md active:scale-[0.98] sm:hover:scale-[1.02] hover:border-primary-400/80 dark:hover:border-primary-500/60 transition-all duration-300 text-xs sm:text-sm font-semibold text-gray-800 dark:text-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500/40 focus-visible:ring-offset-2 touch-manipulation"
+                  className="inline-flex items-center gap-1.5 min-h-[38px] px-3 sm:px-4 py-2 rounded-lg border border-slate-200/80 bg-[#F7F5F1] hover:bg-white hover:border-[#0F1C3F]/20 hover:text-[#0F1C3F] transition-all duration-150 text-xs font-semibold text-slate-600"
                 >
-                  <NavIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
-                  <span className="truncate max-w-[140px] sm:max-w-none">{label}</span>
+                  <NavIcon className="w-3.5 h-3.5 flex-shrink-0" />
+                  <span>{label}</span>
                 </Link>
               ))}
             </nav>
           </div>
         </div>
 
-      {/* Section 1 — The Case for Clinical AI */}
-      <section
-        id="case-for-ai"
-        className="relative scroll-mt-20 sm:scroll-mt-24 md:scroll-mt-28 py-8 sm:py-10 md:py-14 bg-gradient-to-br from-cyan-50/80 via-white to-primary-50/60 dark:from-cyan-950/20 dark:via-slate-950 dark:to-primary-950/20"
-      >
-        <PatternOverlay pattern="topo" opacity={0.04} className="text-primary-500/15 dark:text-primary-400/10" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-5xl mx-auto">
-            <div className="relative pl-3 sm:pl-6 border-l-2 sm:border-l-4 border-primary-400/50 dark:border-primary-500/40 rounded-r-lg animate-fade-in-up motion-reduce:animate-none min-w-0">
-              <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4 mb-3">
-                <div className="flex items-center gap-2 sm:gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-primary-400/30 to-primary-500/20 dark:from-primary-500/25 dark:to-primary-600/15 backdrop-blur-md flex items-center justify-center shadow-[0_8px_24px_rgba(59,130,246,0.2)]">
-                    <Zap className="w-5 h-5 sm:w-7 sm:h-7 text-primary-600 dark:text-primary-400" />
+        {/* Who this is for */}
+        <section className="py-12 sm:py-14 bg-[#F7F5F1] border-b border-slate-200/60">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-content mx-auto">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-6 text-center">Who this is for</p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+                {audienceSegments.map(({ label, icon: Icon, description }) => (
+                  <div key={label} className="rounded-xl bg-white border border-slate-200/80 p-4 text-center shadow-[0_1px_8px_-2px_rgba(15,28,63,0.08)]">
+                    <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-[#0F1C3F]/6">
+                      <Icon className="h-5 w-5 text-[#0F1C3F]" />
+                    </div>
+                    <p className="text-sm font-semibold text-[#0F1C3F]">{label}</p>
+                    <p className="mt-1 text-xs text-slate-500 leading-snug">{description}</p>
                   </div>
-                  <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-50 leading-tight">The Case for Clinical AI</h2>
-                </div>
-              </div>
-              <Card variant="gradient-border" className="p-4 sm:p-6 lg:p-8">
-                <CardContent className="pt-0 min-w-0">
-                  <Prose className="space-y-4 sm:space-y-6 text-left sm:text-justify">
-                    <p>
-                      From diagnostic imaging analysis to administrative automation and clinical decision support, AI is delivering measurable improvements in patient outcomes and operational efficiency. New Zealand healthcare organizations are at a pivotal moment — early adopters are gaining significant advantages, while those waiting face increasing pressure from staff, leadership, and patients who expect modern tools.
-                    </p>
-                    <p>
-                      Translyx helps organizations identify, evaluate, and implement AI solutions that are clinically validated, fit for purpose, and safe to deploy in New Zealand&apos;s healthcare environment.
-                    </p>
-                    <p>
-                      That responsibility extends beyond privacy alone. For some healthcare and research teams, responsible AI also requires a governed workflow around evidence assembly, review gates, and traceable outputs.
-                    </p>
-                  </Prose>
-                </CardContent>
-              </Card>
-
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <Card variant="gradient-border" className="p-4 sm:p-5">
-                  <CardHeader className="p-0">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-700 dark:text-cyan-300 mb-2">
-                      Privexa
-                    </p>
-                    <CardTitle className="text-xl sm:text-2xl">Protected AI privacy layer</CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-0 pt-4">
-                    <p className="text-sm sm:text-base leading-relaxed text-gray-700 dark:text-gray-300">
-                      Protects patient and clinical data before it reaches AI systems or cloud workflows.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card variant="gradient-border" className="p-4 sm:p-5">
-                  <CardHeader className="p-0">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-700 dark:text-primary-300 mb-2">
-                      Privexa Trace
-                    </p>
-                    <CardTitle className="text-xl sm:text-2xl">Reviewer-gated evidence workflow</CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-0 pt-4">
-                    <p className="text-sm sm:text-base leading-relaxed text-gray-700 dark:text-gray-300">
-                      Structures synthetic control and evidence operations with manual benchmark comparison, review gates, lineage, and package-ready outputs.
-                    </p>
-                  </CardContent>
-                </Card>
+                ))}
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <SectionDivider variant="gradient" className="py-2 sm:py-3" />
-
-      {/* Section 2 — The Data Privacy Challenge */}
-      <section
-        id="privacy-challenge"
-        className="relative scroll-mt-20 sm:scroll-mt-24 md:scroll-mt-28 py-8 sm:py-10 md:py-14 bg-gradient-to-br from-amber-50/70 via-white to-rose-50/50 dark:from-amber-950/15 dark:via-slate-950 dark:to-rose-950/10"
-      >
-        <PatternOverlay pattern="topo" opacity={0.04} className="text-amber-500/15 dark:text-amber-400/10" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-5xl mx-auto">
-            <div className="relative pl-3 sm:pl-6 border-l-2 sm:border-l-4 border-amber-400/50 dark:border-amber-500/40 rounded-r-lg animate-fade-in-up motion-reduce:animate-none min-w-0" style={{ animationDelay: "100ms" }}>
-              <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4 mb-3">
-                <div className="flex items-center gap-2 sm:gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-amber-400/30 to-amber-500/20 dark:from-amber-500/25 dark:to-amber-600/15 backdrop-blur-md flex items-center justify-center shadow-[0_8px_24px_rgba(245,158,11,0.2)]">
-                    <ShieldAlert className="w-5 h-5 sm:w-7 sm:h-7 text-amber-600 dark:text-amber-400" />
-                  </div>
-                  <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-50 leading-tight">The Data Privacy Challenge</h2>
+        {/* Case for AI */}
+        <section id="case-for-ai" className="scroll-mt-20 py-12 sm:py-14 md:py-16 bg-white">
+          <PatternOverlay pattern="topo" opacity={0.03} className="text-slate-500/20" />
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-content mx-auto">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="flex-shrink-0 flex h-11 w-11 items-center justify-center rounded-xl bg-[#0F1C3F]/8">
+                  <Zap className="w-5 h-5 text-[#0F1C3F]" />
                 </div>
+                <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">The case for clinical AI</h2>
               </div>
-              <Card variant="gradient-border" className="p-4 sm:p-6 lg:p-8 border-amber-200/30 dark:border-amber-800/30">
-                <CardContent className="pt-0 min-w-0">
-                  <Prose className="space-y-4 sm:space-y-6 text-left sm:text-justify">
+              <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-6">
+                <Card className="p-5 sm:p-6 lg:p-8">
+                  <CardContent className="pt-0 space-y-4 text-base leading-relaxed text-slate-700">
                     <p>
-                      Most AI platforms require data to leave your environment. Patient names, NHI numbers, dates of birth, clinical notes, and diagnostic details are routinely transmitted to external systems when staff use AI tools — often without explicit awareness of the privacy implications.
+                      From diagnostic imaging analysis to administrative automation and clinical decision support, AI is delivering measurable improvements in patient outcomes and operational efficiency. New Zealand healthcare organisations are at a pivotal moment — early adopters are gaining significant advantages, while those waiting face increasing pressure from staff, leadership, and patients who expect modern tools.
                     </p>
                     <p>
-                      Under the New Zealand Privacy Act 2020, health information is among the most sensitive categories of personal data. Organizations have a legal and ethical obligation to ensure that AI adoption does not create exposure that existing governance frameworks were not designed to handle.
+                      Translyx helps organisations identify, evaluate, and implement AI solutions that are clinically validated, fit for purpose, and safe to deploy in New Zealand&apos;s healthcare environment. That responsibility extends beyond privacy alone.
                     </p>
                     <p>
-                      The question is not whether to adopt AI. The question is how to adopt it without creating privacy risk that undermines patient trust and organizational compliance.
+                      For healthcare and research teams, responsible AI also requires a governed workflow around evidence assembly, review gates, and traceable outputs. That is where Privexa and Privexa Trace come in.
                     </p>
-                  </Prose>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <SectionDivider variant="geometric" className="py-2 sm:py-3" />
-
-      {/* Section 3 — Privexa partnership + feature cards */}
-      <section
-        id="privexa"
-        className="relative scroll-mt-20 sm:scroll-mt-24 md:scroll-mt-28 py-8 sm:py-10 md:py-14 bg-gradient-to-br from-primary-50/60 via-white to-cyan-50/70 dark:from-primary-950/20 dark:via-slate-950 dark:to-cyan-950/20"
-      >
-        <PatternOverlay pattern="topo" opacity={0.04} className="text-cyan-500/15 dark:text-cyan-400/10" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-5xl mx-auto">
-            <div className="relative pl-3 sm:pl-6 border-l-2 sm:border-l-4 border-cyan-400/50 dark:border-cyan-500/40 rounded-r-lg animate-fade-in-up motion-reduce:animate-none min-w-0" style={{ animationDelay: "200ms" }}>
-              <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4 mb-3">
-                <div className="flex items-center gap-2 sm:gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-cyan-400/30 to-cyan-500/20 dark:from-cyan-500/25 dark:to-cyan-600/15 backdrop-blur-md flex items-center justify-center shadow-[0_8px_24px_rgba(34,211,238,0.2)]">
-                    <ShieldCheck className="w-5 h-5 sm:w-7 sm:h-7 text-cyan-600 dark:text-cyan-400" />
-                  </div>
-                  <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-50 leading-tight">Privexa — AI Privacy for Healthcare</h2>
-                </div>
-              </div>
-              <Card variant="gradient-border" cornerAccent className="p-4 sm:p-6 lg:p-8 mb-5">
-                <CardContent className="pt-0 min-w-0">
-                  <Prose className="space-y-4 sm:space-y-6 text-left sm:text-justify">
-                    <p>
-                      Translyx has partnered with Privexa, a New Zealand enterprise AI privacy platform, to provide healthcare organizations with the privacy layer that makes responsible AI adoption possible.
-                    </p>
-                    <p>
-                      Before any data reaches an AI system, Privexa detects and replaces sensitive fields — patient names, NHI numbers, dates of birth, clinical identifiers, and custom entity types specific to your organization — with safe placeholders. AI systems work with the placeholders. Original patient data never leaves your environment.
-                    </p>
-                    <p>
-                      When AI responses return, Privexa restores the original context seamlessly. Your clinical teams experience the full benefit of AI assistance. Your patients&apos; data stays where it belongs.
-                    </p>
-                  </Prose>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* How It Works mini-diagram */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 mb-6 py-4 sm:py-5 px-4 rounded-2xl bg-white/60 dark:bg-slate-900/40 border border-primary-200/50 dark:border-primary-700/50">
-              <div className="flex items-center gap-2 sm:gap-3">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-primary-500/15 flex items-center justify-center flex-shrink-0">
-                  <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-primary-600 dark:text-primary-400" />
-                </div>
-                <span className="font-semibold text-gray-800 dark:text-gray-200 text-sm sm:text-base">Clinical Data</span>
-              </div>
-              <div className="flex items-center text-primary-500 dark:text-primary-400 flex-shrink-0 sm:rotate-0 rotate-90">
-                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
-              </div>
-              <div className="flex items-center gap-2 sm:gap-3">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-cyan-500/15 flex items-center justify-center flex-shrink-0">
-                  <Lock className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-600 dark:text-cyan-400" />
-                </div>
-                <span className="font-semibold text-gray-800 dark:text-gray-200 text-sm sm:text-base">Privexa</span>
-              </div>
-              <div className="flex items-center text-primary-500 dark:text-primary-400 flex-shrink-0 sm:rotate-0 rotate-90">
-                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
-              </div>
-              <div className="flex items-center gap-2 sm:gap-3">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-amber-500/15 flex items-center justify-center flex-shrink-0">
-                  <BrainCircuit className="w-5 h-5 sm:w-6 sm:h-6 text-amber-600 dark:text-amber-400" />
-                </div>
-                <span className="font-semibold text-gray-800 dark:text-gray-200 text-sm sm:text-base">AI</span>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
-              {featureCards.map(({ id, title, body, icon: Icon, accentColor }, idx) => {
-                const accentClasses = {
-                  primary: "from-primary-400/25 to-primary-600/20 dark:from-primary-500/20 dark:to-primary-600/15 border-primary-200/50 dark:border-primary-700/50",
-                  cyan: "from-cyan-400/25 to-cyan-600/20 dark:from-cyan-500/20 dark:to-cyan-600/15 border-cyan-200/50 dark:border-cyan-700/50",
-                  amber: "from-amber-400/25 to-amber-600/20 dark:from-amber-500/20 dark:to-amber-600/15 border-amber-200/50 dark:border-amber-700/50",
-                };
-                const iconClasses = {
-                  primary: "text-primary-600 dark:text-primary-400 bg-gradient-to-br from-primary-400/25 to-primary-600/20",
-                  cyan: "text-cyan-600 dark:text-cyan-400 bg-gradient-to-br from-cyan-400/25 to-cyan-600/20",
-                  amber: "text-amber-600 dark:text-amber-400 bg-gradient-to-br from-amber-400/25 to-amber-600/20",
-                };
-                return (
-                  <Card key={id} variant="gradient-border" className={`p-4 sm:p-5 flex flex-col h-full border min-w-0 ${accentClasses[accentColor]} hover:-translate-y-1 hover:shadow-[0_24px_60px_-30px_rgba(15,23,42,0.55)] transition-all duration-300 animate-fade-in-up motion-reduce:animate-none active:translate-y-0 sm:active:translate-y-0`} style={{ animationDelay: `${idx * 100}ms` }}>
-                    <CardHeader className="flex-shrink-0">
-                      <div className="flex items-start gap-2 sm:gap-3 mb-2">
-                        <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0 ${iconClasses[accentColor]}`}>
-                          <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
-                        </div>
-                        <CardTitle className="text-base sm:text-lg font-bold text-gray-900 dark:text-gray-100 leading-tight min-w-0">{title}</CardTitle>
-                      </div>
+                  </CardContent>
+                </Card>
+                <div className="grid grid-rows-2 gap-4">
+                  <Card className="p-4 sm:p-5">
+                    <CardHeader className="p-0">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0891B2] mb-1">Privexa</p>
+                      <CardTitle className="text-lg text-[#0F1C3F]">Protected AI privacy layer</CardTitle>
                     </CardHeader>
-                    <CardContent className="flex-1 pt-0 min-w-0">
-                      <p className="text-sm sm:text-base leading-relaxed text-gray-700 dark:text-gray-300 text-left sm:text-justify hyphens-auto break-words">
-                        {body}
-                      </p>
+                    <CardContent className="p-0 pt-3">
+                      <p className="text-sm text-slate-600 leading-relaxed">Protects patient and clinical data before it reaches AI systems or cloud workflows.</p>
                     </CardContent>
                   </Card>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <SectionDivider variant="gradient" className="py-2 sm:py-3" />
-
-      <section
-        id="privexa-trace"
-        className="relative scroll-mt-20 sm:scroll-mt-24 md:scroll-mt-28 py-8 sm:py-10 md:py-14 bg-gradient-to-br from-slate-50 via-white to-cyan-50/40 dark:from-slate-950 dark:via-slate-950 dark:to-cyan-950/10"
-      >
-        <PatternOverlay pattern="topo" opacity={0.04} className="text-slate-500/15 dark:text-white/10" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-5xl mx-auto">
-            <div className="relative pl-3 sm:pl-6 border-l-2 sm:border-l-4 border-slate-400/40 dark:border-slate-500/40 rounded-r-lg animate-fade-in-up motion-reduce:animate-none" style={{ animationDelay: "260ms" }}>
-              <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4 mb-3">
-                <div className="flex items-center gap-2 sm:gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-slate-400/20 to-cyan-500/15 dark:from-slate-500/20 dark:to-cyan-500/10 backdrop-blur-md flex items-center justify-center shadow-[0_8px_24px_rgba(15,23,42,0.18)]">
-                    <GitBranch className="w-5 h-5 sm:w-7 sm:h-7 text-slate-700 dark:text-slate-200" />
-                  </div>
-                  <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-50 leading-tight">Privexa Trace — governed evidence workflows for synthetic control work</h2>
+                  <Card className="p-4 sm:p-5 border-[#0F1C3F]/15">
+                    <CardHeader className="p-0">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0F1C3F] mb-1">Privexa Trace</p>
+                      <CardTitle className="text-lg text-[#0F1C3F]">Reviewer-gated evidence workflow</CardTitle>
+                    </CardHeader>
+                    <CardContent className="p-0 pt-3">
+                      <p className="text-sm text-slate-600 leading-relaxed">Structures synthetic control and evidence operations with manual benchmark comparison, review gates, and package-ready outputs.</p>
+                    </CardContent>
+                  </Card>
                 </div>
               </div>
-              <Card variant="gradient-border" cornerAccent className="p-4 sm:p-6 lg:p-8">
-                <CardContent className="pt-0 min-w-0">
-                  <Prose className="space-y-4 sm:space-y-6 text-left sm:text-justify">
-                    <p>
-                      Responsible healthcare AI is not only about protecting sensitive data. It is also about how evidence workflows are structured, reviewed, compared, and packaged.
-                    </p>
-                    <p>
-                      Privexa protects clinical data before it reaches AI systems. Privexa Trace addresses a different part of the operating model: reviewer-gated synthetic control arm workflows for biotech, pharma, CRO, and clinical-trial-office stakeholders who need traceable handoffs and credible governance.
-                    </p>
-                    <p>
-                      Trace supports comparison across specialist-entered manual treatment arms, specialist-entered manual control arms, and synthetic workflow outputs. Reviewer sign-off is required before SCA generation, limitations stay visible, and outputs are organized for submission-oriented packaging rather than black-box presentation.
-                    </p>
-                  </Prose>
+            </div>
+          </div>
+        </section>
+
+        <SectionDivider variant="gradient" className="py-2" />
+
+        {/* Privacy challenge */}
+        <section id="privacy-challenge" className="scroll-mt-20 py-12 sm:py-14 md:py-16 bg-[#F7F5F1]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-content mx-auto">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="flex-shrink-0 flex h-11 w-11 items-center justify-center rounded-xl bg-amber-500/10">
+                  <ShieldAlert className="w-5 h-5 text-amber-700" />
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">The data privacy challenge</h2>
+              </div>
+              <Card className="p-5 sm:p-6 lg:p-8">
+                <CardContent className="pt-0 space-y-4 text-base leading-relaxed text-slate-700">
+                  <p>
+                    Most AI platforms require data to leave your environment. Patient names, NHI numbers, dates of birth, clinical notes, and diagnostic details are routinely transmitted to external systems when staff use AI tools — often without explicit awareness of the privacy implications.
+                  </p>
+                  <p>
+                    Under the New Zealand Privacy Act 2020, health information is among the most sensitive categories of personal data. Organisations have a legal and ethical obligation to ensure that AI adoption does not create exposure that existing governance frameworks were not designed to handle.
+                  </p>
+                  <p className="font-medium text-[#0F1C3F]">
+                    The question is not whether to adopt AI. The question is how to adopt it without creating privacy risk that undermines patient trust and organisational compliance.
+                  </p>
                 </CardContent>
               </Card>
             </div>
+          </div>
+        </section>
 
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
-              {traceSignals.map(({ title, body, icon: Icon }, idx) => (
-                <Card
-                  key={title}
-                  variant="gradient-border"
-                  className="p-4 sm:p-5 flex flex-col h-full animate-fade-in-up motion-reduce:animate-none"
-                  style={{ animationDelay: `${idx * 100}ms` }}
-                >
-                  <CardHeader className="flex-shrink-0">
-                    <div className="flex items-start gap-3 mb-2">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-slate-900/5 dark:bg-white/10 flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-slate-700 dark:text-slate-200" />
+        <SectionDivider variant="geometric" className="py-2" />
+
+        {/* Privexa */}
+        <section id="privexa" className="scroll-mt-20 py-12 sm:py-14 md:py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-content mx-auto">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="flex-shrink-0 flex h-11 w-11 items-center justify-center rounded-xl bg-[#22D3EE]/12">
+                  <ShieldCheck className="w-5 h-5 text-[#0891B2]" />
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">Privexa — AI data protection for healthcare</h2>
+              </div>
+
+              <Card className="p-5 sm:p-6 lg:p-8 mb-6">
+                <CardContent className="pt-0 space-y-4 text-base leading-relaxed text-slate-700">
+                  <p>
+                    Translyx has partnered with Privexa, a New Zealand enterprise AI privacy platform, to provide healthcare organisations with the protection layer that makes responsible AI adoption possible.
+                  </p>
+                  <p>
+                    Before any data reaches an AI system, Privexa detects and replaces sensitive fields — patient names, NHI numbers, dates of birth, clinical identifiers, and custom entity types — with safe placeholders. AI systems work with the placeholders. Original patient data never leaves your environment. When AI responses return, Privexa restores original context seamlessly.
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Flow diagram */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-8 py-5 px-4 rounded-xl bg-[#F7F5F1] border border-slate-200/80">
+                {[
+                  { icon: FileText, label: "Clinical data", color: "bg-[#0F1C3F]/8 text-[#0F1C3F]" },
+                  { arrow: true },
+                  { icon: Lock, label: "Privexa", color: "bg-[#22D3EE]/12 text-[#0891B2]" },
+                  { arrow: true },
+                  { icon: BrainCircuit, label: "AI system", color: "bg-amber-500/10 text-amber-700" },
+                ].map((item, i) =>
+                  "arrow" in item ? (
+                    <ArrowRight key={i} className="w-4 h-4 text-slate-300 rotate-90 sm:rotate-0 shrink-0" />
+                  ) : (
+                    <div key={i} className="flex items-center gap-2">
+                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${item.color}`}>
+                        {"icon" in item && <item.icon className="w-5 h-5" />}
                       </div>
-                      <CardTitle className="text-base sm:text-lg font-bold text-gray-900 dark:text-gray-100 leading-tight">
-                        {title}
-                      </CardTitle>
+                      <span className="font-semibold text-sm text-slate-700">{item.label}</span>
                     </div>
-                  </CardHeader>
-                  <CardContent className="flex-1 pt-0">
-                    <p className="text-sm sm:text-base leading-relaxed text-gray-700 dark:text-gray-300 text-left sm:text-justify">
-                      {body}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
+                  )
+                )}
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {featureCards.map(({ id, title, body, outcome, icon: Icon }) => (
+                  <Card key={id} className="p-4 sm:p-5 flex flex-col h-full">
+                    <CardHeader className="flex-shrink-0 p-0 mb-3">
+                      <div className="flex items-start gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-[#0F1C3F]/6 flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-5 h-5 text-[#0F1C3F]" />
+                        </div>
+                        <CardTitle className="text-base text-[#0F1C3F] leading-snug">{title}</CardTitle>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="flex-1 p-0">
+                      <p className="text-sm text-slate-600 leading-relaxed mb-3">{body}</p>
+                      <p className="text-xs font-semibold text-[#0891B2] border-t border-slate-100 pt-3">{outcome}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
-
-            <Card variant="gradient-border" className="p-4 sm:p-6 lg:p-8 mt-6">
-              <CardContent className="pt-0">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-                  <div className="max-w-3xl">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-700 dark:text-primary-300 mb-3">
-                      Worked Example
-                    </p>
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">
-                      One question, three comparison paths, one traceable package
-                    </h3>
-                    <p className="text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                      A team defines the clinical question, a specialist enters a manual treatment arm and manual control arm, Trace structures comparable evidence and synthetic workflow outputs, the reviewer signs off before SCA generation, and the final package carries lineage, rationale, and visible limitations forward.
-                    </p>
-                  </div>
-                  <Button asChild variant="gradient" size="lg" className="shrink-0">
-                    <Link href="/products/privexa-trace" className="flex items-center justify-center gap-2">
-                      Explore Privexa Trace
-                      <ArrowRight className="h-5 w-5" />
-                    </Link>
-                  </Button>
-                </div>
-                <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-6">
-                  {[
-                    "Clinical question",
-                    "Manual treatment arm",
-                    "Manual control arm",
-                    "Synthetic workflow outputs",
-                    "Reviewer-gated comparison",
-                    "Traceable package output",
-                  ].map((item) => (
-                    <div key={item} className="rounded-xl border border-slate-200/70 dark:border-slate-700/70 bg-white/80 dark:bg-slate-950/40 px-3 py-3 text-sm font-medium text-slate-700 dark:text-slate-300">
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <SectionDivider variant="gradient" className="py-2 sm:py-3" />
+        <SectionDivider variant="gradient" className="py-2" />
 
-      {/* Section 4 — Compliance */}
-      <section
-        id="compliance"
-        className="relative scroll-mt-20 sm:scroll-mt-24 md:scroll-mt-28 py-8 sm:py-10 md:py-14 bg-white dark:bg-slate-950"
-      >
-        <PatternOverlay pattern="mesh" opacity={0.05} className="text-primary-500/20 dark:text-primary-400/15" />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-50 mb-4 leading-tight animate-fade-in-up motion-reduce:animate-none" style={{ animationDelay: "300ms" }}>Designed for Regulated Healthcare</h2>
-            <Card variant="gradient-border" className="p-4 sm:p-6 lg:p-8 border-primary-200/50 dark:border-primary-700/50 relative overflow-hidden animate-fade-in-up motion-reduce:animate-none" style={{ animationDelay: "350ms" }}>
-              <GradientAccent position="top" size="lg" />
-              <CardContent className="pt-0">
-                <p className="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">Privexa is built with New Zealand&apos;s regulatory environment in mind:</p>
-                <div className="flex flex-wrap gap-2 sm:gap-4">
-                  {complianceItems.map(({ label, detail, icon: ComplianceIcon }) => (
-                    <div
-                      key={label}
-                      className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-3 rounded-lg sm:rounded-xl bg-primary-50/80 dark:bg-primary-950/30 border border-primary-200/60 dark:border-primary-800/50 shadow-sm hover:shadow-md transition-shadow min-w-0"
-                      title={detail}
-                    >
-                      <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-primary-500/15 flex items-center justify-center flex-shrink-0">
-                        <ComplianceIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary-600 dark:text-primary-400" />
+        {/* Privexa Trace */}
+        <section id="privexa-trace" className="scroll-mt-20 py-12 sm:py-14 md:py-16 bg-[#F7F5F1]">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-content mx-auto">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="flex-shrink-0 flex h-11 w-11 items-center justify-center rounded-xl bg-[#0F1C3F]/8">
+                  <GitBranch className="w-5 h-5 text-[#0F1C3F]" />
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">Privexa Trace — governed evidence workflows for synthetic control work</h2>
+              </div>
+
+              <Card className="p-5 sm:p-6 lg:p-8 mb-6">
+                <CardContent className="pt-0 space-y-4 text-base leading-relaxed text-slate-700">
+                  <p>
+                    Responsible healthcare AI is not only about protecting sensitive data. It is also about how evidence workflows are structured, reviewed, compared, and packaged.
+                  </p>
+                  <p>
+                    Privexa Trace addresses a different part of the operating model: reviewer-gated synthetic control arm workflows for biotech, pharma, CRO, and clinical-trial-office stakeholders who need traceable handoffs and credible governance. Reviewer sign-off is required before SCA generation, limitations stay visible, and outputs are organised for submission-oriented packaging.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                {traceSignals.map(({ title, body, icon: Icon }) => (
+                  <Card key={title} className="p-4 sm:p-5 flex flex-col h-full">
+                    <CardHeader className="flex-shrink-0 p-0 mb-3">
+                      <div className="flex items-start gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-[#0F1C3F]/6 flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-5 h-5 text-[#0F1C3F]" />
+                        </div>
+                        <CardTitle className="text-base text-[#0F1C3F] leading-snug">{title}</CardTitle>
                       </div>
-                      <span className="font-semibold text-gray-900 dark:text-gray-100 text-xs sm:text-base break-words">{label}</span>
+                    </CardHeader>
+                    <CardContent className="flex-1 p-0">
+                      <p className="text-sm text-slate-600 leading-relaxed">{body}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              <Card className="p-5 sm:p-6 lg:p-8">
+                <CardContent className="pt-0">
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                    <div className="max-w-2xl">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">Worked example</p>
+                      <h3 className="text-xl font-bold text-[#0F1C3F] mb-3">One question, three paths, one traceable package</h3>
+                      <p className="text-base text-slate-700 leading-relaxed">
+                        A team defines the clinical question → a specialist builds manual treatment and control arms → Trace structures comparable evidence → reviewer signs off before SCA generation → the final package carries lineage, rationale, and visible limitations forward.
+                      </p>
                     </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+                    <Button asChild variant="primary" size="lg" className="shrink-0">
+                      <Link href="/products/privexa-trace" className="flex items-center gap-2">
+                        Explore Privexa Trace
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <SectionDivider variant="gradient" className="py-2" />
+
+        {/* Compliance */}
+        <section id="compliance" className="scroll-mt-20 py-12 sm:py-14 md:py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-content mx-auto">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F] mb-6">Designed for regulated healthcare</h2>
+              <Card className="p-5 sm:p-6 lg:p-8">
+                <CardContent className="pt-0">
+                  <p className="text-base font-semibold text-[#0F1C3F] mb-5">Privexa is built with New Zealand&apos;s regulatory environment in mind:</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {complianceItems.map(({ label, detail, icon: ComplianceIcon }) => (
+                      <div key={label} className="flex items-start gap-3 p-4 rounded-xl bg-[#F7F5F1] border border-slate-200/80">
+                        <div className="w-9 h-9 rounded-lg bg-[#0F1C3F]/6 flex items-center justify-center flex-shrink-0">
+                          <ComplianceIcon className="w-4 h-4 text-[#0F1C3F]" />
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-[#0F1C3F]">{label}</p>
+                          <p className="text-xs text-slate-500 mt-0.5">{detail}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="py-12 sm:py-14 bg-[#F7F5F1] border-t border-slate-200/60">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-content mx-auto">
+              <h2 className="text-xl font-semibold text-[#0F1C3F] mb-6">Common questions</h2>
+              <div className="space-y-4">
+                {faqItems.map(({ q, a }) => (
+                  <Card key={q} className="p-5 sm:p-6" hover={false}>
+                    <CardContent className="pt-0">
+                      <p className="text-sm font-bold text-[#0F1C3F] mb-2">{q}</p>
+                      <p className="text-sm text-slate-600 leading-relaxed">{a}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
 
       <CTA
-        title="Interested in protected AI workflows and reviewer-gated evidence operations?"
-        description="Translyx presents Privexa for protected AI privacy workflows and Privexa Trace for governed synthetic control and evidence workflows. We can help you evaluate where each product fits."
-        primaryCTA={{ label: "Talk to Us", href: "/contact" }}
+        title="Interested in protected AI workflows and governed evidence operations?"
+        description="Translyx presents Privexa for AI data protection and Privexa Trace for reviewed synthetic control workflows. We can help your team evaluate where each product fits."
+        primaryCTA={{ label: "Request walkthrough", href: "/contact" }}
         secondaryCTA={{ label: "Explore Privexa Trace", href: "/products/privexa-trace" }}
       />
     </>

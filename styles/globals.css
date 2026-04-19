@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 214 45% 98%;
+    --background: 40 20% 97%;
     --foreground: 222 47% 11%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
@@ -16,12 +16,12 @@
     --secondary-foreground: 222 35% 18%;
     --muted: 210 38% 96%;
     --muted-foreground: 215 16% 42%;
-    --accent: 45 96% 92%;
+    --accent: 195 90% 50%;
     --accent-foreground: 222 47% 11%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214 32% 90%;
-    --input: 214 32% 90%;
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
     --ring: 215 90% 48%;
     --radius: 0.75rem;
   }
@@ -39,7 +39,7 @@
     --secondary-foreground: 210 40% 98%;
     --muted: 217 30% 18%;
     --muted-foreground: 215 20% 65%;
-    --accent: 40 40% 18%;
+    --accent: 195 70% 40%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62% 30%;
     --destructive-foreground: 210 40% 98%;
@@ -54,21 +54,17 @@
     @apply border-border;
   }
   html {
-    font-size: clamp(16px, 2vw + 14px, 18px);
+    font-size: clamp(15px, 1.5vw + 13px, 17px);
     scroll-behavior: smooth;
     hyphens: auto;
     -webkit-hyphens: auto;
     overflow-x: hidden;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-[#F7F5F1] text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
     font-family: var(--font-body);
-    line-height: 1.6;
-    background-image:
-      radial-gradient(1200px 600px at 10% -10%, rgba(14, 116, 144, 0.12), transparent 60%),
-      radial-gradient(900px 500px at 90% -20%, rgba(30, 64, 175, 0.12), transparent 55%),
-      linear-gradient(180deg, rgba(248, 250, 252, 0.9), rgba(248, 250, 252, 1));
+    line-height: 1.65;
   }
 
   h1,
@@ -79,32 +75,43 @@
   h6 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
-    line-height: 1.2;
+    line-height: 1.15;
   }
-  h1 { font-size: clamp(2rem, 5vw, 2.75rem); }
-  h2 { font-size: clamp(1.75rem, 4vw, 2.25rem); }
-  h3 { font-size: clamp(1.375rem, 3vw, 1.75rem); }
+  /* Editorial display scale — used in hero sections */
+  .text-display {
+    font-family: var(--font-display);
+    font-size: clamp(3.25rem, 6vw, 5.25rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+  }
+  .text-display-sm {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
+  h2 { font-size: clamp(1.75rem, 3.5vw, 2.25rem); }
+  h3 { font-size: clamp(1.25rem, 2.5vw, 1.625rem); }
   p {
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.65;
   }
-  /* Ensure nav and buttons scale with base */
   nav a,
   button,
   [role="button"] {
-    font-size: clamp(0.9375rem, 0.9rem + 0.3vw, 1rem);
+    font-size: clamp(0.875rem, 0.8rem + 0.3vw, 0.9375rem);
   }
 }
 
 @layer utilities {
-  /* Pattern Backgrounds */
   .pattern-dots {
     background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
     background-size: 24px 24px;
   }
 
   .pattern-grid {
-    background-image: 
+    background-image:
       linear-gradient(currentColor 1px, transparent 1px),
       linear-gradient(90deg, currentColor 1px, transparent 1px);
     background-size: 32px 32px;
@@ -122,14 +129,13 @@
   }
 
   .pattern-mesh {
-    background-image: 
+    background-image:
       radial-gradient(at 40% 20%, currentColor 0px, transparent 50%),
       radial-gradient(at 80% 0%, currentColor 0px, transparent 50%),
       radial-gradient(at 0% 50%, currentColor 0px, transparent 50%);
     background-size: 100% 100%;
   }
 
-  /* Hexagon clip path */
   .clip-path-hexagon {
     clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
   }
@@ -140,10 +146,9 @@
   #ai-solutions-content:has(#privexa:target) nav a[href="#privexa"],
   #ai-solutions-content:has(#privexa-trace:target) nav a[href="#privexa-trace"],
   #ai-solutions-content:has(#compliance:target) nav a[href="#compliance"] {
-    background: linear-gradient(120deg, rgba(59, 130, 246, 0.4), rgba(34, 211, 238, 0.3), rgba(251, 191, 36, 0.2));
-    border-color: rgba(59, 130, 246, 0.6);
-    color: rgb(30 64 175);
-    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.25);
+    background: rgba(15, 28, 63, 0.08);
+    border-color: rgba(15, 28, 63, 0.3);
+    color: rgb(15 28 63);
   }
   .dark #ai-solutions-content:has(#case-for-ai:target) nav a[href="#case-for-ai"],
   .dark #ai-solutions-content:has(#privacy-challenge:target) nav a[href="#privacy-challenge"],
@@ -151,6 +156,6 @@
   .dark #ai-solutions-content:has(#privexa-trace:target) nav a[href="#privexa-trace"],
   .dark #ai-solutions-content:has(#compliance:target) nav a[href="#compliance"] {
     color: rgb(191 219 254);
-    border-color: rgba(96, 165, 250, 0.6);
+    border-color: rgba(96, 165, 250, 0.5);
   }
 }
