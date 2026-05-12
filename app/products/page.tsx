@@ -1,6 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, GitBranch, Lock, Microscope, Workflow } from "lucide-react";
+import {
+  ArrowRight,
+  Cloud,
+  ExternalLink,
+  FileText,
+  FlaskConical,
+  GitBranch,
+  Lock,
+  Microscope,
+  Stethoscope,
+  Workflow,
+} from "lucide-react";
 
 import { Hero } from "@/components/sections/Hero";
 import { CTA } from "@/components/sections/CTA";
@@ -8,24 +19,30 @@ import { ProductArchitecture } from "@/components/sections/ProductArchitecture";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/config/site";
+import { products, statusLabels } from "@/config/products";
+import type { Product } from "@/config/products";
 
 const pageDescription =
-  "Translyx product portfolio — Privexa Trace for reviewer-gated synthetic control arm workflows, Privexa for field-level clinical AI data protection, and a broader diagnostic technology pipeline spanning AMR, sepsis, POCT, and precision medicine.";
+  "Translyx product portfolio — authorised Aiforia digital pathology AI, Privexa-built governed AI products including AI Wrapper, Cloud Shield, Scribe, and Trace, plus a broader diagnostic technology pipeline for New Zealand healthcare.";
 
 export const metadata: Metadata = {
-  title: "Products — Privexa Trace, Privexa & Clinical Pipeline | Translyx",
+  title: "Products — Digital Pathology AI, Governed AI & Clinical Pipeline | Translyx",
   description: pageDescription,
   keywords: [
     "Translyx products",
+    "Aiforia partner New Zealand",
+    "digital pathology AI",
     "Privexa Trace",
     "Privexa AI protection",
+    "Privexa Cloud Shield",
+    "Privexa Scribe",
     "clinical product portfolio",
     "Translyx Limited",
     "healthcare AI products NZ",
   ],
   alternates: { canonical: "/products" },
   openGraph: {
-    title: "Products — Privexa Trace, Privexa & Clinical Pipeline | Translyx",
+    title: "Products — Digital Pathology AI, Governed AI & Clinical Pipeline | Translyx",
     description: pageDescription,
     url: `${siteConfig.url}/products`,
     siteName: siteConfig.name,
@@ -33,45 +50,85 @@ export const metadata: Metadata = {
   },
 };
 
-const products = [
-  {
-    title: "Privexa Trace",
-    href: "/products/privexa-trace",
-    label: "Flagship product",
-    status: "Available",
-    statusColor: "emerald",
-    description:
-      "Reviewer-gated synthetic control arm workflows with manual benchmark comparison, lineage, visible limitations, and submission-oriented packaging.",
-    cta: "Explore Privexa Trace",
-    icon: GitBranch,
-    featured: true,
-  },
-  {
-    title: "Privexa",
-    href: "https://app.privexa.co",
-    label: "Protection layer",
-    status: "Available",
-    statusColor: "emerald",
-    description:
-      "Enterprise AI privacy platform. Five protection layers — Secure LLM Gateway, Cloud Shield, Privexa Scribe, Document Intelligence, and Governance. Live at app.privexa.co.",
-    cta: "Access Privexa",
-    icon: Lock,
-    featured: false,
-    external: true,
-  },
-  {
-    title: "Clinical & Diagnostic Pipeline",
-    href: "/product-pipeline",
-    label: "Broader portfolio",
-    status: "Pipeline",
-    statusColor: "slate",
-    description:
-      "AMR, sepsis diagnostics, point-of-care testing, endocrinology, cardiac markers, and precision medicine products for New Zealand healthcare.",
-    cta: "View pipeline",
-    icon: Microscope,
-    featured: false,
-  },
-];
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  Microscope,
+  Lock,
+  Cloud,
+  FileText,
+  GitBranch,
+  Stethoscope,
+  FlaskConical,
+};
+
+function ProductCard({ product }: { product: Product }) {
+  const Icon = iconMap[product.icon] ?? FlaskConical;
+  const status = statusLabels[product.status];
+  const isPartner = product.type === "partner";
+  const isPipeline = product.type === "pipeline";
+  const isFeatured = product.featured;
+
+  return (
+    <Card
+      className={`flex flex-col p-5 sm:p-6 ${isFeatured ? "border-[#0F1C3F]/20 bg-[#0F1C3F]" : ""}`}
+      cornerAccent={isFeatured}
+    >
+      <CardHeader className="p-0">
+        <div className={`mb-4 flex h-11 w-11 items-center justify-center rounded-xl ${isFeatured ? "bg-white/10" : "bg-[#0F1C3F]/6"}`}>
+          <Icon className={`h-5 w-5 ${isFeatured ? "text-white" : "text-[#0F1C3F]"}`} />
+        </div>
+        <div className="flex flex-wrap items-center gap-2 mb-2">
+          <span className={`text-[10px] font-semibold uppercase tracking-wide px-1.5 py-0.5 rounded border ${
+            isFeatured
+              ? "bg-white/10 text-slate-300 border-white/15"
+              : isPartner
+                ? "bg-purple-50 text-purple-600 border-purple-200"
+                : isPipeline
+                  ? "bg-slate-50 text-slate-500 border-slate-200"
+                  : "bg-cyan-50 text-[#0891B2] border-cyan-200"
+          }`}>
+            {product.badge}
+          </span>
+          <span className={`text-[10px] font-semibold uppercase tracking-wide px-1.5 py-0.5 rounded border ${
+            isFeatured ? "bg-emerald-900/60 text-emerald-300 border-emerald-700/50" : status.className
+          }`}>
+            {status.text}
+          </span>
+        </div>
+        <CardTitle className={`text-xl ${isFeatured ? "text-white" : "text-[#0F1C3F]"}`}>{product.title}</CardTitle>
+      </CardHeader>
+      <CardContent className="flex flex-1 flex-col p-0 pt-3">
+        <p className={`text-sm leading-relaxed flex-1 ${isFeatured ? "text-slate-300" : "text-slate-600"}`}>
+          {product.description}
+        </p>
+        <div className="mt-6 flex flex-col gap-2">
+          <Button
+            asChild
+            variant="secondary"
+            size="lg"
+            className={`w-full ${isFeatured ? "bg-white text-[#0F1C3F] border-0 hover:bg-[#F7F5F1]" : ""}`}
+          >
+            <Link href={product.href} className="flex items-center justify-center gap-2">
+              {isPartner ? "Explore Aiforia" : `Explore ${product.shortTitle ?? product.title}`}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
+          {product.externalHref && (
+            <a
+              href={product.externalHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center justify-center gap-2 text-xs font-medium transition-colors ${
+                isFeatured ? "text-slate-400 hover:text-white" : "text-slate-400 hover:text-slate-600"
+              }`}
+            >
+              Open platform <ExternalLink className="h-3 w-3" />
+            </a>
+          )}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
 
 export default function ProductsPage() {
   const productsSchema = {
@@ -99,9 +156,9 @@ export default function ProductsPage() {
 
       <Hero
         badge={{ text: "Translyx Products", icon: <Workflow className="w-3.5 h-3.5" /> }}
-        headline="Three products. One governed clinical AI stack."
-        description="Privexa Trace governs reviewer-gated synthetic control arm workflows. Privexa protects clinical data before it reaches any AI system. The diagnostic pipeline extends Translyx's reach across AMR, sepsis, POCT, and precision medicine."
-        primaryCTA={{ label: "See Privexa Trace", href: "/products/privexa-trace" }}
+        headline="Diagnostics, digital pathology AI, and governed clinical software"
+        description="Authorised Aiforia digital pathology AI. Privexa-built protected AI products. A broader diagnostic pipeline for New Zealand healthcare. All connected through Translyx's clinical technology platform."
+        primaryCTA={{ label: "See Aiforia", href: "/products/aiforia" }}
         secondaryCTA={{ label: "Talk to Translyx", href: "/contact" }}
         className="py-16 sm:py-20 md:py-24 lg:py-32"
       />
@@ -113,59 +170,38 @@ export default function ProductsPage() {
             <div className="max-w-2xl mb-10">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">Portfolio overview</p>
               <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">
-                Translyx is the company. Privexa and Privexa Trace solve different parts of the operating model.
+                One clinical technology company. Multiple governed products. One diagnostic mission.
               </h2>
+              <p className="mt-3 text-base text-slate-600 leading-relaxed">
+                Translyx connects authorised partner solutions, Privexa-built protected AI products, and a diagnostic technology pipeline — all positioned for clinical adoption in New Zealand and Oceania.
+              </p>
             </div>
 
-            <div className="grid gap-5 lg:grid-cols-3">
-              {products.map(({ title, href, label, status, statusColor, description, cta, icon: Icon, featured, external }: typeof products[number] & { external?: boolean }) => {
-                const statusCls =
-                  statusColor === "emerald"
-                    ? "bg-emerald-50 text-emerald-700 border-emerald-200"
-                    : "bg-slate-100 text-slate-500 border-slate-200";
-                return (
-                  <Card
-                    key={title}
-                    className={`flex flex-col p-5 sm:p-6 ${featured ? "border-[#0F1C3F]/20 bg-[#0F1C3F]" : ""}`}
-                    cornerAccent
-                  >
-                    <CardHeader className="p-0">
-                      <div className={`mb-4 flex h-11 w-11 items-center justify-center rounded-xl ${featured ? "bg-white/10" : "bg-[#0F1C3F]/6"}`}>
-                        <Icon className={`h-5 w-5 ${featured ? "text-white" : "text-[#0F1C3F]"}`} />
-                      </div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <p className={`text-[10px] font-semibold uppercase tracking-[0.2em] ${featured ? "text-slate-400" : "text-slate-400"}`}>
-                          {label}
-                        </p>
-                        <span className={`text-[10px] font-semibold uppercase tracking-wide px-1.5 py-0.5 rounded border ${statusCls}`}>
-                          {status}
-                        </span>
-                      </div>
-                      <CardTitle className={`text-xl ${featured ? "text-white" : "text-[#0F1C3F]"}`}>{title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex flex-1 flex-col p-0 pt-3">
-                      <p className={`text-sm leading-relaxed flex-1 ${featured ? "text-slate-300" : "text-slate-600"}`}>
-                        {description}
-                      </p>
-                      <div className="mt-6">
-                        <Button asChild variant={featured ? "secondary" : "secondary"} size="lg" className={`w-full ${featured ? "bg-white text-[#0F1C3F] border-0 hover:bg-[#F7F5F1]" : ""}`}>
-                          {external ? (
-                            <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                              {cta}
-                              <ArrowRight className="h-4 w-4" />
-                            </a>
-                          ) : (
-                            <Link href={href} className="flex items-center justify-center gap-2">
-                              {cta}
-                              <ArrowRight className="h-4 w-4" />
-                            </Link>
-                          )}
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                );
-              })}
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {products.map((product) => (
+                <ProductCard key={product.slug} product={product} />
+              ))}
+            </div>
+
+            {/* Privexa relationship note */}
+            <div className="mt-8 rounded-xl border border-slate-200/80 bg-white p-5 sm:p-6">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div>
+                  <p className="text-sm font-semibold text-[#0F1C3F] mb-1">Privexa-built software, delivered through a clinical technology lens</p>
+                  <p className="text-sm text-slate-600">
+                    Translyx works with Privexa Limited to bring protected AI software into clinical and diagnostic workflows. Privexa builds the software; Translyx focuses on clinical positioning and healthcare adoption.
+                  </p>
+                </div>
+                <a
+                  href="https://www.privexa.co"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-[#F7F5F1] px-4 py-2.5 text-sm font-semibold text-slate-600 hover:bg-white transition-colors"
+                >
+                  Visit Privexa
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -175,8 +211,8 @@ export default function ProductsPage() {
       <ProductArchitecture />
 
       <CTA
-        title="Speak with Translyx about your clinical AI priorities"
-        description="Request a walkthrough to see Privexa Trace's synthetic control workflow, Privexa's data protection architecture, and the broader Translyx diagnostic portfolio in context."
+        title="Speak with Translyx about your clinical technology priorities"
+        description="Request a walkthrough to see Aiforia digital pathology AI, Privexa-built data protection and evidence workflows, and the broader Translyx diagnostic portfolio in context."
         primaryCTA={{ label: "Request walkthrough", href: "/contact" }}
         secondaryCTA={{ label: "See AI Solutions", href: "/ai-solutions" }}
       />

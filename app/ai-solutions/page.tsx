@@ -30,7 +30,7 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
 const pageDescription =
-  "Translyx AI Solutions — Privexa protects clinical AI data flows field by field. Privexa Trace governs reviewer-gated evidence workflows. Together they form the complete governed AI operating model for healthcare.";
+  "Translyx AI Solutions — Privexa-built products protect clinical AI data flows, govern evidence workflows, and support clinical documentation. Built by Privexa Limited, clinically positioned through Translyx.";
 
 export const metadata: Metadata = {
   title: "AI Solutions — Governed Clinical AI | Translyx",
@@ -79,7 +79,8 @@ const audienceSegments = [
 const featureCards = [
   {
     id: "llm-gateway",
-    title: "Secure LLM Gateway",
+    title: "Privexa AI Wrapper",
+    href: "/products/privexa-ai-wrapper",
     body: "PII is intercepted and replaced with tokens before any message reaches an LLM. Responses are automatically restored with original context. AI workflows operate normally — patient data never leaves your environment.",
     outcome: "Real-time PII detection, token replacement, automatic response restoration.",
     icon: Lock,
@@ -87,17 +88,19 @@ const featureCards = [
   },
   {
     id: "cloud-shield",
-    title: "Cloud Shield",
-    body: "Field-level protection for cloud data pipelines. Sensitive fields are tokenised before reaching AWS, Azure, GCP, Snowflake, or Oracle. The local mapping vault is reversible only inside your perimeter — inaccessible to any external system.",
-    outcome: "Raw PII never reaches your cloud platforms.",
+    title: "Privexa Cloud Shield",
+    href: "/products/privexa-cloud-shield",
+    body: "Field-level protection for cloud data pipelines. Sensitive fields are tokenised before reaching cloud platforms. The local mapping vault is reversible only inside your perimeter — inaccessible to any external system.",
+    outcome: "Sensitive data is tokenised before it reaches cloud platforms.",
     icon: Cloud,
     accentColor: "cyan" as const,
   },
   {
     id: "privexa-scribe",
     title: "Privexa Scribe",
+    href: "/products/privexa-scribe",
     body: "Clinical consultation recording with full PHI protection. Record the full session and transcribe on stop, or enable live relay for in-session visibility. Privexa de-identifies PHI, runs the note pipeline, restores identities locally, and returns a clinician-ready draft with review controls.",
-    outcome: "SOAP notes, referrals, discharge summaries, ICD support — PHI stays inside your boundary.",
+    outcome: "SOAP notes, referrals, discharge summaries — PHI stays inside your boundary.",
     icon: FileText,
     accentColor: "slate" as const,
   },
@@ -105,15 +108,15 @@ const featureCards = [
     id: "doc-intelligence",
     title: "Document Intelligence",
     body: "Analyse contracts, clinical records, and reports with AI — without exposing a single name, number, or identifier to any external model. Structured summaries, compliance scans, risk assessments, and entity mapping, all privacy-first.",
-    outcome: "HIPAA, SOC 2, GDPR compliance scanning and risk assessment on sensitive documents.",
+    outcome: "Privacy-first document analysis and compliance scanning.",
     icon: Database,
     accentColor: "slate" as const,
   },
   {
     id: "governance",
     title: "Governance & Compliance",
-    body: "HIPAA and GDPR compliance monitoring, benchmark testing, data lifecycle controls, and immutable audit trails — built into the platform architecture, not added as optional modules.",
-    outcome: "Audit trails, access controls, and data handling designed for SOC 2 alignment.",
+    body: "Compliance monitoring, benchmark testing, data lifecycle controls, and immutable audit trails — built into the platform architecture, not added as optional modules.",
+    outcome: "Audit trails, access controls, and data handling designed for compliance alignment.",
     icon: FileCheck,
     accentColor: "navy" as const,
   },
@@ -145,6 +148,10 @@ const traceSignals = [
 ];
 
 const faqItems = [
+  {
+    q: "What is the relationship between Privexa and Translyx?",
+    a: "Privexa Limited builds the protected AI software products — AI Wrapper, Cloud Shield, Scribe, and Trace. Translyx Limited is a clinical technology company that clinically positions and supports the adoption of Privexa-built products in healthcare, diagnostics, and research workflows in New Zealand and Oceania.",
+  },
   {
     q: "What is the difference between Privexa and Privexa Trace?",
     a: "Privexa is the data-protection layer — it ensures sensitive clinical data never reaches AI systems in identifiable form. Privexa Trace is the evidence workflow product — it governs reviewer-gated synthetic control arm workflows with lineage and submission packaging. They solve different problems in the same AI governance stack.",
@@ -209,8 +216,8 @@ export default function AISolutionsPage() {
 
       <Hero
         badge={{ text: "Translyx AI Solutions", icon: <Brain className="w-3.5 h-3.5" /> }}
-        headline="AI solutions, governed end-to-end"
-        description="Privexa is the protection primitive for clinical AI workflows. Privexa Trace is the governed evidence platform built on top of it. Together they form a complete, reviewed AI operating model."
+        headline="Privexa-built AI solutions, governed end-to-end"
+        description="Privexa-built products — AI Wrapper, Cloud Shield, Scribe, and Trace — form the governed AI operating model for healthcare. Built by Privexa Limited, clinically positioned through Translyx."
         primaryCTA={{ label: "See Privexa Trace", href: "/products/privexa-trace" }}
         secondaryCTA={{ label: "Talk to Translyx", href: "/contact" }}
         className="py-16 sm:py-20 md:py-28 lg:py-36"
@@ -347,7 +354,7 @@ export default function AISolutionsPage() {
                   </div>
                   <div>
                     <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">Privexa — Enterprise AI privacy platform</h2>
-                    <p className="mt-1 text-sm text-slate-500">Live at <a href="https://app.privexa.co" target="_blank" rel="noopener noreferrer" className="text-[#0891B2] hover:underline">app.privexa.co</a></p>
+                    <p className="mt-1 text-sm text-slate-500">Built by <a href="https://www.privexa.co" target="_blank" rel="noopener noreferrer" className="text-[#0891B2] hover:underline">Privexa Limited</a> · Live at <a href="https://app.privexa.co" target="_blank" rel="noopener noreferrer" className="text-[#0891B2] hover:underline">app.privexa.co</a></p>
                   </div>
                 </div>
                 <a
@@ -402,7 +409,7 @@ export default function AISolutionsPage() {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {featureCards.map(({ id, title, body, outcome, icon: Icon }) => (
+                {featureCards.map(({ id, title, body, outcome, icon: Icon, href }) => (
                   <Card key={id} className="p-4 sm:p-5 flex flex-col h-full">
                     <CardHeader className="flex-shrink-0 p-0 mb-3">
                       <div className="flex items-start gap-3">
@@ -414,7 +421,14 @@ export default function AISolutionsPage() {
                     </CardHeader>
                     <CardContent className="flex-1 p-0">
                       <p className="text-sm text-slate-600 leading-relaxed mb-3">{body}</p>
-                      <p className="text-xs font-semibold text-[#0891B2] border-t border-slate-100 pt-3">{outcome}</p>
+                      <div className="border-t border-slate-100 pt-3 flex items-center justify-between">
+                        <p className="text-xs font-semibold text-[#0891B2]">{outcome}</p>
+                        {href && (
+                          <Link href={href} className="text-xs font-semibold text-[#0F1C3F] hover:underline underline-offset-2 shrink-0 ml-2">
+                            Learn more →
+                          </Link>
+                        )}
+                      </div>
                     </CardContent>
                   </Card>
                 ))}
@@ -539,9 +553,9 @@ export default function AISolutionsPage() {
 
       <CTA
         title="Deploy clinical AI with the governance your organisation requires"
-        description="Translyx can walk your team through Privexa's data protection architecture and Privexa Trace's reviewer-gated evidence workflow — and identify where each fits your clinical AI roadmap."
+        description="Translyx can walk your team through the full Privexa-built product family — AI Wrapper, Cloud Shield, Scribe, and Trace — and identify where each fits your clinical AI roadmap."
         primaryCTA={{ label: "Request walkthrough", href: "/contact" }}
-        secondaryCTA={{ label: "Explore Privexa Trace", href: "/products/privexa-trace" }}
+        secondaryCTA={{ label: "See all products", href: "/products" }}
       />
     </>
   );

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Logo } from "@/components/ui/Logo";
-import { Linkedin, MapPin, Mail } from "lucide-react";
+import { Linkedin, MapPin, Mail, ExternalLink } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,13 +9,13 @@ export function Footer() {
   return (
     <footer className="bg-[#0F1C3F] text-slate-300">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
 
           {/* Company */}
           <div className="lg:col-span-1">
             <Logo href="/" size="lg" className="h-auto w-24 brightness-0 invert opacity-90" />
             <p className="mt-4 text-sm leading-relaxed text-slate-400 max-w-[220px]">
-              {siteConfig.companyName} — the governed evidence layer for clinical AI.
+              Clinical technology, diagnostics, and governed AI for New Zealand healthcare.
             </p>
             <div className="mt-5 flex items-center gap-3">
               <Link
@@ -35,19 +35,58 @@ export function Footer() {
             <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-white mb-5">Products</h3>
             <ul className="space-y-3 text-sm">
               <li>
+                <Link href="/products/aiforia" className="text-slate-400 hover:text-white transition-colors flex items-center gap-2">
+                  Aiforia Digital Pathology AI
+                  <span className="text-[10px] font-semibold bg-purple-900/60 text-purple-300 border border-purple-700/50 px-1.5 py-0.5 rounded uppercase tracking-wide">Partner</span>
+                </Link>
+              </li>
+              <li>
                 <Link href="/products/privexa-trace" className="text-slate-400 hover:text-white transition-colors flex items-center gap-2">
                   Privexa Trace
                   <span className="text-[10px] font-semibold bg-emerald-900/60 text-emerald-300 border border-emerald-700/50 px-1.5 py-0.5 rounded uppercase tracking-wide">Available</span>
                 </Link>
               </li>
               <li>
-                <Link href="/ai-solutions#privexa" className="text-slate-400 hover:text-white transition-colors">Privexa</Link>
+                <Link href="/products/privexa-ai-wrapper" className="text-slate-400 hover:text-white transition-colors">Privexa AI Wrapper</Link>
+              </li>
+              <li>
+                <Link href="/products/privexa-cloud-shield" className="text-slate-400 hover:text-white transition-colors">Privexa Cloud Shield</Link>
+              </li>
+              <li>
+                <Link href="/products/privexa-scribe" className="text-slate-400 hover:text-white transition-colors">Privexa Scribe</Link>
+              </li>
+              <li>
+                <Link href="/products/clinical-triage" className="text-slate-400 hover:text-white transition-colors">ClinicalTriage</Link>
+              </li>
+              <li>
+                <Link href="/product-pipeline" className="text-slate-400 hover:text-white transition-colors">Diagnostic Pipeline</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Solutions */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-white mb-5">Solutions</h3>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <Link href="/products/aiforia" className="text-slate-400 hover:text-white transition-colors">Digital Pathology</Link>
               </li>
               <li>
                 <Link href="/ai-solutions" className="text-slate-400 hover:text-white transition-colors">AI Solutions</Link>
               </li>
               <li>
                 <Link href="/product-pipeline" className="text-slate-400 hover:text-white transition-colors">Clinical Pipeline</Link>
+              </li>
+              <li>
+                <a
+                  href="https://www.privexa.co"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-1.5"
+                >
+                  Privexa Limited
+                  <ExternalLink className="h-3 w-3 text-slate-500" />
+                </a>
               </li>
             </ul>
           </div>
@@ -63,7 +102,10 @@ export function Footer() {
                 <Link href="/updates" className="text-slate-400 hover:text-white transition-colors">Updates</Link>
               </li>
               <li>
-                <span className="text-slate-500 text-xs">Responsible AI disclosure available on request</span>
+                <span className="text-slate-500 text-xs">Authorised Aiforia business partner (NZ)</span>
+              </li>
+              <li>
+                <span className="text-slate-500 text-xs">Responsible AI · Visible limitations</span>
               </li>
               <li>
                 <span className="text-slate-500 text-xs">No implied regulatory endorsement</span>
@@ -99,6 +141,7 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-6 text-xs text-slate-500">
             <Link href="/about" className="hover:text-slate-300 transition-colors">About</Link>
+            <Link href="/products" className="hover:text-slate-300 transition-colors">Products</Link>
             <Link href="/contact" className="hover:text-slate-300 transition-colors">Contact</Link>
           </div>
         </div>

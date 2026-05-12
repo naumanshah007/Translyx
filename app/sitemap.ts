@@ -16,7 +16,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: baseUrl, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
     { url: `${baseUrl}/products`, lastModified: now, changeFrequency: "weekly", priority: 0.95 },
-    { url: `${baseUrl}/products/privexa-trace`, lastModified: now, changeFrequency: "weekly", priority: 0.95 },
+    { url: `${baseUrl}/products/aiforia`, lastModified: now, changeFrequency: "weekly", priority: 0.95 },
+    { url: `${baseUrl}/products/privexa-trace`, lastModified: now, changeFrequency: "weekly", priority: 0.90 },
+    { url: `${baseUrl}/products/privexa-ai-wrapper`, lastModified: now, changeFrequency: "monthly", priority: 0.80 },
+    { url: `${baseUrl}/products/privexa-cloud-shield`, lastModified: now, changeFrequency: "monthly", priority: 0.80 },
+    { url: `${baseUrl}/products/privexa-scribe`, lastModified: now, changeFrequency: "monthly", priority: 0.80 },
+    { url: `${baseUrl}/products/clinical-triage`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
     { url: `${baseUrl}/ai-solutions`, lastModified: now, changeFrequency: "weekly", priority: 0.90 },
     { url: `${baseUrl}/product-pipeline`, lastModified: now, changeFrequency: "monthly", priority: 0.80 },
     ...pipelineUrls,

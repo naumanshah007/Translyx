@@ -101,9 +101,7 @@ export function Header() {
     >
       {/* Desktop */}
       <div className="hidden lg:flex items-center h-16 xl:h-18 max-w-[1280px] mx-auto px-6 xl:px-8">
-        <Link href="/" className="flex-shrink-0 mr-10">
-          <Logo href="/" size="lg" className="h-auto w-28 xl:w-32" />
-        </Link>
+        <Logo href="/" size="lg" className="h-auto w-28 xl:w-32 flex-shrink-0 mr-10" />
 
         <nav className="flex items-center gap-7 flex-1" aria-label="Main navigation">
           {navigation.map((item) =>
