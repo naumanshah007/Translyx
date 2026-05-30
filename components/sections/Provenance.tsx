@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MapPin, Mail, Shield, Calendar } from "lucide-react";
+import { MapPin, Mail, Shield, Calendar, Microscope } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 export function Provenance() {
@@ -17,6 +17,10 @@ export function Provenance() {
               <span className="flex items-center gap-1.5">
                 <Calendar className="h-3.5 w-3.5 text-slate-500" />
                 Est. December 2025
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Microscope className="h-3.5 w-3.5 text-slate-500" />
+                Authorised Aiforia business partner (NZ)
               </span>
               <Link
                 href={`mailto:${siteConfig.company.email}`}

@@ -177,7 +177,7 @@ export default function PrivexaTracePage() {
       />
 
       <Hero
-        badge={{ text: "A Translyx product · Built on Privexa", icon: <Workflow className="w-3.5 h-3.5" /> }}
+        badge={{ text: "Built by Privexa · Clinically positioned through Translyx", icon: <Workflow className="w-3.5 h-3.5" /> }}
         headline="Reviewer-gated synthetic control arms, ready for submission"
         description="Privexa Trace structures synthetic control arm workflows with reviewer sign-off, manual benchmark comparison, lineage, and submission-oriented packaging — for biotech, pharma, CRO, and clinical trial teams."
         primaryCTA={{ label: "Request walkthrough", href: "/contact" }}
@@ -242,15 +242,15 @@ export default function PrivexaTracePage() {
             <div className="space-y-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-4">Product hierarchy</p>
               <div className="rounded-xl border border-slate-200/80 p-4 bg-[#F7F5F1]">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400">Translyx</p>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400">Translyx Limited</p>
                 <p className="mt-1.5 text-sm text-slate-600 leading-relaxed">
-                  Clinical technology holding entity focused on enterprise-ready, clinically credible healthcare AI.
+                  Clinical technology company focused on diagnostics, digital pathology AI, and healthcare adoption in New Zealand.
                 </p>
               </div>
               <div className="rounded-xl border border-[#22D3EE]/25 p-4 bg-white">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0891B2]">Privexa</p>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0891B2]">Built by Privexa Limited</p>
                 <p className="mt-1.5 text-sm text-slate-600 leading-relaxed">
-                  Field-level AI data protection layer. Sensitive healthcare data never leaves your environment.
+                  Privexa builds the protected AI software layer. Clinically positioned through Translyx.
                 </p>
               </div>
               <div className="rounded-xl border border-[#0F1C3F]/20 p-4 bg-[#0F1C3F]">

@@ -7,7 +7,7 @@ import { CTA } from "@/components/sections/CTA";
 import { EcosystemDiagram } from "@/components/sections/EcosystemDiagram";
 import { ProductCard } from "@/components/ui/ProductCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { products } from "@/config/products";
+import { products, type Product } from "@/config/products";
 import { siteConfig } from "@/config/site";
 
 const pageDescription =
@@ -35,14 +35,21 @@ export const metadata: Metadata = {
   },
 };
 
-const groups = [
+const groups: {
+  key: string;
+  eyebrow: string;
+  icon: typeof Handshake;
+  title: string;
+  blurb: string;
+  match: (type: Product["type"]) => boolean;
+}[] = [
   {
     key: "partner",
     eyebrow: "Authorised partner solution",
     icon: Handshake,
     title: "Digital pathology AI",
     blurb: "Represented by Translyx in New Zealand — not a Translyx-owned product.",
-    filter: (id: string) => id === "aiforia",
+    match: (type) => type === "partner",
   },
   {
     key: "privexa",
@@ -50,7 +57,7 @@ const groups = [
     icon: ShieldCheck,
     title: "Protected AI software",
     blurb: "Privacy-first, governed, and reviewer-gated software clinically positioned through Translyx.",
-    filter: (id: string) => id.startsWith("privexa") || id === "clinical-triage",
+    match: (type) => type === "privexa" || type === "clinical",
   },
 ];
 
@@ -80,7 +87,7 @@ export default function ProductsPage() {
         headline="Authorised partner solutions and Privexa-built protected AI, under one"
         highlight="accountable partner."
         description="Aiforia digital pathology AI, Privexa-built protected software, and a clinical diagnostic pipeline — clinically positioned and locally supported by Translyx across New Zealand and Oceania."
-        primaryCTA={{ label: "Discuss Aiforia", href: "/aiforia" }}
+        primaryCTA={{ label: "Discuss Aiforia", href: "/products/aiforia" }}
         secondaryCTA={{ label: "Request a walkthrough", href: "/contact" }}
       />
 
@@ -90,7 +97,7 @@ export default function ProductsPage() {
           <div className="mx-auto max-w-[1140px] space-y-16">
             {groups.map((group) => {
               const Icon = group.icon;
-              const groupProducts = products.filter((p) => group.filter(p.id));
+              const groupProducts = products.filter((p) => group.match(p.type));
               return (
                 <div key={group.key}>
                   <div className="mb-8 flex items-center gap-3">
@@ -109,7 +116,7 @@ export default function ProductsPage() {
                     }`}
                   >
                     {groupProducts.map((product) => (
-                      <ProductCard key={product.id} product={product} />
+                      <ProductCard key={product.slug} product={product} />
                     ))}
                   </div>
                 </div>

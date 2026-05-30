@@ -5,12 +5,12 @@ import { BrandLogo } from "@/components/ui/Brand";
 import { PRIVEXA_APP_URL } from "@/config/products";
 
 const productLinks = [
-  { label: "Aiforia Digital Pathology AI", href: "/aiforia" },
-  { label: "Privexa AI Wrapper", href: "/privexa#ai-wrapper" },
-  { label: "Privexa Cloud Shield", href: "/privexa#cloud-shield" },
-  { label: "Privexa Scribe", href: "/privexa#scribe" },
+  { label: "Aiforia Digital Pathology AI", href: "/products/aiforia" },
+  { label: "Privexa AI Wrapper", href: "/products/privexa-ai-wrapper" },
+  { label: "Privexa Cloud Shield", href: "/products/privexa-cloud-shield" },
+  { label: "Privexa Scribe", href: "/products/privexa-scribe" },
   { label: "Privexa Trace", href: "/products/privexa-trace" },
-  { label: "ClinicalTriage", href: "/privexa#clinical-triage" },
+  { label: "ClinicalTriage", href: "/products/clinical-triage" },
   { label: "Diagnostic Pipeline", href: "/product-pipeline" },
 ];
 

@@ -102,7 +102,7 @@ export default function DigitalPathologyPage() {
         headline="Bring AI-assisted digital pathology to your"
         highlight="clinical and research workflows."
         description="Translyx represents Aiforia as an authorised partner in New Zealand — helping pathology groups, laboratories, and research teams adopt AI-assisted digital pathology with governance, human oversight, and clinical confidence."
-        primaryCTA={{ label: "Discuss Aiforia", href: "/aiforia" }}
+        primaryCTA={{ label: "Discuss Aiforia", href: "/products/aiforia" }}
         secondaryCTA={{ label: "Request a walkthrough", href: "/contact" }}
       />
 
@@ -180,7 +180,7 @@ export default function DigitalPathologyPage() {
               </div>
               <div className="flex shrink-0 flex-col gap-3">
                 <Link
-                  href="/aiforia"
+                  href="/products/aiforia"
                   className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 via-sky-400 to-violet-500 px-6 py-3 text-sm font-semibold text-[#06121f] shadow-[0_8px_30px_-6px_rgba(34,211,238,0.5)] transition-all duration-200 hover:-translate-y-0.5"
                 >
                   Learn about Aiforia

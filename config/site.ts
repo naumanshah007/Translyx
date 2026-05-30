@@ -9,12 +9,12 @@ export const siteConfig = {
   // Basic Information
   name: "Translyx",
   companyName: "Translyx Limited",
-  companyTagline: "Clinical technology and governed AI for New Zealand healthcare",
+  companyTagline: "Clinical technology, digital pathology AI, and governed AI for New Zealand healthcare",
   companyDescription:
-    "Translyx Limited is an Auckland-based clinical technology company. Products include Privexa — a live enterprise AI privacy platform — Privexa Trace for reviewer-gated synthetic control arm workflows, and a broader diagnostic technology pipeline.",
-  tagline: "Clinical technology and governed AI for New Zealand healthcare",
+    "Translyx Limited is an Auckland-based clinical technology company connecting advanced diagnostics, authorised digital pathology AI (Aiforia), and Privexa-built governed AI software for healthcare, laboratories, research teams, and clinical organisations.",
+  tagline: "Clinical technology, digital pathology AI, and governed AI for New Zealand healthcare",
   description:
-    "Translyx Limited brings advanced diagnostic technologies and governed AI solutions to New Zealand and Oceania. Products include Privexa (live at app.privexa.co), Privexa Trace, and a broader clinical pipeline.",
+    "Translyx Limited brings advanced diagnostics, authorised Aiforia digital pathology AI, and Privexa-built protected AI products to New Zealand and Oceania — including AI Wrapper, Cloud Shield, Scribe, Trace, and a broader diagnostic pipeline.",
   
   // Domain & URLs
   domain: "translyx.co",
@@ -41,26 +41,25 @@ export const siteConfig = {
   
   // SEO Defaults
   seo: {
-    defaultTitle: "Translyx | Privexa Trace, AI Solutions, and Clinical Technology",
+    defaultTitle: "Translyx | Digital Pathology AI, Governed AI & Clinical Technology — New Zealand",
     defaultDescription:
-      "Translyx Limited presents Privexa Trace reviewer-gated synthetic control arm workflows, Privexa protected AI privacy solutions, and clinical technology products for healthcare organizations.",
+      "Translyx Limited connects authorised Aiforia digital pathology AI, Privexa-built governed AI products, and advanced diagnostics for New Zealand healthcare, laboratories, and research teams.",
     keywords: [
       "Translyx",
       "Translyx Limited",
+      "Aiforia New Zealand",
+      "Aiforia partner New Zealand",
+      "digital pathology AI",
       "Privexa Trace",
-      "Translyx Privexa Trace",
-      "Translyx AI Solutions",
-      "Translyx healthcare AI",
-      "Privexa Trace synthetic control",
-      "healthcare technology",
-      "clinical technology",
-      "reviewer-gated synthetic control arm workflow",
-      "synthetic control arm",
-      "clinical evidence workflow",
-      "protected AI healthcare",
-      "healthcare AI privacy",
-      "clinical workflow",
-      "diagnostic technology",
+      "Privexa",
+      "clinical technology New Zealand",
+      "governed clinical AI",
+      "privacy-preserving AI healthcare",
+      "reviewer-gated synthetic control arm",
+      "AI data protection healthcare",
+      "diagnostic technology New Zealand",
+      "clinical AI governance",
+      "secure AI wrapper healthcare",
     ],
     author: "Translyx Limited",
     ogImage: "/og-image.png",

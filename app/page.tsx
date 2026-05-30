@@ -26,7 +26,8 @@ import { CTA } from "@/components/sections/CTA";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ProductCard } from "@/components/ui/ProductCard";
 import { GovernanceCard } from "@/components/ui/GovernanceCard";
-import { products, audiences, PRIVEXA_APP_URL } from "@/config/products";
+import { products, audiences, PRIVEXA_APP_URL, getProductsByType } from "@/config/products";
+import { getProductIcon } from "@/lib/productIcons";
 import { siteConfig } from "@/config/site";
 
 const homeDescription =
@@ -150,7 +151,7 @@ export default function HomePage() {
         description="Translyx Limited brings advanced diagnostics, authorised digital pathology AI, and Privexa-built protected AI workflows to New Zealand and Oceania — helping clinicians, laboratories, healthcare providers, and research teams adopt innovation with privacy, governance, and clinical confidence."
         ctas={[
           { label: "Explore Products", href: "/products", variant: "primary" },
-          { label: "Discuss Aiforia", href: "/aiforia", variant: "glass" },
+          { label: "Discuss Aiforia", href: "/products/aiforia", variant: "glass" },
           { label: "Request Walkthrough", href: "/contact", variant: "ghost" },
         ]}
         trustChips={[
@@ -249,9 +250,11 @@ export default function HomePage() {
               className="mb-12"
             />
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {products.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
+              {products
+                .filter((p) => p.type !== "pipeline")
+                .map((product) => (
+                  <ProductCard key={product.slug} product={product} />
+                ))}
             </div>
             <div className="mt-10 text-center">
               <Link
@@ -313,7 +316,7 @@ export default function HomePage() {
                   </p>
                   <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                     <Link
-                      href="/privexa"
+                      href="/products"
                       className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 via-sky-400 to-violet-500 px-6 py-3 text-sm font-semibold text-[#06121f] shadow-[0_8px_30px_-6px_rgba(34,211,238,0.5)] transition-all duration-200 hover:-translate-y-0.5"
                     >
                       View products
@@ -331,18 +334,16 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="grid gap-3 sm:grid-cols-2">
-                  {products
-                    .filter((p) => p.origin === "privexa")
-                    .map((p) => {
-                      const Icon = p.icon;
-                      return (
-                        <div key={p.id} className="glass-panel rounded-xl p-4">
-                          <Icon className="h-5 w-5 text-cyan-300" />
-                          <p className="mt-2.5 text-sm font-semibold text-white">{p.name.replace("Privexa ", "")}</p>
-                          <p className="mt-0.5 text-xs text-slate-400">{p.oneLiner}</p>
-                        </div>
-                      );
-                    })}
+                  {getProductsByType("privexa").map((p) => {
+                    const Icon = getProductIcon(p.icon);
+                    return (
+                      <div key={p.slug} className="glass-panel rounded-xl p-4">
+                        <Icon className="h-5 w-5 text-cyan-300" />
+                        <p className="mt-2.5 text-sm font-semibold text-white">{p.shortTitle ?? p.title}</p>
+                        <p className="mt-0.5 text-xs text-slate-400">{p.tagline}</p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>

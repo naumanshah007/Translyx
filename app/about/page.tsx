@@ -141,7 +141,7 @@ export default function AboutPage() {
             </div>
             <h1 className="text-display-sm font-semibold text-white mb-4">About Translyx</h1>
             <p className="text-lg text-white/65 max-w-2xl leading-relaxed mb-8">
-              Auckland-based clinical technology holding entity — the governed evidence layer for clinical AI in New Zealand and Oceania.
+              Auckland-based clinical technology company — connecting diagnostics, digital pathology AI, and governed AI software for New Zealand and Oceania.
             </p>
             <div className="flex flex-wrap gap-2">
               {sectionAnchors.map(({ id, label }) => (
