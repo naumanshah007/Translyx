@@ -159,7 +159,7 @@ export default function AboutPage() {
       </section>
 
       {/* Credibility strip */}
-      <div className="bg-[#F7F5F1] border-b border-slate-200/60 py-5">
+      <div className="bg-[#F5F8FC] border-b border-slate-200/60 py-5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-slate-500">
             <span className="flex items-center gap-2">
@@ -357,7 +357,7 @@ export default function AboutPage() {
           </section>
 
           {/* CTA strip */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 rounded-2xl border border-[#0F1C3F]/15 bg-[#F7F5F1] p-6 sm:p-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 rounded-2xl border border-[#0F1C3F]/15 bg-[#F5F8FC] p-6 sm:p-8">
             <div>
               <h3 className="text-lg font-semibold text-[#0F1C3F]">Work with Translyx</h3>
               <p className="mt-1 text-sm text-slate-600">Speak with the team about diagnostic product evaluation, Privexa Trace workflows, or the broader Translyx portfolio.</p>

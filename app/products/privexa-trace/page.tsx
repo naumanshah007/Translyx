@@ -186,7 +186,7 @@ export default function PrivexaTracePage() {
       />
 
       {/* Built for — audience segmentation */}
-      <section className="bg-[#F7F5F1] border-b border-slate-200/60 py-10 sm:py-12">
+      <section className="bg-[#F5F8FC] border-b border-slate-200/60 py-10 sm:py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-5 text-center">Built for</p>
@@ -241,7 +241,7 @@ export default function PrivexaTracePage() {
             {/* Product hierarchy */}
             <div className="space-y-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-4">Product hierarchy</p>
-              <div className="rounded-xl border border-slate-200/80 p-4 bg-[#F7F5F1]">
+              <div className="rounded-xl border border-slate-200/80 p-4 bg-[#F5F8FC]">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400">Translyx Limited</p>
                 <p className="mt-1.5 text-sm text-slate-600 leading-relaxed">
                   Clinical technology company focused on diagnostics, digital pathology AI, and healthcare adoption in New Zealand.
@@ -272,7 +272,7 @@ export default function PrivexaTracePage() {
       </section>
 
       {/* 8-step workflow */}
-      <section className="bg-[#F7F5F1] py-16 sm:py-20 md:py-24">
+      <section className="bg-[#F5F8FC] py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <div className="max-w-2xl mb-10">
@@ -362,7 +362,7 @@ export default function PrivexaTracePage() {
       </section>
 
       {/* Worked example + Manual/Synthetic comparison */}
-      <section className="bg-[#F7F5F1] py-16 sm:py-20 md:py-24">
+      <section className="bg-[#F5F8FC] py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto grid gap-8 lg:grid-cols-2">
             <Card className="p-5 sm:p-7 lg:p-8">
@@ -402,7 +402,7 @@ export default function PrivexaTracePage() {
                     "Diagnostics and reviewer sign-off are completed before SCA generation.",
                     "The resulting package preserves lineage, limitations, and reviewed context.",
                   ].map((item, index) => (
-                    <div key={item} className="flex gap-3 rounded-xl border border-slate-100 bg-[#F7F5F1]/60 p-3.5">
+                    <div key={item} className="flex gap-3 rounded-xl border border-slate-100 bg-[#F5F8FC]/60 p-3.5">
                       <div className="w-6 h-6 rounded-full bg-[#0F1C3F] text-white flex items-center justify-center text-xs font-bold shrink-0">
                         {index + 1}
                       </div>
@@ -451,7 +451,7 @@ export default function PrivexaTracePage() {
       </section>
 
       {/* What's included / not included */}
-      <section className="bg-[#F7F5F1] py-16 sm:py-20 md:py-24 border-y border-slate-200/60">
+      <section className="bg-[#F5F8FC] py-16 sm:py-20 md:py-24 border-y border-slate-200/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <div className="max-w-2xl mb-10">
@@ -474,7 +474,7 @@ export default function PrivexaTracePage() {
                   </ul>
                 </CardContent>
               </Card>
-              <Card className="p-5 sm:p-6 bg-[#F7F5F1] border-slate-200/60" hover={false}>
+              <Card className="p-5 sm:p-6 bg-[#F5F8FC] border-slate-200/60" hover={false}>
                 <CardHeader className="p-0 mb-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Not included</p>
                 </CardHeader>
@@ -511,7 +511,7 @@ export default function PrivexaTracePage() {
                     </p>
                     <div className="grid sm:grid-cols-3 gap-3">
                       {["FDA-aligned workflow intent", "EMA-aligned workflow intent", "Medsafe NZ context"].map((item) => (
-                        <div key={item} className="rounded-lg border border-slate-200/80 bg-[#F7F5F1] px-3 py-2.5 text-xs font-semibold text-slate-600 text-center">
+                        <div key={item} className="rounded-lg border border-slate-200/80 bg-[#F5F8FC] px-3 py-2.5 text-xs font-semibold text-slate-600 text-center">
                           {item}
                         </div>
                       ))}
@@ -536,7 +536,7 @@ export default function PrivexaTracePage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#F7F5F1] py-14 sm:py-16 border-t border-slate-200/60">
+      <section className="bg-[#F5F8FC] py-14 sm:py-16 border-t border-slate-200/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <h2 className="text-xl font-semibold text-[#0F1C3F] mb-6">Common questions</h2>

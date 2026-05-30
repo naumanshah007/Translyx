@@ -139,7 +139,7 @@ export default function AiforiaPage() {
       />
 
       {/* Audience */}
-      <section className="bg-[#F7F5F1] border-b border-slate-200/60 py-10 sm:py-12">
+      <section className="bg-[#F5F8FC] border-b border-slate-200/60 py-10 sm:py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-5 text-center">Who this is for</p>
@@ -207,7 +207,7 @@ export default function AiforiaPage() {
             <div className="space-y-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-4">Authorisation details</p>
               {partnerFacts.map((fact) => (
-                <div key={fact} className="flex items-start gap-3 rounded-xl border border-slate-200/80 bg-[#F7F5F1] p-4">
+                <div key={fact} className="flex items-start gap-3 rounded-xl border border-slate-200/80 bg-[#F5F8FC] p-4">
                   <CheckCircle2 className="h-4 w-4 text-purple-500 shrink-0 mt-0.5" />
                   <p className="text-sm text-slate-700">{fact}</p>
                 </div>
@@ -220,7 +220,7 @@ export default function AiforiaPage() {
       <SectionDivider variant="geometric" />
 
       {/* Clinical Suites */}
-      <section className="bg-[#F7F5F1] py-16 sm:py-20 md:py-24">
+      <section className="bg-[#F5F8FC] py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <div className="max-w-2xl mb-10">
@@ -319,7 +319,7 @@ export default function AiforiaPage() {
                   </p>
                   <div className="flex flex-wrap gap-2 pt-1">
                     {["GLP-oriented", "Preclinical", "Aiforia Studies", "Automated workflows"].map((tag) => (
-                      <span key={tag} className="inline-flex items-center rounded-full border border-slate-200/80 bg-[#F7F5F1] px-3 py-1 text-xs font-semibold text-slate-600">
+                      <span key={tag} className="inline-flex items-center rounded-full border border-slate-200/80 bg-[#F5F8FC] px-3 py-1 text-xs font-semibold text-slate-600">
                         {tag}
                       </span>
                     ))}
@@ -332,7 +332,7 @@ export default function AiforiaPage() {
       </section>
 
       {/* Regulatory note */}
-      <section className="bg-[#F7F5F1] py-12 sm:py-14 border-y border-slate-200/60">
+      <section className="bg-[#F5F8FC] py-12 sm:py-14 border-y border-slate-200/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <Card className="p-5 sm:p-7 lg:p-8 border-amber-200/60" hover={false}>

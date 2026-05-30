@@ -49,7 +49,7 @@ const config: Config = {
           primary: "#0F1C3F",
           secondary: "#1D4ED8",
           accent: "#22D3EE",
-          warm: "#F7F5F1",
+          warm: "#F5F8FC",
           ink: "#1A1F2B",
           glow: "#7CE7FF",
           midnight: "#070D1F",

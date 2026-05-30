@@ -13,15 +13,17 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         className={cn(
-          "rounded-2xl border border-slate-200/80 bg-white shadow-[0_2px_16px_-4px_rgba(15,28,63,0.10)] backdrop-blur-sm transition-all duration-200 relative overflow-hidden",
+          "group/card relative overflow-hidden rounded-2xl border border-slate-200/70 bg-white transition-all duration-300",
+          "shadow-[0_1px_2px_rgba(15,28,63,0.04),0_10px_28px_-14px_rgba(15,28,63,0.14)]",
           "dark:border-slate-800/70 dark:bg-slate-950/80",
-          hover && "hover:-translate-y-0.5 hover:shadow-[0_8px_32px_-6px_rgba(15,28,63,0.18)] hover:border-slate-300/80 dark:hover:border-slate-700/80",
+          hover &&
+            "hover:-translate-y-1 hover:border-cyan-300/50 hover:shadow-[0_26px_64px_-30px_rgba(8,145,178,0.45)] dark:hover:border-cyan-400/30",
           className
         )}
         {...props}
       >
         {cornerAccent && (
-          <div className="absolute top-0 right-0 w-16 h-16 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.12),transparent_70%)] rounded-bl-full pointer-events-none" />
+          <div className="pointer-events-none absolute right-0 top-0 h-24 w-24 rounded-bl-[3rem] bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.14),transparent_70%)] opacity-70 transition-opacity duration-300 group-hover/card:opacity-100" />
         )}
         {children}
       </div>

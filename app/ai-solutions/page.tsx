@@ -232,7 +232,7 @@ export default function AISolutionsPage() {
                 <Link
                   key={id}
                   href={`#${id}`}
-                  className="inline-flex items-center gap-1.5 min-h-[38px] px-3 sm:px-4 py-2 rounded-lg border border-slate-200/80 bg-[#F7F5F1] hover:bg-white hover:border-[#0F1C3F]/20 hover:text-[#0F1C3F] transition-all duration-150 text-xs font-semibold text-slate-600"
+                  className="inline-flex items-center gap-1.5 min-h-[38px] px-3 sm:px-4 py-2 rounded-lg border border-slate-200/80 bg-[#F5F8FC] hover:bg-white hover:border-[#0F1C3F]/20 hover:text-[#0F1C3F] transition-all duration-150 text-xs font-semibold text-slate-600"
                 >
                   <NavIcon className="w-3.5 h-3.5 flex-shrink-0" />
                   <span>{label}</span>
@@ -243,7 +243,7 @@ export default function AISolutionsPage() {
         </div>
 
         {/* Who this is for */}
-        <section className="py-12 sm:py-14 bg-[#F7F5F1] border-b border-slate-200/60">
+        <section className="py-12 sm:py-14 bg-[#F5F8FC] border-b border-slate-200/60">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-content mx-auto">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-6 text-center">Who this is for</p>
@@ -315,7 +315,7 @@ export default function AISolutionsPage() {
         <SectionDivider variant="gradient" className="py-2" />
 
         {/* Privacy challenge */}
-        <section id="privacy-challenge" className="scroll-mt-20 py-12 sm:py-14 md:py-16 bg-[#F7F5F1]">
+        <section id="privacy-challenge" className="scroll-mt-20 py-12 sm:py-14 md:py-16 bg-[#F5F8FC]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-content mx-auto">
               <div className="flex items-start gap-4 mb-6">
@@ -378,7 +378,7 @@ export default function AISolutionsPage() {
                   </p>
                   <div className="flex flex-wrap gap-2 pt-1">
                     {["HIPAA-aligned", "GDPR-ready", "NZ Privacy Act 2020", "SOC 2 oriented", "Zero cloud exposure"].map((badge) => (
-                      <span key={badge} className="inline-flex items-center rounded-full border border-slate-200/80 bg-[#F7F5F1] px-3 py-1 text-xs font-semibold text-slate-600">
+                      <span key={badge} className="inline-flex items-center rounded-full border border-slate-200/80 bg-[#F5F8FC] px-3 py-1 text-xs font-semibold text-slate-600">
                         {badge}
                       </span>
                     ))}
@@ -387,7 +387,7 @@ export default function AISolutionsPage() {
               </Card>
 
               {/* Flow diagram */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-8 py-5 px-4 rounded-xl bg-[#F7F5F1] border border-slate-200/80">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-8 py-5 px-4 rounded-xl bg-[#F5F8FC] border border-slate-200/80">
                 {[
                   { icon: FileText, label: "Clinical data", color: "bg-[#0F1C3F]/8 text-[#0F1C3F]" },
                   { arrow: true },
@@ -440,7 +440,7 @@ export default function AISolutionsPage() {
         <SectionDivider variant="gradient" className="py-2" />
 
         {/* Privexa Trace */}
-        <section id="privexa-trace" className="scroll-mt-20 py-12 sm:py-14 md:py-16 bg-[#F7F5F1]">
+        <section id="privexa-trace" className="scroll-mt-20 py-12 sm:py-14 md:py-16 bg-[#F5F8FC]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-content mx-auto">
               <div className="flex items-start gap-4 mb-6">
@@ -514,7 +514,7 @@ export default function AISolutionsPage() {
                   <p className="text-base font-semibold text-[#0F1C3F] mb-5">Privexa is built with New Zealand&apos;s regulatory environment in mind:</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {complianceItems.map(({ label, detail, icon: ComplianceIcon }) => (
-                      <div key={label} className="flex items-start gap-3 p-4 rounded-xl bg-[#F7F5F1] border border-slate-200/80">
+                      <div key={label} className="flex items-start gap-3 p-4 rounded-xl bg-[#F5F8FC] border border-slate-200/80">
                         <div className="w-9 h-9 rounded-lg bg-[#0F1C3F]/6 flex items-center justify-center flex-shrink-0">
                           <ComplianceIcon className="w-4 h-4 text-[#0F1C3F]" />
                         </div>
@@ -532,7 +532,7 @@ export default function AISolutionsPage() {
         </section>
 
         {/* FAQ */}
-        <section className="py-12 sm:py-14 bg-[#F7F5F1] border-t border-slate-200/60">
+        <section className="py-12 sm:py-14 bg-[#F5F8FC] border-t border-slate-200/60">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-content mx-auto">
               <h2 className="text-xl font-semibold text-[#0F1C3F] mb-6">Common questions</h2>

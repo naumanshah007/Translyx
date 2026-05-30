@@ -104,9 +104,11 @@ export function HeroVisual() {
 
       {/* Centerpiece: glowing shield + DNA on a platform */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        {/* rotating conic light sweep */}
+        <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full conic-sweep animate-spin-slow opacity-80 [mask-image:radial-gradient(circle,transparent_32%,#000_46%,transparent_72%)]" />
         {/* ambient glow rings */}
-        <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.22),transparent_65%)] animate-glow-pulse" />
-        <div className="absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.18),transparent_70%)]" />
+        <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.24),transparent_65%)] animate-glow-pulse" />
+        <div className="absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.20),transparent_70%)]" />
 
         <div className="relative flex flex-col items-center">
           {/* shield */}
@@ -148,6 +150,8 @@ export function HeroVisual() {
             <p className="mt-1.5 text-[8px] font-semibold uppercase tracking-[0.26em] text-cyan-200/60">
               Privacy · Governance · Clinical Impact
             </p>
+            {/* reflection pool */}
+            <div className="mt-2.5 h-9 w-44 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.18),transparent_72%)] blur-md" />
           </div>
         </div>
       </div>

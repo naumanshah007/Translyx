@@ -62,10 +62,14 @@ export function HeroSection({
 }: HeroSectionProps) {
   return (
     <section className="relative overflow-hidden bg-midnight">
-      {/* grid + beams */}
-      <div className="pointer-events-none absolute inset-0 grid-overlay opacity-60" />
-      <div className="pointer-events-none absolute -top-32 right-[12%] h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.16),transparent_65%)] blur-2xl" />
-      <div className="pointer-events-none absolute bottom-0 left-[8%] h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.14),transparent_65%)] blur-2xl" />
+      {/* ambient aurora + grid + grain */}
+      <div className="pointer-events-none absolute inset-0 aurora opacity-70" />
+      <div className="pointer-events-none absolute inset-0 grid-overlay opacity-50" />
+      <div className="pointer-events-none absolute inset-0 grain-overlay opacity-[0.06] mix-blend-overlay" />
+      <div className="pointer-events-none absolute -top-32 right-[12%] h-[440px] w-[440px] rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.18),transparent_65%)] blur-3xl animate-glow-pulse" />
+      <div className="pointer-events-none absolute bottom-0 left-[6%] h-[380px] w-[380px] rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.16),transparent_65%)] blur-3xl" />
+      {/* top hairline highlight */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-[1180px] items-center gap-10 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:py-24">

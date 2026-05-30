@@ -26,6 +26,7 @@ import { CTA } from "@/components/sections/CTA";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ProductCard } from "@/components/ui/ProductCard";
 import { GovernanceCard } from "@/components/ui/GovernanceCard";
+import { Reveal } from "@/components/ui/Reveal";
 import { products, audiences, PRIVEXA_APP_URL, getProductsByType } from "@/config/products";
 import { getProductIcon } from "@/lib/productIcons";
 import { siteConfig } from "@/config/site";
@@ -210,7 +211,7 @@ export default function HomePage() {
 
             <div>
               <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400">Focus areas</p>
-              <div className="grid gap-3 sm:grid-cols-2">
+              <Reveal className="grid gap-3 sm:grid-cols-2">
                 {focusAreas.map(({ icon: Icon, title, body }) => (
                   <div
                     key={title}
@@ -223,7 +224,7 @@ export default function HomePage() {
                     <p className="mt-1 text-xs leading-relaxed text-slate-500">{body}</p>
                   </div>
                 ))}
-              </div>
+              </Reveal>
             </div>
           </div>
         </div>
@@ -249,13 +250,13 @@ export default function HomePage() {
               maxWidth="max-w-3xl"
               className="mb-12"
             />
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <Reveal className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {products
                 .filter((p) => p.type !== "pipeline")
                 .map((product) => (
                   <ProductCard key={product.slug} product={product} />
                 ))}
-            </div>
+            </Reveal>
             <div className="mt-10 text-center">
               <Link
                 href="/products"
@@ -287,11 +288,11 @@ export default function HomePage() {
               maxWidth="max-w-2xl"
               className="mb-12"
             />
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <Reveal className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {governance.map((g) => (
                 <GovernanceCard key={g.title} icon={g.icon} title={g.title} body={g.body} tone="dark" />
               ))}
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -362,7 +363,7 @@ export default function HomePage() {
               maxWidth="max-w-2xl"
               className="mb-12"
             />
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            <Reveal className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
               {audiences.map((a, i) => {
                 const Icon = audienceIcons[i];
                 return (
@@ -378,7 +379,7 @@ export default function HomePage() {
                   </div>
                 );
               })}
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>

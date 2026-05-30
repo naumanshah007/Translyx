@@ -19,7 +19,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           variant === "default" || variant === "primary" || variant === "gradient",
 
         // Secondary — clean outline with ink text
-        "border border-[#0F1C3F]/25 bg-white text-[#0F1C3F] hover:bg-[#F7F5F1] hover:border-[#0F1C3F]/40 shadow-sm dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800":
+        "border border-[#0F1C3F]/25 bg-white text-[#0F1C3F] hover:bg-[#F5F8FC] hover:border-[#0F1C3F]/40 shadow-sm dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800":
           variant === "secondary" || variant === "outline",
 
         // Destructive — for danger confirmations only
