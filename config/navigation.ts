@@ -3,6 +3,7 @@ export interface NavSubItem {
   href: string;
   description?: string;
   status?: "available" | "pilot" | "pipeline";
+  badge?: string;
 }
 
 export interface NavItem {
@@ -19,35 +20,64 @@ export const navigation: NavItem[] = [
     description: "Translyx product portfolio",
     subItems: [
       {
+        label: "Aiforia Digital Pathology AI",
+        href: "/aiforia",
+        description: "AI-assisted digital pathology",
+        badge: "Authorised partner",
+        status: "available",
+      },
+      {
+        label: "Privexa AI Wrapper",
+        href: "/privexa#ai-wrapper",
+        description: "Secure gateway for clinical AI",
+        badge: "Built by Privexa",
+        status: "available",
+      },
+      {
+        label: "Privexa Cloud Shield",
+        href: "/privexa#cloud-shield",
+        description: "Field-level data protection",
+        badge: "Built by Privexa",
+        status: "available",
+      },
+      {
+        label: "Privexa Scribe",
+        href: "/privexa#scribe",
+        description: "Governed clinical documentation",
+        badge: "Built by Privexa",
+        status: "available",
+      },
+      {
         label: "Privexa Trace",
         href: "/products/privexa-trace",
-        description: "Reviewer-gated synthetic control workflows",
+        description: "Reviewer-gated evidence workflows",
+        badge: "Built by Privexa",
         status: "available",
       },
       {
-        label: "Privexa",
-        href: "/ai-solutions#privexa",
-        description: "AI data protection layer for healthcare",
-        status: "available",
+        label: "ClinicalTriage",
+        href: "/privexa#clinical-triage",
+        description: "Reviewer-gated triage support",
+        badge: "Built by Privexa",
+        status: "pilot",
       },
       {
-        label: "AI Vision Assistant",
-        href: "/products/ai-vision-assistant",
-        description: "Clinical AI vision tools",
-        status: "pipeline",
-      },
-      {
-        label: "Gynecology Referral",
-        href: "/products/gynecology-referral",
-        description: "Referral pathway optimisation",
+        label: "Diagnostic Pipeline",
+        href: "/product-pipeline",
+        description: "AMR, sepsis, POCT, oncology & more",
         status: "pipeline",
       },
     ],
   },
   {
+    label: "Digital Pathology",
+    href: "/digital-pathology",
+    description: "Aiforia-powered digital pathology AI",
+  },
+  {
     label: "AI Solutions",
     href: "/ai-solutions",
-    description: "Protected AI and governed evidence workflows",
+    description: "Governed clinical AI and privacy-first workflows",
   },
   {
     label: "Pipeline",

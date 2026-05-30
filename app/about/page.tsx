@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Prose } from "@/components/ui/Prose";
 import { siteConfig } from "@/config/site";
-import { Shield, Users, MapPin, Calendar, ArrowRight, Building2 } from "lucide-react";
+import { Shield, Users, MapPin, Calendar, ArrowRight, Building2, Handshake, Microscope, Lock, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Provenance } from "@/components/sections/Provenance";
@@ -54,8 +54,31 @@ Through regional partnerships and scalable distribution models, Translyx aims to
 
 const sectionAnchors = [
   { id: "our-mission", label: "Our mission" },
+  { id: "partner-model", label: "Partner model" },
   { id: "leadership", label: "Leadership" },
   { id: "operational-territory", label: "Territory" },
+  { id: "responsible-ai", label: "Responsible AI" },
+];
+
+const partnerModel = [
+  {
+    icon: Building2,
+    name: "Translyx Limited",
+    role: "Clinical technology & adoption",
+    body: "The accountable New Zealand partner — clinical positioning, diagnostic adoption, local partnerships, and healthcare implementation across Oceania.",
+  },
+  {
+    icon: Handshake,
+    name: "Aiforia",
+    role: "Authorised partner solution",
+    body: "AI-assisted digital pathology, represented by Translyx in New Zealand. An authorised partner solution — not a Translyx-owned product.",
+  },
+  {
+    icon: Lock,
+    name: "Privexa Limited",
+    role: "Protected software layer",
+    body: "Builds the protected AI software — AI Wrapper, Cloud Shield, Scribe, Trace, and ClinicalTriage — clinically positioned through Translyx.",
+  },
 ];
 
 export default function AboutPage() {
@@ -187,6 +210,39 @@ export default function AboutPage() {
             </Card>
           </section>
 
+          {/* Partner model */}
+          <section id="partner-model" className="scroll-mt-24">
+            <div className="mb-6 flex items-center gap-2">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0F1C3F]/6">
+                <Handshake className="h-4 w-4 text-[#0F1C3F]" />
+              </div>
+              <h2 className="text-2xl font-bold text-[#0F1C3F] sm:text-3xl">Partner model</h2>
+            </div>
+            <p className="mb-7 max-w-3xl text-base leading-relaxed text-slate-600">
+              Translyx is the trusted bridge between global diagnostic innovation and local clinical adoption. We represent
+              authorised partner solutions, position Privexa-built protected software, and stay accountable for clinical
+              implementation in New Zealand and Oceania.
+            </p>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {partnerModel.map(({ icon: Icon, name, role, body }) => (
+                <Card key={name} className="p-5 sm:p-6" hover={false}>
+                  <CardContent className="pt-0">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F5F8FC] ring-1 ring-slate-200/70">
+                      <Icon className="h-5 w-5 text-[#0891B2]" />
+                    </span>
+                    <p className="mt-4 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-[#0891B2]">{role}</p>
+                    <h3 className="mt-1 font-display text-lg font-semibold text-[#0F1C3F]">{name}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-600">{body}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <p className="mt-5 text-xs leading-relaxed text-slate-500">
+              Aiforia is an authorised partner solution represented by Translyx in New Zealand — not owned or developed by
+              Translyx. Privexa-built products are developed by Privexa Limited.
+            </p>
+          </section>
+
           {/* Leadership */}
           <section id="leadership" className="scroll-mt-24">
             <div className="flex items-center gap-2 mb-6">
@@ -256,6 +312,48 @@ export default function AboutPage() {
                 ))}
               </div>
             </div>
+          </section>
+
+          {/* Responsible AI */}
+          <section id="responsible-ai" className="scroll-mt-24">
+            <div className="mb-6 flex items-center gap-2">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0F1C3F]/6">
+                <ShieldCheck className="h-4 w-4 text-[#0F1C3F]" />
+              </div>
+              <h2 className="text-2xl font-bold text-[#0F1C3F] sm:text-3xl">Responsible AI &amp; clinical governance</h2>
+            </div>
+            <Card className="overflow-hidden p-0" hover={false}>
+              <div className="grid lg:grid-cols-[1.2fr_1fr]">
+                <div className="p-6 sm:p-8">
+                  <Prose className="space-y-4 text-slate-700">
+                    <p>
+                      As AI enters diagnostic and evidence workflows, Translyx delivers solutions that are governed,
+                      reviewable, and honest about their boundaries. Governance, traceability, visible limitations, and
+                      reviewer gates are structural features of the workflow — not disclaimers added after the fact.
+                    </p>
+                    <p>
+                      We make no implied regulatory endorsement, and we are explicit about what each solution does and does
+                      not do. Human oversight remains central: AI assists clinical judgement, it does not replace it.
+                    </p>
+                  </Prose>
+                </div>
+                <div className="border-t border-slate-200/70 bg-[#0F1C3F] p-6 sm:p-8 lg:border-l lg:border-t-0">
+                  <ul className="space-y-3">
+                    {[
+                      { icon: Users, label: "Reviewer gates & human oversight" },
+                      { icon: Shield, label: "Field-level data protection" },
+                      { icon: Microscope, label: "Visible limitations, declared" },
+                      { icon: ShieldCheck, label: "No implied regulatory endorsement" },
+                    ].map(({ icon: Icon, label }) => (
+                      <li key={label} className="flex items-start gap-3 text-sm text-slate-200">
+                        <Icon className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300" />
+                        {label}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </Card>
           </section>
 
           {/* CTA strip */}

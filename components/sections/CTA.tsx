@@ -1,65 +1,72 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
 interface CTAProps {
   title: string;
   description?: string;
-  primaryCTA?: { label: string; href: string };
+  primaryCTA?: { label: string; href: string; external?: boolean };
   secondaryCTA?: { label: string; href: string; external?: boolean };
   className?: string;
 }
 
+function Action({
+  cta,
+  variant,
+}: {
+  cta: { label: string; href: string; external?: boolean };
+  variant: "primary" | "glass";
+}) {
+  const base =
+    "inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-200 sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1430]";
+  const styles =
+    variant === "primary"
+      ? "bg-gradient-to-r from-cyan-400 via-sky-400 to-violet-500 text-[#06121f] shadow-[0_8px_30px_-6px_rgba(34,211,238,0.5)] hover:-translate-y-0.5 hover:shadow-[0_10px_38px_-6px_rgba(124,58,237,0.55)]"
+      : "glass-panel text-white hover:bg-white/[0.14]";
+  const content = (
+    <>
+      {cta.label}
+      <ArrowRight className="h-4 w-4" />
+    </>
+  );
+  if (cta.external) {
+    return (
+      <a href={cta.href} target="_blank" rel="noopener noreferrer" className={cn(base, styles)}>
+        {content}
+      </a>
+    );
+  }
+  return (
+    <Link href={cta.href} className={cn(base, styles)}>
+      {content}
+    </Link>
+  );
+}
+
 export function CTA({ title, description, primaryCTA, secondaryCTA, className }: CTAProps) {
   return (
-    <section className={cn("relative py-16 sm:py-20 overflow-hidden bg-[#0F1C3F]", className)}>
-      {/* Single subtle accent */}
-      <div className="absolute inset-0 bg-[radial-gradient(600px_300px_at_80%_50%,rgba(34,211,238,0.07),transparent_70%)] pointer-events-none" />
-      {/* Subtle grid */}
-      <div
-        className="absolute inset-0 opacity-[0.035]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-        }}
-      />
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-display-sm font-semibold text-white mb-4">
+    <section className={cn("relative overflow-hidden bg-midnight py-20 sm:py-24", className)}>
+      <div className="pointer-events-none absolute inset-0 grid-overlay opacity-40" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(34,211,238,0.12),transparent_60%)]" />
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="font-display text-[2rem] font-semibold leading-tight tracking-tight text-white sm:text-[2.6rem]">
             {title}
           </h2>
           {description && (
-            <p className={cn("text-base sm:text-lg text-white/65 leading-relaxed", (primaryCTA || secondaryCTA) ? "mb-8" : "mb-0")}>
+            <p
+              className={cn(
+                "mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/65 sm:text-lg",
+                primaryCTA || secondaryCTA ? "mb-9" : "mb-0"
+              )}
+            >
               {description}
             </p>
           )}
           {(primaryCTA || secondaryCTA) && (
             <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              {primaryCTA && (
-                <Button asChild variant="secondary" size="lg" className="bg-white text-[#0F1C3F] hover:bg-[#F7F5F1] border-0 w-full sm:w-auto">
-                  <Link href={primaryCTA.href}>
-                    {primaryCTA.label}
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-              )}
-              {secondaryCTA && (
-                secondaryCTA.external ? (
-                  <Button asChild variant="ghost" size="lg" className="text-white/75 hover:text-white hover:bg-white/8 border border-white/18 w-full sm:w-auto">
-                    <a href={secondaryCTA.href} target="_blank" rel="noopener noreferrer">
-                      {secondaryCTA.label}
-                    </a>
-                  </Button>
-                ) : (
-                  <Button asChild variant="ghost" size="lg" className="text-white/75 hover:text-white hover:bg-white/8 border border-white/18 w-full sm:w-auto">
-                    <Link href={secondaryCTA.href}>{secondaryCTA.label}</Link>
-                  </Button>
-                )
-              )}
+              {primaryCTA && <Action cta={primaryCTA} variant="primary" />}
+              {secondaryCTA && <Action cta={secondaryCTA} variant="glass" />}
             </div>
           )}
         </div>
@@ -67,3 +74,5 @@ export function CTA({ title, description, primaryCTA, secondaryCTA, className }:
     </section>
   );
 }
+
+export const CTASection = CTA;

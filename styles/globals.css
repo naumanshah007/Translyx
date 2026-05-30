@@ -105,6 +105,61 @@
 }
 
 @layer utilities {
+  /* ---- Premium brand utilities ---- */
+  /* Cyan → teal → violet gradient text (brand accent) */
+  .text-gradient-brand {
+    background-image: linear-gradient(100deg, #67E8F9 0%, #22D3EE 30%, #5EEAD4 55%, #818CF8 80%, #A78BFA 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-cyan {
+    background-image: linear-gradient(100deg, #A5F3FC 0%, #22D3EE 50%, #2DD4BF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Glassmorphism panels */
+  .glass-panel {
+    background: linear-gradient(155deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 8px 32px -8px rgba(2, 8, 23, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+  .glass-card {
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Deep navy hero canvas */
+  .bg-midnight {
+    background:
+      radial-gradient(1100px 620px at 78% 8%, rgba(34, 211, 238, 0.14), transparent 60%),
+      radial-gradient(900px 600px at 12% 92%, rgba(139, 92, 246, 0.12), transparent 60%),
+      linear-gradient(165deg, #070D1F 0%, #0B1430 45%, #0C1B3C 100%);
+  }
+  .bg-deep {
+    background: linear-gradient(165deg, #0B1430 0%, #0F1C3F 60%, #0B1735 100%);
+  }
+
+  /* Subtle grid overlays */
+  .grid-overlay {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 52px 52px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 80%);
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 80%);
+  }
+
+  /* Animated gradient border ring for premium cards */
+  .ring-brand-glow {
+    box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.25), 0 18px 60px -22px rgba(34, 211, 238, 0.45);
+  }
+
   .pattern-dots {
     background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
     background-size: 24px 24px;
@@ -140,6 +195,14 @@
     clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
   }
 
+  /* Reveal-on-load helpers (paired with animation-delay inline) */
+  .will-fade {
+    opacity: 0;
+  }
+  .reveal {
+    animation: revealUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
   /* AI Solutions nav active state (:target) */
   #ai-solutions-content:has(#case-for-ai:target) nav a[href="#case-for-ai"],
   #ai-solutions-content:has(#privacy-challenge:target) nav a[href="#privacy-challenge"],
@@ -157,5 +220,34 @@
   .dark #ai-solutions-content:has(#compliance:target) nav a[href="#compliance"] {
     color: rgb(191 219 254);
     border-color: rgba(96, 165, 250, 0.5);
+  }
+}
+
+/* Keyframes referenced by raw CSS classes (kept here so they always emit) */
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility: reduced-motion — show content immediately, drop ambient motion */
+@media (prefers-reduced-motion: reduce) {
+  .will-fade {
+    opacity: 1 !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }

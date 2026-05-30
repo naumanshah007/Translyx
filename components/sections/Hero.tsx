@@ -2,23 +2,22 @@
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
 interface HeroProps {
   headline: string;
+  highlight?: string;
   subheadline?: string;
   description: string;
   primaryCTA?: { label: string; href: string };
   secondaryCTA?: { label: string; href: string; external?: boolean };
   badge?: { text: string; icon?: React.ReactNode };
-  enhancedAurora?: boolean;
-  decorativeShapes?: boolean;
   className?: string;
 }
 
 export function Hero({
   headline,
+  highlight,
   subheadline,
   description,
   primaryCTA,
@@ -27,73 +26,75 @@ export function Hero({
   className,
 }: HeroProps) {
   return (
-    <section className={cn("relative py-20 sm:py-28 md:py-36 lg:py-44 overflow-hidden", className)}>
-      {/* Clean dark navy base */}
-      <div className="absolute inset-0 bg-[#0F1C3F]" />
-      {/* Subtle grid pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-        }}
-      />
-      {/* Single restrained accent glow — bottom right */}
-      <div className="absolute bottom-0 right-0 w-[600px] h-[400px] bg-[radial-gradient(ellipse_at_bottom_right,rgba(34,211,238,0.10),transparent_70%)] pointer-events-none" />
+    <section className={cn("relative overflow-hidden bg-midnight py-20 sm:py-24 md:py-28", className)}>
+      <div className="pointer-events-none absolute inset-0 grid-overlay opacity-50" />
+      <div className="pointer-events-none absolute -top-24 right-[14%] h-[380px] w-[380px] rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.14),transparent_65%)] blur-2xl" />
+      <div className="pointer-events-none absolute bottom-0 left-[10%] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.12),transparent_65%)] blur-2xl" />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Eyebrow badge */}
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
           {badge && (
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/8 border border-white/15 rounded-full text-[11px] uppercase tracking-[0.22em] text-slate-300 mb-8 animate-fade-in">
+            <div className="mb-7 inline-flex items-center gap-2 rounded-full glass-panel px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-200 will-fade reveal">
               {badge.icon}
               {badge.text}
             </div>
           )}
 
-          {/* Headline — editorial Fraunces */}
-          <h1 className="text-display font-semibold text-white mb-6 animate-fade-in-up">
+          <h1
+            className="font-display text-[2.4rem] font-semibold leading-[1.06] tracking-[-0.02em] text-white will-fade reveal sm:text-[3rem] md:text-[3.4rem]"
+            style={{ animationDelay: "0.05s" }}
+          >
             {subheadline && (
-              <span className="block text-[#22D3EE] italic text-display-sm mb-3 font-normal">{subheadline}</span>
+              <span className="mb-3 block font-display text-2xl font-normal italic text-cyan-300 sm:text-3xl">
+                {subheadline}
+              </span>
             )}
             {headline}
+            {highlight && <span className="text-gradient-brand"> {highlight}</span>}
           </h1>
 
-          {/* Description */}
           <p
             className={cn(
-              "text-lg sm:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed font-body",
-              (primaryCTA || secondaryCTA) ? "mb-10" : "mb-0"
+              "mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/65 will-fade reveal sm:text-lg",
+              primaryCTA || secondaryCTA ? "mb-10" : "mb-0"
             )}
+            style={{ animationDelay: "0.12s" }}
           >
             {description}
           </p>
 
-          {/* CTAs */}
           {(primaryCTA || secondaryCTA) && (
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div
+              className="flex flex-col justify-center gap-3 will-fade reveal sm:flex-row"
+              style={{ animationDelay: "0.2s" }}
+            >
               {primaryCTA && (
-                <Button asChild variant="secondary" size="lg" className="bg-white text-[#0F1C3F] hover:bg-[#F7F5F1] border-0 shadow-[0_4px_20px_rgba(255,255,255,0.15)]">
-                  <Link href={primaryCTA.href}>
-                    {primaryCTA.label}
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
+                <Link
+                  href={primaryCTA.href}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 via-sky-400 to-violet-500 px-6 py-3 text-sm font-semibold text-[#06121f] shadow-[0_8px_30px_-6px_rgba(34,211,238,0.5)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_10px_38px_-6px_rgba(124,58,237,0.55)]"
+                >
+                  {primaryCTA.label}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               )}
-              {secondaryCTA && (
-                secondaryCTA.external ? (
-                  <Button asChild variant="ghost" size="lg" className="text-white/80 hover:text-white hover:bg-white/8 border border-white/20">
-                    <a href={secondaryCTA.href} target="_blank" rel="noopener noreferrer" aria-label={`${secondaryCTA.label} (opens in new tab)`}>
-                      {secondaryCTA.label}
-                    </a>
-                  </Button>
+              {secondaryCTA &&
+                (secondaryCTA.external ? (
+                  <a
+                    href={secondaryCTA.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl glass-panel px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/[0.14]"
+                  >
+                    {secondaryCTA.label}
+                  </a>
                 ) : (
-                  <Button asChild variant="ghost" size="lg" className="text-white/80 hover:text-white hover:bg-white/8 border border-white/20">
-                    <Link href={secondaryCTA.href}>{secondaryCTA.label}</Link>
-                  </Button>
-                )
-              )}
+                  <Link
+                    href={secondaryCTA.href}
+                    className="inline-flex items-center justify-center gap-2 rounded-xl glass-panel px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/[0.14]"
+                  >
+                    {secondaryCTA.label}
+                  </Link>
+                ))}
             </div>
           )}
         </div>

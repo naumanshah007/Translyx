@@ -1,105 +1,135 @@
 import Link from "next/link";
+import { Linkedin, MapPin, Mail, ShieldCheck, ArrowUpRight } from "lucide-react";
 import { siteConfig } from "@/config/site";
-import { Logo } from "@/components/ui/Logo";
-import { Linkedin, MapPin, Mail } from "lucide-react";
+import { BrandLogo } from "@/components/ui/Brand";
+import { PRIVEXA_APP_URL } from "@/config/products";
+
+const productLinks = [
+  { label: "Aiforia Digital Pathology AI", href: "/aiforia" },
+  { label: "Privexa AI Wrapper", href: "/privexa#ai-wrapper" },
+  { label: "Privexa Cloud Shield", href: "/privexa#cloud-shield" },
+  { label: "Privexa Scribe", href: "/privexa#scribe" },
+  { label: "Privexa Trace", href: "/products/privexa-trace" },
+  { label: "ClinicalTriage", href: "/privexa#clinical-triage" },
+  { label: "Diagnostic Pipeline", href: "/product-pipeline" },
+];
+
+const solutionLinks = [
+  { label: "Digital Pathology", href: "/digital-pathology" },
+  { label: "AI Solutions", href: "/ai-solutions" },
+  { label: "Clinical Pipeline", href: "/product-pipeline" },
+  { label: "Evidence Workflows", href: "/products/privexa-trace" },
+  { label: "Privacy & Governance", href: "/ai-solutions#privexa" },
+];
+
+const trustItems = [
+  "Responsible AI",
+  "Visible limitations",
+  "No implied regulatory endorsement",
+  "Authorised Aiforia business partner — NZ",
+];
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0F1C3F] text-slate-300">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-
-          {/* Company */}
-          <div className="lg:col-span-1">
-            <Logo href="/" size="lg" className="h-auto w-24 brightness-0 invert opacity-90" />
-            <p className="mt-4 text-sm leading-relaxed text-slate-400 max-w-[220px]">
-              {siteConfig.companyName} — the governed evidence layer for clinical AI.
+    <footer className="relative overflow-hidden bg-midnight text-slate-300">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent" />
+      <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-3 lg:grid-cols-12">
+          {/* Brand */}
+          <div className="col-span-2 md:col-span-3 lg:col-span-4">
+            <BrandLogo tone="dark" />
+            <p className="mt-5 max-w-[260px] text-sm leading-relaxed text-slate-400">
+              The trusted New Zealand bridge between global diagnostic innovation, governed clinical AI, and local
+              healthcare implementation.
             </p>
-            <div className="mt-5 flex items-center gap-3">
-              <Link
-                href="https://www.linkedin.com/company/translyx/"
-                target="_blank"
-                rel="noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/8 text-slate-300 hover:bg-white/14 hover:text-white transition-colors"
-                aria-label="Translyx on LinkedIn"
-              >
-                <Linkedin className="h-4 w-4" />
-              </Link>
-            </div>
+            <Link
+              href="https://www.linkedin.com/company/translyx/"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/[0.06] text-slate-300 transition-colors hover:bg-white/[0.12] hover:text-white"
+              aria-label="Translyx on LinkedIn"
+            >
+              <Linkedin className="h-4 w-4" />
+            </Link>
           </div>
 
           {/* Products */}
-          <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-white mb-5">Products</h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link href="/products/privexa-trace" className="text-slate-400 hover:text-white transition-colors flex items-center gap-2">
-                  Privexa Trace
-                  <span className="text-[10px] font-semibold bg-emerald-900/60 text-emerald-300 border border-emerald-700/50 px-1.5 py-0.5 rounded uppercase tracking-wide">Available</span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/ai-solutions#privexa" className="text-slate-400 hover:text-white transition-colors">Privexa</Link>
-              </li>
-              <li>
-                <Link href="/ai-solutions" className="text-slate-400 hover:text-white transition-colors">AI Solutions</Link>
-              </li>
-              <li>
-                <Link href="/product-pipeline" className="text-slate-400 hover:text-white transition-colors">Clinical Pipeline</Link>
-              </li>
+          <div className="lg:col-span-3">
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">Products</h3>
+            <ul className="space-y-2.5 text-sm">
+              {productLinks.map((l) => (
+                <li key={l.label}>
+                  <Link href={l.href} className="text-slate-400 transition-colors hover:text-cyan-300">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Trust */}
-          <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-white mb-5">Trust</h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link href="/about" className="text-slate-400 hover:text-white transition-colors">About Translyx</Link>
-              </li>
-              <li>
-                <Link href="/updates" className="text-slate-400 hover:text-white transition-colors">Updates</Link>
-              </li>
-              <li>
-                <span className="text-slate-500 text-xs">Responsible AI disclosure available on request</span>
-              </li>
-              <li>
-                <span className="text-slate-500 text-xs">No implied regulatory endorsement</span>
-              </li>
+          {/* Solutions */}
+          <div className="lg:col-span-2">
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">Solutions</h3>
+            <ul className="space-y-2.5 text-sm">
+              {solutionLinks.map((l) => (
+                <li key={l.label}>
+                  <Link href={l.href} className="text-slate-400 transition-colors hover:text-cyan-300">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Reach */}
-          <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-white mb-5">Reach</h3>
-            <ul className="space-y-3 text-sm">
+          {/* Trust + Reach */}
+          <div className="lg:col-span-3">
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">Trust</h3>
+            <ul className="space-y-2.5 text-sm">
+              {trustItems.map((t) => (
+                <li key={t} className="flex items-start gap-2 text-slate-400">
+                  <ShieldCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-400/70" />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="mb-4 mt-8 text-xs font-semibold uppercase tracking-[0.18em] text-white">Reach</h3>
+            <ul className="space-y-2.5 text-sm">
               <li className="flex items-start gap-2 text-slate-400">
-                <MapPin className="h-4 w-4 shrink-0 mt-0.5 text-slate-500" />
-                <span>Auckland, New Zealand</span>
+                <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-500" />
+                <span>Auckland, New Zealand — expanding into Australia &amp; Pacific markets</span>
               </li>
               <li className="flex items-start gap-2 text-slate-400">
-                <Mail className="h-4 w-4 shrink-0 mt-0.5 text-slate-500" />
-                <Link href={`mailto:${siteConfig.company.email}`} className="hover:text-white transition-colors break-all">
+                <Mail className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-500" />
+                <Link href={`mailto:${siteConfig.company.email}`} className="break-all transition-colors hover:text-cyan-300">
                   {siteConfig.company.email}
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-slate-400 hover:text-white transition-colors">Contact Us</Link>
+                <a
+                  href={PRIVEXA_APP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-slate-400 transition-colors hover:text-cyan-300"
+                >
+                  Visit Privexa
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center">
           <p className="text-xs text-slate-500">
-            © {currentYear} {siteConfig.companyName}. All rights reserved.
-            {" "}Registered in New Zealand.
+            © {currentYear} {siteConfig.companyName}. All rights reserved. Registered in New Zealand.
           </p>
           <div className="flex items-center gap-6 text-xs text-slate-500">
-            <Link href="/about" className="hover:text-slate-300 transition-colors">About</Link>
-            <Link href="/contact" className="hover:text-slate-300 transition-colors">Contact</Link>
+            <Link href="/about" className="transition-colors hover:text-slate-300">About</Link>
+            <Link href="/products" className="transition-colors hover:text-slate-300">Products</Link>
+            <Link href="/contact" className="transition-colors hover:text-slate-300">Contact</Link>
           </div>
         </div>
       </div>

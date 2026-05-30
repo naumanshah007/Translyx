@@ -1,39 +1,38 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { Mail, MapPin, Linkedin, ShieldCheck, Microscope, Lock, GitBranch } from "lucide-react";
 import { siteConfig } from "@/config/site";
-import { Mail, MapPin, Linkedin } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
-import { PatternOverlay } from "@/components/ui/DecorativeElements";
+import { Hero } from "@/components/sections/Hero";
+import { ContactForm } from "@/components/sections/ContactForm";
 
-const contactDescription = `Contact ${siteConfig.companyName} about Privexa Trace, AI solutions, and healthcare technology partnerships in New Zealand.`;
+const contactDescription = `Contact ${siteConfig.companyName} about Aiforia digital pathology AI, Privexa-built protected AI, governed evidence workflows, and clinical technology partnerships in New Zealand and Oceania.`;
 
 export const metadata: Metadata = {
-  title: "Contact Translyx",
+  title: "Contact Translyx — Request a Walkthrough",
   description: contactDescription,
   keywords: [
     "Translyx contact",
     "Translyx Limited contact",
-    "Privexa Trace contact",
-    "healthcare technology consultation",
-    "clinical technology contact",
+    "request walkthrough",
+    "Aiforia New Zealand contact",
+    "clinical technology contact NZ",
   ],
-  alternates: {
-    canonical: "/contact",
-  },
+  alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact Translyx | Privexa Trace and AI Solutions",
+    title: "Contact Translyx — Request a Walkthrough",
     description: contactDescription,
     url: `${siteConfig.url}/contact`,
     siteName: siteConfig.name,
-    images: [
-      {
-        url: siteConfig.seo.ogImage,
-        width: 1200,
-        height: 630,
-        alt: "Contact Translyx",
-      },
-    ],
+    images: [{ url: siteConfig.seo.ogImage, width: 1200, height: 630, alt: "Contact Translyx" }],
   },
 };
+
+const discuss = [
+  { icon: Microscope, label: "Aiforia digital pathology AI evaluation" },
+  { icon: Lock, label: "Privexa protected AI & data protection" },
+  { icon: GitBranch, label: "Reviewer-gated evidence workflows" },
+  { icon: ShieldCheck, label: "Diagnostic product evaluation" },
+];
 
 export default function ContactPage() {
   const contactSchema = {
@@ -57,75 +56,70 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14 md:py-16">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }} />
+
+      <Hero
+        badge={{ text: "Contact · Auckland, New Zealand", icon: <MapPin className="h-3.5 w-3.5 text-cyan-300" /> }}
+        headline="Talk to Translyx about your clinical technology"
+        highlight="priorities."
+        description="Whether the focus is digital pathology AI, AI data protection, or reviewer-gated evidence workflows — the Translyx team can help identify the right fit for your organisation. Request a walkthrough below."
       />
-      <div className="max-w-4xl mx-auto relative">
-        <PatternOverlay pattern="topo" opacity={0.04} className="text-primary-500/30" />
-        <div className="text-center mb-12 sm:mb-16 relative">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-primary-500 to-cyan-500 rounded-full mb-4 sm:mb-6" />
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-gray-50 mt-6 sm:mt-8">Contact Translyx</h1>
-          <p className="text-lg text-gray-700 dark:text-gray-300">
-            Reach out to Translyx about Privexa Trace, AI solutions, and healthcare technology partnerships.
-          </p>
+
+      <section className="bg-white py-18 sm:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-[1100px] gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            {/* Left — context */}
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0891B2]">Get in touch</p>
+              <h2 className="mt-3 font-display text-2xl font-semibold text-[#0F1C3F] sm:text-3xl">
+                A clinical technology conversation, not a sales pitch.
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-slate-600">
+                Tell us a little about your organisation and what you&apos;re exploring. We&apos;ll follow up to arrange a
+                walkthrough tailored to your clinical, laboratory, or research context.
+              </p>
+
+              <div className="mt-8 space-y-3">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400">What we can discuss</p>
+                {discuss.map(({ icon: Icon, label }) => (
+                  <div key={label} className="flex items-center gap-3 rounded-xl border border-slate-200/80 bg-[#F5F8FC] p-3.5">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white ring-1 ring-slate-200/70">
+                      <Icon className="h-[18px] w-[18px] text-[#0891B2]" />
+                    </span>
+                    <span className="text-sm font-medium text-[#0F1C3F]">{label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 space-y-3 border-t border-slate-200/70 pt-6">
+                <a href={`mailto:${siteConfig.company.email}`} className="flex items-center gap-3 text-sm text-slate-600 transition-colors hover:text-[#0891B2]">
+                  <Mail className="h-4 w-4 text-slate-400" />
+                  {siteConfig.company.email}
+                </a>
+                <p className="flex items-center gap-3 text-sm text-slate-600">
+                  <MapPin className="h-4 w-4 text-slate-400" />
+                  Auckland, New Zealand — expanding into Australia &amp; Pacific markets
+                </p>
+                <Link
+                  href="https://www.linkedin.com/company/translyx/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-3 text-sm text-slate-600 transition-colors hover:text-[#0891B2]"
+                >
+                  <Linkedin className="h-4 w-4 text-slate-400" />
+                  Translyx on LinkedIn
+                </Link>
+              </div>
+            </div>
+
+            {/* Right — form */}
+            <div>
+              <ContactForm />
+            </div>
+          </div>
         </div>
-
-        <div className="max-w-2xl mx-auto space-y-6 w-full min-w-0">
-          {/* Contact Information */}
-          <Card variant="gradient-border" cornerAccent>
-            <CardHeader className="px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 lg:pt-8">
-              <CardTitle className="text-2xl text-center">Contact Information</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6 px-4 sm:px-6 lg:px-8 pt-0 pb-4 sm:pb-6 lg:pb-8">
-              <div className="flex flex-col items-center gap-4 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-slate-900 via-primary-600 to-cyan-400 rounded-2xl flex items-center justify-center shadow-[0_16px_35px_rgba(37,99,235,0.35)]">
-                  <Mail className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <a
-                    href={`mailto:${siteConfig.company.email}`}
-                    className="text-xl font-semibold text-primary-600 dark:text-primary-400 hover:underline transition-colors block"
-                  >
-                    {siteConfig.company.email}
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 pt-6 border-t border-gray-200 dark:border-gray-700">
-                <div className="w-10 h-10 bg-gradient-to-br from-slate-900 via-primary-600 to-cyan-400 rounded-xl flex items-center justify-center flex-shrink-0 shadow-[0_12px_25px_rgba(37,99,235,0.3)]">
-                  <MapPin className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Location</p>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {siteConfig.company.address}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 pt-6 border-t border-gray-200 dark:border-gray-700">
-                <div className="w-10 h-10 bg-gradient-to-br from-slate-900 via-primary-600 to-cyan-400 rounded-xl flex items-center justify-center flex-shrink-0 shadow-[0_12px_25px_rgba(37,99,235,0.3)]">
-                  <Linkedin className="w-5 h-5 text-white" />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <p className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Follow us</p>
-                  <a
-                    href="https://www.linkedin.com/company/translyx/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 min-h-[44px] py-2 text-primary-600 dark:text-primary-400 hover:underline transition-colors break-words"
-                  >
-                    <Linkedin className="w-4 h-4 flex-shrink-0" />
-                    LinkedIn
-                  </a>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }

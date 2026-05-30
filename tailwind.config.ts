@@ -52,6 +52,15 @@ const config: Config = {
           warm: "#F7F5F1",
           ink: "#1A1F2B",
           glow: "#7CE7FF",
+          midnight: "#070D1F",
+          deep: "#0B1430",
+          navy: "#0F1C3F",
+          cyan: "#22D3EE",
+          teal: "#2DD4BF",
+          violet: "#8B5CF6",
+          emerald: "#34D399",
+          mist: "#F5F8FC",
+          haze: "#EEF3FA",
         },
         success: {
           DEFAULT: "#10B981",
@@ -149,6 +158,39 @@ const config: Config = {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
         },
+        glowPulse: {
+          "0%, 100%": { opacity: "0.55", transform: "scale(1)" },
+          "50%": { opacity: "1", transform: "scale(1.04)" },
+        },
+        floatSlow: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        floatSlower: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-14px)" },
+        },
+        spinSlow: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        gradientShift: {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
+        beam: {
+          "0%": { transform: "translateY(-120%)", opacity: "0" },
+          "20%": { opacity: "1" },
+          "80%": { opacity: "1" },
+          "100%": { transform: "translateY(120%)", opacity: "0" },
+        },
+        dash: {
+          to: { strokeDashoffset: "-1000" },
+        },
+        twinkle: {
+          "0%, 100%": { opacity: "0.2" },
+          "50%": { opacity: "0.9" },
+        },
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-out forwards",
@@ -159,6 +201,14 @@ const config: Config = {
         "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "float": "float 4s ease-in-out infinite",
         "sheen": "sheen 2.5s ease-in-out infinite",
+        "glow-pulse": "glowPulse 4.5s ease-in-out infinite",
+        "float-slow": "floatSlow 6s ease-in-out infinite",
+        "float-slower": "floatSlower 8s ease-in-out infinite",
+        "spin-slow": "spinSlow 26s linear infinite",
+        "gradient-shift": "gradientShift 8s ease-in-out infinite",
+        "beam": "beam 5s ease-in-out infinite",
+        "dash": "dash 24s linear infinite",
+        "twinkle": "twinkle 4s ease-in-out infinite",
       },
       backgroundSize: {
         "300%": "300%",
