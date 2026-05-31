@@ -11,7 +11,7 @@ import {
   TrendingUp,
   CheckCircle2,
 } from "lucide-react";
-import { BrandMark } from "@/components/ui/Brand";
+import { BrandMark, BrandLogo } from "@/components/ui/Brand";
 
 /* H&E-stained tissue thumbnail evoked with layered radial gradients */
 function PathologySlide() {
@@ -134,7 +134,7 @@ export function HeroVisual() {
             </svg>
             {/* DNA inside shield */}
             <div className="absolute left-1/2 top-[46%] -translate-x-1/2 -translate-y-1/2">
-              <BrandMark glow id="hero-dna" className="h-[74px] w-[74px] animate-pulse-slow" />
+              <BrandMark glow className="h-[64px] w-auto animate-pulse-slow" />
             </div>
           </div>
 
@@ -142,10 +142,7 @@ export function HeroVisual() {
           <div className="relative -mt-2 flex flex-col items-center">
             <div className="h-[18px] w-56 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.45),rgba(34,211,238,0)_70%)] blur-[2px]" />
             <div className="-mt-2 flex h-12 w-52 items-center justify-center rounded-[50%] border border-cyan-300/25 bg-gradient-to-b from-white/[0.10] to-transparent">
-              <div className="flex items-center gap-1.5">
-                <BrandMark id="hero-base" className="h-4 w-4" />
-                <span className="font-body text-sm font-extrabold tracking-tight text-white">Translyx</span>
-              </div>
+              <BrandLogo href={null} markClassName="h-[18px]" />
             </div>
             <p className="mt-1.5 text-[8px] font-semibold uppercase tracking-[0.26em] text-cyan-200/60">
               Privacy · Governance · Clinical Impact

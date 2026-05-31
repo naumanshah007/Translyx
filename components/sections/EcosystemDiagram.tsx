@@ -72,7 +72,7 @@ export function EcosystemDiagram() {
         <div className="mx-auto max-w-md">
           <div className="glass-panel relative flex flex-col items-center rounded-2xl px-6 py-6 text-center ring-1 ring-cyan-400/20">
             <span className="pointer-events-none absolute -top-10 left-1/2 h-20 w-20 -translate-x-1/2 rounded-full bg-cyan-400/15 blur-2xl" />
-            <BrandMark glow id="eco-parent" className="h-10 w-10" />
+            <BrandMark glow className="h-9 w-auto" />
             <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-cyan-200/70">
               Clinical technology partner
             </p>

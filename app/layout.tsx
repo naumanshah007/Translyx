@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
-    apple: "/logo.png",
+    apple: "/apple-touch-icon.png",
   },
   // Add Google Search Console and Bing verification codes here when available:
   // verification: {
