@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/products/privexa-cloud-shield`, lastModified: now, changeFrequency: "monthly", priority: 0.80 },
     { url: `${baseUrl}/products/privexa-scribe`, lastModified: now, changeFrequency: "monthly", priority: 0.80 },
     { url: `${baseUrl}/products/clinical-triage`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${baseUrl}/partners`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
     { url: `${baseUrl}/digital-pathology`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
     { url: `${baseUrl}/ai-solutions`, lastModified: now, changeFrequency: "weekly", priority: 0.90 },
     { url: `${baseUrl}/product-pipeline`, lastModified: now, changeFrequency: "monthly", priority: 0.80 },

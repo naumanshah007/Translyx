@@ -15,6 +15,7 @@ const productLinks = [
 ];
 
 const solutionLinks = [
+  { label: "Partners", href: "/partners" },
   { label: "Digital Pathology", href: "/digital-pathology" },
   { label: "AI Solutions", href: "/ai-solutions" },
   { label: "Clinical Pipeline", href: "/product-pipeline" },
@@ -128,6 +129,7 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-6 text-xs text-slate-500">
             <Link href="/about" className="transition-colors hover:text-slate-300">About</Link>
+            <Link href="/partners" className="transition-colors hover:text-slate-300">Partners</Link>
             <Link href="/products" className="transition-colors hover:text-slate-300">Products</Link>
             <Link href="/contact" className="transition-colors hover:text-slate-300">Contact</Link>
           </div>

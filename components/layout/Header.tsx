@@ -101,9 +101,9 @@ export function Header() {
     >
       {/* Desktop */}
       <div className="mx-auto hidden h-[68px] max-w-[1280px] items-center px-6 lg:flex xl:px-8">
-        <BrandLogo tone="dark" className="mr-10 flex-shrink-0" />
+        <BrandLogo tone="dark" className="mr-8 flex-shrink-0" />
 
-        <nav className="flex flex-1 items-center gap-7" aria-label="Main navigation">
+        <nav className="flex flex-1 items-center gap-x-5 xl:gap-x-6" aria-label="Main navigation">
           {navigation.map((item) =>
             item.subItems ? (
               <DesktopDropdown key={item.href} item={item} />

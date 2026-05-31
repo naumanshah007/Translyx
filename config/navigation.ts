@@ -15,6 +15,11 @@ export interface NavItem {
 
 export const navigation: NavItem[] = [
   {
+    label: "Home",
+    href: "/",
+    description: "Translyx — clinical technology & governed AI",
+  },
+  {
     label: "Products",
     href: "/products",
     description: "Translyx product portfolio",
@@ -64,6 +69,37 @@ export const navigation: NavItem[] = [
     ],
   },
   {
+    label: "Partners",
+    href: "/partners",
+    description: "Translyx partner network",
+    subItems: [
+      {
+        label: "All partners",
+        href: "/partners",
+        description: "The Translyx partner network",
+      },
+      {
+        label: "Aiforia Technologies",
+        href: "/products/aiforia",
+        description: "Authorised digital pathology AI partner",
+        badge: "Authorised partner",
+        status: "available",
+      },
+      {
+        label: "Privexa Limited",
+        href: "/partners#privexa",
+        description: "Protected AI software partner",
+        badge: "Software partner",
+        status: "available",
+      },
+      {
+        label: "Become a partner",
+        href: "/partners#become-a-partner",
+        description: "Bring your innovation to NZ & Oceania",
+      },
+    ],
+  },
+  {
     label: "Digital Pathology",
     href: "/digital-pathology",
     description: "Aiforia-powered digital pathology AI for New Zealand",
@@ -72,11 +108,6 @@ export const navigation: NavItem[] = [
     label: "AI Solutions",
     href: "/ai-solutions",
     description: "Protected AI and governed evidence workflows",
-  },
-  {
-    label: "Pipeline",
-    href: "/product-pipeline",
-    description: "Broader clinical technology portfolio",
   },
   {
     label: "Company",
