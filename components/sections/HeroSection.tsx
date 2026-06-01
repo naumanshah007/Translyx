@@ -72,7 +72,7 @@ export function HeroSection({
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-[1180px] items-center gap-10 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:py-24">
+        <div className="mx-auto grid max-w-[1240px] items-center gap-10 py-16 sm:py-20 lg:grid-cols-[1.04fr_1fr] lg:gap-10 lg:py-24">
           {/* Copy */}
           <div className="text-center lg:text-left">
             {badge && (
@@ -83,7 +83,7 @@ export function HeroSection({
             )}
 
             <h1
-              className="font-display text-[2.6rem] font-semibold leading-[1.04] tracking-[-0.02em] text-white will-fade reveal sm:text-[3.2rem] lg:text-[3.6rem]"
+              className="font-display text-[2.6rem] font-semibold leading-[1.04] tracking-[-0.02em] text-white [hyphens:none] will-fade reveal sm:text-[3.2rem] lg:text-[3.55rem]"
               style={{ animationDelay: "0.05s" }}
             >
               {headline}{" "}

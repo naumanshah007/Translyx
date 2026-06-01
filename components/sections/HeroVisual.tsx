@@ -16,7 +16,7 @@ import { BrandMark, BrandLogo } from "@/components/ui/Brand";
 /* H&E-stained tissue thumbnail evoked with layered radial gradients */
 function PathologySlide() {
   return (
-    <div className="relative h-[68px] w-full overflow-hidden rounded-lg ring-1 ring-white/10">
+    <div className="relative h-[74px] w-full overflow-hidden rounded-lg ring-1 ring-white/10">
       <div
         className="absolute inset-0"
         style={{
@@ -25,7 +25,7 @@ function PathologySlide() {
             "radial-gradient(circle at 20% 35%, #b1559b 0 7px, transparent 9px), radial-gradient(circle at 42% 62%, #8e3f86 0 6px, transparent 8px), radial-gradient(circle at 67% 30%, #c06fb5 0 8px, transparent 10px), radial-gradient(circle at 82% 70%, #7c3a78 0 6px, transparent 9px), radial-gradient(circle at 55% 85%, #a64f9c 0 5px, transparent 8px), radial-gradient(circle at 30% 80%, #9d4a93 0 5px, transparent 8px), radial-gradient(circle at 90% 22%, #b85fae 0 5px, transparent 7px)",
         }}
       />
-      <div className="absolute left-[52%] top-[26%] h-7 w-7 rounded-[3px] border border-cyan-300/90 shadow-[0_0_10px_rgba(34,211,238,0.6)]">
+      <div className="absolute left-[52%] top-[26%] h-7 w-7 rounded-[3px] border border-cyan-300/90 shadow-[0_0_12px_rgba(34,211,238,0.7)]">
         <span className="absolute -left-1 -top-1 h-1 w-1 rounded-full bg-cyan-300" />
       </div>
     </div>
@@ -36,24 +36,38 @@ function Panel({
   title,
   children,
   className,
+  accent,
 }: {
   title: string;
   children: React.ReactNode;
   className?: string;
+  accent?: string;
 }) {
   return (
-    <div className={`glass-panel rounded-xl p-3 ${className ?? ""}`}>
-      <p className="mb-2 text-[8.5px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">{title}</p>
-      {children}
+    <div className={`group glass-panel relative overflow-hidden rounded-2xl p-3.5 ${className ?? ""}`}>
+      {accent && (
+        <span
+          className="pointer-events-none absolute inset-x-0 top-0 h-px"
+          style={{ background: `linear-gradient(90deg, transparent, ${accent}, transparent)` }}
+        />
+      )}
+      {accent && (
+        <span
+          className="pointer-events-none absolute -right-6 -top-6 h-16 w-16 rounded-full opacity-50 blur-2xl"
+          style={{ background: accent }}
+        />
+      )}
+      <p className="relative mb-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">{title}</p>
+      <div className="relative">{children}</div>
     </div>
   );
 }
 
 function MiniRow({ icon: Icon, label, color = "text-cyan-300" }: { icon: typeof Cpu; label: string; color?: string }) {
   return (
-    <div className="flex items-center gap-2 rounded-md bg-white/[0.04] px-2 py-1">
-      <Icon className={`h-3 w-3 shrink-0 ${color}`} />
-      <span className="text-[10px] font-medium text-slate-200">{label}</span>
+    <div className="flex items-center gap-2 rounded-md bg-white/[0.05] px-2 py-1.5">
+      <Icon className={`h-3.5 w-3.5 shrink-0 ${color}`} />
+      <span className="text-[11px] font-medium text-slate-100">{label}</span>
     </div>
   );
 }
@@ -62,14 +76,14 @@ function MiniRow({ icon: Icon, label, color = "text-cyan-300" }: { icon: typeof 
 
 function DigitalPathologyPanel() {
   return (
-    <Panel title="Digital Pathology AI">
+    <Panel title="Digital Pathology AI" accent="#22D3EE">
       <PathologySlide />
-      <div className="mt-2 flex items-center justify-between">
-        <span className="flex items-center gap-1.5 text-[10px] font-semibold text-white">
-          <Microscope className="h-3 w-3 text-cyan-300" />
+      <div className="mt-2.5 flex items-center justify-between">
+        <span className="flex items-center gap-1.5 text-[11px] font-semibold text-white">
+          <Microscope className="h-3.5 w-3.5 text-cyan-300" />
           Aiforia
         </span>
-        <span className="flex items-center gap-1 text-[8.5px] font-medium text-emerald-300">
+        <span className="flex items-center gap-1 text-[9px] font-medium text-emerald-300">
           <CheckCircle2 className="h-2.5 w-2.5" />
           Authorised partner
         </span>
@@ -80,16 +94,16 @@ function DigitalPathologyPanel() {
 
 function PrivexaPanel() {
   return (
-    <Panel title="Privexa Software">
-      <div className="space-y-1">
+    <Panel title="Privexa Software" accent="#A78BFA">
+      <div className="space-y-1.5">
         <MiniRow icon={Cpu} label="AI Wrapper" color="text-violet-300" />
         <MiniRow icon={Cloud} label="Cloud Shield" color="text-sky-300" />
         <MiniRow icon={FileText} label="Scribe" color="text-teal-300" />
         <MiniRow icon={GitBranch} label="Trace" color="text-cyan-300" />
       </div>
-      <div className="mt-2 flex items-center gap-1.5 border-t border-white/10 pt-2">
-        <ShieldCheck className="h-3 w-3 text-emerald-300" />
-        <span className="text-[9px] font-medium text-slate-300">Privacy-first by design</span>
+      <div className="mt-2.5 flex items-center gap-1.5 border-t border-white/10 pt-2">
+        <ShieldCheck className="h-3.5 w-3.5 text-emerald-300" />
+        <span className="text-[10px] font-medium text-slate-200">Privacy-first by design</span>
       </div>
     </Panel>
   );
@@ -97,20 +111,20 @@ function PrivexaPanel() {
 
 function GovernedPanel() {
   return (
-    <Panel title="Governed Workflows">
-      <div className="space-y-1.5">
+    <Panel title="Governed Workflows" accent="#34D399">
+      <div className="space-y-2">
         {[
           { icon: UserCheck, t: "Reviewer gate", s: "Human oversight" },
           { icon: Workflow, t: "Full lineage", s: "End-to-end traceability" },
           { icon: Eye, t: "Visible limitations", s: "Declared & transparent" },
         ].map(({ icon: Icon, t, s }) => (
-          <div key={t} className="flex items-center gap-2">
-            <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-white/[0.06]">
-              <Icon className="h-3 w-3 text-cyan-300" />
+          <div key={t} className="flex items-center gap-2.5">
+            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-white/[0.06]">
+              <Icon className="h-3.5 w-3.5 text-cyan-300" />
             </span>
             <span className="leading-tight">
-              <span className="block text-[10px] font-semibold text-white">{t}</span>
-              <span className="block text-[8px] text-slate-400">{s}</span>
+              <span className="block text-[11px] font-semibold text-white">{t}</span>
+              <span className="block text-[8.5px] text-slate-400">{s}</span>
             </span>
           </div>
         ))}
@@ -121,15 +135,16 @@ function GovernedPanel() {
 
 function ClinicalImpactPanel({ idp = "d" }: { idp?: string }) {
   return (
-    <Panel title="Clinical Impact">
-      <svg viewBox="0 0 160 50" className="h-[44px] w-full" fill="none" aria-hidden="true">
+    <Panel title="Clinical Impact" accent="#38BDF8">
+      <svg viewBox="0 0 160 50" className="h-[50px] w-full" fill="none" aria-hidden="true">
         <defs>
           <linearGradient id={`${idp}-impactArea`} x1="0" y1="0" x2="0" y2="50" gradientUnits="userSpaceOnUse">
-            <stop stopColor="rgba(34,211,238,0.35)" />
+            <stop stopColor="rgba(34,211,238,0.40)" />
             <stop offset="1" stopColor="rgba(34,211,238,0)" />
           </linearGradient>
           <linearGradient id={`${idp}-impactLine`} x1="0" y1="0" x2="160" y2="0" gradientUnits="userSpaceOnUse">
             <stop stopColor="#22D3EE" />
+            <stop offset="0.5" stopColor="#5EEAD4" />
             <stop offset="1" stopColor="#A78BFA" />
           </linearGradient>
         </defs>
@@ -137,14 +152,15 @@ function ClinicalImpactPanel({ idp = "d" }: { idp?: string }) {
         <path
           d="M4 42 L40 34 L74 38 L104 20 L136 24 L156 6"
           stroke={`url(#${idp}-impactLine)`}
-          strokeWidth="2"
+          strokeWidth="2.2"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
+        <circle cx="156" cy="6" r="2.5" fill="#A78BFA" />
       </svg>
-      <div className="mt-1.5 flex justify-between">
+      <div className="mt-2 flex justify-between">
         {["Faster insights", "Quality assured", "Workflow trust"].map((l) => (
-          <span key={l} className="flex items-center gap-0.5 text-[7.5px] font-medium text-slate-300">
+          <span key={l} className="flex items-center gap-0.5 text-[8px] font-medium text-slate-300">
             <TrendingUp className="h-2 w-2 text-emerald-300" />
             {l}
           </span>
@@ -159,12 +175,12 @@ function Centerpiece({ className, idp = "d" }: { className?: string; idp?: strin
   return (
     <div className={className}>
       <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full conic-sweep animate-spin-slow opacity-80 [mask-image:radial-gradient(circle,transparent_32%,#000_46%,transparent_72%)]" />
-      <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.24),transparent_65%)] animate-glow-pulse" />
-      <div className="absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.20),transparent_70%)]" />
+      <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.26),transparent_65%)] animate-glow-pulse" />
+      <div className="absolute left-1/2 top-1/2 h-52 w-52 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.22),transparent_70%)]" />
 
       <div className="relative flex flex-col items-center">
         <div className="relative">
-          <svg width="132" height="148" viewBox="0 0 132 148" fill="none" aria-hidden="true">
+          <svg width="148" height="166" viewBox="0 0 132 148" fill="none" aria-hidden="true">
             <defs>
               <linearGradient id={`${idp}-shieldStroke`} x1="0" y1="0" x2="132" y2="148" gradientUnits="userSpaceOnUse">
                 <stop stopColor="#67E8F9" />
@@ -172,7 +188,7 @@ function Centerpiece({ className, idp = "d" }: { className?: string; idp?: strin
                 <stop offset="1" stopColor="#818CF8" />
               </linearGradient>
               <linearGradient id={`${idp}-shieldFill`} x1="66" y1="0" x2="66" y2="148" gradientUnits="userSpaceOnUse">
-                <stop stopColor="rgba(34,211,238,0.16)" />
+                <stop stopColor="rgba(34,211,238,0.18)" />
                 <stop offset="1" stopColor="rgba(15,28,63,0.05)" />
               </linearGradient>
             </defs>
@@ -184,22 +200,81 @@ function Centerpiece({ className, idp = "d" }: { className?: string; idp?: strin
             />
           </svg>
           <div className="absolute left-1/2 top-[46%] -translate-x-1/2 -translate-y-1/2">
-            <BrandMark glow className="h-[64px] w-auto animate-pulse-slow" />
+            <BrandMark glow className="h-[72px] w-auto animate-pulse-slow" />
           </div>
         </div>
 
         <div className="relative -mt-2 flex flex-col items-center">
-          <div className="h-[18px] w-56 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.45),rgba(34,211,238,0)_70%)] blur-[2px]" />
-          <div className="-mt-2 flex h-12 w-52 items-center justify-center rounded-[50%] border border-cyan-300/25 bg-gradient-to-b from-white/[0.10] to-transparent">
-            <BrandLogo href={null} markClassName="h-[18px]" />
+          <div className="h-[18px] w-60 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.5),rgba(34,211,238,0)_70%)] blur-[2px]" />
+          <div className="-mt-2 flex h-12 w-56 items-center justify-center rounded-[50%] border border-cyan-300/30 bg-gradient-to-b from-white/[0.12] to-transparent">
+            <BrandLogo href={null} markClassName="h-[20px]" />
           </div>
-          <p className="mt-1.5 text-[8px] font-semibold uppercase tracking-[0.26em] text-cyan-200/60">
+          <p className="mt-1.5 text-[8.5px] font-semibold uppercase tracking-[0.26em] text-cyan-200/60">
             Privacy · Governance · Clinical Impact
           </p>
-          <div className="mt-2.5 h-9 w-44 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.18),transparent_72%)] blur-md" />
+          <div className="mt-2.5 h-9 w-48 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.2),transparent_72%)] blur-md" />
         </div>
       </div>
     </div>
+  );
+}
+
+/* ---- Desktop-only ambience ---- */
+function OrbitalRings() {
+  return (
+    <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 animate-spin-slow rounded-full border border-dashed border-cyan-400/15">
+        <span className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(34,211,238,0.9)]" />
+        <span className="absolute left-1/2 top-full h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-300 shadow-[0_0_10px_rgba(167,139,250,0.9)]" />
+      </div>
+      <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 animate-spin-slow rounded-full border border-dashed border-violet-400/15 [animation-direction:reverse] [animation-duration:34s]">
+        <span className="absolute left-0 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal-300 shadow-[0_0_10px_rgba(45,212,191,0.9)]" />
+      </div>
+    </div>
+  );
+}
+
+function ConnectorLayer() {
+  const conns = [
+    { ax: 252, ay: 236, color: "#22D3EE", dur: "3.2s", begin: "0s" },
+    { ax: 770, ay: 250, color: "#A78BFA", dur: "3.9s", begin: "0.7s" },
+    { ax: 254, ay: 742, color: "#34D399", dur: "3.5s", begin: "0.3s" },
+    { ax: 762, ay: 728, color: "#38BDF8", dur: "4.1s", begin: "1s" },
+  ];
+  const core = { x: 500, y: 478 };
+  return (
+    <svg
+      viewBox="0 0 1000 1000"
+      preserveAspectRatio="none"
+      className="absolute inset-0 h-full w-full"
+      aria-hidden="true"
+    >
+      {conns.map((c) => {
+        const path = `M${c.ax} ${c.ay} L${core.x} ${core.y}`;
+        return (
+          <g key={c.color}>
+            <path d={path} fill="none" stroke={c.color} strokeOpacity="0.20" strokeWidth="2" />
+            <path
+              d={path}
+              fill="none"
+              stroke={c.color}
+              strokeOpacity="0.7"
+              strokeWidth="2"
+              strokeDasharray="3 20"
+              className="animate-dash"
+            />
+            <circle cx={c.ax} cy={c.ay} r="13" fill="none" stroke={c.color} strokeOpacity="0.35" strokeWidth="1.2" />
+            <circle cx={c.ax} cy={c.ay} r="4.5" fill={c.color} />
+            <circle r="5" fill={c.color}>
+              <animateMotion dur={c.dur} begin={c.begin} repeatCount="indefinite" path={path} />
+            </circle>
+          </g>
+        );
+      })}
+      {/* core node */}
+      <circle cx={core.x} cy={core.y} r="22" fill="none" stroke="#22D3EE" strokeOpacity="0.30" strokeWidth="1.2" />
+      <circle cx={core.x} cy={core.y} r="7" fill="#67E8F9" />
+    </svg>
   );
 }
 
@@ -207,22 +282,9 @@ function NetworkBackdrop() {
   return (
     <div className="pointer-events-none absolute inset-0">
       <div
-        className="absolute right-0 top-0 h-full w-full text-cyan-300/30 [mask-image:radial-gradient(ellipse_60%_55%_at_70%_45%,#000_30%,transparent_75%)]"
+        className="absolute right-0 top-0 h-full w-full text-cyan-300/30 [mask-image:radial-gradient(ellipse_62%_58%_at_72%_45%,#000_28%,transparent_75%)]"
         style={{ backgroundImage: "radial-gradient(currentColor 1px, transparent 1.5px)", backgroundSize: "22px 22px" }}
       />
-      <svg className="absolute inset-0 h-full w-full" viewBox="0 0 560 560" fill="none" aria-hidden="true">
-        <g stroke="rgba(125,211,252,0.35)" strokeWidth="1">
-          <line x1="430" y1="120" x2="500" y2="220" className="animate-twinkle" />
-          <line x1="500" y1="220" x2="450" y2="330" className="animate-twinkle" style={{ animationDelay: "1s" }} />
-          <line x1="430" y1="120" x2="370" y2="200" className="animate-twinkle" style={{ animationDelay: "0.5s" }} />
-        </g>
-        <g fill="#7DD3FC">
-          <circle cx="430" cy="120" r="2.5" className="animate-twinkle" />
-          <circle cx="500" cy="220" r="2" className="animate-twinkle" style={{ animationDelay: "1.2s" }} />
-          <circle cx="450" cy="330" r="2" className="animate-twinkle" style={{ animationDelay: "0.8s" }} />
-          <circle cx="370" cy="200" r="1.5" className="animate-twinkle" style={{ animationDelay: "0.3s" }} />
-        </g>
-      </svg>
     </div>
   );
 }
@@ -233,7 +295,7 @@ export function HeroVisual() {
       {/* Mobile (< sm): clean centerpiece + tidy 2x2 panel grid — no overlap */}
       <div className="sm:hidden">
         <div className="relative mx-auto flex h-[230px] items-center justify-center overflow-hidden">
-          <Centerpiece idp="m" className="relative scale-[0.88]" />
+          <Centerpiece idp="m" className="relative scale-[0.82]" />
         </div>
         <div className="mt-1 grid grid-cols-2 gap-2.5">
           <DigitalPathologyPanel />
@@ -243,21 +305,23 @@ export function HeroVisual() {
         </div>
       </div>
 
-      {/* sm+ : floating composition */}
-      <div className="relative mx-auto hidden h-[460px] w-full max-w-[560px] sm:block sm:h-[500px] lg:h-[560px]">
+      {/* sm+ : floating composition with connected, glowing core */}
+      <div className="relative mx-auto hidden h-[480px] w-full max-w-[600px] sm:block sm:h-[520px] lg:h-[600px]">
         <NetworkBackdrop />
-        <Centerpiece idp="d" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+        <ConnectorLayer />
+        <OrbitalRings />
+        <Centerpiece idp="d" className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 scale-105" />
 
-        <div className="absolute left-0 top-4 w-[208px] animate-float-slow">
+        <div className="absolute left-0 top-2 z-20 w-[232px] animate-float-slow">
           <DigitalPathologyPanel />
         </div>
-        <div className="absolute right-0 top-8 w-[190px] animate-float-slower" style={{ animationDelay: "0.6s" }}>
+        <div className="absolute right-0 top-7 z-20 w-[216px] animate-float-slower" style={{ animationDelay: "0.6s" }}>
           <PrivexaPanel />
         </div>
-        <div className="absolute bottom-6 left-1 w-[208px] animate-float-slower" style={{ animationDelay: "1.1s" }}>
+        <div className="absolute bottom-4 left-0 z-20 w-[232px] animate-float-slower" style={{ animationDelay: "1.1s" }}>
           <GovernedPanel />
         </div>
-        <div className="absolute bottom-10 right-1 w-[196px] animate-float-slow" style={{ animationDelay: "0.3s" }}>
+        <div className="absolute bottom-10 right-0 z-20 w-[220px] animate-float-slow" style={{ animationDelay: "0.3s" }}>
           <ClinicalImpactPanel idp="d" />
         </div>
       </div>
