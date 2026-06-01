@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   Microscope,
   ShieldCheck,
@@ -13,21 +14,41 @@ import {
 } from "lucide-react";
 import { BrandMark, BrandLogo } from "@/components/ui/Brand";
 
-/* H&E-stained tissue thumbnail evoked with layered radial gradients */
+/* AI object-detection box with bright corner brackets */
+function DetectionBox({ className }: { className?: string }) {
+  return (
+    <span
+      className={`absolute rounded-[3px] border border-cyan-300/80 shadow-[0_0_12px_rgba(34,211,238,0.7)] ${className ?? ""}`}
+    >
+      <span className="absolute -left-px -top-px h-1.5 w-1.5 border-l border-t border-cyan-200" />
+      <span className="absolute -right-px -top-px h-1.5 w-1.5 border-r border-t border-cyan-200" />
+      <span className="absolute -bottom-px -left-px h-1.5 w-1.5 border-b border-l border-cyan-200" />
+      <span className="absolute -bottom-px -right-px h-1.5 w-1.5 border-b border-r border-cyan-200" />
+    </span>
+  );
+}
+
+/* Real H&E-stained tissue crop (procedurally generated) with AI detection overlay */
 function PathologySlide() {
   return (
-    <div className="relative h-[74px] w-full overflow-hidden rounded-lg ring-1 ring-white/10">
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundColor: "#e9c9e4",
-          backgroundImage:
-            "radial-gradient(circle at 20% 35%, #b1559b 0 7px, transparent 9px), radial-gradient(circle at 42% 62%, #8e3f86 0 6px, transparent 8px), radial-gradient(circle at 67% 30%, #c06fb5 0 8px, transparent 10px), radial-gradient(circle at 82% 70%, #7c3a78 0 6px, transparent 9px), radial-gradient(circle at 55% 85%, #a64f9c 0 5px, transparent 8px), radial-gradient(circle at 30% 80%, #9d4a93 0 5px, transparent 8px), radial-gradient(circle at 90% 22%, #b85fae 0 5px, transparent 7px)",
-        }}
+    <div className="relative h-[74px] w-full overflow-hidden rounded-lg ring-1 ring-white/15">
+      <Image
+        src="/digital-pathology-slide.webp"
+        alt=""
+        aria-hidden="true"
+        fill
+        sizes="(min-width: 640px) 232px, 45vw"
+        className="object-cover"
       />
-      <div className="absolute left-[52%] top-[26%] h-7 w-7 rounded-[3px] border border-cyan-300/90 shadow-[0_0_12px_rgba(34,211,238,0.7)]">
-        <span className="absolute -left-1 -top-1 h-1 w-1 rounded-full bg-cyan-300" />
-      </div>
+      {/* subtle analysis sheen */}
+      <span className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-cyan-300/10" />
+      {/* AI detections */}
+      <DetectionBox className="left-[49%] top-[20%] h-[26px] w-[26px]" />
+      <DetectionBox className="left-[16%] top-[46%] h-[18px] w-[18px]" />
+      {/* AI label */}
+      <span className="absolute bottom-1 left-1 rounded bg-[#06121f]/70 px-1.5 py-px text-[7px] font-semibold uppercase tracking-[0.12em] text-cyan-200 ring-1 ring-cyan-300/20 backdrop-blur-sm">
+        AI analysis
+      </span>
     </div>
   );
 }
