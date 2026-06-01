@@ -29,7 +29,7 @@ function DesktopDropdown({ item }: { item: NavItem }) {
       <Link
         href={item.href}
         className={cn(
-          "flex items-center gap-1 text-[13px] font-medium transition-colors duration-150",
+          "flex items-center gap-1 whitespace-nowrap text-[13px] font-medium transition-colors duration-150",
           isActive ? "text-white" : "text-slate-300 hover:text-white"
         )}
       >
@@ -101,9 +101,9 @@ export function Header() {
     >
       {/* Desktop */}
       <div className="mx-auto hidden h-[68px] max-w-[1280px] items-center px-6 lg:flex xl:px-8">
-        <BrandLogo tone="dark" className="mr-8 flex-shrink-0" />
+        <BrandLogo tone="dark" className="mr-4 flex-shrink-0 xl:mr-8" />
 
-        <nav className="flex flex-1 items-center gap-x-5 xl:gap-x-6" aria-label="Main navigation">
+        <nav className="flex flex-1 items-center gap-x-3 xl:gap-x-6" aria-label="Main navigation">
           {navigation.map((item) =>
             item.subItems ? (
               <DesktopDropdown key={item.href} item={item} />
@@ -112,7 +112,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "relative text-[13px] font-medium transition-colors duration-150",
+                  "relative whitespace-nowrap text-[13px] font-medium transition-colors duration-150",
                   "after:absolute after:-bottom-1.5 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-gradient-to-r after:from-cyan-400 after:to-violet-400 after:transition-transform after:duration-200 hover:after:scale-x-100",
                   pathname === item.href || (pathname.startsWith(item.href) && item.href !== "/")
                     ? "text-white after:scale-x-100"
@@ -127,7 +127,7 @@ export function Header() {
 
         <Link
           href={headerCTA.href}
-          className="ml-6 inline-flex flex-shrink-0 items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 via-sky-400 to-violet-500 px-5 py-2.5 text-[13px] font-semibold text-[#06121f] shadow-[0_6px_24px_-6px_rgba(34,211,238,0.5)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_-6px_rgba(124,58,237,0.55)]"
+          className="ml-3 inline-flex flex-shrink-0 items-center gap-2 whitespace-nowrap rounded-xl bg-gradient-to-r from-cyan-400 via-sky-400 to-violet-500 px-4 py-2.5 text-[13px] font-semibold text-[#06121f] shadow-[0_6px_24px_-6px_rgba(34,211,238,0.5)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_-6px_rgba(124,58,237,0.55)] xl:ml-6 xl:px-5"
         >
           {headerCTA.label}
           <ArrowRight className="h-3.5 w-3.5" />

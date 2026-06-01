@@ -60,12 +60,6 @@ export const navigation: NavItem[] = [
         description: "Clinical pathway and referral grading support",
         status: "pilot",
       },
-      {
-        label: "Diagnostic Pipeline",
-        href: "/product-pipeline",
-        description: "AMR, sepsis, POCT, oncology, and more",
-        status: "pipeline",
-      },
     ],
   },
   {
@@ -108,6 +102,11 @@ export const navigation: NavItem[] = [
     label: "AI Solutions",
     href: "/ai-solutions",
     description: "Protected AI and governed evidence workflows",
+  },
+  {
+    label: "Pipeline",
+    href: "/product-pipeline",
+    description: "Diagnostic pipeline — AMR, sepsis, POCT, oncology & more",
   },
   {
     label: "Company",
