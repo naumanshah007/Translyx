@@ -19,10 +19,15 @@ export const dynamic = "force-dynamic";
  * and GEMINI_API_KEY is set, so cron monitoring stays green while disabled.
  */
 function isAuthorised(request: Request): boolean {
-  const secret = process.env.NEWS_REFRESH_SECRET || process.env.CRON_SECRET;
-  if (!secret) return false;
   const auth = request.headers.get("authorization");
-  return auth === `Bearer ${secret}`;
+  if (!auth) return false;
+  // Accept a bearer matching EITHER secret. Vercel Cron auto-attaches
+  // `Bearer <CRON_SECRET>`; an external scheduler (e.g. GitHub Actions) can
+  // use NEWS_REFRESH_SECRET. Either is valid so both triggers authenticate.
+  const secrets = [process.env.NEWS_REFRESH_SECRET, process.env.CRON_SECRET].filter(
+    (s): s is string => Boolean(s)
+  );
+  return secrets.some((s) => auth === `Bearer ${s}`);
 }
 
 async function handle(request: Request) {

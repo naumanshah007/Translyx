@@ -36,21 +36,34 @@ only from an env var named exactly `CRON_SECRET`. The handler accepts either
 `NEWS_REFRESH_SECRET` or `CRON_SECRET`; set both to the same value so scheduled
 runs authenticate.
 
-## Enabling the live refresh
+## Status: LIVE
 
-1. Attach a **Vercel Blob** store to the project (provisions `BLOB_READ_WRITE_TOKEN`).
-2. Add `GEMINI_API_KEY`, `NEWS_REFRESH_SECRET`, and `CRON_SECRET` (same value).
-3. Set `NEWS_REFRESH_ENABLED=true`.
-4. Redeploy.
+The refresh is **enabled in production** (as of June 2026):
 
-While `NEWS_REFRESH_ENABLED` is not `"true"` (or `GEMINI_API_KEY` is missing),
-the endpoint returns `200 { "skipped": "disabled" }` and the page uses the seed.
+- A **Vercel Blob** store (`translyx-news`) is attached → `BLOB_READ_WRITE_TOKEN`.
+- `GEMINI_API_KEY`, `NEWS_REFRESH_SECRET`, and `CRON_SECRET` are set (the last two
+  share the same value).
+- `NEWS_REFRESH_ENABLED=true`.
 
-## Schedule
+If you ever need to pause it, set `NEWS_REFRESH_ENABLED` to anything other than
+`true` (or remove `GEMINI_API_KEY`) and redeploy — the endpoint then returns
+`200 { "skipped": "disabled" }` and the page falls back to `config/news.seed.json`.
 
-`vercel.json` runs the job daily at **17:00 UTC**:
-- 05:00 NZST (winter) / 06:00 NZDT (summer) — accept the 1-hour seasonal drift.
-Vercel Cron is UTC-only.
+## Schedule — runs many times a day
+
+Two independent triggers hit the same endpoint:
+
+1. **GitHub Actions** (`.github/workflows/refresh-news.yml`) — every **4 hours**
+   (`0 */4 * * *`), ~6 runs/day. This is the primary cadence. It curls the
+   production endpoint with `Authorization: Bearer <NEWS_REFRESH_SECRET>` (stored
+   as the repo secret `NEWS_REFRESH_SECRET`). Also runnable on demand from the
+   Actions tab (`workflow_dispatch`).
+2. **Vercel Cron** (`vercel.json`) — once daily at **17:00 UTC** as a backstop.
+   The Vercel **Hobby** plan caps cron at one run per day, which is why the
+   higher cadence lives in GitHub Actions.
+
+The handler dedupes by source URL and caps the store at 50 items, so frequent
+runs converge rather than pile up duplicates.
 
 ## Manual trigger (testing)
 

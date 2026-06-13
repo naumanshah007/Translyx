@@ -233,6 +233,15 @@
     animation: revealUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 
+  /* Hide scrollbars on horizontal snap rails (mobile chips / event cards) */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   /* AI Solutions nav active state (:target) */
   #ai-solutions-content:has(#case-for-ai:target) nav a[href="#case-for-ai"],
   #ai-solutions-content:has(#privacy-challenge:target) nav a[href="#privacy-challenge"],
@@ -272,6 +281,24 @@
   }
   to {
     transform: translateX(-50%);
+  }
+}
+
+/* Vertical news wall — each column track is rendered twice for a seamless loop */
+@keyframes marqueeUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+@keyframes marqueeDown {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
   }
 }
 

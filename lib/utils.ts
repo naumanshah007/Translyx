@@ -5,6 +5,20 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+/** Forward-looking counterpart to timeAgo, e.g. "tomorrow", "in 3 weeks". */
+export function timeUntil(iso: string): string {
+  const then = Date.parse(iso);
+  if (Number.isNaN(then)) return "";
+  const days = Math.ceil((then - Date.now()) / 86400000);
+  if (days <= 0) return "happening now";
+  if (days === 1) return "tomorrow";
+  if (days < 7) return `in ${days} days`;
+  const weeks = Math.round(days / 7);
+  if (weeks < 9) return `in ${weeks} weeks`;
+  const months = Math.round(days / 30);
+  return `in ${months} months`;
+}
+
 /** Relative time label for news recency, e.g. "3 hours ago", "2 days ago". */
 export function timeAgo(iso: string): string {
   const then = Date.parse(iso);

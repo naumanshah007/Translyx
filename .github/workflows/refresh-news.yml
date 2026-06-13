@@ -1,0 +1,51 @@
+name: Refresh news (Gemini)
+
+# Pings the production news-refresh endpoint several times a day so the /news
+# feed and homepage ticker stay current. Vercel Hobby crons are capped at once
+# per day, so this GitHub Actions schedule provides the higher cadence.
+#
+# Requires repo secret NEWS_REFRESH_SECRET (must match the Vercel env var of
+# the same value, which the API route accepts as the bearer token).
+
+on:
+  schedule:
+    # Every 4 hours, on the hour (UTC). ~6 refreshes per day.
+    - cron: "0 */4 * * *"
+  workflow_dispatch: # allow manual runs from the Actions tab
+
+# Don't pile up overlapping runs.
+concurrency:
+  group: refresh-news
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Trigger news refresh
+        env:
+          SECRET: ${{ secrets.NEWS_REFRESH_SECRET }}
+          ENDPOINT: https://translyx.co.nz/api/cron/refresh-news
+        run: |
+          if [ -z "$SECRET" ]; then
+            echo "::error::NEWS_REFRESH_SECRET repo secret is not set."
+            exit 1
+          fi
+
+          echo "Requesting $ENDPOINT"
+          response=$(curl -sS -w "\n%{http_code}" \
+            --max-time 120 \
+            -H "Authorization: Bearer $SECRET" \
+            "$ENDPOINT")
+
+          body=$(echo "$response" | sed '$d')
+          code=$(echo "$response" | tail -n1)
+
+          echo "HTTP $code"
+          echo "$body"
+
+          if [ "$code" != "200" ]; then
+            echo "::error::Refresh failed with HTTP $code"
+            exit 1
+          fi

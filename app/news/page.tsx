@@ -5,7 +5,9 @@ import { Hero } from "@/components/sections/Hero";
 import { CTA } from "@/components/sections/CTA";
 import { NewsList } from "@/components/news/NewsList";
 import { NewsTicker } from "@/components/news/NewsTicker";
+import { UpcomingEvents } from "@/components/news/UpcomingEvents";
 import { getNewsItems } from "@/lib/news";
+import { getUpcomingEvents } from "@/config/events";
 import { siteConfig } from "@/config/site";
 
 export const revalidate = 3600;
@@ -36,6 +38,7 @@ export const metadata: Metadata = {
 
 export default async function NewsPage() {
   const items = await getNewsItems();
+  const events = getUpcomingEvents();
 
   return (
     <>
@@ -67,6 +70,9 @@ export default async function NewsPage() {
           </div>
         </div>
       </section>
+
+      {/* Upcoming sector events */}
+      <UpcomingEvents events={events} />
 
       <CTA
         title="Bring your innovation to New Zealand and Oceania."
