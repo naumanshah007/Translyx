@@ -21,12 +21,13 @@ const pageDescription =
   "Clinical Triage is a Translyx pipeline capability in development — structured referral review, pathway grading, role-based workflows, and auditability for authorised clinical users. Not a publicly launched product.";
 
 export const metadata: Metadata = {
-  title: "Clinical Triage — Pipeline Capability",
+  title: "Clinical Triage — Referral Grading & Clinical Pathway Capability",
   description: pageDescription,
   keywords: [
     "Clinical Triage",
-    "clinical pathway support",
+    "referral grading tool",
     "referral grading",
+    "clinical pathway support",
     "clinical workflow",
     "healthcare triage",
     "audited clinical workflow",
@@ -34,11 +35,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/pipeline/clinical-triage" },
   openGraph: {
-    title: "Clinical Triage — Pipeline Capability | Translyx",
+    title: "Clinical Triage — Referral Grading & Clinical Pathway Capability | Translyx",
     description: pageDescription,
     url: `${siteConfig.url}/pipeline/clinical-triage`,
     siteName: siteConfig.name,
-    images: [{ url: siteConfig.seo.ogImage, width: 1200, height: 630, alt: "Clinical Triage — Translyx pipeline capability" }],
+    images: [{ url: siteConfig.seo.ogImage, width: 1200, height: 630, alt: "Clinical Triage — referral grading, a Translyx pipeline capability" }],
   },
 };
 
@@ -94,9 +95,9 @@ export default function ClinicalTriagePage() {
   return (
     <>
       <Hero
-        badge={{ text: "Translyx pipeline capability · In development", icon: <Stethoscope className="w-3.5 h-3.5" /> }}
+        badge={{ text: "Translyx pipeline capability · Referral grading · In development", icon: <Stethoscope className="w-3.5 h-3.5" /> }}
         headline="Clinical pathway and referral grading support for authorised healthcare teams"
-        description="Clinical Triage is a Translyx pipeline capability in development. The concept: structured referral review, pathway grading, role-based workflows, and auditability for authorised clinical users — human-reviewed workflow decisions, never autonomous diagnosis. It is not a publicly launched product."
+        description="Clinical Triage — a referral grading and clinical pathway tool — is a Translyx pipeline capability in development. The concept: structured referral review, pathway grading, role-based workflows, and auditability for authorised clinical users — human-reviewed workflow decisions, never autonomous diagnosis. It is not a publicly launched product."
         primaryCTA={{ label: "Discuss this capability", href: "/contact" }}
         secondaryCTA={{ label: "View pipeline", href: "/pipeline" }}
         className="py-16 sm:py-20 md:py-28 lg:py-36"
