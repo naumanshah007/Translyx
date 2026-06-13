@@ -37,8 +37,13 @@ jobs:
           fi
 
           echo "Requesting $ENDPOINT"
+          # Gemini's search-grounding latency varies and the function is capped
+          # at 60s; retry a couple of times so an occasional slow call doesn't
+          # fail the whole run. --retry covers transient 5xx (incl. the 504
+          # function timeout) and connection errors.
           response=$(curl -sS -w "\n%{http_code}" \
-            --max-time 120 \
+            --max-time 75 \
+            --retry 3 --retry-delay 15 --retry-all-errors \
             -H "Authorization: Bearer $SECRET" \
             "$ENDPOINT")
 
