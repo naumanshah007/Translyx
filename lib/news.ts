@@ -11,6 +11,37 @@ const seedItems = seed as NewsItem[];
 export const NEWS_BLOB_KEY = "news/latest.json";
 
 /**
+ * Reject source URLs that aren't real publisher links. Gemini's Google Search
+ * grounding sometimes returns opaque redirect wrappers
+ * (vertexaisearch.cloud.google.com/grounding-api-redirect/...) or generic
+ * search/aggregator pages instead of the canonical article — those are ugly,
+ * expire, and can't be trusted as a citation.
+ */
+/** Hosts that are search/redirect wrappers, never canonical article sources. */
+const BLOCKED_HOSTS = [
+  "vertexaisearch.cloud.google.com",
+  "news.google.com",
+  "duckduckgo.com",
+];
+
+export function isAcceptableSourceUrl(url: string): boolean {
+  try {
+    const u = new URL(url);
+    if (u.protocol !== "https:") return false;
+    const host = u.host.toLowerCase();
+    if (BLOCKED_HOSTS.includes(host)) return false;
+    // Google/Vertex grounding redirect wrappers and bare search-result pages.
+    if (url.toLowerCase().includes("grounding-api-redirect")) return false;
+    if (host.endsWith("google.com") && (u.pathname.startsWith("/search") || u.pathname.startsWith("/url"))) {
+      return false;
+    }
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
  * Validate and normalise a single raw item (e.g. from Gemini output).
  * Returns null if the item is missing required fields or fails a check.
  */
@@ -28,6 +59,7 @@ export function validateNewsItem(raw: unknown): NewsItem | null {
 
   if (!title || !source || !summary) return null;
   if (!sourceUrl.startsWith("https://")) return null;
+  if (!isAcceptableSourceUrl(sourceUrl)) return null;
   if (!REGIONS.includes(region)) return null;
   if (!publishedAt || Number.isNaN(Date.parse(publishedAt))) return null;
 
@@ -83,7 +115,8 @@ export function dedupeNews(items: NewsItem[]): NewsItem[] {
 
 /** Read just the stored Blob items (no seed merge) — used by the refresh job to dedupe. */
 export async function readStoredNews(): Promise<NewsItem[]> {
-  return (await readNewsFromBlob()) ?? [];
+  // The refresh job needs the absolute latest doc to dedupe correctly.
+  return (await readNewsFromBlob({ fresh: true })) ?? [];
 }
 
 /**
@@ -128,15 +161,24 @@ export async function getNewsItems(): Promise<NewsItem[]> {
  * Attempt to read the news document from Vercel Blob. Returns null on any
  * failure or when storage is not configured. Uses a dynamic import so the
  * project builds even before @vercel/blob is installed.
+ *
+ * Caching: by default the content fetch participates in ISR (revalidate 60s)
+ * so it is safe inside statically-generated pages — an explicit `no-store`
+ * fetch would force the page dynamic / be dropped during static regeneration,
+ * which silently fell back to the seed. The refresh job passes `fresh: true`
+ * to bypass that short cache when it needs the very latest doc to dedupe.
  */
-async function readNewsFromBlob(): Promise<NewsItem[] | null> {
+async function readNewsFromBlob(opts?: { fresh?: boolean }): Promise<NewsItem[] | null> {
   if (!process.env.BLOB_READ_WRITE_TOKEN) return null;
   try {
     const { list } = await import("@vercel/blob");
     const { blobs } = await list({ prefix: NEWS_BLOB_KEY, limit: 1 });
     const blob = blobs.find((b) => b.pathname === NEWS_BLOB_KEY) ?? blobs[0];
     if (!blob) return null;
-    const res = await fetch(blob.url, { cache: "no-store" });
+    const res = await fetch(
+      blob.url,
+      opts?.fresh ? { cache: "no-store" } : { next: { revalidate: 60 } }
+    );
     if (!res.ok) return null;
     const data = (await res.json()) as unknown;
     if (!Array.isArray(data)) return null;

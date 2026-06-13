@@ -26,7 +26,10 @@ jobs:
       - name: Trigger news refresh
         env:
           SECRET: ${{ secrets.NEWS_REFRESH_SECRET }}
-          ENDPOINT: https://translyx.co.nz/api/cron/refresh-news
+          # Target the canonical www host directly. The apex (translyx.co.nz)
+          # 308-redirects to www, and a cross-subdomain redirect drops the
+          # Authorization header — so hit the final URL to keep auth intact.
+          ENDPOINT: https://www.translyx.co.nz/api/cron/refresh-news
         run: |
           if [ -z "$SECRET" ]; then
             echo "::error::NEWS_REFRESH_SECRET repo secret is not set."

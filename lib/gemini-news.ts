@@ -35,6 +35,11 @@ Prioritise in this order:
 
 Do NOT include: celebrity health news, generic AI hype, opinion-only posts without a strong source, low-quality SEO spam, or unsupported medical claims.
 
+CRITICAL — source URLs:
+- "sourceUrl" MUST be the canonical link to the ORIGINAL publisher's article (e.g. the news outlet, journal, company press release, or official body).
+- NEVER return a Google/Vertex grounding redirect URL (anything containing "vertexaisearch", "grounding-api-redirect", "google.com/search", or "news.google.com").
+- NEVER guess or fabricate a URL. If you are not confident the exact article URL is real, omit that item entirely.
+
 Return ONLY a JSON array (no markdown, no prose) of objects with EXACTLY these fields:
 - "title": string (the article headline)
 - "source": string (the publication or organisation name)
