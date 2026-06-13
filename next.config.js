@@ -18,21 +18,22 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // translyx.co.nz is the canonical domain. translyx.co (and www.translyx.co)
-      // are kept as secondary domains that permanently redirect to translyx.co.nz,
-      // preserving the path and query string, to avoid duplicate indexing.
-      // Requires both domains to be attached to this deployment.
+      // www.translyx.co.nz is the canonical origin. translyx.co (and
+      // www.translyx.co) are secondary domains that permanently redirect
+      // straight to the canonical host — targeting www directly avoids a
+      // second hop through the apex (the apex→www redirect is handled at the
+      // Vercel domain level). Path and query string are preserved.
       // Host rules must stay first so they resolve before path rules.
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'translyx.co' }],
-        destination: 'https://translyx.co.nz/:path*',
+        destination: 'https://www.translyx.co.nz/:path*',
         permanent: true,
       },
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.translyx.co' }],
-        destination: 'https://translyx.co.nz/:path*',
+        destination: 'https://www.translyx.co.nz/:path*',
         permanent: true,
       },
 

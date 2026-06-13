@@ -72,7 +72,7 @@ const platformModel = [
     icon: Handshake,
     name: "Partner products",
     role: "Aiforia & Algoscope",
-    body: "Aiforia digital pathology AI and Algoscope surgery-to-pathology workflow automation — partner products represented by Translyx, not Translyx-owned.",
+    body: "Aiforia digital pathology AI and Algoscope surgery-to-pathology workflow automation — partner products Translyx brings to New Zealand, not Translyx-owned.",
   },
   {
     icon: Lock,
@@ -244,7 +244,7 @@ export default function AboutPage() {
               ))}
             </div>
             <p className="mt-5 text-xs leading-relaxed text-slate-500">
-              Aiforia and Algoscope are partner products represented by Translyx in New Zealand — not owned or developed
+              Aiforia and Algoscope are partner products Translyx brings to New Zealand — not owned or developed
               by Translyx. Pipeline capabilities are under evaluation or development and are not publicly launched products.
             </p>
           </section>

@@ -186,7 +186,7 @@ export default function PartnersPage() {
               })}
             </Reveal>
             <p className="mx-auto mt-8 max-w-2xl text-center text-xs leading-relaxed text-slate-500">
-              Aiforia and Algoscope are partner products represented by Translyx in New Zealand — not owned or developed
+              Aiforia and Algoscope are partner products Translyx brings to New Zealand — not owned or developed
               by Translyx. Product-specific regulatory status should be confirmed with each partner and the relevant
               regulatory authorities.
             </p>

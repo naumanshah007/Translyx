@@ -33,7 +33,15 @@ Prioritise in this order:
 6. Partner relevance: Aiforia, Algoscope
 7. Pipeline relevance: AMR, sepsis, POCT, oncology/endocrine/cardiac biomarkers, precision medicine
 
-Do NOT include: celebrity health news, generic AI hype, opinion-only posts without a strong source, low-quality SEO spam, or unsupported medical claims.
+Source quality — prefer authoritative sources, in this order, and let it drive both selection and your "confidence" rating:
+1. Official bodies: health ministries/agencies, regulators (FDA, TGA, Medsafe, EMA), and government health departments (e.g. Health NZ, Australian Department of Health, ACSQHC).
+2. Professional/clinical bodies and pathology organisations (e.g. RCPA, College of American Pathologists, RColPath).
+3. Peer-reviewed journals and academic/research institutions.
+4. Established medical/healthcare trade press and reputable wire services.
+5. Primary company/partner announcements (official press releases from Aiforia, Algoscope, etc.).
+Down-rank, and only include if clearly relevant and well-sourced: generic market-research/forecast sites, SEO "market size" pages, law-firm or consultancy marketing/commentary, and vendor blogs. Never let those outrank an official-body or journal source on the same topic.
+
+Do NOT include: celebrity health news, generic AI hype, opinion-only posts without a strong source, low-quality SEO spam, press-release aggregators, or unsupported medical claims.
 
 CRITICAL — source URLs:
 - "sourceUrl" MUST be the canonical link to the ORIGINAL publisher's article (e.g. the news outlet, journal, company press release, or official body).

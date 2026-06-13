@@ -64,9 +64,10 @@ export const products: Product[] = [
     featured: true,
     claims: [
       {
-        text: "According to Algoscope's public materials, Algoscope obtained ISO 13485 certification in June 2023.",
+        // Verified against Algoscope's public materials (June 2026): they state
+        // ISO 13485:2016 certification (AFNOR Certification), obtained June 2023.
+        text: "According to Algoscope's public materials, Algoscope holds ISO 13485:2016 certification (issued by AFNOR Certification), obtained in June 2023.",
         attribution: "Algoscope",
-        // TODO: verify and replace with the specific announcement URL before publishing.
         sourceUrl: "https://www.algoscope.fr",
       },
     ],

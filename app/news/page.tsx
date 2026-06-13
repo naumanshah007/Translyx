@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { Newspaper, Info } from "lucide-react";
 import { Hero } from "@/components/sections/Hero";
 import { CTA } from "@/components/sections/CTA";
@@ -55,9 +54,7 @@ export default async function NewsPage() {
       <section className="bg-white py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1180px]">
-            <Suspense fallback={<div className="py-16 text-center text-sm text-slate-400">Loading news…</div>}>
-              <NewsList items={items} />
-            </Suspense>
+            <NewsList items={items} />
 
             {/* Disclaimer */}
             <div className="mt-12 flex items-start gap-3 rounded-xl border border-slate-200/80 bg-[#F5F8FC] p-4">

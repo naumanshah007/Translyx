@@ -151,7 +151,7 @@ export default async function HomePage() {
         "@type": "SoftwareApplication",
         name: "Algoscope",
         applicationCategory: "MedicalApplication",
-        description: "AI-powered surgery-to-pathology workflow automation and traceability — partner product represented by Translyx in New Zealand.",
+        description: "AI-powered surgery-to-pathology workflow automation and traceability — a partner product Translyx is bringing to New Zealand.",
       },
     ],
   };
@@ -255,7 +255,7 @@ export default async function HomePage() {
               eyebrow="Partner products"
               title={
                 <>
-                  Partner diagnostic and pathology solutions, represented by{" "}
+                  Partner diagnostic and pathology solutions, brought to New Zealand by{" "}
                   <span className="text-[#0891B2]">Translyx.</span>
                 </>
               }

@@ -25,7 +25,7 @@ export const navigation: NavItem[] = [
   {
     label: "Products",
     href: "/products",
-    description: "Partner products represented by Translyx",
+    description: "Partner diagnostic & pathology products",
     subItems: [
       {
         label: "Aiforia Digital Pathology AI",

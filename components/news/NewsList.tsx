@@ -1,7 +1,7 @@
 "use client";
 
-import { useMemo, useState, useEffect } from "react";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { Suspense, useCallback, useMemo, useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { Newspaper } from "lucide-react";
 import type { NewsItem, NewsRegion } from "@/config/news";
 import { newsRegions, newsTopics } from "@/config/news";
@@ -15,27 +15,35 @@ function isRegion(v: string | null): v is NewsRegion {
   return v === "new-zealand" || v === "australia" || v === "global";
 }
 
-export function NewsList({ items }: { items: NewsItem[] }) {
+/**
+ * Reads ?region/?topic and pushes them into NewsList state. Isolated in its own
+ * Suspense boundary (rendered by the parent) with a null fallback, so the
+ * `useSearchParams()` client-only bailout stays contained here and the rest of
+ * the feed still renders server-side — no visible "Loading…" in the HTML.
+ */
+function UrlFilterSync({
+  onParams,
+}: {
+  onParams: (region: NewsRegion | "all", topic: string | "all") => void;
+}) {
   const searchParams = useSearchParams();
-  const router = useRouter();
-  const pathname = usePathname();
-
-  const regionParam = searchParams.get("region");
-  const topicParam = searchParams.get("topic");
-
-  const [region, setRegion] = useState<NewsRegion | "all">(isRegion(regionParam) ? regionParam : "all");
-  const [topic, setTopic] = useState<string | "all">(topicParam ?? "all");
-
-  // Keep state in sync if the URL changes (e.g. nav dropdown deep link)
+  const region = searchParams.get("region");
+  const topic = searchParams.get("topic");
   useEffect(() => {
-    setRegion(isRegion(regionParam) ? regionParam : "all");
-  }, [regionParam]);
-  useEffect(() => {
-    setTopic(topicParam ?? "all");
-  }, [topicParam]);
+    onParams(isRegion(region) ? region : "all", topic ?? "all");
+  }, [region, topic, onParams]);
+  return null;
+}
+
+export function NewsList({ items }: { items: NewsItem[] }) {
+  // Default to the full feed so the server-rendered HTML shows everything. The
+  // Suspense-isolated UrlFilterSync below applies any ?region/?topic deep-link
+  // (and reacts to in-app nav changes) after hydration.
+  const [region, setRegion] = useState<NewsRegion | "all">("all");
+  const [topic, setTopic] = useState<string | "all">("all");
 
   const updateUrl = (next: { region?: NewsRegion | "all"; topic?: string | "all" }) => {
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams(window.location.search);
     const nextRegion = next.region ?? region;
     const nextTopic = next.topic ?? topic;
     if (nextRegion === "all") params.delete("region");
@@ -43,7 +51,7 @@ export function NewsList({ items }: { items: NewsItem[] }) {
     if (nextTopic === "all") params.delete("topic");
     else params.set("topic", nextTopic);
     const qs = params.toString();
-    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+    window.history.replaceState(null, "", qs ? `${window.location.pathname}?${qs}` : window.location.pathname);
   };
 
   const onRegion = (r: NewsRegion | "all") => {
@@ -54,6 +62,12 @@ export function NewsList({ items }: { items: NewsItem[] }) {
     setTopic(t);
     updateUrl({ topic: t });
   };
+
+  // Stable so UrlFilterSync's effect doesn't re-fire on every render.
+  const handleParams = useCallback((r: NewsRegion | "all", t: string | "all") => {
+    setRegion(r);
+    setTopic(t);
+  }, []);
 
   const filtered = useMemo(() => {
     return items.filter((item) => {
@@ -75,6 +89,12 @@ export function NewsList({ items }: { items: NewsItem[] }) {
 
   return (
     <div>
+      {/* URL ↔ filter sync, isolated so its client-only render doesn't pull the
+          feed out of the server-rendered HTML. */}
+      <Suspense fallback={null}>
+        <UrlFilterSync onParams={handleParams} />
+      </Suspense>
+
       {/* Region tabs */}
       <div className="flex flex-wrap gap-2" role="tablist" aria-label="Filter by region">
         {regionTabs.map((t) => (

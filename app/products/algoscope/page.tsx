@@ -29,7 +29,7 @@ import { getProduct } from "@/config/products";
 import { siteConfig } from "@/config/site";
 
 const pageDescription =
-  "Algoscope is a partner product represented by Translyx in New Zealand — AI-powered workflow automation, computer vision, 3D modelling, and traceability across surgery-to-pathology pathways for operating rooms and pathology laboratories.";
+  "Algoscope is a partner product Translyx is bringing to New Zealand — AI-powered workflow automation, computer vision, 3D modelling, and traceability across surgery-to-pathology pathways for operating rooms and pathology laboratories. Translyx and Algoscope are finalising a New Zealand representation partnership.";
 
 export const metadata: Metadata = {
   title: "Algoscope — Surgery-to-Pathology Workflow Automation | Translyx",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     description: pageDescription,
     url: `${siteConfig.url}/products/algoscope`,
     siteName: siteConfig.name,
-    images: [{ url: siteConfig.seo.ogImage, width: 1200, height: 630, alt: "Algoscope — partner product represented by Translyx" }],
+    images: [{ url: siteConfig.seo.ogImage, width: 1200, height: 630, alt: "Algoscope — partner product Translyx is bringing to New Zealand" }],
   },
 };
 
@@ -127,18 +127,18 @@ const sampleJourney = [
 ];
 
 /*
- * Milestones from Algoscope's public materials.
- * TODO: verify each item and add its specific source URL before publishing —
- * remove any entry that cannot be source-linked.
+ * Milestones drawn from Algoscope's public materials and verified against their
+ * public site (June 2026). Each is attributed to Algoscope, with dates as they
+ * publish them. Source-linked at the foot of the section.
  */
 const milestones = [
-  { label: "CytologIA DataChallenge", detail: "Participation in the CytologIA data challenge for AI in cytology" },
-  { label: "Algoscope × Xpath partnership", detail: "Partnership announcement with Xpath" },
-  { label: "Carrefour Pathologie", detail: "Presence at the French pathology congress" },
-  { label: "AWS HealthDataCon", detail: "Presented at AWS HealthDataCon" },
-  { label: "European Pathology Congress", detail: "Presence at the European Congress of Pathology" },
-  { label: "ISO 13485 certification", detail: "According to Algoscope's public materials, obtained June 2023" },
-  { label: "Next French Healthcare", detail: "Participation in the Next French Healthcare programme" },
+  { label: "Algoscope × Xpath Groupe partnership", detail: "Partnership to integrate AI-powered laboratory solutions (Nov 2024)" },
+  { label: "CytologIA DataChallenge", detail: "AI-in-cytology data challenge, with GFHC and the Health Data Hub (Dec 2024)" },
+  { label: "Carrefour Pathologie", detail: "Showcase at the French pathology congress (Nov 2024)" },
+  { label: "AWS HealthDataCon", detail: "Featured in the AWS HealthDataCon “Unicorn Tank” (Oct 2024)" },
+  { label: "European Congress of Pathology", detail: "Presence at the 36th ECP in Italy (Sep 2024)" },
+  { label: "ISO 13485:2016 certification", detail: "Certified by AFNOR Certification, per Algoscope (Jun 2023)" },
+  { label: "Next French Healthcare", detail: "Participation in the Business France Next Healthcare programme (May 2023)" },
 ];
 
 export default function AlgoscopePage() {
@@ -147,7 +147,7 @@ export default function AlgoscopePage() {
   return (
     <>
       <Hero
-        badge={{ text: "Partner product · Represented by Translyx in New Zealand", icon: <Workflow className="w-3.5 h-3.5" /> }}
+        badge={{ text: "Partner product · New Zealand representation being finalised", icon: <Workflow className="w-3.5 h-3.5" /> }}
         headline="AI-powered workflow automation for surgery and pathology"
         description="Algoscope streamlines workflows from surgery to pathology through intelligent automation, computer vision, 3D modelling, and traceability-focused tools designed for operating rooms and pathology laboratories."
         primaryCTA={{ label: "Discuss Algoscope", href: "/contact" }}
@@ -376,7 +376,16 @@ export default function AlgoscopePage() {
                   ))}
                 </ul>
                 <p className="mt-4 border-t border-slate-100 pt-3 text-xs leading-relaxed text-slate-400">
-                  Milestones are drawn from Algoscope&apos;s public materials and are subject to source verification.
+                  Milestones are as published by Algoscope. Source:{" "}
+                  <a
+                    href="https://www.algoscope.fr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-violet-600 underline-offset-2 hover:underline"
+                  >
+                    algoscope.fr
+                  </a>
+                  .
                 </p>
               </CardContent>
             </Card>
@@ -399,9 +408,9 @@ export default function AlgoscopePage() {
                       Translyx regional role
                     </p>
                     <p className="text-sm text-slate-600 leading-relaxed mb-3">
-                      Translyx represents Algoscope in New Zealand — supporting regional evaluation, clinical workflow
-                      relevance assessment, governance expectations, and adoption pathways for New Zealand and Oceania
-                      healthcare organisations.
+                      Translyx and Algoscope are finalising a New Zealand representation partnership. Translyx is
+                      supporting regional evaluation, clinical workflow relevance assessment, governance expectations,
+                      and adoption pathways for New Zealand and Oceania healthcare organisations.
                     </p>
                     <p className="text-sm text-slate-500 leading-relaxed">
                       Algoscope is a partner product — it is not owned or developed by Translyx. Product-specific

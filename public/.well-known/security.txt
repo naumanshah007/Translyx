@@ -1,5 +1,5 @@
 Contact: mailto:info@translyx.co
 Expires: 2027-01-01T00:00:00.000Z
 Preferred-Languages: en
-Canonical: https://translyx.co.nz/.well-known/security.txt
-Policy: https://translyx.co.nz/company
+Canonical: https://www.translyx.co.nz/.well-known/security.txt
+Policy: https://www.translyx.co.nz/company

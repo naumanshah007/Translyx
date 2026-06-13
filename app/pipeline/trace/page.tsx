@@ -501,10 +501,10 @@ export default function TracePage() {
                       Designed to support submission packaging — not to claim regulatory approval
                     </h3>
                     <p className="text-base text-slate-700 leading-relaxed mb-4">
-                      Trace is designed with the intent of supporting FDA, EMA, and Medsafe submission packaging workflows. It structures evidence with the discipline those processes require. It does not claim, imply, or guarantee regulatory acceptance of any output.
+                      Trace is a pipeline capability under evaluation. The intent is to help teams organise evidence and provenance with the discipline that formal submission processes generally require. It is not a regulatory pathway, and it does not claim, imply, or guarantee acceptance by any regulator.
                     </p>
                     <div className="grid sm:grid-cols-3 gap-3">
-                      {["FDA-aligned workflow intent", "EMA-aligned workflow intent", "Medsafe NZ context"].map((item) => (
+                      {["Structured evidence packaging", "Documented provenance & lineage", "Visible limitations on every output"].map((item) => (
                         <div key={item} className="rounded-lg border border-slate-200/80 bg-[#F5F8FC] px-3 py-2.5 text-xs font-semibold text-slate-600 text-center">
                           {item}
                         </div>

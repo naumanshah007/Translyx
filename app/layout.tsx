@@ -129,7 +129,7 @@ export default function RootLayout({
           applicationCategory: "MedicalApplication",
           url: `${siteConfig.url}/products/algoscope`,
           description:
-            "AI-powered surgery-to-pathology workflow automation and traceability — partner product represented by Translyx in New Zealand.",
+            "AI-powered surgery-to-pathology workflow automation and traceability — a partner product Translyx is bringing to New Zealand.",
           operatingSystem: "Web",
           provider: { "@type": "Organization", name: "Algoscope" },
         },

@@ -19,7 +19,7 @@ const branches: Branch[] = [
   {
     label: "Partner Products",
     title: "Aiforia & Algoscope",
-    body: "Aiforia digital pathology AI and Algoscope surgery-to-pathology workflow automation — partner products represented by Translyx in New Zealand.",
+    body: "Aiforia digital pathology AI and Algoscope surgery-to-pathology workflow automation — partner products Translyx brings to New Zealand.",
     href: "/products",
     cta: "Explore products",
     icon: Handshake,
@@ -128,7 +128,7 @@ export function EcosystemDiagram() {
         </div>
 
         <p className="mx-auto mt-10 max-w-2xl text-center text-xs leading-relaxed text-slate-500">
-          Aiforia and Algoscope are partner products represented by Translyx in New Zealand — not Translyx-owned
+          Aiforia and Algoscope are partner products Translyx brings to New Zealand — not Translyx-owned
           products. Pipeline capabilities are under evaluation or development and are not publicly launched products.
         </p>
       </div>
