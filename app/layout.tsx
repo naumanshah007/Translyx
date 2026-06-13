@@ -19,7 +19,7 @@ const body = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Translyx | Governed Clinical AI — Privexa Trace & AI Solutions",
+    default: "Translyx | Diagnostic Innovation & Governed Clinical AI — New Zealand",
     template: `%s | Translyx`,
   },
   description: siteConfig.seo.defaultDescription,
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_NZ",
     url: siteConfig.url,
-    title: "Translyx | Governed Clinical AI — Privexa Trace & AI Solutions",
+    title: "Translyx | Diagnostic Innovation & Governed Clinical AI — New Zealand",
     description: siteConfig.seo.defaultDescription,
     siteName: siteConfig.name,
     images: [
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Translyx | Governed Clinical AI",
+    title: "Translyx | Diagnostic Innovation & Governed Clinical AI",
     description: siteConfig.seo.defaultDescription,
     images: [siteConfig.seo.ogImage],
   },
@@ -102,35 +102,36 @@ export default function RootLayout({
     },
     knowsAbout: [
       "clinical AI governance",
-      "synthetic control arms",
+      "digital pathology AI",
+      "surgery-to-pathology workflow automation",
       "reviewer-gated evidence workflows",
-      "AI data protection for healthcare",
       "in vitro diagnostics",
       "diagnostic technology New Zealand",
     ],
     sameAs: ["https://www.linkedin.com/company/translyx/"],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Translyx Products",
+      name: "Translyx Partner Products",
       itemListElement: [
         {
           "@type": "SoftwareApplication",
-          name: "Privexa Trace",
-          applicationCategory: "BusinessApplication",
-          url: `${siteConfig.url}/products/privexa-trace`,
+          name: "Aiforia Digital Pathology AI",
+          applicationCategory: "MedicalApplication",
+          url: `${siteConfig.url}/products/aiforia`,
           description:
-            "Reviewer-gated synthetic control arm workflow platform with manual benchmark comparison, lineage, and submission-oriented packaging.",
+            "AI-assisted digital pathology for clinical, preclinical, and research workflows — authorised partner solution represented by Translyx in New Zealand.",
           operatingSystem: "Web",
-          provider: { "@type": "Organization", name: siteConfig.companyName },
+          provider: { "@type": "Organization", name: "Aiforia Technologies Plc" },
         },
         {
           "@type": "SoftwareApplication",
-          name: "Privexa",
-          applicationCategory: "SecurityApplication",
-          url: `${siteConfig.url}/ai-solutions`,
-          description: "Field-level AI data protection for healthcare workflows.",
+          name: "Algoscope",
+          applicationCategory: "MedicalApplication",
+          url: `${siteConfig.url}/products/algoscope`,
+          description:
+            "AI-powered surgery-to-pathology workflow automation and traceability — partner product represented by Translyx in New Zealand.",
           operatingSystem: "Web",
-          provider: { "@type": "Organization", name: siteConfig.companyName },
+          provider: { "@type": "Organization", name: "Algoscope" },
         },
       ],
     },
@@ -143,7 +144,7 @@ export default function RootLayout({
     alternateName: siteConfig.companyName,
     url: siteConfig.url,
     description:
-      "Translyx Limited — governed clinical AI, Privexa Trace synthetic control workflows, and AI data protection for healthcare.",
+      "Translyx Limited — partner diagnostic solutions, digital pathology AI, and governed clinical AI workflow capabilities for New Zealand healthcare.",
     publisher: {
       "@type": "Organization",
       name: siteConfig.companyName,

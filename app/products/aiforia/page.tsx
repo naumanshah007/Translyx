@@ -389,11 +389,11 @@ export default function AiforiaPage() {
                   <div className="w-10 h-10 rounded-xl bg-[#22D3EE]/12 flex items-center justify-center mb-3">
                     <ShieldCheck className="w-5 h-5 text-[#0891B2]" />
                   </div>
-                  <CardTitle className="text-base text-[#0F1C3F]">Privexa-built AI products</CardTitle>
+                  <CardTitle className="text-base text-[#0F1C3F]">Pipeline capabilities</CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
                   <p className="text-sm text-slate-600 leading-relaxed">
-                    Privexa-built products — AI Wrapper, Cloud Shield, Scribe, and Trace — handle data protection, clinical documentation, and evidence workflows alongside pathology AI.
+                    Translyx pipeline capabilities under evaluation — covering data protection, clinical documentation, and governed evidence workflows — sit alongside pathology AI.
                   </p>
                 </CardContent>
               </Card>

@@ -6,11 +6,21 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
+const inquiryTypes = [
+  "Discuss Aiforia",
+  "Discuss Algoscope",
+  "Discuss Pipeline",
+  "Partner with Translyx",
+  "Request Walkthrough",
+  "General inquiry",
+];
+
 export function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     organization: "",
+    inquiryType: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -47,7 +57,7 @@ export function ContactForm() {
       }
 
       setSubmitStatus("success");
-      setFormData({ name: "", email: "", organization: "", message: "" });
+      setFormData({ name: "", email: "", organization: "", inquiryType: "", message: "" });
     } catch (error) {
       console.error("Form submission error:", error);
       setSubmitStatus("error");
@@ -105,6 +115,25 @@ export function ContactForm() {
               onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
               className="w-full px-4 py-3 border-2 border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 dark:bg-gray-800 dark:text-white"
             />
+          </div>
+
+          <div>
+            <label htmlFor="inquiryType" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+              What would you like to discuss?
+            </label>
+            <select
+              id="inquiryType"
+              value={formData.inquiryType}
+              onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
+              className="w-full px-4 py-3 border-2 border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 bg-white dark:bg-gray-800 dark:text-white"
+            >
+              <option value="">Select a topic (optional)</option>
+              {inquiryTypes.map((t) => (
+                <option key={t} value={t}>
+                  {t}
+                </option>
+              ))}
+            </select>
           </div>
 
           <div>

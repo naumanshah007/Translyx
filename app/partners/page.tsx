@@ -11,15 +11,15 @@ import { getProductIcon } from "@/lib/productIcons";
 import { siteConfig } from "@/config/site";
 
 const pageDescription =
-  "Translyx is the New Zealand and Oceania partner for global clinical-technology innovators. Aiforia is our authorised digital pathology AI partner, with Privexa-built protected software and a growing partner network.";
+  "Translyx is the New Zealand and Oceania partner for global clinical-technology innovators. Aiforia is our authorised digital pathology AI partner and Algoscope our surgery-to-pathology workflow automation partner — with a growing partner network.";
 
 export const metadata: Metadata = {
-  title: "Partners — Aiforia & the Translyx Partner Network",
+  title: "Partners — Aiforia, Algoscope & the Translyx Partner Network",
   description: pageDescription,
   keywords: [
     "Translyx partners",
     "Aiforia partner New Zealand",
-    "Privexa partner",
+    "Algoscope partner New Zealand",
     "clinical technology partnership NZ",
     "become a partner New Zealand healthcare",
     "digital pathology AI partner",
@@ -67,9 +67,9 @@ export default function PartnersPage() {
         badge={{ text: "Partner network", icon: <Handshake className="h-3.5 w-3.5 text-cyan-300" /> }}
         headline="Your bridge to New Zealand and Oceania"
         highlight="healthcare."
-        description="Translyx partners with global diagnostic and clinical-AI innovators — bringing world-class technology to New Zealand and Oceania with local expertise, governance, and clinical adoption. Aiforia is our authorised digital pathology AI partner, and the network is growing."
+        description="Translyx partners with global diagnostic and clinical-AI innovators — bringing world-class technology to New Zealand and Oceania with local expertise, governance, and clinical adoption. Aiforia and Algoscope are our current partner products, and the network is growing."
         primaryCTA={{ label: "Become a partner", href: "/contact" }}
-        secondaryCTA={{ label: "Explore Aiforia", href: "/products/aiforia" }}
+        secondaryCTA={{ label: "Explore products", href: "/products" }}
       />
 
       {/* Why partner with Translyx */}
@@ -174,7 +174,7 @@ export default function PartnersPage() {
                       href={p.href}
                       className="relative mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-white"
                     >
-                      {p.slug === "aiforia" ? "Explore Aiforia" : "View products"}
+                      Explore {p.shortName}
                       {p.external ? (
                         <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       ) : (
@@ -186,8 +186,9 @@ export default function PartnersPage() {
               })}
             </Reveal>
             <p className="mx-auto mt-8 max-w-2xl text-center text-xs leading-relaxed text-slate-500">
-              Aiforia is an authorised partner solution represented by Translyx in New Zealand — not owned or developed by
-              Translyx. Privexa-built products are developed by Privexa Limited and clinically positioned through Translyx.
+              Aiforia and Algoscope are partner products represented by Translyx in New Zealand — not owned or developed
+              by Translyx. Product-specific regulatory status should be confirmed with each partner and the relevant
+              regulatory authorities.
             </p>
           </div>
         </div>

@@ -42,18 +42,18 @@ export const partners: Partner[] = [
     location: "Helsinki, Finland",
   },
   {
-    slug: "privexa",
-    name: "Privexa Limited",
-    shortName: "Privexa",
-    type: "Software Partner",
-    category: "Protected AI Software",
+    slug: "algoscope",
+    name: "Algoscope",
+    shortName: "Algoscope",
+    type: "Partner Product",
+    category: "Surgical pathology workflow automation",
     status: "active",
     description:
-      "Builds the protected AI software layer — AI Wrapper, Cloud Shield, Scribe, Trace, and ClinicalTriage — clinically positioned through Translyx.",
-    href: "/products",
-    icon: "ShieldCheck",
+      "AI-powered workflow automation and traceability across surgery-to-pathology pathways — computer vision, 3D modelling, and pre-analytical workflow intelligence. Represented by Translyx in New Zealand.",
+    href: "/products/algoscope",
+    icon: "Workflow",
     accent: "violet",
-    location: "Auckland, New Zealand",
+    location: "France",
   },
 ];
 

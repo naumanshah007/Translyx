@@ -20,7 +20,7 @@ interface PipelineCategoryCardProps {
  */
 export function PipelineCategoryCard({ slug, title, excerpt, image }: PipelineCategoryCardProps) {
   return (
-    <Link href={`/product-pipeline/${slug}`}>
+    <Link href={`/pipeline/${slug}`}>
       <Card variant="gradient-border" className="h-full overflow-hidden hover:-translate-y-1 transition-transform duration-300">
         <PipelineImage
           localSrc={image.local}

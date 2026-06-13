@@ -1,15 +1,22 @@
 /**
  * Central product data for Translyx
  *
- * Product types:
- *   "partner"   – Authorised partner solution (e.g. Aiforia)
- *   "privexa"   – Built by Privexa Limited
- *   "clinical"  – Clinical workflow product built by Privexa
- *   "pipeline"  – Diagnostic pipeline category
+ * Products are partner solutions represented or supported by Translyx in
+ * New Zealand and Oceania. Translyx does not own or develop these products.
+ *
+ * Internal/pre-launch workflow capabilities live in config/pipelineCapabilities.ts —
+ * they are NOT products and must never be presented as launched offerings.
  */
 
-export type ProductType = "partner" | "privexa" | "clinical" | "pipeline";
+export type ProductType = "partner";
 export type ProductStatus = "available" | "pilot" | "pipeline";
+
+/** A claim that must be attributed to its source (e.g. partner certifications). */
+export interface AttributedClaim {
+  text: string;
+  attribution: string;
+  sourceUrl: string;
+}
 
 export interface Product {
   slug: string;
@@ -20,10 +27,11 @@ export interface Product {
   tagline: string;
   description: string;
   href: string;
-  externalHref?: string;
   icon: string;
   badge: string;
   featured?: boolean;
+  /** Source-attributed claims (certifications etc.) — render only with attribution + link. */
+  claims?: AttributedClaim[];
 }
 
 export const products: Product[] = [
@@ -42,88 +50,26 @@ export const products: Product[] = [
     featured: true,
   },
   {
-    slug: "privexa-ai-wrapper",
-    title: "Privexa AI Wrapper",
-    shortTitle: "AI Wrapper",
-    type: "privexa",
+    slug: "algoscope",
+    title: "Algoscope",
+    shortTitle: "Algoscope",
+    type: "partner",
     status: "available",
-    tagline: "Secure LLM gateway for privacy-preserving AI use",
+    tagline: "Partner product — AI-powered surgery-to-pathology workflow automation",
     description:
-      "A secure LLM gateway that intercepts and replaces sensitive data with safe tokens before any message reaches an AI system. Responses are restored with original context automatically.",
-    href: "/products/privexa-ai-wrapper",
-    externalHref: "https://app.privexa.co",
-    icon: "Lock",
-    badge: "Built by Privexa",
-  },
-  {
-    slug: "privexa-cloud-shield",
-    title: "Privexa Cloud Shield",
-    shortTitle: "Cloud Shield",
-    type: "privexa",
-    status: "available",
-    tagline: "Field-level protection for cloud platforms and data workflows",
-    description:
-      "Field-level tokenisation for cloud data pipelines. Sensitive fields are replaced before reaching cloud platforms — the local mapping vault is reversible only inside your perimeter.",
-    href: "/products/privexa-cloud-shield",
-    externalHref: "https://app.privexa.co",
-    icon: "Cloud",
-    badge: "Built by Privexa",
-  },
-  {
-    slug: "privexa-scribe",
-    title: "Privexa Scribe",
-    shortTitle: "Scribe",
-    type: "privexa",
-    status: "available",
-    tagline: "Privacy-protected clinical documentation and structured notes",
-    description:
-      "Clinical consultation recording with full PHI protection. Record, transcribe, and generate clinician-ready notes — sensitive data never leaves your boundary.",
-    href: "/products/privexa-scribe",
-    externalHref: "https://app.privexa.co",
-    icon: "FileText",
-    badge: "Built by Privexa",
-  },
-  {
-    slug: "privexa-trace",
-    title: "Privexa Trace",
-    shortTitle: "Trace",
-    type: "privexa",
-    status: "available",
-    tagline: "Reviewer-gated evidence and synthetic control workflows",
-    description:
-      "Reviewer-gated synthetic control arm workflows with manual benchmark comparison, lineage, visible limitations, and submission-oriented packaging.",
-    href: "/products/privexa-trace",
-    externalHref: "https://trace.privexa.co",
-    icon: "GitBranch",
-    badge: "Built by Privexa",
+      "AI-powered workflow automation and traceability across surgery-to-pathology pathways — computer vision, 3D modelling, and pre-analytical workflow intelligence for operating rooms and pathology laboratories.",
+    href: "/products/algoscope",
+    icon: "Workflow",
+    badge: "Partner product",
     featured: true,
-  },
-  {
-    slug: "clinical-triage",
-    title: "ClinicalTriage",
-    shortTitle: "ClinicalTriage",
-    type: "clinical",
-    status: "pilot",
-    tagline: "Clinical pathway and referral grading support for authorised healthcare teams",
-    description:
-      "Audited clinical pathway and referral grading support with role-based access, specialist review, and full audit trail. Designed for authorised clinical users.",
-    href: "/products/clinical-triage",
-    externalHref: "https://screening.privexa.co",
-    icon: "Stethoscope",
-    badge: "Built by Privexa",
-  },
-  {
-    slug: "diagnostic-pipeline",
-    title: "Clinical & Diagnostic Pipeline",
-    shortTitle: "Diagnostic Pipeline",
-    type: "pipeline",
-    status: "pipeline",
-    tagline: "AMR, sepsis, POCT, oncology, endocrine, cardiac, and precision medicine portfolio",
-    description:
-      "Advanced diagnostic technologies for New Zealand healthcare — antimicrobial resistance, sepsis, point-of-care testing, oncology biomarkers, endocrinology, cardiac markers, and precision medicine.",
-    href: "/product-pipeline",
-    icon: "FlaskConical",
-    badge: "Diagnostic portfolio",
+    claims: [
+      {
+        text: "According to Algoscope's public materials, Algoscope obtained ISO 13485 certification in June 2023.",
+        attribution: "Algoscope",
+        // TODO: verify and replace with the specific announcement URL before publishing.
+        sourceUrl: "https://www.algoscope.fr",
+      },
+    ],
   },
 ];
 
@@ -136,10 +82,7 @@ export function getProductsByType(type: ProductType): Product[] {
 }
 
 export const productTypeLabels: Record<ProductType, string> = {
-  partner: "Authorised partner solution",
-  privexa: "Privexa-built product",
-  clinical: "Clinical workflow product",
-  pipeline: "Diagnostic pipeline",
+  partner: "Partner product",
 };
 
 export const statusLabels: Record<ProductStatus, { text: string; className: string }> = {
@@ -157,18 +100,11 @@ export const statusLabels: Record<ProductStatus, { text: string; className: stri
   },
 };
 
-export const PRIVEXA_APP_URL = "https://app.privexa.co";
-
 /** Premium accent per product, used for card glows and icon tints */
 export type ProductAccent = "cyan" | "violet" | "teal" | "emerald" | "sky";
 export const accentBySlug: Record<string, ProductAccent> = {
   aiforia: "cyan",
-  "privexa-ai-wrapper": "violet",
-  "privexa-cloud-shield": "sky",
-  "privexa-scribe": "teal",
-  "privexa-trace": "cyan",
-  "clinical-triage": "emerald",
-  "diagnostic-pipeline": "teal",
+  algoscope: "violet",
 };
 
 /** Who Translyx works with — audience cards */
@@ -183,14 +119,18 @@ export const audiences = [
   },
   {
     title: "Research Teams",
-    detail: "Governed evidence workflows, image analysis, and reviewer-gated synthetic control arms.",
+    detail: "Governed evidence workflows, image analysis, and reviewer-gated evaluation pathways.",
   },
   {
     title: "Pharma & CROs",
-    detail: "Protected AI workflows and submission-oriented evidence packaging for clinical programmes.",
+    detail: "Workflow traceability, governed AI evaluation, and submission-oriented evidence support for clinical programmes.",
   },
   {
     title: "Health Innovation Teams",
     detail: "A local bridge to evaluate, govern, and deploy clinical AI with privacy and confidence.",
+  },
+  {
+    title: "Global Diagnostic Companies",
+    detail: "A trusted regional pathway for diagnostic and clinical technologies entering New Zealand and Australia.",
   },
 ];
