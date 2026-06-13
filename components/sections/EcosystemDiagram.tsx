@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Microscope, ShieldCheck, FlaskConical } from "lucide-react";
+import { ArrowRight, Handshake, ShieldCheck, FlaskConical } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { BrandMark } from "@/components/ui/Brand";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -17,30 +17,30 @@ interface Branch {
 
 const branches: Branch[] = [
   {
-    label: "Authorised Partner Solution",
-    title: "Aiforia Digital Pathology AI",
-    body: "AI-assisted digital pathology for clinical, preclinical, and research pathology workflows — represented by Translyx in New Zealand.",
-    href: "/products/aiforia",
-    cta: "Explore Aiforia",
-    icon: Microscope,
+    label: "Partner Products",
+    title: "Aiforia & Algoscope",
+    body: "Aiforia digital pathology AI and Algoscope surgery-to-pathology workflow automation — partner products represented by Translyx in New Zealand.",
+    href: "/products",
+    cta: "Explore products",
+    icon: Handshake,
     color: "#22D3EE",
     soft: "rgba(34,211,238,0.14)",
   },
   {
-    label: "Built by Privexa",
-    title: "Privexa-Built AI Products",
-    body: "Protected AI software products — AI Wrapper, Cloud Shield, Scribe, Trace, and ClinicalTriage — clinically positioned through Translyx.",
-    href: "/products",
-    cta: "View Privexa products",
+    label: "Pipeline Capabilities",
+    title: "Governed Clinical AI Workflows",
+    body: "AI Wrapper, Cloud Shield, Scribe, Trace, and ClinicalTriage — workflow capabilities under evaluation and development, not publicly launched products.",
+    href: "/pipeline",
+    cta: "View capabilities",
     icon: ShieldCheck,
     color: "#A78BFA",
     soft: "rgba(139,92,246,0.14)",
   },
   {
-    label: "Diagnostic Portfolio",
+    label: "Diagnostic Innovation",
     title: "Clinical & Diagnostic Pipeline",
     body: "AMR, sepsis, POCT, oncology, endocrine, cardiac, and precision medicine opportunities for New Zealand and Oceania.",
-    href: "/product-pipeline",
+    href: "/pipeline#diagnostic-innovation",
     cta: "View pipeline",
     icon: FlaskConical,
     color: "#2DD4BF",
@@ -63,7 +63,7 @@ export function EcosystemDiagram() {
               <span className="text-gradient-brand">local clinical adoption.</span>
             </>
           }
-          description="Translyx connects authorised digital pathology AI, Privexa-built protected software, and a clinical diagnostic pipeline — under one accountable, New Zealand-based partner."
+          description="Translyx connects partner digital pathology AI, governed clinical AI workflow capabilities, and a diagnostic innovation pipeline — under one accountable, New Zealand-based partner."
           maxWidth="max-w-3xl"
           className="mb-14"
         />
@@ -128,8 +128,8 @@ export function EcosystemDiagram() {
         </div>
 
         <p className="mx-auto mt-10 max-w-2xl text-center text-xs leading-relaxed text-slate-500">
-          Aiforia is an authorised partner solution represented by Translyx in New Zealand — not a Translyx-owned
-          product. Privexa-built products are developed by Privexa Limited and clinically positioned through Translyx.
+          Aiforia and Algoscope are partner products represented by Translyx in New Zealand — not Translyx-owned
+          products. Pipeline capabilities are under evaluation or development and are not publicly launched products.
         </p>
       </div>
     </section>

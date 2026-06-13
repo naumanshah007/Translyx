@@ -19,6 +19,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: "Email",
+    // TODO: switch to mailto:info@translyx.co.nz once email routing is set up on the new domain.
     href: "mailto:info@translyx.co",
     icon: "Mail",
   },

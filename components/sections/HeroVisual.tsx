@@ -113,9 +113,9 @@ function DigitalPathologyPanel() {
   );
 }
 
-function PrivexaPanel() {
+function PipelinePanel() {
   return (
-    <Panel title="Privexa Software" accent="#A78BFA">
+    <Panel title="Pipeline Capabilities" accent="#A78BFA">
       <div className="space-y-1.5">
         <MiniRow icon={Cpu} label="AI Wrapper" color="text-violet-300" />
         <MiniRow icon={Cloud} label="Cloud Shield" color="text-sky-300" />
@@ -124,7 +124,7 @@ function PrivexaPanel() {
       </div>
       <div className="mt-2.5 flex items-center gap-1.5 border-t border-white/10 pt-2">
         <ShieldCheck className="h-3.5 w-3.5 text-emerald-300" />
-        <span className="text-[10px] font-medium text-slate-200">Privacy-first by design</span>
+        <span className="text-[10px] font-medium text-slate-200">Under evaluation · privacy-first</span>
       </div>
     </Panel>
   );
@@ -320,7 +320,7 @@ export function HeroVisual() {
         </div>
         <div className="mt-1 grid grid-cols-2 gap-2.5">
           <DigitalPathologyPanel />
-          <PrivexaPanel />
+          <PipelinePanel />
           <GovernedPanel />
           <ClinicalImpactPanel idp="m" />
         </div>
@@ -337,7 +337,7 @@ export function HeroVisual() {
           <DigitalPathologyPanel />
         </div>
         <div className="absolute right-0 top-7 z-20 w-[216px] animate-float-slower" style={{ animationDelay: "0.6s" }}>
-          <PrivexaPanel />
+          <PipelinePanel />
         </div>
         <div className="absolute bottom-4 left-0 z-20 w-[232px] animate-float-slower" style={{ animationDelay: "1.1s" }}>
           <GovernedPanel />

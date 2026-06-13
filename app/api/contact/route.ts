@@ -17,7 +17,7 @@ export async function POST(request: Request) {
     const resend = new Resend(apiKey);
 
     const body = await request.json();
-    const { name, email, organization, message } = body;
+    const { name, email, organization, inquiryType, message } = body;
 
     // Validate required fields
     if (!name || !email || !message) {
@@ -37,7 +37,7 @@ export async function POST(request: Request) {
     }
 
     // Prepare email content
-    const subject = `New Contact Form Submission from ${name}${organization ? ` (${organization})` : ""}`;
+    const subject = `${inquiryType ? `[${inquiryType}] ` : ""}New Contact Form Submission from ${name}${organization ? ` (${organization})` : ""}`;
 
     const emailBody = `
 New contact form submission:
@@ -45,6 +45,7 @@ New contact form submission:
 Name: ${name}
 Email: ${email}
 ${organization ? `Organization: ${organization}` : ""}
+${inquiryType ? `Inquiry type: ${inquiryType}` : ""}
 
 Message:
 ${message}
@@ -57,9 +58,11 @@ Reply directly to this email to respond to ${name} (${email}).
     // Send email using Resend
     // Note: Domain verification is required to send to info@translyx.co
     // Until domain is verified, Resend may only allow sending to verified account email
+    // TODO: once translyx.co.nz email routing is set up, verify that domain with Resend
+    // and switch siteConfig.company.email + the sender address below to translyx.co.nz.
     const { data, error } = await resend.emails.send({
-      from: "Translyx Website <onboarding@resend.dev>", // Change to noreply@translyx.co after domain verification
-      to: [siteConfig.company.email], // info@translyx.co
+      from: "Translyx Website <onboarding@resend.dev>", // Change to noreply@translyx.co.nz after domain verification
+      to: [siteConfig.company.email], // info@translyx.co (TODO: info@translyx.co.nz)
       replyTo: email,
       subject: subject,
       text: emailBody,
@@ -70,6 +73,7 @@ Reply directly to this email to respond to ${name} (${email}).
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
             ${organization ? `<p><strong>Organization:</strong> ${organization}</p>` : ""}
+            ${inquiryType ? `<p><strong>Inquiry type:</strong> ${inquiryType}</p>` : ""}
           </div>
           <div style="margin: 20px 0;">
             <h3 style="color: #1E40AF;">Message:</h3>

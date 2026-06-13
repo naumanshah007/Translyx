@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Translyx — Governed Clinical AI";
+export const alt = "Translyx — Diagnostic Innovation & Governed Clinical AI";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -71,10 +71,10 @@ export default async function Image() {
               marginBottom: 24,
             }}
           >
-            The governed evidence layer for clinical AI
+            Diagnostic innovation and governed clinical AI
           </div>
           <div style={{ display: "flex", gap: 12, marginTop: 8 }}>
-            {["Privexa Trace", "Privexa", "Clinical AI Governance"].map((tag) => (
+            {["Digital Pathology AI", "Partner Products", "Governed Clinical AI"].map((tag) => (
               <div
                 key={tag}
                 style={{

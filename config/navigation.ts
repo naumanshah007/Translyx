@@ -2,8 +2,11 @@ export interface NavSubItem {
   label: string;
   href: string;
   description?: string;
-  status?: "available" | "pilot" | "pipeline";
+  /** Product availability or pipeline capability stage — drives the status dot */
+  status?: "available" | "pilot" | "pipeline" | "evaluation" | "development" | "future";
   badge?: string;
+  /** Optional section header — consecutive items with the same group render under one heading */
+  group?: string;
 }
 
 export interface NavItem {
@@ -22,7 +25,7 @@ export const navigation: NavItem[] = [
   {
     label: "Products",
     href: "/products",
-    description: "Translyx product portfolio",
+    description: "Partner products represented by Translyx",
     subItems: [
       {
         label: "Aiforia Digital Pathology AI",
@@ -31,34 +34,86 @@ export const navigation: NavItem[] = [
         status: "available",
       },
       {
-        label: "Privexa AI Wrapper",
-        href: "/products/privexa-ai-wrapper",
+        label: "Algoscope",
+        href: "/products/algoscope",
+        description: "Surgery-to-pathology workflow automation & traceability",
+        status: "available",
+        badge: "Partner product",
+      },
+    ],
+  },
+  {
+    label: "Pipeline",
+    href: "/pipeline",
+    description: "Translyx pipeline — workflow capabilities & diagnostic innovation",
+    subItems: [
+      {
+        label: "AI Wrapper",
+        href: "/pipeline/ai-wrapper",
         description: "Secure LLM gateway for protected AI use",
-        status: "available",
+        status: "evaluation",
+        group: "Capabilities",
       },
       {
-        label: "Privexa Cloud Shield",
-        href: "/products/privexa-cloud-shield",
+        label: "Cloud Shield",
+        href: "/pipeline/cloud-shield",
         description: "Field-level cloud data protection",
-        status: "available",
+        status: "evaluation",
+        group: "Capabilities",
       },
       {
-        label: "Privexa Scribe",
-        href: "/products/privexa-scribe",
+        label: "Scribe",
+        href: "/pipeline/scribe",
         description: "Privacy-protected clinical documentation",
-        status: "available",
+        status: "development",
+        group: "Capabilities",
       },
       {
-        label: "Privexa Trace",
-        href: "/products/privexa-trace",
+        label: "Trace",
+        href: "/pipeline/trace",
         description: "Reviewer-gated synthetic control workflows",
-        status: "available",
+        status: "evaluation",
+        group: "Capabilities",
       },
       {
         label: "ClinicalTriage",
-        href: "/products/clinical-triage",
+        href: "/pipeline/clinical-triage",
         description: "Clinical pathway and referral grading support",
-        status: "pilot",
+        status: "development",
+        group: "Capabilities",
+      },
+      {
+        label: "Diagnostic Innovation Pipeline",
+        href: "/pipeline#diagnostic-innovation",
+        description: "AMR, sepsis, POCT, oncology, endocrine, cardiac & precision medicine",
+        group: "Diagnostic innovation",
+      },
+    ],
+  },
+  {
+    label: "News",
+    href: "/news",
+    description: "News intelligence for diagnostics, pathology & clinical AI",
+    subItems: [
+      {
+        label: "All News",
+        href: "/news",
+        description: "Latest market intelligence across all regions",
+      },
+      {
+        label: "New Zealand",
+        href: "/news?region=new-zealand",
+        description: "NZ healthcare, diagnostics & pathology news",
+      },
+      {
+        label: "Australia",
+        href: "/news?region=australia",
+        description: "Australian pathology & diagnostic technology news",
+      },
+      {
+        label: "Global",
+        href: "/news?region=global",
+        description: "Global digital pathology, clinical AI & regulation",
       },
     ],
   },
@@ -80,10 +135,10 @@ export const navigation: NavItem[] = [
         status: "available",
       },
       {
-        label: "Privexa Limited",
-        href: "/partners#privexa",
-        description: "Protected AI software partner",
-        badge: "Software partner",
+        label: "Algoscope",
+        href: "/products/algoscope",
+        description: "Surgery-to-pathology workflow automation partner",
+        badge: "Partner product",
         status: "available",
       },
       {
@@ -94,23 +149,8 @@ export const navigation: NavItem[] = [
     ],
   },
   {
-    label: "Digital Pathology",
-    href: "/digital-pathology",
-    description: "Aiforia-powered digital pathology AI for New Zealand",
-  },
-  {
-    label: "AI Solutions",
-    href: "/ai-solutions",
-    description: "Protected AI and governed evidence workflows",
-  },
-  {
-    label: "Pipeline",
-    href: "/product-pipeline",
-    description: "Diagnostic pipeline — AMR, sepsis, POCT, oncology & more",
-  },
-  {
     label: "Company",
-    href: "/about",
+    href: "/company",
     description: "About Translyx Limited",
   },
   {

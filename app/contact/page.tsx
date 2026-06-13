@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site";
 import { Hero } from "@/components/sections/Hero";
 import { ContactForm } from "@/components/sections/ContactForm";
 
-const contactDescription = `Contact ${siteConfig.companyName} about Aiforia digital pathology AI, Privexa-built protected AI, governed evidence workflows, and clinical technology partnerships in New Zealand and Oceania.`;
+const contactDescription = `Contact ${siteConfig.companyName} about Aiforia digital pathology AI, Algoscope workflow automation, the Translyx pipeline, and clinical technology partnerships in New Zealand and Oceania.`;
 
 export const metadata: Metadata = {
   title: "Contact Translyx — Request a Walkthrough",
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
 
 const discuss = [
   { icon: Microscope, label: "Aiforia digital pathology AI evaluation" },
-  { icon: Lock, label: "Privexa protected AI & data protection" },
-  { icon: GitBranch, label: "Reviewer-gated evidence workflows" },
-  { icon: ShieldCheck, label: "Diagnostic product evaluation" },
+  { icon: GitBranch, label: "Algoscope surgery-to-pathology workflow automation" },
+  { icon: Lock, label: "Translyx pipeline capabilities & governed AI" },
+  { icon: ShieldCheck, label: "Diagnostic product evaluation & partnerships" },
 ];
 
 export default function ContactPage() {
@@ -63,7 +63,7 @@ export default function ContactPage() {
         badge={{ text: "Contact · Auckland, New Zealand", icon: <MapPin className="h-3.5 w-3.5 text-cyan-300" /> }}
         headline="Talk to Translyx about your clinical technology"
         highlight="priorities."
-        description="Whether the focus is digital pathology AI, AI data protection, or reviewer-gated evidence workflows — the Translyx team can help identify the right fit for your organisation. Request a walkthrough below."
+        description="Whether the focus is digital pathology AI, workflow automation, or governed clinical AI capabilities — the Translyx team can help identify the right fit for your organisation. Request a walkthrough below."
       />
 
       <section className="bg-white py-18 sm:py-24">

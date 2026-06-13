@@ -14,6 +14,7 @@ import {
   Truck,
   Building2,
   Handshake,
+  Workflow,
   type LucideIcon,
 } from "lucide-react";
 
@@ -34,6 +35,7 @@ export const productIconMap: Record<string, LucideIcon> = {
   Truck,
   Building2,
   Handshake,
+  Workflow,
 };
 
 export function getProductIcon(name: string): LucideIcon {

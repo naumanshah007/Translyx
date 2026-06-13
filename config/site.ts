@@ -11,30 +11,34 @@ export const siteConfig = {
   companyName: "Translyx Limited",
   companyTagline: "Clinical technology, digital pathology AI, and governed AI for New Zealand healthcare",
   companyDescription:
-    "Translyx Limited is an Auckland-based clinical technology company connecting advanced diagnostics, authorised digital pathology AI (Aiforia), and Privexa-built governed AI software for healthcare, laboratories, research teams, and clinical organisations.",
+    "Translyx Limited is an Auckland-based clinical technology company connecting advanced diagnostics, partner digital pathology AI solutions, and governed clinical AI workflow capabilities for healthcare, laboratories, research teams, and clinical organisations.",
   tagline: "Clinical technology, digital pathology AI, and governed AI for New Zealand healthcare",
   description:
-    "Translyx Limited brings advanced diagnostics, authorised Aiforia digital pathology AI, and Privexa-built protected AI products to New Zealand and Oceania — including AI Wrapper, Cloud Shield, Scribe, Trace, and a broader diagnostic pipeline.",
+    "Translyx Limited brings advanced diagnostics, partner digital pathology AI (Aiforia), surgery-to-pathology workflow automation (Algoscope), and governed clinical AI workflow capabilities to New Zealand and Oceania.",
   
   // Domain & URLs
-  domain: "translyx.co",
-  url: "https://translyx.co",
-  
+  // translyx.co.nz is the canonical public domain. translyx.co is kept as a
+  // secondary domain that 301-redirects here (see next.config.js).
+  domain: "translyx.co.nz",
+  url: "https://translyx.co.nz",
+
   // Company Details
   company: {
     name: "Translyx Limited",
     location: "Auckland, New Zealand",
+    // TODO: switch to info@translyx.co.nz once email routing is set up on the new domain.
     email: "info@translyx.co",
     phone: "+64 (0) X XXX XXXX",
     address: "Auckland, New Zealand",
   },
-  
+
   // Team Contact Information
   team: {
     ehsan: {
       name: "Dr Ehsan Ullah",
       role: "Clinical & Technology Liaison",
       phone: "+64220141390",
+      // TODO: switch to ehsan.ullah@translyx.co.nz once email routing is set up on the new domain.
       email: "ehsan.ullah@translyx.co",
     },
   },
@@ -43,23 +47,24 @@ export const siteConfig = {
   seo: {
     defaultTitle: "Translyx | Digital Pathology AI, Governed AI & Clinical Technology — New Zealand",
     defaultDescription:
-      "Translyx Limited connects authorised Aiforia digital pathology AI, Privexa-built governed AI products, and advanced diagnostics for New Zealand healthcare, laboratories, and research teams.",
+      "Translyx Limited connects partner digital pathology AI (Aiforia), surgery-to-pathology workflow automation (Algoscope), and governed clinical AI workflow capabilities for New Zealand healthcare, laboratories, and research teams.",
     keywords: [
       "Translyx",
       "Translyx Limited",
       "Aiforia New Zealand",
       "Aiforia partner New Zealand",
+      "Algoscope New Zealand",
+      "surgery-to-pathology workflow automation",
       "digital pathology AI",
-      "Privexa Trace",
-      "Privexa",
+      "pathology traceability",
       "clinical technology New Zealand",
       "governed clinical AI",
       "privacy-preserving AI healthcare",
       "reviewer-gated synthetic control arm",
-      "AI data protection healthcare",
       "diagnostic technology New Zealand",
       "clinical AI governance",
-      "secure AI wrapper healthcare",
+      "diagnostics news New Zealand",
+      "digital pathology news",
     ],
     author: "Translyx Limited",
     ogImage: "/og-image.png",

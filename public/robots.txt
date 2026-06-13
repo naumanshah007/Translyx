@@ -4,5 +4,5 @@ Allow: /
 # Block API routes from indexing
 Disallow: /api/
 
-Host: https://translyx.co
-Sitemap: https://translyx.co/sitemap.xml
+Host: https://translyx.co.nz
+Sitemap: https://translyx.co.nz/sitemap.xml

@@ -1,33 +1,35 @@
 import Link from "next/link";
-import { Linkedin, MapPin, Mail, ShieldCheck, ArrowUpRight } from "lucide-react";
+import { Linkedin, MapPin, Mail, Globe, ShieldCheck } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { BrandLogo } from "@/components/ui/Brand";
-import { PRIVEXA_APP_URL } from "@/config/products";
+import { products } from "@/config/products";
+import { pipelineCapabilities } from "@/config/pipelineCapabilities";
 
-const productLinks = [
-  { label: "Aiforia Digital Pathology AI", href: "/products/aiforia" },
-  { label: "Privexa AI Wrapper", href: "/products/privexa-ai-wrapper" },
-  { label: "Privexa Cloud Shield", href: "/products/privexa-cloud-shield" },
-  { label: "Privexa Scribe", href: "/products/privexa-scribe" },
-  { label: "Privexa Trace", href: "/products/privexa-trace" },
-  { label: "ClinicalTriage", href: "/products/clinical-triage" },
-  { label: "Diagnostic Pipeline", href: "/product-pipeline" },
+const productLinks = products.map((p) => ({ label: p.title, href: p.href }));
+
+const pipelineLinks = [
+  ...pipelineCapabilities.map((c) => ({ label: c.title, href: c.href })),
+  { label: "Diagnostic Innovation Pipeline", href: "/pipeline#diagnostic-innovation" },
 ];
 
-const solutionLinks = [
+const newsLinks = [
+  { label: "All News", href: "/news" },
+  { label: "New Zealand", href: "/news?region=new-zealand" },
+  { label: "Australia", href: "/news?region=australia" },
+  { label: "Global", href: "/news?region=global" },
+];
+
+const companyLinks = [
+  { label: "About", href: "/company" },
   { label: "Partners", href: "/partners" },
-  { label: "Digital Pathology", href: "/digital-pathology" },
-  { label: "AI Solutions", href: "/ai-solutions" },
-  { label: "Clinical Pipeline", href: "/product-pipeline" },
-  { label: "Evidence Workflows", href: "/products/privexa-trace" },
-  { label: "Privacy & Governance", href: "/ai-solutions#privexa" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const trustItems = [
   "Responsible AI",
   "Visible limitations",
   "No implied regulatory endorsement",
-  "Authorised Aiforia business partner — NZ",
+  "Human oversight",
 ];
 
 export function Footer() {
@@ -39,7 +41,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1280px] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
         <div className="grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-3 lg:grid-cols-12">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-3 lg:col-span-4">
+          <div className="col-span-2 md:col-span-3 lg:col-span-3">
             <BrandLogo tone="dark" />
             <p className="mt-5 max-w-[260px] text-sm leading-relaxed text-slate-400">
               The trusted New Zealand bridge between global diagnostic innovation, governed clinical AI, and local
@@ -57,7 +59,7 @@ export function Footer() {
           </div>
 
           {/* Products */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-2">
             <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">Products</h3>
             <ul className="space-y-2.5 text-sm">
               {productLinks.map((l) => (
@@ -70,11 +72,35 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Solutions */}
+          {/* Pipeline */}
           <div className="lg:col-span-2">
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">Solutions</h3>
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">Pipeline</h3>
             <ul className="space-y-2.5 text-sm">
-              {solutionLinks.map((l) => (
+              {pipelineLinks.map((l) => (
+                <li key={l.label}>
+                  <Link href={l.href} className="text-slate-400 transition-colors hover:text-cyan-300">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* News + Company */}
+          <div className="lg:col-span-2">
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">News</h3>
+            <ul className="space-y-2.5 text-sm">
+              {newsLinks.map((l) => (
+                <li key={l.label}>
+                  <Link href={l.href} className="text-slate-400 transition-colors hover:text-cyan-300">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h3 className="mb-4 mt-8 text-xs font-semibold uppercase tracking-[0.18em] text-white">Company</h3>
+            <ul className="space-y-2.5 text-sm">
+              {companyLinks.map((l) => (
                 <li key={l.label}>
                   <Link href={l.href} className="text-slate-400 transition-colors hover:text-cyan-300">
                     {l.label}
@@ -103,21 +129,14 @@ export function Footer() {
                 <span>Auckland, New Zealand — expanding into Australia &amp; Pacific markets</span>
               </li>
               <li className="flex items-start gap-2 text-slate-400">
+                <Globe className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-500" />
+                <span>{siteConfig.domain}</span>
+              </li>
+              <li className="flex items-start gap-2 text-slate-400">
                 <Mail className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-500" />
                 <Link href={`mailto:${siteConfig.company.email}`} className="break-all transition-colors hover:text-cyan-300">
                   {siteConfig.company.email}
                 </Link>
-              </li>
-              <li>
-                <a
-                  href={PRIVEXA_APP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-slate-400 transition-colors hover:text-cyan-300"
-                >
-                  Visit Privexa
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </a>
               </li>
             </ul>
           </div>
@@ -128,9 +147,10 @@ export function Footer() {
             © {currentYear} {siteConfig.companyName}. All rights reserved. Registered in New Zealand.
           </p>
           <div className="flex items-center gap-6 text-xs text-slate-500">
-            <Link href="/about" className="transition-colors hover:text-slate-300">About</Link>
+            <Link href="/company" className="transition-colors hover:text-slate-300">About</Link>
             <Link href="/partners" className="transition-colors hover:text-slate-300">Partners</Link>
             <Link href="/products" className="transition-colors hover:text-slate-300">Products</Link>
+            <Link href="/pipeline" className="transition-colors hover:text-slate-300">Pipeline</Link>
             <Link href="/contact" className="transition-colors hover:text-slate-300">Contact</Link>
           </div>
         </div>

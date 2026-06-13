@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Product, ProductAccent } from "@/config/products";
 import { statusLabels, accentBySlug } from "@/config/products";
@@ -17,8 +17,7 @@ export function ProductCard({ product, className }: { product: Product; classNam
   const a = accentMap[accentBySlug[product.slug] ?? "cyan"];
   const Icon = getProductIcon(product.icon);
   const status = statusLabels[product.status];
-  const isPartner = product.type === "partner";
-  const ctaLabel = isPartner ? "Explore Aiforia" : `Explore ${product.shortTitle ?? product.title}`;
+  const ctaLabel = `Explore ${product.shortTitle ?? product.title}`;
 
   const style = { "--accent": a.color, "--glow": a.glow } as React.CSSProperties;
 
@@ -52,27 +51,17 @@ export function ProductCard({ product, className }: { product: Product; classNam
         </span>
       </div>
 
-      <p
-        className={cn(
-          "relative mt-5 text-[10.5px] font-semibold uppercase tracking-[0.16em]",
-          isPartner ? "text-cyan-700/80" : "text-violet-700/80"
-        )}
-      >
+      <p className="relative mt-5 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-cyan-700/80">
         {product.badge}
       </p>
       <h3 className="relative mt-1.5 font-display text-xl font-semibold text-[#0F1C3F]">{product.title}</h3>
       <p className="relative mt-2.5 flex-1 text-sm leading-relaxed text-slate-600">{product.description}</p>
 
-      <span className="mt-6 flex items-center justify-between">
+      <span className="mt-6 flex items-center">
         <span className={cn("inline-flex items-center gap-1.5 text-sm font-semibold transition-colors", a.text)}>
           {ctaLabel}
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </span>
-        {product.externalHref && (
-          <span className="inline-flex items-center gap-1 text-xs font-medium text-slate-400">
-            Platform <ArrowUpRight className="h-3 w-3" />
-          </span>
-        )}
       </span>
     </Link>
   );
