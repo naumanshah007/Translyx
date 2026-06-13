@@ -18,13 +18,13 @@ import { SectionDivider } from "@/components/ui/DecorativeElements";
 import { siteConfig } from "@/config/site";
 
 const pageDescription =
-  "ClinicalTriage is a Translyx pipeline capability in development — structured referral review, pathway grading, role-based workflows, and auditability for authorised clinical users. Not a publicly launched product.";
+  "Clinical Triage is a Translyx pipeline capability in development — structured referral review, pathway grading, role-based workflows, and auditability for authorised clinical users. Not a publicly launched product.";
 
 export const metadata: Metadata = {
-  title: "ClinicalTriage — Pipeline Capability | Translyx",
+  title: "Clinical Triage — Pipeline Capability",
   description: pageDescription,
   keywords: [
-    "ClinicalTriage",
+    "Clinical Triage",
     "clinical pathway support",
     "referral grading",
     "clinical workflow",
@@ -34,11 +34,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/pipeline/clinical-triage" },
   openGraph: {
-    title: "ClinicalTriage — Pipeline Capability | Translyx",
+    title: "Clinical Triage — Pipeline Capability | Translyx",
     description: pageDescription,
     url: `${siteConfig.url}/pipeline/clinical-triage`,
     siteName: siteConfig.name,
-    images: [{ url: siteConfig.seo.ogImage, width: 1200, height: 630, alt: "ClinicalTriage — Translyx pipeline capability" }],
+    images: [{ url: siteConfig.seo.ogImage, width: 1200, height: 630, alt: "Clinical Triage — Translyx pipeline capability" }],
   },
 };
 
@@ -60,7 +60,7 @@ const capabilities = [
   },
   {
     title: "Human review at every stage",
-    body: "ClinicalTriage supports workflow decisions made by authorised clinical users. It does not make autonomous clinical decisions or provide diagnostic recommendations.",
+    body: "Clinical Triage supports workflow decisions made by authorised clinical users. It does not make autonomous clinical decisions or provide diagnostic recommendations.",
     icon: ShieldCheck,
   },
 ];
@@ -96,7 +96,7 @@ export default function ClinicalTriagePage() {
       <Hero
         badge={{ text: "Translyx pipeline capability · In development", icon: <Stethoscope className="w-3.5 h-3.5" /> }}
         headline="Clinical pathway and referral grading support for authorised healthcare teams"
-        description="ClinicalTriage is a Translyx pipeline capability in development. The concept: structured referral review, pathway grading, role-based workflows, and auditability for authorised clinical users — human-reviewed workflow decisions, never autonomous diagnosis. It is not a publicly launched product."
+        description="Clinical Triage is a Translyx pipeline capability in development. The concept: structured referral review, pathway grading, role-based workflows, and auditability for authorised clinical users — human-reviewed workflow decisions, never autonomous diagnosis. It is not a publicly launched product."
         primaryCTA={{ label: "Discuss this capability", href: "/contact" }}
         secondaryCTA={{ label: "View pipeline", href: "/pipeline" }}
         className="py-16 sm:py-20 md:py-28 lg:py-36"
@@ -168,13 +168,13 @@ export default function ClinicalTriagePage() {
                   <div>
                     <h3 className="text-lg font-bold text-[#0F1C3F] mb-2">Clinical safety and governance note</h3>
                     <p className="text-sm text-slate-700 leading-relaxed mb-3">
-                      ClinicalTriage supports human-reviewed workflow decisions. It does not provide autonomous diagnosis, automated treatment recommendations, or clinical decision-making without human oversight.
+                      Clinical Triage supports human-reviewed workflow decisions. It does not provide autonomous diagnosis, automated treatment recommendations, or clinical decision-making without human oversight.
                     </p>
                     <p className="text-sm text-slate-700 leading-relaxed mb-3">
-                      ClinicalTriage is designed for authorised clinical users operating within their scope of practice and institutional governance frameworks.
+                      Clinical Triage is designed for authorised clinical users operating within their scope of practice and institutional governance frameworks.
                     </p>
                     <p className="text-sm text-slate-500 font-medium">
-                      ClinicalTriage does not imply endorsement by any healthcare organisation, district health board, or government body unless confirmed in writing by the relevant institution.
+                      Clinical Triage does not imply endorsement by any healthcare organisation, district health board, or government body unless confirmed in writing by the relevant institution.
                     </p>
                   </div>
                 </div>
@@ -190,7 +190,7 @@ export default function ClinicalTriagePage() {
           <div className="max-w-content mx-auto">
             <div className="max-w-2xl mb-10">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">Honest scoping</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">What ClinicalTriage covers — and what it does not</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">What Clinical Triage covers — and what it does not</h2>
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
               <Card className="p-5 sm:p-6" hover={false}>
@@ -236,7 +236,7 @@ export default function ClinicalTriagePage() {
               <CardContent className="pt-0">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0891B2] mb-1">Pipeline status</p>
                 <p className="text-sm text-slate-600">
-                  ClinicalTriage is part of the Translyx pipeline and is in development. It is not a publicly launched
+                  Clinical Triage is part of the Translyx pipeline and is in development. It is not a publicly launched
                   product and is not currently available to customers. Talk to Translyx to discuss the capability,
                   evaluation pathways, and how it could fit your organisation&apos;s referral management workflows.
                 </p>
@@ -247,8 +247,8 @@ export default function ClinicalTriagePage() {
       </section>
 
       <CTA
-        title="Discuss the ClinicalTriage capability for your clinical team"
-        description="Request a walkthrough to see how the ClinicalTriage capability supports structured referral review, pathway grading, and audited clinical workflows."
+        title="Discuss the Clinical Triage capability for your clinical team"
+        description="Request a walkthrough to see how the Clinical Triage capability supports structured referral review, pathway grading, and audited clinical workflows."
         primaryCTA={{ label: "Request walkthrough", href: "/contact" }}
         secondaryCTA={{ label: "View pipeline", href: "/pipeline" }}
       />

@@ -2,6 +2,16 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { siteConfig } from "@/config/site";
 
+/** Escape user-supplied text before interpolating into the notification HTML. */
+function escapeHtml(value: unknown): string {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 export async function POST(request: Request) {
   try {
     // Check for API key
@@ -17,7 +27,13 @@ export async function POST(request: Request) {
     const resend = new Resend(apiKey);
 
     const body = await request.json();
-    const { name, email, organization, inquiryType, message } = body;
+    const { name, email, organization, inquiryType, message, company_website } = body;
+
+    // Honeypot: a hidden field real users never see/fill. If a bot fills it,
+    // pretend success and drop the submission silently.
+    if (typeof company_website === "string" && company_website.trim() !== "") {
+      return NextResponse.json({ success: true, message: "Email sent successfully" }, { status: 200 });
+    }
 
     // Validate required fields
     if (!name || !email || !message) {
@@ -70,19 +86,19 @@ Reply directly to this email to respond to ${name} (${email}).
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #1E40AF;">New Contact Form Submission</h2>
           <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-            ${organization ? `<p><strong>Organization:</strong> ${organization}</p>` : ""}
-            ${inquiryType ? `<p><strong>Inquiry type:</strong> ${inquiryType}</p>` : ""}
+            <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+            <p><strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
+            ${organization ? `<p><strong>Organization:</strong> ${escapeHtml(organization)}</p>` : ""}
+            ${inquiryType ? `<p><strong>Inquiry type:</strong> ${escapeHtml(inquiryType)}</p>` : ""}
           </div>
           <div style="margin: 20px 0;">
             <h3 style="color: #1E40AF;">Message:</h3>
-            <p style="white-space: pre-wrap; background-color: #f9f9f9; padding: 15px; border-radius: 4px;">${message}</p>
+            <p style="white-space: pre-wrap; background-color: #f9f9f9; padding: 15px; border-radius: 4px;">${escapeHtml(message)}</p>
           </div>
           <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 30px 0;">
           <p style="color: #666; font-size: 12px;">
             This email was sent from the Translyx Limited website contact form.<br>
-            Reply directly to this email to respond to ${name} (${email}).
+            Reply directly to this email to respond to ${escapeHtml(name)} (${escapeHtml(email)}).
           </p>
         </div>
       `,

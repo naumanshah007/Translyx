@@ -22,6 +22,7 @@ export function ContactForm() {
     organization: "",
     inquiryType: "",
     message: "",
+    company_website: "", // honeypot — must stay empty for real users
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
@@ -57,7 +58,7 @@ export function ContactForm() {
       }
 
       setSubmitStatus("success");
-      setFormData({ name: "", email: "", organization: "", inquiryType: "", message: "" });
+      setFormData({ name: "", email: "", organization: "", inquiryType: "", message: "", company_website: "" });
     } catch (error) {
       console.error("Form submission error:", error);
       setSubmitStatus("error");
@@ -76,6 +77,19 @@ export function ContactForm() {
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Honeypot — hidden from users, catches bots. Not announced to AT. */}
+          <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden" style={{ position: "absolute" }}>
+            <label htmlFor="company_website">Leave this field empty</label>
+            <input
+              type="text"
+              id="company_website"
+              name="company_website"
+              tabIndex={-1}
+              autoComplete="off"
+              value={formData.company_website}
+              onChange={(e) => setFormData({ ...formData, company_website: e.target.value })}
+            />
+          </div>
           <div>
             <label htmlFor="name" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
               Name

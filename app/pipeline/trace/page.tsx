@@ -27,7 +27,7 @@ const pageDescription =
   "Trace is a Translyx pipeline capability under evaluation — reviewer-gated synthetic control arm workflows with manual benchmark comparison, lineage, visible limitations, and submission-oriented packaging. Not a publicly launched product.";
 
 export const metadata: Metadata = {
-  title: "Trace — Pipeline Capability | Translyx",
+  title: "Trace — Pipeline Capability",
   description: pageDescription,
   keywords: [
     "reviewer-gated synthetic control arm",
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
     description: pageDescription,
     url: `${siteConfig.url}/pipeline/trace`,
     siteName: siteConfig.name,
-    images: [{ url: siteConfig.seo.ogImage, width: 1200, height: 630, alt: "Trace — Translyx pipeline capability" }],
+    // No explicit image: use the bespoke card from
+    // app/pipeline/trace/opengraph-image.tsx via the file convention.
   },
   twitter: {
     card: "summary_large_image",
     title: "Trace — Pipeline Capability | Translyx",
     description: pageDescription,
-    images: [siteConfig.seo.ogImage],
   },
 };
 

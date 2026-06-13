@@ -202,10 +202,10 @@ export default async function HomePage() {
                   evidence-grounded, and aligned with local clinical requirements.
                 </p>
                 <p>
-                  Translyx connects global diagnostic innovation with local clinical adoption. We represent partner
-                  products such as Aiforia digital pathology AI and Algoscope workflow automation, develop governed
-                  clinical AI workflow capabilities in our pipeline, and introduce diagnostic technologies — with the
-                  clinical rigour and governance that successful adoption requires.
+                  Translyx connects global diagnostic innovation with local clinical adoption. We bring partner
+                  products such as Aiforia digital pathology AI and Algoscope workflow automation to New Zealand,
+                  develop governed clinical AI workflow capabilities in our pipeline, and introduce diagnostic
+                  technologies — with the clinical rigour and governance that successful adoption requires.
                 </p>
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">

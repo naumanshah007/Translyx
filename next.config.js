@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Don't advertise the framework.
+  poweredByHeader: false,
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -15,6 +17,20 @@ const nextConfig = {
       { protocol: "https", hostname: "cdn.open-pr.com", pathname: "/**" },
       { protocol: "https", hostname: "www.genomicseducation.hee.nhs.uk", pathname: "/**" },
     ],
+  },
+  // Baseline security headers (defence-in-depth). NB: a Content-Security-Policy
+  // is intentionally omitted here — it needs nonce wiring + testing against the
+  // inline JSON-LD, Next.js runtime, fonts, and remote news images, and a broken
+  // CSP is worse than none. Treat CSP as a separate, tested follow-up.
+  async headers() {
+    const securityHeaders = [
+      { key: "X-Content-Type-Options", value: "nosniff" },
+      { key: "X-Frame-Options", value: "SAMEORIGIN" },
+      { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+      { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), browsing-topics=()" },
+      { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+    ];
+    return [{ source: "/:path*", headers: securityHeaders }];
   },
   async redirects() {
     return [

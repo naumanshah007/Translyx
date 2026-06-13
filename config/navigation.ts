@@ -18,11 +18,6 @@ export interface NavItem {
 
 export const navigation: NavItem[] = [
   {
-    label: "Home",
-    href: "/",
-    description: "Translyx — clinical technology & governed AI",
-  },
-  {
     label: "Products",
     href: "/products",
     description: "Partner diagnostic & pathology products",
@@ -76,7 +71,7 @@ export const navigation: NavItem[] = [
         group: "Capabilities",
       },
       {
-        label: "ClinicalTriage",
+        label: "Clinical Triage",
         href: "/pipeline/clinical-triage",
         description: "Clinical pathway and referral grading support",
         status: "development",
@@ -115,38 +110,17 @@ export const navigation: NavItem[] = [
         href: "/news?region=global",
         description: "Global digital pathology, clinical AI & regulation",
       },
+      {
+        label: "Upcoming events",
+        href: "/news#events",
+        description: "Conferences, forums & summits on the Translyx radar",
+      },
     ],
   },
   {
     label: "Partners",
     href: "/partners",
-    description: "Translyx partner network",
-    subItems: [
-      {
-        label: "All partners",
-        href: "/partners",
-        description: "The Translyx partner network",
-      },
-      {
-        label: "Aiforia Technologies",
-        href: "/products/aiforia",
-        description: "Authorised digital pathology AI partner",
-        badge: "Authorised partner",
-        status: "available",
-      },
-      {
-        label: "Algoscope",
-        href: "/products/algoscope",
-        description: "Surgery-to-pathology workflow automation partner",
-        badge: "Partner product",
-        status: "available",
-      },
-      {
-        label: "Become a partner",
-        href: "/partners#become-a-partner",
-        description: "Bring your innovation to NZ & Oceania",
-      },
-    ],
+    description: "The Translyx partner network — and how to join it",
   },
   {
     label: "Company",

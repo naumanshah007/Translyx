@@ -21,7 +21,7 @@ const pageDescription =
   "Scribe is a Translyx pipeline capability in development — structured clinical documentation workflows such as notes, summaries, letters, and reports with sensitive data protection and human review central. Not a publicly launched product.";
 
 export const metadata: Metadata = {
-  title: "Scribe — Pipeline Capability | Translyx",
+  title: "Scribe — Pipeline Capability",
   description: pageDescription,
   keywords: [
     "clinical documentation AI",

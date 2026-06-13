@@ -29,7 +29,7 @@ const branches: Branch[] = [
   {
     label: "Pipeline Capabilities",
     title: "Governed Clinical AI Workflows",
-    body: "AI Wrapper, Cloud Shield, Scribe, Trace, and ClinicalTriage — workflow capabilities under evaluation and development, not publicly launched products.",
+    body: "AI Wrapper, Cloud Shield, Scribe, Trace, and Clinical Triage — workflow capabilities under evaluation and development, not publicly launched products.",
     href: "/pipeline",
     cta: "View capabilities",
     icon: ShieldCheck,

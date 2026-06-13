@@ -21,7 +21,7 @@ const pageDescription =
   "AI Wrapper is a Translyx pipeline capability under evaluation — a secure LLM gateway concept that helps organisations use AI systems without sending sensitive data in its original form. Not a publicly launched product.";
 
 export const metadata: Metadata = {
-  title: "AI Wrapper — Pipeline Capability | Translyx",
+  title: "AI Wrapper — Pipeline Capability",
   description: pageDescription,
   keywords: [
     "secure AI gateway",

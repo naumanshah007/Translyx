@@ -32,7 +32,7 @@ const pageDescription =
   "Algoscope is a partner product Translyx is bringing to New Zealand — AI-powered workflow automation, computer vision, 3D modelling, and traceability across surgery-to-pathology pathways for operating rooms and pathology laboratories. Translyx and Algoscope are finalising a New Zealand representation partnership.";
 
 export const metadata: Metadata = {
-  title: "Algoscope — Surgery-to-Pathology Workflow Automation | Translyx",
+  title: "Algoscope — Surgery-to-Pathology Workflow Automation",
   description: pageDescription,
   keywords: [
     "Algoscope",

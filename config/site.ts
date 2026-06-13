@@ -31,7 +31,6 @@ export const siteConfig = {
     location: "Auckland, New Zealand",
     // TODO: switch to info@translyx.co.nz once email routing is set up on the new domain.
     email: "info@translyx.co",
-    phone: "+64 (0) X XXX XXXX",
     address: "Auckland, New Zealand",
   },
 
@@ -70,66 +69,8 @@ export const siteConfig = {
       "digital pathology news",
     ],
     author: "Translyx Limited",
-    ogImage: "/og-image.png",
-  },
-  
-  // Logo Configuration
-  logo: {
-    src: "/logo.jpeg",
-    alt: "Translyx Limited Logo",
-    width: 48,
-    height: 48,
-  },
-
-  // Services (replacing products)
-  services: [
-    {
-      name: "Regulatory & Compliance Alignment",
-      description: "Ensure technology adoption meets New Zealand healthcare regulatory requirements and compliance standards.",
-      icon: "Shield",
-    },
-    {
-      name: "Technology Integration Support",
-      description: "Facilitate seamless integration of diagnostic and clinical technologies into existing healthcare workflows.",
-      icon: "Zap",
-    },
-    {
-      name: "Documentation & Evidence Support",
-      description: "Comprehensive documentation and evidence gathering to support technology adoption and regulatory submissions.",
-      icon: "FileText",
-    },
-    {
-      name: "Training & Enablement",
-      description: "Training programs and operational enablement to ensure successful technology implementation and adoption.",
-      icon: "Users",
-    },
-    {
-      name: "Operational & Logistics Support",
-      description: "End-to-end operational support for technology deployment, including logistics and workflow facilitation.",
-      icon: "Settings",
-    },
-    {
-      name: "Partnership & Stakeholder Coordination",
-      description: "Coordinate partnerships between manufacturers, laboratories, clinicians, and research organizations.",
-      icon: "Handshake",
-    },
-  ],
-
-  // Team Expertise
-  expertise: {
-    talent: "Healthcare Technology Enablement Specialists",
-    domains: [
-      "Diagnostic Technology",
-      "Clinical Systems",
-      "Regulatory Compliance",
-      "Laboratory Workflows",
-      "Healthcare Integration",
-      "Technology Training",
-    ],
-    specialties: [
-      "Regulatory Alignment",
-      "Technology Integration",
-      "Clinical Enablement",
-    ],
+    // Use the dynamically-generated branded card from app/opengraph-image.tsx
+    // (served at /opengraph-image). Avoids a missing static /og-image.png.
+    ogImage: "/opengraph-image",
   },
 };

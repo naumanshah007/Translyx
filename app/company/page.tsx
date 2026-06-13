@@ -78,7 +78,7 @@ const platformModel = [
     icon: Lock,
     name: "Translyx Pipeline",
     role: "Capabilities under evaluation",
-    body: "Governed clinical AI workflow capabilities — AI Wrapper, Cloud Shield, Scribe, Trace, and ClinicalTriage — under evaluation and development, not publicly launched.",
+    body: "Governed clinical AI workflow capabilities — AI Wrapper, Cloud Shield, Scribe, Trace, and Clinical Triage — under evaluation and development, not publicly launched.",
   },
 ];
 

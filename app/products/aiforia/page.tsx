@@ -24,7 +24,7 @@ const pageDescription =
   "Translyx is an authorised non-exclusive business partner of Aiforia Technologies Plc in New Zealand, representing Aiforia Clinical Suites and Aiforia Create Platform for AI-assisted digital pathology workflows.";
 
 export const metadata: Metadata = {
-  title: "Aiforia Digital Pathology AI — Authorised Partner Solution | Translyx",
+  title: "Aiforia Digital Pathology AI — Authorised Partner Solution",
   description: pageDescription,
   keywords: [
     "Aiforia New Zealand",

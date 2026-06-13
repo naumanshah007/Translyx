@@ -17,6 +17,7 @@ const newsLinks = [
   { label: "New Zealand", href: "/news?region=new-zealand" },
   { label: "Australia", href: "/news?region=australia" },
   { label: "Global", href: "/news?region=global" },
+  { label: "Upcoming events", href: "/news#events" },
 ];
 
 const companyLinks = [

@@ -113,7 +113,7 @@ export const pipelineCapabilities: PipelineCapability[] = [
   },
   {
     slug: "clinical-triage",
-    title: "ClinicalTriage",
+    title: "Clinical Triage",
     stage: "development",
     tagline: "Clinical pathway and referral grading support for authorised healthcare teams",
     description:

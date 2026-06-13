@@ -21,7 +21,7 @@ const pageDescription =
   "Cloud Shield is a Translyx pipeline capability under evaluation — field-level protection for sensitive data before it is used in cloud platforms, analytics workflows, or AI-enabled systems. Not a publicly launched product.";
 
 export const metadata: Metadata = {
-  title: "Cloud Shield — Pipeline Capability | Translyx",
+  title: "Cloud Shield — Pipeline Capability",
   description: pageDescription,
   keywords: [
     "cloud data protection",

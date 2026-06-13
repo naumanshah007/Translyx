@@ -82,7 +82,7 @@ export function UpcomingEvents({ events }: { events: UpcomingEvent[] }) {
   if (events.length === 0) return null;
 
   return (
-    <section aria-label="Upcoming events" className="relative overflow-hidden bg-[#0A1429] py-16 sm:py-20">
+    <section id="events" aria-label="Upcoming events" className="relative overflow-hidden bg-[#0A1429] py-16 sm:py-20 scroll-mt-24">
       <div className="pointer-events-none absolute inset-0 aurora opacity-30" />
       <div className="pointer-events-none absolute inset-0 pattern-grid text-white/[0.03]" />
 
