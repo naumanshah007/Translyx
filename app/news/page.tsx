@@ -4,6 +4,7 @@ import { Newspaper, Info } from "lucide-react";
 import { Hero } from "@/components/sections/Hero";
 import { CTA } from "@/components/sections/CTA";
 import { NewsList } from "@/components/news/NewsList";
+import { NewsTicker } from "@/components/news/NewsTicker";
 import { getNewsItems } from "@/lib/news";
 import { siteConfig } from "@/config/site";
 
@@ -44,6 +45,9 @@ export default async function NewsPage() {
         highlight="clinical AI."
         description="Curated market intelligence across New Zealand, Australia, and global healthcare — tracking digital pathology, diagnostics, clinical AI governance, and the areas that matter to Translyx, its partners, and its pipeline."
       />
+
+      {/* Breaking-news style headline ticker */}
+      <NewsTicker items={items} />
 
       <section className="bg-white py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

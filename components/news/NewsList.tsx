@@ -6,10 +6,28 @@ import { Newspaper } from "lucide-react";
 import type { NewsItem, NewsRegion } from "@/config/news";
 import { newsRegions, newsTopics } from "@/config/news";
 import { NewsCard } from "@/components/news/NewsCard";
+import { NewsSpotlight } from "@/components/news/NewsSpotlight";
 import { cn } from "@/lib/utils";
+
+const SPOTLIGHT_COUNT = 5;
 
 function isRegion(v: string | null): v is NewsRegion {
   return v === "new-zealand" || v === "australia" || v === "global";
+}
+
+/** Group an already newest-first list into month buckets, preserving order. */
+function groupByMonth(items: NewsItem[]): { label: string; items: NewsItem[] }[] {
+  const groups: { label: string; items: NewsItem[] }[] = [];
+  for (const item of items) {
+    const d = new Date(item.publishedAt);
+    const label = Number.isNaN(d.getTime())
+      ? "Earlier"
+      : d.toLocaleDateString("en-NZ", { month: "long", year: "numeric" });
+    const last = groups[groups.length - 1];
+    if (last && last.label === label) last.items.push(item);
+    else groups.push({ label, items: [item] });
+  }
+  return groups;
 }
 
 export function NewsList({ items }: { items: NewsItem[] }) {
@@ -59,6 +77,11 @@ export function NewsList({ items }: { items: NewsItem[] }) {
       return true;
     });
   }, [items, region, topic]);
+
+  // Items arrive newest-first from getNewsItems(); the spotlight plays the
+  // top stories and the timeline carries the rest in chronological order.
+  const spotlightItems = useMemo(() => filtered.slice(0, SPOTLIGHT_COUNT), [filtered]);
+  const timelineGroups = useMemo(() => groupByMonth(filtered.slice(SPOTLIGHT_COUNT)), [filtered]);
 
   const regionTabs: { value: NewsRegion | "all"; label: string }[] = [
     { value: "all", label: "All" },
@@ -117,11 +140,31 @@ export function NewsList({ items }: { items: NewsItem[] }) {
 
       {/* Results */}
       {filtered.length > 0 ? (
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((item) => (
-            <NewsCard key={item.id} item={item} />
-          ))}
-        </div>
+        <>
+          {/* Top stories — auto-playing spotlight */}
+          <div className="mt-10">
+            <NewsSpotlight items={spotlightItems} />
+          </div>
+
+          {/* Timeline — the rest of the feed, newest to oldest */}
+          {timelineGroups.length > 0 && (
+            <div className="relative mt-14 border-l-2 border-slate-200 pl-6 sm:mt-16 sm:pl-10">
+              {timelineGroups.map((group) => (
+                <div key={group.label} className="relative pb-12 last:pb-0">
+                  <span className="absolute -left-[31px] top-0.5 flex h-4 w-4 items-center justify-center rounded-full border-2 border-white bg-[#0891B2] shadow-[0_0_0_3px_rgba(8,145,178,0.15)] sm:-left-[47px]" />
+                  <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-[#0F1C3F]">
+                    {group.label}
+                  </h3>
+                  <div className="mt-5 grid gap-5 sm:grid-cols-2">
+                    {group.items.map((item) => (
+                      <NewsCard key={item.id} item={item} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </>
       ) : (
         <div className="mt-10 flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white py-16 text-center">
           <Newspaper className="h-8 w-8 text-slate-300" />

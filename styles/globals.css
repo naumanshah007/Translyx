@@ -265,6 +265,26 @@
   }
 }
 
+/* News ticker — track is rendered twice, so -50% loops seamlessly */
+@keyframes newsTicker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* News spotlight auto-advance progress bar */
+@keyframes spotlightProgress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 /* Accessibility: reduced-motion — show content immediately, drop ambient motion */
 @media (prefers-reduced-motion: reduce) {
   .will-fade {

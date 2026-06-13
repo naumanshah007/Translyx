@@ -28,6 +28,7 @@ import { ProductCard } from "@/components/ui/ProductCard";
 import { PipelineCapabilityCard } from "@/components/ui/PipelineCapabilityCard";
 import { GovernanceCard } from "@/components/ui/GovernanceCard";
 import { NewsCardCompact } from "@/components/news/NewsCard";
+import { NewsTicker } from "@/components/news/NewsTicker";
 import { Reveal } from "@/components/ui/Reveal";
 import { products, audiences } from "@/config/products";
 import { pipelineCapabilities } from "@/config/pipelineCapabilities";
@@ -128,7 +129,8 @@ const governance = [
 const audienceIcons = [Building2, Microscope, Beaker, FlaskRound, Lightbulb, Globe];
 
 export default async function HomePage() {
-  const newsItems = (await getNewsItems()).slice(0, 3);
+  const allNews = await getNewsItems();
+  const newsItems = allNews.slice(0, 3);
 
   const homePageSchema = {
     "@context": "https://schema.org",
@@ -399,6 +401,9 @@ export default async function HomePage() {
               maxWidth="max-w-2xl"
               className="mb-12"
             />
+            <Reveal className="mb-8">
+              <NewsTicker items={allNews} className="rounded-2xl border-x border-white/10 shadow-[0_18px_44px_-26px_rgba(15,28,63,0.55)]" />
+            </Reveal>
             <Reveal className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {newsItems.map((item) => (
                 <NewsCardCompact key={item.id} item={item} />
