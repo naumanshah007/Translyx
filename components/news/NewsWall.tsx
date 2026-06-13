@@ -1,163 +1,222 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { ArrowUpRight } from "lucide-react";
 import type { NewsItem } from "@/config/news";
-import { NewsWallCard } from "@/components/news/NewsCard";
-import { cn } from "@/lib/utils";
+import { newsRegionLabel, newsTopicLabel } from "@/config/news";
+import { cn, timeAgo } from "@/lib/utils";
 
 /**
- * A live wall of news cards that stream vertically in a seamless loop (each
- * column's track is rendered twice and translated 50%), giving the "newsroom
- * feed" feel without manual interaction.
+ * A live newswire: a single clean column of compact headline rows that
+ * advances ONE headline at a time with a smooth, eased step (not a constant
+ * crawl). Every few seconds the list glides down by exactly one row — a fresh
+ * headline slides in at the top, the oldest drops off the bottom — then holds
+ * still long enough to read. Reads like a Reuters/Bloomberg live wire rather
+ * than a moving wall of cards.
  *
- * - Desktop: up to 3 columns, but only ONE scrolls at a time — focus rotates
- *   column→column on a timer so the other columns stay still and readable
- *   (continuous all-at-once motion was too busy).
- * - Mobile/small screens: a single column window flows continuously.
- * - Pauses on hover/touch so any card can be read and clicked.
- * - prefers-reduced-motion (or very few items) → static responsive grid.
+ * - Holds still between steps so every headline is readable and clickable.
+ * - Pauses entirely on hover/touch.
+ * - prefers-reduced-motion (or too few items) → a static scrollable list.
  */
 
-const DESKTOP_COLUMNS = 3;
-/** How long each column scrolls before focus hands off to the next. */
-const ROTATE_MS = 6000;
+const STEP_MS = 3800; // dwell between steps
+const TRANSITION_MS = 720; // glide duration
+const VISIBLE_DESKTOP = 5;
+const VISIBLE_MOBILE = 4;
 
-/** Distribute items round-robin across N columns so each column stays balanced. */
-function toColumns(items: NewsItem[], count: number): NewsItem[][] {
-  const cols: NewsItem[][] = Array.from({ length: count }, () => []);
-  items.forEach((item, i) => cols[i % count].push(item));
-  return cols;
-}
+const regionAccent: Record<string, { dot: string; text: string }> = {
+  "new-zealand": { dot: "bg-cyan-400", text: "text-cyan-600" },
+  australia: { dot: "bg-violet-400", text: "text-violet-600" },
+  global: { dot: "bg-slate-300", text: "text-slate-500" },
+};
 
-function Column({
-  items,
-  direction,
-  durationSec,
-  paused,
-}: {
-  items: NewsItem[];
-  direction: "up" | "down";
-  durationSec: number;
-  paused: boolean;
-}) {
-  // Render the list twice so the -50% / +50% translate loops seamlessly.
-  const doubled = [...items, ...items];
+function Row({ item }: { item: NewsItem }) {
+  const accent = regionAccent[item.region] ?? regionAccent.global;
   return (
-    <div className="overflow-hidden">
-      <div
-        className={cn(
-          "flex flex-col gap-4",
-          direction === "up" ? "animate-[marqueeUp_60s_linear_infinite]" : "animate-[marqueeDown_60s_linear_infinite]"
-        )}
-        style={{
-          animationDuration: `${durationSec}s`,
-          animationPlayState: paused ? "paused" : "running",
-        }}
-      >
-        {doubled.map((item, i) => (
-          <div key={`${item.id}-${i}`} aria-hidden={i >= items.length || undefined}>
-            <NewsWallCard item={item} />
-          </div>
-        ))}
+    <a
+      href={item.sourceUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex h-[92px] items-center gap-4 border-b border-slate-100 px-4 transition-colors hover:bg-slate-50/80 sm:h-[84px] sm:px-5"
+    >
+      {/* Region dot + time */}
+      <div className="flex w-[78px] shrink-0 flex-col gap-1.5">
+        <span className="flex items-center gap-1.5">
+          <span className={cn("h-1.5 w-1.5 shrink-0 rounded-full", accent.dot)} />
+          <span className={cn("text-[11px] font-semibold uppercase tracking-wide", accent.text)}>
+            {newsRegionLabel(item.region)}
+          </span>
+        </span>
+        <span className="pl-3 text-[11px] text-slate-400">{timeAgo(item.publishedAt)}</span>
       </div>
-    </div>
+
+      {/* Headline */}
+      <p className="min-w-0 flex-1 font-display text-[15px] font-semibold leading-snug text-[#0F1C3F] line-clamp-2 transition-colors group-hover:text-[#0891B2]">
+        {item.title}
+      </p>
+
+      {/* Source + topic (desktop) */}
+      <div className="hidden shrink-0 items-center gap-3 sm:flex">
+        {item.topics[0] && (
+          <span className="rounded-md border border-slate-200/80 bg-white px-2 py-0.5 text-[10px] font-medium text-slate-500">
+            {newsTopicLabel(item.topics[0])}
+          </span>
+        )}
+        <span className="inline-flex w-[150px] items-center justify-end gap-1 text-right text-xs font-semibold text-slate-500 transition-colors group-hover:text-[#0F1C3F]">
+          <span className="truncate">{item.source}</span>
+          <ArrowUpRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        </span>
+      </div>
+
+      {/* Mobile arrow */}
+      <ArrowUpRight className="h-4 w-4 shrink-0 text-slate-300 sm:hidden" />
+    </a>
   );
 }
 
 export function NewsWall({ items }: { items: NewsItem[] }) {
   const [paused, setPaused] = useState(false);
   const [reduced, setReduced] = useState(false);
-  const [columnCount, setColumnCount] = useState(1);
+  const [visible, setVisible] = useState(VISIBLE_DESKTOP);
   const [mounted, setMounted] = useState(false);
-  const [activeColumn, setActiveColumn] = useState(0);
+  const [rowH, setRowH] = useState(0);
+
+  // offset counts DOWN from n→0 so the track glides downward (new headline
+  // slides in at the top). At offset 0 we reset to n: those two positions are
+  // pixel-identical because the list is rendered twice, so the loop is seamless.
+  const [offset, setOffset] = useState(items.length);
+  const [withTransition, setWithTransition] = useState(true);
+  const offsetRef = useRef(items.length);
+  const firstRowRef = useRef<HTMLDivElement | null>(null);
+
+  const n = items.length;
+  useEffect(() => {
+    offsetRef.current = offset;
+  }, [offset]);
 
   useEffect(() => {
     setMounted(true);
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const wide = window.matchMedia("(min-width: 1024px)");
-    const mid = window.matchMedia("(min-width: 640px)");
-
+    const wide = window.matchMedia("(min-width: 640px)");
     const sync = () => {
       setReduced(motion.matches);
-      setColumnCount(wide.matches ? DESKTOP_COLUMNS : mid.matches ? 2 : 1);
+      setVisible(wide.matches ? VISIBLE_DESKTOP : VISIBLE_MOBILE);
     };
     sync();
     motion.addEventListener("change", sync);
     wide.addEventListener("change", sync);
-    mid.addEventListener("change", sync);
     return () => {
       motion.removeEventListener("change", sync);
       wide.removeEventListener("change", sync);
-      mid.removeEventListener("change", sync);
     };
   }, []);
 
-  // Never spread items so thin that a column holds fewer than two cards.
-  const effectiveColumns = Math.max(1, Math.min(columnCount, Math.floor(items.length / 2)));
-  const columns = useMemo(() => toColumns(items, effectiveColumns), [items, effectiveColumns]);
+  // Measure a row's height so the transform steps land exactly on row bounds.
+  useLayoutEffect(() => {
+    const measure = () => {
+      const el = firstRowRef.current?.firstElementChild as HTMLElement | null;
+      if (el) setRowH(el.offsetHeight);
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [mounted, visible]);
 
-  // Rotate which column is scrolling: one moves while the rest stay still.
-  // Single-column (mobile) flows continuously, so no rotation is needed there.
-  const canAnimate = mounted && !reduced && items.length >= 4;
   useEffect(() => {
-    if (paused || !canAnimate || effectiveColumns < 2) return;
-    setActiveColumn((c) => (c < effectiveColumns ? c : 0));
+    setOffset(n);
+  }, [n]);
+
+  const canAnimate = mounted && !reduced && rowH > 0 && n > visible;
+
+  // Step the wire down by one row every STEP_MS. When it reaches the seam,
+  // snap (no transition) to the identical position on the second copy, then
+  // continue — so the loop never visibly jumps or stalls.
+  useEffect(() => {
+    if (paused || !canAnimate) return;
     const t = setInterval(() => {
-      setActiveColumn((c) => (c + 1) % effectiveColumns);
-    }, ROTATE_MS);
+      const cur = offsetRef.current;
+      if (cur <= 0) {
+        setWithTransition(false);
+        setOffset(n);
+        requestAnimationFrame(() =>
+          requestAnimationFrame(() => {
+            setWithTransition(true);
+            setOffset(n - 1);
+          })
+        );
+      } else {
+        setWithTransition(true);
+        setOffset(cur - 1);
+      }
+    }, STEP_MS);
     return () => clearInterval(t);
-  }, [paused, canAnimate, effectiveColumns]);
+  }, [paused, canAnimate, n]);
 
-  if (items.length === 0) return null;
+  const doubled = useMemo(() => [...items, ...items], [items]);
 
-  // Static fallback: reduced-motion, SSR/first paint, or too few items to loop nicely.
+  if (n === 0) return null;
+
+  // Static fallback (reduced motion, too few items, or pre-measure): a plain
+  // scrollable list — fully readable, no motion.
   if (!canAnimate) {
     return (
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((item) => (
-          <NewsWallCard key={item.id} item={item} />
-        ))}
+      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+        <div ref={firstRowRef} className="max-h-[460px] overflow-y-auto">
+          {items.map((item) => (
+            <Row key={item.id} item={item} />
+          ))}
+        </div>
       </div>
     );
   }
 
-  // Window height scales with column count; longer columns travel slower.
+  const windowH = visible * rowH;
+  const translateY = -offset * rowH;
+
   return (
     <div
-      className="group relative"
+      className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_2px_24px_-12px_rgba(15,28,63,0.12)]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onTouchStart={() => setPaused((p) => !p)}
     >
-      {/* Fade masks top & bottom for the "window into a stream" look */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-16 bg-gradient-to-b from-white to-transparent" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-16 bg-gradient-to-t from-white to-transparent" />
-
-      <div
-        className="grid max-h-[560px] gap-4 overflow-hidden sm:max-h-[620px] lg:max-h-[680px]"
-        style={{ gridTemplateColumns: `repeat(${effectiveColumns}, minmax(0, 1fr))` }}
-      >
-        {columns.map((col, i) => (
-          <Column
-            key={i}
-            items={col}
-            // Always top→bottom: cards appear at the top and drift downward.
-            direction="down"
-            durationSec={42 + i * 3}
-            // Only the focused column scrolls (single-column mobile is always
-            // "active"); hover freezes everything.
-            paused={paused || (effectiveColumns > 1 && i !== activeColumn)}
-          />
-        ))}
+      {/* Live status bar */}
+      <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50/60 px-4 py-2 sm:px-5">
+        <span className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">
+          <span className="relative flex h-1.5 w-1.5">
+            <span
+              className={cn(
+                "absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-70",
+                !paused && "animate-ping"
+              )}
+            />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-cyan-500" />
+          </span>
+          {paused ? "Paused" : "Live wire"}
+        </span>
+        <span className="text-[10px] uppercase tracking-wide text-slate-400">Updated continuously</span>
       </div>
 
-      {/* Subtle "live" affordance */}
-      <div className="pointer-events-none absolute right-3 top-3 z-20 inline-flex items-center gap-1.5 rounded-full border border-slate-200/80 bg-white/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500 shadow-sm backdrop-blur">
-        <span className="relative flex h-1.5 w-1.5">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-70" />
-          <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-cyan-500" />
-        </span>
-        {paused ? "Paused" : "Live feed"}
+      {/* The wire window */}
+      <div className="relative" style={{ height: windowH }}>
+        {/* Accent line where fresh headlines arrive */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent" />
+        {/* Bottom fade for the row leaving the wire */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-10 bg-gradient-to-t from-white to-transparent" />
+
+        <div className="overflow-hidden" style={{ height: windowH }}>
+          <div
+            ref={firstRowRef}
+            style={{
+              transform: `translateY(${translateY}px)`,
+              transition: withTransition ? `transform ${TRANSITION_MS}ms cubic-bezier(0.5, 0, 0.2, 1)` : "none",
+            }}
+          >
+            {doubled.map((item, i) => (
+              <Row key={`${item.id}-${i}`} item={item} />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 import { ExternalLink, ArrowUpRight } from "lucide-react";
 import type { NewsItem } from "@/config/news";
 import { newsRegionLabel, newsTopicLabel } from "@/config/news";
-import { timeAgo } from "@/lib/utils";
 
 const confidenceStyle: Record<NewsItem["confidence"], string> = {
   high: "bg-emerald-50 text-emerald-700 border-emerald-200",
@@ -65,42 +64,6 @@ export function NewsCard({ item }: { item: NewsItem }) {
         </span>
       </div>
     </article>
-  );
-}
-
-/** Mid-weight card for the flowing live wall — lighter than NewsCard, richer than compact. */
-export function NewsWallCard({ item }: { item: NewsItem }) {
-  return (
-    <a
-      href={item.sourceUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group block rounded-2xl border border-slate-200/80 bg-white p-5 shadow-[0_2px_16px_-8px_rgba(15,28,63,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-300/70 hover:shadow-[0_18px_44px_-26px_rgba(8,145,178,0.45)]"
-    >
-      <div className="flex flex-wrap items-center gap-2">
-        <span className={`rounded-full border px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${regionStyle[item.region] ?? regionStyle.global}`}>
-          {newsRegionLabel(item.region)}
-        </span>
-        <span className="text-[11px] text-slate-400">{timeAgo(item.publishedAt)}</span>
-      </div>
-      <h3 className="mt-2.5 font-display text-base font-semibold leading-snug text-[#0F1C3F]">
-        {item.title}
-      </h3>
-      <p className="mt-2 text-[13px] leading-relaxed text-slate-600 line-clamp-3">{item.summary}</p>
-      <div className="mt-3.5 flex items-center justify-between border-t border-slate-100 pt-3">
-        <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#0F1C3F] transition-colors group-hover:text-[#0891B2]">
-          {item.source}
-          <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-        </span>
-        <div className="flex gap-1">
-          {item.topics.slice(0, 2).map((t) => (
-            <span key={t} className="rounded border border-slate-200/80 bg-white px-1.5 py-0.5 text-[9px] font-medium text-slate-400">
-              {newsTopicLabel(t)}
-            </span>
-          ))}
-        </div>
-      </div>
-    </a>
   );
 }
 
