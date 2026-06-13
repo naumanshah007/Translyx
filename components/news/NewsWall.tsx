@@ -6,18 +6,21 @@ import { NewsWallCard } from "@/components/news/NewsCard";
 import { cn } from "@/lib/utils";
 
 /**
- * A live, continuously-flowing wall of news cards. Cards stream vertically in
- * a seamless loop (each column's track is rendered twice and translated 50%),
- * giving the "newsroom feed" feel — content drifts in one edge and out the
- * other without manual interaction.
+ * A live wall of news cards that stream vertically in a seamless loop (each
+ * column's track is rendered twice and translated 50%), giving the "newsroom
+ * feed" feel without manual interaction.
  *
- * - Desktop: up to 3 columns; adjacent columns drift in alternating directions.
- * - Mobile/small screens: a single column window so motion stays gentle.
+ * - Desktop: up to 3 columns, but only ONE scrolls at a time — focus rotates
+ *   column→column on a timer so the other columns stay still and readable
+ *   (continuous all-at-once motion was too busy).
+ * - Mobile/small screens: a single column window flows continuously.
  * - Pauses on hover/touch so any card can be read and clicked.
  * - prefers-reduced-motion (or very few items) → static responsive grid.
  */
 
 const DESKTOP_COLUMNS = 3;
+/** How long each column scrolls before focus hands off to the next. */
+const ROTATE_MS = 6000;
 
 /** Distribute items round-robin across N columns so each column stays balanced. */
 function toColumns(items: NewsItem[], count: number): NewsItem[][] {
@@ -66,6 +69,7 @@ export function NewsWall({ items }: { items: NewsItem[] }) {
   const [reduced, setReduced] = useState(false);
   const [columnCount, setColumnCount] = useState(1);
   const [mounted, setMounted] = useState(false);
+  const [activeColumn, setActiveColumn] = useState(0);
 
   useEffect(() => {
     setMounted(true);
@@ -92,12 +96,22 @@ export function NewsWall({ items }: { items: NewsItem[] }) {
   const effectiveColumns = Math.max(1, Math.min(columnCount, Math.floor(items.length / 2)));
   const columns = useMemo(() => toColumns(items, effectiveColumns), [items, effectiveColumns]);
 
+  // Rotate which column is scrolling: one moves while the rest stay still.
+  // Single-column (mobile) flows continuously, so no rotation is needed there.
+  const canAnimate = mounted && !reduced && items.length >= 4;
+  useEffect(() => {
+    if (paused || !canAnimate || effectiveColumns < 2) return;
+    setActiveColumn((c) => (c < effectiveColumns ? c : 0));
+    const t = setInterval(() => {
+      setActiveColumn((c) => (c + 1) % effectiveColumns);
+    }, ROTATE_MS);
+    return () => clearInterval(t);
+  }, [paused, canAnimate, effectiveColumns]);
+
   if (items.length === 0) return null;
 
   // Static fallback: reduced-motion, SSR/first paint, or too few items to loop nicely.
-  const animate = mounted && !reduced && items.length >= 4;
-
-  if (!animate) {
+  if (!canAnimate) {
     return (
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item) => (
@@ -127,10 +141,12 @@ export function NewsWall({ items }: { items: NewsItem[] }) {
           <Column
             key={i}
             items={col}
-            direction={i % 2 === 0 ? "up" : "down"}
-            // Stagger durations a touch per column so they don't sync up.
-            durationSec={48 + col.length * 6 + i * 4}
-            paused={paused}
+            // Always top→bottom: cards appear at the top and drift downward.
+            direction="down"
+            durationSec={42 + i * 3}
+            // Only the focused column scrolls (single-column mobile is always
+            // "active"); hover freezes everything.
+            paused={paused || (effectiveColumns > 1 && i !== activeColumn)}
           />
         ))}
       </div>
