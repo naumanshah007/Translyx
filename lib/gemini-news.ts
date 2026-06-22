@@ -22,7 +22,7 @@ function buildPrompt(): string {
   return `You are a market-intelligence analyst for Translyx Limited, a New Zealand clinical technology company.
 Translyx represents partner products (Aiforia digital pathology AI; Algoscope surgery-to-pathology workflow automation) and develops governed clinical AI workflow capabilities. Its diagnostic pipeline spans AMR, sepsis, point-of-care testing, oncology, endocrine, cardiac biomarkers, and precision medicine.
 
-Today is ${today}. Use web search to find 8-12 RECENT, real, source-linked news items most relevant to Translyx.
+Today is ${today}. Use web search to find 6-9 RECENT, real, source-linked news items most relevant to Translyx.
 
 Prioritise in this order:
 1. New Zealand healthcare / diagnostics / pathology
@@ -94,7 +94,10 @@ export async function generateNews(apiKey: string): Promise<GeminiNewsResult> {
     body: JSON.stringify({
       contents: [{ role: "user", parts: [{ text: buildPrompt() }] }],
       tools: [{ google_search: {} }],
-      generationConfig: { temperature: 0.2 },
+      // thinkingBudget: 0 disables gemini-2.5-flash's extended-thinking pass,
+      // which otherwise adds significant latency on top of search grounding
+      // and was pushing this call past the 60s serverless function cap.
+      generationConfig: { temperature: 0.2, thinkingConfig: { thinkingBudget: 0 } },
     }),
   });
 
