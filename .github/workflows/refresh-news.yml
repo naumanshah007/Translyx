@@ -1,16 +1,17 @@
 name: Refresh news (Gemini)
 
-# Pings the production news-refresh endpoint several times a day so the /news
-# feed and homepage ticker stay current. Vercel Hobby crons are capped at once
-# per day, so this GitHub Actions schedule provides the higher cadence.
+# Pings the production news-refresh endpoint twice a day so the /news feed
+# and homepage ticker stay current without over-calling Gemini. Vercel Hobby
+# crons are capped at once per day, so this GitHub Actions schedule provides
+# the second daily refresh.
 #
 # Requires repo secret NEWS_REFRESH_SECRET (must match the Vercel env var of
 # the same value, which the API route accepts as the bearer token).
 
 on:
   schedule:
-    # Every 4 hours, on the hour (UTC). ~6 refreshes per day.
-    - cron: "0 */4 * * *"
+    # 06:00 and 18:00 UTC (~6pm/6am NZT) — twice a day.
+    - cron: "0 6,18 * * *"
   workflow_dispatch: # allow manual runs from the Actions tab
 
 # Don't pile up overlapping runs.
