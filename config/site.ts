@@ -22,7 +22,7 @@ export const siteConfig = {
   // level, translyx.co via next.config.js). `url` drives all canonicals, OG,
   // and the sitemap, so it must be the final, non-redirecting host. `domain`
   // is the short brand label shown in the UI.
-  domain: "translyx.co.nz",
+  domain: "www.translyx.co.nz",
   url: "https://www.translyx.co.nz",
 
   // Company Details
