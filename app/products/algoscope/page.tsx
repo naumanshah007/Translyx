@@ -23,8 +23,10 @@ import {
 
 import { Hero } from "@/components/sections/Hero";
 import { CTA } from "@/components/sections/CTA";
+import { SampleJourneyDiagram } from "@/components/sections/SampleJourneyDiagram";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
-import { SectionDivider } from "@/components/ui/DecorativeElements";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Reveal } from "@/components/ui/Reveal";
 import { getProduct } from "@/config/products";
 import { siteConfig } from "@/config/site";
 
@@ -117,15 +119,6 @@ const technology = [
   { icon: ClipboardList, label: "Structured workflow data", description: "Workflow dashboards and documented, reviewable data trails" },
 ];
 
-const sampleJourney = [
-  "Operating room",
-  "Specimen capture",
-  "Documentation",
-  "Transport",
-  "Lab accession",
-  "Pathology reporting",
-];
-
 /*
  * Milestones drawn from Algoscope's public materials and verified against their
  * public site (June 2026). Each is attributed to Algoscope, with dates as they
@@ -150,7 +143,7 @@ export default function AlgoscopePage() {
         badge={{ text: "Partner product · New Zealand representation being finalised", icon: <Workflow className="w-3.5 h-3.5" /> }}
         headline="AI-powered workflow automation for surgery and pathology"
         description="Algoscope streamlines workflows from surgery to pathology through intelligent automation, computer vision, 3D modelling, and traceability-focused tools designed for operating rooms and pathology laboratories."
-        primaryCTA={{ label: "Discuss Algoscope", href: "/contact" }}
+        primaryCTA={{ label: "Discuss Algoscope", href: "/contact?topic=algoscope" }}
         secondaryCTA={{ label: "See all products", href: "/products" }}
         className="py-16 sm:py-20 md:py-28 lg:py-36"
       />
@@ -179,42 +172,22 @@ export default function AlgoscopePage() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-6 text-center">
               The sample journey, traced end to end
             </p>
-            <div className="relative overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-[#0F1C3F] to-[#0B1430] p-6 sm:p-8">
-              <div className="grid grid-cols-2 gap-y-6 sm:grid-cols-3 lg:grid-cols-6">
-                {sampleJourney.map((step, i) => (
-                  <div key={step} className="relative flex flex-col items-center text-center">
-                    {i < sampleJourney.length - 1 && (
-                      <span className="absolute left-1/2 top-[14px] hidden h-px w-full bg-gradient-to-r from-violet-400/50 to-cyan-400/20 lg:block" />
-                    )}
-                    <span className="relative z-10 flex h-7 w-7 items-center justify-center rounded-full border border-violet-300/40 bg-violet-400/15 text-[11px] font-bold text-violet-200 shadow-[0_0_14px_rgba(139,92,246,0.35)]">
-                      {i + 1}
-                    </span>
-                    <p className="mt-2.5 text-[11px] font-semibold leading-snug text-slate-200">{step}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-6 border-t border-white/10 pt-4 text-center text-[11px] text-slate-400">
-                Traceability nodes capture each step — barcode, vision, and structured data — so the laboratory sees the
-                full surgical context with every specimen.
-              </p>
-            </div>
+            <SampleJourneyDiagram />
           </div>
         </div>
       </section>
-
-      <SectionDivider variant="gradient" />
 
       {/* Why manual workflows create bottlenecks */}
       <section className="bg-[#F5F8FC] py-16 sm:py-20 md:py-24 border-y border-slate-200/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
-            <div className="max-w-2xl mb-10">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">The problem</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">
-                Why manual surgery-to-pathology workflows create bottlenecks
-              </h2>
-            </div>
-            <div className="grid gap-5 sm:grid-cols-3">
+            <SectionHeader
+              eyebrow="The problem"
+              title="Why manual surgery-to-pathology workflows create bottlenecks"
+              maxWidth="max-w-2xl"
+              className="mb-10"
+            />
+            <Reveal className="grid gap-5 sm:grid-cols-3">
               {bottlenecks.map(({ title, body }, i) => (
                 <Card key={title} className="p-5 sm:p-6">
                   <CardHeader className="p-0 mb-3">
@@ -230,7 +203,7 @@ export default function AlgoscopePage() {
                   </CardContent>
                 </Card>
               ))}
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -239,15 +212,15 @@ export default function AlgoscopePage() {
       <section className="bg-white py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
-            <div className="max-w-2xl mb-10">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">Solution areas</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">
-                From operating room to laboratory bench
-              </h2>
-            </div>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <SectionHeader
+              eyebrow="Solution areas"
+              title="From operating room to laboratory bench"
+              maxWidth="max-w-2xl"
+              className="mb-10"
+            />
+            <Reveal className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {solutionAreas.map(({ icon: Icon, label, description }) => (
-                <div key={label} className="rounded-xl bg-[#F5F8FC] border border-slate-200/80 p-4 sm:p-5">
+                <div key={label} className="rounded-xl bg-[#F5F8FC] border border-slate-200/80 p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-violet-300/60 hover:shadow-[0_18px_40px_-22px_rgba(139,92,246,0.35)]">
                   <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-violet-50 ring-1 ring-violet-200/60">
                     <Icon className="h-5 w-5 text-violet-600" />
                   </div>
@@ -255,7 +228,7 @@ export default function AlgoscopePage() {
                   <p className="mt-1 text-xs text-slate-500 leading-snug">{description}</p>
                 </div>
               ))}
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -264,13 +237,13 @@ export default function AlgoscopePage() {
       <section className="bg-[#F5F8FC] py-16 sm:py-20 md:py-24 border-y border-slate-200/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
-            <div className="max-w-2xl mb-10">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">Benefits</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">
-                Traceability, reliability, and laboratory efficiency
-              </h2>
-            </div>
-            <div className="grid gap-5 sm:grid-cols-2">
+            <SectionHeader
+              eyebrow="Benefits"
+              title="Traceability, reliability, and laboratory efficiency"
+              maxWidth="max-w-2xl"
+              className="mb-10"
+            />
+            <Reveal className="grid gap-5 sm:grid-cols-2">
               {benefits.map(({ icon: Icon, title, body }) => (
                 <Card key={title} className="p-5 sm:p-6">
                   <CardHeader className="p-0">
@@ -286,7 +259,7 @@ export default function AlgoscopePage() {
                   </CardContent>
                 </Card>
               ))}
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -295,15 +268,15 @@ export default function AlgoscopePage() {
       <section className="bg-white py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
-            <div className="max-w-2xl mb-10">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">Technology</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">
-                Computer vision, 3D modelling, and workflow intelligence
-              </h2>
-            </div>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+            <SectionHeader
+              eyebrow="Technology"
+              title="Computer vision, 3D modelling, and workflow intelligence"
+              maxWidth="max-w-2xl"
+              className="mb-10"
+            />
+            <Reveal className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
               {technology.map(({ icon: Icon, label, description }) => (
-                <div key={label} className="rounded-xl bg-[#F5F8FC] border border-slate-200/80 p-4 text-center">
+                <div key={label} className="rounded-xl bg-[#F5F8FC] border border-slate-200/80 p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/60">
                   <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-white ring-1 ring-slate-200/70">
                     <Icon className="h-5 w-5 text-[#0891B2]" />
                   </div>
@@ -311,7 +284,7 @@ export default function AlgoscopePage() {
                   <p className="mt-1 text-xs text-slate-500 leading-snug">{description}</p>
                 </div>
               ))}
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -364,18 +337,18 @@ export default function AlgoscopePage() {
                 </div>
               </CardHeader>
               <CardContent className="p-0">
-                <ul className="space-y-2.5">
+                <ol className="relative space-y-5 border-l border-violet-200/70 pl-5">
                   {milestones.map(({ label, detail }) => (
-                    <li key={label} className="flex items-start gap-2.5 text-sm">
-                      <CheckCircle2 className="h-4 w-4 text-violet-500 shrink-0 mt-0.5" />
-                      <span>
-                        <span className="font-semibold text-[#0F1C3F]">{label}</span>
-                        <span className="text-slate-500"> — {detail}</span>
+                    <li key={label} className="relative text-sm">
+                      <span className="absolute -left-[26px] top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-white ring-2 ring-violet-400">
+                        <span className="h-1.5 w-1.5 rounded-full bg-violet-500" />
                       </span>
+                      <span className="font-semibold text-[#0F1C3F]">{label}</span>
+                      <span className="block text-slate-500">{detail}</span>
                     </li>
                   ))}
-                </ul>
-                <p className="mt-4 border-t border-slate-100 pt-3 text-xs leading-relaxed text-slate-400">
+                </ol>
+                <p className="mt-5 border-t border-slate-100 pt-3 text-xs leading-relaxed text-slate-400">
                   Milestones are as published by Algoscope. Source:{" "}
                   <a
                     href="https://www.algoscope.fr"
@@ -429,7 +402,7 @@ export default function AlgoscopePage() {
       <CTA
         title="Discuss Algoscope for your surgical or pathology workflows"
         description="Talk to Translyx about how Algoscope's workflow automation and traceability could fit your operating rooms, pathology laboratories, or research programmes."
-        primaryCTA={{ label: "Discuss Algoscope", href: "/contact" }}
+        primaryCTA={{ label: "Discuss Algoscope", href: "/contact?topic=algoscope" }}
         secondaryCTA={{ label: "See all products", href: "/products" }}
       />
     </>

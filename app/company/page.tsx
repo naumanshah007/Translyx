@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Prose } from "@/components/ui/Prose";
 import { siteConfig } from "@/config/site";
-import { Shield, Users, MapPin, Calendar, ArrowRight, Building2, Handshake, Microscope, Lock, ShieldCheck } from "lucide-react";
+import { Shield, Users, MapPin, Calendar, ArrowRight, Building2, Handshake, Microscope, Lock, ShieldCheck, GraduationCap } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Provenance } from "@/components/sections/Provenance";
+import { OceaniaMap } from "@/components/sections/OceaniaMap";
 import Link from "next/link";
 
 const aboutDescription = `Learn about ${siteConfig.companyName} — the Auckland-based clinical technology company connecting partner diagnostic solutions, digital pathology AI, and governed clinical AI workflow capabilities for New Zealand healthcare.`;
@@ -136,8 +137,11 @@ export default function AboutPage() {
       />
 
       {/* Page header */}
-      <section className="bg-[#0F1C3F] py-16 sm:py-20 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-midnight py-16 sm:py-20 md:py-24">
+        <div className="pointer-events-none absolute inset-0 aurora opacity-50" />
+        <div className="pointer-events-none absolute inset-0 grid-overlay opacity-40" />
+        <div className="pointer-events-none absolute -top-24 right-[10%] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.14),transparent_65%)] blur-3xl" />
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <div className="flex items-center gap-2 mb-4">
               <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/10">
@@ -273,6 +277,22 @@ export default function AboutPage() {
                 <div className="flex-1 min-w-0">
                   <h3 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F] mb-0.5">{leadershipPrimary.name}</h3>
                   <p className="text-[#0891B2] font-semibold text-base mb-5">{leadershipPrimary.title}</p>
+                  <div className="mb-6 flex flex-wrap gap-2">
+                    {[
+                      { icon: GraduationCap, label: "Physician scientist" },
+                      { icon: MapPin, label: "Auckland, New Zealand" },
+                      { icon: Calendar, label: "Founded December 2025" },
+                      { icon: Users, label: "50+ years collective team IVD experience" },
+                    ].map(({ icon: Icon, label }) => (
+                      <span
+                        key={label}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-slate-200/80 bg-[#F5F8FC] px-3 py-1.5 text-xs font-semibold text-slate-600"
+                      >
+                        <Icon className="h-3.5 w-3.5 text-[#0891B2]" />
+                        {label}
+                      </span>
+                    ))}
+                  </div>
                   <Prose className="space-y-4 text-slate-700">
                     {leadershipText.split("\n\n").map((para, i) => (
                       <p key={i}>{para}</p>
@@ -321,6 +341,9 @@ export default function AboutPage() {
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">Operational territory</h2>
             </div>
+            <div className="mb-5">
+              <OceaniaMap />
+            </div>
             <div className="grid sm:grid-cols-2 gap-5">
               <Card className="p-5 sm:p-7">
                 <CardContent className="pt-0">
@@ -329,24 +352,16 @@ export default function AboutPage() {
                   </Prose>
                 </CardContent>
               </Card>
-              <div className="space-y-4">
-                {[
-                  { label: "Primary", regions: ["New Zealand — national"] },
-                  { label: "Expanding", regions: ["Australia", "Pacific Island markets"] },
-                  { label: "Partner model", regions: ["Local labs and hospitals", "Academic research centres", "Manufacturer partnerships"] },
-                ].map(({ label, regions }) => (
-                  <Card key={label} className="p-4 sm:p-5" hover={false}>
-                    <CardContent className="pt-0">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-2">{label}</p>
-                      <ul className="space-y-1">
-                        {regions.map((r) => (
-                          <li key={r} className="text-sm font-semibold text-[#0F1C3F]">{r}</li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
+              <Card className="p-4 sm:p-5" hover={false}>
+                <CardContent className="pt-0">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-2">Partner model</p>
+                  <ul className="space-y-1">
+                    {["Local labs and hospitals", "Academic research centres", "Manufacturer partnerships"].map((r) => (
+                      <li key={r} className="text-sm font-semibold text-[#0F1C3F]">{r}</li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
             </div>
           </section>
 
@@ -373,8 +388,9 @@ export default function AboutPage() {
                     </p>
                   </Prose>
                 </div>
-                <div className="border-t border-slate-200/70 bg-[#0F1C3F] p-6 sm:p-8 lg:border-l lg:border-t-0">
-                  <ul className="space-y-3">
+                <div className="relative overflow-hidden border-t border-slate-200/70 bg-deep p-6 sm:p-8 lg:border-l lg:border-t-0">
+                  <div className="pointer-events-none absolute inset-0 grid-overlay opacity-30" />
+                  <ul className="relative space-y-3">
                     {[
                       { icon: Users, label: "Reviewer gates & human oversight" },
                       { icon: Shield, label: "Field-level data protection" },

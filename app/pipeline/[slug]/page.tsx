@@ -1,9 +1,12 @@
 import { notFound } from "next/navigation";
 import { pipelineCategories } from "@/config/pipeline";
-import { PatternOverlay } from "@/components/ui/DecorativeElements";
 import { PipelineImage } from "@/components/ui/PipelineImage";
-import { ArrowLeft } from "lucide-react";
+import { Prose } from "@/components/ui/Prose";
+import { CTA } from "@/components/sections/CTA";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { ArrowLeft, ArrowRight, FlaskConical } from "lucide-react";
 import Link from "next/link";
+import { siteConfig } from "@/config/site";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -21,6 +24,12 @@ export async function generateMetadata({ params }: PageProps) {
     title: category.title,
     description: category.excerpt,
     alternates: { canonical: `/pipeline/${slug}` },
+    openGraph: {
+      title: `${category.title} | Translyx`,
+      description: category.excerpt,
+      url: `${siteConfig.url}/pipeline/${slug}`,
+      siteName: siteConfig.name,
+    },
   };
 }
 
@@ -29,51 +38,103 @@ export default async function PipelineCategoryPage({ params }: PageProps) {
   const category = pipelineCategories.find((c) => c.slug === slug);
   if (!category) notFound();
 
-  const introParagraph = category.content.split("\n\n")[0];
+  const paragraphs = category.content.split("\n\n");
+  const related = pipelineCategories.filter((c) => c.slug !== slug).slice(0, 3);
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24">
-      <div className="max-w-5xl mx-auto relative">
-        <PatternOverlay pattern="topo" opacity={0.04} className="text-primary-500/30" />
-
-        <Link
-          href="/pipeline"
-          className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium mb-8"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to Pipeline
-        </Link>
-
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 dark:text-gray-50 mb-6">
-          {category.title}
-        </h1>
-
-        <p className="text-lg sm:text-xl leading-relaxed text-gray-700 dark:text-gray-300 text-justify hyphens-auto break-words mb-12">
-          {introParagraph}
-        </p>
-
-        {/* Image Gallery */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full items-stretch mb-16">
-          {category.images.map((img, i) => (
-            <PipelineImage
-              key={i}
-              localSrc={img.local}
-              remoteSrc={img.remote}
-              alt={`${category.title} image ${i + 1}`}
-              className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/50 shadow-sm"
-            />
-          ))}
-        </div>
-
-        {/* Full Content */}
-        <div className="space-y-5 sm:space-y-6">
-          {category.content.split("\n\n").slice(1).map((para, i) => (
-            <p key={i} className="text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300 text-justify hyphens-auto break-words">
-              {para}
+    <>
+      {/* Page header */}
+      <section className="relative overflow-hidden bg-midnight py-16 sm:py-20">
+        <div className="pointer-events-none absolute inset-0 grid-overlay opacity-40" />
+        <div className="pointer-events-none absolute -top-24 right-[10%] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(45,212,191,0.14),transparent_65%)] blur-3xl" />
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl">
+            <Link
+              href="/pipeline#diagnostic-innovation"
+              className="inline-flex items-center gap-2 text-sm font-medium text-slate-400 transition-colors hover:text-cyan-300"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Back to diagnostic innovation
+            </Link>
+            <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.22em] text-teal-300/80">
+              Diagnostic innovation
             </p>
-          ))}
+            <h1 className="mt-2 font-display text-[2.1rem] font-semibold leading-tight tracking-tight text-white sm:text-[2.6rem]">
+              {category.title}
+            </h1>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/65 sm:text-lg">{category.excerpt}</p>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      {/* Body */}
+      <section className="bg-white py-16 sm:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl">
+            {/* Image gallery — restrained 16:9 treatment with a brand-tint overlay */}
+            <div className="mb-12 grid grid-cols-1 gap-5 sm:grid-cols-3">
+              {category.images.map((img, i) => (
+                <div key={i} className="relative overflow-hidden rounded-xl">
+                  <PipelineImage
+                    localSrc={img.local}
+                    remoteSrc={img.remote}
+                    alt={`${category.title} — reference image ${i + 1}`}
+                    className="rounded-xl border border-slate-200/70 shadow-[0_8px_24px_-12px_rgba(15,28,63,0.2)]"
+                  />
+                  <span className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-[#0F1C3F]/20 via-transparent to-transparent" />
+                </div>
+              ))}
+            </div>
+
+            <Prose>
+              {paragraphs.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </Prose>
+          </div>
+        </div>
+      </section>
+
+      {/* Related categories */}
+      <section className="border-t border-slate-200/60 bg-[#F5F8FC] py-16 sm:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-[1100px]">
+            <SectionHeader
+              eyebrow="Explore more"
+              title="Other diagnostic innovation areas"
+              maxWidth="max-w-2xl"
+              className="mb-10"
+            />
+            <div className="grid gap-5 sm:grid-cols-3">
+              {related.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/pipeline/${c.slug}`}
+                  className="group flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white p-5 shadow-[0_2px_16px_-6px_rgba(15,28,63,0.10)] transition-all duration-300 hover:-translate-y-1 hover:border-teal-300/60"
+                >
+                  <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-50 ring-1 ring-slate-200/70">
+                    <FlaskConical className="h-4 w-4 text-teal-600" />
+                  </span>
+                  <h3 className="mt-3.5 font-display text-base font-semibold leading-snug text-[#0F1C3F]">
+                    {c.title}
+                  </h3>
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-600">
+                    Learn more
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CTA
+        title="Discuss diagnostic innovation for your organisation."
+        description="Talk to Translyx about how this diagnostic innovation area fits your clinical, laboratory, or research priorities."
+        primaryCTA={{ label: "Contact us", href: "/contact" }}
+        secondaryCTA={{ label: "See the full pipeline", href: "/pipeline" }}
+      />
+    </>
   );
 }

@@ -68,7 +68,7 @@ export default function PartnersPage() {
         headline="Your bridge to New Zealand and Oceania"
         highlight="healthcare."
         description="Translyx partners with global diagnostic and clinical-AI innovators — bringing world-class technology to New Zealand and Oceania with local expertise, governance, and clinical adoption. Aiforia and Algoscope are our current partner products, and the network is growing."
-        primaryCTA={{ label: "Become a partner", href: "/contact" }}
+        primaryCTA={{ label: "Become a partner", href: "/contact?topic=partner" }}
         secondaryCTA={{ label: "Explore products", href: "/products" }}
       />
 
@@ -263,7 +263,7 @@ export default function PartnersPage() {
                 </div>
                 <div className="flex flex-col gap-3">
                   <Link
-                    href="/contact"
+                    href="/contact?topic=partner"
                     className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 via-sky-400 to-violet-500 px-6 py-3 text-sm font-semibold text-[#06121f] shadow-[0_8px_30px_-6px_rgba(34,211,238,0.5)] transition-all duration-200 hover:-translate-y-0.5"
                   >
                     Start a partnership conversation

@@ -38,6 +38,9 @@ import { siteConfig } from "@/config/site";
 const homeDescription =
   "Translyx Limited brings advanced diagnostics, partner digital pathology AI solutions, and governed clinical workflow capabilities to New Zealand and Oceania — helping clinicians, laboratories, healthcare providers, research teams, pharma, and CROs evaluate and adopt innovation with privacy, governance, and clinical confidence.";
 
+const heroDescription =
+  "Partner digital pathology AI, workflow automation, and governed clinical AI capabilities — brought to New Zealand and Oceania with clinical rigour built in.";
+
 export const metadata: Metadata = {
   title: "Translyx | Diagnostic Innovation & Governed Clinical AI — Auckland, NZ",
   description: homeDescription,
@@ -165,11 +168,10 @@ export default async function HomePage() {
         badge={{ icon: ShieldCheck, text: "Translyx Limited · Auckland, New Zealand" }}
         headline="Translating diagnostic innovation and governed clinical AI into"
         highlight="clinical impact."
-        description={homeDescription}
+        description={heroDescription}
         ctas={[
           { label: "Explore Products", href: "/products", variant: "primary" },
-          { label: "View Pipeline", href: "/pipeline", variant: "glass" },
-          { label: "Request Walkthrough", href: "/contact", variant: "ghost" },
+          { label: "Request Walkthrough", href: "/contact", variant: "glass" },
         ]}
         trustChips={[
           { icon: MapPin, label: "Auckland, New Zealand" },
@@ -178,6 +180,15 @@ export default async function HomePage() {
           { icon: Eye, label: "Visible limitations" },
           { icon: UserCheck, label: "Human review" },
         ]}
+        footer={
+          <Link
+            href="/pipeline"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-400 transition-colors hover:text-cyan-300"
+          >
+            View the Translyx pipeline
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        }
       />
 
       {/* 2 — Purpose */}
@@ -331,17 +342,15 @@ export default async function HomePage() {
       <EcosystemDiagram />
 
       {/* 6 — Governance by design */}
-      <section className="relative overflow-hidden bg-deep py-18 sm:py-24">
-        <div className="pointer-events-none absolute inset-0 grid-overlay opacity-40" />
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-white py-18 sm:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1100px]">
             <SectionHeader
-              tone="dark"
               eyebrow="Governance by design"
               title={
                 <>
                   Governed AI workflows — not AI with governance{" "}
-                  <span className="text-gradient-brand">bolted on.</span>
+                  <span className="text-[#0891B2]">bolted on.</span>
                 </>
               }
               description="Governance, traceability, visible limitations, and reviewer gates are structural features of the workflow — present by design, not added as disclaimers after the fact."
@@ -350,7 +359,7 @@ export default async function HomePage() {
             />
             <Reveal className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {governance.map((g) => (
-                <GovernanceCard key={g.title} icon={g.icon} title={g.title} body={g.body} tone="dark" />
+                <GovernanceCard key={g.title} icon={g.icon} title={g.title} body={g.body} tone="solid" />
               ))}
             </Reveal>
           </div>
@@ -418,6 +427,7 @@ export default async function HomePage() {
               <Link href="/news?region=australia" className="text-slate-500 hover:text-[#0891B2]">Australia</Link>
               <Link href="/news?region=global" className="text-slate-500 hover:text-[#0891B2]">Global</Link>
             </div>
+            <p className="mt-4 text-center text-xs font-medium text-slate-400">Feed refreshed twice daily</p>
           </div>
         </div>
       </section>
@@ -428,6 +438,7 @@ export default async function HomePage() {
         description="Whether the focus is diagnostic product evaluation, digital pathology AI, workflow automation, or governed clinical AI capabilities — the Translyx team can help identify the right fit for your organisation."
         primaryCTA={{ label: "Contact us", href: "/contact" }}
         secondaryCTA={{ label: "See partner products", href: "/products" }}
+        footnote="We typically respond within two business days."
       />
     </>
   );

@@ -20,6 +20,8 @@ interface HeroSectionProps {
   ctas?: HeroCTA[];
   trustChips?: { icon: LucideIcon; label: string }[];
   visual?: React.ReactNode;
+  /** Low-weight link rendered under the trust chips, for a tertiary path that doesn't need CTA-level prominence */
+  footer?: React.ReactNode;
 }
 
 function CTAButton({ cta }: { cta: HeroCTA }) {
@@ -59,6 +61,7 @@ export function HeroSection({
   ctas,
   trustChips,
   visual,
+  footer,
 }: HeroSectionProps) {
   return (
     <section className="relative overflow-hidden bg-midnight">
@@ -116,6 +119,15 @@ export function HeroSection({
                 {trustChips.map((c) => (
                   <TrustChip key={c.label} icon={c.icon} label={c.label} tone="dark" />
                 ))}
+              </div>
+            )}
+
+            {footer && (
+              <div
+                className="mt-6 will-fade reveal"
+                style={{ animationDelay: "0.34s" }}
+              >
+                {footer}
               </div>
             )}
           </div>

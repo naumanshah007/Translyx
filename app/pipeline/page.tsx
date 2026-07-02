@@ -8,6 +8,8 @@ import { Hero } from "@/components/sections/Hero";
 import { CTA } from "@/components/sections/CTA";
 import { PipelineCategoryCard } from "@/components/ui/PipelineCategoryCard";
 import { PipelineCapabilityCard } from "@/components/ui/PipelineCapabilityCard";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Reveal } from "@/components/ui/Reveal";
 
 const pipelineDescription = `The ${siteConfig.companyName} pipeline — governed clinical AI workflow capabilities under evaluation and development, plus diagnostic innovation opportunities across AMR, sepsis, POCT, oncology, endocrine, cardiac, and precision medicine for New Zealand healthcare.`;
 
@@ -49,7 +51,7 @@ export default function PipelinePage() {
         headline="Clinical AI capabilities and diagnostic innovation for New Zealand &"
         highlight="Oceania."
         description={`The ${siteConfig.companyName} pipeline spans governed clinical AI workflow capabilities — under evaluation and development — and diagnostic innovation across AMR, sepsis, point-of-care testing, oncology, endocrine, cardiac, and precision medicine.`}
-        primaryCTA={{ label: "Discuss the pipeline", href: "/contact" }}
+        primaryCTA={{ label: "Discuss the pipeline", href: "/contact?topic=pipeline" }}
         secondaryCTA={{ label: "See partner products", href: "/products" }}
       />
 
@@ -57,22 +59,16 @@ export default function PipelinePage() {
       <section className="bg-white py-18 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1180px]">
-            <div className="max-w-3xl mb-8">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">
-                Clinical AI workflow capabilities
-              </p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F] mb-3">
-                Governed workflow capabilities in the Translyx pipeline
-              </h2>
-              <p className="text-base text-slate-600 leading-relaxed">
-                Privacy-preserving, reviewer-gated clinical AI workflow concepts being evaluated and developed under
-                the Translyx platform — designed with human oversight, visible limitations, and clinical governance
-                from the outset.
-              </p>
-            </div>
+            <SectionHeader
+              eyebrow="Clinical AI workflow capabilities"
+              title="Governed workflow capabilities in the Translyx pipeline"
+              description="Privacy-preserving, reviewer-gated clinical AI workflow concepts being evaluated and developed under the Translyx platform — designed with human oversight, visible limitations, and clinical governance from the outset."
+              maxWidth="max-w-3xl"
+              className="mb-8"
+            />
 
-            {/* Not-launched disclaimer */}
-            <div className="mb-10 flex items-start gap-3 rounded-xl border border-amber-200/70 bg-amber-50/60 p-4">
+            {/* Pipeline status banner */}
+            <div className="card-note mb-10 flex items-start gap-3 rounded-xl p-4">
               <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
               <p className="text-sm leading-relaxed text-amber-900">
                 Pipeline capabilities are under evaluation or in development. They are not publicly launched products
@@ -80,11 +76,11 @@ export default function PipelinePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <Reveal className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {pipelineCapabilities.map((capability) => (
                 <PipelineCapabilityCard key={capability.slug} capability={capability} />
               ))}
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -93,19 +89,13 @@ export default function PipelinePage() {
       <section id="diagnostic-innovation" className="bg-[#F5F8FC] py-18 sm:py-24 border-t border-slate-200/60 scroll-mt-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1180px]">
-            <div className="max-w-3xl mb-10">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">
-                Diagnostic innovation
-              </p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F] mb-3">
-                Diagnostic technology opportunities for New Zealand healthcare
-              </h2>
-              <p className="text-base text-slate-600 leading-relaxed">
-                Globally validated diagnostic and clinical technology areas Translyx is working to bring to New
-                Zealand — across antimicrobial resistance, sepsis, point-of-care testing, oncology, endocrine,
-                cardiac, and precision medicine.
-              </p>
-            </div>
+            <SectionHeader
+              eyebrow="Diagnostic innovation"
+              title="Diagnostic technology opportunities for New Zealand healthcare"
+              description="Globally validated diagnostic and clinical technology areas Translyx is working to bring to New Zealand — across antimicrobial resistance, sepsis, point-of-care testing, oncology, endocrine, cardiac, and precision medicine."
+              maxWidth="max-w-3xl"
+              className="mb-10"
+            />
 
             {/* Aiforia digital pathology context */}
             <div className="mb-12 overflow-hidden rounded-2xl border border-violet-200/70 bg-white p-6 shadow-[0_10px_28px_-16px_rgba(15,28,63,0.18)] sm:p-8">
@@ -154,7 +144,7 @@ export default function PipelinePage() {
       <CTA
         title="Discuss the Translyx pipeline for your organisation."
         description="Contact Translyx to discuss how pipeline capabilities and diagnostic innovation fit your healthcare or research priorities."
-        primaryCTA={{ label: "Contact us", href: "/contact" }}
+        primaryCTA={{ label: "Contact us", href: "/contact?topic=pipeline" }}
         secondaryCTA={{ label: "See partner products", href: "/products" }}
       />
     </>

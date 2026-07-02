@@ -76,6 +76,8 @@
     font-family: var(--font-display);
     letter-spacing: -0.02em;
     line-height: 1.15;
+    hyphens: none;
+    -webkit-hyphens: none;
   }
   /* Editorial display scale — used in hero sections */
   .text-display {
@@ -242,23 +244,16 @@
     display: none;
   }
 
-  /* AI Solutions nav active state (:target) */
-  #ai-solutions-content:has(#case-for-ai:target) nav a[href="#case-for-ai"],
-  #ai-solutions-content:has(#privacy-challenge:target) nav a[href="#privacy-challenge"],
-  #ai-solutions-content:has(#privexa:target) nav a[href="#privexa"],
-  #ai-solutions-content:has(#privexa-trace:target) nav a[href="#privexa-trace"],
-  #ai-solutions-content:has(#compliance:target) nav a[href="#compliance"] {
-    background: rgba(15, 28, 63, 0.08);
-    border-color: rgba(15, 28, 63, 0.3);
-    color: rgb(15 28 63);
+  /* Governance / regulatory note card — amber accent, used for compliance-adjacent copy */
+  .card-note {
+    border: 1px solid rgba(217, 119, 6, 0.25);
+    background: linear-gradient(160deg, rgba(255, 251, 235, 0.9), rgba(255, 255, 255, 0.95));
   }
-  .dark #ai-solutions-content:has(#case-for-ai:target) nav a[href="#case-for-ai"],
-  .dark #ai-solutions-content:has(#privacy-challenge:target) nav a[href="#privacy-challenge"],
-  .dark #ai-solutions-content:has(#privexa:target) nav a[href="#privexa"],
-  .dark #ai-solutions-content:has(#privexa-trace:target) nav a[href="#privexa-trace"],
-  .dark #ai-solutions-content:has(#compliance:target) nav a[href="#compliance"] {
-    color: rgb(191 219 254);
-    border-color: rgba(96, 165, 250, 0.5);
+
+  /* Neutral status card — cyan accent, used for pipeline/maturity status notes (no warning implied) */
+  .card-info {
+    border: 1px solid rgba(8, 145, 178, 0.2);
+    background: linear-gradient(160deg, rgba(236, 254, 255, 0.7), rgba(255, 255, 255, 0.95));
   }
 }
 

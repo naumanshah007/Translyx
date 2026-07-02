@@ -15,9 +15,8 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
         className={cn(
           "group/card relative overflow-hidden rounded-2xl border border-slate-200/70 bg-white transition-all duration-300",
           "shadow-[0_1px_2px_rgba(15,28,63,0.04),0_10px_28px_-14px_rgba(15,28,63,0.14)]",
-          "dark:border-slate-800/70 dark:bg-slate-950/80",
           hover &&
-            "hover:-translate-y-1 hover:border-cyan-300/50 hover:shadow-[0_26px_64px_-30px_rgba(8,145,178,0.45)] dark:hover:border-cyan-400/30",
+            "hover:-translate-y-1 hover:border-cyan-300/50 hover:shadow-[0_26px_64px_-30px_rgba(8,145,178,0.45)]",
           className
         )}
         {...props}
@@ -43,7 +42,7 @@ const CardTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HT
   ({ className, ...props }, ref) => (
     <h3
       ref={ref}
-      className={cn("text-xl font-bold leading-snug tracking-tight text-slate-900 dark:text-slate-50", className)}
+      className={cn("font-display text-xl font-semibold leading-snug tracking-tight text-[#0F1C3F]", className)}
       {...props}
     />
   )
@@ -52,7 +51,7 @@ CardTitle.displayName = "CardTitle";
 
 const CardDescription = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLParagraphElement>>(
   ({ className, ...props }, ref) => (
-    <p ref={ref} className={cn("text-sm text-slate-600 dark:text-slate-400 leading-relaxed", className)} {...props} />
+    <p ref={ref} className={cn("text-sm text-slate-600 leading-relaxed", className)} {...props} />
   )
 );
 CardDescription.displayName = "CardDescription";

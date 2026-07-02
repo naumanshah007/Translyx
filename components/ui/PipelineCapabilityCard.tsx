@@ -5,6 +5,7 @@ import type { ProductAccent } from "@/config/products";
 import type { PipelineCapability } from "@/config/pipelineCapabilities";
 import { stageLabels } from "@/config/pipelineCapabilities";
 import { getProductIcon } from "@/lib/productIcons";
+import { StageRail } from "@/components/ui/StageRail";
 
 const accentMap: Record<ProductAccent, { color: string; soft: string; glow: string; text: string }> = {
   cyan: { color: "#22D3EE", soft: "rgba(34,211,238,0.10)", glow: "rgba(34,211,238,0.30)", text: "text-cyan-600" },
@@ -62,7 +63,9 @@ export function PipelineCapabilityCard({
       <h3 className="relative mt-1.5 font-display text-lg font-semibold text-[#0F1C3F]">{capability.title}</h3>
       <p className="relative mt-2 flex-1 text-sm leading-relaxed text-slate-600">{capability.tagline}</p>
 
-      <span className={cn("mt-5 inline-flex items-center gap-1.5 text-sm font-semibold", a.text)}>
+      <StageRail stage={capability.stage} accent={capability.accent} compact className="relative mt-5 mb-1" />
+
+      <span className={cn("mt-3 inline-flex items-center gap-1.5 text-sm font-semibold", a.text)}>
         Learn more
         <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
       </span>

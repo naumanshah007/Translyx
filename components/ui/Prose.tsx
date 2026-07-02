@@ -5,23 +5,12 @@ interface ProseProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 /**
- * Reusable justified long-form text wrapper.
- * MS-Word-style alignment with consistent typography.
+ * Reusable long-form text wrapper — left-aligned for readability.
  */
 export function Prose({ children, className, ...props }: ProseProps) {
   return (
     <div
-      className={cn(
-        "text-gray-700 dark:text-gray-300",
-        "text-base sm:text-lg",
-        "leading-relaxed",
-        "space-y-4",
-        "text-justify",
-        "hyphens-auto",
-        "break-words",
-        "max-w-none",
-        className
-      )}
+      className={cn("text-slate-700", "text-base sm:text-lg", "leading-relaxed", "space-y-4", "max-w-none", className)}
       {...props}
     >
       {children}

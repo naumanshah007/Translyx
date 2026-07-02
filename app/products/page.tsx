@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Handshake, FlaskConical } from "lucide-react";
+import { ArrowRight, Handshake, FlaskConical, Microscope, Workflow } from "lucide-react";
 
 import { Hero } from "@/components/sections/Hero";
 import { CTA } from "@/components/sections/CTA";
 import { EcosystemDiagram } from "@/components/sections/EcosystemDiagram";
+import { AdoptionPathway } from "@/components/sections/AdoptionPathway";
 import { ProductCard } from "@/components/ui/ProductCard";
 import { products } from "@/config/products";
 import { siteConfig } from "@/config/site";
@@ -59,8 +60,8 @@ export default function ProductsPage() {
         headline="Partner diagnostic and pathology solutions, under one"
         highlight="accountable partner."
         description="Aiforia digital pathology AI and Algoscope surgery-to-pathology workflow automation — represented, clinically positioned, and locally supported by Translyx across New Zealand and Oceania."
-        primaryCTA={{ label: "Discuss a product", href: "/contact" }}
-        secondaryCTA={{ label: "Request a walkthrough", href: "/contact" }}
+        primaryCTA={{ label: "Request a walkthrough", href: "/contact" }}
+        secondaryCTA={{ label: "Discuss a product", href: "/contact" }}
       />
 
       {/* Partner products */}
@@ -80,10 +81,36 @@ export default function ProductsPage() {
                   </p>
                 </div>
               </div>
-              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mx-auto grid max-w-3xl gap-5 sm:grid-cols-2">
                 {products.map((product) => (
                   <ProductCard key={product.slug} product={product} />
                 ))}
+              </div>
+            </div>
+
+            {/* Comparison strip — clarifies the two portfolios at a glance */}
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="flex items-start gap-4 rounded-2xl border border-cyan-200/60 bg-cyan-50/40 p-5">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white ring-1 ring-cyan-200/70">
+                  <Microscope className="h-5 w-5 text-cyan-700" />
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-[#0F1C3F]">Aiforia — analysis of the slide</p>
+                  <p className="mt-1 text-xs leading-relaxed text-slate-500">
+                    AI-assisted digital pathology scoring, grading, and quantitative image analysis.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4 rounded-2xl border border-violet-200/60 bg-violet-50/40 p-5">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white ring-1 ring-violet-200/70">
+                  <Workflow className="h-5 w-5 text-violet-600" />
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-[#0F1C3F]">Algoscope — journey of the specimen</p>
+                  <p className="mt-1 text-xs leading-relaxed text-slate-500">
+                    Traceability and workflow automation from operating room to pathology laboratory.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -116,6 +143,11 @@ export default function ProductsPage() {
           </div>
         </div>
       </section>
+
+      <AdoptionPathway
+        eyebrow="How adoption works"
+        title="A guided path from first conversation to local adoption"
+      />
 
       <EcosystemDiagram />
 

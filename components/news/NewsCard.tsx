@@ -54,8 +54,11 @@ export function NewsCard({ item }: { item: NewsItem }) {
           href={item.sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#0F1C3F] transition-colors hover:text-[#0891B2]"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-[#0F1C3F] transition-colors hover:text-[#0891B2]"
         >
+          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0F1C3F]/8 text-[9px] font-bold text-[#0F1C3F]">
+            {item.source.charAt(0).toUpperCase()}
+          </span>
           {item.source}
           <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </a>
@@ -83,7 +86,10 @@ export function NewsCardCompact({ item }: { item: NewsItem }) {
         <span className="text-[11px] text-slate-400">{formatDate(item.publishedAt)}</span>
       </div>
       <h3 className="mt-2.5 flex-1 font-display text-base font-semibold leading-snug text-[#0F1C3F]">{item.title}</h3>
-      <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-[#0891B2]">
+      <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-[#0891B2]">
+        <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-cyan-50 text-[8px] font-bold text-[#0891B2]">
+          {item.source.charAt(0).toUpperCase()}
+        </span>
         {item.source}
         <ExternalLink className="h-3 w-3" />
       </span>

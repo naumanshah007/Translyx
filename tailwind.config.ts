@@ -184,6 +184,10 @@ const config: Config = {
           "80%": { opacity: "1" },
           "100%": { transform: "translateY(120%)", opacity: "0" },
         },
+        travel: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(1000%)" },
+        },
         dash: {
           to: { strokeDashoffset: "-1000" },
         },
@@ -207,6 +211,7 @@ const config: Config = {
         "spin-slow": "spinSlow 26s linear infinite",
         "gradient-shift": "gradientShift 8s ease-in-out infinite",
         "beam": "beam 5s ease-in-out infinite",
+        "travel": "travel 2.4s linear infinite",
         "dash": "dash 24s linear infinite",
         "twinkle": "twinkle 4s ease-in-out infinite",
       },

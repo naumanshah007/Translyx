@@ -7,6 +7,8 @@ interface CTAProps {
   description?: string;
   primaryCTA?: { label: string; href: string; external?: boolean };
   secondaryCTA?: { label: string; href: string; external?: boolean };
+  /** Small trust/expectation line rendered under the buttons, e.g. response-time promise */
+  footnote?: string;
   className?: string;
 }
 
@@ -43,7 +45,7 @@ function Action({
   );
 }
 
-export function CTA({ title, description, primaryCTA, secondaryCTA, className }: CTAProps) {
+export function CTA({ title, description, primaryCTA, secondaryCTA, footnote, className }: CTAProps) {
   return (
     <section className={cn("relative overflow-hidden bg-midnight py-20 sm:py-24", className)}>
       <div className="pointer-events-none absolute inset-0 grid-overlay opacity-40" />
@@ -69,6 +71,8 @@ export function CTA({ title, description, primaryCTA, secondaryCTA, className }:
               {secondaryCTA && <Action cta={secondaryCTA} variant="glass" />}
             </div>
           )}
+
+          {footnote && <p className="mt-6 text-xs text-slate-400">{footnote}</p>}
         </div>
       </div>
     </section>

@@ -95,8 +95,11 @@ export function NewsSpotlight({ items }: { items: NewsItem[] }) {
                 href={active.sourceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/40 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-200 transition-colors hover:bg-cyan-400/20 hover:text-white"
+                className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-200 transition-colors hover:bg-cyan-400/20 hover:text-white"
               >
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-400/20 text-[9px] font-bold text-cyan-100">
+                  {active.source.charAt(0).toUpperCase()}
+                </span>
                 Read at {active.source}
                 <ArrowUpRight className="h-4 w-4" />
               </a>

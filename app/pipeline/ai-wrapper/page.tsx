@@ -14,7 +14,9 @@ import {
 import { Hero } from "@/components/sections/Hero";
 import { CTA } from "@/components/sections/CTA";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
-import { SectionDivider } from "@/components/ui/DecorativeElements";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { Reveal } from "@/components/ui/Reveal";
+import { StageRail } from "@/components/ui/StageRail";
 import { siteConfig } from "@/config/site";
 
 const pageDescription =
@@ -96,14 +98,23 @@ export default function AIWrapperPage() {
         className="py-16 sm:py-20 md:py-28 lg:py-36"
       />
 
+      {/* Stage rail */}
+      <section className="bg-[#F5F8FC] border-b border-slate-200/60 py-6">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-sm">
+            <StageRail stage="evaluation" accent="violet" />
+          </div>
+        </div>
+      </section>
+
       {/* Audience */}
       <section className="bg-[#F5F8FC] border-b border-slate-200/60 py-10 sm:py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-5 text-center">Who this is designed for</p>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <Reveal className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {audiences.map(({ icon: Icon, label, description }) => (
-                <div key={label} className="rounded-xl bg-white border border-slate-200/80 p-4 text-center shadow-[0_1px_8px_-2px_rgba(15,28,63,0.06)]">
+                <div key={label} className="rounded-xl bg-white border border-slate-200/80 p-4 text-center shadow-[0_1px_8px_-2px_rgba(15,28,63,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-violet-300/60">
                   <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-[#22D3EE]/10">
                     <Icon className="h-5 w-5 text-[#0891B2]" />
                   </div>
@@ -111,24 +122,22 @@ export default function AIWrapperPage() {
                   <p className="mt-1 text-xs text-slate-500 leading-snug">{description}</p>
                 </div>
               ))}
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
-
-      <SectionDivider variant="gradient" />
 
       {/* How it works */}
       <section className="bg-white py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
-            <div className="max-w-2xl mb-10">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">How the concept works</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">
-                Sensitive data is protected before it reaches any AI system
-              </h2>
-            </div>
-            <div className="grid gap-5 sm:grid-cols-3">
+            <SectionHeader
+              eyebrow="How the concept works"
+              title="Sensitive data is protected before it reaches any AI system"
+              maxWidth="max-w-2xl"
+              className="mb-10"
+            />
+            <Reveal className="grid gap-5 sm:grid-cols-3">
               {capabilities.map(({ title, body }, i) => (
                 <Card key={title} className="p-5 sm:p-6">
                   <CardHeader className="p-0 mb-3">
@@ -144,7 +153,7 @@ export default function AIWrapperPage() {
                   </CardContent>
                 </Card>
               ))}
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -153,10 +162,12 @@ export default function AIWrapperPage() {
       <section className="bg-[#F5F8FC] py-16 sm:py-20 md:py-24 border-y border-slate-200/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
-            <div className="max-w-2xl mb-10">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">Honest scoping</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">What this capability covers — and what it does not</h2>
-            </div>
+            <SectionHeader
+              eyebrow="Honest scoping"
+              title="What this capability covers — and what it does not"
+              maxWidth="max-w-2xl"
+              className="mb-10"
+            />
             <div className="grid sm:grid-cols-2 gap-6">
               <Card className="p-5 sm:p-6" hover={false}>
                 <CardHeader className="p-0 mb-4">
@@ -197,7 +208,7 @@ export default function AIWrapperPage() {
       <section className="bg-white py-12 sm:py-14">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
-            <Card className="p-5 sm:p-7 border-[#22D3EE]/20" hover={false}>
+            <Card className="card-info p-5 sm:p-7" hover={false}>
               <CardContent className="pt-0">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0891B2] mb-1">Pipeline status</p>
                 <p className="text-sm text-slate-600">

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
 import { CTA } from "@/components/sections/CTA";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
-import { SectionDivider } from "@/components/ui/DecorativeElements";
+import { StageRail } from "@/components/ui/StageRail";
 import {
   FileCheck,
   GitBranch,
@@ -179,6 +179,15 @@ export default function TracePage() {
         className="py-16 sm:py-20 md:py-28 lg:py-36"
       />
 
+      {/* Stage rail */}
+      <section className="bg-[#F5F8FC] border-b border-slate-200/60 py-6">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-sm">
+            <StageRail stage="evaluation" accent="cyan" />
+          </div>
+        </div>
+      </section>
+
       {/* Built for — audience segmentation */}
       <section className="bg-[#F5F8FC] border-b border-slate-200/60 py-10 sm:py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -198,8 +207,6 @@ export default function TracePage() {
           </div>
         </div>
       </section>
-
-      <SectionDivider variant="gradient" />
 
       {/* Where Trace fits */}
       <section className="bg-white py-16 sm:py-20 md:py-24">
@@ -303,8 +310,6 @@ export default function TracePage() {
           </div>
         </div>
       </section>
-
-      <SectionDivider variant="geometric" />
 
       {/* Three comparison paths */}
       <section className="bg-white py-16 sm:py-20 md:py-24">
