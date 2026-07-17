@@ -191,7 +191,7 @@ export default function TracePage() {
       <section className="bg-[#F5F8FC] border-b border-slate-200/60 py-10 sm:py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-5 text-center">Built for</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-5 text-center">Built for</p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {audienceSegments.map(({ icon: Icon, label, description }) => (
                 <div key={label} className="rounded-xl bg-white border border-slate-200/80 p-4 text-center shadow-[0_1px_8px_-2px_rgba(15,28,63,0.06)]">
@@ -240,21 +240,21 @@ export default function TracePage() {
 
             {/* Pipeline placement */}
             <div className="space-y-3">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-4">Where Trace sits</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-4">Where Trace sits</p>
               <div className="rounded-xl border border-slate-200/80 p-4 bg-[#F5F8FC]">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400">Translyx Limited</p>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-600">Translyx Limited</p>
                 <p className="mt-1.5 text-sm text-slate-600 leading-relaxed">
                   Clinical technology company focused on diagnostics, digital pathology AI, and healthcare adoption in New Zealand.
                 </p>
               </div>
               <div className="rounded-xl border border-[#22D3EE]/25 p-4 bg-white">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0891B2]">Translyx Pipeline</p>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0E7490]">Translyx Pipeline</p>
                 <p className="mt-1.5 text-sm text-slate-600 leading-relaxed">
                   Clinical AI workflow capabilities under evaluation and development — not publicly launched products.
                 </p>
               </div>
               <div className="rounded-xl border border-[#0F1C3F]/20 p-4 bg-[#0F1C3F]">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400">Trace</p>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-300">Trace</p>
                 <p className="mt-1.5 text-sm text-slate-300 leading-relaxed">
                   Reviewer-gated synthetic control arm workflows with lineage, comparison workspace, and submission packaging.
                 </p>
@@ -276,7 +276,7 @@ export default function TracePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <div className="max-w-2xl mb-10">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">Workflow</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-3">Workflow</p>
               <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F] mb-3">
                 The eight-step Trace workflow
               </h2>
@@ -315,7 +315,7 @@ export default function TracePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <div className="max-w-2xl mb-10">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">Comparison model</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-3">Comparison model</p>
               <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F] mb-3">
                 Three comparison paths inside one governed workflow
               </h2>
@@ -419,7 +419,7 @@ export default function TracePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <div className="max-w-2xl mb-10">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">Governance model</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-3">Governance model</p>
               <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F] mb-3">
                 Governance built in, not bolted on
               </h2>
@@ -453,7 +453,7 @@ export default function TracePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <div className="max-w-2xl mb-10">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">Honest scoping</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-3">Honest scoping</p>
               <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">What Trace covers — and what it does not</h2>
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
@@ -474,7 +474,7 @@ export default function TracePage() {
               </Card>
               <Card className="p-5 sm:p-6 bg-[#F5F8FC] border-slate-200/60" hover={false}>
                 <CardHeader className="p-0 mb-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Not included</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-600">Not included</p>
                 </CardHeader>
                 <CardContent className="p-0">
                   <ul className="space-y-2.5">
@@ -500,7 +500,7 @@ export default function TracePage() {
               <CardContent className="pt-0">
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                   <div className="max-w-2xl">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">Regulatory posture</p>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-3">Regulatory posture</p>
                     <h3 className="text-xl sm:text-2xl font-bold text-[#0F1C3F] mb-3">
                       Designed to support submission packaging — not to claim regulatory approval
                     </h3>

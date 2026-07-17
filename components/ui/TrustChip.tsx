@@ -22,7 +22,7 @@ export function TrustChip({ icon: Icon, label, tone = "dark", className }: Trust
       <Icon
         className={cn(
           "h-3.5 w-3.5 shrink-0",
-          tone === "dark" ? "text-cyan-300" : "text-[#0891B2]"
+          tone === "dark" ? "text-cyan-300" : "text-[#0E7490]"
         )}
       />
       {label}

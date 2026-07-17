@@ -71,7 +71,7 @@ export function ChipButton({ children, onClick, active = false, className }: Chi
       className={cn(
         "rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors",
         active
-          ? "border-transparent bg-[#0891B2] text-white shadow-[0_4px_14px_-4px_rgba(8,145,178,0.55)]"
+          ? "border-transparent bg-[#0E7490] text-white shadow-[0_4px_14px_-4px_rgba(14,116,144,0.5)]"
           : "border-slate-200 bg-white text-slate-500 hover:bg-slate-50",
         className
       )}

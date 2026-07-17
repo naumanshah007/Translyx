@@ -143,11 +143,11 @@ export default async function HomePage() {
           <div className="mx-auto grid max-w-[1240px] divide-y divide-slate-200/70 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
             {proofPoints.map(({ icon: Icon, label, value }) => (
               <div key={label} className="flex items-start gap-3 px-2 py-6 sm:px-5 sm:py-8 lg:px-6">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#F2F7FB] text-[#0891B2] ring-1 ring-slate-200/70">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#F2F7FB] text-[#0E7490] ring-1 ring-slate-200/70">
                   <Icon className="h-[18px] w-[18px]" />
                 </span>
                 <span>
-                  <span className="block text-[9px] font-semibold uppercase tracking-[0.17em] text-slate-400">{label}</span>
+                  <span className="block text-[9px] font-semibold uppercase tracking-[0.17em] text-slate-600">{label}</span>
                   <span className="mt-1 block text-xs font-semibold leading-snug text-[#0F1C3F]">{value}</span>
                 </span>
               </div>
@@ -165,7 +165,7 @@ export default async function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-16">
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0891B2]">Oceania, connected</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0E7490]">Oceania, connected</p>
               <h2 className="mt-3 font-display text-[2.2rem] font-semibold leading-[1.08] text-[#0F1C3F] sm:text-[3rem]">
                 Global innovation, translated for local clinical reality.
               </h2>
@@ -179,7 +179,7 @@ export default async function HomePage() {
                   </span>
                 ))}
               </div>
-              <Link href="/company" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#0F1C3F] hover:text-[#0891B2]">
+              <Link href="/company" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#0F1C3F] hover:text-[#0E7490]">
                 Meet Translyx
                 <ArrowRight className="h-4 w-4" />
               </Link>
@@ -200,12 +200,12 @@ export default async function HomePage() {
             <div className="mx-auto max-w-[1180px]">
               <div className="mb-10 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
                 <div className="max-w-2xl">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0891B2]">Clinical intelligence desk</p>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0E7490]">Clinical intelligence desk</p>
                   <h2 className="mt-3 font-display text-[2.2rem] font-semibold leading-[1.08] text-[#0F1C3F] sm:text-[3rem]">
                     What is moving diagnostics, pathology and clinical AI.
                   </h2>
                 </div>
-                <Link href="/news" className="inline-flex items-center gap-2 text-sm font-semibold text-[#0F1C3F] hover:text-[#0891B2]">
+                <Link href="/news" className="inline-flex items-center gap-2 text-sm font-semibold text-[#0F1C3F] hover:text-[#0E7490]">
                   View all intelligence
                   <ArrowRight className="h-4 w-4" />
                 </Link>

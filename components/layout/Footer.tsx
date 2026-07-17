@@ -144,10 +144,10 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center">
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-slate-400">
             © {currentYear} {siteConfig.companyName}. All rights reserved. Registered in New Zealand.
           </p>
-          <div className="flex items-center gap-6 text-xs text-slate-500">
+          <div className="flex items-center gap-6 text-xs text-slate-400">
             <Link href="/company" className="transition-colors hover:text-slate-300">About</Link>
             <Link href="/partners" className="transition-colors hover:text-slate-300">Partners</Link>
             <Link href="/products" className="transition-colors hover:text-slate-300">Products</Link>

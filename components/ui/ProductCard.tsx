@@ -6,9 +6,9 @@ import { statusLabels, accentBySlug } from "@/config/products";
 import { getProductIcon } from "@/lib/productIcons";
 
 const accentMap: Record<ProductAccent, { color: string; soft: string; glow: string; text: string }> = {
-  cyan: { color: "#22D3EE", soft: "rgba(34,211,238,0.12)", glow: "rgba(34,211,238,0.40)", text: "text-cyan-600" },
+  cyan: { color: "#22D3EE", soft: "rgba(34,211,238,0.12)", glow: "rgba(34,211,238,0.40)", text: "text-cyan-700" },
   violet: { color: "#8B5CF6", soft: "rgba(139,92,246,0.12)", glow: "rgba(139,92,246,0.38)", text: "text-violet-600" },
-  teal: { color: "#2DD4BF", soft: "rgba(45,212,191,0.12)", glow: "rgba(45,212,191,0.38)", text: "text-teal-600" },
+  teal: { color: "#2DD4BF", soft: "rgba(45,212,191,0.12)", glow: "rgba(45,212,191,0.38)", text: "text-teal-700" },
   emerald: { color: "#34D399", soft: "rgba(52,211,153,0.12)", glow: "rgba(52,211,153,0.38)", text: "text-emerald-600" },
   sky: { color: "#38BDF8", soft: "rgba(56,189,248,0.12)", glow: "rgba(56,189,248,0.38)", text: "text-sky-600" },
 };

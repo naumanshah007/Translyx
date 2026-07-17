@@ -25,7 +25,7 @@ const VISIBLE_DESKTOP = 5;
 const VISIBLE_MOBILE = 4;
 
 const regionAccent: Record<string, { dot: string; text: string }> = {
-  "new-zealand": { dot: "bg-cyan-400", text: "text-cyan-600" },
+  "new-zealand": { dot: "bg-cyan-400", text: "text-cyan-700" },
   australia: { dot: "bg-violet-400", text: "text-violet-600" },
   global: { dot: "bg-slate-300", text: "text-slate-500" },
 };
@@ -47,11 +47,11 @@ function Row({ item }: { item: NewsItem }) {
             {newsRegionLabel(item.region)}
           </span>
         </span>
-        <span className="pl-3 text-[11px] text-slate-400">{timeAgo(item.publishedAt)}</span>
+        <span className="pl-3 text-[11px] text-slate-600">{timeAgo(item.publishedAt)}</span>
       </div>
 
       {/* Headline */}
-      <p className="min-w-0 flex-1 font-display text-[15px] font-semibold leading-snug text-[#0F1C3F] line-clamp-2 transition-colors group-hover:text-[#0891B2]">
+      <p className="min-w-0 flex-1 font-display text-[15px] font-semibold leading-snug text-[#0F1C3F] line-clamp-2 transition-colors group-hover:text-[#0E7490]">
         {item.title}
       </p>
 
@@ -194,7 +194,7 @@ export function NewsWall({ items }: { items: NewsItem[] }) {
           </span>
           {paused ? "Paused" : "Live wire"}
         </span>
-        <span className="text-[10px] uppercase tracking-wide text-slate-400">Updated continuously</span>
+        <span className="text-[10px] uppercase tracking-wide text-slate-600">Updated continuously</span>
       </div>
 
       {/* The wire window */}

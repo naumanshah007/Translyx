@@ -239,7 +239,7 @@ export function ContactForm() {
           Send Message
         </Button>
 
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5 border-t border-slate-100 pt-4 text-xs text-slate-400">
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5 border-t border-slate-100 pt-4 text-xs text-slate-600">
           <span className="flex items-center gap-1.5">
             <Clock className="h-3.5 w-3.5" />
             Response within two business days

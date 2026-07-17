@@ -27,7 +27,7 @@ export function ProductWorlds() {
           <div className="mx-auto mb-14 max-w-3xl text-center sm:mb-20">
             <div className="mb-5 flex items-center justify-center gap-3">
               <span className="h-px w-8 bg-gradient-to-r from-transparent to-cyan-500" />
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#0891B2]">Partner product worlds</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#0E7490]">Partner product worlds</p>
               <span className="h-px w-8 bg-gradient-to-r from-cyan-500 to-transparent" />
             </div>
             <h2 className="font-display text-[2.2rem] font-semibold leading-[1.08] tracking-[-0.025em] text-[#0F1C3F] sm:text-[3.2rem]">
@@ -43,7 +43,7 @@ export function ProductWorlds() {
               <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-cyan-200/30 blur-3xl" />
               <div className="relative grid lg:grid-cols-[0.78fr_1.22fr] lg:items-stretch">
                 <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-14">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-600 ring-1 ring-cyan-200/60">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-700 ring-1 ring-cyan-200/60">
                     <Microscope className="h-5 w-5" />
                   </span>
                   <p className="mt-7 text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-700">Authorised partner solution</p>
@@ -80,7 +80,7 @@ export function ProductWorlds() {
                         <ScanLine className="h-3.5 w-3.5" />
                         Specimen trace active
                       </span>
-                      <span className="text-[10px] text-slate-500">Six connected stages</span>
+                      <span className="text-[10px] text-slate-400">Six connected stages</span>
                     </div>
                     <SampleJourneyDiagram />
                   </div>

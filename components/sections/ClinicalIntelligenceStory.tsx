@@ -76,7 +76,7 @@ export function ClinicalIntelligenceStory() {
                       <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_12px_rgba(110,231,183,0.8)]" />
                       Clinical intelligence field
                     </span>
-                    <span className="hidden text-[10px] text-slate-500 sm:block">Specialist review active</span>
+                    <span className="hidden text-[10px] text-slate-400 sm:block">Specialist review active</span>
                   </div>
 
                   <div className="relative h-[360px] sm:h-[480px]">
@@ -113,7 +113,7 @@ export function ClinicalIntelligenceStory() {
                   </div>
                 </div>
               </div>
-              <p className="mt-4 text-center text-[10px] uppercase tracking-[0.2em] text-slate-500">
+              <p className="mt-4 text-center text-[10px] uppercase tracking-[0.2em] text-slate-400">
                 Illustrative workflow · not a diagnostic output
               </p>
             </div>

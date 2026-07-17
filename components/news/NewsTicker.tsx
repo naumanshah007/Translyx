@@ -29,7 +29,7 @@ export function NewsTicker({ items, className }: { items: NewsItem[]; className?
           <span className="text-sm font-medium text-slate-200 transition-colors group-hover/item:text-white">
             {item.title}
           </span>
-          <span className="text-xs text-slate-500">
+          <span className="text-xs text-slate-400">
             {item.source} · {timeAgo(item.publishedAt)}
           </span>
         </a>

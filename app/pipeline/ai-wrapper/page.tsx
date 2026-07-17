@@ -110,12 +110,12 @@ export default function AIWrapperPage() {
       <section className="bg-[#F5F8FC] border-b border-slate-200/60 py-10 sm:py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-5 text-center">Who this is designed for</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-5 text-center">Who this is designed for</p>
             <Reveal className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {audiences.map(({ icon: Icon, label, description }) => (
                 <div key={label} className="rounded-xl bg-white border border-slate-200/80 p-4 text-center shadow-[0_1px_8px_-2px_rgba(15,28,63,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-violet-300/60">
                   <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-[#22D3EE]/10">
-                    <Icon className="h-5 w-5 text-[#0891B2]" />
+                    <Icon className="h-5 w-5 text-[#0E7490]" />
                   </div>
                   <p className="text-sm font-semibold text-[#0F1C3F]">{label}</p>
                   <p className="mt-1 text-xs text-slate-500 leading-snug">{description}</p>
@@ -185,7 +185,7 @@ export default function AIWrapperPage() {
               </Card>
               <Card className="p-5 sm:p-6 bg-[#F5F8FC] border-slate-200/60" hover={false}>
                 <CardHeader className="p-0 mb-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Not included</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-600">Not included</p>
                 </CardHeader>
                 <CardContent className="p-0">
                   <ul className="space-y-2.5">
@@ -209,7 +209,7 @@ export default function AIWrapperPage() {
           <div className="max-w-content mx-auto">
             <Card className="card-info p-5 sm:p-7" hover={false}>
               <CardContent className="pt-0">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0891B2] mb-1">Pipeline status</p>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0E7490] mb-1">Pipeline status</p>
                 <p className="text-sm text-slate-600">
                   AI Wrapper is part of the Translyx pipeline and is under evaluation. It is not a publicly launched
                   product and is not currently available to customers. Talk to Translyx to discuss the capability,

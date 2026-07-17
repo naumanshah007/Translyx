@@ -168,7 +168,7 @@ export default function AboutPage() {
             </span>
             <span className="hidden h-4 w-px bg-slate-300 lg:block" />
             {sectionAnchors.map(({ id, label }) => (
-              <Link key={id} href={`#${id}`} className="text-xs font-semibold text-slate-500 transition-colors hover:text-[#0891B2]">
+              <Link key={id} href={`#${id}`} className="text-xs font-semibold text-slate-500 transition-colors hover:text-[#0E7490]">
                 {label}
               </Link>
             ))}
@@ -222,9 +222,9 @@ export default function AboutPage() {
                 <Card key={name} className="p-5 sm:p-6" hover={false}>
                   <CardContent className="pt-0">
                     <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F5F8FC] ring-1 ring-slate-200/70">
-                      <Icon className="h-5 w-5 text-[#0891B2]" />
+                      <Icon className="h-5 w-5 text-[#0E7490]" />
                     </span>
-                    <p className="mt-4 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-[#0891B2]">{role}</p>
+                    <p className="mt-4 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-[#0E7490]">{role}</p>
                     <h3 className="mt-1 font-display text-lg font-semibold text-[#0F1C3F]">{name}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-slate-600">{body}</p>
                   </CardContent>
@@ -260,7 +260,7 @@ export default function AboutPage() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F] mb-0.5">{leadershipPrimary.name}</h3>
-                  <p className="text-[#0891B2] font-semibold text-base mb-5">{leadershipPrimary.title}</p>
+                  <p className="text-[#0E7490] font-semibold text-base mb-5">{leadershipPrimary.title}</p>
                   <div className="mb-6 flex flex-wrap gap-2">
                     {[
                       { icon: GraduationCap, label: "Physician scientist" },
@@ -272,7 +272,7 @@ export default function AboutPage() {
                         key={label}
                         className="inline-flex items-center gap-1.5 rounded-full border border-slate-200/80 bg-[#F5F8FC] px-3 py-1.5 text-xs font-semibold text-slate-600"
                       >
-                        <Icon className="h-3.5 w-3.5 text-[#0891B2]" />
+                        <Icon className="h-3.5 w-3.5 text-[#0E7490]" />
                         {label}
                       </span>
                     ))}
@@ -303,11 +303,11 @@ export default function AboutPage() {
                   ))}
                   <p>
                     Please contact us at{" "}
-                    <a href={`mailto:${siteConfig.team.ehsan.email}`} className="font-semibold text-[#0891B2]">
+                    <a href={`mailto:${siteConfig.team.ehsan.email}`} className="font-semibold text-[#0E7490]">
                       {siteConfig.team.ehsan.email}
                     </a>{" "}
                     or{" "}
-                    <a href={`mailto:${siteConfig.company.email}`} className="font-semibold text-[#0891B2]">
+                    <a href={`mailto:${siteConfig.company.email}`} className="font-semibold text-[#0E7490]">
                       {siteConfig.company.email}
                     </a>{" "}
                     for details.
@@ -338,7 +338,7 @@ export default function AboutPage() {
               </Card>
               <Card className="p-4 sm:p-5" hover={false}>
                 <CardContent className="pt-0">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-2">Partner model</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-2">Partner model</p>
                   <ul className="space-y-1">
                     {["Local labs and hospitals", "Academic research centres", "Manufacturer partnerships"].map((r) => (
                       <li key={r} className="text-sm font-semibold text-[#0F1C3F]">{r}</li>

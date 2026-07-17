@@ -27,7 +27,7 @@ export function NewsCard({ item }: { item: NewsItem }) {
         <span className={`rounded-full border px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${regionStyle[item.region] ?? regionStyle.global}`}>
           {newsRegionLabel(item.region)}
         </span>
-        <span className="text-xs text-slate-400">{formatDate(item.publishedAt)}</span>
+        <span className="text-xs text-slate-600">{formatDate(item.publishedAt)}</span>
       </div>
 
       <h3 className="mt-3 font-display text-lg font-semibold leading-snug text-[#0F1C3F]">
@@ -37,7 +37,7 @@ export function NewsCard({ item }: { item: NewsItem }) {
       <p className="mt-2.5 flex-1 text-sm leading-relaxed text-slate-600">{item.summary}</p>
 
       <div className="mt-4 rounded-xl border border-slate-100 bg-[#F5F8FC] p-3.5">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#0891B2]">Why it matters for Translyx</p>
+        <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#0E7490]">Why it matters for Translyx</p>
         <p className="mt-1 text-xs leading-relaxed text-slate-600">{item.relevanceToTranslyx}</p>
       </div>
 
@@ -54,7 +54,7 @@ export function NewsCard({ item }: { item: NewsItem }) {
           href={item.sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-[#0F1C3F] transition-colors hover:text-[#0891B2]"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-[#0F1C3F] transition-colors hover:text-[#0E7490]"
         >
           <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0F1C3F]/8 text-[9px] font-bold text-[#0F1C3F]">
             {item.source.charAt(0).toUpperCase()}
@@ -83,11 +83,11 @@ export function NewsCardCompact({ item }: { item: NewsItem }) {
         <span className={`rounded-full border px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide ${regionStyle[item.region] ?? regionStyle.global}`}>
           {newsRegionLabel(item.region)}
         </span>
-        <span className="text-[11px] text-slate-400">{formatDate(item.publishedAt)}</span>
+        <span className="text-[11px] text-slate-600">{formatDate(item.publishedAt)}</span>
       </div>
       <h3 className="mt-2.5 flex-1 font-display text-base font-semibold leading-snug text-[#0F1C3F]">{item.title}</h3>
-      <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-[#0891B2]">
-        <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-cyan-50 text-[8px] font-bold text-[#0891B2]">
+      <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-[#0E7490]">
+        <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-cyan-50 text-[8px] font-bold text-[#0E7490]">
           {item.source.charAt(0).toUpperCase()}
         </span>
         {item.source}

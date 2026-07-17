@@ -58,11 +58,11 @@ function EventCard({ event }: { event: UpcomingEvent }) {
 
       <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-1.5 pt-4 text-[11px] text-slate-400">
         <span className="inline-flex items-center gap-1.5">
-          <CalendarDays className="h-3.5 w-3.5 text-slate-500" />
+          <CalendarDays className="h-3.5 w-3.5 text-slate-400" />
           {event.dateLabel}
         </span>
         <span className="inline-flex items-center gap-1.5">
-          <MapPin className="h-3.5 w-3.5 text-slate-500" />
+          <MapPin className="h-3.5 w-3.5 text-slate-400" />
           {event.location}
         </span>
       </div>
@@ -109,7 +109,7 @@ export function UpcomingEvents({ events }: { events: UpcomingEvent[] }) {
             ))}
           </div>
 
-          <p className="mt-6 text-[11px] leading-relaxed text-slate-500">
+          <p className="mt-6 text-[11px] leading-relaxed text-slate-400">
             Event listings are for awareness only and do not imply Translyx attendance, sponsorship, or
             affiliation. Confirm dates and details with each organiser.
           </p>

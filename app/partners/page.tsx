@@ -82,7 +82,7 @@ export default function PartnersPage() {
               title={
                 <>
                   A trusted local partner for{" "}
-                  <span className="text-[#0891B2]">global innovators.</span>
+                  <span className="text-[#0E7490]">global innovators.</span>
                 </>
               }
               description="Bringing diagnostic and AI technology into a new region takes more than distribution. Translyx provides the clinical, regulatory, and operational bridge to adopt it well."
@@ -98,7 +98,7 @@ export default function PartnersPage() {
                     className="group rounded-2xl border border-slate-200/80 bg-white p-6 shadow-[0_2px_16px_-6px_rgba(15,28,63,0.1)] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/60 hover:shadow-[0_24px_60px_-30px_rgba(8,145,178,0.5)]"
                   >
                     <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F5F8FC] ring-1 ring-slate-200/70">
-                      <Icon className="h-[22px] w-[22px] text-[#0891B2]" />
+                      <Icon className="h-[22px] w-[22px] text-[#0E7490]" />
                     </span>
                     <h3 className="mt-4 font-display text-lg font-semibold text-[#0F1C3F]">{v.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-slate-600">{v.body}</p>
@@ -185,7 +185,7 @@ export default function PartnersPage() {
                 );
               })}
             </Reveal>
-            <p className="mx-auto mt-8 max-w-2xl text-center text-xs leading-relaxed text-slate-500">
+            <p className="mx-auto mt-8 max-w-2xl text-center text-xs leading-relaxed text-slate-400">
               Aiforia and Algoscope are partner products Translyx brings to New Zealand — not owned or developed
               by Translyx. Product-specific regulatory status should be confirmed with each partner and the relevant
               regulatory authorities.
@@ -225,7 +225,7 @@ export default function PartnersPage() {
                         Announcing soon
                       </span>
                     </div>
-                    <p className="mt-4 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                    <p className="mt-4 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-slate-600">
                       {u.category}
                     </p>
                     <h3 className="mt-1 font-display text-lg font-semibold text-[#0F1C3F]">{u.area}</h3>

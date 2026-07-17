@@ -13,7 +13,10 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         className={cn(
-          "group/card relative overflow-hidden rounded-[1.35rem] border border-slate-200/70 bg-[linear-gradient(155deg,#ffffff_0%,#ffffff_62%,#f8fbff_100%)] transition-all duration-300",
+          "group/card relative overflow-hidden rounded-[1.35rem] border transition-all duration-300",
+          variant === "default"
+            ? "border-slate-200/70 bg-white"
+            : "border-cyan-200/50 bg-white",
           "shadow-[0_1px_2px_rgba(15,28,63,0.03),0_18px_46px_-28px_rgba(15,28,63,0.32)]",
           hover &&
             "hover:-translate-y-1.5 hover:border-cyan-300/55 hover:shadow-[0_30px_70px_-32px_rgba(8,145,178,0.48)]",

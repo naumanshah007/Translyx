@@ -8,9 +8,9 @@ import { getProductIcon } from "@/lib/productIcons";
 import { StageRail } from "@/components/ui/StageRail";
 
 const accentMap: Record<ProductAccent, { color: string; soft: string; glow: string; text: string }> = {
-  cyan: { color: "#22D3EE", soft: "rgba(34,211,238,0.10)", glow: "rgba(34,211,238,0.30)", text: "text-cyan-600" },
+  cyan: { color: "#22D3EE", soft: "rgba(34,211,238,0.10)", glow: "rgba(34,211,238,0.30)", text: "text-cyan-700" },
   violet: { color: "#8B5CF6", soft: "rgba(139,92,246,0.10)", glow: "rgba(139,92,246,0.28)", text: "text-violet-600" },
-  teal: { color: "#2DD4BF", soft: "rgba(45,212,191,0.10)", glow: "rgba(45,212,191,0.28)", text: "text-teal-600" },
+  teal: { color: "#2DD4BF", soft: "rgba(45,212,191,0.10)", glow: "rgba(45,212,191,0.28)", text: "text-teal-700" },
   emerald: { color: "#34D399", soft: "rgba(52,211,153,0.10)", glow: "rgba(52,211,153,0.28)", text: "text-emerald-600" },
   sky: { color: "#38BDF8", soft: "rgba(56,189,248,0.10)", glow: "rgba(56,189,248,0.28)", text: "text-sky-600" },
 };
@@ -57,7 +57,7 @@ export function PipelineCapabilityCard({
         </span>
       </div>
 
-      <p className="relative mt-5 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+      <p className="relative mt-5 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-slate-600">
         Pipeline capability
       </p>
       <h3 className="relative mt-1.5 font-display text-lg font-semibold text-[#0F1C3F]">{capability.title}</h3>

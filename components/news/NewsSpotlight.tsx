@@ -143,7 +143,7 @@ export function NewsSpotlight({ items }: { items: NewsItem[] }) {
                       <span
                         className={cn(
                           "mt-0.5 font-display text-sm font-semibold tabular-nums",
-                          isActive ? "text-cyan-300" : "text-slate-500"
+                          isActive ? "text-cyan-300" : "text-slate-400"
                         )}
                       >
                         {String(i + 1).padStart(2, "0")}
@@ -157,7 +157,7 @@ export function NewsSpotlight({ items }: { items: NewsItem[] }) {
                         >
                           {item.title}
                         </span>
-                        <span className="mt-1 block text-[11px] text-slate-500">
+                        <span className="mt-1 block text-[11px] text-slate-400">
                           {item.source} · {timeAgo(item.publishedAt)}
                         </span>
                       </span>

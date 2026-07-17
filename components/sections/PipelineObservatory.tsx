@@ -21,7 +21,7 @@ export function PipelineObservatory() {
               <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0F1C3F] text-cyan-300 shadow-[0_15px_40px_-18px_rgba(15,28,63,0.7)]">
                 <FlaskConical className="h-5 w-5" />
               </span>
-              <p className="mt-7 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0891B2]">Translyx pipeline</p>
+              <p className="mt-7 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0E7490]">Translyx pipeline</p>
               <h2 className="mt-3 font-display text-[2.2rem] font-semibold leading-[1.08] text-[#0F1C3F] sm:text-[3rem]">
                 A clinical AI observatory—not a shelf of finished products.
               </h2>
@@ -33,7 +33,7 @@ export function PipelineObservatory() {
                   Pipeline capabilities are under evaluation or development and are not publicly launched products.
                 </p>
               </div>
-              <Link href="/pipeline" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#0F1C3F] hover:text-[#0891B2]">
+              <Link href="/pipeline" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#0F1C3F] hover:text-[#0E7490]">
                 Enter the full pipeline
                 <ArrowRight className="h-4 w-4" />
               </Link>

@@ -135,14 +135,14 @@ export function NewsList({ items }: { items: NewsItem[] }) {
               )}
             >
               {t.label}
-              <span className={cn("ml-1.5 text-xs", region === t.value ? "text-white/60" : "text-slate-400")}>
+              <span className={cn("ml-1.5 text-xs", region === t.value ? "text-white/70" : "text-slate-600")}>
                 {t.count}
               </span>
             </button>
           ))}
         </div>
         {lastRefreshed && (
-          <span className="flex items-center gap-1.5 text-xs font-medium text-slate-400">
+          <span className="flex items-center gap-1.5 text-xs font-medium text-slate-600">
             <RefreshCw className="h-3 w-3" />
             Feed refreshed {lastRefreshed}
           </span>
@@ -177,7 +177,7 @@ export function NewsList({ items }: { items: NewsItem[] }) {
                   More from the feed
                 </h3>
                 <span className="h-px flex-1 bg-slate-200" />
-                <span className="text-xs text-slate-400">{wallItems.length} stories</span>
+                <span className="text-xs text-slate-600">{wallItems.length} stories</span>
               </div>
               <NewsWall items={wallItems} />
             </div>

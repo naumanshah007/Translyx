@@ -168,7 +168,7 @@ export default function AlgoscopePage() {
       <section className="bg-white py-14 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-6 text-center">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-6 text-center">
               The sample journey, traced end to end
             </p>
             <SampleJourneyDiagram />
@@ -277,7 +277,7 @@ export default function AlgoscopePage() {
               {technology.map(({ icon: Icon, label, description }) => (
                 <div key={label} className="rounded-xl bg-[#F5F8FC] border border-slate-200/80 p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/60">
                   <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-white ring-1 ring-slate-200/70">
-                    <Icon className="h-5 w-5 text-[#0891B2]" />
+                    <Icon className="h-5 w-5 text-[#0E7490]" />
                   </div>
                   <p className="text-sm font-semibold text-[#0F1C3F]">{label}</p>
                   <p className="mt-1 text-xs text-slate-500 leading-snug">{description}</p>
@@ -316,7 +316,7 @@ export default function AlgoscopePage() {
                         href={claim.sourceUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-semibold text-[#0891B2] hover:underline"
+                        className="font-semibold text-[#0E7490] hover:underline"
                       >
                         Source: {claim.attribution}
                       </a>
@@ -347,7 +347,7 @@ export default function AlgoscopePage() {
                     </li>
                   ))}
                 </ol>
-                <p className="mt-5 border-t border-slate-100 pt-3 text-xs leading-relaxed text-slate-400">
+                <p className="mt-5 border-t border-slate-100 pt-3 text-xs leading-relaxed text-slate-600">
                   Milestones are as published by Algoscope. Source:{" "}
                   <a
                     href="https://www.algoscope.fr"

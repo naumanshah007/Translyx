@@ -148,12 +148,12 @@ export default function AiforiaPage() {
       <section className="bg-[#F5F8FC] border-b border-slate-200/60 py-10 sm:py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-5 text-center">Who this is for</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-5 text-center">Who this is for</p>
             <Reveal className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {audienceSegments.map(({ icon: Icon, label, description }) => (
                 <div key={label} className="rounded-xl bg-white border border-slate-200/80 p-4 text-center shadow-[0_1px_8px_-2px_rgba(15,28,63,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/60 hover:shadow-[0_18px_40px_-22px_rgba(8,145,178,0.5)]">
                   <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-50">
-                    <Icon className="h-5 w-5 text-cyan-600" />
+                    <Icon className="h-5 w-5 text-cyan-700" />
                   </div>
                   <p className="text-sm font-semibold text-[#0F1C3F]">{label}</p>
                   <p className="mt-1 text-xs text-slate-500 leading-snug">{description}</p>
@@ -171,7 +171,7 @@ export default function AiforiaPage() {
             <Card className="p-5 sm:p-7 lg:p-8" cornerAccent>
               <CardHeader className="p-0">
                 <div className="inline-flex items-center gap-2 mb-4">
-                  <span className="text-[10px] font-semibold uppercase tracking-wide px-2 py-1 rounded border bg-cyan-50 text-cyan-600 border-cyan-200">
+                  <span className="text-[10px] font-semibold uppercase tracking-wide px-2 py-1 rounded border bg-cyan-50 text-cyan-700 border-cyan-200">
                     Authorised partner solution
                   </span>
                 </div>
@@ -209,7 +209,7 @@ export default function AiforiaPage() {
 
             {/* Partner facts */}
             <div className="space-y-3">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-4">Authorisation details</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-4">Authorisation details</p>
               {partnerFacts.map((fact) => (
                 <div key={fact} className="flex items-start gap-3 rounded-xl border border-slate-200/80 bg-[#F5F8FC] p-4">
                   <CheckCircle2 className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" />
@@ -239,7 +239,7 @@ export default function AiforiaPage() {
                   <CardHeader className="p-0">
                     <div className="flex items-start gap-3 mb-3">
                       <div className="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center shrink-0">
-                        <Microscope className="w-5 h-5 text-cyan-600" />
+                        <Microscope className="w-5 h-5 text-cyan-700" />
                       </div>
                       <CardTitle className="text-base text-[#0F1C3F] leading-snug">{name}</CardTitle>
                     </div>
@@ -253,7 +253,7 @@ export default function AiforiaPage() {
                         </li>
                       ))}
                     </ul>
-                    <p className="text-xs text-slate-400 border-t border-slate-100 pt-2">{note}</p>
+                    <p className="text-xs text-slate-600 border-t border-slate-100 pt-2">{note}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -271,7 +271,7 @@ export default function AiforiaPage() {
                 <CardHeader className="p-0">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-11 h-11 rounded-xl bg-cyan-50 flex items-center justify-center">
-                      <Layers3 className="w-5 h-5 text-cyan-600" />
+                      <Layers3 className="w-5 h-5 text-cyan-700" />
                     </div>
                     <div>
                       <CardTitle className="text-2xl text-[#0F1C3F]">Aiforia Create Platform</CardTitle>
@@ -288,7 +288,7 @@ export default function AiforiaPage() {
                   </p>
                   <div className="flex flex-wrap gap-2 pt-1">
                     {["Cloud-based", "No-code", "Research Use Only", "Transfer learning", "Annotation assistant"].map((tag) => (
-                      <span key={tag} className="inline-flex items-center rounded-full border border-cyan-100 bg-cyan-50/50 px-3 py-1 text-xs font-semibold text-cyan-600">
+                      <span key={tag} className="inline-flex items-center rounded-full border border-cyan-100 bg-cyan-50/50 px-3 py-1 text-xs font-semibold text-cyan-700">
                         {tag}
                       </span>
                     ))}
@@ -372,7 +372,7 @@ export default function AiforiaPage() {
               <Card className="p-5 sm:p-6">
                 <CardHeader className="p-0 mb-3">
                   <div className="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center mb-3">
-                    <Microscope className="w-5 h-5 text-cyan-600" />
+                    <Microscope className="w-5 h-5 text-cyan-700" />
                   </div>
                   <CardTitle className="text-base text-[#0F1C3F]">Digital pathology AI</CardTitle>
                 </CardHeader>
@@ -385,7 +385,7 @@ export default function AiforiaPage() {
               <Card className="p-5 sm:p-6">
                 <CardHeader className="p-0 mb-3">
                   <div className="w-10 h-10 rounded-xl bg-[#22D3EE]/12 flex items-center justify-center mb-3">
-                    <ShieldCheck className="w-5 h-5 text-[#0891B2]" />
+                    <ShieldCheck className="w-5 h-5 text-[#0E7490]" />
                   </div>
                   <CardTitle className="text-base text-[#0F1C3F]">Pipeline capabilities</CardTitle>
                 </CardHeader>

@@ -71,7 +71,7 @@ export default function ContactPage() {
           <div className="mx-auto grid max-w-[1100px] gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             {/* Left — context */}
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0891B2]">Get in touch</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0E7490]">Get in touch</p>
               <h2 className="mt-3 font-display text-2xl font-semibold text-[#0F1C3F] sm:text-3xl">
                 A clinical technology conversation, not a sales pitch.
               </h2>
@@ -81,11 +81,11 @@ export default function ContactPage() {
               </p>
 
               <div className="mt-8 space-y-3">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400">What we can discuss</p>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-600">What we can discuss</p>
                 {discuss.map(({ icon: Icon, label }) => (
                   <div key={label} className="flex items-center gap-3 rounded-xl border border-slate-200/80 bg-[#F5F8FC] p-3.5">
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white ring-1 ring-slate-200/70">
-                      <Icon className="h-[18px] w-[18px] text-[#0891B2]" />
+                      <Icon className="h-[18px] w-[18px] text-[#0E7490]" />
                     </span>
                     <span className="text-sm font-medium text-[#0F1C3F]">{label}</span>
                   </div>
@@ -93,7 +93,7 @@ export default function ContactPage() {
               </div>
 
               <div className="mt-8 space-y-3 border-t border-slate-200/70 pt-6">
-                <a href={`mailto:${siteConfig.company.email}`} className="flex items-center gap-3 text-sm text-slate-600 transition-colors hover:text-[#0891B2]">
+                <a href={`mailto:${siteConfig.company.email}`} className="flex items-center gap-3 text-sm text-slate-600 transition-colors hover:text-[#0E7490]">
                   <Mail className="h-4 w-4 text-slate-400" />
                   {siteConfig.company.email}
                 </a>
@@ -105,7 +105,7 @@ export default function ContactPage() {
                   href="https://www.linkedin.com/company/translyx/"
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-3 text-sm text-slate-600 transition-colors hover:text-[#0891B2]"
+                  className="flex items-center gap-3 text-sm text-slate-600 transition-colors hover:text-[#0E7490]"
                 >
                   <Linkedin className="h-4 w-4 text-slate-400" />
                   Translyx on LinkedIn

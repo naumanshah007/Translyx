@@ -64,7 +64,7 @@ export function StageRail({
                 <span
                   className={cn(
                     "whitespace-nowrap text-[9px] font-semibold uppercase tracking-wide",
-                    isCurrent ? "text-[#0F1C3F]" : "text-slate-400"
+                    isCurrent ? "text-[#0F1C3F]" : "text-slate-600"
                   )}
                 >
                   {node.label}
