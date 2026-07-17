@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Microscope, ScanLine, Workflow } from "lucide-react";
 import { SlideViewerPanel } from "@/components/sections/SlideViewerPanel";
-import { SampleJourneyDiagram } from "@/components/sections/SampleJourneyDiagram";
+import { AlgoscopeProductPanel } from "@/components/sections/AlgoscopeProductPanel";
 
-const aiforiaPoints = ["Clinical and research pathology", "AI-assisted image analysis", "Locally represented in New Zealand"];
-const algoscopePoints = ["Operating room to laboratory", "Computer vision and traceability", "Workflow context preserved end to end"];
+const aiforiaPoints = ["Clinical Suites: case-level AI review", "Create: collaborative model development", "Locally represented in New Zealand"];
+const algoscopePoints = ["AccessPath: structured intake data", "VoxelPath: vision-assisted grossing", "Traceability from registration onward"];
 
 function FeatureList({ items, tone }: { items: string[]; tone: "cyan" | "violet" }) {
   return (
@@ -49,7 +49,7 @@ export function ProductWorlds() {
                   <p className="mt-7 text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-700">Authorised partner solution</p>
                   <h3 className="mt-2 font-display text-3xl font-semibold text-[#0F1C3F] sm:text-4xl">Aiforia</h3>
                   <p className="mt-4 text-base leading-relaxed text-slate-600">
-                    AI-assisted digital pathology for clinical, preclinical and research workflows—represented by Translyx in New Zealand.
+                    Clinical Suites for case-level diagnostic support and Aiforia Create for collaborative AI model development—represented by Translyx in New Zealand.
                   </p>
                   <FeatureList items={aiforiaPoints} tone="cyan" />
                   <Link href="/products/aiforia" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 transition-colors hover:text-[#0F1C3F]">
@@ -74,15 +74,15 @@ export function ProductWorlds() {
                 <div className="relative order-2 flex min-h-[420px] items-center bg-[#0B1025] p-5 sm:p-8 lg:order-1 lg:min-h-[540px] lg:p-10">
                   <div className="pointer-events-none absolute inset-0 grid-overlay opacity-25" />
                   <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_32%_65%,rgba(139,92,246,0.18),transparent_46%)]" />
-                  <div className="relative mx-auto w-full max-w-[760px]">
+                  <div className="relative mx-auto w-full max-w-[600px]">
                     <div className="mb-4 flex items-center justify-between px-1">
                       <span className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-violet-200/70">
                         <ScanLine className="h-3.5 w-3.5" />
-                        Specimen trace active
+                        Two product modules
                       </span>
-                      <span className="text-[10px] text-slate-400">Six connected stages</span>
+                      <span className="text-[10px] text-slate-400">One connected data chain</span>
                     </div>
-                    <SampleJourneyDiagram />
+                    <AlgoscopeProductPanel />
                   </div>
                 </div>
 
@@ -93,7 +93,7 @@ export function ProductWorlds() {
                   <p className="mt-7 text-[10px] font-semibold uppercase tracking-[0.2em] text-violet-700">Partner product</p>
                   <h3 className="mt-2 font-display text-3xl font-semibold text-[#0F1C3F] sm:text-4xl">Algoscope</h3>
                   <p className="mt-4 text-base leading-relaxed text-slate-600">
-                    AI-powered surgery-to-pathology workflow automation that preserves specimen context, identity and traceability.
+                    AccessPath structures requisition and vial data at reception; VoxelPath brings computer vision, morphometry and traceability into the grossing workflow.
                   </p>
                   <FeatureList items={algoscopePoints} tone="violet" />
                   <Link href="/products/algoscope" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-violet-700 transition-colors hover:text-[#0F1C3F]">

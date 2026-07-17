@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -11,6 +12,9 @@ import {
   AlertCircle,
   Layers3,
   Users,
+  BarChart3,
+  Eye,
+  ExternalLink,
 } from "lucide-react";
 
 import { HeroSection } from "@/components/sections/HeroSection";
@@ -80,7 +84,7 @@ const clinicalSuites = [
     note: "Select models CE-IVD marked in EU/EEA",
   },
   {
-    name: "Colorectal Cancer Suite",
+    name: "Colon Suite",
     models: ["QuantCRC", "Lymph Node Metastasis"],
     note: "Select models under performance studies",
   },
@@ -228,10 +232,51 @@ export default function AiforiaPage() {
             <SectionHeader
               eyebrow="Aiforia Clinical Suites"
               title="AI-assisted clinical pathology workflows"
-              description="Aiforia Clinical Suites provide AI-assisted image analysis for clinical pathology — covering standardised scoring, quantitative biomarker assessment, and automated detection across major cancer types."
+              description="Aiforia Clinical Suites combine a worklist, interactive Clinical Viewer, quantitative AI models and case-level reporting for explainable first-read support."
               maxWidth="max-w-2xl"
               className="mb-10"
             />
+
+            <div className="mb-8 overflow-hidden rounded-[1.75rem] border border-cyan-200/60 bg-[#081326] shadow-[0_28px_80px_-48px_rgba(8,145,178,0.65)]">
+              <div className="grid lg:grid-cols-[1.12fr_0.88fr] lg:items-stretch">
+                <div className="relative min-h-[280px] overflow-hidden sm:min-h-[360px]">
+                  <Image
+                    src="/images/partners/aiforia-lung-pdl1.webp"
+                    alt="Aiforia lung PD-L1 clinical AI image with transparent cell-level overlays"
+                    fill
+                    sizes="(min-width: 1024px) 650px, 94vw"
+                    className="object-cover"
+                  />
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#081326]/60" />
+                  <span className="absolute bottom-4 left-4 rounded-full border border-white/20 bg-[#06121f]/75 px-3 py-1.5 text-[8px] font-semibold uppercase tracking-[0.16em] text-cyan-100 backdrop-blur-md sm:bottom-5 sm:left-5 sm:text-[9px]">
+                    Official Aiforia clinical imagery
+                  </span>
+                </div>
+                <div className="relative flex flex-col justify-center p-6 sm:p-8 lg:p-10">
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-cyan-200/70">Clinical Viewer language</p>
+                  <h3 className="mt-3 font-display text-2xl font-semibold leading-tight text-white sm:text-3xl">Evidence that remains visible at the point of review.</h3>
+                  <p className="mt-4 text-sm leading-relaxed text-white/65">
+                    Aiforia presents detailed visual overlays directly on whole-slide images, enabling pathologists to confirm findings while working with quantitative results and case-level reports.
+                  </p>
+                  <div className="mt-6 grid grid-cols-3 gap-2">
+                    {[
+                      { icon: Eye, label: "Visible overlays" },
+                      { icon: BarChart3, label: "Quantitative results" },
+                      { icon: CheckCircle2, label: "Case-level review" },
+                    ].map(({ icon: Icon, label }) => (
+                      <span key={label} className="flex flex-col items-center justify-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.05] px-2 py-3 text-center text-[8px] font-semibold leading-tight text-slate-200 sm:text-[9px]">
+                        <Icon className="h-4 w-4 text-cyan-300" />
+                        {label}
+                      </span>
+                    ))}
+                  </div>
+                  <a href="https://www.aiforia.com/aiforia-clinical-solutions" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 text-xs font-semibold text-cyan-200 hover:text-white">
+                    View official Aiforia Clinical Suites
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                </div>
+              </div>
+            </div>
 
             <Reveal className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {clinicalSuites.map(({ name, models, note }) => (

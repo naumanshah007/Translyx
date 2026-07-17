@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   Workflow,
   ScanLine,
@@ -19,10 +20,12 @@ import {
   Award,
   Newspaper,
   Users,
+  ExternalLink,
 } from "lucide-react";
 
-import { Hero } from "@/components/sections/Hero";
+import { HeroSection } from "@/components/sections/HeroSection";
 import { CTA } from "@/components/sections/CTA";
+import { AlgoscopeProductPanel } from "@/components/sections/AlgoscopeProductPanel";
 import { SampleJourneyDiagram } from "@/components/sections/SampleJourneyDiagram";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -119,6 +122,29 @@ const technology = [
   { icon: ClipboardList, label: "Structured workflow data", description: "Workflow dashboards and documented, reviewable data trails" },
 ];
 
+const productModules = [
+  {
+    name: "AccessPath",
+    eyebrow: "Automated data entry · available since 2024",
+    description: "Transforms physical pathology requisitions into structured, verified and traceable digital data from specimen reception to the grossing station.",
+    image: "/images/partners/algoscope-accesspath.webp",
+    imageAlt: "AccessPath interface showing associated specimen vials and chain-of-custody status",
+    icon: ScanLine,
+    features: ["Request-form scanning and data extraction", "Human validation and field correction", "Vial association and chain of custody", "On-premise, LIS-agnostic workflow"],
+    source: "https://www.algoscope.fr/accessioning/",
+  },
+  {
+    name: "VoxelPath",
+    eyebrow: "Vision-assisted grossing",
+    description: "A clinical-grade grossing workstation combining real-time visual capture, automated morphometry and specimen traceability.",
+    image: "/images/partners/algoscope-voxelpath.webp",
+    imageAlt: "VoxelPath grossing workstation with imaging arms and specimen display",
+    icon: Boxes,
+    features: ["Automated measurement and weighing", "2D and 3D specimen imaging", "Human-in-the-loop validation", "Timestamped end-to-end traceability"],
+    source: "https://www.algoscope.fr/voxelpath/",
+  },
+];
+
 /*
  * Milestones drawn from Algoscope's public materials and verified against their
  * public site (June 2026). Each is attributed to Algoscope, with dates as they
@@ -139,12 +165,15 @@ export default function AlgoscopePage() {
 
   return (
     <>
-      <Hero
-        badge={{ text: "Partner product · New Zealand representation being finalised", icon: <Workflow className="w-3.5 h-3.5" /> }}
+      <HeroSection
+        badge={{ text: "Partner product · New Zealand representation being finalised", icon: Workflow }}
         headline="AI-powered workflow automation for surgery and pathology"
         description="Algoscope streamlines workflows from surgery to pathology through intelligent automation, computer vision, 3D modelling, and traceability-focused tools designed for operating rooms and pathology laboratories."
-        primaryCTA={{ label: "Discuss Algoscope", href: "/contact?topic=algoscope" }}
-        secondaryCTA={{ label: "See all products", href: "/products" }}
+        ctas={[
+          { label: "Discuss Algoscope", href: "/contact?topic=algoscope", variant: "primary" },
+          { label: "See all products", href: "/products", variant: "glass" },
+        ]}
+        visual={<AlgoscopeProductPanel />}
       />
 
       {/* Trust chips */}
@@ -164,14 +193,56 @@ export default function AlgoscopePage() {
         </div>
       </section>
 
-      {/* Sample journey visual */}
-      <section className="bg-white py-14 sm:py-16">
+      {/* Product modules and sample journey */}
+      <section className="bg-white py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-6 text-center">
-              The sample journey, traced end to end
-            </p>
-            <SampleJourneyDiagram />
+            <SectionHeader
+              eyebrow="Algoscope product modules"
+              title="From verified intake data to vision-assisted grossing"
+              description="AccessPath and VoxelPath address distinct pre-analytical pressure points while feeding one traceable pathology workflow."
+              maxWidth="max-w-3xl"
+              className="mb-10"
+            />
+
+            <Reveal className="grid gap-6 lg:grid-cols-2">
+              {productModules.map(({ name, eyebrow, description, image, imageAlt, icon: Icon, features, source }) => (
+                <article key={name} className="group overflow-hidden rounded-[1.75rem] border border-slate-200/80 bg-[#F7FAFC] shadow-[0_26px_70px_-48px_rgba(15,28,63,0.55)]">
+                  <div className="relative h-[230px] overflow-hidden bg-white sm:h-[300px]">
+                    <Image src={image} alt={imageAlt} fill sizes="(min-width: 1024px) 560px, 94vw" className="object-contain p-4 transition-transform duration-500 group-hover:scale-[1.02] sm:p-6" />
+                    <span className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#F7FAFC] to-transparent" />
+                    <span className="absolute left-5 top-5 flex items-center gap-2 rounded-full border border-white/80 bg-white/90 px-3 py-1.5 text-[8px] font-semibold uppercase tracking-[0.16em] text-violet-700 shadow-sm backdrop-blur-md sm:text-[9px]">
+                      <Icon className="h-3.5 w-3.5" />
+                      Official product imagery
+                    </span>
+                  </div>
+                  <div className="relative -mt-5 p-6 pt-0 sm:p-8 sm:pt-0">
+                    <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-violet-700 sm:text-[10px]">{eyebrow}</p>
+                    <h3 className="mt-2 font-display text-3xl font-semibold text-[#0F1C3F]">{name}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">{description}</p>
+                    <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+                      {features.map((feature) => (
+                        <li key={feature} className="flex items-start gap-2 text-xs leading-snug text-slate-600">
+                          <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-violet-500" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <a href={source} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 text-xs font-semibold text-violet-700 hover:text-[#0F1C3F]">
+                      View official {name} information
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </Reveal>
+
+            <div className="mt-12">
+              <p className="mb-6 text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600">
+                The sample journey, traced end to end
+              </p>
+              <SampleJourneyDiagram />
+            </div>
           </div>
         </div>
       </section>

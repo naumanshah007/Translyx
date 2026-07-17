@@ -56,8 +56,8 @@
   html {
     font-size: clamp(15px, 1.5vw + 13px, 17px);
     scroll-behavior: smooth;
-    hyphens: auto;
-    -webkit-hyphens: auto;
+    hyphens: none;
+    -webkit-hyphens: none;
     overflow-x: hidden;
   }
   body {

@@ -95,17 +95,18 @@ export function ClinicalIntelligenceStory() {
                       Region selected
                     </span>
 
-                    <div className="absolute inset-x-4 bottom-4 grid gap-2 sm:inset-x-5 sm:grid-cols-3">
+                    <div className="absolute inset-x-3 bottom-3 grid grid-cols-3 gap-1.5 sm:inset-x-5 sm:bottom-4 sm:gap-2">
                       {[
-                        ["Signal", "Region surfaced"],
-                        ["Review", "Human verified"],
-                        ["Lineage", "Evidence linked"],
-                      ].map(([label, value]) => (
-                        <div key={label} className="rounded-xl border border-white/15 bg-[#07101F]/75 px-3 py-2.5 backdrop-blur-xl">
-                          <p className="text-[8px] font-semibold uppercase tracking-[0.18em] text-cyan-200/60">{label}</p>
-                          <p className="mt-1 flex items-center gap-1.5 text-[10px] font-semibold text-white sm:text-[11px]">
-                            <Check className="h-3 w-3 text-emerald-300" />
-                            {value}
+                        ["Signal", "Surfaced", "Region surfaced"],
+                        ["Review", "Verified", "Human verified"],
+                        ["Lineage", "Linked", "Evidence linked"],
+                      ].map(([label, mobileValue, value]) => (
+                        <div key={label} className="rounded-lg border border-white/15 bg-[#07101F]/80 px-2 py-2 backdrop-blur-xl sm:rounded-xl sm:px-3 sm:py-2.5">
+                          <p className="text-[6.5px] font-semibold uppercase tracking-[0.14em] text-cyan-200/65 sm:text-[8px] sm:tracking-[0.18em]">{label}</p>
+                          <p className="mt-1 flex items-center gap-1 text-[8px] font-semibold leading-none text-white sm:gap-1.5 sm:text-[11px]">
+                            <Check className="h-2.5 w-2.5 shrink-0 text-emerald-300 sm:h-3 sm:w-3" />
+                            <span className="sm:hidden">{mobileValue}</span>
+                            <span className="hidden sm:inline">{value}</span>
                           </p>
                         </div>
                       ))}
