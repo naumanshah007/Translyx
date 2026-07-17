@@ -3,8 +3,9 @@ import { pipelineCategories } from "@/config/pipeline";
 import { PipelineImage } from "@/components/ui/PipelineImage";
 import { Prose } from "@/components/ui/Prose";
 import { CTA } from "@/components/sections/CTA";
+import { Hero } from "@/components/sections/Hero";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { ArrowLeft, ArrowRight, FlaskConical } from "lucide-react";
+import { ArrowRight, FlaskConical } from "lucide-react";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 
@@ -43,43 +44,28 @@ export default async function PipelineCategoryPage({ params }: PageProps) {
 
   return (
     <>
-      {/* Page header */}
-      <section className="relative overflow-hidden bg-midnight py-16 sm:py-20">
-        <div className="pointer-events-none absolute inset-0 grid-overlay opacity-40" />
-        <div className="pointer-events-none absolute -top-24 right-[10%] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(45,212,191,0.14),transparent_65%)] blur-3xl" />
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <Link
-              href="/pipeline#diagnostic-innovation"
-              className="inline-flex items-center gap-2 text-sm font-medium text-slate-400 transition-colors hover:text-cyan-300"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Back to diagnostic innovation
-            </Link>
-            <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.22em] text-teal-300/80">
-              Diagnostic innovation
-            </p>
-            <h1 className="mt-2 font-display text-[2.1rem] font-semibold leading-tight tracking-tight text-white sm:text-[2.6rem]">
-              {category.title}
-            </h1>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/65 sm:text-lg">{category.excerpt}</p>
-          </div>
-        </div>
-      </section>
+      <Hero
+        badge={{ text: "Diagnostic innovation", icon: <FlaskConical className="h-3.5 w-3.5 text-teal-300" /> }}
+        headline={category.title}
+        description={category.excerpt}
+        primaryCTA={{ label: "Discuss this opportunity", href: "/contact?topic=pipeline" }}
+        secondaryCTA={{ label: "Back to pipeline", href: "/pipeline#diagnostic-innovation" }}
+      />
 
       {/* Body */}
-      <section className="bg-white py-16 sm:py-20">
+      <section className="relative overflow-hidden bg-white py-20 sm:py-28">
+        <div className="pointer-events-none absolute -left-32 top-20 h-96 w-96 rounded-full bg-teal-200/10 blur-3xl" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl">
             {/* Image gallery — restrained 16:9 treatment with a brand-tint overlay */}
-            <div className="mb-12 grid grid-cols-1 gap-5 sm:grid-cols-3">
+            <div className="relative mb-14 grid grid-cols-1 gap-5 sm:grid-cols-3">
               {category.images.map((img, i) => (
-                <div key={i} className="relative overflow-hidden rounded-xl">
+                <div key={i} className="group relative overflow-hidden rounded-[1.35rem] border border-slate-200/70 bg-[#0B1430] shadow-[0_24px_60px_-34px_rgba(15,28,63,0.5)]">
                   <PipelineImage
                     localSrc={img.local}
                     remoteSrc={img.remote}
                     alt={`${category.title} — reference image ${i + 1}`}
-                    className="rounded-xl border border-slate-200/70 shadow-[0_8px_24px_-12px_rgba(15,28,63,0.2)]"
+                    className="rounded-none transition-transform duration-700 group-hover:scale-[1.04]"
                   />
                   <span className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-[#0F1C3F]/20 via-transparent to-transparent" />
                 </div>

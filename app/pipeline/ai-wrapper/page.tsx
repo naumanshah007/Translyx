@@ -95,7 +95,6 @@ export default function AIWrapperPage() {
         description="AI Wrapper is a Translyx pipeline capability under evaluation. The concept: organisations use AI systems without sending sensitive data in its original form — sensitive fields are transformed into protected placeholders before approved AI workflows and reconstructed under controlled conditions. It is not a publicly launched product."
         primaryCTA={{ label: "Discuss this capability", href: "/contact" }}
         secondaryCTA={{ label: "View pipeline", href: "/pipeline" }}
-        className="py-16 sm:py-20 md:py-28 lg:py-36"
       />
 
       {/* Stage rail */}

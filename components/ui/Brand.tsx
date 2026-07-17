@@ -34,37 +34,43 @@ export function BrandMark({
 
 interface BrandLogoProps {
   href?: string | null;
-  /** retained for API compatibility; the real logo reads on both tones */
+  /** Adds a restrained contrast lift when the official artwork sits on navy. */
   tone?: "light" | "dark";
   className?: string;
-  /** sizing/extra classes for the logo image itself (default height h-9) */
+  /** sizing/extra classes for the official lockup image (default height h-9) */
   markClassName?: string;
   /** false → render the DNA mark only (no wordmark) */
   showWordmark?: boolean;
 }
 
 /**
- * Full Translyx lockup using the real logo artwork (DNA mark + "Translyx"
- * two-tone wordmark). Transparent, so it works on the dark glass header,
- * the dark footer, and light pages alike.
+ * Official Translyx lockup: the original blue-and-green DNA mark and wordmark.
+ * Sizing and dark-surface contrast are handled here so the approved artwork
+ * remains unchanged everywhere it appears.
  */
 export function BrandLogo({
   href = "/",
+  tone = "light",
   className,
   markClassName,
   showWordmark = true,
 }: BrandLogoProps) {
   const src = showWordmark ? "/logo-lockup.png" : "/logo-mark.png";
-  const intrinsic = showWordmark ? { w: 760, h: 207 } : { w: 239, h: 207 };
+  const intrinsic = showWordmark ? { width: 760, height: 207 } : { width: 239, height: 207 };
 
   const img = (
     <Image
       src={src}
-      alt="Translyx"
-      width={intrinsic.w}
-      height={intrinsic.h}
+      alt={showWordmark ? "Translyx" : ""}
+      aria-hidden={showWordmark ? undefined : true}
+      width={intrinsic.width}
+      height={intrinsic.height}
       priority
-      className={cn("h-9 w-auto select-none", markClassName)}
+      className={cn(
+        "h-9 w-auto select-none object-contain",
+        tone === "dark" && "brightness-[1.16] saturate-[1.06] [filter:brightness(1.16)_saturate(1.06)_drop-shadow(0_2px_10px_rgba(255,255,255,0.10))]",
+        markClassName
+      )}
     />
   );
 

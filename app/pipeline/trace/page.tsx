@@ -176,7 +176,6 @@ export default function TracePage() {
         description="Trace is a Translyx pipeline capability under evaluation. It structures synthetic control arm workflows with reviewer sign-off, manual benchmark comparison, lineage, and submission-oriented packaging — for biotech, pharma, CRO, and clinical trial teams. It is not a publicly launched product."
         primaryCTA={{ label: "Discuss this capability", href: "/contact" }}
         secondaryCTA={{ label: "View pipeline", href: "/pipeline" }}
-        className="py-16 sm:py-20 md:py-28 lg:py-36"
       />
 
       {/* Stage rail */}

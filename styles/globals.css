@@ -67,6 +67,29 @@
     line-height: 1.65;
   }
 
+  ::selection {
+    background: rgba(34, 211, 238, 0.28);
+    color: #07101f;
+  }
+
+  main > section,
+  main > div {
+    isolation: isolate;
+  }
+
+  main > section[class~="bg-white"] {
+    background-image:
+      radial-gradient(800px 360px at 100% 0%, rgba(34, 211, 238, 0.035), transparent 62%),
+      linear-gradient(#ffffff, #ffffff);
+  }
+
+  main > section[class~="bg-[#F5F8FC]"],
+  main > section[class~="bg-[#F4F7FB]"] {
+    background-image:
+      radial-gradient(720px 340px at 0% 20%, rgba(139, 92, 246, 0.045), transparent 65%),
+      radial-gradient(720px 340px at 100% 80%, rgba(34, 211, 238, 0.05), transparent 65%);
+  }
+
   h1,
   h2,
   h3,

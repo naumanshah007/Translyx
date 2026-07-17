@@ -96,7 +96,6 @@ export default function ScribePage() {
         description="Scribe is a Translyx pipeline capability in development. The concept: structured documentation workflows such as notes, summaries, letters, and reports with sensitive data protection and human review central. It supports documentation — it does not replace professional judgement — and it is not a publicly launched product."
         primaryCTA={{ label: "Discuss this capability", href: "/contact" }}
         secondaryCTA={{ label: "View pipeline", href: "/pipeline" }}
-        className="py-16 sm:py-20 md:py-28 lg:py-36"
       />
 
       {/* Stage rail */}

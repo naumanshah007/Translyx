@@ -94,7 +94,6 @@ export default function CloudShieldPage() {
         description="Cloud Shield is a Translyx pipeline capability under evaluation. The concept: field-level protection for sensitive data before it is used in cloud platforms, analytics workflows, or AI-enabled systems — with a local mapping vault that keeps original values recoverable only inside your perimeter. It is not a publicly launched product."
         primaryCTA={{ label: "Discuss this capability", href: "/contact" }}
         secondaryCTA={{ label: "View pipeline", href: "/pipeline" }}
-        className="py-16 sm:py-20 md:py-28 lg:py-36"
       />
 
       {/* Stage rail */}

@@ -43,7 +43,7 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-3 lg:grid-cols-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-3 lg:col-span-3">
-            <BrandLogo tone="dark" />
+            <BrandLogo tone="dark" markClassName="h-11" />
             <p className="mt-5 max-w-[260px] text-sm leading-relaxed text-slate-400">
               The trusted New Zealand bridge between global diagnostic innovation, governed clinical AI, and local
               healthcare implementation.

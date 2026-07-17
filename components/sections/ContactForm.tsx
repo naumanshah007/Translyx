@@ -37,7 +37,7 @@ function TopicPrefill({ onTopic }: { onTopic: (inquiry: string) => void }) {
 }
 
 const inputClass =
-  "w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-[#0F1C3F] transition-colors placeholder:text-slate-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/30";
+  "w-full rounded-xl border border-slate-200/80 bg-[#F8FAFD] px-4 py-3 text-sm text-[#0F1C3F] shadow-inner shadow-slate-900/[0.02] transition-all placeholder:text-slate-400 hover:border-slate-300 focus:border-cyan-400 focus:bg-white focus:outline-none focus:ring-4 focus:ring-cyan-400/12";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -126,7 +126,10 @@ export function ContactForm() {
   }
 
   return (
-    <div className="rounded-2xl border border-slate-200/80 bg-white p-6 shadow-[0_2px_16px_-6px_rgba(15,28,63,0.10)] sm:p-8">
+    <div className="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white p-6 shadow-[0_32px_90px_-48px_rgba(15,28,63,0.48)] sm:p-9">
+      <div className="pointer-events-none absolute inset-x-14 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300 to-transparent" />
+      <div className="pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-full bg-cyan-200/25 blur-3xl" />
+      <div className="relative">
       <Suspense fallback={null}>
         <TopicPrefill onTopic={handleTopic} />
       </Suspense>
@@ -136,7 +139,7 @@ export function ContactForm() {
         Fill out the form below and we&apos;ll get back to you as soon as possible.
       </p>
 
-      <form onSubmit={handleSubmit} className="mt-6 space-y-5">
+      <form onSubmit={handleSubmit} className="mt-7 space-y-5">
         {/* Honeypot — hidden from users, catches bots. Not announced to AT. */}
         <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden">
           <label htmlFor="company_website">Leave this field empty</label>
@@ -247,6 +250,7 @@ export function ContactForm() {
           </span>
         </div>
       </form>
+      </div>
     </div>
   );
 }

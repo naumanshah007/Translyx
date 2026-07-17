@@ -71,6 +71,6 @@ export const siteConfig = {
     author: "Translyx Limited",
     // Use the dynamically-generated branded card from app/opengraph-image.tsx
     // (served at /opengraph-image). Avoids a missing static /og-image.png.
-    ogImage: "/opengraph-image",
+    ogImage: "/og-premium.png",
   },
 };

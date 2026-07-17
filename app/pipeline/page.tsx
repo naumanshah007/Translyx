@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
-import { FlaskConical, Microscope, ArrowRight, AlertCircle } from "lucide-react";
+import { FlaskConical, Microscope, ArrowRight } from "lucide-react";
 import { pipelineCategories } from "@/config/pipeline";
-import { pipelineCapabilities } from "@/config/pipelineCapabilities";
 import { Hero } from "@/components/sections/Hero";
 import { CTA } from "@/components/sections/CTA";
+import { PipelineObservatory } from "@/components/sections/PipelineObservatory";
 import { PipelineCategoryCard } from "@/components/ui/PipelineCategoryCard";
-import { PipelineCapabilityCard } from "@/components/ui/PipelineCapabilityCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -55,38 +54,11 @@ export default function PipelinePage() {
         secondaryCTA={{ label: "See partner products", href: "/products" }}
       />
 
-      {/* Capabilities */}
-      <section className="bg-white py-18 sm:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-[1180px]">
-            <SectionHeader
-              eyebrow="Clinical AI workflow capabilities"
-              title="Governed workflow capabilities in the Translyx pipeline"
-              description="Privacy-preserving, reviewer-gated clinical AI workflow concepts being evaluated and developed under the Translyx platform — designed with human oversight, visible limitations, and clinical governance from the outset."
-              maxWidth="max-w-3xl"
-              className="mb-8"
-            />
-
-            {/* Pipeline status banner */}
-            <div className="card-note mb-10 flex items-start gap-3 rounded-xl p-4">
-              <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
-              <p className="text-sm leading-relaxed text-amber-900">
-                Pipeline capabilities are under evaluation or in development. They are not publicly launched products
-                and are not currently available to customers. No regulatory endorsement is implied.
-              </p>
-            </div>
-
-            <Reveal className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {pipelineCapabilities.map((capability) => (
-                <PipelineCapabilityCard key={capability.slug} capability={capability} />
-              ))}
-            </Reveal>
-          </div>
-        </div>
-      </section>
+      <PipelineObservatory />
 
       {/* Diagnostic innovation */}
-      <section id="diagnostic-innovation" className="bg-[#F5F8FC] py-18 sm:py-24 border-t border-slate-200/60 scroll-mt-24">
+      <section id="diagnostic-innovation" className="relative overflow-hidden bg-[#F4F7FB] py-20 sm:py-28 border-t border-slate-200/60 scroll-mt-24">
+        <div className="pointer-events-none absolute -right-32 top-20 h-96 w-96 rounded-full bg-violet-300/10 blur-3xl" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1180px]">
             <SectionHeader
@@ -98,7 +70,8 @@ export default function PipelinePage() {
             />
 
             {/* Aiforia digital pathology context */}
-            <div className="mb-12 overflow-hidden rounded-2xl border border-violet-200/70 bg-white p-6 shadow-[0_10px_28px_-16px_rgba(15,28,63,0.18)] sm:p-8">
+            <div className="relative mb-12 overflow-hidden rounded-[1.75rem] border border-violet-200/70 bg-white p-6 shadow-[0_24px_70px_-38px_rgba(124,58,237,0.4)] sm:p-8">
+              <div className="pointer-events-none absolute -right-14 -top-14 h-40 w-40 rounded-full bg-violet-200/35 blur-3xl" />
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-start gap-4">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-violet-50 ring-1 ring-violet-200">

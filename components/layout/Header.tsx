@@ -38,7 +38,7 @@ export function Header() {
     >
       {/* Desktop */}
       <div className="mx-auto hidden h-[68px] max-w-[1280px] items-center px-6 lg:flex xl:px-8">
-        <BrandLogo tone="dark" className="mr-4 flex-shrink-0 xl:mr-8" />
+        <BrandLogo tone="dark" markClassName="h-10" className="mr-5 flex-shrink-0 xl:mr-9" />
 
         <nav className="flex flex-1 items-center gap-x-3 xl:gap-x-6" aria-label="Main navigation">
           {navigation.map((item) =>
@@ -74,7 +74,7 @@ export function Header() {
       {/* Mobile */}
       <div className="lg:hidden">
         <div className="flex h-16 items-center justify-between px-4 sm:px-6">
-          <BrandLogo tone="dark" />
+          <BrandLogo tone="dark" markClassName="h-9" />
           <button
             type="button"
             className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg p-2 text-slate-200 transition-colors hover:bg-white/10"

@@ -32,14 +32,14 @@ export function SectionHeader({
       {eyebrow && (
         <div
           className={cn(
-            "flex items-center gap-2 mb-4",
+            "flex items-center gap-2.5 mb-5",
             align === "center" && "justify-center"
           )}
         >
-          <span className="h-px w-6 bg-gradient-to-r from-cyan-400 to-transparent" />
+          <span className="h-px w-8 bg-gradient-to-r from-cyan-400 to-transparent" />
           <span
             className={cn(
-              "text-[11px] font-semibold uppercase tracking-[0.22em]",
+              "text-[10px] font-semibold uppercase tracking-[0.24em]",
               tone === "dark" ? "text-cyan-300/80" : "text-[#0891B2]"
             )}
           >
@@ -49,8 +49,8 @@ export function SectionHeader({
       )}
       <h2
         className={cn(
-          "font-display font-semibold tracking-tight",
-          "text-[1.75rem] sm:text-[2.1rem] leading-[1.12]",
+          "font-display font-semibold tracking-[-0.025em]",
+          "text-[2rem] sm:text-[2.65rem] leading-[1.08]",
           tone === "dark" ? "text-white" : "text-[#0F1C3F]",
           titleClassName
         )}
@@ -60,7 +60,7 @@ export function SectionHeader({
       {description && (
         <p
           className={cn(
-            "mt-4 text-base sm:text-lg leading-relaxed",
+            "mt-5 text-base sm:text-lg leading-relaxed",
             align === "center" && cn(maxWidth, "mx-auto"),
             tone === "dark" ? "text-white/65" : "text-slate-600"
           )}

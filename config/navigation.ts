@@ -18,11 +18,6 @@ export interface NavItem {
 
 export const navigation: NavItem[] = [
   {
-    label: "Home",
-    href: "/",
-    description: "Translyx — clinical technology & governed AI",
-  },
-  {
     label: "Products",
     href: "/products",
     description: "Partner diagnostic & pathology products",
@@ -91,7 +86,7 @@ export const navigation: NavItem[] = [
     ],
   },
   {
-    label: "News",
+    label: "Intelligence",
     href: "/news",
     description: "News intelligence for diagnostics, pathology & clinical AI",
     subItems: [
@@ -131,11 +126,6 @@ export const navigation: NavItem[] = [
     label: "Company",
     href: "/company",
     description: "About Translyx Limited",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-    description: "Get in touch",
   },
 ];
 

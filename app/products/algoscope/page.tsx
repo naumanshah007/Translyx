@@ -145,7 +145,6 @@ export default function AlgoscopePage() {
         description="Algoscope streamlines workflows from surgery to pathology through intelligent automation, computer vision, 3D modelling, and traceability-focused tools designed for operating rooms and pathology laboratories."
         primaryCTA={{ label: "Discuss Algoscope", href: "/contact?topic=algoscope" }}
         secondaryCTA={{ label: "See all products", href: "/products" }}
-        className="py-16 sm:py-20 md:py-28 lg:py-36"
       />
 
       {/* Trust chips */}

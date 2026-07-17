@@ -102,7 +102,6 @@ export default function ClinicalTriagePage() {
         description="Clinical Triage — a referral grading and clinical pathway tool — is a Translyx pipeline capability in development. The concept: structured referral review, pathway grading, role-based workflows, and auditability for authorised clinical users — human-reviewed workflow decisions, never autonomous diagnosis. It is not a publicly launched product."
         primaryCTA={{ label: "Discuss this capability", href: "/contact" }}
         secondaryCTA={{ label: "View pipeline", href: "/pipeline" }}
-        className="py-16 sm:py-20 md:py-28 lg:py-36"
       />
 
       {/* Stage rail */}
