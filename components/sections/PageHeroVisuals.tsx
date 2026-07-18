@@ -16,14 +16,17 @@ import {
 
 function VisualShell({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div className="relative mx-auto h-[260px] w-full max-w-[370px] overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.025] shadow-[0_30px_80px_-48px_rgba(34,211,238,0.55)] sm:h-[300px] sm:max-w-[400px] lg:h-[330px] lg:max-w-[440px]">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(34,211,238,0.12),transparent_54%)]" />
-      <div className="pointer-events-none absolute inset-0 opacity-30 [background-image:radial-gradient(rgba(103,232,249,0.35)_1px,transparent_1px)] [background-size:18px_18px] [mask-image:radial-gradient(circle_at_center,#000,transparent_78%)]" />
+    <div
+      aria-hidden="true"
+      className="relative mx-auto h-[270px] w-full max-w-[390px] overflow-visible sm:h-[330px] sm:max-w-[450px] lg:h-[400px] lg:max-w-[520px]"
+    >
+      <div className="pointer-events-none absolute -inset-[8%] bg-[radial-gradient(circle_at_50%_46%,rgba(34,211,238,0.17),transparent_62%)] blur-xl" />
+      <div className="pointer-events-none absolute -inset-[5%] opacity-35 [background-image:radial-gradient(rgba(103,232,249,0.38)_1px,transparent_1px)] [background-size:20px_20px] [mask-image:radial-gradient(circle_at_center,#000,transparent_76%)]" />
       <div className="absolute left-5 top-4 z-30 flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-cyan-100/60">
         <span className="h-1.5 w-1.5 animate-pulse-slow rounded-full bg-cyan-300 shadow-[0_0_10px_rgba(103,232,249,0.85)]" />
         {label}
       </div>
-      {children}
+      <div className="absolute inset-0 origin-center sm:scale-105 lg:scale-[1.16]">{children}</div>
     </div>
   );
 }

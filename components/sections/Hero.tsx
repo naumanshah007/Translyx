@@ -36,7 +36,7 @@ export function Hero({
           className={cn(
             "mx-auto max-w-[1180px] py-12 sm:py-14 lg:py-16",
             visual &&
-              "grid items-center gap-9 lg:max-w-[1220px] lg:grid-cols-[minmax(0,1.17fr)_minmax(360px,0.83fr)] lg:gap-10 xl:gap-14"
+              "grid items-center gap-9 lg:max-w-[1320px] lg:grid-cols-[minmax(0,1.08fr)_minmax(420px,0.92fr)] lg:gap-8 xl:gap-12"
           )}
         >
           <div className={cn("max-w-[860px]", visual && "lg:max-w-[760px]")}>
