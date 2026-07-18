@@ -313,16 +313,15 @@ function NetworkBackdrop() {
 export function HeroVisual() {
   return (
     <>
-      {/* Mobile (< sm): clean centerpiece + tidy 2x2 panel grid — no overlap */}
+      {/* Mobile: retain the live core without crowding the page with dashboard panels. */}
       <div className="sm:hidden">
-        <div className="relative mx-auto flex h-[230px] items-center justify-center overflow-hidden">
-          <Centerpiece idp="m" className="relative scale-[0.82]" />
-        </div>
-        <div className="mt-1 grid grid-cols-2 gap-2.5">
-          <DigitalPathologyPanel />
-          <PipelinePanel />
-          <GovernedPanel />
-          <ClinicalImpactPanel idp="m" />
+        <div className="relative mx-auto flex h-[280px] max-w-[360px] items-center justify-center overflow-hidden rounded-3xl border border-white/10 bg-white/[0.025]">
+          <NetworkBackdrop />
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 animate-spin-slow rounded-full border border-dashed border-cyan-300/15">
+            <span className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(34,211,238,0.9)]" />
+            <span className="absolute bottom-0 left-1/2 h-1.5 w-1.5 -translate-x-1/2 translate-y-1/2 rounded-full bg-violet-300 shadow-[0_0_10px_rgba(167,139,250,0.9)]" />
+          </div>
+          <Centerpiece idp="m" className="relative scale-[0.78]" />
         </div>
       </div>
 

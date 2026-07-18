@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Handshake, CheckCircle2, MapPin, Clock } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Handshake, CheckCircle2, MapPin } from "lucide-react";
 
 import { Hero } from "@/components/sections/Hero";
-import { CTA } from "@/components/sections/CTA";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
-import { partners, upcomingPartners, partnerValues, type PartnerAccent } from "@/config/partners";
+import { partners, partnerValues, type PartnerAccent } from "@/config/partners";
 import { getProductIcon } from "@/lib/productIcons";
 import { siteConfig } from "@/config/site";
 
 const pageDescription =
-  "Translyx is the New Zealand and Oceania partner for global clinical-technology innovators. Aiforia is our authorised digital pathology AI partner and Algoscope our surgery-to-pathology workflow automation partner — with a growing partner network.";
+  "Translyx is the New Zealand and Oceania partner for global clinical-technology innovators. Aiforia is our authorised digital pathology AI partner and Algoscope our surgery-to-pathology workflow automation partner.";
 
 export const metadata: Metadata = {
   title: "Partners — Aiforia, Algoscope & the Translyx Partner Network",
@@ -67,7 +66,7 @@ export default function PartnersPage() {
         badge={{ text: "Partner network", icon: <Handshake className="h-3.5 w-3.5 text-cyan-300" /> }}
         headline="Your bridge to New Zealand and Oceania"
         highlight="healthcare."
-        description="Translyx partners with global diagnostic and clinical-AI innovators — bringing world-class technology to New Zealand and Oceania with local expertise, governance, and clinical adoption. Aiforia and Algoscope are our current partner products, and the network is growing."
+        description="Translyx partners with global diagnostic and clinical-AI innovators — bringing world-class technology to New Zealand and Oceania with local expertise, governance, and clinical adoption. Aiforia and Algoscope are our current partner products."
         primaryCTA={{ label: "Become a partner", href: "/contact?topic=partner" }}
         secondaryCTA={{ label: "Explore products", href: "/products" }}
       />
@@ -194,54 +193,11 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      {/* Expanding network */}
-      <section className="bg-[#F5F8FC] py-18 sm:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-[1100px]">
-            <SectionHeader
-              eyebrow="Expanding the network"
-              title="New partners are joining — announcing soon."
-              description="Translyx is actively bringing new diagnostic and AI partners to New Zealand and Oceania across these areas."
-              className="mb-12"
-            />
-            <Reveal className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {upcomingPartners.map((u) => {
-                const Icon = getProductIcon(u.icon);
-                const a = accent[u.accent];
-                return (
-                  <div
-                    key={u.area}
-                    className="relative overflow-hidden rounded-2xl border border-dashed border-slate-300 bg-white/70 p-6"
-                  >
-                    <div className="flex items-start justify-between">
-                      <span
-                        className="flex h-11 w-11 items-center justify-center rounded-xl ring-1 ring-inset ring-slate-200/70"
-                        style={{ background: a.soft }}
-                      >
-                        <Icon className="h-5 w-5" style={{ color: a.color }} aria-hidden="true" />
-                      </span>
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-300 bg-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-slate-500">
-                        <Clock className="h-3 w-3" />
-                        Announcing soon
-                      </span>
-                    </div>
-                    <p className="mt-4 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-slate-600">
-                      {u.category}
-                    </p>
-                    <h3 className="mt-1 font-display text-lg font-semibold text-[#0F1C3F]">{u.area}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-500">
-                      Partner in discussion to bring this capability to New Zealand and Oceania.
-                    </p>
-                  </div>
-                );
-              })}
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
       {/* Become a partner */}
-      <section id="become-a-partner" className="scroll-mt-24 bg-white py-18 sm:py-24">
+      <section
+        id="become-a-partner"
+        className="scroll-mt-24 bg-gradient-to-b from-[#F5F8FC] to-white py-20 sm:py-28"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1100px]">
             <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0F1C3F] to-[#0B1430] p-8 shadow-[0_30px_80px_-40px_rgba(15,28,63,0.6)] sm:p-12">
@@ -281,13 +237,6 @@ export default function PartnersPage() {
           </div>
         </div>
       </section>
-
-      <CTA
-        title="Let's bring world-class clinical technology to the region."
-        description="Whether you're a global innovator seeking local adoption or a healthcare organisation evaluating partner solutions — Translyx is the bridge."
-        primaryCTA={{ label: "Contact us", href: "/contact" }}
-        secondaryCTA={{ label: "Explore products", href: "/products" }}
-      />
     </>
   );
 }

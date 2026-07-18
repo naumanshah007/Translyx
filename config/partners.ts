@@ -2,11 +2,10 @@
  * Partner registry for Translyx.
  *
  * Translyx is the New Zealand / Oceania bridge for global clinical-technology
- * companies. Add new partners here — set status "active" once announced, or
- * "upcoming" for partners in discussion (rendered as "announcing soon").
+ * companies. Add new partners here once the partnership can be announced.
  */
 
-export type PartnerStatus = "active" | "upcoming";
+export type PartnerStatus = "active";
 export type PartnerAccent = "cyan" | "violet" | "teal" | "emerald" | "sky";
 
 export interface Partner {
@@ -55,13 +54,6 @@ export const partners: Partner[] = [
     accent: "violet",
     location: "France",
   },
-];
-
-/** Slots reserved for partners in discussion — replace with real names as they sign. */
-export const upcomingPartners: { area: string; category: string; icon: string; accent: PartnerAccent }[] = [
-  { area: "Sepsis & AMR diagnostics", category: "Diagnostics partner", icon: "Activity", accent: "teal" },
-  { area: "Molecular & oncology", category: "Diagnostics partner", icon: "FlaskConical", accent: "emerald" },
-  { area: "Point-of-care testing", category: "Diagnostics partner", icon: "Stethoscope", accent: "sky" },
 ];
 
 /** Why a global innovator partners with Translyx */

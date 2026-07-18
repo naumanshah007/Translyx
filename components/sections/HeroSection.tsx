@@ -20,6 +20,7 @@ interface HeroSectionProps {
   ctas?: HeroCTA[];
   trustChips?: { icon: LucideIcon; label: string }[];
   visual?: React.ReactNode | false;
+  layout?: "balanced" | "visual-forward";
   /** Low-weight link rendered under the trust chips, for a tertiary path that doesn't need CTA-level prominence */
   footer?: React.ReactNode;
 }
@@ -61,9 +62,11 @@ export function HeroSection({
   ctas,
   trustChips,
   visual,
+  layout = "balanced",
   footer,
 }: HeroSectionProps) {
   const hasVisual = visual !== false;
+  const visualForward = hasVisual && layout === "visual-forward";
 
   return (
     <section className="relative overflow-hidden bg-midnight">
@@ -79,14 +82,16 @@ export function HeroSection({
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className={cn(
-            "mx-auto grid items-center py-16 sm:py-20 lg:py-24",
+            "mx-auto grid items-center py-16 sm:py-20",
             hasVisual
-              ? "max-w-[1240px] gap-10 lg:grid-cols-[1.04fr_1fr] lg:items-start lg:gap-10"
-              : "max-w-[900px]"
+              ? visualForward
+                ? "max-w-[1280px] gap-10 lg:grid-cols-[minmax(0,1.03fr)_minmax(0,0.97fr)] lg:gap-6 lg:py-16 xl:gap-10"
+                : "max-w-[1240px] gap-10 lg:grid-cols-[1.04fr_1fr] lg:items-start lg:gap-10 lg:py-24"
+              : "max-w-[900px] lg:py-24"
           )}
         >
           {/* Copy */}
-          <div className={cn("text-center", hasVisual && "lg:text-left")}>
+          <div className={cn("text-center", hasVisual && "lg:text-left", visualForward && "lg:max-w-[600px]")}>
             {badge && (
               <div className="mb-7 inline-flex items-center gap-2 rounded-full glass-panel px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-200 will-fade reveal">
                 {badge.icon && <badge.icon className="h-3.5 w-3.5 text-cyan-300" />}
@@ -95,7 +100,10 @@ export function HeroSection({
             )}
 
             <h1
-              className="font-display text-[2.6rem] font-semibold leading-[1.04] tracking-[-0.02em] text-white [hyphens:none] will-fade reveal sm:text-[3.2rem] lg:text-[3.55rem]"
+              className={cn(
+                "font-display text-[2.6rem] font-semibold leading-[1.04] tracking-[-0.02em] text-white [hyphens:none] will-fade reveal sm:text-[3.2rem]",
+                visualForward ? "lg:text-[3.25rem] xl:text-[3.55rem]" : "lg:text-[3.55rem]"
+              )}
               style={{ animationDelay: "0.05s" }}
             >
               {headline}{" "}
@@ -151,7 +159,10 @@ export function HeroSection({
           </div>
 
           {hasVisual && (
-            <div className="will-fade reveal" style={{ animationDelay: "0.15s" }}>
+            <div
+              className={cn("will-fade reveal", visualForward && "lg:-mr-4 xl:-mr-8")}
+              style={{ animationDelay: "0.15s" }}
+            >
               {visual ?? <HeroVisual />}
             </div>
           )}

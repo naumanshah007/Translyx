@@ -120,7 +120,7 @@ export default function HomePage() {
           { icon: ShieldCheck, label: "Governed AI workflows" },
           { icon: UserCheck, label: "Human review" },
         ]}
-        visual={false}
+        layout="visual-forward"
       />
 
       <section className="relative z-20 border-b border-slate-200/70 bg-white">
