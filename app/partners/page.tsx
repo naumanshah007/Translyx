@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Handshake, CheckCircle2, MapPin } from "lucide-react";
 
 import { Hero } from "@/components/sections/Hero";
+import { PartnersHeroVisual } from "@/components/sections/PageHeroVisuals";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { partners, partnerValues, type PartnerAccent } from "@/config/partners";
@@ -69,6 +70,7 @@ export default function PartnersPage() {
         description="Translyx partners with global diagnostic and clinical-AI innovators — bringing world-class technology to New Zealand and Oceania with local expertise, governance, and clinical adoption. Aiforia and Algoscope are our current partner products."
         primaryCTA={{ label: "Become a partner", href: "/contact?topic=partner" }}
         secondaryCTA={{ label: "Explore products", href: "/products" }}
+        visual={<PartnersHeroVisual />}
       />
 
       {/* Why partner with Translyx */}

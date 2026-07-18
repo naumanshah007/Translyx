@@ -11,6 +11,7 @@ interface HeroProps {
   primaryCTA?: { label: string; href: string };
   secondaryCTA?: { label: string; href: string; external?: boolean };
   badge?: { text: string; icon?: ReactNode };
+  visual?: ReactNode;
   className?: string;
 }
 
@@ -22,6 +23,7 @@ export function Hero({
   primaryCTA,
   secondaryCTA,
   badge,
+  visual,
   className,
 }: HeroProps) {
   return (
@@ -30,8 +32,13 @@ export function Hero({
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/35 to-transparent" />
 
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1180px] py-12 sm:py-14 lg:py-16">
-          <div className="max-w-[860px]">
+        <div
+          className={cn(
+            "mx-auto max-w-[1180px] py-12 sm:py-14 lg:py-16",
+            visual && "grid items-center gap-9 lg:grid-cols-[minmax(0,1.25fr)_minmax(320px,0.75fr)] lg:gap-12"
+          )}
+        >
+          <div className={cn("max-w-[860px]", visual && "lg:max-w-[760px]")}>
             {badge && (
               <div className="mb-5 inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-cyan-100/75">
                 {badge.icon ?? <Sparkles className="h-3.5 w-3.5 text-cyan-300" />}
@@ -81,6 +88,12 @@ export function Hero({
               </div>
             )}
           </div>
+
+          {visual && (
+            <div className="will-fade reveal" style={{ animationDelay: "0.12s" }}>
+              {visual}
+            </div>
+          )}
         </div>
       </div>
     </section>

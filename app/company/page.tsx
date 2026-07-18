@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { Provenance } from "@/components/sections/Provenance";
 import { OceaniaMap } from "@/components/sections/OceaniaMap";
 import { Hero } from "@/components/sections/Hero";
+import { CompanyHeroVisual } from "@/components/sections/PageHeroVisuals";
 import Link from "next/link";
 
 const aboutDescription = `Learn about ${siteConfig.companyName} — the Auckland-based clinical technology company connecting partner diagnostic solutions, digital pathology AI, and governed clinical AI workflow capabilities for New Zealand healthcare.`;
@@ -144,6 +145,7 @@ export default function AboutPage() {
         description="Translyx is an Auckland-based clinical technology company connecting diagnostic innovation, digital pathology AI, and governed clinical workflows with New Zealand and Oceania."
         primaryCTA={{ label: "Talk with our team", href: "/contact" }}
         secondaryCTA={{ label: "Explore partners", href: "/partners" }}
+        visual={<CompanyHeroVisual />}
       />
 
       {/* Credibility strip */}

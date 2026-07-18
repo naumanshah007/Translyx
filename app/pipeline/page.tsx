@@ -4,6 +4,7 @@ import { siteConfig } from "@/config/site";
 import { FlaskConical, Microscope, ArrowRight } from "lucide-react";
 import { pipelineCategories } from "@/config/pipeline";
 import { Hero } from "@/components/sections/Hero";
+import { PipelineHeroVisual } from "@/components/sections/PageHeroVisuals";
 import { CTA } from "@/components/sections/CTA";
 import { PipelineObservatory } from "@/components/sections/PipelineObservatory";
 import { PipelineCategoryCard } from "@/components/ui/PipelineCategoryCard";
@@ -52,6 +53,7 @@ export default function PipelinePage() {
         description={`The ${siteConfig.companyName} pipeline spans governed clinical AI workflow capabilities — under evaluation and development — and diagnostic innovation across AMR, sepsis, point-of-care testing, oncology, endocrine, cardiac, and precision medicine.`}
         primaryCTA={{ label: "Discuss the pipeline", href: "/contact?topic=pipeline" }}
         secondaryCTA={{ label: "See partner products", href: "/products" }}
+        visual={<PipelineHeroVisual />}
       />
 
       <PipelineObservatory />
