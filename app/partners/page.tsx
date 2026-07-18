@@ -120,8 +120,8 @@ export default function PartnersPage() {
               eyebrow="Our partners"
               title={
                 <>
-                  The companies behind Translyx{" "}
-                  <span className="text-gradient-brand">solutions.</span>
+                  Our clinical technology{" "}
+                  <span className="text-gradient-brand">partners.</span>
                 </>
               }
               maxWidth="max-w-2xl"

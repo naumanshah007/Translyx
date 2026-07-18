@@ -3,11 +3,11 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 import { BrandLogo } from "@/components/ui/Brand";
 import { NavDropdown, statusDot } from "@/components/layout/NavDropdown";
-import { navigation, headerCTA } from "@/config/navigation";
+import { navigation } from "@/config/navigation";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -62,13 +62,6 @@ export function Header() {
           )}
         </nav>
 
-        <Link
-          href={headerCTA.href}
-          className="ml-3 inline-flex flex-shrink-0 items-center gap-2 whitespace-nowrap rounded-xl bg-gradient-to-r from-cyan-400 via-sky-400 to-violet-500 px-4 py-2.5 text-[13px] font-semibold text-[#06121f] shadow-[0_6px_24px_-6px_rgba(34,211,238,0.5)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_28px_-6px_rgba(124,58,237,0.55)] xl:ml-6 xl:px-5"
-        >
-          {headerCTA.label}
-          <ArrowRight className="h-3.5 w-3.5" />
-        </Link>
       </div>
 
       {/* Mobile */}
@@ -138,17 +131,6 @@ export function Header() {
                   </div>
                 );
               })}
-
-              <div className="pt-4">
-                <Link
-                  href={headerCTA.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 via-sky-400 to-violet-500 px-5 py-3 text-sm font-semibold text-[#06121f] shadow-[0_6px_24px_-6px_rgba(34,211,238,0.5)]"
-                >
-                  {headerCTA.label}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
             </div>
           </div>
         )}

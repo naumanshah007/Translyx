@@ -12,14 +12,6 @@ const pipelineLinks = [
   { label: "Diagnostic Innovation Pipeline", href: "/pipeline#diagnostic-innovation" },
 ];
 
-const newsLinks = [
-  { label: "All News", href: "/news" },
-  { label: "New Zealand", href: "/news?region=new-zealand" },
-  { label: "Australia", href: "/news?region=australia" },
-  { label: "Global", href: "/news?region=global" },
-  { label: "Upcoming events", href: "/news#events" },
-];
-
 const companyLinks = [
   { label: "About", href: "/company" },
   { label: "Partners", href: "/partners" },
@@ -87,19 +79,9 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* News + Company */}
+          {/* Company */}
           <div className="lg:col-span-2">
-            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">News</h3>
-            <ul className="space-y-2.5 text-sm">
-              {newsLinks.map((l) => (
-                <li key={l.label}>
-                  <Link href={l.href} className="text-slate-400 transition-colors hover:text-cyan-300">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <h3 className="mb-4 mt-8 text-xs font-semibold uppercase tracking-[0.18em] text-white">Company</h3>
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white">Company</h3>
             <ul className="space-y-2.5 text-sm">
               {companyLinks.map((l) => (
                 <li key={l.label}>

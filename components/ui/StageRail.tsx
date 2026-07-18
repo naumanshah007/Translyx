@@ -40,15 +40,18 @@ export function StageRail({
   const nodes = [{ key: "concept" as const, label: "Concept" }, ...railStages];
 
   return (
-    <div className={cn("flex items-center", className)}>
+    <div className={cn("flex min-w-0 items-center", className)}>
       {nodes.map((node, i) => {
         const isConcept = node.key === "concept";
         const passed = isConcept || i - 1 < activeIdx;
         const isCurrent = !isConcept && i - 1 === activeIdx;
         const filled = isConcept || passed || isCurrent;
         return (
-          <div key={node.key} className="flex flex-1 items-center last:flex-none">
-            <div className="flex flex-col items-center gap-1.5">
+          <div
+            key={node.key}
+            className="flex min-w-0 flex-1 items-center last:basis-[4.5rem] last:flex-none sm:last:basis-auto"
+          >
+            <div className="flex min-w-0 flex-col items-center gap-1.5">
               <span
                 className={cn(
                   "rounded-full transition-colors",
@@ -63,7 +66,7 @@ export function StageRail({
               {!compact && (
                 <span
                   className={cn(
-                    "whitespace-nowrap text-[9px] font-semibold uppercase tracking-wide",
+                    "max-w-[4.5rem] text-center text-[9px] font-semibold uppercase leading-tight tracking-wide sm:max-w-none sm:whitespace-nowrap",
                     isCurrent ? "text-[#0F1C3F]" : "text-slate-600"
                   )}
                 >

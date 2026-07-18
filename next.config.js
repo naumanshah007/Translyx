@@ -34,25 +34,6 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // www.translyx.co.nz is the canonical origin. translyx.co (and
-      // www.translyx.co) are secondary domains that permanently redirect
-      // straight to the canonical host — targeting www directly avoids a
-      // second hop through the apex (the apex→www redirect is handled at the
-      // Vercel domain level). Path and query string are preserved.
-      // Host rules must stay first so they resolve before path rules.
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'translyx.co' }],
-        destination: 'https://www.translyx.co.nz/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.translyx.co' }],
-        destination: 'https://www.translyx.co.nz/:path*',
-        permanent: true,
-      },
-
       // --- 2026 single-brand restructure: legacy routes → new structure ---
       // Former Privexa product pages → pipeline capabilities
       { source: '/products/privexa-ai-wrapper', destination: '/pipeline/ai-wrapper', permanent: true },

@@ -19,7 +19,7 @@ interface HeroSectionProps {
   description: string;
   ctas?: HeroCTA[];
   trustChips?: { icon: LucideIcon; label: string }[];
-  visual?: React.ReactNode;
+  visual?: React.ReactNode | false;
   /** Low-weight link rendered under the trust chips, for a tertiary path that doesn't need CTA-level prominence */
   footer?: React.ReactNode;
 }
@@ -63,6 +63,8 @@ export function HeroSection({
   visual,
   footer,
 }: HeroSectionProps) {
+  const hasVisual = visual !== false;
+
   return (
     <section className="relative overflow-hidden bg-midnight">
       {/* ambient aurora + grid + grain */}
@@ -75,9 +77,16 @@ export function HeroSection({
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-[1240px] items-center gap-10 py-16 sm:py-20 lg:grid-cols-[1.04fr_1fr] lg:items-start lg:gap-10 lg:py-24">
+        <div
+          className={cn(
+            "mx-auto grid items-center py-16 sm:py-20 lg:py-24",
+            hasVisual
+              ? "max-w-[1240px] gap-10 lg:grid-cols-[1.04fr_1fr] lg:items-start lg:gap-10"
+              : "max-w-[900px]"
+          )}
+        >
           {/* Copy */}
-          <div className="text-center lg:text-left">
+          <div className={cn("text-center", hasVisual && "lg:text-left")}>
             {badge && (
               <div className="mb-7 inline-flex items-center gap-2 rounded-full glass-panel px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-200 will-fade reveal">
                 {badge.icon && <badge.icon className="h-3.5 w-3.5 text-cyan-300" />}
@@ -94,7 +103,10 @@ export function HeroSection({
             </h1>
 
             <p
-              className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/65 will-fade reveal sm:text-lg lg:mx-0"
+              className={cn(
+                "mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/65 will-fade reveal sm:text-lg",
+                hasVisual && "lg:mx-0 lg:max-w-xl"
+              )}
               style={{ animationDelay: "0.12s" }}
             >
               {description}
@@ -102,7 +114,10 @@ export function HeroSection({
 
             {ctas && ctas.length > 0 && (
               <div
-                className="mt-9 flex flex-col items-stretch gap-3 will-fade reveal sm:flex-row sm:flex-wrap sm:items-center sm:justify-center lg:justify-start"
+                className={cn(
+                  "mt-9 flex flex-col items-stretch gap-3 will-fade reveal sm:flex-row sm:flex-wrap sm:items-center sm:justify-center",
+                  hasVisual && "lg:justify-start"
+                )}
                 style={{ animationDelay: "0.2s" }}
               >
                 {ctas.map((cta) => (
@@ -113,7 +128,10 @@ export function HeroSection({
 
             {trustChips && trustChips.length > 0 && (
               <div
-                className="mt-9 flex flex-wrap justify-center gap-2 will-fade reveal lg:justify-start"
+                className={cn(
+                  "mt-9 flex flex-wrap justify-center gap-2 will-fade reveal",
+                  hasVisual && "lg:justify-start"
+                )}
                 style={{ animationDelay: "0.28s" }}
               >
                 {trustChips.map((c) => (
@@ -132,10 +150,11 @@ export function HeroSection({
             )}
           </div>
 
-          {/* Visual */}
-          <div className="will-fade reveal" style={{ animationDelay: "0.15s" }}>
-            {visual ?? <HeroVisual />}
-          </div>
+          {hasVisual && (
+            <div className="will-fade reveal" style={{ animationDelay: "0.15s" }}>
+              {visual ?? <HeroVisual />}
+            </div>
+          )}
         </div>
       </div>
 

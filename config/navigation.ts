@@ -86,38 +86,6 @@ export const navigation: NavItem[] = [
     ],
   },
   {
-    label: "Intelligence",
-    href: "/news",
-    description: "News intelligence for diagnostics, pathology & clinical AI",
-    subItems: [
-      {
-        label: "All News",
-        href: "/news",
-        description: "Latest market intelligence across all regions",
-      },
-      {
-        label: "New Zealand",
-        href: "/news?region=new-zealand",
-        description: "NZ healthcare, diagnostics & pathology news",
-      },
-      {
-        label: "Australia",
-        href: "/news?region=australia",
-        description: "Australian pathology & diagnostic technology news",
-      },
-      {
-        label: "Global",
-        href: "/news?region=global",
-        description: "Global digital pathology, clinical AI & regulation",
-      },
-      {
-        label: "Upcoming events",
-        href: "/news#events",
-        description: "Conferences, forums & summits on the Translyx radar",
-      },
-    ],
-  },
-  {
     label: "Partners",
     href: "/partners",
     description: "The Translyx partner network — and how to join it",
@@ -127,9 +95,9 @@ export const navigation: NavItem[] = [
     href: "/company",
     description: "About Translyx Limited",
   },
+  {
+    label: "Contact Us",
+    href: "/contact",
+    description: "Contact Translyx",
+  },
 ];
-
-export const headerCTA = {
-  label: "Request Walkthrough",
-  href: "/contact",
-};

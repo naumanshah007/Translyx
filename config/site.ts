@@ -17,11 +17,9 @@ export const siteConfig = {
     "Translyx Limited brings advanced diagnostics, partner digital pathology AI (Aiforia), surgery-to-pathology workflow automation (Algoscope), and governed clinical AI workflow capabilities to New Zealand and Oceania.",
   
   // Domain & URLs
-  // www.translyx.co.nz is the canonical public origin (the apex translyx.co.nz
-  // and translyx.co both 301-redirect to it — apex→www at the Vercel domain
-  // level, translyx.co via next.config.js). `url` drives all canonicals, OG,
-  // and the sitemap, so it must be the final, non-redirecting host. `domain`
-  // is the short brand label shown in the UI.
+  // www.translyx.co.nz is the canonical public origin. The legacy .co domain
+  // is intentionally not redirected by this app. `url` drives all canonicals,
+  // Open Graph metadata, and the sitemap; `domain` is shown in the UI.
   domain: "www.translyx.co.nz",
   url: "https://www.translyx.co.nz",
 

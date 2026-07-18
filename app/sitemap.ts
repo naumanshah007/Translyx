@@ -29,7 +29,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/pipeline`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
     ...capabilityUrls,
     ...diagnosticUrls,
-    { url: `${baseUrl}/news`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
     { url: `${baseUrl}/partners`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
     { url: `${baseUrl}/company`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
