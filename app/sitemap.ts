@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: baseUrl, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
     { url: `${baseUrl}/privexa`, lastModified: now, changeFrequency: "weekly", priority: 0.98 },
+    { url: `${baseUrl}/cervigrade`, lastModified: now, changeFrequency: "weekly", priority: 0.95 },
     { url: `${baseUrl}/privexa/wsi`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/privexa/platform`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${baseUrl}/privexa/deployment`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },

@@ -19,6 +19,7 @@ const columns = [
   {
     title: "Clinical technology",
     links: [
+      { label: "CerviGrade", href: "/cervigrade" },
       { label: "Digital pathology", href: "/digital-pathology" },
       { label: "Aiforia", href: "/products/aiforia" },
       { label: "Algoscope", href: "/products/algoscope" },
@@ -62,6 +63,10 @@ export function Footer() {
             <p className="mt-6 text-sm text-slate-300">
               <span className="font-semibold uppercase tracking-[0.24em] text-white">Privexa</span>
               <span className="ml-2 text-xs text-slate-400">A Translyx Platform</span>
+            </p>
+            <p className="mt-2 text-sm text-slate-300">
+              <span className="font-semibold uppercase tracking-[0.24em] text-white">CerviGrade</span>
+              <span className="ml-2 text-xs text-slate-400">A Translyx Clinical Technology</span>
             </p>
             <ul className="mt-6 space-y-2 text-sm">
               <li className="flex items-start gap-2">

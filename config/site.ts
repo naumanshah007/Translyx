@@ -11,7 +11,7 @@ export const siteConfig = {
   companyName: "Translyx Limited",
   companyTagline: "Technology for trusted AI, diagnostics and clinical transformation",
   companyDescription:
-    "Translyx Limited is a New Zealand-founded technology company working across privacy-first enterprise AI, digital pathology, diagnostic innovation and healthcare technology. Privexa, the control boundary for the AI era, is a Translyx platform.",
+    "Translyx Limited is a New Zealand-founded technology company working across privacy-first enterprise AI, clinical decision support, digital pathology, diagnostic innovation and healthcare technology. Translyx builds Privexa, the control boundary for the AI era, and CerviGrade, governed cervical screening decision support.",
   tagline: "Technology for trusted AI, diagnostics and clinical transformation",
   description:
     "Translyx builds Privexa, a privacy-preserving control boundary for enterprise AI, and brings digital pathology and diagnostic innovation — including partner technologies Aiforia and Algoscope — into real-world workflows.",
@@ -49,6 +49,7 @@ export const siteConfig = {
     keywords: [
       "Translyx",
       "Privexa",
+      "CerviGrade",
       "enterprise AI privacy",
       "privacy-preserving AI",
       "secure AI gateway",

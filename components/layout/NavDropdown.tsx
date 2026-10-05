@@ -22,6 +22,7 @@ function DropdownEntry({ sub, onNavigate }: { sub: NavSubItem; onNavigate: () =>
   return (
     <Link
       href={sub.href}
+      {...(sub.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       onClick={onNavigate}
       className="group flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-black/[0.06]"
     >

@@ -61,23 +61,6 @@ export const pipelineCapabilities: PipelineCapability[] = [
       "Submission-oriented evidence packaging with visible limitations",
     ],
   },
-  {
-    slug: "clinical-triage",
-    title: "Clinical Triage",
-    stage: "development",
-    tagline: "Clinical pathway and referral grading support for authorised healthcare teams",
-    description:
-      "An audited clinical pathway and referral grading capability with role-based access, specialist review, and a full audit trail — human review at every stage.",
-    icon: "Stethoscope",
-    accent: "emerald",
-    href: "/pipeline/clinical-triage",
-    capabilities: [
-      "Structured referral review with specialist oversight",
-      "Role-based access for authorised clinical users",
-      "Full audit trail across every decision point",
-      "Human review at every stage — no autonomous grading",
-    ],
-  },
 ];
 
 export function getCapability(slug: string): PipelineCapability | undefined {

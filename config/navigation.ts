@@ -30,6 +30,17 @@ export const navigation: NavItem[] = [
     ],
   },
   {
+    label: "CerviGrade",
+    href: "/cervigrade",
+    description: "Governed cervical screening decision support",
+    subItems: [
+      { label: "CerviGrade overview", href: "/cervigrade", description: "Guideline-aligned screening decision support", badge: "Validation" },
+      { label: "Decision traceability", href: "/cervigrade#traceability", description: "Source-to-decision reasoning" },
+      { label: "Open demonstration ↗", href: "https://screening.translyx.co.nz", description: "Synthetic data · provisional outputs" },
+      { label: "Discuss clinical evaluation", href: "/contact?topic=cervigrade" },
+    ],
+  },
+  {
     label: "Digital Pathology",
     href: "/digital-pathology",
     description: "Partner pathology AI & workflow technology",
@@ -40,13 +51,12 @@ export const navigation: NavItem[] = [
     ],
   },
   {
-    label: "Diagnostic Innovation",
+    label: "Innovation",
     href: "/pipeline",
     description: "Emerging diagnostics and translational technology",
     subItems: [
       { label: "Diagnostic innovation pipeline", href: "/pipeline#diagnostic-innovation", description: "AMR, sepsis, POCT, oncology, cardiac & more" },
       { label: "Trace", href: "/pipeline/trace", description: "Reviewer-gated synthetic control workflows", status: "evaluation", group: "Research capabilities" },
-      { label: "Clinical Triage", href: "/pipeline/clinical-triage", description: "Clinical pathway and referral grading support", status: "development", group: "Research capabilities" },
     ],
   },
   {

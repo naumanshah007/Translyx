@@ -44,10 +44,12 @@ const nextConfig = {
       { source: '/pipeline/cloud-shield', destination: '/privexa', permanent: true },
       { source: '/pipeline/scribe', destination: '/privexa#scribe', permanent: true },
       { source: '/products/privexa-trace', destination: '/pipeline/trace', permanent: true },
-      { source: '/products/clinical-triage', destination: '/pipeline/clinical-triage', permanent: true },
+      // Clinical Triage superseded by CerviGrade (301 for SEO continuity)
+      { source: '/pipeline/clinical-triage', destination: '/cervigrade', statusCode: 301 },
+      { source: '/products/clinical-triage', destination: '/cervigrade', statusCode: 301 },
       // Deleted product stubs
       { source: '/products/ai-vision-assistant', destination: '/products', permanent: true },
-      { source: '/products/gynecology-referral', destination: '/pipeline/clinical-triage', permanent: true },
+      { source: '/products/gynecology-referral', destination: '/cervigrade', statusCode: 301 },
       // Pipeline rename (covers the 6 diagnostic slugs via wildcard)
       { source: '/product-pipeline', destination: '/pipeline', permanent: true },
       { source: '/product-pipeline/:slug', destination: '/pipeline/:slug', permanent: true },

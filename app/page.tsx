@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 import { pageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/config/site";
@@ -9,43 +9,27 @@ import { BoundaryDiagram, HowItWorks, ModalityGrid } from "@/components/privexa/
 import { VideoGallery } from "@/components/privexa/VideoGallery";
 import { PxFinalCta } from "@/components/privexa/FinalCta";
 import { Reveal } from "@/components/ui/Reveal";
+import { CgStatusBadge } from "@/components/cervigrade/ui";
+import { cervigradeDemoUrl, cervigradeShort } from "@/config/cervigrade";
 
 export const metadata = pageMetadata({
   title: "Translyx — Technology for Trusted AI, Diagnostics and Clinical Transformation",
   description:
-    "Translyx is a New Zealand-founded technology company: Privexa privacy-first enterprise AI, digital pathology, diagnostic innovation and healthcare technology — with governance, evidence and human accountability.",
+    "Translyx is a New Zealand-founded technology company. Translyx builds Privexa (privacy-first enterprise AI) and CerviGrade (governed cervical screening decision support), and works with partner technologies in digital pathology and diagnostic innovation.",
   path: "/",
 });
 
-const ecosystem = [
+/** Our technology — ownership is explicit: built by Translyx vs partner vs innovation. */
+const partnerTech = [
   {
-    eyebrow: "Translyx platform",
-    title: "Privexa",
-    body: "Enterprise AI privacy & control — the control boundary for the AI era.",
-    href: "/privexa",
-    cta: "Explore Privexa",
-    featured: true,
+    title: "Aiforia",
+    body: "AI-assisted digital pathology — an authorised partner solution represented by Translyx in New Zealand.",
+    href: "/products/aiforia",
   },
   {
-    eyebrow: "Clinical technology",
-    title: "Digital pathology",
-    body: "AI-enabled pathology and clinical workflow technologies, including Aiforia — an authorised partner solution.",
-    href: "/digital-pathology",
-    cta: "Explore digital pathology",
-  },
-  {
-    eyebrow: "Partner product",
-    title: "Algoscope · surgery-to-pathology",
-    body: "AI-powered surgery-to-pathology workflow automation and traceability, brought to New Zealand by Translyx.",
+    title: "Algoscope",
+    body: "Surgery-to-pathology workflow automation and traceability — a partner product Translyx is bringing to New Zealand.",
     href: "/products/algoscope",
-    cta: "Explore Algoscope",
-  },
-  {
-    eyebrow: "Translational technology",
-    title: "Diagnostic innovation",
-    body: "Emerging diagnostics across AMR, sepsis, point-of-care, oncology, cardiac and precision medicine.",
-    href: "/pipeline",
-    cta: "Explore the pipeline",
   },
 ];
 
@@ -74,8 +58,8 @@ export default function HomePage() {
             Technology for trusted AI, diagnostics and clinical transformation.
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl">
-            Privacy-first enterprise AI. Digital pathology. Diagnostic innovation. Built and brought into real-world workflows
-            with governance, evidence and human accountability.
+            Privacy-first enterprise AI. Governed clinical decision support. Digital pathology. Diagnostic innovation. Built and
+            brought into real-world workflows with governance, evidence and human accountability.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
             <PxCta href="/privexa">Explore Privexa</PxCta>
@@ -89,54 +73,104 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2 — Ecosystem */}
+      {/* 2 — Our technology */}
       <section aria-labelledby="ecosystem" className="pb-20 sm:pb-28">
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-          <h2 id="ecosystem" className="sr-only">Translyx technology ecosystem</h2>
-          <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2">
-            {ecosystem.map((e) => (
-              <li
-                key={e.title}
-                className={
-                  e.featured
-                    ? "md:col-span-2 lg:row-span-2"
-                    : e.title === "Diagnostic innovation"
-                      ? "md:col-span-2 lg:col-span-2"
-                      : ""
-                }
+          <div className="flex flex-wrap items-baseline justify-between gap-4 border-t border-black/10 pt-10">
+            <h2 id="ecosystem" className="text-[11px] font-semibold uppercase tracking-[0.3em] text-slate-600">Our technology</h2>
+            <p className="text-sm text-slate-600">Platforms we build — and partner technologies we bring to market.</p>
+          </div>
+
+          {/* Translyx-built */}
+          <p className="mt-10 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#A50E28]">Translyx-built</p>
+          <ul className="mt-4 grid gap-4 lg:grid-cols-[1.15fr_1fr]">
+            <li>
+              <Link
+                href="/privexa"
+                className="group flex h-full flex-col justify-between rounded-3xl border border-[#A50E28]/30 bg-gradient-to-b from-[#A50E28]/[0.06] to-transparent p-7 transition-colors hover:border-[#A50E28]/50 sm:p-9"
               >
-                <Link
-                  href={e.href}
-                  className={`group flex h-full flex-col justify-between rounded-3xl border p-7 transition-colors sm:p-8 ${
-                    e.featured
-                      ? "border-[#A50E28]/30 bg-gradient-to-b from-[#A50E28]/[0.06] to-transparent hover:border-[#A50E28]/50"
-                      : "border-black/10 hover:border-black/25"
-                  }`}
-                >
-                  <div>
-                    <p className={`text-[10px] font-semibold uppercase tracking-[0.2em] ${e.featured ? "text-[#A50E28]" : "text-slate-600"}`}>
-                      {e.eyebrow}
-                    </p>
-                    <h3
-                      className={`mt-4 font-semibold tracking-[-0.03em] text-[#0B0B0C] ${
-                        e.featured ? "text-[2.5rem] leading-none sm:text-[3.5rem]" : "text-xl"
-                      }`}
-                    >
-                      {e.title}
-                    </h3>
-                    <p className={`mt-4 leading-relaxed text-slate-600 ${e.featured ? "max-w-md text-lg" : "text-sm"}`}>{e.body}</p>
-                    {e.featured && (
-                      <p className="mt-8 font-mono text-xs text-slate-600">Text · Documents · Images · WSI · Audio · API</p>
-                    )}
-                  </div>
-                  <span className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-[#A50E28] group-hover:text-[#0B0B0C]">
-                    {e.cta}
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
-                  </span>
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#A50E28]">Enterprise AI privacy &amp; control</p>
+                  <h3 className="mt-4 text-[2.5rem] font-semibold leading-none tracking-[-0.03em] text-[#0B0B0C] sm:text-[3.5rem]">Privexa</h3>
+                  <p className="mt-4 max-w-md text-lg leading-relaxed text-slate-600">The Control Boundary for the AI Era.</p>
+                  <p className="mt-8 font-mono text-xs text-slate-600">Text · Documents · Images · WSI · Audio · API</p>
+                </div>
+                <span className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-[#A50E28] group-hover:text-[#0B0B0C]">
+                  Explore Privexa
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
+                </span>
+              </Link>
+            </li>
+            <li className="flex h-full flex-col justify-between rounded-3xl border border-[#0F766E]/30 bg-gradient-to-b from-[#0F766E]/[0.06] to-transparent p-7 sm:p-9">
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0F766E]">Governed cervical screening decision support</p>
+                <h3 className="mt-4 text-[2.5rem] font-semibold leading-none tracking-[-0.03em] text-[#0B1117] sm:text-[3.5rem]">CerviGrade</h3>
+                <p className="mt-4 max-w-md text-base leading-relaxed text-slate-600">{cervigradeShort}</p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  <CgStatusBadge kind="validation" />
+                  <CgStatusBadge kind="demo" />
+                </div>
+              </div>
+              <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm font-semibold">
+                <Link href="/cervigrade" className="group inline-flex items-center gap-1.5 text-[#0F766E] hover:text-[#0B1117]">
+                  Explore CerviGrade
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
                 </Link>
-              </li>
-            ))}
+                <a
+                  href={cervigradeDemoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-1.5 text-slate-700 hover:text-[#0B1117]"
+                >
+                  Open Demonstration
+                  <ArrowUpRight className="h-4 w-4" aria-hidden />
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              </div>
+            </li>
           </ul>
+
+          <div className="mt-10 grid gap-10 lg:grid-cols-[2fr_1fr] lg:gap-4">
+            {/* Partner technology */}
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-600">Partner technology</p>
+              <ul className="mt-4 grid gap-4 md:grid-cols-2">
+                {partnerTech.map((p) => (
+                  <li key={p.title}>
+                    <Link href={p.href} className="group flex h-full flex-col justify-between rounded-3xl border border-black/10 p-7 transition-colors hover:border-black/25">
+                      <div>
+                        <h3 className="text-xl font-semibold tracking-[-0.02em] text-[#0B0B0C]">{p.title}</h3>
+                        <p className="mt-3 text-sm leading-relaxed text-slate-600">{p.body}</p>
+                      </div>
+                      <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-slate-800 group-hover:text-[#0B0B0C]">
+                        Explore {p.title}
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Innovation */}
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-600">Innovation</p>
+              <Link
+                href="/pipeline"
+                className="group mt-4 flex h-[calc(100%-1.75rem)] flex-col justify-between rounded-3xl border border-dashed border-black/20 p-7 transition-colors hover:border-black/35"
+              >
+                <div>
+                  <h3 className="text-xl font-semibold tracking-[-0.02em] text-[#0B0B0C]">Diagnostic innovation</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                    Emerging clinical and diagnostic technologies across AMR, sepsis, point-of-care, oncology and cardiac.
+                  </p>
+                </div>
+                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-slate-800 group-hover:text-[#0B0B0C]">
+                  Explore the pipeline
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
+                </span>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -219,8 +253,57 @@ export default function HomePage() {
         </div>
       </PxSection>
 
+      {/* 8b — CerviGrade */}
+      <PxSection tone="light" labelledBy="cervigrade">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.34em] text-[#0B1117]">CerviGrade</p>
+            <h2 id="cervigrade" className="mt-5 text-balance text-[2rem] font-semibold leading-[1.08] tracking-[-0.03em] text-[#0B1117] sm:text-[2.75rem]">
+              Complex screening decisions, structured — with a clinician in control.
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-slate-600 sm:text-lg">
+              CerviGrade validates the information behind each case, applies governed pathways derived from published New Zealand
+              cervical screening guidance, and produces a provisional recommendation that an authorised clinician reviews.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              <CgStatusBadge kind="validation" />
+              <CgStatusBadge kind="demo" />
+            </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/cervigrade"
+                className="group inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full bg-[#0F766E] px-6 text-sm font-semibold text-white transition-colors hover:bg-[#0B5E58] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F766E]/50 focus-visible:ring-offset-2"
+              >
+                Explore CerviGrade
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+              </Link>
+              <a
+                href={cervigradeDemoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full border border-[#0B1117]/20 px-6 text-sm font-semibold text-[#0B1117] transition-colors hover:border-[#0B1117]/40 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F766E]/50 focus-visible:ring-offset-2"
+              >
+                Open Demonstration
+                <ArrowUpRight className="h-4 w-4" aria-hidden />
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            </div>
+          </div>
+          <ol className="grid gap-2">
+            {["Screening information", "Data sufficiency check", "Guideline pathway", "Provisional recommendation", "Clinician review", "Auditable decision"].map(
+              (step, i) => (
+                <li key={step} className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white px-5 py-4">
+                  <span className="font-mono text-xs text-[#0F766E]">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="text-sm font-semibold text-[#0B1117]">{step}</span>
+                </li>
+              )
+            )}
+          </ol>
+        </div>
+      </PxSection>
+
       {/* 9 — Digital pathology */}
-      <PxSection tone="light" labelledBy="pathology">
+      <PxSection labelledBy="pathology">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           <div>
             <PxHeading
@@ -263,7 +346,7 @@ export default function HomePage() {
       </PxSection>
 
       {/* 10 — Global */}
-      <PxSection labelledBy="global">
+      <PxSection tone="charcoal" labelledBy="global">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <PxHeading
             id="global"

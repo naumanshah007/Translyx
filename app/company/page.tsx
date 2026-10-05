@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Prose } from "@/components/ui/Prose";
 import { siteConfig } from "@/config/site";
-import { Shield, Users, MapPin, Calendar, ArrowRight, Building2, Handshake, Microscope, Lock, ShieldCheck, GraduationCap } from "lucide-react";
+import { Shield, Users, MapPin, Calendar, ArrowRight, Building2, Handshake, Stethoscope, Microscope, Lock, ShieldCheck, GraduationCap } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Provenance } from "@/components/sections/Provenance";
@@ -69,7 +69,7 @@ const platformModel = [
     icon: Building2,
     name: "Translyx Limited",
     role: "The company",
-    body: "The New Zealand technology company behind Privexa, digital pathology partnerships and diagnostic innovation — one accountable brand.",
+    body: "The New Zealand technology company behind Privexa, CerviGrade, digital pathology partnerships and diagnostic innovation — one accountable brand.",
   },
   {
     icon: Handshake,
@@ -82,6 +82,12 @@ const platformModel = [
     name: "Privexa",
     role: "A Translyx platform",
     body: "Translyx's flagship enterprise AI privacy platform — the control boundary for the AI era. Privexa, formerly a separate venture, is now part of Translyx.",
+  },
+  {
+    icon: Stethoscope,
+    name: "CerviGrade",
+    role: "A Translyx clinical technology",
+    body: "Governed cervical screening decision support — guideline-aligned pathways, data validation, clinician review and decision traceability. Under clinical validation.",
   },
 ];
 
@@ -219,7 +225,7 @@ export default function AboutPage() {
               public platform spanning partner products, governed clinical AI workflow capabilities, and diagnostic
               innovation, accountable for clinical implementation in New Zealand and Oceania.
             </p>
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {platformModel.map(({ icon: Icon, name, role, body }) => (
                 <Card key={name} className="p-5 sm:p-6" hover={false}>
                   <CardContent className="pt-0">
@@ -235,7 +241,7 @@ export default function AboutPage() {
             </div>
             <p className="mt-5 text-xs leading-relaxed text-slate-600">
               Aiforia and Algoscope are partner products Translyx brings to New Zealand — not owned or developed
-              by Translyx. Privexa capability status is published on the Trust &amp; product status page; diagnostic pipeline capabilities are under evaluation or development.
+              by Translyx. Privexa and CerviGrade are built by Translyx; CerviGrade is under clinical validation. Privexa capability status is published on the Trust &amp; product status page; diagnostic pipeline capabilities are under evaluation or development.
             </p>
           </section>
 

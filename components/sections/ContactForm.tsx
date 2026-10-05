@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 
 const inquiryTypes = [
   "Discuss Privexa",
+  "CerviGrade / Clinical Evaluation",
   "Discuss Aiforia",
   "Discuss Algoscope",
   "Discuss Pipeline",
@@ -21,6 +22,7 @@ const inquiryTypes = [
 /** Maps ?topic= deep-links (from CTAs across the site) to a pre-selected inquiry type. */
 const topicToInquiry: Record<string, string> = {
   privexa: "Discuss Privexa",
+  cervigrade: "CerviGrade / Clinical Evaluation",
   aiforia: "Discuss Aiforia",
   algoscope: "Discuss Algoscope",
   pipeline: "Discuss Pipeline",

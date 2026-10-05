@@ -131,6 +131,7 @@ export function Header() {
                           <Link
                             key={sub.href}
                             href={sub.href}
+                            {...(sub.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                             onClick={() => setMobileMenuOpen(false)}
                             className="flex min-h-[40px] items-center gap-2 rounded-lg px-3 py-2 text-sm text-slate-700 transition-colors hover:bg-black/[0.05] hover:text-[#0B0B0C]"
                           >
