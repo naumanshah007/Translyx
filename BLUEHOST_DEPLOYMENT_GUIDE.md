@@ -26,7 +26,7 @@
 ### Step 1: Get Your Vercel Domain
 
 1. Go to Vercel Dashboard → Your Project → Settings → Domains
-2. Add your domain: `privexa.co`
+2. Add your domain: `translyx.co.nz`
 3. Vercel will give you DNS records to add
 
 ### Step 2: Update DNS in Bluehost

@@ -19,7 +19,7 @@
 ### Step 3: Select Your Domain
 
 1. You'll see a list of your domains
-2. Find and select **`privexa.co`**
+2. Find and select **`translyx.co.nz`**
 3. Click on it or select it from a dropdown
 
 ### Step 4: Add the 3 DNS Records
@@ -66,7 +66,7 @@ You need to add 3 records. For each one:
 
 ### Step 6: After Verification
 
-Once verified, I'll update the code to use `noreply@privexa.co` as the sender, and your contact form will work perfectly!
+Once verified, I'll update the code to use `website@translyx.co.nz` as the sender, and your contact form will work perfectly!
 
 ## Troubleshooting
 

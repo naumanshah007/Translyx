@@ -1,4 +1,4 @@
-# Vercel Custom Domain Setup - www.privexa.co
+# Vercel Custom Domain Setup - www.translyx.co.nz
 
 ## Step-by-Step Guide
 
@@ -8,19 +8,19 @@
 2. Open your **"privexa"** project
 3. Go to **Settings** → **Domains**
 4. Click **"Add Domain"**
-5. Enter: `www.privexa.co`
+5. Enter: `www.translyx.co.nz`
 6. Click **"Add"**
 
 ### Step 2: Vercel Will Show DNS Records
 
 Vercel will display DNS records you need to add. You'll see something like:
 
-**For www.privexa.co:**
+**For www.translyx.co.nz:**
 - Type: `CNAME`
 - Name: `www`
 - Value: `cname.vercel-dns.com` (or similar)
 
-**For privexa.co (root domain):**
+**For translyx.co.nz (root domain):**
 - Type: `A`
 - Name: `@` (or blank)
 - Value: `76.76.21.21` (Vercel's IP - they'll provide the exact one)
@@ -66,7 +66,7 @@ While you're adding DNS records, also add the 3 Resend records:
 
 - Wait 5-60 minutes for DNS to propagate
 - Vercel will automatically detect when DNS is configured
-- Your site will be live at `www.privexa.co`
+- Your site will be live at `www.translyx.co.nz`
 
 ### Step 6: SSL Certificate
 
