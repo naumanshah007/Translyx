@@ -21,7 +21,7 @@ interface PipelineCategoryCardProps {
 export function PipelineCategoryCard({ slug, title, excerpt, image }: PipelineCategoryCardProps) {
   return (
     <Link href={`/pipeline/${slug}`} className="group block h-full">
-      <Card variant="gradient-border" className="h-full overflow-hidden rounded-[1.6rem] border-white bg-[#0B1430] hover:-translate-y-1.5 transition-transform duration-300">
+      <Card variant="gradient-border" className="h-full overflow-hidden rounded-[1.6rem] border-white bg-[#0E0F12] hover:-translate-y-1.5 transition-transform duration-300">
         <div className="relative overflow-hidden">
           <PipelineImage
             localSrc={image.local}
@@ -29,7 +29,7 @@ export function PipelineCategoryCard({ slug, title, excerpt, image }: PipelineCa
             alt={title}
             className="h-52 rounded-none transition-transform duration-700 group-hover:scale-[1.04]"
           />
-          <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0B1430] via-transparent to-transparent" />
+          <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0E0F12] via-transparent to-transparent" />
         </div>
         <CardContent className="relative p-6 pt-5 sm:p-7 sm:pt-5">
           <p className="mb-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-cyan-200/60">Diagnostic opportunity</p>

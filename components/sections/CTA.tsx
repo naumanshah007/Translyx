@@ -12,71 +12,43 @@ interface CTAProps {
   className?: string;
 }
 
-function Action({
-  cta,
-  variant,
-}: {
-  cta: { label: string; href: string; external?: boolean };
-  variant: "primary" | "glass";
-}) {
-  const base =
-    "inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-200 sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1430]";
-  const styles =
-    variant === "primary"
-      ? "bg-gradient-to-r from-cyan-400 via-sky-400 to-violet-500 text-[#06121f] shadow-[0_8px_30px_-6px_rgba(34,211,238,0.5)] hover:-translate-y-0.5 hover:shadow-[0_10px_38px_-6px_rgba(124,58,237,0.55)]"
-      : "glass-panel text-white hover:bg-white/[0.14]";
+const base =
+  "group inline-flex min-h-[46px] w-full items-center justify-center gap-2 rounded-full px-6 text-sm font-semibold transition-colors sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#8E0C22]";
+
+function Action({ cta, primary }: { cta: { label: string; href: string; external?: boolean }; primary: boolean }) {
+  const cls = cn(base, primary ? "bg-white text-[#8E0C22] hover:bg-white/90" : "border border-white/40 text-white hover:bg-white/10");
   const content = (
     <>
       {cta.label}
-      <ArrowRight className="h-4 w-4" />
+      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
     </>
   );
-  if (cta.external) {
-    return (
-      <a href={cta.href} target="_blank" rel="noopener noreferrer" className={cn(base, styles)}>
-        {content}
-      </a>
-    );
-  }
-  return (
-    <Link href={cta.href} className={cn(base, styles)}>
+  return cta.external ? (
+    <a href={cta.href} target="_blank" rel="noopener noreferrer" className={cls}>
+      {content}
+    </a>
+  ) : (
+    <Link href={cta.href} className={cls}>
       {content}
     </Link>
   );
 }
 
+/** Closing call-to-action band — shared crimson treatment across the site. */
 export function CTA({ title, description, primaryCTA, secondaryCTA, footnote, className }: CTAProps) {
   return (
-    <section className={cn("relative overflow-hidden bg-midnight py-20 sm:py-24", className)}>
-      <div className="pointer-events-none absolute inset-0 grid-overlay opacity-40" />
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(34,211,238,0.12),transparent_60%)]" />
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-[2rem] font-semibold leading-tight tracking-tight text-white sm:text-[2.6rem]">
-            {title}
-          </h2>
-          {description && (
-            <p
-              className={cn(
-                "mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/65 sm:text-lg",
-                primaryCTA || secondaryCTA ? "mb-9" : "mb-0"
-              )}
-            >
-              {description}
-            </p>
-          )}
-          {(primaryCTA || secondaryCTA) && (
-            <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              {primaryCTA && <Action cta={primaryCTA} variant="primary" />}
-              {secondaryCTA && <Action cta={secondaryCTA} variant="glass" />}
-            </div>
-          )}
-
-          {footnote && <p className="mt-6 text-xs text-slate-400">{footnote}</p>}
-        </div>
+    <section className={cn("relative overflow-hidden bg-gradient-to-br from-[#7A0A1D] via-[#8E0C22] to-[#A50E28] py-20 sm:py-28", className)}>
+      <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
+        <h2 className="text-balance text-[2rem] font-semibold leading-[1.08] tracking-[-0.03em] text-white sm:text-[2.75rem]">{title}</h2>
+        {description && <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">{description}</p>}
+        {(primaryCTA || secondaryCTA) && (
+          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            {primaryCTA && <Action cta={primaryCTA} primary />}
+            {secondaryCTA && <Action cta={secondaryCTA} primary={false} />}
+          </div>
+        )}
+        {footnote && <p className="mt-6 text-xs text-white/75">{footnote}</p>}
       </div>
     </section>
   );
 }
-
-export const CTASection = CTA;

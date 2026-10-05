@@ -3,11 +3,11 @@ import type { ProductAccent } from "@/config/products";
 import type { CapabilityStage } from "@/config/pipelineCapabilities";
 
 const accentColor: Record<ProductAccent, string> = {
-  cyan: "#22D3EE",
-  violet: "#8B5CF6",
+  cyan: "#E8607A",
+  violet: "#94A3B8",
   teal: "#2DD4BF",
   emerald: "#34D399",
-  sky: "#38BDF8",
+  sky: "#E8607A",
 };
 
 const railStages: { key: CapabilityStage; label: string }[] = [
@@ -67,7 +67,7 @@ export function StageRail({
                 <span
                   className={cn(
                     "max-w-[4.5rem] text-center text-[9px] font-semibold uppercase leading-tight tracking-wide sm:max-w-none sm:whitespace-nowrap",
-                    isCurrent ? "text-[#0F1C3F]" : "text-slate-600"
+                    isCurrent ? "text-[#0B0B0C]" : "text-slate-600"
                   )}
                 >
                   {node.label}

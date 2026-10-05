@@ -36,7 +36,7 @@ const models = [
 
 export default function PlatformPage() {
   return (
-    <div className="bg-[#070B10]">
+    <div className="bg-white">
       <PrivexaSubnav />
       <section className="pb-20 pt-16 sm:pb-28 sm:pt-24">
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
@@ -56,11 +56,11 @@ export default function PlatformPage() {
             {flow.map((f, i) => (
               <li
                 key={f.title}
-                className={`relative rounded-2xl border p-5 ${f.accent ? "border-cyan-300/40 bg-cyan-300/[0.04]" : "border-white/10"}`}
+                className={`relative rounded-2xl border p-5 ${f.accent ? "border-[#A50E28]/40 bg-[#A50E28]/[0.04]" : "border-black/10"}`}
               >
-                <span className="font-mono text-[11px] text-slate-500">{String(i + 1).padStart(2, "0")}</span>
-                <h2 className={`mt-4 text-sm font-semibold ${f.accent ? "text-cyan-200" : "text-white"}`}>{f.title}</h2>
-                <p className="mt-2 text-xs leading-relaxed text-slate-400">{f.body}</p>
+                <span className="font-mono text-[11px] text-slate-600">{String(i + 1).padStart(2, "0")}</span>
+                <h2 className={`mt-4 text-sm font-semibold ${f.accent ? "text-[#A50E28]" : "text-[#0B0B0C]"}`}>{f.title}</h2>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600">{f.body}</p>
               </li>
             ))}
           </ol>
@@ -71,7 +71,7 @@ export default function PlatformPage() {
         <PxHeading id="who" eyebrow="Who it's for" title="Built for platforms that handle sensitive data." />
         <ul className="mt-10 flex flex-wrap gap-2">
           {audiences.map((a) => (
-            <li key={a} className="rounded-full border border-white/15 px-4 py-2 text-sm text-slate-200">{a}</li>
+            <li key={a} className="rounded-full border border-black/15 px-4 py-2 text-sm text-slate-800">{a}</li>
           ))}
         </ul>
       </PxSection>
@@ -80,13 +80,13 @@ export default function PlatformPage() {
         <PxHeading id="models" eyebrow="Commercial models" title="Integrate the way your product needs." />
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {models.map((m) => (
-            <li key={m.title} className="rounded-2xl border border-white/10 p-6">
-              <h3 className="font-semibold text-white">{m.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">{m.body}</p>
+            <li key={m.title} className="rounded-2xl border border-black/10 p-6">
+              <h3 className="font-semibold text-[#0B0B0C]">{m.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">{m.body}</p>
             </li>
           ))}
         </ul>
-        <p className="mt-6 text-xs text-slate-500">Integration scope, SLAs and commercial terms are agreed per partner.</p>
+        <p className="mt-6 text-xs text-slate-600">Integration scope, SLAs and commercial terms are agreed per partner.</p>
       </PxSection>
 
       <PxFinalCta

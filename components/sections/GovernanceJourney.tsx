@@ -10,9 +10,9 @@ const steps = [
 
 export function GovernanceJourney() {
   return (
-    <section className="relative overflow-hidden bg-[#0B1430] py-20 sm:py-28">
+    <section className="relative overflow-hidden bg-[#0E0F12] py-20 sm:py-28">
       <div className="pointer-events-none absolute inset-0 grid-overlay opacity-30" />
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[850px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(34,211,238,0.12),transparent_62%)]" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[850px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(200,16,46,0.12),transparent_62%)]" />
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1180px]">
           <div className="mx-auto max-w-3xl text-center">
@@ -30,9 +30,9 @@ export function GovernanceJourney() {
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
               {steps.map(({ icon: Icon, label, detail }, index) => (
                 <div key={label} className="group relative rounded-2xl border border-white/10 bg-white/[0.045] p-5 backdrop-blur-sm transition-all hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/[0.07]">
-                  <span className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-200/25 bg-[#07101F] text-cyan-300 shadow-[0_0_28px_-10px_rgba(34,211,238,0.8)]">
+                  <span className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-200/25 bg-[#0E0F12] text-cyan-300 shadow-[0_0_28px_-10px_rgba(200,16,46,0.8)]">
                     <Icon className="h-5 w-5" />
-                    <span className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-cyan-300 text-[9px] font-bold text-[#07101F]">
+                    <span className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-cyan-300 text-[9px] font-bold text-white">
                       {index + 1}
                     </span>
                   </span>

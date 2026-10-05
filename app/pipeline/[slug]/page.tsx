@@ -60,14 +60,14 @@ export default async function PipelineCategoryPage({ params }: PageProps) {
             {/* Image gallery — restrained 16:9 treatment with a brand-tint overlay */}
             <div className="relative mb-14 grid grid-cols-1 gap-5 sm:grid-cols-3">
               {category.images.map((img, i) => (
-                <div key={i} className="group relative overflow-hidden rounded-[1.35rem] border border-slate-200/70 bg-[#0B1430] shadow-[0_24px_60px_-34px_rgba(15,28,63,0.5)]">
+                <div key={i} className="group relative overflow-hidden rounded-[1.35rem] border border-slate-200/70 bg-[#0E0F12] shadow-[0_24px_60px_-34px_rgba(11,11,12,0.5)]">
                   <PipelineImage
                     localSrc={img.local}
                     remoteSrc={img.remote}
                     alt={`${category.title} — reference image ${i + 1}`}
                     className="rounded-none transition-transform duration-700 group-hover:scale-[1.04]"
                   />
-                  <span className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-[#0F1C3F]/20 via-transparent to-transparent" />
+                  <span className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-[#0B0B0C]/20 via-transparent to-transparent" />
                 </div>
               ))}
             </div>
@@ -82,7 +82,7 @@ export default async function PipelineCategoryPage({ params }: PageProps) {
       </section>
 
       {/* Related categories */}
-      <section className="border-t border-slate-200/60 bg-[#F5F8FC] py-16 sm:py-20">
+      <section className="border-t border-slate-200/60 bg-[#F6F6F7] py-16 sm:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1100px]">
             <SectionHeader
@@ -96,12 +96,12 @@ export default async function PipelineCategoryPage({ params }: PageProps) {
                 <Link
                   key={c.slug}
                   href={`/pipeline/${c.slug}`}
-                  className="group flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white p-5 shadow-[0_2px_16px_-6px_rgba(15,28,63,0.10)] transition-all duration-300 hover:-translate-y-1 hover:border-teal-300/60"
+                  className="group flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white p-5 shadow-[0_2px_16px_-6px_rgba(11,11,12,0.10)] transition-all duration-300 hover:-translate-y-1 hover:border-teal-300/60"
                 >
                   <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-teal-50 ring-1 ring-slate-200/70">
                     <FlaskConical className="h-4 w-4 text-teal-700" />
                   </span>
-                  <h3 className="mt-3.5 font-display text-base font-semibold leading-snug text-[#0F1C3F]">
+                  <h3 className="mt-3.5 font-display text-base font-semibold leading-snug text-[#0B0B0C]">
                     {c.title}
                   </h3>
                   <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-700">

@@ -177,13 +177,13 @@ export default function AlgoscopePage() {
       />
 
       {/* Trust chips */}
-      <section className="bg-[#F5F8FC] border-b border-slate-200/60 py-8">
+      <section className="bg-[#F6F6F7] border-b border-slate-200/60 py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto flex flex-wrap items-center justify-center gap-3">
             {trustChips.map(({ icon: Icon, label }) => (
               <span
                 key={label}
-                className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white px-4 py-2 text-xs font-semibold text-slate-600 shadow-[0_1px_8px_-2px_rgba(15,28,63,0.06)]"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white px-4 py-2 text-xs font-semibold text-slate-600 shadow-[0_1px_8px_-2px_rgba(11,11,12,0.06)]"
               >
                 <Icon className="h-3.5 w-3.5 text-violet-500" />
                 {label}
@@ -207,10 +207,10 @@ export default function AlgoscopePage() {
 
             <Reveal className="grid gap-6 lg:grid-cols-2">
               {productModules.map(({ name, eyebrow, description, image, imageAlt, icon: Icon, features, source }) => (
-                <article key={name} className="group overflow-hidden rounded-[1.75rem] border border-slate-200/80 bg-[#F7FAFC] shadow-[0_26px_70px_-48px_rgba(15,28,63,0.55)]">
+                <article key={name} className="group overflow-hidden rounded-[1.75rem] border border-slate-200/80 bg-[#F6F6F7] shadow-[0_26px_70px_-48px_rgba(11,11,12,0.55)]">
                   <div className="relative h-[230px] overflow-hidden bg-white sm:h-[300px]">
                     <Image src={image} alt={imageAlt} fill sizes="(min-width: 1024px) 560px, 94vw" className="object-contain p-4 transition-transform duration-500 group-hover:scale-[1.02] sm:p-6" />
-                    <span className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#F7FAFC] to-transparent" />
+                    <span className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#F6F6F7] to-transparent" />
                     <span className="absolute left-5 top-5 flex items-center gap-2 rounded-full border border-white/80 bg-white/90 px-3 py-1.5 text-[8px] font-semibold uppercase tracking-[0.16em] text-violet-700 shadow-sm backdrop-blur-md sm:text-[9px]">
                       <Icon className="h-3.5 w-3.5" />
                       Official product imagery
@@ -218,7 +218,7 @@ export default function AlgoscopePage() {
                   </div>
                   <div className="relative -mt-5 p-6 pt-0 sm:p-8 sm:pt-0">
                     <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-violet-700 sm:text-[10px]">{eyebrow}</p>
-                    <h3 className="mt-2 font-display text-3xl font-semibold text-[#0F1C3F]">{name}</h3>
+                    <h3 className="mt-2 font-display text-3xl font-semibold text-[#0B0B0C]">{name}</h3>
                     <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">{description}</p>
                     <ul className="mt-5 grid gap-2 sm:grid-cols-2">
                       {features.map((feature) => (
@@ -228,7 +228,7 @@ export default function AlgoscopePage() {
                         </li>
                       ))}
                     </ul>
-                    <a href={source} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 text-xs font-semibold text-violet-700 hover:text-[#0F1C3F]">
+                    <a href={source} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 text-xs font-semibold text-violet-700 hover:text-[#0B0B0C]">
                       View official {name} information
                       <ExternalLink className="h-3.5 w-3.5" />
                     </a>
@@ -248,7 +248,7 @@ export default function AlgoscopePage() {
       </section>
 
       {/* Why manual workflows create bottlenecks */}
-      <section className="bg-[#F5F8FC] py-16 sm:py-20 md:py-24 border-y border-slate-200/60">
+      <section className="bg-[#F6F6F7] py-16 sm:py-20 md:py-24 border-y border-slate-200/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <SectionHeader
@@ -262,10 +262,10 @@ export default function AlgoscopePage() {
                 <Card key={title} className="p-5 sm:p-6">
                   <CardHeader className="p-0 mb-3">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0F1C3F] text-xs font-bold text-white">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0B0B0C] text-xs font-bold text-white">
                         {i + 1}
                       </div>
-                      <CardTitle className="text-base text-[#0F1C3F]">{title}</CardTitle>
+                      <CardTitle className="text-base text-[#0B0B0C]">{title}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="p-0">
@@ -290,12 +290,12 @@ export default function AlgoscopePage() {
             />
             <Reveal className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {solutionAreas.map(({ icon: Icon, label, description }) => (
-                <div key={label} className="rounded-xl bg-[#F5F8FC] border border-slate-200/80 p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-violet-300/60 hover:shadow-[0_18px_40px_-22px_rgba(139,92,246,0.35)]">
+                <div key={label} className="rounded-xl bg-[#F6F6F7] border border-slate-200/80 p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:border-violet-300/60 hover:shadow-[0_18px_40px_-22px_rgba(100,116,139,0.35)]">
                   <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-violet-50 ring-1 ring-violet-200/60">
                     <Icon className="h-5 w-5 text-violet-600" />
                   </div>
-                  <p className="text-sm font-semibold text-[#0F1C3F]">{label}</p>
-                  <p className="mt-1 text-xs text-slate-500 leading-snug">{description}</p>
+                  <p className="text-sm font-semibold text-[#0B0B0C]">{label}</p>
+                  <p className="mt-1 text-xs text-slate-600 leading-snug">{description}</p>
                 </div>
               ))}
             </Reveal>
@@ -304,7 +304,7 @@ export default function AlgoscopePage() {
       </section>
 
       {/* Benefits */}
-      <section className="bg-[#F5F8FC] py-16 sm:py-20 md:py-24 border-y border-slate-200/60">
+      <section className="bg-[#F6F6F7] py-16 sm:py-20 md:py-24 border-y border-slate-200/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <SectionHeader
@@ -321,7 +321,7 @@ export default function AlgoscopePage() {
                       <div className="w-10 h-10 rounded-xl bg-violet-50 flex items-center justify-center shrink-0 ring-1 ring-violet-200/60">
                         <Icon className="w-5 h-5 text-violet-600" />
                       </div>
-                      <CardTitle className="text-base sm:text-lg leading-snug text-[#0F1C3F]">{title}</CardTitle>
+                      <CardTitle className="text-base sm:text-lg leading-snug text-[#0B0B0C]">{title}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="p-0 pt-4">
@@ -346,12 +346,12 @@ export default function AlgoscopePage() {
             />
             <Reveal className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
               {technology.map(({ icon: Icon, label, description }) => (
-                <div key={label} className="rounded-xl bg-[#F5F8FC] border border-slate-200/80 p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/60">
+                <div key={label} className="rounded-xl bg-[#F6F6F7] border border-slate-200/80 p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/60">
                   <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-white ring-1 ring-slate-200/70">
-                    <Icon className="h-5 w-5 text-[#0E7490]" />
+                    <Icon className="h-5 w-5 text-[#A50E28]" />
                   </div>
-                  <p className="text-sm font-semibold text-[#0F1C3F]">{label}</p>
-                  <p className="mt-1 text-xs text-slate-500 leading-snug">{description}</p>
+                  <p className="text-sm font-semibold text-[#0B0B0C]">{label}</p>
+                  <p className="mt-1 text-xs text-slate-600 leading-snug">{description}</p>
                 </div>
               ))}
             </Reveal>
@@ -360,7 +360,7 @@ export default function AlgoscopePage() {
       </section>
 
       {/* Company credibility + milestones */}
-      <section className="bg-[#F5F8FC] py-16 sm:py-20 md:py-24 border-y border-slate-200/60">
+      <section className="bg-[#F6F6F7] py-16 sm:py-20 md:py-24 border-y border-slate-200/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto grid gap-8 lg:grid-cols-2">
             <Card className="p-5 sm:p-7 lg:p-8" cornerAccent>
@@ -369,7 +369,7 @@ export default function AlgoscopePage() {
                   <div className="w-11 h-11 rounded-xl bg-violet-50 flex items-center justify-center ring-1 ring-violet-200/60">
                     <Users className="w-5 h-5 text-violet-600" />
                   </div>
-                  <CardTitle className="text-2xl text-[#0F1C3F]">Built by clinicians and engineers</CardTitle>
+                  <CardTitle className="text-2xl text-[#0B0B0C]">Built by clinicians and engineers</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="p-0 space-y-4 text-base leading-relaxed text-slate-700">
@@ -387,7 +387,7 @@ export default function AlgoscopePage() {
                         href={claim.sourceUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-semibold text-[#0E7490] hover:underline"
+                        className="font-semibold text-[#A50E28] hover:underline"
                       >
                         Source: {claim.attribution}
                       </a>
@@ -400,10 +400,10 @@ export default function AlgoscopePage() {
             <Card className="p-5 sm:p-7 lg:p-8">
               <CardHeader className="p-0">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-11 h-11 rounded-xl bg-[#0F1C3F]/6 flex items-center justify-center">
-                    <Newspaper className="w-5 h-5 text-[#0F1C3F]" />
+                  <div className="w-11 h-11 rounded-xl bg-[#0B0B0C]/6 flex items-center justify-center">
+                    <Newspaper className="w-5 h-5 text-[#0B0B0C]" />
                   </div>
-                  <CardTitle className="text-2xl text-[#0F1C3F]">Milestones &amp; recognition</CardTitle>
+                  <CardTitle className="text-2xl text-[#0B0B0C]">Milestones &amp; recognition</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="p-0">
@@ -413,8 +413,8 @@ export default function AlgoscopePage() {
                       <span className="absolute -left-[26px] top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-white ring-2 ring-violet-400">
                         <span className="h-1.5 w-1.5 rounded-full bg-violet-500" />
                       </span>
-                      <span className="font-semibold text-[#0F1C3F]">{label}</span>
-                      <span className="block text-slate-500">{detail}</span>
+                      <span className="font-semibold text-[#0B0B0C]">{label}</span>
+                      <span className="block text-slate-600">{detail}</span>
                     </li>
                   ))}
                 </ol>
@@ -455,7 +455,7 @@ export default function AlgoscopePage() {
                       supporting regional evaluation, clinical workflow relevance assessment, governance expectations,
                       and adoption pathways for New Zealand and Oceania healthcare organisations.
                     </p>
-                    <p className="text-sm text-slate-500 leading-relaxed">
+                    <p className="text-sm text-slate-600 leading-relaxed">
                       Algoscope is a partner product — it is not owned or developed by Translyx. Product-specific
                       regulatory status, intended use, and applicable local requirements should be confirmed with
                       Algoscope and the relevant regulatory authorities. Translyx does not claim or imply any

@@ -45,14 +45,14 @@ export function AdoptionPathway({
             <div className="pointer-events-none absolute left-0 right-0 top-[27px] hidden h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent lg:block" />
             {steps.map(({ icon: Icon, title: stepTitle, body }, i) => (
               <div key={stepTitle} className="relative flex flex-col items-center text-center">
-                <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-slate-200/80 bg-white shadow-[0_8px_24px_-12px_rgba(15,28,63,0.25)]">
-                  <Icon className="h-6 w-6 text-[#0E7490]" />
-                  <span className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-[#0F1C3F] text-[10px] font-bold text-white">
+                <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-slate-200/80 bg-white shadow-[0_8px_24px_-12px_rgba(11,11,12,0.25)]">
+                  <Icon className="h-6 w-6 text-[#A50E28]" />
+                  <span className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full bg-[#0B0B0C] text-[10px] font-bold text-white">
                     {i + 1}
                   </span>
                 </span>
-                <h3 className="mt-4 font-display text-base font-semibold text-[#0F1C3F]">{stepTitle}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-slate-500">{body}</p>
+                <h3 className="mt-4 font-display text-base font-semibold text-[#0B0B0C]">{stepTitle}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-slate-600">{body}</p>
               </div>
             ))}
           </Reveal>

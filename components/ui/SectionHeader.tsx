@@ -40,7 +40,7 @@ export function SectionHeader({
           <span
             className={cn(
               "text-[10px] font-semibold uppercase tracking-[0.24em]",
-              tone === "dark" ? "text-cyan-300/80" : "text-[#0E7490]"
+              tone === "dark" ? "text-cyan-300/80" : "text-[#A50E28]"
             )}
           >
             {eyebrow}
@@ -51,7 +51,7 @@ export function SectionHeader({
         className={cn(
           "font-display font-semibold tracking-[-0.025em]",
           "text-[2rem] sm:text-[2.65rem] leading-[1.08]",
-          tone === "dark" ? "text-white" : "text-[#0F1C3F]",
+          tone === "dark" ? "text-white" : "text-[#0B0B0C]",
           titleClassName
         )}
       >

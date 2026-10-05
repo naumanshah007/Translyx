@@ -8,11 +8,11 @@ import { getProductIcon } from "@/lib/productIcons";
 import { StageRail } from "@/components/ui/StageRail";
 
 const accentMap: Record<ProductAccent, { color: string; soft: string; glow: string; text: string }> = {
-  cyan: { color: "#22D3EE", soft: "rgba(34,211,238,0.10)", glow: "rgba(34,211,238,0.30)", text: "text-cyan-700" },
-  violet: { color: "#8B5CF6", soft: "rgba(139,92,246,0.10)", glow: "rgba(139,92,246,0.28)", text: "text-violet-600" },
+  cyan: { color: "#E8607A", soft: "rgba(200,16,46,0.10)", glow: "rgba(200,16,46,0.30)", text: "text-cyan-700" },
+  violet: { color: "#94A3B8", soft: "rgba(100,116,139,0.10)", glow: "rgba(100,116,139,0.28)", text: "text-violet-600" },
   teal: { color: "#2DD4BF", soft: "rgba(45,212,191,0.10)", glow: "rgba(45,212,191,0.28)", text: "text-teal-700" },
   emerald: { color: "#34D399", soft: "rgba(52,211,153,0.10)", glow: "rgba(52,211,153,0.28)", text: "text-emerald-600" },
-  sky: { color: "#38BDF8", soft: "rgba(56,189,248,0.10)", glow: "rgba(56,189,248,0.28)", text: "text-sky-600" },
+  sky: { color: "#E8607A", soft: "rgba(56,189,248,0.10)", glow: "rgba(56,189,248,0.28)", text: "text-sky-600" },
 };
 
 /**
@@ -37,7 +37,7 @@ export function PipelineCapabilityCard({
       href={capability.href}
       className={cn(
         "group relative flex h-full flex-col overflow-hidden rounded-2xl border border-dashed border-slate-300/80 bg-white/80 p-6",
-        "shadow-[0_2px_12px_-6px_rgba(15,28,63,0.08)] transition-all duration-300",
+        "shadow-[0_2px_12px_-6px_rgba(11,11,12,0.08)] transition-all duration-300",
         "hover:-translate-y-1 hover:border-solid hover:border-[color:var(--accent)] hover:shadow-[0_24px_60px_-30px_var(--glow)]",
         className
       )}
@@ -60,7 +60,7 @@ export function PipelineCapabilityCard({
       <p className="relative mt-5 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-slate-600">
         Pipeline capability
       </p>
-      <h3 className="relative mt-1.5 font-display text-lg font-semibold text-[#0F1C3F]">{capability.title}</h3>
+      <h3 className="relative mt-1.5 font-display text-lg font-semibold text-[#0B0B0C]">{capability.title}</h3>
       <p className="relative mt-2 flex-1 text-sm leading-relaxed text-slate-600">{capability.tagline}</p>
 
       <StageRail stage={capability.stage} accent={capability.accent} compact className="relative mt-5 mb-1" />

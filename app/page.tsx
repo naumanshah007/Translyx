@@ -62,18 +62,18 @@ export default function HomePage() {
   };
 
   return (
-    <div className="bg-[#070B10]">
+    <div className="bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* 1 — Hero */}
       <section className="relative overflow-hidden pb-20 pt-20 sm:pb-28 sm:pt-28 lg:pt-32">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-[600px] bg-[radial-gradient(ellipse_at_70%_0%,rgba(103,232,249,0.07),transparent_55%)]" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[600px] bg-[radial-gradient(ellipse_at_70%_0%,rgba(165,14,40,0.07),transparent_55%)]" />
         <div className="relative mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-slate-400">Translyx · Founded in New Zealand</p>
-          <h1 className="mt-6 max-w-5xl text-balance text-[2.6rem] font-semibold leading-[1.02] tracking-[-0.04em] text-white sm:text-[4rem] lg:text-[5.2rem]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-slate-600">Translyx · Founded in New Zealand</p>
+          <h1 className="mt-6 max-w-5xl text-balance text-[2.6rem] font-semibold leading-[1.02] tracking-[-0.04em] text-[#0B0B0C] sm:text-[4rem] lg:text-[5.2rem]">
             Technology for trusted AI, diagnostics and clinical transformation.
           </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-slate-400 sm:text-xl">
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl">
             Privacy-first enterprise AI. Digital pathology. Diagnostic innovation. Built and brought into real-world workflows
             with governance, evidence and human accountability.
           </p>
@@ -109,27 +109,27 @@ export default function HomePage() {
                   href={e.href}
                   className={`group flex h-full flex-col justify-between rounded-3xl border p-7 transition-colors sm:p-8 ${
                     e.featured
-                      ? "border-cyan-300/30 bg-gradient-to-b from-cyan-300/[0.06] to-transparent hover:border-cyan-300/50"
-                      : "border-white/10 hover:border-white/25"
+                      ? "border-[#A50E28]/30 bg-gradient-to-b from-[#A50E28]/[0.06] to-transparent hover:border-[#A50E28]/50"
+                      : "border-black/10 hover:border-black/25"
                   }`}
                 >
                   <div>
-                    <p className={`text-[10px] font-semibold uppercase tracking-[0.2em] ${e.featured ? "text-cyan-300" : "text-slate-500"}`}>
+                    <p className={`text-[10px] font-semibold uppercase tracking-[0.2em] ${e.featured ? "text-[#A50E28]" : "text-slate-600"}`}>
                       {e.eyebrow}
                     </p>
                     <h3
-                      className={`mt-4 font-semibold tracking-[-0.03em] text-white ${
+                      className={`mt-4 font-semibold tracking-[-0.03em] text-[#0B0B0C] ${
                         e.featured ? "text-[2.5rem] leading-none sm:text-[3.5rem]" : "text-xl"
                       }`}
                     >
                       {e.title}
                     </h3>
-                    <p className={`mt-4 leading-relaxed text-slate-400 ${e.featured ? "max-w-md text-lg" : "text-sm"}`}>{e.body}</p>
+                    <p className={`mt-4 leading-relaxed text-slate-600 ${e.featured ? "max-w-md text-lg" : "text-sm"}`}>{e.body}</p>
                     {e.featured && (
-                      <p className="mt-8 font-mono text-xs text-slate-500">Text · Documents · Images · WSI · Audio · API</p>
+                      <p className="mt-8 font-mono text-xs text-slate-600">Text · Documents · Images · WSI · Audio · API</p>
                     )}
                   </div>
-                  <span className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-200 group-hover:text-white">
+                  <span className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-[#A50E28] group-hover:text-[#0B0B0C]">
                     {e.cta}
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
                   </span>
@@ -143,18 +143,18 @@ export default function HomePage() {
       {/* 3 — Featured Privexa */}
       <PxSection tone="charcoal" labelledBy="featured">
         <div className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.34em] text-white">Privexa</p>
-          <h2 id="featured" className="mx-auto mt-6 max-w-4xl text-balance text-[2.3rem] font-semibold leading-[1.04] tracking-[-0.035em] text-white sm:text-[3.6rem]">
+          <p className="text-sm font-semibold uppercase tracking-[0.34em] text-[#0B0B0C]">Privexa</p>
+          <h2 id="featured" className="mx-auto mt-6 max-w-4xl text-balance text-[2.3rem] font-semibold leading-[1.04] tracking-[-0.035em] text-[#0B0B0C] sm:text-[3.6rem]">
             {privexaTagline}
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-400">{privexaHeroCopy}</p>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">{privexaHeroCopy}</p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <PxCta href="#see-it">Watch Demo</PxCta>
             <PxCta href="/privexa/demo" variant="secondary">
               Request Enterprise Demo
             </PxCta>
           </div>
-          <p className="mt-8 font-mono text-xs tracking-wide text-slate-500">
+          <p className="mt-8 font-mono text-xs tracking-wide text-slate-600">
             Text · Documents · Images · Whole-Slide Pathology · Audio · API
           </p>
         </div>
@@ -167,10 +167,10 @@ export default function HomePage() {
       <PxSection labelledBy="why">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <PxHeading id="why" eyebrow="Why Privexa" title="AI is moving faster than enterprise data controls." />
-          <div className="space-y-5 text-base leading-relaxed text-slate-400 sm:text-lg">
+          <div className="space-y-5 text-base leading-relaxed text-slate-600 sm:text-lg">
             <p>Organisations increasingly use external AI, and valuable, sensitive information follows the workflow.</p>
             <p>Blanket AI bans often drive shadow usage instead. What organisations need is a governed boundary.</p>
-            <p className="text-white">Privexa creates the control boundary before AI egress.</p>
+            <p className="text-[#0B0B0C]">Privexa creates the control boundary before AI egress.</p>
           </div>
         </div>
       </PxSection>
@@ -181,13 +181,13 @@ export default function HomePage() {
         <ul className="grid gap-12 md:grid-cols-3 md:gap-10">
           {principles.map((p) => (
             <li key={p.title}>
-              <span className="block h-px w-10 bg-cyan-300" aria-hidden />
-              <h3 className="mt-8 text-2xl font-semibold tracking-tight text-white">{p.title}</h3>
-              <p className="mt-4 text-base leading-relaxed text-slate-400">{p.body}</p>
+              <span className="block h-px w-10 bg-[#A50E28]" aria-hidden />
+              <h3 className="mt-8 text-2xl font-semibold tracking-tight text-[#0B0B0C]">{p.title}</h3>
+              <p className="mt-4 text-base leading-relaxed text-slate-600">{p.body}</p>
             </li>
           ))}
         </ul>
-        <p className="mt-16 text-center text-lg font-medium text-slate-200">{privexaLine}</p>
+        <p className="mt-16 text-center text-lg font-medium text-slate-800">{privexaLine}</p>
       </PxSection>
 
       {/* 6 — How it works */}
@@ -254,7 +254,7 @@ export default function HomePage() {
                     </span>
                     <span className="mt-1 block text-sm text-slate-600">{x.d}</span>
                   </span>
-                  <ArrowRight className="h-4 w-4 shrink-0 text-slate-400 transition-transform group-hover:translate-x-1" aria-hidden />
+                  <ArrowRight className="h-4 w-4 shrink-0 text-slate-600 transition-transform group-hover:translate-x-1" aria-hidden />
                 </Link>
               </li>
             ))}
@@ -272,10 +272,10 @@ export default function HomePage() {
             body="Translyx works from Auckland with organisations whose data, regulation and clinical practice demand care."
           />
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">Markets in focus</p>
-            <ul className="mt-5 divide-y divide-white/10 border-y border-white/10">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-600">Markets in focus</p>
+            <ul className="mt-5 divide-y divide-black/10 border-y border-black/10">
               {markets.map((m) => (
-                <li key={m} className="py-4 text-base text-slate-200">{m}</li>
+                <li key={m} className="py-4 text-base text-slate-800">{m}</li>
               ))}
             </ul>
           </div>

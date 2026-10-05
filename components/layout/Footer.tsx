@@ -61,15 +61,15 @@ export function Footer() {
             </p>
             <p className="mt-6 text-sm text-slate-300">
               <span className="font-semibold uppercase tracking-[0.24em] text-white">Privexa</span>
-              <span className="ml-2 text-xs text-slate-500">A Translyx Platform</span>
+              <span className="ml-2 text-xs text-slate-400">A Translyx Platform</span>
             </p>
             <ul className="mt-6 space-y-2 text-sm">
               <li className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-500" aria-hidden />
+                <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-400" aria-hidden />
                 {siteConfig.company.location}
               </li>
               <li className="flex items-start gap-2">
-                <Mail className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-500" aria-hidden />
+                <Mail className="mt-0.5 h-3.5 w-3.5 shrink-0 text-slate-400" aria-hidden />
                 <a href={`mailto:${siteConfig.company.email}`} className="break-all hover:text-cyan-200">
                   {siteConfig.company.email}
                 </a>
@@ -120,7 +120,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-4 text-xs">
-          <p className="text-slate-500">
+          <p className="text-slate-400">
             Aiforia and Algoscope are third-party products represented by Translyx. Other trademarks belong to their owners.
           </p>
         </div>

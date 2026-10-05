@@ -49,7 +49,7 @@ export default function ContactPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }} />
 
-      <section className="bg-[#F5F8FC] py-12 sm:py-16 lg:py-20">
+      <section className="bg-[#F6F6F7] py-12 sm:py-16 lg:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[720px]">
             <ContactForm />

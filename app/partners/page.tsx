@@ -35,11 +35,11 @@ export const metadata: Metadata = {
 };
 
 const accent: Record<PartnerAccent, { color: string; soft: string; glow: string }> = {
-  cyan: { color: "#22D3EE", soft: "rgba(34,211,238,0.14)", glow: "rgba(34,211,238,0.40)" },
-  violet: { color: "#A78BFA", soft: "rgba(139,92,246,0.16)", glow: "rgba(139,92,246,0.38)" },
-  teal: { color: "#2DD4BF", soft: "rgba(45,212,191,0.16)", glow: "rgba(45,212,191,0.38)" },
+  cyan: { color: "#A50E28", soft: "rgba(200,16,46,0.14)", glow: "rgba(200,16,46,0.40)" },
+  violet: { color: "#475569", soft: "rgba(100,116,139,0.16)", glow: "rgba(100,116,139,0.38)" },
+  teal: { color: "#0F766E", soft: "rgba(45,212,191,0.16)", glow: "rgba(45,212,191,0.38)" },
   emerald: { color: "#34D399", soft: "rgba(52,211,153,0.16)", glow: "rgba(52,211,153,0.38)" },
-  sky: { color: "#38BDF8", soft: "rgba(56,189,248,0.16)", glow: "rgba(56,189,248,0.38)" },
+  sky: { color: "#A50E28", soft: "rgba(56,189,248,0.16)", glow: "rgba(56,189,248,0.38)" },
 };
 
 export default function PartnersPage() {
@@ -64,7 +64,7 @@ export default function PartnersPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <Hero
-        badge={{ text: "Partner network", icon: <Handshake className="h-3.5 w-3.5 text-cyan-300" /> }}
+        badge={{ text: "Partner network", icon: <Handshake className="h-3.5 w-3.5 text-cyan-700" /> }}
         headline="Your bridge to New Zealand and Oceania"
         highlight="healthcare."
         description="Translyx partners with global diagnostic and clinical-AI innovators — bringing world-class technology to New Zealand and Oceania with local expertise, governance, and clinical adoption. Aiforia and Algoscope are our current partner products."
@@ -83,7 +83,7 @@ export default function PartnersPage() {
               title={
                 <>
                   A trusted local partner for{" "}
-                  <span className="text-[#0E7490]">global innovators.</span>
+                  <span className="text-[#A50E28]">global innovators.</span>
                 </>
               }
               description="Bringing diagnostic and AI technology into a new region takes more than distribution. Translyx provides the clinical, regulatory, and operational bridge to adopt it well."
@@ -96,12 +96,12 @@ export default function PartnersPage() {
                 return (
                   <div
                     key={v.title}
-                    className="group rounded-2xl border border-slate-200/80 bg-white p-6 shadow-[0_2px_16px_-6px_rgba(15,28,63,0.1)] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/60 hover:shadow-[0_24px_60px_-30px_rgba(8,145,178,0.5)]"
+                    className="group rounded-2xl border border-slate-200/80 bg-white p-6 shadow-[0_2px_16px_-6px_rgba(11,11,12,0.1)] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/60 hover:shadow-[0_24px_60px_-30px_rgba(200,16,46,0.5)]"
                   >
-                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F5F8FC] ring-1 ring-slate-200/70">
-                      <Icon className="h-[22px] w-[22px] text-[#0E7490]" />
+                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#F6F6F7] ring-1 ring-slate-200/70">
+                      <Icon className="h-[22px] w-[22px] text-[#A50E28]" />
                     </span>
-                    <h3 className="mt-4 font-display text-lg font-semibold text-[#0F1C3F]">{v.title}</h3>
+                    <h3 className="mt-4 font-display text-lg font-semibold text-[#0B0B0C]">{v.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-slate-600">{v.body}</p>
                   </div>
                 );
@@ -112,12 +112,12 @@ export default function PartnersPage() {
       </section>
 
       {/* Current partners */}
-      <section className="relative overflow-hidden bg-deep py-18 sm:py-24">
+      <section className="relative overflow-hidden bg-[#F6F6F7] py-18 sm:py-24">
         <div className="pointer-events-none absolute inset-0 grid-overlay opacity-40" />
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1100px]">
             <SectionHeader
-              tone="dark"
+              tone="light"
               eyebrow="Our partners"
               title={
                 <>
@@ -136,7 +136,7 @@ export default function PartnersPage() {
                   <div
                     key={p.slug}
                     id={p.slug}
-                    className="group relative scroll-mt-24 overflow-hidden rounded-2xl glass-panel p-7 transition-all duration-300 hover:-translate-y-1 hover:ring-1 hover:ring-cyan-400/30"
+                    className="group relative scroll-mt-24 overflow-hidden rounded-2xl light-panel p-7 transition-all duration-300 hover:-translate-y-1 hover:ring-1 hover:ring-cyan-400/30"
                   >
                     <span
                       className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100"
@@ -144,12 +144,12 @@ export default function PartnersPage() {
                     />
                     <div className="relative flex items-start justify-between gap-4">
                       <span
-                        className="flex h-14 w-14 items-center justify-center rounded-xl ring-1 ring-inset ring-white/15"
+                        className="flex h-14 w-14 items-center justify-center rounded-xl ring-1 ring-inset ring-black/15"
                         style={{ background: a.soft }}
                       >
                         <Icon className="h-6 w-6" style={{ color: a.color }} aria-hidden="true" />
                       </span>
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-emerald-300">
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-600/25 bg-emerald-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-emerald-700">
                         <CheckCircle2 className="h-3 w-3" />
                         Active partner
                       </span>
@@ -160,8 +160,8 @@ export default function PartnersPage() {
                     >
                       {p.type}
                     </p>
-                    <h3 className="relative mt-1 font-display text-2xl font-semibold text-white">{p.name}</h3>
-                    <div className="relative mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-400">
+                    <h3 className="relative mt-1 font-display text-2xl font-semibold text-[#0B0B0C]">{p.name}</h3>
+                    <div className="relative mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-600">
                       <span>{p.category}</span>
                       {p.location && (
                         <span className="flex items-center gap-1">
@@ -170,10 +170,10 @@ export default function PartnersPage() {
                         </span>
                       )}
                     </div>
-                    <p className="relative mt-3 text-sm leading-relaxed text-white/65">{p.description}</p>
+                    <p className="relative mt-3 text-sm leading-relaxed text-slate-600">{p.description}</p>
                     <Link
                       href={p.href}
-                      className="relative mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-white"
+                      className="relative mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0B0B0C]"
                     >
                       Explore {p.shortName}
                       {p.external ? (
@@ -186,7 +186,7 @@ export default function PartnersPage() {
                 );
               })}
             </Reveal>
-            <p className="mx-auto mt-8 max-w-2xl text-center text-xs leading-relaxed text-slate-400">
+            <p className="mx-auto mt-8 max-w-2xl text-center text-xs leading-relaxed text-slate-600">
               Aiforia and Algoscope are partner products Translyx brings to New Zealand — not owned or developed
               by Translyx. Product-specific regulatory status should be confirmed with each partner and the relevant
               regulatory authorities.
@@ -198,22 +198,22 @@ export default function PartnersPage() {
       {/* Become a partner */}
       <section
         id="become-a-partner"
-        className="scroll-mt-24 bg-gradient-to-b from-[#F5F8FC] to-white py-20 sm:py-28"
+        className="scroll-mt-24 bg-gradient-to-b from-[#F6F6F7] to-white py-20 sm:py-28"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1100px]">
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0F1C3F] to-[#0B1430] p-8 shadow-[0_30px_80px_-40px_rgba(15,28,63,0.6)] sm:p-12">
-              <div className="pointer-events-none absolute inset-0 grain-overlay opacity-[0.06] mix-blend-overlay" />
-              <div className="pointer-events-none absolute -right-10 -top-10 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.18),transparent_65%)] blur-2xl" />
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0B0B0C] to-[#0E0F12] p-8 shadow-[0_30px_80px_-40px_rgba(11,11,12,0.6)] sm:p-12">
+              <div className="pointer-events-none absolute inset-0 hidden opacity-[0.06] mix-blend-overlay" />
+              <div className="pointer-events-none absolute -right-10 -top-10 h-56 w-56 rounded-full bg-[radial-gradient(circle,rgba(200,16,46,0.18),transparent_65%)] blur-2xl" />
               <div className="relative grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
                 <div>
-                  <p className="mb-4 inline-flex items-center gap-2 rounded-full glass-panel px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-cyan-200/80">
+                  <p className="mb-4 inline-flex items-center gap-2 rounded-full light-panel px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-cyan-700">
                     <Handshake className="h-3.5 w-3.5" /> Become a partner
                   </p>
-                  <h2 className="font-display text-[1.75rem] font-semibold leading-tight text-white sm:text-[2.2rem]">
+                  <h2 className="font-display text-[1.75rem] font-semibold leading-tight text-[#0B0B0C] sm:text-[2.2rem]">
                     Bring your innovation to New Zealand and Oceania.
                   </h2>
-                  <p className="mt-4 text-base leading-relaxed text-white/65">
+                  <p className="mt-4 text-base leading-relaxed text-slate-600">
                     If you build diagnostic technology, digital pathology AI, or protected clinical software, Translyx can
                     be your accountable local partner — handling clinical positioning, governance, adoption, and
                     implementation across the region.
@@ -222,14 +222,14 @@ export default function PartnersPage() {
                 <div className="flex flex-col gap-3">
                   <Link
                     href="/contact?topic=partner"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 via-sky-400 to-violet-500 px-6 py-3 text-sm font-semibold text-[#06121f] shadow-[0_8px_30px_-6px_rgba(34,211,238,0.5)] transition-all duration-200 hover:-translate-y-0.5"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#A50E28] hover:bg-[#860B20] px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_30px_-6px_rgba(200,16,46,0.5)] transition-all duration-200 hover:-translate-y-0.5"
                   >
                     Start a partnership conversation
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
                     href="/products"
-                    className="inline-flex items-center justify-center gap-2 rounded-xl glass-panel px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/[0.14]"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl light-panel px-6 py-3 text-sm font-semibold text-[#0B0B0C] transition-colors hover:bg-black/[0.04]"
                   >
                     See what we deliver
                   </Link>

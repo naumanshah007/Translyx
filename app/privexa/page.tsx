@@ -57,27 +57,27 @@ export default function PrivexaPage() {
   };
 
   return (
-    <div className="bg-[#070B10]">
+    <div className="bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <PrivexaSubnav />
 
       {/* 1 — Hero */}
       <section className="relative overflow-hidden pb-20 pt-16 sm:pb-28 sm:pt-24">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-[520px] bg-[radial-gradient(ellipse_at_50%_0%,rgba(103,232,249,0.08),transparent_60%)]" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[520px] bg-[radial-gradient(ellipse_at_50%_0%,rgba(165,14,40,0.08),transparent_60%)]" />
         <div className="relative mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-cyan-300">Privexa · A Translyx Platform</p>
-          <h1 className="mt-6 max-w-4xl text-balance text-[2.6rem] font-semibold leading-[1.02] tracking-[-0.035em] text-white sm:text-[4rem] lg:text-[5rem]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#A50E28]">Privexa · A Translyx Platform</p>
+          <h1 className="mt-6 max-w-4xl text-balance text-[2.6rem] font-semibold leading-[1.02] tracking-[-0.035em] text-[#0B0B0C] sm:text-[4rem] lg:text-[5rem]">
             {privexaTagline}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-400 sm:text-xl">{privexaHeroCopy}</p>
-          <p className="mt-3 text-base font-medium text-slate-200">{privexaLine}</p>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl">{privexaHeroCopy}</p>
+          <p className="mt-3 text-base font-medium text-slate-800">{privexaLine}</p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <PxCta href="/privexa/demo">Request Enterprise Demo</PxCta>
             <PxCta href="#see-it" variant="secondary">
               Watch Demo
             </PxCta>
           </div>
-          <p className="mt-10 font-mono text-xs tracking-wide text-slate-500">
+          <p className="mt-10 font-mono text-xs tracking-wide text-slate-600">
             Text · Documents · Images · Whole-Slide Pathology · Audio · API
           </p>
           <Reveal className="mt-16">
@@ -90,10 +90,10 @@ export default function PrivexaPage() {
       <PxSection tone="charcoal" labelledBy="why">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <PxHeading id="why" eyebrow="Why Privexa exists" title="AI is moving faster than enterprise data controls." />
-          <div className="space-y-5 text-base leading-relaxed text-slate-400 sm:text-lg">
+          <div className="space-y-5 text-base leading-relaxed text-slate-600 sm:text-lg">
             <p>Organisations increasingly rely on external AI. Valuable and sensitive information naturally follows the workflow.</p>
             <p>Blanket bans rarely hold — they tend to push usage into unmanaged tools. What organisations need is a governed boundary.</p>
-            <p className="text-white">Privexa creates that control boundary before AI egress.</p>
+            <p className="text-[#0B0B0C]">Privexa creates that control boundary before AI egress.</p>
           </div>
         </div>
       </PxSection>
@@ -101,11 +101,11 @@ export default function PrivexaPage() {
       {/* 3 — Principles */}
       <PxSection labelledBy="principles">
         <PxHeading id="principles" eyebrow="Three principles" title="Disclose less. Keep the meaning. Own the policy." />
-        <ul className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-3">
+        <ul className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 md:grid-cols-3">
           {principles.map((p) => (
-            <li key={p.title} className="bg-[#070B10] p-8 sm:p-10">
-              <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">{p.title}</h3>
-              <p className="mt-6 text-lg leading-relaxed text-slate-200">{p.body}</p>
+            <li key={p.title} className="bg-white p-8 sm:p-10">
+              <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#A50E28]">{p.title}</h3>
+              <p className="mt-6 text-lg leading-relaxed text-slate-800">{p.body}</p>
             </li>
           ))}
         </ul>
@@ -142,22 +142,22 @@ export default function PrivexaPage() {
         />
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {modules.map((m) => (
-            <li key={m.id} id={m.id} className="flex scroll-mt-24 flex-col rounded-2xl border border-white/10 bg-[#070B10] p-6 sm:p-7">
+            <li key={m.id} id={m.id} className="flex scroll-mt-24 flex-col rounded-2xl border border-black/10 bg-white p-6 sm:p-7">
               <div className="flex items-start justify-between gap-4">
-                <h3 className="text-lg font-semibold tracking-tight text-white">{m.name}</h3>
+                <h3 className="text-lg font-semibold tracking-tight text-[#0B0B0C]">{m.name}</h3>
                 <StatusBadge status={m.status} />
               </div>
-              <p className="mt-3 text-sm leading-relaxed text-slate-400">{m.summary}</p>
-              <ul className="mt-5 space-y-1.5 text-sm text-slate-300">
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">{m.summary}</p>
+              <ul className="mt-5 space-y-1.5 text-sm text-slate-700">
                 {m.includes.map((x) => (
                   <li key={x} className="flex items-center gap-2">
-                    <Check className="h-3.5 w-3.5 text-cyan-300/80" aria-hidden />
+                    <Check className="h-3.5 w-3.5 text-[#A50E28]" aria-hidden />
                     {x}
                   </li>
                 ))}
               </ul>
               {m.href && (
-                <Link href={m.href} className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-200 hover:text-white">
+                <Link href={m.href} className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#A50E28] hover:text-[#0B0B0C]">
                   Learn more <ArrowRight className="h-3.5 w-3.5" aria-hidden />
                 </Link>
               )}
@@ -191,7 +191,7 @@ export default function PrivexaPage() {
               title="Privacy controls for whole-slide pathology."
               body="Protect identity-bearing slide information while preserving the diagnostic image workflow."
             />
-            <p className="mt-6 max-w-xl text-sm leading-relaxed text-slate-400">
+            <p className="mt-6 max-w-xl text-sm leading-relaxed text-slate-600">
               Privexa focuses on the known identity-bearing surfaces of a digital slide — label, macro image, thumbnail and
               metadata — plus regions a reviewer adds. It does not run generic OCR over tissue, which in testing produced
               high false-detection rates and harmed diagnostic utility. This capability is developed and currently
@@ -232,14 +232,14 @@ export default function PrivexaPage() {
               points: ["Audit evidence", "Provider & model policy", "Evaluation and benchmarks"],
             },
           ].map((c) => (
-            <article key={c.title} className="rounded-2xl border border-white/10 p-7">
+            <article key={c.title} className="rounded-2xl border border-black/10 p-7">
               <StatusBadge status={c.status} />
-              <h3 className="mt-6 text-xl font-semibold tracking-tight text-white">{c.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-400">{c.body}</p>
-              <ul className="mt-5 space-y-1.5 text-sm text-slate-300">
+              <h3 className="mt-6 text-xl font-semibold tracking-tight text-[#0B0B0C]">{c.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">{c.body}</p>
+              <ul className="mt-5 space-y-1.5 text-sm text-slate-700">
                 {c.points.map((x) => (
                   <li key={x} className="flex items-center gap-2">
-                    <Check className="h-3.5 w-3.5 text-cyan-300/80" aria-hidden />
+                    <Check className="h-3.5 w-3.5 text-[#A50E28]" aria-hidden />
                     {x}
                   </li>
                 ))}
@@ -259,14 +259,14 @@ export default function PrivexaPage() {
             body="Privexa separates organisation privacy policy from model choice, so approved models can evolve without rebuilding the privacy boundary."
           />
           <div>
-            <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
+            <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10">
               {providers.map((p) => (
-                <li key={p} className="flex min-h-[96px] items-center justify-center bg-[#0E151D] p-5 text-center text-sm font-medium text-slate-200">
+                <li key={p} className="flex min-h-[96px] items-center justify-center bg-[#F6F6F7] p-5 text-center text-sm font-medium text-slate-800">
                   {p}
                 </li>
               ))}
             </ul>
-            <p className="mt-4 text-xs leading-relaxed text-slate-500">
+            <p className="mt-4 text-xs leading-relaxed text-slate-600">
               Current engineering supports configurable provider and model access. Approved providers and models are set per organisation policy. Trademarks belong to
               their respective owners; no endorsement is implied.
             </p>
@@ -284,9 +284,9 @@ export default function PrivexaPage() {
         </div>
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {deploymentModels.map((d) => (
-            <li key={d.title} className="rounded-2xl border border-white/10 p-6">
-              <h3 className="font-semibold text-white">{d.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">{d.body}</p>
+            <li key={d.title} className="rounded-2xl border border-black/10 p-6">
+              <h3 className="font-semibold text-[#0B0B0C]">{d.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">{d.body}</p>
             </li>
           ))}
         </ul>
@@ -308,12 +308,12 @@ export default function PrivexaPage() {
             Solutions by industry
           </PxCta>
         </div>
-        <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-5">
+        <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 sm:grid-cols-2 lg:grid-cols-5">
           {industries.map((i) => (
-            <li key={i.id} className="bg-[#070B10]">
-              <Link href={`/solutions#${i.id}`} className="block h-full p-6 transition-colors hover:bg-white/[0.03]">
-                <h3 className="font-semibold text-white">{i.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-400">{i.body}</p>
+            <li key={i.id} className="bg-white">
+              <Link href={`/solutions#${i.id}`} className="block h-full p-6 transition-colors hover:bg-black/[0.03]">
+                <h3 className="font-semibold text-[#0B0B0C]">{i.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{i.body}</p>
               </Link>
             </li>
           ))}
@@ -336,11 +336,11 @@ export default function PrivexaPage() {
               </PxCta>
             </div>
           </div>
-          <ul className="divide-y divide-white/10 border-y border-white/10">
+          <ul className="divide-y divide-black/10 border-y border-black/10">
             {trustControls.map((t) => (
               <li key={t.title} className="grid gap-1 py-5 sm:grid-cols-[220px_1fr] sm:gap-6">
-                <h3 className="text-sm font-semibold text-white">{t.title}</h3>
-                <p className="text-sm leading-relaxed text-slate-400">{t.body}</p>
+                <h3 className="text-sm font-semibold text-[#0B0B0C]">{t.title}</h3>
+                <p className="text-sm leading-relaxed text-slate-600">{t.body}</p>
               </li>
             ))}
           </ul>

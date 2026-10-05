@@ -44,7 +44,7 @@ export function OceaniaMap({ nodes = defaultNodes }: { nodes?: RegionNode[] }) {
               <span
                 className={
                   n.status === "primary"
-                    ? "flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-cyan-300/50 bg-cyan-400/15 shadow-[0_0_16px_rgba(34,211,238,0.35)]"
+                    ? "flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-cyan-300/50 bg-cyan-400/15 shadow-[0_0_16px_rgba(200,16,46,0.35)]"
                     : "flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-dashed border-white/25 bg-white/[0.04]"
                 }
               >

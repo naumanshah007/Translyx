@@ -27,8 +27,8 @@ export function Hero({
   className,
 }: HeroProps) {
   return (
-    <section className={cn("relative overflow-hidden border-b border-white/10 bg-[#0B1430]", className)}>
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_10%,rgba(34,211,238,0.10),transparent_38%)]" />
+    <section className={cn("relative overflow-hidden border-b border-black/[0.06] bg-white", className)}>
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_85%_0%,rgba(165,14,40,0.05),transparent_45%)]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/35 to-transparent" />
 
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,19 +41,19 @@ export function Hero({
         >
           <div className={cn("max-w-[860px]", visual && "lg:max-w-[760px]")}>
             {badge && (
-              <div className="mb-5 inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-cyan-100/75">
-                {badge.icon ?? <Sparkles className="h-3.5 w-3.5 text-cyan-300" />}
+              <div className="mb-5 inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-cyan-700">
+                {badge.icon ?? <Sparkles className="h-3.5 w-3.5 text-cyan-700" />}
                 {badge.text}
               </div>
             )}
 
-            <h1 className="text-balance font-display text-[2.25rem] font-semibold leading-[1.06] tracking-[-0.025em] text-white sm:text-[2.85rem] lg:text-[3.2rem]">
-              {subheadline && <span className="mb-2 block text-lg font-normal text-cyan-200 sm:text-xl">{subheadline}</span>}
+            <h1 className="text-balance font-display text-[2.25rem] font-semibold leading-[1.06] tracking-[-0.025em] text-[#0B0B0C] sm:text-[2.85rem] lg:text-[3.2rem]">
+              {subheadline && <span className="mb-2 block text-lg font-normal text-cyan-700 sm:text-xl">{subheadline}</span>}
               {headline}
-              {highlight && <span className="text-cyan-300"> {highlight}</span>}
+              {highlight && <span className="text-cyan-700"> {highlight}</span>}
             </h1>
 
-            <p className="mt-5 max-w-[760px] text-base leading-relaxed text-white/65 sm:text-lg">
+            <p className="mt-5 max-w-[760px] text-base leading-relaxed text-slate-600 sm:text-lg">
               {description}
             </p>
 
@@ -62,7 +62,7 @@ export function Hero({
                 {primaryCTA && (
                   <Link
                     href={primaryCTA.href}
-                    className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg bg-cyan-300 px-5 py-2.5 text-sm font-semibold text-[#07101F] transition-colors hover:bg-cyan-200"
+                    className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-lg bg-[#A50E28] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#860B20]"
                   >
                     {primaryCTA.label}
                     <ArrowRight className="h-4 w-4" />
@@ -74,14 +74,14 @@ export function Hero({
                       href={secondaryCTA.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex min-h-[44px] items-center justify-center rounded-lg border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/[0.08]"
+                      className="inline-flex min-h-[44px] items-center justify-center rounded-lg border border-black/15 text-[#0B0B0C] px-5 py-2.5 text-sm font-semibold text-[#0B0B0C] transition-colors hover:bg-black/[0.08]"
                     >
                       {secondaryCTA.label}
                     </a>
                   ) : (
                     <Link
                       href={secondaryCTA.href}
-                      className="inline-flex min-h-[44px] items-center justify-center rounded-lg border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/[0.08]"
+                      className="inline-flex min-h-[44px] items-center justify-center rounded-lg border border-black/15 text-[#0B0B0C] px-5 py-2.5 text-sm font-semibold text-[#0B0B0C] transition-colors hover:bg-black/[0.08]"
                     >
                       {secondaryCTA.label}
                     </Link>

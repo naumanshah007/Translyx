@@ -6,11 +6,11 @@ import { statusLabels, accentBySlug } from "@/config/products";
 import { getProductIcon } from "@/lib/productIcons";
 
 const accentMap: Record<ProductAccent, { color: string; soft: string; glow: string; text: string }> = {
-  cyan: { color: "#22D3EE", soft: "rgba(34,211,238,0.12)", glow: "rgba(34,211,238,0.40)", text: "text-cyan-700" },
-  violet: { color: "#8B5CF6", soft: "rgba(139,92,246,0.12)", glow: "rgba(139,92,246,0.38)", text: "text-violet-600" },
+  cyan: { color: "#E8607A", soft: "rgba(200,16,46,0.12)", glow: "rgba(200,16,46,0.40)", text: "text-cyan-700" },
+  violet: { color: "#94A3B8", soft: "rgba(100,116,139,0.12)", glow: "rgba(100,116,139,0.38)", text: "text-violet-600" },
   teal: { color: "#2DD4BF", soft: "rgba(45,212,191,0.12)", glow: "rgba(45,212,191,0.38)", text: "text-teal-700" },
   emerald: { color: "#34D399", soft: "rgba(52,211,153,0.12)", glow: "rgba(52,211,153,0.38)", text: "text-emerald-600" },
-  sky: { color: "#38BDF8", soft: "rgba(56,189,248,0.12)", glow: "rgba(56,189,248,0.38)", text: "text-sky-600" },
+  sky: { color: "#E8607A", soft: "rgba(56,189,248,0.12)", glow: "rgba(56,189,248,0.38)", text: "text-sky-600" },
 };
 
 export function ProductCard({ product, className }: { product: Product; className?: string }) {
@@ -26,7 +26,7 @@ export function ProductCard({ product, className }: { product: Product; classNam
       href={product.href}
       className={cn(
         "group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-6",
-        "shadow-[0_2px_16px_-6px_rgba(15,28,63,0.10)] transition-all duration-300",
+        "shadow-[0_2px_16px_-6px_rgba(11,11,12,0.10)] transition-all duration-300",
         "hover:-translate-y-1 hover:border-[color:var(--accent)] hover:shadow-[0_28px_70px_-30px_var(--glow)]",
         className
       )}
@@ -54,7 +54,7 @@ export function ProductCard({ product, className }: { product: Product; classNam
       <p className="relative mt-5 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-cyan-700/80">
         {product.badge}
       </p>
-      <h3 className="relative mt-1.5 font-display text-xl font-semibold text-[#0F1C3F]">{product.title}</h3>
+      <h3 className="relative mt-1.5 font-display text-xl font-semibold text-[#0B0B0C]">{product.title}</h3>
       <p className="relative mt-2.5 flex-1 text-sm leading-relaxed text-slate-600">{product.description}</p>
 
       <span className="mt-6 flex items-center">

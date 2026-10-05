@@ -179,7 +179,7 @@ export default function TracePage() {
       />
 
       {/* Stage rail */}
-      <section className="bg-[#F5F8FC] border-b border-slate-200/60 py-6">
+      <section className="bg-[#F6F6F7] border-b border-slate-200/60 py-6">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-sm">
             <StageRail stage="evaluation" accent="cyan" />
@@ -188,18 +188,18 @@ export default function TracePage() {
       </section>
 
       {/* Built for — audience segmentation */}
-      <section className="bg-[#F5F8FC] border-b border-slate-200/60 py-10 sm:py-12">
+      <section className="bg-[#F6F6F7] border-b border-slate-200/60 py-10 sm:py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-5 text-center">Built for</p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {audienceSegments.map(({ icon: Icon, label, description }) => (
-                <div key={label} className="rounded-xl bg-white border border-slate-200/80 p-4 text-center shadow-[0_1px_8px_-2px_rgba(15,28,63,0.06)]">
-                  <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-[#0F1C3F]/6">
-                    <Icon className="h-5 w-5 text-[#0F1C3F]" />
+                <div key={label} className="rounded-xl bg-white border border-slate-200/80 p-4 text-center shadow-[0_1px_8px_-2px_rgba(11,11,12,0.06)]">
+                  <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-[#0B0B0C]/6">
+                    <Icon className="h-5 w-5 text-[#0B0B0C]" />
                   </div>
-                  <p className="text-sm font-semibold text-[#0F1C3F]">{label}</p>
-                  <p className="mt-1 text-xs text-slate-500 leading-snug">{description}</p>
+                  <p className="text-sm font-semibold text-[#0B0B0C]">{label}</p>
+                  <p className="mt-1 text-xs text-slate-600 leading-snug">{description}</p>
                 </div>
               ))}
             </div>
@@ -213,7 +213,7 @@ export default function TracePage() {
           <div className="max-w-content mx-auto grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
             <Card className="p-5 sm:p-7 lg:p-8" cornerAccent>
               <CardHeader className="p-0">
-                <CardTitle className="text-2xl sm:text-3xl text-[#0F1C3F]">
+                <CardTitle className="text-2xl sm:text-3xl text-[#0B0B0C]">
                   Built for teams that require a defensible audit trail
                 </CardTitle>
               </CardHeader>
@@ -241,19 +241,19 @@ export default function TracePage() {
             {/* Pipeline placement */}
             <div className="space-y-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-4">Where Trace sits</p>
-              <div className="rounded-xl border border-slate-200/80 p-4 bg-[#F5F8FC]">
+              <div className="rounded-xl border border-slate-200/80 p-4 bg-[#F6F6F7]">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-600">Translyx Limited</p>
                 <p className="mt-1.5 text-sm text-slate-600 leading-relaxed">
                   Clinical technology company focused on diagnostics, digital pathology AI, and healthcare adoption in New Zealand.
                 </p>
               </div>
-              <div className="rounded-xl border border-[#22D3EE]/25 p-4 bg-white">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#0E7490]">Translyx Pipeline</p>
+              <div className="rounded-xl border border-[#E8607A]/25 p-4 bg-white">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#A50E28]">Translyx Pipeline</p>
                 <p className="mt-1.5 text-sm text-slate-600 leading-relaxed">
                   Clinical AI workflow capabilities under evaluation and development — not publicly launched products.
                 </p>
               </div>
-              <div className="rounded-xl border border-[#0F1C3F]/20 p-4 bg-[#0F1C3F]">
+              <div className="rounded-xl border border-[#0B0B0C]/20 p-4 bg-[#0B0B0C]">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-300">Trace</p>
                 <p className="mt-1.5 text-sm text-slate-300 leading-relaxed">
                   Reviewer-gated synthetic control arm workflows with lineage, comparison workspace, and submission packaging.
@@ -261,7 +261,7 @@ export default function TracePage() {
               </div>
               <div className="mt-4 flex flex-wrap gap-2">
                 {["Biotech", "Pharma", "CRO", "Clinical trial office", "Review & governance"].map((item) => (
-                  <span key={item} className="inline-flex items-center rounded-full border border-slate-200/80 bg-white px-3 py-1.5 text-[11px] font-semibold text-slate-500 uppercase tracking-[0.12em]">
+                  <span key={item} className="inline-flex items-center rounded-full border border-slate-200/80 bg-white px-3 py-1.5 text-[11px] font-semibold text-slate-600 uppercase tracking-[0.12em]">
                     {item}
                   </span>
                 ))}
@@ -272,12 +272,12 @@ export default function TracePage() {
       </section>
 
       {/* 8-step workflow */}
-      <section className="bg-[#F5F8FC] py-16 sm:py-20 md:py-24">
+      <section className="bg-[#F6F6F7] py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <div className="max-w-2xl mb-10">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-3">Workflow</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F] mb-3">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#0B0B0C] mb-3">
                 The eight-step Trace workflow
               </h2>
               <p className="text-base text-slate-600 leading-relaxed">
@@ -289,7 +289,7 @@ export default function TracePage() {
                 <Card key={item.step} className="p-4 sm:p-5" hover={false}>
                   <CardHeader className="p-0">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0F1C3F] text-[11px] font-bold text-white">
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0B0B0C] text-[11px] font-bold text-white">
                         {index + 1}
                       </span>
                       {index === 5 && (
@@ -298,10 +298,10 @@ export default function TracePage() {
                         </span>
                       )}
                     </div>
-                    <CardTitle className="text-base text-[#0F1C3F]">{item.step}</CardTitle>
+                    <CardTitle className="text-base text-[#0B0B0C]">{item.step}</CardTitle>
                   </CardHeader>
                   <CardContent className="p-0 pt-2">
-                    <p className="text-xs text-slate-500 leading-relaxed">{item.description}</p>
+                    <p className="text-xs text-slate-600 leading-relaxed">{item.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -316,7 +316,7 @@ export default function TracePage() {
           <div className="max-w-content mx-auto">
             <div className="max-w-2xl mb-10">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-3">Comparison model</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F] mb-3">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#0B0B0C] mb-3">
                 Three comparison paths inside one governed workflow
               </h2>
               <p className="text-base text-slate-600 leading-relaxed">
@@ -342,12 +342,12 @@ export default function TracePage() {
                   dark: true,
                 },
               ].map(({ title, body, icon: Icon, dark }) => (
-                <Card key={title} className={`p-5 sm:p-6 ${dark ? "bg-[#0F1C3F] border-[#0F1C3F]" : ""}`}>
+                <Card key={title} className={`p-5 sm:p-6 ${dark ? "bg-[#0B0B0C] border-[#0B0B0C]" : ""}`}>
                   <CardHeader className="p-0">
-                    <div className={`w-11 h-11 rounded-xl ${dark ? "bg-white/10" : "bg-[#0F1C3F]/6"} flex items-center justify-center mb-4`}>
-                      <Icon className={`w-5 h-5 ${dark ? "text-white" : "text-[#0F1C3F]"}`} />
+                    <div className={`w-11 h-11 rounded-xl ${dark ? "bg-white/10" : "bg-[#0B0B0C]/6"} flex items-center justify-center mb-4`}>
+                      <Icon className={`w-5 h-5 ${dark ? "text-white" : "text-[#0B0B0C]"}`} />
                     </div>
-                    <CardTitle className={`text-lg ${dark ? "text-white" : "text-[#0F1C3F]"}`}>{title}</CardTitle>
+                    <CardTitle className={`text-lg ${dark ? "text-white" : "text-[#0B0B0C]"}`}>{title}</CardTitle>
                   </CardHeader>
                   <CardContent className="p-0 pt-3">
                     <p className={`text-sm leading-relaxed ${dark ? "text-slate-300" : "text-slate-600"}`}>{body}</p>
@@ -360,16 +360,16 @@ export default function TracePage() {
       </section>
 
       {/* Worked example + Manual/Synthetic comparison */}
-      <section className="bg-[#F5F8FC] py-16 sm:py-20 md:py-24">
+      <section className="bg-[#F6F6F7] py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto grid gap-8 lg:grid-cols-2">
             <Card className="p-5 sm:p-7 lg:p-8">
               <CardHeader className="p-0">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-11 h-11 rounded-xl bg-[#0F1C3F]/6 flex items-center justify-center">
-                    <Microscope className="w-5 h-5 text-[#0F1C3F]" />
+                  <div className="w-11 h-11 rounded-xl bg-[#0B0B0C]/6 flex items-center justify-center">
+                    <Microscope className="w-5 h-5 text-[#0B0B0C]" />
                   </div>
-                  <CardTitle className="text-2xl text-[#0F1C3F]">Manual and synthetic comparison</CardTitle>
+                  <CardTitle className="text-2xl text-[#0B0B0C]">Manual and synthetic comparison</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="p-0 space-y-4 text-base leading-relaxed text-slate-700">
@@ -388,7 +388,7 @@ export default function TracePage() {
                   <div className="w-11 h-11 rounded-xl bg-amber-500/10 flex items-center justify-center">
                     <FlaskConical className="w-5 h-5 text-amber-700" />
                   </div>
-                  <CardTitle className="text-2xl text-[#0F1C3F]">Worked example</CardTitle>
+                  <CardTitle className="text-2xl text-[#0B0B0C]">Worked example</CardTitle>
                 </div>
               </CardHeader>
               <CardContent className="p-0">
@@ -400,8 +400,8 @@ export default function TracePage() {
                     "Diagnostics and reviewer sign-off are completed before SCA generation.",
                     "The resulting package preserves lineage, limitations, and reviewed context.",
                   ].map((item, index) => (
-                    <div key={item} className="flex gap-3 rounded-xl border border-slate-100 bg-[#F5F8FC]/60 p-3.5">
-                      <div className="w-6 h-6 rounded-full bg-[#0F1C3F] text-white flex items-center justify-center text-xs font-bold shrink-0">
+                    <div key={item} className="flex gap-3 rounded-xl border border-slate-100 bg-[#F6F6F7]/60 p-3.5">
+                      <div className="w-6 h-6 rounded-full bg-[#0B0B0C] text-white flex items-center justify-center text-xs font-bold shrink-0">
                         {index + 1}
                       </div>
                       <p className="text-sm text-slate-700 leading-relaxed">{item}</p>
@@ -420,7 +420,7 @@ export default function TracePage() {
           <div className="max-w-content mx-auto">
             <div className="max-w-2xl mb-10">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-3">Governance model</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F] mb-3">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#0B0B0C] mb-3">
                 Governance built in, not bolted on
               </h2>
               <p className="text-base text-slate-600 leading-relaxed">
@@ -432,10 +432,10 @@ export default function TracePage() {
                 <Card key={title} className="p-5 sm:p-6">
                   <CardHeader className="p-0">
                     <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-[#0F1C3F]/6 flex items-center justify-center shrink-0">
-                        <Icon className="w-5 h-5 text-[#0F1C3F]" />
+                      <div className="w-10 h-10 rounded-xl bg-[#0B0B0C]/6 flex items-center justify-center shrink-0">
+                        <Icon className="w-5 h-5 text-[#0B0B0C]" />
                       </div>
-                      <CardTitle className="text-base sm:text-lg leading-snug text-[#0F1C3F]">{title}</CardTitle>
+                      <CardTitle className="text-base sm:text-lg leading-snug text-[#0B0B0C]">{title}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="p-0 pt-4">
@@ -449,12 +449,12 @@ export default function TracePage() {
       </section>
 
       {/* What's included / not included */}
-      <section className="bg-[#F5F8FC] py-16 sm:py-20 md:py-24 border-y border-slate-200/60">
+      <section className="bg-[#F6F6F7] py-16 sm:py-20 md:py-24 border-y border-slate-200/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <div className="max-w-2xl mb-10">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-3">Honest scoping</p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">What Trace covers — and what it does not</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#0B0B0C]">What Trace covers — and what it does not</h2>
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
               <Card className="p-5 sm:p-6" hover={false}>
@@ -472,14 +472,14 @@ export default function TracePage() {
                   </ul>
                 </CardContent>
               </Card>
-              <Card className="p-5 sm:p-6 bg-[#F5F8FC] border-slate-200/60" hover={false}>
+              <Card className="p-5 sm:p-6 bg-[#F6F6F7] border-slate-200/60" hover={false}>
                 <CardHeader className="p-0 mb-4">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-600">Not included</p>
                 </CardHeader>
                 <CardContent className="p-0">
                   <ul className="space-y-2.5">
                     {includedNotIncluded.notIncluded.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-sm text-slate-500">
+                      <li key={item} className="flex items-start gap-2.5 text-sm text-slate-600">
                         <XCircle className="h-4 w-4 text-slate-300 shrink-0 mt-0.5" />
                         {item}
                       </li>
@@ -496,12 +496,12 @@ export default function TracePage() {
       <section className="bg-white py-14 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
-            <Card className="p-5 sm:p-7 lg:p-8 border-[#0F1C3F]/15">
+            <Card className="p-5 sm:p-7 lg:p-8 border-[#0B0B0C]/15">
               <CardContent className="pt-0">
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                   <div className="max-w-2xl">
                     <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-3">Regulatory posture</p>
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#0F1C3F] mb-3">
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#0B0B0C] mb-3">
                       Designed to support submission packaging — not to claim regulatory approval
                     </h3>
                     <p className="text-base text-slate-700 leading-relaxed mb-4">
@@ -509,7 +509,7 @@ export default function TracePage() {
                     </p>
                     <div className="grid sm:grid-cols-3 gap-3">
                       {["Structured evidence packaging", "Documented provenance & lineage", "Visible limitations on every output"].map((item) => (
-                        <div key={item} className="rounded-lg border border-slate-200/80 bg-[#F5F8FC] px-3 py-2.5 text-xs font-semibold text-slate-600 text-center">
+                        <div key={item} className="rounded-lg border border-slate-200/80 bg-[#F6F6F7] px-3 py-2.5 text-xs font-semibold text-slate-600 text-center">
                           {item}
                         </div>
                       ))}
@@ -534,15 +534,15 @@ export default function TracePage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#F5F8FC] py-14 sm:py-16 border-t border-slate-200/60">
+      <section className="bg-[#F6F6F7] py-14 sm:py-16 border-t border-slate-200/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
-            <h2 className="text-xl font-semibold text-[#0F1C3F] mb-6">Common questions</h2>
+            <h2 className="text-xl font-semibold text-[#0B0B0C] mb-6">Common questions</h2>
             <div className="space-y-4">
               {faqItems.map(({ q, a }) => (
                 <Card key={q} className="p-5 sm:p-6" hover={false}>
                   <CardContent className="pt-0">
-                    <p className="text-sm font-bold text-[#0F1C3F] mb-2">{q}</p>
+                    <p className="text-sm font-bold text-[#0B0B0C] mb-2">{q}</p>
                     <p className="text-sm text-slate-600 leading-relaxed">{a}</p>
                   </CardContent>
                 </Card>

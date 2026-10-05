@@ -29,24 +29,24 @@ export default function DigitalPathologyPage() {
           <ul className="mt-12 grid gap-4 md:grid-cols-3">
             {products.map((p) => (
               <li key={p.slug} className="rounded-2xl border border-slate-200 bg-white p-7">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-cyan-800">{p.badge}</p>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#A50E28]">{p.badge}</p>
                 <h2 className="mt-3 text-xl font-semibold tracking-tight text-[#0B1117]">{p.shortTitle ?? p.title}</h2>
                 <p className="mt-3 text-sm leading-relaxed text-slate-600">{p.description}</p>
-                <Link href={p.href} className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0B1117] hover:text-cyan-800">
+                <Link href={p.href} className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0B1117] hover:text-[#A50E28]">
                   Explore {p.shortTitle ?? p.title} <ArrowRight className="h-3.5 w-3.5" aria-hidden />
                 </Link>
               </li>
             ))}
-            <li className="rounded-2xl border border-[#0B1117] bg-[#070B10] p-7 text-white">
+            <li className="rounded-2xl border border-[#0B1117] bg-white p-7 text-[#0B0B0C]">
               <div className="flex items-center justify-between gap-3">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-cyan-300">A Translyx platform</p>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#A50E28]">A Translyx platform</p>
                 <StatusBadge status="validation" />
               </div>
               <h2 className="mt-3 text-xl font-semibold tracking-tight">Privexa WSI privacy</h2>
-              <p className="mt-3 text-sm leading-relaxed text-slate-400">
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">
                 Privacy controls for labels, macro images, thumbnails and metadata of whole-slide images.
               </p>
-              <Link href="/privexa/wsi" className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-200 hover:text-white">
+              <Link href="/privexa/wsi" className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#A50E28] hover:text-[#0B0B0C]">
                 Explore WSI privacy <ArrowRight className="h-3.5 w-3.5" aria-hidden />
               </Link>
             </li>

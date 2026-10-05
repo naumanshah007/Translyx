@@ -59,7 +59,7 @@ export default function PipelinePage() {
       <PipelineObservatory />
 
       {/* Diagnostic innovation */}
-      <section id="diagnostic-innovation" className="relative overflow-hidden bg-[#F4F7FB] py-20 sm:py-28 border-t border-slate-200/60 scroll-mt-24">
+      <section id="diagnostic-innovation" className="relative overflow-hidden bg-[#F6F6F7] py-20 sm:py-28 border-t border-slate-200/60 scroll-mt-24">
         <div className="pointer-events-none absolute -right-32 top-20 h-96 w-96 rounded-full bg-violet-300/10 blur-3xl" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-[1180px]">
@@ -72,7 +72,7 @@ export default function PipelinePage() {
             />
 
             {/* Aiforia digital pathology context */}
-            <div className="relative mb-12 overflow-hidden rounded-[1.75rem] border border-violet-200/70 bg-white p-6 shadow-[0_24px_70px_-38px_rgba(124,58,237,0.4)] sm:p-8">
+            <div className="relative mb-12 overflow-hidden rounded-[1.75rem] border border-violet-200/70 bg-white p-6 shadow-[0_24px_70px_-38px_rgba(100,116,139,0.4)] sm:p-8">
               <div className="pointer-events-none absolute -right-14 -top-14 h-40 w-40 rounded-full bg-violet-200/35 blur-3xl" />
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-start gap-4">
@@ -83,7 +83,7 @@ export default function PipelinePage() {
                     <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-violet-600">
                       Authorised partner solution
                     </p>
-                    <h3 className="font-display text-lg font-semibold text-[#0F1C3F]">Aiforia Digital Pathology AI</h3>
+                    <h3 className="font-display text-lg font-semibold text-[#0B0B0C]">Aiforia Digital Pathology AI</h3>
                     <p className="mt-1 text-sm leading-relaxed text-slate-600">
                       Translyx is an authorised non-exclusive business partner of Aiforia Technologies Plc in New Zealand,
                       representing Aiforia Clinical Suites and Aiforia Create Platform. Aiforia strengthens the oncology

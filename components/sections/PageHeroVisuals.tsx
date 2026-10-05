@@ -20,10 +20,10 @@ function VisualShell({ label, children }: { label: string; children: React.React
       aria-hidden="true"
       className="relative mx-auto h-[270px] w-full max-w-[390px] overflow-visible sm:h-[330px] sm:max-w-[450px] lg:h-[400px] lg:max-w-[520px]"
     >
-      <div className="pointer-events-none absolute -inset-[8%] bg-[radial-gradient(circle_at_50%_46%,rgba(34,211,238,0.17),transparent_62%)] blur-xl" />
-      <div className="pointer-events-none absolute -inset-[5%] opacity-35 [background-image:radial-gradient(rgba(103,232,249,0.38)_1px,transparent_1px)] [background-size:20px_20px] [mask-image:radial-gradient(circle_at_center,#000,transparent_76%)]" />
+      <div className="pointer-events-none absolute -inset-[8%] bg-[radial-gradient(circle_at_50%_46%,rgba(200,16,46,0.17),transparent_62%)] blur-xl" />
+      <div className="pointer-events-none absolute -inset-[5%] opacity-35 [background-image:radial-gradient(rgba(200,16,46,0.38)_1px,transparent_1px)] [background-size:20px_20px] [mask-image:radial-gradient(circle_at_center,#000,transparent_76%)]" />
       <div className="absolute left-5 top-4 z-30 flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.2em] text-cyan-100/60">
-        <span className="h-1.5 w-1.5 animate-pulse-slow rounded-full bg-cyan-300 shadow-[0_0_10px_rgba(103,232,249,0.85)]" />
+        <span className="h-1.5 w-1.5 animate-pulse-slow rounded-full bg-cyan-300 shadow-[0_0_10px_rgba(200,16,46,0.85)]" />
         {label}
       </div>
       <div className="absolute inset-0 origin-center sm:scale-105 lg:scale-[1.16]">{children}</div>
@@ -49,7 +49,7 @@ function SignalNode({
       className={`absolute z-20 flex flex-col items-center gap-1.5 animate-float-slow ${className}`}
       style={{ animationDelay: delay }}
     >
-      <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[#101C3B]/90 shadow-[0_12px_30px_-18px_rgba(34,211,238,0.8)] backdrop-blur-md">
+      <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[#0E0F12]/90 shadow-[0_12px_30px_-18px_rgba(200,16,46,0.8)] backdrop-blur-md">
         <Icon className={`h-[18px] w-[18px] ${color}`} />
       </span>
       <span className="whitespace-nowrap text-[8px] font-semibold uppercase tracking-[0.12em] text-white/45">{label}</span>
@@ -71,17 +71,17 @@ export function PipelineHeroVisual() {
             key={path}
             d={path}
             fill="none"
-            stroke={index % 2 === 0 ? "#22D3EE" : "#A78BFA"}
+            stroke={index % 2 === 0 ? "#E8607A" : "#94A3B8"}
             strokeOpacity="0.42"
             strokeWidth="1.4"
             strokeDasharray="4 8"
             className="animate-dash"
           />
         ))}
-        <circle r="3.5" fill="#67E8F9">
+        <circle r="3.5" fill="#E8607A">
           <animateMotion dur="3.2s" repeatCount="indefinite" path="M74 91 C118 92 136 111 170 128" />
         </circle>
-        <circle r="3.5" fill="#A78BFA">
+        <circle r="3.5" fill="#94A3B8">
           <animateMotion dur="3.8s" begin="0.7s" repeatCount="indefinite" path="M294 196 C252 182 228 156 199 141" />
         </circle>
       </svg>
@@ -94,12 +94,12 @@ export function PipelineHeroVisual() {
       <div className="absolute left-1/2 top-[47%] z-20 h-28 w-28 -translate-x-1/2 -translate-y-1/2">
         <div className="absolute inset-0 animate-spin-slow rounded-full border border-dashed border-cyan-300/35" />
         <div className="absolute inset-3 animate-glow-pulse rounded-full bg-cyan-300/10 blur-md" />
-        <div className="absolute inset-5 flex items-center justify-center rounded-[1.4rem] border border-cyan-300/25 bg-[#0B1734]/95 shadow-[0_0_28px_rgba(34,211,238,0.2)]">
+        <div className="absolute inset-5 flex items-center justify-center rounded-[1.4rem] border border-cyan-300/25 bg-[#0E0F12]/95 shadow-[0_0_28px_rgba(200,16,46,0.2)]">
           <FlaskConical className="h-9 w-9 text-cyan-200" />
         </div>
       </div>
 
-      <div className="absolute bottom-4 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 bg-[#0B1734]/85 px-3 py-1.5 backdrop-blur-md">
+      <div className="absolute bottom-4 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2 rounded-full border border-white/10 bg-[#0E0F12]/85 px-3 py-1.5 backdrop-blur-md">
         {[
           ["Evaluate", "bg-violet-300"],
           ["Develop", "bg-cyan-300"],
@@ -121,7 +121,7 @@ export function PartnersHeroVisual() {
   return (
     <VisualShell label="Partner bridge">
       <svg viewBox="0 0 370 280" className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
-        <path d={bridgePath} fill="none" stroke="#67E8F9" strokeOpacity="0.2" strokeWidth="16" />
+        <path d={bridgePath} fill="none" stroke="#E8607A" strokeOpacity="0.2" strokeWidth="16" />
         <path
           d={bridgePath}
           fill="none"
@@ -132,28 +132,28 @@ export function PartnersHeroVisual() {
         />
         <defs>
           <linearGradient id="partnerBridgeGradient" x1="68" y1="102" x2="304" y2="170" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#22D3EE" />
-            <stop offset="0.55" stopColor="#5EEAD4" />
-            <stop offset="1" stopColor="#A78BFA" />
+            <stop stopColor="#E8607A" />
+            <stop offset="0.55" stopColor="#E8607A" />
+            <stop offset="1" stopColor="#94A3B8" />
           </linearGradient>
         </defs>
-        <circle r="4" fill="#67E8F9">
+        <circle r="4" fill="#E8607A">
           <animateMotion dur="3.6s" repeatCount="indefinite" path={bridgePath} />
         </circle>
-        <circle r="3.5" fill="#A78BFA">
+        <circle r="3.5" fill="#94A3B8">
           <animateMotion dur="4.2s" begin="0.8s" repeatCount="indefinite" path="M304 170 C226 228 130 44 68 102" />
         </circle>
       </svg>
 
       <div className="absolute left-5 top-[70px] z-20 animate-float-slow">
-        <div className="flex h-[76px] w-[76px] items-center justify-center rounded-full border border-cyan-300/25 bg-[#0B1734]/90 shadow-[0_0_30px_rgba(34,211,238,0.15)]">
+        <div className="flex h-[76px] w-[76px] items-center justify-center rounded-full border border-cyan-300/25 bg-[#0E0F12]/90 shadow-[0_0_30px_rgba(200,16,46,0.15)]">
           <Globe2 className="h-8 w-8 text-cyan-200" />
         </div>
         <p className="mt-2 text-center text-[8px] font-semibold uppercase tracking-[0.12em] text-white/45">Global innovation</p>
       </div>
 
       <div className="absolute bottom-[32px] right-5 z-20 animate-float-slower" style={{ animationDelay: "0.8s" }}>
-        <div className="flex h-[76px] w-[76px] items-center justify-center rounded-full border border-violet-300/25 bg-[#0B1734]/90 shadow-[0_0_30px_rgba(167,139,250,0.15)]">
+        <div className="flex h-[76px] w-[76px] items-center justify-center rounded-full border border-violet-300/25 bg-[#0E0F12]/90 shadow-[0_0_30px_rgba(100,116,139,0.15)]">
           <MapPin className="h-8 w-8 text-violet-200" />
         </div>
         <p className="mt-2 text-center text-[8px] font-semibold uppercase tracking-[0.12em] text-white/45">New Zealand</p>
@@ -164,7 +164,7 @@ export function PartnersHeroVisual() {
 
       <div className="absolute left-1/2 top-1/2 z-30 h-24 w-24 -translate-x-1/2 -translate-y-1/2">
         <div className="absolute inset-0 animate-spin-slow rounded-full border border-dashed border-emerald-300/30 [animation-direction:reverse]" />
-        <div className="absolute inset-3 flex items-center justify-center rounded-2xl border border-emerald-300/25 bg-[#0B1734]/95 shadow-[0_0_32px_rgba(52,211,153,0.2)]">
+        <div className="absolute inset-3 flex items-center justify-center rounded-2xl border border-emerald-300/25 bg-[#0E0F12]/95 shadow-[0_0_32px_rgba(52,211,153,0.2)]">
           <Handshake className="h-9 w-9 text-emerald-200" />
         </div>
       </div>
@@ -182,8 +182,8 @@ export function CompanyHeroVisual() {
           "M284 202 C246 187 224 163 201 145",
         ].map((path, index) => (
           <g key={path}>
-            <path d={path} fill="none" stroke={index === 1 ? "#A78BFA" : "#22D3EE"} strokeOpacity="0.32" strokeWidth="1.4" />
-            <circle r="3.2" fill={index === 1 ? "#A78BFA" : "#67E8F9"}>
+            <path d={path} fill="none" stroke={index === 1 ? "#94A3B8" : "#E8607A"} strokeOpacity="0.32" strokeWidth="1.4" />
+            <circle r="3.2" fill={index === 1 ? "#94A3B8" : "#E8607A"}>
               <animateMotion dur={`${3.2 + index * 0.5}s`} begin={`${index * 0.45}s`} repeatCount="indefinite" path={path} />
             </circle>
           </g>
@@ -197,13 +197,13 @@ export function CompanyHeroVisual() {
       <div className="absolute left-1/2 top-[49%] z-20 h-36 w-36 -translate-x-1/2 -translate-y-1/2">
         <div className="absolute inset-0 animate-spin-slow rounded-full border border-dashed border-cyan-300/25" />
         <div className="absolute inset-4 animate-glow-pulse rounded-[2rem] bg-cyan-300/10 blur-lg" />
-        <div className="absolute inset-6 flex flex-col items-center justify-center rounded-[1.6rem] border border-cyan-300/25 bg-[#0B1734]/95 shadow-[0_0_34px_rgba(34,211,238,0.18)]">
+        <div className="absolute inset-6 flex flex-col items-center justify-center rounded-[1.6rem] border border-cyan-300/25 bg-[#0E0F12]/95 shadow-[0_0_34px_rgba(200,16,46,0.18)]">
           <Building2 className="h-10 w-10 text-cyan-200" />
           <span className="mt-1 text-[7px] font-semibold uppercase tracking-[0.16em] text-white/45">Translyx</span>
         </div>
       </div>
 
-      <div className="absolute bottom-5 left-7 z-30 flex items-center gap-2 rounded-full border border-white/10 bg-[#0B1734]/85 px-3 py-1.5 backdrop-blur-md">
+      <div className="absolute bottom-5 left-7 z-30 flex items-center gap-2 rounded-full border border-white/10 bg-[#0E0F12]/85 px-3 py-1.5 backdrop-blur-md">
         <span className="relative flex h-2 w-2">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-300 opacity-60" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-300" />

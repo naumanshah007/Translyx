@@ -18,7 +18,7 @@ import { BrandMark, BrandLogo } from "@/components/ui/Brand";
 function DetectionBox({ className }: { className?: string }) {
   return (
     <span
-      className={`absolute rounded-[3px] border border-cyan-300/80 shadow-[0_0_12px_rgba(34,211,238,0.7)] ${className ?? ""}`}
+      className={`absolute rounded-[3px] border border-cyan-300/80 shadow-[0_0_12px_rgba(200,16,46,0.7)] ${className ?? ""}`}
     >
       <span className="absolute -left-px -top-px h-1.5 w-1.5 border-l border-t border-cyan-200" />
       <span className="absolute -right-px -top-px h-1.5 w-1.5 border-r border-t border-cyan-200" />
@@ -46,7 +46,7 @@ function PathologySlide() {
       <DetectionBox className="left-[49%] top-[20%] h-[26px] w-[26px]" />
       <DetectionBox className="left-[16%] top-[46%] h-[18px] w-[18px]" />
       {/* AI label */}
-      <span className="absolute bottom-1 left-1 rounded bg-[#06121f]/70 px-1.5 py-px text-[7px] font-semibold uppercase tracking-[0.12em] text-cyan-200 ring-1 ring-cyan-300/20 backdrop-blur-sm">
+      <span className="absolute bottom-1 left-1 rounded bg-[#0E0F12]/70 px-1.5 py-px text-[7px] font-semibold uppercase tracking-[0.12em] text-cyan-200 ring-1 ring-cyan-300/20 backdrop-blur-sm">
         AI analysis
       </span>
     </div>
@@ -97,7 +97,7 @@ function MiniRow({ icon: Icon, label, color = "text-cyan-300" }: { icon: typeof 
 
 function DigitalPathologyPanel() {
   return (
-    <Panel title="Digital Pathology AI" accent="#22D3EE">
+    <Panel title="Digital Pathology AI" accent="#E8607A">
       <PathologySlide />
       <div className="mt-2.5 flex items-center justify-between">
         <span className="flex items-center gap-1.5 text-[11px] font-semibold text-white">
@@ -115,7 +115,7 @@ function DigitalPathologyPanel() {
 
 function PipelinePanel() {
   return (
-    <Panel title="Privexa Platform" accent="#A78BFA">
+    <Panel title="Privexa Platform" accent="#94A3B8">
       <div className="space-y-1.5">
         <MiniRow icon={Cpu} label="Secure AI" color="text-violet-300" />
         <MiniRow icon={Cloud} label="Documents & Knowledge" color="text-sky-300" />
@@ -156,17 +156,17 @@ function GovernedPanel() {
 
 function ClinicalImpactPanel({ idp = "d" }: { idp?: string }) {
   return (
-    <Panel title="Clinical Impact" accent="#38BDF8">
+    <Panel title="Clinical Impact" accent="#E8607A">
       <svg viewBox="0 0 160 50" className="h-[50px] w-full" fill="none" aria-hidden="true">
         <defs>
           <linearGradient id={`${idp}-impactArea`} x1="0" y1="0" x2="0" y2="50" gradientUnits="userSpaceOnUse">
-            <stop stopColor="rgba(34,211,238,0.40)" />
-            <stop offset="1" stopColor="rgba(34,211,238,0)" />
+            <stop stopColor="rgba(200,16,46,0.40)" />
+            <stop offset="1" stopColor="rgba(200,16,46,0)" />
           </linearGradient>
           <linearGradient id={`${idp}-impactLine`} x1="0" y1="0" x2="160" y2="0" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#22D3EE" />
-            <stop offset="0.5" stopColor="#5EEAD4" />
-            <stop offset="1" stopColor="#A78BFA" />
+            <stop stopColor="#E8607A" />
+            <stop offset="0.5" stopColor="#E8607A" />
+            <stop offset="1" stopColor="#94A3B8" />
           </linearGradient>
         </defs>
         <path d="M4 42 L40 34 L74 38 L104 20 L136 24 L156 6 L156 50 L4 50 Z" fill={`url(#${idp}-impactArea)`} />
@@ -177,7 +177,7 @@ function ClinicalImpactPanel({ idp = "d" }: { idp?: string }) {
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-        <circle cx="156" cy="6" r="2.5" fill="#A78BFA" />
+        <circle cx="156" cy="6" r="2.5" fill="#94A3B8" />
       </svg>
       <div className="mt-2 flex justify-between">
         {["Faster insights", "Quality assured", "Workflow trust"].map((l) => (
@@ -196,21 +196,21 @@ function Centerpiece({ className, idp = "d" }: { className?: string; idp?: strin
   return (
     <div className={className}>
       <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full conic-sweep animate-spin-slow opacity-80 [mask-image:radial-gradient(circle,transparent_32%,#000_46%,transparent_72%)]" />
-      <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.26),transparent_65%)] animate-glow-pulse" />
-      <div className="absolute left-1/2 top-1/2 h-52 w-52 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.22),transparent_70%)]" />
+      <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(200,16,46,0.26),transparent_65%)] animate-glow-pulse" />
+      <div className="absolute left-1/2 top-1/2 h-52 w-52 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(100,116,139,0.22),transparent_70%)]" />
 
       <div className="relative flex flex-col items-center">
         <div className="relative">
           <svg width="148" height="166" viewBox="0 0 132 148" fill="none" aria-hidden="true">
             <defs>
               <linearGradient id={`${idp}-shieldStroke`} x1="0" y1="0" x2="132" y2="148" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#67E8F9" />
-                <stop offset="0.5" stopColor="#22D3EE" />
-                <stop offset="1" stopColor="#818CF8" />
+                <stop stopColor="#E8607A" />
+                <stop offset="0.5" stopColor="#E8607A" />
+                <stop offset="1" stopColor="#94A3B8" />
               </linearGradient>
               <linearGradient id={`${idp}-shieldFill`} x1="66" y1="0" x2="66" y2="148" gradientUnits="userSpaceOnUse">
-                <stop stopColor="rgba(34,211,238,0.18)" />
-                <stop offset="1" stopColor="rgba(15,28,63,0.05)" />
+                <stop stopColor="rgba(200,16,46,0.18)" />
+                <stop offset="1" stopColor="rgba(11,11,12,0.05)" />
               </linearGradient>
             </defs>
             <path
@@ -226,14 +226,14 @@ function Centerpiece({ className, idp = "d" }: { className?: string; idp?: strin
         </div>
 
         <div className="relative -mt-2 flex flex-col items-center">
-          <div className="h-[18px] w-60 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.5),rgba(34,211,238,0)_70%)] blur-[2px]" />
+          <div className="h-[18px] w-60 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(200,16,46,0.5),rgba(200,16,46,0)_70%)] blur-[2px]" />
           <div className="-mt-2 flex h-12 w-56 items-center justify-center rounded-[50%] border border-cyan-300/30 bg-gradient-to-b from-white/[0.12] to-transparent">
             <BrandLogo href={null} markClassName="h-[20px]" />
           </div>
           <p className="mt-1.5 text-[8.5px] font-semibold uppercase tracking-[0.26em] text-cyan-200/60">
             Privacy · Governance · Clinical Impact
           </p>
-          <div className="mt-2.5 h-9 w-48 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.2),transparent_72%)] blur-md" />
+          <div className="mt-2.5 h-9 w-48 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(200,16,46,0.2),transparent_72%)] blur-md" />
         </div>
       </div>
     </div>
@@ -245,8 +245,8 @@ function OrbitalRings() {
   return (
     <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
       <div className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 animate-spin-slow rounded-full border border-dashed border-cyan-400/15">
-        <span className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(34,211,238,0.9)]" />
-        <span className="absolute left-1/2 top-full h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-300 shadow-[0_0_10px_rgba(167,139,250,0.9)]" />
+        <span className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(200,16,46,0.9)]" />
+        <span className="absolute left-1/2 top-full h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-300 shadow-[0_0_10px_rgba(100,116,139,0.9)]" />
       </div>
       <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 animate-spin-slow rounded-full border border-dashed border-violet-400/15 [animation-direction:reverse] [animation-duration:34s]">
         <span className="absolute left-0 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal-300 shadow-[0_0_10px_rgba(45,212,191,0.9)]" />
@@ -257,10 +257,10 @@ function OrbitalRings() {
 
 function ConnectorLayer() {
   const conns = [
-    { ax: 252, ay: 236, color: "#22D3EE", dur: "3.2s", begin: "0s" },
-    { ax: 770, ay: 250, color: "#A78BFA", dur: "3.9s", begin: "0.7s" },
+    { ax: 252, ay: 236, color: "#E8607A", dur: "3.2s", begin: "0s" },
+    { ax: 770, ay: 250, color: "#94A3B8", dur: "3.9s", begin: "0.7s" },
     { ax: 254, ay: 742, color: "#34D399", dur: "3.5s", begin: "0.3s" },
-    { ax: 762, ay: 728, color: "#38BDF8", dur: "4.1s", begin: "1s" },
+    { ax: 762, ay: 728, color: "#E8607A", dur: "4.1s", begin: "1s" },
   ];
   const core = { x: 500, y: 478 };
   return (
@@ -293,8 +293,8 @@ function ConnectorLayer() {
         );
       })}
       {/* core node */}
-      <circle cx={core.x} cy={core.y} r="22" fill="none" stroke="#22D3EE" strokeOpacity="0.30" strokeWidth="1.2" />
-      <circle cx={core.x} cy={core.y} r="7" fill="#67E8F9" />
+      <circle cx={core.x} cy={core.y} r="22" fill="none" stroke="#E8607A" strokeOpacity="0.30" strokeWidth="1.2" />
+      <circle cx={core.x} cy={core.y} r="7" fill="#E8607A" />
     </svg>
   );
 }
@@ -318,8 +318,8 @@ export function HeroVisual() {
         <div className="relative mx-auto flex h-[280px] max-w-[360px] items-center justify-center overflow-hidden rounded-3xl border border-white/10 bg-white/[0.025]">
           <NetworkBackdrop />
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 animate-spin-slow rounded-full border border-dashed border-cyan-300/15">
-            <span className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(34,211,238,0.9)]" />
-            <span className="absolute bottom-0 left-1/2 h-1.5 w-1.5 -translate-x-1/2 translate-y-1/2 rounded-full bg-violet-300 shadow-[0_0_10px_rgba(167,139,250,0.9)]" />
+            <span className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(200,16,46,0.9)]" />
+            <span className="absolute bottom-0 left-1/2 h-1.5 w-1.5 -translate-x-1/2 translate-y-1/2 rounded-full bg-violet-300 shadow-[0_0_10px_rgba(100,116,139,0.9)]" />
           </div>
           <Centerpiece idp="m" className="relative scale-[0.78]" />
         </div>

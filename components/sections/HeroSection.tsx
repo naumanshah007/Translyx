@@ -27,12 +27,12 @@ interface HeroSectionProps {
 
 function CTAButton({ cta }: { cta: HeroCTA }) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1430]";
+    "inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white";
   const styles: Record<HeroCTA["variant"], string> = {
     primary:
-      "bg-gradient-to-r from-cyan-400 via-sky-400 to-violet-500 text-[#06121f] shadow-[0_8px_30px_-6px_rgba(34,211,238,0.55)] hover:shadow-[0_10px_38px_-6px_rgba(124,58,237,0.6)] hover:-translate-y-0.5",
-    glass: "glass-panel text-white hover:bg-white/[0.14]",
-    ghost: "text-slate-300 hover:text-white",
+      "bg-[#A50E28] hover:bg-[#860B20] text-white shadow-[0_8px_30px_-6px_rgba(200,16,46,0.55)] hover:shadow-[0_10px_38px_-6px_rgba(100,116,139,0.6)] hover:-translate-y-0.5",
+    glass: "light-panel text-[#0B0B0C] hover:bg-black/[0.04]",
+    ghost: "text-slate-700 hover:text-black",
   };
   const content = (
     <>
@@ -69,13 +69,13 @@ export function HeroSection({
   const visualForward = hasVisual && layout === "visual-forward";
 
   return (
-    <section className="relative overflow-hidden bg-midnight">
-      {/* ambient aurora + grid + grain */}
-      <div className="pointer-events-none absolute inset-0 aurora opacity-70" />
+    <section className="relative overflow-hidden bg-white">
+      {/* ambient hidden + grid + grain */}
+      <div className="pointer-events-none absolute inset-0 hidden opacity-70" />
       <div className="pointer-events-none absolute inset-0 grid-overlay opacity-50" />
-      <div className="pointer-events-none absolute inset-0 grain-overlay opacity-[0.06] mix-blend-overlay" />
-      <div className="pointer-events-none absolute -top-32 right-[12%] h-[440px] w-[440px] rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.18),transparent_65%)] blur-3xl animate-glow-pulse" />
-      <div className="pointer-events-none absolute bottom-0 left-[6%] h-[380px] w-[380px] rounded-full bg-[radial-gradient(circle,rgba(139,92,246,0.16),transparent_65%)] blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 hidden opacity-[0.06] mix-blend-overlay" />
+      <div className="pointer-events-none absolute -top-32 right-[12%] h-[440px] w-[440px] rounded-full bg-[radial-gradient(circle,rgba(200,16,46,0.18),transparent_65%)] blur-3xl animate-glow-pulse" />
+      <div className="pointer-events-none absolute bottom-0 left-[6%] h-[380px] w-[380px] rounded-full bg-[radial-gradient(circle,rgba(100,116,139,0.16),transparent_65%)] blur-3xl" />
       {/* top hairline highlight */}
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent" />
 
@@ -93,15 +93,15 @@ export function HeroSection({
           {/* Copy */}
           <div className={cn("text-center", hasVisual && "lg:text-left", visualForward && "lg:max-w-[600px]")}>
             {badge && (
-              <div className="mb-7 inline-flex items-center gap-2 rounded-full glass-panel px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-200 will-fade reveal">
-                {badge.icon && <badge.icon className="h-3.5 w-3.5 text-cyan-300" />}
+              <div className="mb-7 inline-flex items-center gap-2 rounded-full light-panel px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-700 will-fade reveal">
+                {badge.icon && <badge.icon className="h-3.5 w-3.5 text-cyan-700" />}
                 {badge.text}
               </div>
             )}
 
             <h1
               className={cn(
-                "font-display text-[2.6rem] font-semibold leading-[1.04] tracking-[-0.02em] text-white [hyphens:none] will-fade reveal sm:text-[3.2rem]",
+                "font-display text-[2.6rem] font-semibold leading-[1.04] tracking-[-0.02em] text-[#0B0B0C] [hyphens:none] will-fade reveal sm:text-[3.2rem]",
                 visualForward ? "lg:text-[3.25rem] xl:text-[3.55rem]" : "lg:text-[3.55rem]"
               )}
               style={{ animationDelay: "0.05s" }}
@@ -112,7 +112,7 @@ export function HeroSection({
 
             <p
               className={cn(
-                "mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/65 will-fade reveal sm:text-lg",
+                "mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-600 will-fade reveal sm:text-lg",
                 hasVisual && "lg:mx-0 lg:max-w-xl"
               )}
               style={{ animationDelay: "0.12s" }}
@@ -143,7 +143,7 @@ export function HeroSection({
                 style={{ animationDelay: "0.28s" }}
               >
                 {trustChips.map((c) => (
-                  <TrustChip key={c.label} icon={c.icon} label={c.label} tone="dark" />
+                  <TrustChip key={c.label} icon={c.icon} label={c.label} tone="light" />
                 ))}
               </div>
             )}
@@ -170,7 +170,7 @@ export function HeroSection({
       </div>
 
       {/* bottom fade into next section */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-[#070D1F]/0" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-[#0E0F12]/0" />
     </section>
   );
 }

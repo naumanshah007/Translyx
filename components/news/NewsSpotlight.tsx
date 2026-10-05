@@ -51,7 +51,7 @@ export function NewsSpotlight({ items }: { items: NewsItem[] }) {
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
       onBlurCapture={() => setPaused(false)}
-      className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0B1530] shadow-[0_32px_80px_-40px_rgba(15,28,63,0.7)]"
+      className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0E0F12] shadow-[0_32px_80px_-40px_rgba(11,11,12,0.7)]"
     >
       {/* Ambient backdrop */}
       <div className="pointer-events-none absolute inset-0 aurora opacity-40" />

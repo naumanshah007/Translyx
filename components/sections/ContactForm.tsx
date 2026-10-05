@@ -39,7 +39,7 @@ function TopicPrefill({ onTopic }: { onTopic: (inquiry: string) => void }) {
 }
 
 const inputClass =
-  "w-full rounded-xl border border-slate-200/80 bg-[#F8FAFD] px-4 py-3 text-sm text-[#0F1C3F] shadow-inner shadow-slate-900/[0.02] transition-all placeholder:text-slate-400 hover:border-slate-300 focus:border-cyan-400 focus:bg-white focus:outline-none focus:ring-4 focus:ring-cyan-400/12";
+  "w-full rounded-xl border border-slate-200/80 bg-[#F6F6F7] px-4 py-3 text-sm text-[#0B0B0C] shadow-inner shadow-slate-900/[0.02] transition-all placeholder:text-slate-400 hover:border-slate-300 focus:border-cyan-400 focus:bg-white focus:outline-none focus:ring-4 focus:ring-cyan-400/12";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -102,7 +102,7 @@ export function ContactForm() {
         <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100">
           <CheckCircle2 className="h-7 w-7 text-emerald-600" />
         </span>
-        <h3 className="mt-5 font-display text-xl font-semibold text-[#0F1C3F]">Message sent</h3>
+        <h3 className="mt-5 font-display text-xl font-semibold text-[#0B0B0C]">Message sent</h3>
         <p className="mt-2 text-sm leading-relaxed text-slate-600">
           Thank you for reaching out. Here&apos;s what happens next:
         </p>
@@ -128,7 +128,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white p-6 shadow-[0_32px_90px_-48px_rgba(15,28,63,0.48)] sm:p-9">
+    <div className="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white p-6 shadow-[0_32px_90px_-48px_rgba(11,11,12,0.48)] sm:p-9">
       <div className="pointer-events-none absolute inset-x-14 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300 to-transparent" />
       <div className="pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-full bg-cyan-200/25 blur-3xl" />
       <div className="relative">
@@ -136,8 +136,8 @@ export function ContactForm() {
         <TopicPrefill onTopic={handleTopic} />
       </Suspense>
 
-      <h2 className="font-display text-xl font-semibold text-[#0F1C3F]">Send a message</h2>
-      <p className="mt-1.5 text-sm leading-relaxed text-slate-500">
+      <h2 className="font-display text-xl font-semibold text-[#0B0B0C]">Send a message</h2>
+      <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
         Fill out the form below and we&apos;ll get back to you as soon as possible.
       </p>
 
@@ -158,7 +158,7 @@ export function ContactForm() {
 
         <div className="grid gap-5 sm:grid-cols-2">
           <div>
-            <label htmlFor="name" className="mb-1.5 block text-sm font-semibold text-[#0F1C3F]">
+            <label htmlFor="name" className="mb-1.5 block text-sm font-semibold text-[#0B0B0C]">
               Name
             </label>
             <input
@@ -171,7 +171,7 @@ export function ContactForm() {
             />
           </div>
           <div>
-            <label htmlFor="email" className="mb-1.5 block text-sm font-semibold text-[#0F1C3F]">
+            <label htmlFor="email" className="mb-1.5 block text-sm font-semibold text-[#0B0B0C]">
               Email
             </label>
             <input
@@ -186,7 +186,7 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="organization" className="mb-1.5 block text-sm font-semibold text-[#0F1C3F]">
+          <label htmlFor="organization" className="mb-1.5 block text-sm font-semibold text-[#0B0B0C]">
             Organization
           </label>
           <input
@@ -199,7 +199,7 @@ export function ContactForm() {
         </div>
 
         <div>
-          <p className="mb-2 text-sm font-semibold text-[#0F1C3F]">What would you like to discuss?</p>
+          <p className="mb-2 text-sm font-semibold text-[#0B0B0C]">What would you like to discuss?</p>
           <div className="flex flex-wrap gap-2">
             {inquiryTypes.map((t) => (
               <ChipButton
@@ -214,7 +214,7 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="message" className="mb-1.5 block text-sm font-semibold text-[#0F1C3F]">
+          <label htmlFor="message" className="mb-1.5 block text-sm font-semibold text-[#0B0B0C]">
             Message
           </label>
           <textarea

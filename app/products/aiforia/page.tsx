@@ -149,18 +149,18 @@ export default function AiforiaPage() {
       />
 
       {/* Audience */}
-      <section className="bg-[#F5F8FC] border-b border-slate-200/60 py-10 sm:py-12">
+      <section className="bg-[#F6F6F7] border-b border-slate-200/60 py-10 sm:py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-5 text-center">Who this is for</p>
             <Reveal className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {audienceSegments.map(({ icon: Icon, label, description }) => (
-                <div key={label} className="rounded-xl bg-white border border-slate-200/80 p-4 text-center shadow-[0_1px_8px_-2px_rgba(15,28,63,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/60 hover:shadow-[0_18px_40px_-22px_rgba(8,145,178,0.5)]">
+                <div key={label} className="rounded-xl bg-white border border-slate-200/80 p-4 text-center shadow-[0_1px_8px_-2px_rgba(11,11,12,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/60 hover:shadow-[0_18px_40px_-22px_rgba(200,16,46,0.5)]">
                   <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-50">
                     <Icon className="h-5 w-5 text-cyan-700" />
                   </div>
-                  <p className="text-sm font-semibold text-[#0F1C3F]">{label}</p>
-                  <p className="mt-1 text-xs text-slate-500 leading-snug">{description}</p>
+                  <p className="text-sm font-semibold text-[#0B0B0C]">{label}</p>
+                  <p className="mt-1 text-xs text-slate-600 leading-snug">{description}</p>
                 </div>
               ))}
             </Reveal>
@@ -179,7 +179,7 @@ export default function AiforiaPage() {
                     Authorised partner solution
                   </span>
                 </div>
-                <CardTitle className="text-2xl sm:text-3xl text-[#0F1C3F]">
+                <CardTitle className="text-2xl sm:text-3xl text-[#0B0B0C]">
                   What Translyx represents
                 </CardTitle>
               </CardHeader>
@@ -189,11 +189,11 @@ export default function AiforiaPage() {
                 </p>
                 <div className="grid sm:grid-cols-2 gap-3">
                   <div className="rounded-xl border border-cyan-100 bg-cyan-50/50 p-4">
-                    <p className="text-sm font-bold text-[#0F1C3F]">Aiforia Clinical Suites</p>
+                    <p className="text-sm font-bold text-[#0B0B0C]">Aiforia Clinical Suites</p>
                     <p className="mt-1 text-xs text-slate-600">AI-assisted clinical pathology workflows with standardised scoring and quantitative outputs</p>
                   </div>
                   <div className="rounded-xl border border-cyan-100 bg-cyan-50/50 p-4">
-                    <p className="text-sm font-bold text-[#0F1C3F]">Aiforia Create Platform</p>
+                    <p className="text-sm font-bold text-[#0B0B0C]">Aiforia Create Platform</p>
                     <p className="mt-1 text-xs text-slate-600">Cloud-based deep learning model development for histological image analysis</p>
                   </div>
                 </div>
@@ -215,7 +215,7 @@ export default function AiforiaPage() {
             <div className="space-y-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-4">Authorisation details</p>
               {partnerFacts.map((fact) => (
-                <div key={fact} className="flex items-start gap-3 rounded-xl border border-slate-200/80 bg-[#F5F8FC] p-4">
+                <div key={fact} className="flex items-start gap-3 rounded-xl border border-slate-200/80 bg-[#F6F6F7] p-4">
                   <CheckCircle2 className="h-4 w-4 text-cyan-500 shrink-0 mt-0.5" />
                   <p className="text-sm text-slate-700">{fact}</p>
                 </div>
@@ -226,7 +226,7 @@ export default function AiforiaPage() {
       </section>
 
       {/* Clinical Suites */}
-      <section className="bg-[#F5F8FC] py-16 sm:py-20 md:py-24">
+      <section className="bg-[#F6F6F7] py-16 sm:py-20 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <SectionHeader
@@ -237,7 +237,7 @@ export default function AiforiaPage() {
               className="mb-10"
             />
 
-            <div className="mb-8 overflow-hidden rounded-[1.75rem] border border-cyan-200/60 bg-[#081326] shadow-[0_28px_80px_-48px_rgba(8,145,178,0.65)]">
+            <div className="mb-8 overflow-hidden rounded-[1.75rem] border border-cyan-200/60 bg-[#0E0F12] shadow-[0_28px_80px_-48px_rgba(200,16,46,0.65)]">
               <div className="grid lg:grid-cols-[1.12fr_0.88fr] lg:items-stretch">
                 <div className="relative min-h-[280px] overflow-hidden sm:min-h-[360px]">
                   <Image
@@ -247,8 +247,8 @@ export default function AiforiaPage() {
                     sizes="(min-width: 1024px) 650px, 94vw"
                     className="object-cover"
                   />
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#081326]/60" />
-                  <span className="absolute bottom-4 left-4 rounded-full border border-white/20 bg-[#06121f]/75 px-3 py-1.5 text-[8px] font-semibold uppercase tracking-[0.16em] text-cyan-100 backdrop-blur-md sm:bottom-5 sm:left-5 sm:text-[9px]">
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#0E0F12]/60" />
+                  <span className="absolute bottom-4 left-4 rounded-full border border-white/20 bg-[#0E0F12]/75 px-3 py-1.5 text-[8px] font-semibold uppercase tracking-[0.16em] text-cyan-100 backdrop-blur-md sm:bottom-5 sm:left-5 sm:text-[9px]">
                     Official Aiforia clinical imagery
                   </span>
                 </div>
@@ -286,7 +286,7 @@ export default function AiforiaPage() {
                       <div className="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center shrink-0">
                         <Microscope className="w-5 h-5 text-cyan-700" />
                       </div>
-                      <CardTitle className="text-base text-[#0F1C3F] leading-snug">{name}</CardTitle>
+                      <CardTitle className="text-base text-[#0B0B0C] leading-snug">{name}</CardTitle>
                     </div>
                   </CardHeader>
                   <CardContent className="p-0">
@@ -319,8 +319,8 @@ export default function AiforiaPage() {
                       <Layers3 className="w-5 h-5 text-cyan-700" />
                     </div>
                     <div>
-                      <CardTitle className="text-2xl text-[#0F1C3F]">Aiforia Create Platform</CardTitle>
-                      <p className="text-xs text-slate-500 mt-0.5">Research Use Only</p>
+                      <CardTitle className="text-2xl text-[#0B0B0C]">Aiforia Create Platform</CardTitle>
+                      <p className="text-xs text-slate-600 mt-0.5">Research Use Only</p>
                     </div>
                   </div>
                 </CardHeader>
@@ -344,12 +344,12 @@ export default function AiforiaPage() {
               <Card className="p-5 sm:p-7 lg:p-8">
                 <CardHeader className="p-0">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-11 h-11 rounded-xl bg-[#0F1C3F]/6 flex items-center justify-center">
-                      <FlaskConical className="w-5 h-5 text-[#0F1C3F]" />
+                    <div className="w-11 h-11 rounded-xl bg-[#0B0B0C]/6 flex items-center justify-center">
+                      <FlaskConical className="w-5 h-5 text-[#0B0B0C]" />
                     </div>
                     <div>
-                      <CardTitle className="text-2xl text-[#0F1C3F]">Research & Preclinical</CardTitle>
-                      <p className="text-xs text-slate-500 mt-0.5">Aiforia Research Solutions</p>
+                      <CardTitle className="text-2xl text-[#0B0B0C]">Research & Preclinical</CardTitle>
+                      <p className="text-xs text-slate-600 mt-0.5">Aiforia Research Solutions</p>
                     </div>
                   </div>
                 </CardHeader>
@@ -362,7 +362,7 @@ export default function AiforiaPage() {
                   </p>
                   <div className="flex flex-wrap gap-2 pt-1">
                     {["GLP-oriented", "Preclinical", "Aiforia Studies", "Automated workflows"].map((tag) => (
-                      <span key={tag} className="inline-flex items-center rounded-full border border-slate-200/80 bg-[#F5F8FC] px-3 py-1 text-xs font-semibold text-slate-600">
+                      <span key={tag} className="inline-flex items-center rounded-full border border-slate-200/80 bg-[#F6F6F7] px-3 py-1 text-xs font-semibold text-slate-600">
                         {tag}
                       </span>
                     ))}
@@ -375,7 +375,7 @@ export default function AiforiaPage() {
       </section>
 
       {/* Regulatory note */}
-      <section className="bg-[#F5F8FC] py-12 sm:py-14 border-y border-slate-200/60">
+      <section className="bg-[#F6F6F7] py-12 sm:py-14 border-y border-slate-200/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-content mx-auto">
             <Card className="card-note p-5 sm:p-7 lg:p-8" hover={false}>
@@ -385,14 +385,14 @@ export default function AiforiaPage() {
                     <AlertCircle className="w-5 h-5 text-amber-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#0F1C3F] mb-2">Regulatory and intended-use note</h3>
+                    <h3 className="text-lg font-bold text-[#0B0B0C] mb-2">Regulatory and intended-use note</h3>
                     <p className="text-sm text-slate-700 leading-relaxed mb-3">
                       Regulatory status and intended use vary by product and jurisdiction. Several Aiforia Clinical Suite models carry CE-IVD marking for diagnostic use in the EU/EEA. Outside the EU/EEA, these models may be classified as Research Use Only or Performance Studies Only.
                     </p>
                     <p className="text-sm text-slate-700 leading-relaxed mb-3">
                       Translyx supports responsible local evaluation and adoption in New Zealand. Product-specific regulatory status, intended use, and applicable local requirements should be confirmed with Aiforia Technologies Plc and relevant regulatory authorities.
                     </p>
-                    <p className="text-sm text-slate-500 font-medium">
+                    <p className="text-sm text-slate-600 font-medium">
                       Translyx does not claim or imply Medsafe approval, TGA listing, or any jurisdiction-specific regulatory endorsement for Aiforia products unless explicitly confirmed.
                     </p>
                   </div>
@@ -419,7 +419,7 @@ export default function AiforiaPage() {
                   <div className="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center mb-3">
                     <Microscope className="w-5 h-5 text-cyan-700" />
                   </div>
-                  <CardTitle className="text-base text-[#0F1C3F]">Digital pathology AI</CardTitle>
+                  <CardTitle className="text-base text-[#0B0B0C]">Digital pathology AI</CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
                   <p className="text-sm text-slate-600 leading-relaxed">
@@ -429,10 +429,10 @@ export default function AiforiaPage() {
               </Card>
               <Card className="p-5 sm:p-6">
                 <CardHeader className="p-0 mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#22D3EE]/12 flex items-center justify-center mb-3">
-                    <ShieldCheck className="w-5 h-5 text-[#0E7490]" />
+                  <div className="w-10 h-10 rounded-xl bg-[#E8607A]/12 flex items-center justify-center mb-3">
+                    <ShieldCheck className="w-5 h-5 text-[#A50E28]" />
                   </div>
-                  <CardTitle className="text-base text-[#0F1C3F]">Pipeline capabilities</CardTitle>
+                  <CardTitle className="text-base text-[#0B0B0C]">Pipeline capabilities</CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
                   <p className="text-sm text-slate-600 leading-relaxed">
@@ -442,10 +442,10 @@ export default function AiforiaPage() {
               </Card>
               <Card className="p-5 sm:p-6">
                 <CardHeader className="p-0 mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#0F1C3F]/6 flex items-center justify-center mb-3">
-                    <FlaskConical className="w-5 h-5 text-[#0F1C3F]" />
+                  <div className="w-10 h-10 rounded-xl bg-[#0B0B0C]/6 flex items-center justify-center mb-3">
+                    <FlaskConical className="w-5 h-5 text-[#0B0B0C]" />
                   </div>
-                  <CardTitle className="text-base text-[#0F1C3F]">Diagnostic pipeline</CardTitle>
+                  <CardTitle className="text-base text-[#0B0B0C]">Diagnostic pipeline</CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
                   <p className="text-sm text-slate-600 leading-relaxed">

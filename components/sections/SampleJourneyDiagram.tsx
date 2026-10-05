@@ -22,7 +22,7 @@ const traceabilityNodes = [
  */
 export function SampleJourneyDiagram() {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-[#0F1C3F] to-[#0B1430] p-6 sm:p-8">
+    <div className="relative overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-[#0B0B0C] to-[#0E0F12] p-6 sm:p-8">
       <div className="pointer-events-none absolute inset-0 grid-overlay opacity-30" />
 
       <div className="relative grid grid-cols-3 gap-y-8 sm:grid-cols-6">
@@ -37,7 +37,7 @@ export function SampleJourneyDiagram() {
                 />
               </span>
             )}
-            <span className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-violet-300/40 bg-violet-400/15 text-violet-200 shadow-[0_0_16px_rgba(139,92,246,0.35)]">
+            <span className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-violet-300/40 bg-violet-400/15 text-violet-200 shadow-[0_0_16px_rgba(100,116,139,0.35)]">
               <Icon className="h-5 w-5" />
             </span>
             <p className="mt-2.5 text-[11px] font-semibold leading-snug text-slate-200">{label}</p>

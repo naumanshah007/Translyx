@@ -22,9 +22,9 @@ export function GovernanceCard({ icon: Icon, title, body, tone = "dark", classNa
         "group relative overflow-hidden rounded-2xl p-6 transition-all duration-300",
         tone === "dark" && "glass-panel hover:-translate-y-1 hover:ring-1 hover:ring-cyan-400/30",
         tone === "light" &&
-          "border border-slate-200/80 bg-white shadow-[0_2px_16px_-6px_rgba(15,28,63,0.10)] hover:-translate-y-1 hover:border-slate-300",
+          "border border-slate-200/80 bg-white shadow-[0_2px_16px_-6px_rgba(11,11,12,0.10)] hover:-translate-y-1 hover:border-slate-300",
         tone === "solid" &&
-          "bg-[#0F1C3F] shadow-[0_10px_30px_-14px_rgba(15,28,63,0.5)] hover:-translate-y-1 hover:shadow-[0_20px_46px_-18px_rgba(15,28,63,0.6)]",
+          "bg-[#0B0B0C] shadow-[0_10px_30px_-14px_rgba(11,11,12,0.5)] hover:-translate-y-1 hover:shadow-[0_20px_46px_-18px_rgba(11,11,12,0.6)]",
         className
       )}
     >
@@ -38,15 +38,15 @@ export function GovernanceCard({ icon: Icon, title, body, tone = "dark", classNa
       <span
         className={cn(
           "relative flex h-11 w-11 items-center justify-center rounded-xl",
-          tone === "light" ? "bg-[#0F1C3F]/6" : "bg-white/10 ring-1 ring-inset ring-white/15"
+          tone === "light" ? "bg-[#0B0B0C]/6" : "bg-white/10 ring-1 ring-inset ring-white/15"
         )}
       >
-        <Icon className={cn("h-5 w-5", tone === "light" ? "text-[#0F1C3F]" : "text-cyan-300")} aria-hidden="true" />
+        <Icon className={cn("h-5 w-5", tone === "light" ? "text-[#0B0B0C]" : "text-cyan-300")} aria-hidden="true" />
       </span>
       <h3
         className={cn(
           "relative mt-4 font-display text-lg font-semibold",
-          tone === "light" ? "text-[#0F1C3F]" : "text-white"
+          tone === "light" ? "text-[#0B0B0C]" : "text-white"
         )}
       >
         {title}

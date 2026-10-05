@@ -14,7 +14,7 @@ function LiteYouTube({ id, title, featured }: { id: string; title: string; featu
 
   return (
     <figure className="group">
-      <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10 bg-[#0E151D]">
+      <div className="relative aspect-video overflow-hidden rounded-2xl border border-black/10 bg-[#F6F6F7]">
         {active ? (
           <iframe
             className="absolute inset-0 h-full w-full"
@@ -28,7 +28,7 @@ function LiteYouTube({ id, title, featured }: { id: string; title: string; featu
           <button
             type="button"
             onClick={() => setActive(true)}
-            className="absolute inset-0 h-full w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-cyan-300"
+            className="absolute inset-0 h-full w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#A50E28]"
             aria-label={`Play video: ${title}`}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -39,10 +39,10 @@ function LiteYouTube({ id, title, featured }: { id: string; title: string; featu
               decoding="async"
               className="h-full w-full object-cover opacity-80 transition-opacity duration-300 group-hover:opacity-100"
             />
-            <span className="absolute inset-0 bg-gradient-to-t from-[#070B10]/80 via-transparent to-transparent" />
+            <span className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             <span
               className={cn(
-                "absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-[#070B10] shadow-xl transition-transform duration-300 group-hover:scale-105",
+                "absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-[#A50E28] shadow-xl transition-transform duration-300 group-hover:scale-105",
                 featured ? "h-16 w-16" : "h-12 w-12"
               )}
             >
@@ -51,7 +51,7 @@ function LiteYouTube({ id, title, featured }: { id: string; title: string; featu
           </button>
         )}
       </div>
-      <figcaption className={cn("mt-3 font-medium text-slate-200", featured ? "text-base" : "text-sm")}>{title}</figcaption>
+      <figcaption className={cn("mt-3 font-medium text-slate-800", featured ? "text-base" : "text-sm")}>{title}</figcaption>
     </figure>
   );
 }

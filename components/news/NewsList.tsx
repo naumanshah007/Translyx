@@ -114,7 +114,7 @@ export function NewsList({ items }: { items: NewsItem[] }) {
         <div className="relative flex flex-wrap gap-2" role="tablist" aria-label="Filter by region">
           {indicator && (
             <span
-              className="absolute inset-y-0 z-0 rounded-full bg-[#0F1C3F] shadow-[0_4px_16px_-6px_rgba(15,28,63,0.5)] transition-all duration-300 ease-out"
+              className="absolute inset-y-0 z-0 rounded-full bg-[#0B0B0C] shadow-[0_4px_16px_-6px_rgba(11,11,12,0.5)] transition-all duration-300 ease-out"
               style={{ left: indicator.left, width: indicator.width }}
               aria-hidden="true"
             />
@@ -173,7 +173,7 @@ export function NewsList({ items }: { items: NewsItem[] }) {
           {wallItems.length > 0 && (
             <div className="mt-14 sm:mt-16">
               <div className="mb-6 flex items-center gap-3">
-                <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-[#0F1C3F]">
+                <h3 className="text-sm font-bold uppercase tracking-[0.18em] text-[#0B0B0C]">
                   More from the feed
                 </h3>
                 <span className="h-px flex-1 bg-slate-200" />
@@ -186,8 +186,8 @@ export function NewsList({ items }: { items: NewsItem[] }) {
       ) : (
         <div className="mt-10 flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300 bg-white py-16 text-center">
           <Newspaper className="h-8 w-8 text-slate-300" />
-          <p className="mt-3 text-sm font-semibold text-[#0F1C3F]">No news items match these filters</p>
-          <p className="mt-1 text-sm text-slate-500">Try a different region or topic.</p>
+          <p className="mt-3 text-sm font-semibold text-[#0B0B0C]">No news items match these filters</p>
+          <p className="mt-1 text-sm text-slate-600">Try a different region or topic.</p>
         </div>
       )}
     </div>

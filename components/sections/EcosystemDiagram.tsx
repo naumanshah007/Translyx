@@ -23,8 +23,8 @@ const branches: Branch[] = [
     href: "/products",
     cta: "Explore products",
     icon: Handshake,
-    color: "#22D3EE",
-    soft: "rgba(34,211,238,0.14)",
+    color: "#A50E28",
+    soft: "rgba(200,16,46,0.14)",
   },
   {
     label: "Translyx Platform",
@@ -33,8 +33,8 @@ const branches: Branch[] = [
     href: "/privexa",
     cta: "Explore Privexa",
     icon: ShieldCheck,
-    color: "#A78BFA",
-    soft: "rgba(139,92,246,0.14)",
+    color: "#475569",
+    soft: "rgba(100,116,139,0.14)",
   },
   {
     label: "Diagnostic Innovation",
@@ -43,19 +43,19 @@ const branches: Branch[] = [
     href: "/pipeline#diagnostic-innovation",
     cta: "View pipeline",
     icon: FlaskConical,
-    color: "#2DD4BF",
+    color: "#0F766E",
     soft: "rgba(45,212,191,0.14)",
   },
 ];
 
 export function EcosystemDiagram() {
   return (
-    <section className="relative overflow-hidden bg-deep py-18 sm:py-24">
+    <section className="relative overflow-hidden bg-[#F6F6F7] py-18 sm:py-24">
       <div className="pointer-events-none absolute inset-0 grid-overlay opacity-40" />
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           align="center"
-          tone="dark"
+          tone="light"
           eyebrow="Product ecosystem"
           title={
             <>
@@ -70,14 +70,14 @@ export function EcosystemDiagram() {
 
         {/* Parent node */}
         <div className="mx-auto max-w-md">
-          <div className="glass-panel relative flex flex-col items-center rounded-2xl px-6 py-6 text-center ring-1 ring-cyan-400/20">
+          <div className="light-panel relative flex flex-col items-center rounded-2xl px-6 py-6 text-center ring-1 ring-cyan-400/20">
             <span className="pointer-events-none absolute -top-10 left-1/2 h-20 w-20 -translate-x-1/2 rounded-full bg-cyan-400/15 blur-2xl" />
             <BrandMark glow className="h-9 w-auto" />
-            <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-cyan-200/70">
+            <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-cyan-700">
               Clinical technology partner
             </p>
-            <h3 className="mt-1 font-display text-2xl font-semibold text-white">Translyx Limited</h3>
-            <p className="mt-1 text-xs text-slate-400">Auckland, New Zealand · Oceania</p>
+            <h3 className="mt-1 font-display text-2xl font-semibold text-[#0B0B0C]">Translyx Limited</h3>
+            <p className="mt-1 text-xs text-slate-600">Auckland, New Zealand · Oceania</p>
           </div>
         </div>
 
@@ -95,7 +95,7 @@ export function EcosystemDiagram() {
                   <span className="absolute -top-8 left-1/2 hidden h-8 w-px -translate-x-1/2 bg-cyan-400/25 sm:block" />
                   <Link
                     href={b.href}
-                    className="group relative flex h-full flex-col overflow-hidden rounded-2xl glass-panel p-6 transition-all duration-300 hover:-translate-y-1 hover:ring-1 hover:ring-cyan-400/30"
+                    className="group relative flex h-full flex-col overflow-hidden rounded-2xl light-panel p-6 transition-all duration-300 hover:-translate-y-1 hover:ring-1 hover:ring-cyan-400/30"
                     style={{ ["--c" as string]: b.color }}
                   >
                     <span
@@ -103,7 +103,7 @@ export function EcosystemDiagram() {
                       style={{ background: b.soft }}
                     />
                     <span
-                      className="flex h-12 w-12 items-center justify-center rounded-xl ring-1 ring-inset ring-white/15"
+                      className="flex h-12 w-12 items-center justify-center rounded-xl ring-1 ring-inset ring-black/15"
                       style={{ background: b.soft }}
                     >
                       <Icon className="h-[22px] w-[22px]" style={{ color: b.color }} aria-hidden="true" />
@@ -114,9 +114,9 @@ export function EcosystemDiagram() {
                     >
                       {b.label}
                     </p>
-                    <h4 className="mt-1.5 font-display text-lg font-semibold text-white">{b.title}</h4>
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-white/65">{b.body}</p>
-                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-white">
+                    <h4 className="mt-1.5 font-display text-lg font-semibold text-[#0B0B0C]">{b.title}</h4>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{b.body}</p>
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0B0B0C]">
                       {b.cta}
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>
@@ -127,7 +127,7 @@ export function EcosystemDiagram() {
           </div>
         </div>
 
-        <p className="mx-auto mt-10 max-w-2xl text-center text-xs leading-relaxed text-slate-500">
+        <p className="mx-auto mt-10 max-w-2xl text-center text-xs leading-relaxed text-slate-600">
           Aiforia and Algoscope are partner products Translyx brings to New Zealand — not Translyx-owned
           products. Pipeline capabilities are under evaluation or development and are not publicly launched products.
         </p>

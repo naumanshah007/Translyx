@@ -98,14 +98,14 @@ function Pane({
     <div
       className={cn(
         "flex flex-col rounded-2xl border p-5 sm:p-6",
-        accent ? "border-cyan-300/30 bg-cyan-300/[0.04]" : "border-white/10 bg-white/[0.02]"
+        accent ? "border-[#A50E28]/30 bg-[#A50E28]/[0.04]" : "border-black/10 bg-black/[0.02]"
       )}
     >
-      <p className={cn("text-[10px] font-semibold uppercase tracking-[0.2em]", accent ? "text-cyan-300" : "text-slate-500")}>
+      <p className={cn("text-[10px] font-semibold uppercase tracking-[0.2em]", accent ? "text-[#A50E28]" : "text-slate-600")}>
         {label}
       </p>
-      <p className="mt-1 text-xs text-slate-500">{caption}</p>
-      <div className="mt-4 font-mono text-[13px] leading-[1.9] text-slate-200">{children}</div>
+      <p className="mt-1 text-xs text-slate-600">{caption}</p>
+      <div className="mt-4 font-mono text-[13px] leading-[1.9] text-slate-800">{children}</div>
     </div>
   );
 }
@@ -130,7 +130,7 @@ export function WhatAISees() {
         return (
           <span
             key={i}
-            className="rounded bg-cyan-300/15 px-1 py-0.5 text-cyan-200 ring-1 ring-cyan-300/30 transition-colors duration-300"
+            className="rounded bg-[#A50E28]/15 px-1 py-0.5 text-[#A50E28] ring-1 ring-[#A50E28]/30 transition-colors duration-300"
           >
             {placeholders.get(seg.text)}
           </span>
@@ -138,7 +138,7 @@ export function WhatAISees() {
       }
       if (mode === "protected" && !on) {
         return (
-          <span key={i} className="rounded bg-amber-300/10 px-1 py-0.5 text-amber-200 ring-1 ring-amber-300/25">
+          <span key={i} className="rounded bg-amber-300/10 px-1 py-0.5 text-amber-700 ring-1 ring-amber-300/25">
             {seg.text}
           </span>
         );
@@ -148,7 +148,7 @@ export function WhatAISees() {
           key={i}
           className={cn(
             "rounded px-1 py-0.5 transition-colors duration-300",
-            mode === "restored" ? "bg-emerald-300/10 text-emerald-200" : on ? "bg-white/[0.08] text-white" : "text-slate-200"
+            mode === "restored" ? "bg-emerald-300/10 text-emerald-700" : on ? "bg-black/[0.08] text-[#0B0B0C]" : "text-slate-800"
           )}
         >
           {seg.text}
@@ -161,7 +161,7 @@ export function WhatAISees() {
   return (
     <div>
       <fieldset>
-        <legend className="text-sm font-medium text-slate-300">Organisation policy — protect these entity types:</legend>
+        <legend className="text-sm font-medium text-slate-700">Organisation policy — protect these entity types:</legend>
         <div className="mt-4 flex flex-wrap gap-2">
           {allTypes.map((t) => {
             const on = enabled.has(t);
@@ -173,10 +173,10 @@ export function WhatAISees() {
                 aria-checked={on}
                 onClick={() => toggle(t)}
                 className={cn(
-                  "min-h-[40px] rounded-full border px-4 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300",
+                  "min-h-[40px] rounded-full border px-4 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A50E28]",
                   on
-                    ? "border-cyan-300/50 bg-cyan-300/10 text-cyan-100"
-                    : "border-white/15 text-slate-400 hover:border-white/30 hover:text-slate-200"
+                    ? "border-[#A50E28]/50 bg-[#A50E28]/10 text-[#A50E28]"
+                    : "border-black/15 text-slate-600 hover:border-black/30 hover:text-slate-800"
                 )}
               >
                 {entityLabels[t]}
@@ -198,7 +198,7 @@ export function WhatAISees() {
         </Pane>
       </div>
 
-      <p className="mt-5 text-xs text-slate-500" aria-live="polite">
+      <p className="mt-5 text-xs text-slate-600" aria-live="polite">
         {disclosed.length === 0
           ? "Every selected entity type is replaced before AI egress. Placeholders keep roles consistent, so the AI can still reason about the case."
           : `Policy allows ${disclosed.map((t) => entityLabels[t].toLowerCase()).join(", ")} to be disclosed — shown in amber. Your organisation decides.`}{" "}

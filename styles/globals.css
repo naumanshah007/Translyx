@@ -63,15 +63,15 @@
   body {
     /* One grotesk family site-wide; display headings use tighter tracking. */
     --font-display: var(--font-body);
-    @apply bg-[#F5F8FC] text-foreground;
+    @apply bg-white text-[#0B0B0C];
     font-feature-settings: "rlig" 1, "calt" 1;
     font-family: var(--font-body);
     line-height: 1.65;
   }
 
   ::selection {
-    background: rgba(34, 211, 238, 0.28);
-    color: #07101f;
+    background: rgba(165, 14, 40, 0.16);
+    color: #0B0B0C;
   }
 
   main > section,
@@ -81,15 +81,14 @@
 
   main > section[class~="bg-white"] {
     background-image:
-      radial-gradient(800px 360px at 100% 0%, rgba(34, 211, 238, 0.035), transparent 62%),
+      radial-gradient(800px 360px at 100% 0%, rgba(200,16,46, 0.035), transparent 62%),
       linear-gradient(#ffffff, #ffffff);
   }
 
-  main > section[class~="bg-[#F5F8FC]"],
-  main > section[class~="bg-[#F4F7FB]"] {
+  main > section[class~="bg-[#F6F6F7]"],
+  main > section[class~="bg-[#F6F6F7]"] {
     background-image:
-      radial-gradient(720px 340px at 0% 20%, rgba(139, 92, 246, 0.045), transparent 65%),
-      radial-gradient(720px 340px at 100% 80%, rgba(34, 211, 238, 0.05), transparent 65%);
+      none;
   }
 
   h1,
@@ -134,42 +133,34 @@
 @layer utilities {
   /* ---- Premium brand utilities ---- */
   /* Cyan → teal → violet gradient text (brand accent) */
-  .text-gradient-brand {
-    background-image: linear-gradient(100deg, #67E8F9 0%, #22D3EE 30%, #5EEAD4 55%, #818CF8 80%, #A78BFA 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
+  /* Brand emphasis — solid crimson, no rainbow gradients */
+  .text-gradient-brand,
   .text-gradient-cyan {
-    background-image: linear-gradient(100deg, #A5F3FC 0%, #22D3EE 50%, #2DD4BF 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: #A50E28;
   }
 
-  /* Glassmorphism panels */
+  /* Dark "device" panel — used for product visuals that sit on light pages */
   .glass-panel {
-    background: linear-gradient(155deg, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.02));
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    box-shadow: 0 8px 32px -8px rgba(2, 8, 23, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.10);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: linear-gradient(160deg, #18191D 0%, #0E0F12 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 60px -30px rgba(11, 11, 12, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+  /* Light card for content on white/grey sections */
+  .light-panel {
+    background: #FFFFFF;
+    border: 1px solid rgba(11, 11, 12, 0.08);
+    box-shadow: 0 1px 2px rgba(11, 11, 12, 0.04), 0 18px 44px -30px rgba(11, 11, 12, 0.28);
   }
   .glass-card {
-    background: linear-gradient(160deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: #FFFFFF;
   }
 
-  /* Deep navy hero canvas */
+  /* Dark canvases, now neutral near-black (used only inside contained visuals) */
   .bg-midnight {
-    background:
-      radial-gradient(1100px 620px at 78% 8%, rgba(34, 211, 238, 0.14), transparent 60%),
-      radial-gradient(900px 600px at 12% 92%, rgba(139, 92, 246, 0.12), transparent 60%),
-      linear-gradient(165deg, #070D1F 0%, #0B1430 45%, #0C1B3C 100%);
+    background: linear-gradient(165deg, #141518 0%, #0E0F12 100%);
   }
   .bg-deep {
-    background: linear-gradient(165deg, #0B1430 0%, #0F1C3F 60%, #0B1735 100%);
+    background: linear-gradient(165deg, #17181C 0%, #0E0F12 100%);
   }
 
   /* Subtle grid overlays */
@@ -184,7 +175,7 @@
 
   /* Animated gradient border ring for premium cards */
   .ring-brand-glow {
-    box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.25), 0 18px 60px -22px rgba(34, 211, 238, 0.45);
+    box-shadow: 0 0 0 1px rgba(200,16,46, 0.25), 0 18px 60px -22px rgba(200,16,46, 0.45);
   }
 
   /* Fine film grain — adds richness over dark sections */
@@ -196,8 +187,8 @@
   /* Slow drifting aurora blob for hero backdrops */
   .aurora {
     background:
-      radial-gradient(40% 55% at 70% 30%, rgba(34, 211, 238, 0.20), transparent 70%),
-      radial-gradient(35% 45% at 25% 70%, rgba(139, 92, 246, 0.18), transparent 70%),
+      radial-gradient(40% 55% at 70% 30%, rgba(200,16,46, 0.20), transparent 70%),
+      radial-gradient(35% 45% at 25% 70%, rgba(100,116,139, 0.18), transparent 70%),
       radial-gradient(30% 40% at 50% 50%, rgba(45, 212, 191, 0.12), transparent 70%);
     background-size: 200% 200%;
     animation: gradientShift 16s ease-in-out infinite;
@@ -208,11 +199,11 @@
     background: conic-gradient(
       from 0deg,
       transparent 0deg,
-      rgba(34, 211, 238, 0.16) 40deg,
+      rgba(200,16,46, 0.16) 40deg,
       transparent 120deg,
-      rgba(139, 92, 246, 0.14) 200deg,
+      rgba(100,116,139, 0.14) 200deg,
       transparent 280deg,
-      rgba(34, 211, 238, 0.10) 340deg,
+      rgba(200,16,46, 0.10) 340deg,
       transparent 360deg
     );
   }
@@ -277,7 +268,7 @@
 
   /* Neutral status card — cyan accent, used for pipeline/maturity status notes (no warning implied) */
   .card-info {
-    border: 1px solid rgba(8, 145, 178, 0.2);
+    border: 1px solid rgba(200,16,46, 0.2);
     background: linear-gradient(160deg, rgba(236, 254, 255, 0.7), rgba(255, 255, 255, 0.95));
   }
 }
@@ -355,8 +346,8 @@
   100% { transform: translate(100%, 100%); }
 }
 @keyframes pxPulse {
-  0%, 70%, 100% { border-color: rgba(255, 255, 255, 0.1); color: rgb(226 232 240); }
-  15%, 35% { border-color: rgba(103, 232, 249, 0.6); color: #fff; }
+  0%, 70%, 100% { border-color: rgba(0, 0, 0, 0.1); color: rgb(51 65 85); }
+  15%, 35% { border-color: rgba(165, 14, 40, 0.6); color: #A50E28; }
 }
 @keyframes pxBar {
   0%, 100% { transform: scaleX(0); opacity: 0; }
@@ -366,7 +357,7 @@
 }
 @keyframes pxSurface {
   0%, 60%, 100% { opacity: 1; text-decoration: none; }
-  20%, 45% { opacity: 0.45; text-decoration: line-through; border-color: rgba(103, 232, 249, 0.5); }
+  20%, 45% { opacity: 0.45; text-decoration: line-through; border-color: rgba(165, 14, 40, 0.5); }
 }
 .px-flow { animation: pxFlow 2.4s linear infinite; }
 .px-boundary-step { animation: pxPulse 3s ease-in-out infinite; }

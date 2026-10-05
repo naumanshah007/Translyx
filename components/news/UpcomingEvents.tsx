@@ -26,7 +26,7 @@ function EventCard({ event }: { event: UpcomingEvent }) {
     >
       <div className="flex items-start gap-4">
         {/* Calendar date block */}
-        <div className="flex shrink-0 flex-col items-center overflow-hidden rounded-xl border border-white/10 bg-[#0B1530] text-center">
+        <div className="flex shrink-0 flex-col items-center overflow-hidden rounded-xl border border-white/10 bg-[#0E0F12] text-center">
           <span className="w-full bg-cyan-400/15 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-cyan-300">
             {monthAbbrev(event.startDate)}
           </span>
@@ -82,7 +82,7 @@ export function UpcomingEvents({ events }: { events: UpcomingEvent[] }) {
   if (events.length === 0) return null;
 
   return (
-    <section id="events" aria-label="Upcoming events" className="relative overflow-hidden bg-[#0A1429] py-16 sm:py-20 scroll-mt-24">
+    <section id="events" aria-label="Upcoming events" className="relative overflow-hidden bg-[#0E0F12] py-16 sm:py-20 scroll-mt-24">
       <div className="pointer-events-none absolute inset-0 aurora opacity-30" />
       <div className="pointer-events-none absolute inset-0 pattern-grid text-white/[0.03]" />
 

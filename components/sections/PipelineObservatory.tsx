@@ -18,11 +18,11 @@ export function PipelineObservatory() {
         <div className="mx-auto max-w-[1200px]">
           <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-14">
             <div className="lg:pt-8">
-              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0F1C3F] text-cyan-300 shadow-[0_15px_40px_-18px_rgba(15,28,63,0.7)]">
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0B0B0C] text-cyan-300 shadow-[0_15px_40px_-18px_rgba(11,11,12,0.7)]">
                 <FlaskConical className="h-5 w-5" />
               </span>
-              <p className="mt-7 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0E7490]">Translyx pipeline</p>
-              <h2 className="mt-3 font-display text-[2.2rem] font-semibold leading-[1.08] text-[#0F1C3F] sm:text-[3rem]">
+              <p className="mt-7 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#A50E28]">Translyx pipeline</p>
+              <h2 className="mt-3 font-display text-[2.2rem] font-semibold leading-[1.08] text-[#0B0B0C] sm:text-[3rem]">
                 A clinical AI observatory—not a shelf of finished products.
               </h2>
               <p className="mt-5 text-base leading-relaxed text-slate-600">
@@ -33,13 +33,13 @@ export function PipelineObservatory() {
                   Pipeline capabilities are under evaluation or development and are not publicly launched products.
                 </p>
               </div>
-              <Link href="/pipeline" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#0F1C3F] hover:text-[#0E7490]">
+              <Link href="/pipeline" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#0B0B0C] hover:text-[#A50E28]">
                 Enter the full pipeline
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
 
-            <div className="relative overflow-hidden rounded-[2rem] bg-[#07101F] p-4 shadow-[0_35px_90px_-45px_rgba(7,16,31,0.8)] sm:p-6 lg:p-8">
+            <div className="relative overflow-hidden rounded-[2rem] bg-[#0E0F12] p-4 shadow-[0_35px_90px_-45px_rgba(11,11,12,0.8)] sm:p-6 lg:p-8">
               <div className="pointer-events-none absolute inset-0 grid-overlay opacity-30" />
               <div className="pointer-events-none absolute right-0 top-0 h-80 w-80 rounded-full bg-violet-400/10 blur-3xl" />
               <div className="relative mb-6 flex items-center justify-between border-b border-white/10 pb-4">

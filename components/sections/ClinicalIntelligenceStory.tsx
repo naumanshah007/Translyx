@@ -34,7 +34,7 @@ const chapters = [
 
 function DetectionBox({ className }: { className: string }) {
   return (
-    <span className={`absolute rounded-md border border-cyan-200/90 shadow-[0_0_24px_rgba(34,211,238,0.7)] ${className}`}>
+    <span className={`absolute rounded-md border border-cyan-200/90 shadow-[0_0_24px_rgba(200,16,46,0.7)] ${className}`}>
       <span className="absolute -left-px -top-px h-3 w-3 border-l-2 border-t-2 border-white" />
       <span className="absolute -right-px -top-px h-3 w-3 border-r-2 border-t-2 border-white" />
       <span className="absolute -bottom-px -left-px h-3 w-3 border-b-2 border-l-2 border-white" />
@@ -45,9 +45,9 @@ function DetectionBox({ className }: { className: string }) {
 
 export function ClinicalIntelligenceStory() {
   return (
-    <section className="relative overflow-hidden bg-[#07101F] py-20 sm:py-28">
+    <section className="relative overflow-hidden bg-[#0E0F12] py-20 sm:py-28">
       <div className="pointer-events-none absolute inset-0 grid-overlay opacity-30" />
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-2/3 bg-[radial-gradient(ellipse_at_20%_40%,rgba(34,211,238,0.12),transparent_62%)]" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-2/3 bg-[radial-gradient(ellipse_at_20%_40%,rgba(200,16,46,0.12),transparent_62%)]" />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1240px]">
@@ -70,7 +70,7 @@ export function ClinicalIntelligenceStory() {
             <div className="lg:sticky lg:top-28">
               <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.04] p-3 shadow-[0_40px_100px_-40px_rgba(0,0,0,0.8)] sm:p-5">
                 <div className="absolute inset-x-16 -top-16 h-36 rounded-full bg-cyan-300/20 blur-3xl" />
-                <div className="relative overflow-hidden rounded-[1.45rem] bg-[#0A1427]">
+                <div className="relative overflow-hidden rounded-[1.45rem] bg-[#0E0F12]">
                   <div className="flex items-center justify-between border-b border-white/10 px-4 py-3 sm:px-5">
                     <span className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-100/70">
                       <span className="h-2 w-2 rounded-full bg-emerald-300 shadow-[0_0_12px_rgba(110,231,183,0.8)]" />
@@ -87,11 +87,11 @@ export function ClinicalIntelligenceStory() {
                       sizes="(min-width: 1024px) 620px, 92vw"
                       className="scale-110 object-cover saturate-[0.92] contrast-[1.06]"
                     />
-                    <span className="absolute inset-0 bg-gradient-to-tr from-[#07101F]/30 via-transparent to-cyan-200/10" />
-                    <span className="absolute inset-0 bg-[radial-gradient(circle_at_56%_42%,transparent_0,transparent_18%,rgba(7,16,31,0.2)_58%,rgba(7,16,31,0.62)_100%)]" />
+                    <span className="absolute inset-0 bg-gradient-to-tr from-[#0E0F12]/30 via-transparent to-cyan-200/10" />
+                    <span className="absolute inset-0 bg-[radial-gradient(circle_at_56%_42%,transparent_0,transparent_18%,rgba(11,11,12,0.2)_58%,rgba(11,11,12,0.62)_100%)]" />
                     <DetectionBox className="left-[47%] top-[24%] h-24 w-24 sm:h-32 sm:w-32" />
                     <DetectionBox className="left-[15%] top-[52%] h-14 w-14 opacity-70 sm:h-20 sm:w-20" />
-                    <span className="absolute left-[50%] top-[21%] rounded-full border border-cyan-100/30 bg-[#06121f]/75 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.14em] text-cyan-100 backdrop-blur-md">
+                    <span className="absolute left-[50%] top-[21%] rounded-full border border-cyan-100/30 bg-[#0E0F12]/75 px-2.5 py-1 text-[9px] font-semibold uppercase tracking-[0.14em] text-cyan-100 backdrop-blur-md">
                       Region selected
                     </span>
 
@@ -101,7 +101,7 @@ export function ClinicalIntelligenceStory() {
                         ["Review", "Verified", "Human verified"],
                         ["Lineage", "Linked", "Evidence linked"],
                       ].map(([label, mobileValue, value]) => (
-                        <div key={label} className="rounded-lg border border-white/15 bg-[#07101F]/80 px-2 py-2 backdrop-blur-xl sm:rounded-xl sm:px-3 sm:py-2.5">
+                        <div key={label} className="rounded-lg border border-white/15 bg-[#0E0F12]/80 px-2 py-2 backdrop-blur-xl sm:rounded-xl sm:px-3 sm:py-2.5">
                           <p className="text-[6.5px] font-semibold uppercase tracking-[0.14em] text-cyan-200/65 sm:text-[8px] sm:tracking-[0.18em]">{label}</p>
                           <p className="mt-1 flex items-center gap-1 text-[8px] font-semibold leading-none text-white sm:gap-1.5 sm:text-[11px]">
                             <Check className="h-2.5 w-2.5 shrink-0 text-emerald-300 sm:h-3 sm:w-3" />

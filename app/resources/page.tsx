@@ -52,7 +52,7 @@ const faqs = [
 
 export default function ResourcesPage() {
   return (
-    <div className="bg-[#070B10]">
+    <div className="bg-white">
       <section className="pb-12 pt-16 sm:pt-24">
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
           <PxHeading as="h1" eyebrow="Resources" title="Learn Privexa and Translyx technology." />
@@ -68,13 +68,13 @@ export default function ResourcesPage() {
 
       <PxSection tone="charcoal" labelledBy="guides">
         <PxHeading id="guides" eyebrow="Guides" title="Go deeper." />
-        <ul className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 sm:grid-cols-2 lg:grid-cols-4">
           {guides.map((g) => (
-            <li key={g.title} className="bg-[#0E151D]">
-              <Link href={g.href} className="group flex h-full flex-col p-6 transition-colors hover:bg-white/[0.03]">
-                <h3 className="font-semibold text-white">{g.title}</h3>
-                <p className="mt-2 flex-1 text-sm text-slate-400">{g.body}</p>
-                <ArrowRight className="mt-5 h-4 w-4 text-cyan-300 transition-transform group-hover:translate-x-1" aria-hidden />
+            <li key={g.title} className="bg-[#F6F6F7]">
+              <Link href={g.href} className="group flex h-full flex-col p-6 transition-colors hover:bg-black/[0.03]">
+                <h3 className="font-semibold text-[#0B0B0C]">{g.title}</h3>
+                <p className="mt-2 flex-1 text-sm text-slate-600">{g.body}</p>
+                <ArrowRight className="mt-5 h-4 w-4 text-[#A50E28] transition-transform group-hover:translate-x-1" aria-hidden />
               </Link>
             </li>
           ))}
@@ -83,14 +83,14 @@ export default function ResourcesPage() {
 
       <PxSection id="faq" labelledBy="faq-h">
         <PxHeading id="faq-h" eyebrow="FAQs" title="Straight answers." />
-        <div className="mt-10 divide-y divide-white/10 border-y border-white/10">
+        <div className="mt-10 divide-y divide-black/10 border-y border-black/10">
           {faqs.map((f) => (
             <details key={f.q} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-base font-medium text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-base font-medium text-[#0B0B0C] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A50E28]">
                 {f.q}
-                <span className="text-slate-500 transition-transform group-open:rotate-45" aria-hidden>+</span>
+                <span className="text-slate-600 transition-transform group-open:rotate-45" aria-hidden>+</span>
               </summary>
-              <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-400">{f.a}</p>
+              <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600">{f.a}</p>
             </details>
           ))}
         </div>

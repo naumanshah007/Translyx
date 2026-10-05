@@ -30,20 +30,20 @@ const process = [
 
 export default function WsiPage() {
   return (
-    <div className="bg-[#070B10]">
+    <div className="bg-white">
       <PrivexaSubnav />
       <section className="pb-20 pt-16 sm:pb-28 sm:pt-24">
         <div className="mx-auto grid max-w-[1200px] gap-14 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20 lg:px-8">
           <div>
             <StatusBadge status="validation" />
-            <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.3em] text-cyan-300">Privexa WSI</p>
-            <h1 className="mt-5 text-balance text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.035em] text-white sm:text-[3.6rem]">
+            <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#A50E28]">Privexa WSI</p>
+            <h1 className="mt-5 text-balance text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.035em] text-[#0B0B0C] sm:text-[3.6rem]">
               Privacy controls for digital pathology.
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-400">
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
               Protect identity-bearing slide information while preserving the pathology workflow.
             </p>
-            <p className="mt-6 max-w-xl rounded-xl border border-amber-300/20 bg-amber-300/[0.04] p-4 text-sm leading-relaxed text-amber-100/90">
+            <p className="mt-6 max-w-xl rounded-xl border border-amber-600/20 bg-amber-300/[0.04] p-4 text-sm leading-relaxed text-amber-700">
               Developed capability — under validation. Whole-slide privacy is built and undergoing extended testing and
               qualification. Format coverage and throughput are confirmed per evaluation.
             </p>
@@ -59,7 +59,7 @@ export default function WsiPage() {
       <PxSection tone="charcoal" labelledBy="challenge">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <PxHeading id="challenge" eyebrow="The challenge" title="A slide is more than tissue." />
-          <div className="space-y-5 text-base leading-relaxed text-slate-400">
+          <div className="space-y-5 text-base leading-relaxed text-slate-600">
             <p>
               A digital slide is a gigapixel pyramidal image accompanied by associated images and metadata. Identity rarely
               lives in the tissue — it lives in the surfaces around it.
@@ -75,11 +75,11 @@ export default function WsiPage() {
 
       <PxSection labelledBy="anatomy">
         <PxHeading id="anatomy" eyebrow="Anatomy of a digital slide" title="The surfaces Privexa protects." />
-        <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-5">
+        <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 sm:grid-cols-2 lg:grid-cols-5">
           {surfaces.map((s) => (
-            <li key={s.title} className="bg-[#070B10] p-6">
-              <h3 className="font-semibold text-white">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">{s.body}</p>
+            <li key={s.title} className="bg-white p-6">
+              <h3 className="font-semibold text-[#0B0B0C]">{s.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">{s.body}</p>
             </li>
           ))}
         </ul>
@@ -87,12 +87,12 @@ export default function WsiPage() {
 
       <PxSection tone="charcoal" labelledBy="process">
         <PxHeading id="process" eyebrow="From slide to controlled release" title="Protect, review, approve." />
-        <ol className="mt-12 divide-y divide-white/10 border-y border-white/10">
+        <ol className="mt-12 divide-y divide-black/10 border-y border-black/10">
           {process.map((p, i) => (
             <li key={p.title} className="grid gap-2 py-6 sm:grid-cols-[60px_240px_1fr] sm:gap-6">
-              <span className="font-mono text-xs text-cyan-300/80">{String(i + 1).padStart(2, "0")}</span>
-              <h3 className="font-semibold text-white">{p.title}</h3>
-              <p className="text-sm leading-relaxed text-slate-400">{p.body}</p>
+              <span className="font-mono text-xs text-[#A50E28]">{String(i + 1).padStart(2, "0")}</span>
+              <h3 className="font-semibold text-[#0B0B0C]">{p.title}</h3>
+              <p className="text-sm leading-relaxed text-slate-600">{p.body}</p>
             </li>
           ))}
         </ol>
@@ -100,17 +100,17 @@ export default function WsiPage() {
 
       <PxSection labelledBy="tech">
         <PxHeading id="tech" eyebrow="Technical notes" title="Engineered for gigapixel images." />
-        <ul className="mt-10 grid gap-3 text-sm text-slate-300 sm:grid-cols-2">
+        <ul className="mt-10 grid gap-3 text-sm text-slate-700 sm:grid-cols-2">
           {[
             "Tiled, pyramidal image handling for very large slides",
             "Slide access built on OpenSlide-compatible reading",
             "Durable large-image processing with protected derivatives",
             "Interactive slide review in the browser",
           ].map((x) => (
-            <li key={x} className="rounded-xl border border-white/10 px-5 py-4">{x}</li>
+            <li key={x} className="rounded-xl border border-black/10 px-5 py-4">{x}</li>
           ))}
         </ul>
-        <p className="mt-6 text-xs text-slate-500">
+        <p className="mt-6 text-xs text-slate-600">
           Supported vendor formats are confirmed during evaluation. Privexa is not a medical device and does not perform
           diagnosis.
         </p>

@@ -5,7 +5,7 @@ import { newsRegionLabel, newsTopicLabel } from "@/config/news";
 const confidenceStyle: Record<NewsItem["confidence"], string> = {
   high: "bg-emerald-50 text-emerald-700 border-emerald-200",
   medium: "bg-amber-50 text-amber-700 border-amber-200",
-  low: "bg-slate-100 text-slate-500 border-slate-200",
+  low: "bg-slate-100 text-slate-600 border-slate-200",
 };
 
 const regionStyle: Record<string, string> = {
@@ -22,7 +22,7 @@ function formatDate(iso: string): string {
 
 export function NewsCard({ item }: { item: NewsItem }) {
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-6 shadow-[0_2px_16px_-6px_rgba(15,28,63,0.10)] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/60 hover:shadow-[0_24px_60px_-30px_rgba(8,145,178,0.4)]">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-6 shadow-[0_2px_16px_-6px_rgba(11,11,12,0.10)] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/60 hover:shadow-[0_24px_60px_-30px_rgba(200,16,46,0.4)]">
       <div className="flex flex-wrap items-center gap-2">
         <span className={`rounded-full border px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${regionStyle[item.region] ?? regionStyle.global}`}>
           {newsRegionLabel(item.region)}
@@ -30,20 +30,20 @@ export function NewsCard({ item }: { item: NewsItem }) {
         <span className="text-xs text-slate-600">{formatDate(item.publishedAt)}</span>
       </div>
 
-      <h3 className="mt-3 font-display text-lg font-semibold leading-snug text-[#0F1C3F]">
+      <h3 className="mt-3 font-display text-lg font-semibold leading-snug text-[#0B0B0C]">
         {item.title}
       </h3>
 
       <p className="mt-2.5 flex-1 text-sm leading-relaxed text-slate-600">{item.summary}</p>
 
-      <div className="mt-4 rounded-xl border border-slate-100 bg-[#F5F8FC] p-3.5">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#0E7490]">Why it matters for Translyx</p>
+      <div className="mt-4 rounded-xl border border-slate-100 bg-[#F6F6F7] p-3.5">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#A50E28]">Why it matters for Translyx</p>
         <p className="mt-1 text-xs leading-relaxed text-slate-600">{item.relevanceToTranslyx}</p>
       </div>
 
       <div className="mt-4 flex flex-wrap gap-1.5">
         {item.topics.map((t) => (
-          <span key={t} className="rounded-md border border-slate-200/80 bg-white px-2 py-0.5 text-[10px] font-medium text-slate-500">
+          <span key={t} className="rounded-md border border-slate-200/80 bg-white px-2 py-0.5 text-[10px] font-medium text-slate-600">
             {newsTopicLabel(t)}
           </span>
         ))}
@@ -54,9 +54,9 @@ export function NewsCard({ item }: { item: NewsItem }) {
           href={item.sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-[#0F1C3F] transition-colors hover:text-[#0E7490]"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-[#0B0B0C] transition-colors hover:text-[#A50E28]"
         >
-          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0F1C3F]/8 text-[9px] font-bold text-[#0F1C3F]">
+          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0B0B0C]/8 text-[9px] font-bold text-[#0B0B0C]">
             {item.source.charAt(0).toUpperCase()}
           </span>
           {item.source}
@@ -77,7 +77,7 @@ export function NewsCardCompact({ item }: { item: NewsItem }) {
       href={item.sourceUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white p-5 shadow-[0_2px_16px_-6px_rgba(15,28,63,0.10)] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/60"
+      className="group flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white p-5 shadow-[0_2px_16px_-6px_rgba(11,11,12,0.10)] transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/60"
     >
       <div className="flex items-center gap-2">
         <span className={`rounded-full border px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide ${regionStyle[item.region] ?? regionStyle.global}`}>
@@ -85,9 +85,9 @@ export function NewsCardCompact({ item }: { item: NewsItem }) {
         </span>
         <span className="text-[11px] text-slate-600">{formatDate(item.publishedAt)}</span>
       </div>
-      <h3 className="mt-2.5 flex-1 font-display text-base font-semibold leading-snug text-[#0F1C3F]">{item.title}</h3>
-      <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-[#0E7490]">
-        <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-cyan-50 text-[8px] font-bold text-[#0E7490]">
+      <h3 className="mt-2.5 flex-1 font-display text-base font-semibold leading-snug text-[#0B0B0C]">{item.title}</h3>
+      <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-[#A50E28]">
+        <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-cyan-50 text-[8px] font-bold text-[#A50E28]">
           {item.source.charAt(0).toUpperCase()}
         </span>
         {item.source}

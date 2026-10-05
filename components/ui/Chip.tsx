@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 export type ChipTone = "neutral" | "cyan" | "violet" | "teal" | "emerald" | "amber" | "sky";
 
 const toneStyles: Record<ChipTone, string> = {
-  neutral: "bg-slate-100 text-slate-500 border-slate-200",
+  neutral: "bg-slate-100 text-slate-600 border-slate-200",
   cyan: "bg-cyan-50 text-cyan-700 border-cyan-200",
   violet: "bg-violet-50 text-violet-700 border-violet-200",
   teal: "bg-teal-50 text-teal-700 border-teal-200",
@@ -44,7 +44,7 @@ export function Chip({ children, icon: Icon, tone = "neutral", dark = false, act
       className={cn(
         "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide transition-colors",
         dark ? toneStylesDark[tone] : toneStyles[tone],
-        active && (dark ? "ring-1 ring-white/20" : "ring-1 ring-[#0F1C3F]/10"),
+        active && (dark ? "ring-1 ring-white/20" : "ring-1 ring-[#0B0B0C]/10"),
         className
       )}
     >
@@ -71,8 +71,8 @@ export function ChipButton({ children, onClick, active = false, className }: Chi
       className={cn(
         "rounded-lg border px-3 py-1.5 text-xs font-semibold transition-colors",
         active
-          ? "border-transparent bg-[#0E7490] text-white shadow-[0_4px_14px_-4px_rgba(14,116,144,0.5)]"
-          : "border-slate-200 bg-white text-slate-500 hover:bg-slate-50",
+          ? "border-transparent bg-[#A50E28] text-white shadow-[0_4px_14px_-4px_rgba(14,116,144,0.5)]"
+          : "border-slate-200 bg-white text-slate-600 hover:bg-slate-50",
         className
       )}
     >

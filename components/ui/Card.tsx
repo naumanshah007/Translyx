@@ -17,16 +17,16 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
           variant === "default"
             ? "border-slate-200/70 bg-white"
             : "border-cyan-200/50 bg-white",
-          "shadow-[0_1px_2px_rgba(15,28,63,0.03),0_18px_46px_-28px_rgba(15,28,63,0.32)]",
+          "shadow-[0_1px_2px_rgba(11,11,12,0.03),0_18px_46px_-28px_rgba(11,11,12,0.32)]",
           hover &&
-            "hover:-translate-y-1.5 hover:border-cyan-300/55 hover:shadow-[0_30px_70px_-32px_rgba(8,145,178,0.48)]",
+            "hover:-translate-y-1.5 hover:border-cyan-300/55 hover:shadow-[0_30px_70px_-32px_rgba(200,16,46,0.48)]",
           className
         )}
         {...props}
       >
         <span className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/50 to-transparent opacity-0 transition-opacity duration-300 group-hover/card:opacity-100" />
         {cornerAccent && (
-          <div className="pointer-events-none absolute right-0 top-0 h-32 w-32 rounded-bl-[4rem] bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.18),transparent_70%)] opacity-80 transition-opacity duration-300 group-hover/card:opacity-100" />
+          <div className="pointer-events-none absolute right-0 top-0 h-32 w-32 rounded-bl-[4rem] bg-[radial-gradient(circle_at_top_right,rgba(200,16,46,0.18),transparent_70%)] opacity-80 transition-opacity duration-300 group-hover/card:opacity-100" />
         )}
         {children}
       </div>
@@ -46,7 +46,7 @@ const CardTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HT
   ({ className, ...props }, ref) => (
     <h3
       ref={ref}
-      className={cn("font-display text-xl font-semibold leading-snug tracking-tight text-[#0F1C3F]", className)}
+      className={cn("font-display text-xl font-semibold leading-snug tracking-tight text-[#0B0B0C]", className)}
       {...props}
     />
   )

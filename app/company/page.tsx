@@ -149,9 +149,9 @@ export default function AboutPage() {
       />
 
       {/* Credibility strip */}
-      <div className="bg-[#F5F8FC] border-b border-slate-200/60 py-5">
+      <div className="bg-[#F6F6F7] border-b border-slate-200/60 py-5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-content mx-auto flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-500">
+          <div className="max-w-content mx-auto flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-600">
             <span className="flex items-center gap-2">
               <Calendar className="h-4 w-4 text-slate-400" />
               Founded December 2025
@@ -170,7 +170,7 @@ export default function AboutPage() {
             </span>
             <span className="hidden h-4 w-px bg-slate-300 lg:block" />
             {sectionAnchors.map(({ id, label }) => (
-              <Link key={id} href={`#${id}`} className="text-xs font-semibold text-slate-500 transition-colors hover:text-[#0E7490]">
+              <Link key={id} href={`#${id}`} className="text-xs font-semibold text-slate-600 transition-colors hover:text-[#A50E28]">
                 {label}
               </Link>
             ))}
@@ -184,10 +184,10 @@ export default function AboutPage() {
           {/* Mission */}
           <section id="our-mission" className="scroll-mt-24">
             <div className="flex items-center gap-2 mb-6">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0F1C3F]/6">
-                <Shield className="h-4 w-4 text-[#0F1C3F]" />
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0B0B0C]/6">
+                <Shield className="h-4 w-4 text-[#0B0B0C]" />
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">Our mission</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#0B0B0C]">Our mission</h2>
             </div>
             <Card className="p-5 sm:p-7 lg:p-10" cornerAccent>
               <CardContent className="pt-0">
@@ -209,10 +209,10 @@ export default function AboutPage() {
           {/* Single-platform model */}
           <section id="single-platform" className="scroll-mt-24">
             <div className="mb-6 flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0F1C3F]/6">
-                <Handshake className="h-4 w-4 text-[#0F1C3F]" />
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0B0B0C]/6">
+                <Handshake className="h-4 w-4 text-[#0B0B0C]" />
               </div>
-              <h2 className="text-2xl font-bold text-[#0F1C3F] sm:text-3xl">One platform, one accountable brand</h2>
+              <h2 className="text-2xl font-bold text-[#0B0B0C] sm:text-3xl">One platform, one accountable brand</h2>
             </div>
             <p className="mb-7 max-w-3xl text-base leading-relaxed text-slate-600">
               Translyx is the trusted bridge between global diagnostic innovation and local clinical adoption — a single
@@ -223,17 +223,17 @@ export default function AboutPage() {
               {platformModel.map(({ icon: Icon, name, role, body }) => (
                 <Card key={name} className="p-5 sm:p-6" hover={false}>
                   <CardContent className="pt-0">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F5F8FC] ring-1 ring-slate-200/70">
-                      <Icon className="h-5 w-5 text-[#0E7490]" />
+                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F6F6F7] ring-1 ring-slate-200/70">
+                      <Icon className="h-5 w-5 text-[#A50E28]" />
                     </span>
-                    <p className="mt-4 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-[#0E7490]">{role}</p>
-                    <h3 className="mt-1 font-display text-lg font-semibold text-[#0F1C3F]">{name}</h3>
+                    <p className="mt-4 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-[#A50E28]">{role}</p>
+                    <h3 className="mt-1 font-display text-lg font-semibold text-[#0B0B0C]">{name}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-slate-600">{body}</p>
                   </CardContent>
                 </Card>
               ))}
             </div>
-            <p className="mt-5 text-xs leading-relaxed text-slate-500">
+            <p className="mt-5 text-xs leading-relaxed text-slate-600">
               Aiforia and Algoscope are partner products Translyx brings to New Zealand — not owned or developed
               by Translyx. Privexa capability status is published on the Trust &amp; product status page; diagnostic pipeline capabilities are under evaluation or development.
             </p>
@@ -242,15 +242,15 @@ export default function AboutPage() {
           {/* Leadership */}
           <section id="leadership" className="scroll-mt-24">
             <div className="flex items-center gap-2 mb-6">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0F1C3F]/6">
-                <Users className="h-4 w-4 text-[#0F1C3F]" />
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0B0B0C]/6">
+                <Users className="h-4 w-4 text-[#0B0B0C]" />
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">Leadership</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#0B0B0C]">Leadership</h2>
             </div>
             <Card className="p-5 sm:p-7 lg:p-10">
               <div className="flex flex-col sm:flex-row gap-7 sm:gap-10">
                 <div className="flex-shrink-0">
-                  <div className="aspect-square w-32 h-32 sm:w-40 sm:h-40 rounded-2xl overflow-hidden bg-gradient-to-br from-[#0F1C3F]/10 to-[#22D3EE]/10 flex items-center justify-center shadow-lg">
+                  <div className="aspect-square w-32 h-32 sm:w-40 sm:h-40 rounded-2xl overflow-hidden bg-gradient-to-br from-[#0B0B0C]/10 to-[#E8607A]/10 flex items-center justify-center shadow-lg">
                     <Image
                       src="/images/leadership/ehsan-presenting.jpg"
                       alt={leadershipPrimary.name}
@@ -261,8 +261,8 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F] mb-0.5">{leadershipPrimary.name}</h3>
-                  <p className="text-[#0E7490] font-semibold text-base mb-5">{leadershipPrimary.title}</p>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[#0B0B0C] mb-0.5">{leadershipPrimary.name}</h3>
+                  <p className="text-[#A50E28] font-semibold text-base mb-5">{leadershipPrimary.title}</p>
                   <div className="mb-6 flex flex-wrap gap-2">
                     {[
                       { icon: GraduationCap, label: "Physician scientist" },
@@ -272,9 +272,9 @@ export default function AboutPage() {
                     ].map(({ icon: Icon, label }) => (
                       <span
                         key={label}
-                        className="inline-flex items-center gap-1.5 rounded-full border border-slate-200/80 bg-[#F5F8FC] px-3 py-1.5 text-xs font-semibold text-slate-600"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-slate-200/80 bg-[#F6F6F7] px-3 py-1.5 text-xs font-semibold text-slate-600"
                       >
-                        <Icon className="h-3.5 w-3.5 text-[#0E7490]" />
+                        <Icon className="h-3.5 w-3.5 text-[#A50E28]" />
                         {label}
                       </span>
                     ))}
@@ -292,10 +292,10 @@ export default function AboutPage() {
           {/* How we work — folded in from the former /services page */}
           <section id="how-we-work" className="scroll-mt-24">
             <div className="flex items-center gap-2 mb-6">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0F1C3F]/6">
-                <Handshake className="h-4 w-4 text-[#0F1C3F]" />
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0B0B0C]/6">
+                <Handshake className="h-4 w-4 text-[#0B0B0C]" />
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">How we work</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#0B0B0C]">How we work</h2>
             </div>
             <Card className="p-5 sm:p-7 lg:p-10" cornerAccent>
               <CardContent className="pt-0">
@@ -305,11 +305,11 @@ export default function AboutPage() {
                   ))}
                   <p>
                     Please contact us at{" "}
-                    <a href={`mailto:${siteConfig.team.ehsan.email}`} className="font-semibold text-[#0E7490]">
+                    <a href={`mailto:${siteConfig.team.ehsan.email}`} className="font-semibold text-[#A50E28]">
                       {siteConfig.team.ehsan.email}
                     </a>{" "}
                     or{" "}
-                    <a href={`mailto:${siteConfig.company.email}`} className="font-semibold text-[#0E7490]">
+                    <a href={`mailto:${siteConfig.company.email}`} className="font-semibold text-[#A50E28]">
                       {siteConfig.company.email}
                     </a>{" "}
                     for details.
@@ -322,10 +322,10 @@ export default function AboutPage() {
           {/* Operational territory */}
           <section id="operational-territory" className="scroll-mt-24">
             <div className="flex items-center gap-2 mb-6">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0F1C3F]/6">
-                <MapPin className="h-4 w-4 text-[#0F1C3F]" />
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0B0B0C]/6">
+                <MapPin className="h-4 w-4 text-[#0B0B0C]" />
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0F1C3F]">Operational territory</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#0B0B0C]">Operational territory</h2>
             </div>
             <div className="mb-5">
               <OceaniaMap />
@@ -343,7 +343,7 @@ export default function AboutPage() {
                   <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-600 mb-2">Partner model</p>
                   <ul className="space-y-1">
                     {["Local labs and hospitals", "Academic research centres", "Manufacturer partnerships"].map((r) => (
-                      <li key={r} className="text-sm font-semibold text-[#0F1C3F]">{r}</li>
+                      <li key={r} className="text-sm font-semibold text-[#0B0B0C]">{r}</li>
                     ))}
                   </ul>
                 </CardContent>
@@ -354,10 +354,10 @@ export default function AboutPage() {
           {/* Responsible AI */}
           <section id="responsible-ai" className="scroll-mt-24">
             <div className="mb-6 flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0F1C3F]/6">
-                <ShieldCheck className="h-4 w-4 text-[#0F1C3F]" />
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0B0B0C]/6">
+                <ShieldCheck className="h-4 w-4 text-[#0B0B0C]" />
               </div>
-              <h2 className="text-2xl font-bold text-[#0F1C3F] sm:text-3xl">Responsible AI &amp; clinical governance</h2>
+              <h2 className="text-2xl font-bold text-[#0B0B0C] sm:text-3xl">Responsible AI &amp; clinical governance</h2>
             </div>
             <Card className="overflow-hidden p-0" hover={false}>
               <div className="grid lg:grid-cols-[1.2fr_1fr]">
@@ -395,9 +395,9 @@ export default function AboutPage() {
           </section>
 
           {/* CTA strip */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 rounded-2xl border border-[#0F1C3F]/15 bg-[#F5F8FC] p-6 sm:p-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 rounded-2xl border border-[#0B0B0C]/15 bg-[#F6F6F7] p-6 sm:p-8">
             <div>
-              <h3 className="text-lg font-semibold text-[#0F1C3F]">Work with Translyx</h3>
+              <h3 className="text-lg font-semibold text-[#0B0B0C]">Work with Translyx</h3>
               <p className="mt-1 text-sm text-slate-600">Speak with the team about diagnostic product evaluation, partner products, Privexa, or the broader Translyx pipeline.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">

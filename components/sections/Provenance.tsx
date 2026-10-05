@@ -4,33 +4,33 @@ import { siteConfig } from "@/config/site";
 
 export function Provenance() {
   return (
-    <section className="bg-[#0F1C3F] py-10 sm:py-12">
+    <section className="bg-[#F6F6F7] border-y border-black/[0.06] py-10 sm:py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-content mx-auto">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-slate-400">
-              <span className="font-semibold text-white text-xs uppercase tracking-[0.18em]">{siteConfig.companyName}</span>
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-sm text-slate-600">
+              <span className="font-semibold text-[#0B0B0C] text-xs uppercase tracking-[0.18em]">{siteConfig.companyName}</span>
               <span className="flex items-center gap-1.5">
-                <MapPin className="h-3.5 w-3.5 text-slate-500" />
+                <MapPin className="h-3.5 w-3.5 text-slate-600" />
                 Auckland, New Zealand
               </span>
               <span className="flex items-center gap-1.5">
-                <Calendar className="h-3.5 w-3.5 text-slate-500" />
+                <Calendar className="h-3.5 w-3.5 text-slate-600" />
                 Est. December 2025
               </span>
               <span className="flex items-center gap-1.5">
-                <Microscope className="h-3.5 w-3.5 text-slate-500" />
+                <Microscope className="h-3.5 w-3.5 text-slate-600" />
                 Authorised Aiforia business partner (NZ)
               </span>
               <Link
                 href={`mailto:${siteConfig.company.email}`}
-                className="flex items-center gap-1.5 hover:text-white transition-colors"
+                className="flex items-center gap-1.5 hover:text-black transition-colors"
               >
-                <Mail className="h-3.5 w-3.5 text-slate-500" />
+                <Mail className="h-3.5 w-3.5 text-slate-600" />
                 {siteConfig.company.email}
               </Link>
             </div>
-            <div className="flex items-center gap-2 text-xs text-slate-500 shrink-0">
+            <div className="flex items-center gap-2 text-xs text-slate-600 shrink-0">
               <Shield className="h-3.5 w-3.5" />
               <span>Responsible AI · Visible limitations · No implied regulatory endorsement</span>
             </div>

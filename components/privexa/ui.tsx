@@ -3,27 +3,27 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { statusMeta, type CapabilityStatus } from "@/config/privexa";
 import { cn } from "@/lib/utils";
 
-/** Privexa design primitives — near-black base, icy cyan used sparingly. */
+/** Privexa design primitives — white base, deep red used sparingly. */
 
 const statusTone: Record<CapabilityStatus, string> = {
-  available: "border-emerald-400/30 text-emerald-300",
-  pilot: "border-sky-400/30 text-sky-300",
-  controlled: "border-cyan-300/30 text-cyan-200",
-  validation: "border-amber-300/35 text-amber-200",
-  research: "border-white/20 text-slate-300",
+  available: "border-emerald-600/30 text-emerald-700",
+  pilot: "border-sky-600/30 text-sky-700",
+  controlled: "border-[#A50E28]/30 text-[#A50E28]",
+  validation: "border-amber-600/35 text-amber-700",
+  research: "border-black/20 text-slate-700",
 };
 
 const statusToneLight: Record<CapabilityStatus, string> = {
   available: "border-emerald-600/25 text-emerald-700",
   pilot: "border-sky-600/25 text-sky-700",
-  controlled: "border-cyan-700/25 text-cyan-800",
+  controlled: "border-slate-400/50 text-slate-700",
   validation: "border-amber-600/30 text-amber-700",
   research: "border-slate-400/40 text-slate-600",
 };
 
 export function StatusBadge({
   status,
-  tone = "dark",
+  tone = "light",
   className,
 }: {
   status: CapabilityStatus;
@@ -64,8 +64,8 @@ export function PxSection({
       aria-labelledby={labelledBy}
       className={cn(
         "relative scroll-mt-20 py-20 sm:py-28",
-        tone === "dark" && "bg-[#070B10] text-[#F4F7FA]",
-        tone === "charcoal" && "bg-[#0E151D] text-[#F4F7FA]",
+        tone === "dark" && "bg-white text-[#0B0B0C]",
+        tone === "charcoal" && "bg-[#F6F6F7] text-[#0B0B0C]",
         tone === "light" && "bg-[#F4F7FA] text-[#0B1117]",
         className
       )}
@@ -100,7 +100,7 @@ export function PxHeading({
         <p
           className={cn(
             "mb-4 text-[11px] font-semibold uppercase tracking-[0.22em]",
-            tone === "dark" ? "text-cyan-300/90" : "text-cyan-800"
+            tone === "dark" ? "text-[#A50E28]" : "text-[#A50E28]"
           )}
         >
           {eyebrow}
@@ -111,7 +111,7 @@ export function PxHeading({
         className={cn(
           "text-balance font-body font-semibold tracking-[-0.03em]",
           Tag === "h1" ? "text-[2.5rem] leading-[1.04] sm:text-[3.6rem] lg:text-[4.4rem]" : "text-[2rem] leading-[1.08] sm:text-[2.75rem]",
-          tone === "dark" ? "text-white" : "text-[#0B1117]"
+          tone === "dark" ? "text-[#0B0B0C]" : "text-[#0B1117]"
         )}
       >
         {title}
@@ -121,7 +121,7 @@ export function PxHeading({
           className={cn(
             "mt-5 text-base leading-relaxed sm:text-lg",
             align === "center" && "mx-auto",
-            tone === "dark" ? "text-slate-400" : "text-slate-600"
+            tone === "dark" ? "text-slate-600" : "text-slate-600"
           )}
         >
           {body}
@@ -135,14 +135,14 @@ type CtaVariant = "primary" | "secondary" | "text" | "secondary-light" | "primar
 
 const ctaStyles: Record<CtaVariant, string> = {
   primary:
-    "bg-cyan-300 text-[#04121A] hover:bg-cyan-200 focus-visible:ring-cyan-300/60 focus-visible:ring-offset-[#070B10]",
+    "bg-[#A50E28] text-white hover:bg-[#860B20] focus-visible:ring-[#A50E28]/60 focus-visible:ring-offset-white",
   "primary-light":
-    "bg-[#0B1117] text-white hover:bg-[#1A2430] focus-visible:ring-cyan-700/50 focus-visible:ring-offset-white",
+    "bg-[#0B1117] text-white hover:bg-[#1A2430] focus-visible:ring-[#A50E28]/50 focus-visible:ring-offset-white",
   secondary:
-    "border border-white/20 text-white hover:border-white/40 hover:bg-white/[0.06] focus-visible:ring-cyan-300/60 focus-visible:ring-offset-[#070B10]",
+    "border border-black/20 text-[#0B0B0C] hover:border-black/40 hover:bg-black/[0.06] focus-visible:ring-[#A50E28]/60 focus-visible:ring-offset-white",
   "secondary-light":
-    "border border-[#0B1117]/20 text-[#0B1117] hover:border-[#0B1117]/40 hover:bg-white focus-visible:ring-cyan-700/50 focus-visible:ring-offset-white",
-  text: "px-0 text-cyan-200 hover:text-white",
+    "border border-[#0B1117]/20 text-[#0B1117] hover:border-[#0B1117]/40 hover:bg-white focus-visible:ring-[#A50E28]/50 focus-visible:ring-offset-white",
+  text: "px-0 text-[#A50E28] hover:text-[#0B0B0C]",
 };
 
 export function PxCta({
@@ -192,12 +192,12 @@ export function PrivexaMark({ className, tone = "dark" }: { className?: string; 
       <span
         className={cn(
           "text-sm font-semibold uppercase tracking-[0.32em]",
-          tone === "dark" ? "text-white" : "text-[#0B1117]"
+          tone === "dark" ? "text-[#0B0B0C]" : "text-[#0B1117]"
         )}
       >
         Privexa
       </span>
-      <span className={cn("text-[11px] tracking-wide", tone === "dark" ? "text-slate-500" : "text-slate-500")}>
+      <span className={cn("text-[11px] tracking-wide", tone === "dark" ? "text-slate-600" : "text-slate-600")}>
         A Translyx Platform
       </span>
     </span>

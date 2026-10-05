@@ -27,8 +27,8 @@ function InterestPrefill({ onInterest, onTrial }: { onInterest: (v: string) => v
 }
 
 const field =
-  "w-full rounded-xl border border-white/12 bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-slate-500 transition-colors hover:border-white/25 focus:border-cyan-300/70 focus:outline-none focus:ring-2 focus:ring-cyan-300/25";
-const label = "mb-2 block text-xs font-medium text-slate-300";
+  "w-full rounded-xl border border-black/12 bg-black/[0.03] px-4 py-3 text-sm text-[#0B0B0C] placeholder:text-slate-600 transition-colors hover:border-black/25 focus:border-[#A50E28]/70 focus:outline-none focus:ring-2 focus:ring-[#A50E28]/25";
+const label = "mb-2 block text-xs font-medium text-slate-700";
 
 export function DemoForm() {
   const [data, setData] = useState({
@@ -69,10 +69,10 @@ export function DemoForm() {
 
   if (status === "sent") {
     return (
-      <div className="rounded-2xl border border-emerald-300/25 p-8 text-center sm:p-10" role="status">
-        <CheckCircle2 className="mx-auto h-8 w-8 text-emerald-300" aria-hidden />
-        <h2 className="mt-5 text-xl font-semibold text-white">Request received</h2>
-        <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-slate-400">
+      <div className="rounded-2xl border border-emerald-600/25 p-8 text-center sm:p-10" role="status">
+        <CheckCircle2 className="mx-auto h-8 w-8 text-emerald-700" aria-hidden />
+        <h2 className="mt-5 text-xl font-semibold text-[#0B0B0C]">Request received</h2>
+        <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-slate-600">
           A member of the Translyx team will reply by email, usually within two business days, to arrange a session around
           your scenario.
         </p>
@@ -96,10 +96,10 @@ export function DemoForm() {
             <label
               key={i}
               className={cn(
-                "inline-flex min-h-[40px] cursor-pointer items-center rounded-full border px-4 text-xs font-semibold transition-colors focus-within:ring-2 focus-within:ring-cyan-300",
+                "inline-flex min-h-[40px] cursor-pointer items-center rounded-full border px-4 text-xs font-semibold transition-colors focus-within:ring-2 focus-within:ring-[#A50E28]",
                 data.interest === i
-                  ? "border-cyan-300/60 bg-cyan-300/10 text-cyan-100"
-                  : "border-white/15 text-slate-400 hover:border-white/30 hover:text-slate-200"
+                  ? "border-[#A50E28]/60 bg-[#A50E28]/10 text-[#A50E28]"
+                  : "border-black/15 text-slate-600 hover:border-black/30 hover:text-slate-800"
               )}
             >
               <input
@@ -139,18 +139,18 @@ export function DemoForm() {
         </div>
         <div className="sm:col-span-2">
           <label htmlFor="d-msg" className={label}>
-            Message <span className="text-slate-500">(optional)</span>
+            Message <span className="text-slate-600">(optional)</span>
           </label>
           <textarea id="d-msg" rows={4} className={cn(field, "resize-y")} value={data.message} onChange={set("message")} />
         </div>
       </div>
 
-      <label className="flex items-start gap-3 text-sm text-slate-300">
+      <label className="flex items-start gap-3 text-sm text-slate-700">
         <input
           type="checkbox"
           checked={trial}
           onChange={(e) => setTrial(e.target.checked)}
-          className="mt-0.5 h-4 w-4 rounded border-white/30 bg-transparent accent-cyan-300"
+          className="mt-0.5 h-4 w-4 rounded border-black/30 bg-transparent accent-[#A50E28]"
         />
         I&apos;m also interested in organisation trial access.
       </label>
@@ -162,7 +162,7 @@ export function DemoForm() {
       </div>
 
       {status === "error" && (
-        <p className="text-sm text-amber-200" role="alert">
+        <p className="text-sm text-amber-700" role="alert">
           Something went wrong sending your request. Please try again, or email {siteConfig.company.email}.
         </p>
       )}
@@ -170,11 +170,11 @@ export function DemoForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="inline-flex min-h-[48px] w-full items-center justify-center rounded-full bg-cyan-300 px-8 text-sm font-semibold text-[#04121A] transition-colors hover:bg-cyan-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070B10] disabled:opacity-60 sm:w-auto"
+        className="inline-flex min-h-[48px] w-full items-center justify-center rounded-full bg-[#A50E28] px-8 text-sm font-semibold text-white transition-colors hover:bg-[#860B20] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A50E28] focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:opacity-60 sm:w-auto"
       >
         {status === "sending" ? "Sending…" : "Request Demo"}
       </button>
-      <p className="text-xs text-slate-500">We use these details only to respond to your request. See our <a href="/privacy" className="underline hover:text-slate-300">Privacy Policy</a>.</p>
+      <p className="text-xs text-slate-600">We use these details only to respond to your request. See our <a href="/privacy" className="underline hover:text-slate-700">Privacy Policy</a>.</p>
     </form>
   );
 }

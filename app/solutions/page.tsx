@@ -41,7 +41,7 @@ const detail: Record<string, { problems: string[]; fit: string; cta: { label: st
 
 export default function SolutionsPage() {
   return (
-    <div className="bg-[#070B10]">
+    <div className="bg-white">
       <section className="pb-12 pt-16 sm:pt-24">
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
           <PxHeading
@@ -66,10 +66,10 @@ export default function SolutionsPage() {
               <div>
                 <ul className="space-y-2">
                   {d.problems.map((p) => (
-                    <li key={p} className="rounded-xl border border-white/10 px-5 py-4 text-sm text-slate-200">{p}</li>
+                    <li key={p} className="rounded-xl border border-black/10 px-5 py-4 text-sm text-slate-800">{p}</li>
                   ))}
                 </ul>
-                <p className="mt-6 text-sm leading-relaxed text-slate-400">{d.fit}</p>
+                <p className="mt-6 text-sm leading-relaxed text-slate-600">{d.fit}</p>
               </div>
             </div>
           </PxSection>

@@ -40,12 +40,12 @@ export function NewsTicker({ items, className }: { items: NewsItem[]; className?
   return (
     <div
       className={cn(
-        "relative flex items-stretch overflow-hidden border-y border-white/10 bg-[#0B1530]",
+        "relative flex items-stretch overflow-hidden border-y border-white/10 bg-[#0E0F12]",
         className
       )}
     >
       {/* Pulsing "Latest" label */}
-      <div className="relative z-10 flex shrink-0 items-center gap-2 bg-[#0B1530] py-3 pl-4 pr-5 sm:pl-6">
+      <div className="relative z-10 flex shrink-0 items-center gap-2 bg-[#0E0F12] py-3 pl-4 pr-5 sm:pl-6">
         <span className="relative flex h-2 w-2">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-60" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-400" />
@@ -53,7 +53,7 @@ export function NewsTicker({ items, className }: { items: NewsItem[]; className?
         <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-cyan-300">Latest</span>
       </div>
       {/* Fade between label and track */}
-      <div className="pointer-events-none absolute bottom-0 left-[88px] top-0 z-10 w-10 bg-gradient-to-r from-[#0B1530] to-transparent sm:left-[104px]" />
+      <div className="pointer-events-none absolute bottom-0 left-[88px] top-0 z-10 w-10 bg-gradient-to-r from-[#0E0F12] to-transparent sm:left-[104px]" />
 
       {/* Marquee */}
       <div className="group relative flex-1 overflow-hidden">
@@ -67,7 +67,7 @@ export function NewsTicker({ items, className }: { items: NewsItem[]; className?
       </div>
 
       {/* Right fade edge */}
-      <div className="pointer-events-none absolute bottom-0 right-0 top-0 z-10 w-14 bg-gradient-to-l from-[#0B1530] to-transparent" />
+      <div className="pointer-events-none absolute bottom-0 right-0 top-0 z-10 w-14 bg-gradient-to-l from-[#0E0F12] to-transparent" />
     </div>
   );
 }

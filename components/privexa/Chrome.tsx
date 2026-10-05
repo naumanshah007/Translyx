@@ -17,9 +17,9 @@ const links = [
 export function PrivexaSubnav() {
   const pathname = usePathname();
   return (
-    <nav aria-label="Privexa" className="border-b border-white/[0.08] bg-[#070B10]">
+    <nav aria-label="Privexa" className="border-b border-black/[0.08] bg-white">
       <div className="mx-auto flex max-w-[1200px] items-center gap-6 overflow-x-auto px-4 sm:px-6 lg:px-8 [scrollbar-width:none]">
-        <span className="shrink-0 py-3.5 text-xs font-semibold uppercase tracking-[0.28em] text-white">Privexa</span>
+        <span className="shrink-0 py-3.5 text-xs font-semibold uppercase tracking-[0.28em] text-[#0B0B0C]">Privexa</span>
         <ul className="flex shrink-0 items-center gap-5">
           {links.map((l) => {
             const active = pathname === l.href;
@@ -30,7 +30,7 @@ export function PrivexaSubnav() {
                   aria-current={active ? "page" : undefined}
                   className={cn(
                     "block whitespace-nowrap py-3.5 text-[13px] transition-colors",
-                    active ? "text-cyan-200" : "text-slate-400 hover:text-white"
+                    active ? "text-[#A50E28]" : "text-slate-600 hover:text-[#0B0B0C]"
                   )}
                 >
                   {l.label}
@@ -44,14 +44,14 @@ export function PrivexaSubnav() {
             href={privexaLoginUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-auto shrink-0 whitespace-nowrap py-3.5 text-[13px] text-slate-400 hover:text-white"
+            className="ml-auto shrink-0 whitespace-nowrap py-3.5 text-[13px] text-slate-600 hover:text-[#0B0B0C]"
           >
             Open Privexa ↗
           </a>
         )}
         <Link
           href="/privexa/demo"
-          className=" hidden shrink-0 rounded-full border border-cyan-300/40 px-4 py-1.5 text-xs font-semibold text-cyan-100 transition-colors hover:bg-cyan-300/10 sm:inline-flex"
+          className=" hidden shrink-0 rounded-full border border-[#A50E28]/40 px-4 py-1.5 text-xs font-semibold text-[#A50E28] transition-colors hover:bg-[#A50E28]/10 sm:inline-flex"
         >
           Request Demo
         </Link>

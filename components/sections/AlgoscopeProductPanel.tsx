@@ -36,7 +36,7 @@ export function AlgoscopeProductPanel() {
 
       <div className="relative mt-3 grid grid-cols-2 gap-2.5 sm:mt-4 sm:gap-3">
         {modules.map(({ name, eyebrow, description, image, icon: Icon }) => (
-          <div key={name} className="overflow-hidden rounded-xl border border-white/15 bg-[#F7FAFC] shadow-[0_18px_45px_-25px_rgba(2,8,23,0.9)]">
+          <div key={name} className="overflow-hidden rounded-xl border border-white/15 bg-[#F6F6F7] shadow-[0_18px_45px_-25px_rgba(11,11,12,0.9)]">
             <div className="relative h-[112px] bg-white sm:h-[158px]">
               <Image src={image} alt={`${name} product interface published by Algoscope`} fill sizes="(min-width: 640px) 250px, 44vw" className="object-contain p-1.5 sm:p-2" />
               <span className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white to-transparent" />
@@ -48,7 +48,7 @@ export function AlgoscopeProductPanel() {
                 </span>
                 <span>
                   <span className="block text-[7px] font-semibold uppercase tracking-[0.14em] text-violet-700 sm:text-[8px]">{eyebrow}</span>
-                  <span className="block font-display text-sm font-semibold text-[#0F1C3F] sm:text-base">{name}</span>
+                  <span className="block font-display text-sm font-semibold text-[#0B0B0C] sm:text-base">{name}</span>
                 </span>
               </div>
               <p className="mt-2 hidden text-[10px] leading-snug text-slate-600 sm:block">{description}</p>

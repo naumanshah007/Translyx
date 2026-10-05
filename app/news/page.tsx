@@ -57,7 +57,7 @@ export default async function NewsPage() {
             <NewsList items={items} />
 
             {/* Disclaimer */}
-            <div className="mt-12 flex items-start gap-3 rounded-xl border border-slate-200/80 bg-[#F5F8FC] p-4">
+            <div className="mt-12 flex items-start gap-3 rounded-xl border border-slate-200/80 bg-[#F6F6F7] p-4">
               <Info className="mt-0.5 h-4 w-4 shrink-0 text-slate-400" />
               <p className="text-xs leading-relaxed text-slate-600">
                 News summaries are AI-assisted and source-linked. They are provided for market awareness and do not

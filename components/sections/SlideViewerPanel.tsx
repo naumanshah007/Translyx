@@ -5,7 +5,7 @@ import { BarChart3, CheckCircle2, FileCheck2, Microscope, UserCheck } from "luci
 function DetectionBox({ className }: { className?: string }) {
   return (
     <span
-      className={`absolute rounded-[3px] border border-cyan-300/80 shadow-[0_0_12px_rgba(34,211,238,0.7)] ${className ?? ""}`}
+      className={`absolute rounded-[3px] border border-cyan-300/80 shadow-[0_0_12px_rgba(200,16,46,0.7)] ${className ?? ""}`}
     >
       <span className="absolute -left-px -top-px h-2 w-2 border-l border-t border-cyan-200" />
       <span className="absolute -right-px -top-px h-2 w-2 border-r border-t border-cyan-200" />
@@ -50,7 +50,7 @@ export function SlideViewerPanel() {
         <span className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-cyan-300/10" />
         <DetectionBox className="left-[46%] top-[22%] h-16 w-16" />
         <DetectionBox className="right-[12%] bottom-[16%] h-11 w-11" />
-        <span className="absolute bottom-2 left-2 rounded bg-[#06121f]/70 px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.14em] text-cyan-200 ring-1 ring-cyan-300/20 backdrop-blur-sm">
+        <span className="absolute bottom-2 left-2 rounded bg-[#0E0F12]/70 px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.14em] text-cyan-200 ring-1 ring-cyan-300/20 backdrop-blur-sm">
           Transparent AI overlay
         </span>
       </div>

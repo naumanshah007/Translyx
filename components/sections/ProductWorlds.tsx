@@ -21,16 +21,16 @@ function FeatureList({ items, tone }: { items: string[]; tone: "cyan" | "violet"
 
 export function ProductWorlds() {
   return (
-    <section className="overflow-hidden bg-[#F4F7FB] py-20 sm:py-28">
+    <section className="overflow-hidden bg-[#F6F6F7] py-20 sm:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1240px]">
           <div className="mx-auto mb-14 max-w-3xl text-center sm:mb-20">
             <div className="mb-5 flex items-center justify-center gap-3">
               <span className="h-px w-8 bg-gradient-to-r from-transparent to-cyan-500" />
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#0E7490]">Partner product worlds</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#A50E28]">Partner product worlds</p>
               <span className="h-px w-8 bg-gradient-to-r from-cyan-500 to-transparent" />
             </div>
-            <h2 className="font-display text-[2.2rem] font-semibold leading-[1.08] tracking-[-0.025em] text-[#0F1C3F] sm:text-[3.2rem]">
+            <h2 className="font-display text-[2.2rem] font-semibold leading-[1.08] tracking-[-0.025em] text-[#0B0B0C] sm:text-[3.2rem]">
               Two clinical journeys. One accountable regional partner.
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
@@ -39,7 +39,7 @@ export function ProductWorlds() {
           </div>
 
           <div className="space-y-6 sm:space-y-8">
-            <article className="relative overflow-hidden rounded-[2rem] border border-cyan-200/60 bg-white shadow-[0_30px_90px_-55px_rgba(8,145,178,0.55)]">
+            <article className="relative overflow-hidden rounded-[2rem] border border-cyan-200/60 bg-white shadow-[0_30px_90px_-55px_rgba(200,16,46,0.55)]">
               <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-cyan-200/30 blur-3xl" />
               <div className="relative grid lg:grid-cols-[0.78fr_1.22fr] lg:items-stretch">
                 <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-14">
@@ -47,20 +47,20 @@ export function ProductWorlds() {
                     <Microscope className="h-5 w-5" />
                   </span>
                   <p className="mt-7 text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-700">Authorised partner solution</p>
-                  <h3 className="mt-2 font-display text-3xl font-semibold text-[#0F1C3F] sm:text-4xl">Aiforia</h3>
+                  <h3 className="mt-2 font-display text-3xl font-semibold text-[#0B0B0C] sm:text-4xl">Aiforia</h3>
                   <p className="mt-4 text-base leading-relaxed text-slate-600">
                     Clinical Suites for case-level diagnostic support and Aiforia Create for collaborative AI model development—represented by Translyx in New Zealand.
                   </p>
                   <FeatureList items={aiforiaPoints} tone="cyan" />
-                  <Link href="/products/aiforia" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 transition-colors hover:text-[#0F1C3F]">
+                  <Link href="/products/aiforia" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 transition-colors hover:text-[#0B0B0C]">
                     Explore Aiforia
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
 
-                <div className="relative flex min-h-[440px] items-center bg-[#081326] p-5 sm:p-8 lg:min-h-[580px] lg:p-12">
+                <div className="relative flex min-h-[440px] items-center bg-[#0E0F12] p-5 sm:p-8 lg:min-h-[580px] lg:p-12">
                   <div className="pointer-events-none absolute inset-0 grid-overlay opacity-30" />
-                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_35%,rgba(34,211,238,0.18),transparent_45%)]" />
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_35%,rgba(200,16,46,0.18),transparent_45%)]" />
                   <div className="relative mx-auto w-full max-w-[560px] lg:scale-105">
                     <SlideViewerPanel />
                   </div>
@@ -68,12 +68,12 @@ export function ProductWorlds() {
               </div>
             </article>
 
-            <article className="relative overflow-hidden rounded-[2rem] border border-violet-200/60 bg-white shadow-[0_30px_90px_-55px_rgba(124,58,237,0.45)]">
+            <article className="relative overflow-hidden rounded-[2rem] border border-violet-200/60 bg-white shadow-[0_30px_90px_-55px_rgba(100,116,139,0.45)]">
               <div className="absolute -left-20 -bottom-20 h-72 w-72 rounded-full bg-violet-200/25 blur-3xl" />
               <div className="relative grid lg:grid-cols-[1.22fr_0.78fr] lg:items-stretch">
-                <div className="relative order-2 flex min-h-[420px] items-center bg-[#0B1025] p-5 sm:p-8 lg:order-1 lg:min-h-[540px] lg:p-10">
+                <div className="relative order-2 flex min-h-[420px] items-center bg-[#0E0F12] p-5 sm:p-8 lg:order-1 lg:min-h-[540px] lg:p-10">
                   <div className="pointer-events-none absolute inset-0 grid-overlay opacity-25" />
-                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_32%_65%,rgba(139,92,246,0.18),transparent_46%)]" />
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_32%_65%,rgba(100,116,139,0.18),transparent_46%)]" />
                   <div className="relative mx-auto w-full max-w-[600px]">
                     <div className="mb-4 flex items-center justify-between px-1">
                       <span className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-violet-200/70">
@@ -91,12 +91,12 @@ export function ProductWorlds() {
                     <Workflow className="h-5 w-5" />
                   </span>
                   <p className="mt-7 text-[10px] font-semibold uppercase tracking-[0.2em] text-violet-700">Partner product</p>
-                  <h3 className="mt-2 font-display text-3xl font-semibold text-[#0F1C3F] sm:text-4xl">Algoscope</h3>
+                  <h3 className="mt-2 font-display text-3xl font-semibold text-[#0B0B0C] sm:text-4xl">Algoscope</h3>
                   <p className="mt-4 text-base leading-relaxed text-slate-600">
                     AccessPath structures requisition and vial data at reception; VoxelPath brings computer vision, morphometry and traceability into the grossing workflow.
                   </p>
                   <FeatureList items={algoscopePoints} tone="violet" />
-                  <Link href="/products/algoscope" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-violet-700 transition-colors hover:text-[#0F1C3F]">
+                  <Link href="/products/algoscope" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-violet-700 transition-colors hover:text-[#0B0B0C]">
                     Explore Algoscope
                     <ArrowRight className="h-4 w-4" />
                   </Link>
