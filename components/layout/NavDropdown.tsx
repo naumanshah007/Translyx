@@ -74,9 +74,18 @@ export function NavDropdown({ item }: { item: NavItem }) {
       className="relative"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
+      onFocus={() => setOpen(true)}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setOpen(false);
+      }}
+      onKeyDown={(e) => {
+        if (e.key === "Escape") setOpen(false);
+      }}
     >
       <Link
         href={item.href}
+        aria-haspopup="true"
+        aria-expanded={open}
         className={cn(
           "flex items-center gap-1 whitespace-nowrap text-[13px] font-medium transition-colors duration-150",
           isActive ? "text-white" : "text-slate-300 hover:text-white"
@@ -87,7 +96,7 @@ export function NavDropdown({ item }: { item: NavItem }) {
       </Link>
       {open && item.subItems && (
         <div className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-4">
-          <div className="w-[320px] overflow-hidden rounded-2xl border border-white/10 bg-[#0B1430]/95 p-2 shadow-[0_24px_70px_-20px_rgba(0,0,0,0.7)] backdrop-blur-xl">
+          <div className="w-[320px] overflow-hidden rounded-2xl border border-white/10 bg-[#0E151D]/95 p-2 shadow-[0_24px_70px_-20px_rgba(0,0,0,0.7)] backdrop-blur-xl">
             {sections.map((section, i) => (
               <div key={section.group ?? `section-${i}`}>
                 {section.group && (

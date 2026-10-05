@@ -36,9 +36,13 @@ const nextConfig = {
     return [
       // --- 2026 single-brand restructure: legacy routes → new structure ---
       // Former Privexa product pages → pipeline capabilities
-      { source: '/products/privexa-ai-wrapper', destination: '/pipeline/ai-wrapper', permanent: true },
-      { source: '/products/privexa-cloud-shield', destination: '/pipeline/cloud-shield', permanent: true },
-      { source: '/products/privexa-scribe', destination: '/pipeline/scribe', permanent: true },
+      { source: '/products/privexa-ai-wrapper', destination: '/privexa', permanent: true },
+      { source: '/products/privexa-cloud-shield', destination: '/privexa', permanent: true },
+      { source: '/products/privexa-scribe', destination: '/privexa#scribe', permanent: true },
+      // Privexa consolidation: legacy capability names → the Privexa platform
+      { source: '/pipeline/ai-wrapper', destination: '/privexa', permanent: true },
+      { source: '/pipeline/cloud-shield', destination: '/privexa', permanent: true },
+      { source: '/pipeline/scribe', destination: '/privexa#scribe', permanent: true },
       { source: '/products/privexa-trace', destination: '/pipeline/trace', permanent: true },
       { source: '/products/clinical-triage', destination: '/pipeline/clinical-triage', permanent: true },
       // Deleted product stubs
@@ -49,7 +53,6 @@ const nextConfig = {
       { source: '/product-pipeline/:slug', destination: '/pipeline/:slug', permanent: true },
       // Folded pages
       { source: '/ai-solutions', destination: '/pipeline', permanent: true },
-      { source: '/digital-pathology', destination: '/products/aiforia', permanent: true },
       { source: '/about', destination: '/company', permanent: true },
       { source: '/services', destination: '/company', permanent: true },
       { source: '/features', destination: '/company', permanent: true },

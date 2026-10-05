@@ -8,6 +8,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { BrandLogo } from "@/components/ui/Brand";
 import { NavDropdown, statusDot } from "@/components/layout/NavDropdown";
 import { navigation } from "@/config/navigation";
+import { privexaLoginUrl } from "@/config/privexa";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -32,8 +33,8 @@ export function Header() {
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
         scrolled
-          ? "border-b border-white/10 bg-[#070D1F]/85 shadow-[0_4px_30px_-10px_rgba(0,0,0,0.6)] backdrop-blur-xl"
-          : "border-b border-white/[0.06] bg-[#070D1F]/40 backdrop-blur-md"
+          ? "border-b border-white/10 bg-[#070B10]/90 shadow-[0_4px_30px_-10px_rgba(0,0,0,0.6)] backdrop-blur-xl"
+          : "border-b border-white/[0.06] bg-[#070B10]/80 backdrop-blur-md"
       )}
     >
       {/* Desktop */}
@@ -50,7 +51,7 @@ export function Header() {
                 href={item.href}
                 className={cn(
                   "relative whitespace-nowrap text-[13px] font-medium transition-colors duration-150",
-                  "after:absolute after:-bottom-1.5 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-gradient-to-r after:from-cyan-400 after:to-violet-400 after:transition-transform after:duration-200 hover:after:scale-x-100",
+                  "after:absolute after:-bottom-1.5 after:left-0 after:h-[2px] after:w-full after:origin-left after:scale-x-0 after:bg-cyan-300 after:transition-transform after:duration-200 hover:after:scale-x-100",
                   pathname === item.href || (pathname.startsWith(item.href) && item.href !== "/")
                     ? "text-white after:scale-x-100"
                     : "text-slate-300 hover:text-white"
@@ -62,6 +63,19 @@ export function Header() {
           )}
         </nav>
 
+        <div className="ml-4 flex shrink-0 items-center gap-4">
+          {privexaLoginUrl && (
+            <a href={privexaLoginUrl} target="_blank" rel="noopener noreferrer" className="hidden whitespace-nowrap text-[13px] text-slate-400 hover:text-white xl:inline">
+              Open Privexa ↗
+            </a>
+          )}
+          <Link
+            href="/privexa/demo"
+            className="inline-flex min-h-[38px] items-center whitespace-nowrap rounded-full bg-cyan-300 px-4 text-[13px] font-semibold text-[#04121A] transition-colors hover:bg-cyan-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070B10]"
+          >
+            Request Demo
+          </Link>
+        </div>
       </div>
 
       {/* Mobile */}
@@ -80,7 +94,7 @@ export function Header() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="border-t border-white/10 bg-[#070D1F]/98 backdrop-blur-xl">
+          <div className="border-t border-white/10 bg-[#070B10] backdrop-blur-xl">
             <div className="max-h-[calc(100vh-4rem)] space-y-1 overflow-y-auto px-4 pb-6 pt-3">
               {navigation.map((item) => {
                 const isActive = pathname === item.href || (pathname.startsWith(item.href) && item.href !== "/");
@@ -131,6 +145,17 @@ export function Header() {
                   </div>
                 );
               })}
+              {privexaLoginUrl && (
+                <a href={privexaLoginUrl} target="_blank" rel="noopener noreferrer" className="mt-3 flex min-h-[44px] items-center justify-center text-sm text-slate-300">
+                  Open Privexa ↗
+                </a>
+              )}
+              <Link
+                href="/privexa/demo"
+                className="mt-3 flex min-h-[48px] items-center justify-center rounded-full bg-cyan-300 text-sm font-semibold text-[#04121A]"
+              >
+                Request Demo
+              </Link>
             </div>
           </div>
         )}

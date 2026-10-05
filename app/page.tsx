@@ -1,189 +1,289 @@
-import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Handshake,
-  MapPin,
-  Microscope,
-  ShieldCheck,
-  Sparkles,
-  UserCheck,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-import { HeroSection } from "@/components/sections/HeroSection";
-import { ProductWorlds } from "@/components/sections/ProductWorlds";
-import { PipelineObservatory } from "@/components/sections/PipelineObservatory";
-import { OceaniaMap } from "@/components/sections/OceaniaMap";
-import { CTA } from "@/components/sections/CTA";
+import { pageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/config/site";
+import { principles, privexaHeroCopy, privexaLine, privexaTagline } from "@/config/privexa";
+import { PxCta, PxHeading, PxSection, StatusBadge } from "@/components/privexa/ui";
+import { BoundaryDiagram, HowItWorks, ModalityGrid } from "@/components/privexa/Diagrams";
+import { VideoGallery } from "@/components/privexa/VideoGallery";
+import { PxFinalCta } from "@/components/privexa/FinalCta";
+import { Reveal } from "@/components/ui/Reveal";
 
-const homeDescription =
-  "Translyx Limited brings advanced diagnostics, partner digital pathology AI solutions, and governed clinical workflow capabilities to New Zealand and Oceania — helping clinicians, laboratories, healthcare providers, research teams, pharma, and CROs evaluate and adopt innovation with privacy, governance, and clinical confidence.";
+export const metadata = pageMetadata({
+  title: "Translyx — Technology for Trusted AI, Diagnostics and Clinical Transformation",
+  description:
+    "Translyx is a New Zealand-founded technology company: Privexa privacy-first enterprise AI, digital pathology, diagnostic innovation and healthcare technology — with governance, evidence and human accountability.",
+  path: "/",
+});
 
-export const metadata: Metadata = {
-  title: "Translyx | Diagnostic Innovation & Governed Clinical AI — Auckland, NZ",
-  description: homeDescription,
-  keywords: [
-    "Translyx",
-    "Translyx Limited",
-    "Aiforia New Zealand",
-    "Algoscope New Zealand",
-    "digital pathology AI",
-    "governed clinical AI",
-    "clinical AI governance",
-    "reviewer-gated workflows",
-    "diagnostic technology New Zealand",
-    "clinical technology NZ",
-    "surgery-to-pathology workflow automation",
-  ],
-  alternates: { canonical: "/" },
-  openGraph: {
-    title: "Translyx | Diagnostic Innovation & Governed Clinical AI",
-    description: homeDescription,
-    url: siteConfig.url,
-    siteName: siteConfig.name,
-    images: [{ url: siteConfig.seo.ogImage, width: 1200, height: 630, alt: "Translyx" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Translyx | Diagnostic Innovation & Governed Clinical AI",
-    description: homeDescription,
-    images: [siteConfig.seo.ogImage],
-  },
-};
-
-const proofPoints = [
+const ecosystem = [
   {
-    icon: Handshake,
-    label: "Partner solutions",
-    value: "Specialist technologies, locally represented",
+    eyebrow: "Translyx platform",
+    title: "Privexa",
+    body: "Enterprise AI privacy & control — the control boundary for the AI era.",
+    href: "/privexa",
+    cta: "Explore Privexa",
+    featured: true,
   },
   {
-    icon: Microscope,
-    label: "Clinical context",
-    value: "Pathology, diagnostics and clinical workflows",
+    eyebrow: "Clinical technology",
+    title: "Digital pathology",
+    body: "AI-enabled pathology and clinical workflow technologies, including Aiforia — an authorised partner solution.",
+    href: "/digital-pathology",
+    cta: "Explore digital pathology",
   },
   {
-    icon: ShieldCheck,
-    label: "Governed by design",
-    value: "Human review, protection and full lineage",
+    eyebrow: "Partner product",
+    title: "Algoscope · surgery-to-pathology",
+    body: "AI-powered surgery-to-pathology workflow automation and traceability, brought to New Zealand by Translyx.",
+    href: "/products/algoscope",
+    cta: "Explore Algoscope",
   },
   {
-    icon: MapPin,
-    label: "Regional accountability",
-    value: "Auckland-based, serving New Zealand and Oceania",
+    eyebrow: "Translational technology",
+    title: "Diagnostic innovation",
+    body: "Emerging diagnostics across AMR, sepsis, point-of-care, oncology, cardiac and precision medicine.",
+    href: "/pipeline",
+    cta: "Explore the pipeline",
   },
 ];
 
-const audiences = ["Hospitals & laboratories", "Pathology groups", "Research teams", "Pharma & CROs"];
+const markets = ["New Zealand", "GCC", "United Arab Emirates", "Saudi Arabia", "International enterprise & healthcare"];
 
 export default function HomePage() {
-  const homePageSchema = {
+  const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Translyx — Diagnostic Innovation & Governed Clinical AI",
+    name: "Translyx",
     url: siteConfig.url,
-    description: homeDescription,
+    description: siteConfig.description,
     isPartOf: { "@type": "WebSite", name: siteConfig.name, url: siteConfig.url },
-    about: [
-      { "@type": "Organization", name: "Translyx Limited" },
-      {
-        "@type": "SoftwareApplication",
-        name: "Aiforia Digital Pathology AI",
-        applicationCategory: "MedicalApplication",
-        description: "AI-assisted digital pathology — authorised partner solution represented by Translyx in New Zealand.",
-      },
-      {
-        "@type": "SoftwareApplication",
-        name: "Algoscope",
-        applicationCategory: "MedicalApplication",
-        description: "AI-powered surgery-to-pathology workflow automation and traceability — a partner product Translyx is bringing to New Zealand.",
-      },
-    ],
   };
 
   return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homePageSchema) }} />
+    <div className="bg-[#070B10]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <HeroSection
-        badge={{ icon: Sparkles, text: "Clinical technology · Auckland, New Zealand" }}
-        headline="From diagnostic innovation to trusted"
-        highlight="clinical impact."
-        description="Partner digital pathology AI, surgery-to-pathology automation, and governed clinical AI capabilities—brought into local context with evidence, human judgement, and accountability built in."
-        ctas={[
-          { label: "Explore the platform", href: "/products", variant: "primary" },
-          { label: "Contact us", href: "/contact", variant: "glass" },
-        ]}
-        trustChips={[
-          { icon: Handshake, label: "Partner diagnostic solutions" },
-          { icon: ShieldCheck, label: "Governed AI workflows" },
-          { icon: UserCheck, label: "Human review" },
-        ]}
-        layout="visual-forward"
-      />
-
-      <section className="relative z-20 border-b border-slate-200/70 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto grid max-w-[1240px] divide-y divide-slate-200/70 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
-            {proofPoints.map(({ icon: Icon, label, value }) => (
-              <div key={label} className="flex items-start gap-3 px-2 py-6 sm:px-5 sm:py-8 lg:px-6">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#F2F7FB] text-[#0E7490] ring-1 ring-slate-200/70">
-                  <Icon className="h-[18px] w-[18px]" />
-                </span>
-                <span>
-                  <span className="block text-[9px] font-semibold uppercase tracking-[0.17em] text-slate-600">{label}</span>
-                  <span className="mt-1 block text-xs font-semibold leading-snug text-[#0F1C3F]">{value}</span>
-                </span>
-              </div>
-            ))}
+      {/* 1 — Hero */}
+      <section className="relative overflow-hidden pb-20 pt-20 sm:pb-28 sm:pt-28 lg:pt-32">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[600px] bg-[radial-gradient(ellipse_at_70%_0%,rgba(103,232,249,0.07),transparent_55%)]" />
+        <div className="relative mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-slate-400">Translyx · Founded in New Zealand</p>
+          <h1 className="mt-6 max-w-5xl text-balance text-[2.6rem] font-semibold leading-[1.02] tracking-[-0.04em] text-white sm:text-[4rem] lg:text-[5.2rem]">
+            Technology for trusted AI, diagnostics and clinical transformation.
+          </h1>
+          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-slate-400 sm:text-xl">
+            Privacy-first enterprise AI. Digital pathology. Diagnostic innovation. Built and brought into real-world workflows
+            with governance, evidence and human accountability.
+          </p>
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <PxCta href="/privexa">Explore Privexa</PxCta>
+            <PxCta href="/digital-pathology" variant="secondary">
+              Explore Clinical Technology
+            </PxCta>
+            <PxCta href="/contact" variant="text" className="sm:ml-3">
+              Talk to Translyx
+            </PxCta>
           </div>
         </div>
       </section>
 
-      <ProductWorlds />
-      <PipelineObservatory />
-
-      <section className="overflow-hidden bg-[#F4F7FB] py-20 sm:py-28">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-16">
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0E7490]">Oceania, connected</p>
-              <h2 className="mt-3 font-display text-[2.2rem] font-semibold leading-[1.08] text-[#0F1C3F] sm:text-[3rem]">
-                Global innovation, translated for local clinical reality.
-              </h2>
-              <p className="mt-5 text-base leading-relaxed text-slate-600">
-                Translyx operates from Auckland as the accountable bridge between global clinical technology and the organisations evaluating it across New Zealand and Oceania.
-              </p>
-              <div className="mt-7 flex flex-wrap gap-2">
-                {audiences.map((audience) => (
-                  <span key={audience} className="rounded-full border border-slate-200 bg-white px-3.5 py-2 text-xs font-semibold text-slate-600 shadow-sm">
-                    {audience}
+      {/* 2 — Ecosystem */}
+      <section aria-labelledby="ecosystem" className="pb-20 sm:pb-28">
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+          <h2 id="ecosystem" className="sr-only">Translyx technology ecosystem</h2>
+          <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2">
+            {ecosystem.map((e) => (
+              <li
+                key={e.title}
+                className={
+                  e.featured
+                    ? "md:col-span-2 lg:row-span-2"
+                    : e.title === "Diagnostic innovation"
+                      ? "md:col-span-2 lg:col-span-2"
+                      : ""
+                }
+              >
+                <Link
+                  href={e.href}
+                  className={`group flex h-full flex-col justify-between rounded-3xl border p-7 transition-colors sm:p-8 ${
+                    e.featured
+                      ? "border-cyan-300/30 bg-gradient-to-b from-cyan-300/[0.06] to-transparent hover:border-cyan-300/50"
+                      : "border-white/10 hover:border-white/25"
+                  }`}
+                >
+                  <div>
+                    <p className={`text-[10px] font-semibold uppercase tracking-[0.2em] ${e.featured ? "text-cyan-300" : "text-slate-500"}`}>
+                      {e.eyebrow}
+                    </p>
+                    <h3
+                      className={`mt-4 font-semibold tracking-[-0.03em] text-white ${
+                        e.featured ? "text-[2.5rem] leading-none sm:text-[3.5rem]" : "text-xl"
+                      }`}
+                    >
+                      {e.title}
+                    </h3>
+                    <p className={`mt-4 leading-relaxed text-slate-400 ${e.featured ? "max-w-md text-lg" : "text-sm"}`}>{e.body}</p>
+                    {e.featured && (
+                      <p className="mt-8 font-mono text-xs text-slate-500">Text · Documents · Images · WSI · Audio · API</p>
+                    )}
+                  </div>
+                  <span className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-200 group-hover:text-white">
+                    {e.cta}
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
                   </span>
-                ))}
-              </div>
-              <Link href="/company" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#0F1C3F] hover:text-[#0E7490]">
-                Meet Translyx
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-            <div className="relative">
-              <div className="absolute -inset-10 rounded-full bg-cyan-300/10 blur-3xl" />
-              <div className="relative">
-                <OceaniaMap />
-              </div>
-            </div>
-          </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      <CTA
-        title="Bring your clinical technology priorities into focus."
-        description="Talk with an Auckland-based team about diagnostic product evaluation, digital pathology AI, workflow automation, or governed clinical AI capabilities."
-        primaryCTA={{ label: "Contact us", href: "/contact" }}
-        secondaryCTA={{ label: "Explore partner products", href: "/products" }}
-        footnote="A clinical technology conversation—not a generic sales call."
-      />
-    </>
+      {/* 3 — Featured Privexa */}
+      <PxSection tone="charcoal" labelledBy="featured">
+        <div className="text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.34em] text-white">Privexa</p>
+          <h2 id="featured" className="mx-auto mt-6 max-w-4xl text-balance text-[2.3rem] font-semibold leading-[1.04] tracking-[-0.035em] text-white sm:text-[3.6rem]">
+            {privexaTagline}
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-400">{privexaHeroCopy}</p>
+          <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+            <PxCta href="#see-it">Watch Demo</PxCta>
+            <PxCta href="/privexa/demo" variant="secondary">
+              Request Enterprise Demo
+            </PxCta>
+          </div>
+          <p className="mt-8 font-mono text-xs tracking-wide text-slate-500">
+            Text · Documents · Images · Whole-Slide Pathology · Audio · API
+          </p>
+        </div>
+        <Reveal className="mt-16">
+          <BoundaryDiagram />
+        </Reveal>
+      </PxSection>
+
+      {/* 4 — Why */}
+      <PxSection labelledBy="why">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+          <PxHeading id="why" eyebrow="Why Privexa" title="AI is moving faster than enterprise data controls." />
+          <div className="space-y-5 text-base leading-relaxed text-slate-400 sm:text-lg">
+            <p>Organisations increasingly use external AI, and valuable, sensitive information follows the workflow.</p>
+            <p>Blanket AI bans often drive shadow usage instead. What organisations need is a governed boundary.</p>
+            <p className="text-white">Privexa creates the control boundary before AI egress.</p>
+          </div>
+        </div>
+      </PxSection>
+
+      {/* 5 — Principles */}
+      <PxSection tone="charcoal" labelledBy="principles">
+        <h2 id="principles" className="sr-only">Three principles</h2>
+        <ul className="grid gap-12 md:grid-cols-3 md:gap-10">
+          {principles.map((p) => (
+            <li key={p.title}>
+              <span className="block h-px w-10 bg-cyan-300" aria-hidden />
+              <h3 className="mt-8 text-2xl font-semibold tracking-tight text-white">{p.title}</h3>
+              <p className="mt-4 text-base leading-relaxed text-slate-400">{p.body}</p>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-16 text-center text-lg font-medium text-slate-200">{privexaLine}</p>
+      </PxSection>
+
+      {/* 6 — How it works */}
+      <PxSection labelledBy="how">
+        <PxHeading id="how" eyebrow="How Privexa works" title="Understand. Protect. Authorise. Reconstruct. Prove." />
+        <div className="mt-12">
+          <HowItWorks />
+        </div>
+      </PxSection>
+
+      {/* 7 — Multimodal */}
+      <PxSection tone="charcoal" labelledBy="multimodal">
+        <PxHeading id="multimodal" eyebrow="Multimodal privacy" title="One privacy boundary. Multiple data modalities." />
+        <div className="mt-12">
+          <ModalityGrid />
+        </div>
+      </PxSection>
+
+      {/* 8 — Videos */}
+      <PxSection id="see-it" labelledBy="videos">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <PxHeading id="videos" eyebrow="See Privexa in action" title="Watch the platform." />
+          <PxCta href="/resources#videos" variant="text">
+            All resources
+          </PxCta>
+        </div>
+        <div className="mt-12">
+          <VideoGallery />
+        </div>
+      </PxSection>
+
+      {/* 9 — Digital pathology */}
+      <PxSection tone="light" labelledBy="pathology">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+          <div>
+            <PxHeading
+              id="pathology"
+              tone="light"
+              eyebrow="Digital pathology"
+              title="Clinical technology, from grossing bench to slide."
+              body="Translyx represents leading pathology technologies in New Zealand. Privexa complements them where slides and reports need to travel — without being part of those partner products."
+            />
+            <div className="mt-8">
+              <PxCta href="/digital-pathology" variant="primary-light">
+                Explore digital pathology
+              </PxCta>
+            </div>
+          </div>
+          <ul className="grid gap-3">
+            {[
+              { t: "Aiforia", d: "Authorised partner solution — AI-assisted digital pathology.", h: "/products/aiforia" },
+              { t: "Algoscope", d: "Partner product — surgery-to-pathology workflow automation.", h: "/products/algoscope" },
+              { t: "Privexa WSI privacy", d: "Translyx platform — whole-slide privacy controls.", h: "/privexa/wsi", s: true },
+            ].map((x) => (
+              <li key={x.t}>
+                <Link
+                  href={x.h}
+                  className="group flex items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-white p-6 transition-colors hover:border-slate-300"
+                >
+                  <span>
+                    <span className="flex flex-wrap items-center gap-3">
+                      <span className="text-lg font-semibold text-[#0B1117]">{x.t}</span>
+                      {x.s && <StatusBadge status="validation" tone="light" />}
+                    </span>
+                    <span className="mt-1 block text-sm text-slate-600">{x.d}</span>
+                  </span>
+                  <ArrowRight className="h-4 w-4 shrink-0 text-slate-400 transition-transform group-hover:translate-x-1" aria-hidden />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </PxSection>
+
+      {/* 10 — Global */}
+      <PxSection labelledBy="global">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+          <PxHeading
+            id="global"
+            eyebrow="Global relevance"
+            title="Founded in New Zealand. Built for sensitive environments everywhere."
+            body="Translyx works from Auckland with organisations whose data, regulation and clinical practice demand care."
+          />
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">Markets in focus</p>
+            <ul className="mt-5 divide-y divide-white/10 border-y border-white/10">
+              {markets.map((m) => (
+                <li key={m} className="py-4 text-base text-slate-200">{m}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </PxSection>
+
+      {/* 11 — Final CTA */}
+      <PxFinalCta />
+    </div>
   );
 }

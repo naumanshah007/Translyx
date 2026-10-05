@@ -11,10 +11,10 @@ import { PipelineCategoryCard } from "@/components/ui/PipelineCategoryCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
 
-const pipelineDescription = `The ${siteConfig.companyName} pipeline — governed clinical AI workflow capabilities under evaluation and development, plus diagnostic innovation opportunities across AMR, sepsis, POCT, oncology, endocrine, cardiac, and precision medicine for New Zealand healthcare.`;
+const pipelineDescription = `The ${siteConfig.companyName} pipeline — diagnostic innovation opportunities across AMR, sepsis, POCT, oncology, endocrine, cardiac, and precision medicine for New Zealand healthcare.`;
 
 export const metadata: Metadata = {
-  title: "Translyx Pipeline — Clinical AI Capabilities & Diagnostic Innovation",
+  title: "Diagnostic Innovation — Translyx Pipeline",
   description: pipelineDescription,
   keywords: [
     "Translyx pipeline",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     canonical: "/pipeline",
   },
   openGraph: {
-    title: "Translyx Pipeline | Clinical AI Capabilities & Diagnostic Innovation",
+    title: "Diagnostic Innovation — Translyx Pipeline | Translyx",
     description: pipelineDescription,
     url: `${siteConfig.url}/pipeline`,
     siteName: siteConfig.name,
@@ -47,12 +47,12 @@ export default function PipelinePage() {
   return (
     <>
       <Hero
-        badge={{ text: "Translyx pipeline", icon: <FlaskConical className="h-3.5 w-3.5 text-cyan-300" /> }}
-        headline="Clinical AI capabilities and diagnostic innovation for New Zealand &"
-        highlight="Oceania."
-        description={`The ${siteConfig.companyName} pipeline spans governed clinical AI workflow capabilities — under evaluation and development — and diagnostic innovation across AMR, sepsis, point-of-care testing, oncology, endocrine, cardiac, and precision medicine.`}
+        badge={{ text: "Diagnostic innovation", icon: <FlaskConical className="h-3.5 w-3.5 text-cyan-300" /> }}
+        headline="Emerging diagnostics and translational technology for"
+        highlight="real clinical settings."
+        description="Diagnostic innovation across AMR, sepsis, point-of-care testing, oncology, endocrine, cardiac and precision medicine — plus clinical workflow research capabilities under evaluation. For enterprise AI privacy, see Privexa."
         primaryCTA={{ label: "Discuss the pipeline", href: "/contact?topic=pipeline" }}
-        secondaryCTA={{ label: "See partner products", href: "/products" }}
+        secondaryCTA={{ label: "Explore Privexa", href: "/privexa" }}
         visual={<PipelineHeroVisual />}
       />
 

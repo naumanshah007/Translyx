@@ -1,4 +1,6 @@
-# Deployment Guide - Privexa Limited Website
+# Deployment Guide - Translyx Website
+
+> Translyx Limited is the company; Privexa is a Translyx platform. The repository name below (`naumanshah007/Privexa`) is historical and unchanged.
 
 ## Option 1: Deploy to Vercel (Recommended - Easiest)
 

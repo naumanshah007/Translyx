@@ -1,9 +1,10 @@
 /**
  * Pipeline capabilities — Translyx clinical AI workflow capabilities.
  *
- * These are NOT launched products. They are internal workflow capabilities
+ * These are NOT launched products. They are research and workflow capabilities
  * under evaluation or in development, presented as part of the Translyx
- * pipeline. There is intentionally no externalHref field: capabilities must
+ * diagnostic-innovation pipeline. Former AI Wrapper / Cloud Shield / Scribe
+ * capabilities now live in the Privexa platform (config/privexa.ts). There is intentionally no externalHref field: capabilities must
  * never link out to a live platform. Detail pages CTA to /contact.
  */
 
@@ -43,57 +44,6 @@ export const stageLabels: Record<CapabilityStage, { text: string; className: str
 };
 
 export const pipelineCapabilities: PipelineCapability[] = [
-  {
-    slug: "ai-wrapper",
-    title: "AI Wrapper",
-    stage: "evaluation",
-    tagline: "Secure LLM gateway for privacy-preserving AI use",
-    description:
-      "A secure LLM gateway concept that intercepts and replaces sensitive data with safe tokens before any message reaches an AI system, restoring original context on response.",
-    icon: "Lock",
-    accent: "violet",
-    href: "/pipeline/ai-wrapper",
-    capabilities: [
-      "Field-level detection of sensitive and identifying data",
-      "Token replacement before content leaves the trusted boundary",
-      "Automatic restoration of original context in responses",
-      "Designed for hospitals, research teams, and protected enterprise workflows",
-    ],
-  },
-  {
-    slug: "cloud-shield",
-    title: "Cloud Shield",
-    stage: "evaluation",
-    tagline: "Field-level protection for cloud platforms and data workflows",
-    description:
-      "Field-level tokenisation for cloud data pipelines — sensitive fields are replaced before reaching cloud platforms, with the local mapping vault reversible only inside your perimeter.",
-    icon: "Cloud",
-    accent: "sky",
-    href: "/pipeline/cloud-shield",
-    capabilities: [
-      "Field-level tokenisation before data reaches cloud platforms",
-      "Local mapping vault — reversible only inside your perimeter",
-      "Designed for governed cloud adoption in clinical settings",
-      "Privacy-preserving by design, no raw identifiers in transit",
-    ],
-  },
-  {
-    slug: "scribe",
-    title: "Scribe",
-    stage: "development",
-    tagline: "Privacy-protected clinical documentation and structured notes",
-    description:
-      "A clinical documentation concept: record and transcribe consultations and generate clinician-ready structured notes, with sensitive data kept inside your boundary throughout.",
-    icon: "FileText",
-    accent: "teal",
-    href: "/pipeline/scribe",
-    capabilities: [
-      "Consultation recording and transcription with PHI protection",
-      "Clinician-ready structured note generation",
-      "Human review before anything enters the record",
-      "Sensitive data never leaves the trusted boundary",
-    ],
-  },
   {
     slug: "trace",
     title: "Trace",

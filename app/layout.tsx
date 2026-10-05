@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { Manrope } from "next/font/google";
 import { siteConfig } from "@/config/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import "../styles/globals.css";
-
-const display = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-display",
-  axes: ["SOFT", "WONK"],
-});
 
 const body = Manrope({
   subsets: ["latin"],
@@ -19,7 +13,7 @@ const body = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Translyx | Diagnostic Innovation & Governed Clinical AI — New Zealand",
+    default: siteConfig.seo.defaultTitle,
     template: `%s | Translyx`,
   },
   description: siteConfig.seo.defaultDescription,
@@ -43,7 +37,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_NZ",
     url: siteConfig.url,
-    title: "Translyx | Diagnostic Innovation & Governed Clinical AI — New Zealand",
+    title: siteConfig.seo.defaultTitle,
     description: siteConfig.seo.defaultDescription,
     siteName: siteConfig.name,
     images: [
@@ -57,7 +51,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Translyx | Diagnostic Innovation & Governed Clinical AI",
+    title: siteConfig.seo.defaultTitle,
     description: siteConfig.seo.defaultDescription,
     images: [siteConfig.seo.ogImage],
   },
@@ -101,6 +95,9 @@ export default function RootLayout({
       addressCountry: "NZ",
     },
     knowsAbout: [
+      "enterprise AI privacy",
+      "privacy-preserving AI",
+      "digital pathology privacy",
       "clinical AI governance",
       "digital pathology AI",
       "surgery-to-pathology workflow automation",
@@ -111,8 +108,17 @@ export default function RootLayout({
     sameAs: ["https://www.linkedin.com/company/translyx/"],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Translyx Partner Products",
+      name: "Translyx Platforms & Partner Products",
       itemListElement: [
+        {
+          "@type": "SoftwareApplication",
+          name: "Privexa",
+          applicationCategory: "SecurityApplication",
+          url: `${siteConfig.url}/privexa`,
+          description: "The control boundary for the AI era — a Translyx platform for privacy-preserving enterprise AI.",
+          operatingSystem: "Web",
+          provider: { "@type": "Organization", name: "Translyx Limited" },
+        },
         {
           "@type": "SoftwareApplication",
           name: "Aiforia Digital Pathology AI",
@@ -144,7 +150,7 @@ export default function RootLayout({
     alternateName: siteConfig.companyName,
     url: siteConfig.url,
     description:
-      "Translyx Limited — partner diagnostic solutions, digital pathology AI, and governed clinical AI workflow capabilities for New Zealand healthcare.",
+      siteConfig.description,
     publisher: {
       "@type": "Organization",
       name: siteConfig.companyName,
@@ -161,7 +167,7 @@ export default function RootLayout({
 
   return (
     <html lang="en-NZ" suppressHydrationWarning>
-      <body className={`${body.variable} ${display.variable} font-body`}>
+      <body className={`${body.variable} font-body antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

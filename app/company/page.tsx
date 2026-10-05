@@ -11,10 +11,10 @@ import { Hero } from "@/components/sections/Hero";
 import { CompanyHeroVisual } from "@/components/sections/PageHeroVisuals";
 import Link from "next/link";
 
-const aboutDescription = `Learn about ${siteConfig.companyName} — the Auckland-based clinical technology company connecting partner diagnostic solutions, digital pathology AI, and governed clinical AI workflow capabilities for New Zealand healthcare.`;
+const aboutDescription = `Learn about ${siteConfig.companyName} — the Auckland-founded technology company behind Privexa, privacy-first enterprise AI, alongside digital pathology and diagnostic innovation.`;
 
 export const metadata: Metadata = {
-  title: "Company — Translyx, Clinical Technology from Auckland, New Zealand",
+  title: "About Translyx — Technology for Trusted AI and Diagnostics",
   description: aboutDescription,
   keywords: [
     "about Translyx",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/company" },
   openGraph: {
-    title: "Company | Translyx — Clinical Technology from Auckland, New Zealand",
+    title: "About Translyx — Technology for Trusted AI and Diagnostics",
     description: aboutDescription,
     url: `${siteConfig.url}/company`,
     siteName: siteConfig.name,
@@ -68,8 +68,8 @@ const platformModel = [
   {
     icon: Building2,
     name: "Translyx Limited",
-    role: "The single platform",
-    body: "The accountable New Zealand company — clinical positioning, diagnostic adoption, local partnerships, and healthcare implementation across Oceania, under one brand.",
+    role: "The company",
+    body: "The New Zealand technology company behind Privexa, digital pathology partnerships and diagnostic innovation — one accountable brand.",
   },
   {
     icon: Handshake,
@@ -79,9 +79,9 @@ const platformModel = [
   },
   {
     icon: Lock,
-    name: "Translyx Pipeline",
-    role: "Capabilities under evaluation",
-    body: "Governed clinical AI workflow capabilities — AI Wrapper, Cloud Shield, Scribe, Trace, and Clinical Triage (referral grading) — under evaluation and development, not publicly launched.",
+    name: "Privexa",
+    role: "A Translyx platform",
+    body: "Translyx's flagship enterprise AI privacy platform — the control boundary for the AI era. Privexa, formerly a separate venture, is now part of Translyx.",
   },
 ];
 
@@ -140,9 +140,9 @@ export default function AboutPage() {
 
       <Hero
         badge={{ text: "Company · Auckland, New Zealand", icon: <Building2 className="h-3.5 w-3.5 text-cyan-300" /> }}
-        headline="The accountable bridge between global innovation and"
-        highlight="local clinical adoption."
-        description="Translyx is an Auckland-based clinical technology company connecting diagnostic innovation, digital pathology AI, and governed clinical workflows with New Zealand and Oceania."
+        headline="A technology company for trusted AI,"
+        highlight="diagnostics and clinical transformation."
+        description="Translyx is a New Zealand-founded technology company working across privacy-first enterprise AI, digital pathology, diagnostic innovation and healthcare technology — with Privexa as its flagship platform."
         primaryCTA={{ label: "Talk with our team", href: "/contact" }}
         secondaryCTA={{ label: "Explore partners", href: "/partners" }}
         visual={<CompanyHeroVisual />}
@@ -235,7 +235,7 @@ export default function AboutPage() {
             </div>
             <p className="mt-5 text-xs leading-relaxed text-slate-500">
               Aiforia and Algoscope are partner products Translyx brings to New Zealand — not owned or developed
-              by Translyx. Pipeline capabilities are under evaluation or development and are not publicly launched products.
+              by Translyx. Privexa capability status is published on the Trust &amp; product status page; diagnostic pipeline capabilities are under evaluation or development.
             </p>
           </section>
 
@@ -398,7 +398,7 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 rounded-2xl border border-[#0F1C3F]/15 bg-[#F5F8FC] p-6 sm:p-8">
             <div>
               <h3 className="text-lg font-semibold text-[#0F1C3F]">Work with Translyx</h3>
-              <p className="mt-1 text-sm text-slate-600">Speak with the team about diagnostic product evaluation, partner products, or the broader Translyx pipeline.</p>
+              <p className="mt-1 text-sm text-slate-600">Speak with the team about diagnostic product evaluation, partner products, Privexa, or the broader Translyx pipeline.</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
               <Button asChild variant="primary" size="lg">

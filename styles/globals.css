@@ -61,6 +61,8 @@
     overflow-x: hidden;
   }
   body {
+    /* One grotesk family site-wide; display headings use tighter tracking. */
+    --font-display: var(--font-body);
     @apply bg-[#F5F8FC] text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
     font-family: var(--font-body);
@@ -97,7 +99,7 @@
   h5,
   h6 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     line-height: 1.15;
     hyphens: none;
     -webkit-hyphens: none;
@@ -345,4 +347,32 @@
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ---------- Privexa explanatory motion (disabled under reduced motion) ---------- */
+@keyframes pxFlow {
+  0% { transform: translate(-100%, -100%); }
+  100% { transform: translate(100%, 100%); }
+}
+@keyframes pxPulse {
+  0%, 70%, 100% { border-color: rgba(255, 255, 255, 0.1); color: rgb(226 232 240); }
+  15%, 35% { border-color: rgba(103, 232, 249, 0.6); color: #fff; }
+}
+@keyframes pxBar {
+  0%, 100% { transform: scaleX(0); opacity: 0; }
+  10% { opacity: 1; }
+  20%, 30% { transform: scaleX(1); opacity: 1; }
+  45% { opacity: 0; transform: scaleX(1); }
+}
+@keyframes pxSurface {
+  0%, 60%, 100% { opacity: 1; text-decoration: none; }
+  20%, 45% { opacity: 0.45; text-decoration: line-through; border-color: rgba(103, 232, 249, 0.5); }
+}
+.px-flow { animation: pxFlow 2.4s linear infinite; }
+.px-boundary-step { animation: pxPulse 3s ease-in-out infinite; }
+.px-step-bar { transform-origin: left; transform: scaleX(0); animation: pxBar 4.5s ease-in-out infinite; }
+.px-surface { animation: pxSurface 4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .px-flow, .px-boundary-step, .px-step-bar, .px-surface { animation: none; }
+  .px-step-bar { transform: scaleX(0); }
 }

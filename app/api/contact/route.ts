@@ -26,7 +26,9 @@ export async function POST(request: Request) {
     const resend = new Resend(apiKey);
 
     const body = await request.json();
-    const { name, email, organization, inquiryType, message, company_website } = body;
+    const { name, email, organization, inquiryType, message, company_website, role, country, source } = body;
+    // Demo requests from /privexa/demo keep the message optional.
+    const isDemo = source === "privexa-demo";
 
     // Honeypot: a hidden field real users never see/fill. If a bot fills it,
     // pretend success and drop the submission silently.
@@ -35,7 +37,7 @@ export async function POST(request: Request) {
     }
 
     // Validate required fields
-    if (!name || !email || !message) {
+    if (!name || !email || (!message && !isDemo)) {
       return NextResponse.json(
         { error: "Name, email, and message are required" },
         { status: 400 }
@@ -61,9 +63,11 @@ Name: ${name}
 Email: ${email}
 ${organization ? `Organization: ${organization}` : ""}
 ${inquiryType ? `Inquiry type: ${inquiryType}` : ""}
+${role ? `Role: ${role}` : ""}
+${country ? `Country/region: ${country}` : ""}
 
 Message:
-${message}
+${message || "(none)"}
 
 ---
 This email was sent from the Translyx Limited website contact form.
@@ -92,10 +96,12 @@ Reply directly to this email to respond to ${name} (${email}).
             <p><strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
             ${organization ? `<p><strong>Organization:</strong> ${escapeHtml(organization)}</p>` : ""}
             ${inquiryType ? `<p><strong>Inquiry type:</strong> ${escapeHtml(inquiryType)}</p>` : ""}
+            ${role ? `<p><strong>Role:</strong> ${escapeHtml(role)}</p>` : ""}
+            ${country ? `<p><strong>Country/region:</strong> ${escapeHtml(country)}</p>` : ""}
           </div>
           <div style="margin: 20px 0;">
             <h3 style="color: #1E40AF;">Message:</h3>
-            <p style="white-space: pre-wrap; background-color: #f9f9f9; padding: 15px; border-radius: 4px;">${escapeHtml(message)}</p>
+            <p style="white-space: pre-wrap; background-color: #f9f9f9; padding: 15px; border-radius: 4px;">${escapeHtml(message || "(none)")}</p>
           </div>
           <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 30px 0;">
           <p style="color: #666; font-size: 12px;">

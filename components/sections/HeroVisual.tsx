@@ -115,16 +115,16 @@ function DigitalPathologyPanel() {
 
 function PipelinePanel() {
   return (
-    <Panel title="Pipeline Capabilities" accent="#A78BFA">
+    <Panel title="Privexa Platform" accent="#A78BFA">
       <div className="space-y-1.5">
-        <MiniRow icon={Cpu} label="AI Wrapper" color="text-violet-300" />
-        <MiniRow icon={Cloud} label="Cloud Shield" color="text-sky-300" />
+        <MiniRow icon={Cpu} label="Secure AI" color="text-violet-300" />
+        <MiniRow icon={Cloud} label="Documents & Knowledge" color="text-sky-300" />
         <MiniRow icon={FileText} label="Scribe" color="text-teal-300" />
-        <MiniRow icon={GitBranch} label="Trace" color="text-cyan-300" />
+        <MiniRow icon={GitBranch} label="Governance" color="text-cyan-300" />
       </div>
       <div className="mt-2.5 flex items-center gap-1.5 border-t border-white/10 pt-2">
         <ShieldCheck className="h-3.5 w-3.5 text-emerald-300" />
-        <span className="text-[10px] font-medium text-slate-200">Under evaluation · privacy-first</span>
+        <span className="text-[10px] font-medium text-slate-200">A Translyx platform · minimum disclosure</span>
       </div>
     </Panel>
   );
