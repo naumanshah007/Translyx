@@ -1,13 +1,13 @@
 # Simple DNS Setup Guide for Resend
 
 ## The Problem
-Resend says you can send to `info@privexa.co`, but you need to verify your domain first by adding DNS records.
+To deliver website enquiries to `info@translyx.co.nz` from a Translyx sender, verify the domain in Resend by adding its DNS records.
 
 ## What You Need to Do (Step by Step)
 
 ### Step 1: Find Where You Manage Your Domain
 
-**Question:** Where did you buy or register `privexa.co`?
+`translyx.co.nz` is registered and its DNS is managed through Bluehost.
 
 Common places:
 - **Bluehost** (if you use Bluehost for hosting/email)
@@ -74,13 +74,8 @@ Repeat for all 3 records.
 
 ## Need Help Finding Your DNS?
 
-Tell me:
-- Where did you buy `privexa.co`?
-- Or where do you manage your website/hosting?
-
-I can give you specific instructions for that provider!
+Use Bluehost's advanced DNS manager for `translyx.co.nz` and copy every value exactly as Resend provides it.
 
 ## After Domain is Verified
 
-Once verified, I'll update the code to use `noreply@privexa.co` as the sender, and emails will work perfectly!
-
+Once verified, configure `website@translyx.co.nz` as the sender and `info@translyx.co.nz` as the recipient in Vercel.

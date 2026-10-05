@@ -75,7 +75,7 @@ Vercel automatically provides free SSL certificates. Once DNS is configured, SSL
 ## Benefits
 
 ✅ Free hosting on Vercel
-✅ Your own domain (www.privexa.co)
+✅ Your own domain (`www.translyx.co.nz`)
 ✅ Free SSL certificate
 ✅ Contact form API works perfectly
 ✅ Fast CDN worldwide
@@ -84,7 +84,6 @@ Vercel automatically provides free SSL certificates. Once DNS is configured, SSL
 ## After Setup
 
 Once DNS is configured:
-- Your site will be live at `www.privexa.co`
+- Your site will be live at `www.translyx.co.nz`
 - Contact form will work
-- Emails will be sent to `info@privexa.co` (after Resend domain verification)
-
+- Emails will be sent to `info@translyx.co.nz` (after Resend domain verification)

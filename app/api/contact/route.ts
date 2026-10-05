@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { siteConfig } from "@/config/site";
 
 /** Escape user-supplied text before interpolating into the notification HTML. */
 function escapeHtml(value: unknown): string {
@@ -74,11 +75,10 @@ This email was sent from the Translyx Limited website contact form.
 Reply directly to this email to respond to ${name} (${email}).
     `.trim();
 
-    // Resend's onboarding sender can deliver only to the account's verified
-    // inbox. Keep these configurable so the addresses can be switched to the
-    // Translyx domain as soon as that domain is verified in Resend.
-    const recipient = process.env.CONTACT_FORM_RECIPIENT || "info@privexa.co";
-    const sender = process.env.CONTACT_FORM_SENDER || "Translyx Website <onboarding@resend.dev>";
+    // Keep delivery configurable for Resend while defaulting to the public
+    // Translyx contact address.
+    const recipient = process.env.CONTACT_FORM_RECIPIENT || siteConfig.company.email;
+    const sender = process.env.CONTACT_FORM_SENDER || "Translyx Website <website@translyx.co.nz>";
 
     // Send email using Resend. The visitor remains the Reply-To address, so a
     // normal reply from the verified inbox goes directly back to them.

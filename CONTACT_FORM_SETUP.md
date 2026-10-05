@@ -1,6 +1,6 @@
 # Contact Form Email Integration Setup
 
-The contact form is now integrated with Resend to send emails to `info@privexa.co`.
+The contact form is integrated with Resend to send emails to `info@translyx.co.nz`.
 
 ## Setup Instructions
 
@@ -17,6 +17,8 @@ Create a `.env.local` file in the root directory:
 
 ```env
 RESEND_API_KEY=re_your_api_key_here
+CONTACT_FORM_RECIPIENT=info@translyx.co.nz
+CONTACT_FORM_SENDER="Translyx Website <website@translyx.co.nz>"
 ```
 
 ### 3. Production (Vercel)
@@ -29,26 +31,24 @@ RESEND_API_KEY=re_your_api_key_here
    - **Environment**: Production, Preview, Development (select all)
 4. Redeploy your application
 
-### 4. Domain Verification (Optional but Recommended)
+### 4. Domain Verification
 
-For production use, you should verify your domain with Resend:
+The production domain is verified with Resend:
 
 1. Go to Resend Dashboard → Domains
-2. Add your domain (`privexa.co`)
+2. Add your domain (`translyx.co.nz`)
 3. Add the DNS records provided by Resend
-4. Once verified, update the `from` field in `app/api/contact/route.ts`:
+4. Use the verified sender in `app/api/contact/route.ts`:
    ```typescript
-   from: "Privexa Website <noreply@privexa.co>",
+   from: "Translyx Website <website@translyx.co.nz>",
    ```
-
-Until your domain is verified, emails will be sent from `onboarding@resend.dev` (Resend's default sender).
 
 ## How It Works
 
 1. User fills out the contact form
 2. Form data is sent to `/api/contact` endpoint
 3. API route validates the data
-4. Email is sent to `info@privexa.co` via Resend
+4. Email is sent to `info@translyx.co.nz` via Resend
 5. User receives success/error message
 
 ## Email Format
@@ -66,4 +66,3 @@ The email includes:
 - **API errors**: Check Vercel function logs
 - **Rate limits**: Resend free tier allows 3,000 emails/month
 - **Domain issues**: Use verified domain for better deliverability
-

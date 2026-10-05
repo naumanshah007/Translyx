@@ -27,8 +27,7 @@ export const siteConfig = {
   company: {
     name: "Translyx Limited",
     location: "Auckland, New Zealand",
-    // TODO: switch to info@translyx.co.nz once email routing is set up on the new domain.
-    email: "info@translyx.co",
+    email: "info@translyx.co.nz",
     address: "Auckland, New Zealand",
   },
 
@@ -38,8 +37,7 @@ export const siteConfig = {
       name: "Dr Ehsan Ullah",
       role: "Clinical & Technology Liaison",
       phone: "+64220141390",
-      // TODO: switch to ehsan.ullah@translyx.co.nz once email routing is set up on the new domain.
-      email: "ehsan.ullah@translyx.co",
+      email: "ehsan.ullah@translyx.co.nz",
     },
   },
   
